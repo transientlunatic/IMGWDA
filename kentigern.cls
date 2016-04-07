@@ -260,14 +260,15 @@
 \makechapterstyle{minimalist}{%
   \renewcommand*{\chapnamefont}{}
   \renewcommand*{\chaptitlefont}{\fontsize{.75cm}{1cm}\selectfont \sffamily \scshape}
-  \renewcommand*{\chapnumfont}{\fontsize{5cm}{5.5cm}\selectfont \color{Maroon}\sffamily}
+  \renewcommand*{\chapnumfont}{\fontsize{.75cm}{1cm}\selectfont \color{Maroon}\sffamily}
   \renewcommand*{\printchaptername}{}
   \setlength{\chapindent}{0pt}
   \renewcommand*{\afterchapternum}{}
   \addtolength{\chapindent}{0pt}
   \renewcommand*{\printchapternum}{\chapnumfont \thechapter\space}
   \renewcommand{\printchaptertitle}[1]{%
-    \\[2cm]
+    %\\[2cm]
+    \quad
     \chaptitlefont
     \scshape ##1
   }
@@ -277,7 +278,7 @@
 \setlength\beforechapskip{1cm}
 \setlength{\prechapterprecisshift}{1cm}
 \def\prechapterprecis{\vspace*{\prechapterprecisshift}}
-\def\postchapterprecis{\newpage}
+\def\postchapterprecis{\vspace{1cm}}
 
 \def\afterchaptertitle{
   %\newpage
