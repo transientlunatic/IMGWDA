@@ -1,0 +1,125 @@
+\documentclass{kentigern}
+
+\usepackage{lipsum}
+\usepackage[toc]{glossaries}
+
+\makeglossaries
+
+
+\title{Gravitational Waves : A Handbook}
+\author{Daniel Williams}
+
+
+\newglossaryentry{gravitational wave}{
+  name = {gravitational wave},
+  description = {A gravitational wave is a propogating perturbation of spacetime.}
+}
+
+\newglossaryentry{GW150914}{
+  name = {GW150914},
+  description = {The first gravitational wave event to be observed. The observation was made by the two \gls{LIGO} detectors in the United States of America, located at Hanford, Washington; and Livingston, Louisiana}
+}
+
+\newglossaryentry{LIGO}{
+  name = LIGO,
+  description = {
+    The Laser Interferometer Gravitational-wave Observatory is a
+    joint project of California Institute of Technology (CalTech) and
+    the Massechusets Institute of Technology (MIT), in which laser
+    interferometers of a similar design to the Michelson
+    interferometer, famous for its use in disproving the existence of
+    the ``luminous aether'', are used to detect small length
+    perturbations over distances of 4km. }
+}
+
+\newglossaryentry{DetChar}{
+  name = detector characterisation,
+  description = {DetChar, or detector characterisation, is the process of analysing the noise sources and calibration of the detector, as well as identifying ``glitches'', transient noise events which can interfere with burst searches, and ``lines'', sources of noise which exist in a narrow frequency band which can interfere with long-integration time searches.}
+}
+
+\newglossaryentry{burst}{
+  name = burst,
+  description = {A burst is a short-lived, transient gravitational wave event.}
+}
+
+\newglossaryentry{chirp mass}{
+  name = {chirp mass, $\mathcal{M}$},
+  description = {What the chirp mass is.}
+}
+
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\chapter{Gravitational Waves}
+\label{cha:grav-waves}
+
+\chapterprecis{\Glspl{gravitational wave} were perhaps the last of the
+  predictions of Einstein's General Theory of Relativity to be
+  observed; their detection was the catalyst for the beginning of a
+  new era of astrophysics}
+
+\epigraph{I Guess we need the detection checklist...}{\textbf{Sergey Klimencko}, \emph{Internal communication}}
+
+The 14 September 2016 will likely be remembered as one of the most
+significant in the history of astronomy and of astrophysics. Early in
+the morning of this autumn day, shortly after 9am UT, a gravitational
+wave passed through the Earth, and on its way produced a sufficiently
+large movement in the mirrors and test masses of the detectors of the
+Laser Interferometer Gravitational-wave Observatory (\gls{LIGO}), as to be
+detected.
+
+Over five months' of data analysis, detector characterisation, and
+detection verification were conducted by a global team of scientists,
+in the LIGO and VIRGO Scientific Collaboration (LVC). This process
+resulted in a slew of journal papers being written, vast quantities of
+data produced, and an enormous public outreach effort to be
+launched. Eventually, the collaboration found itself in a position to
+make the announcement of the first detection of gravitational waves on
+11 February 2016.
+
+
+\section{Gravitational Waves and General Relativity}
+\label{sec:grav-waves-gener}
+
+Gravitational waves are one of the prediction of Einstein's 1915 Theory of General Relativity.
+
+\chapter{Mathematical \& Technical Definitions}
+\label{cha:math--techn}
+
+\chapterprecis{The field of gravitational wave detection has a rich}
+
+
+\chapter{Detectors}
+\label{cha:detectors}
+
+\chapterprecis{Gravitational wave detectors are one of the great
+  achievements of Twentieth and early Twenty-First Century
+  science. They are the most sensitive measuring devices ever
+  constructed, but they face numerous technical challenges.}
+
+Gravitational Wave detectors were first conceived in the 1960s by...
+
+\section{An overview of noise sources}
+\label{sec:an-overview-noise}
+
+\section{Newtonian Noise}
+\label{sec:newtonian-noise}
+
+\section{Seismic Noise}
+\label{sec:seismic-noise}
+
+\section{Other noise sources}
+\label{sec:other-noise-sources}
+
+There are numerous additional noise sources within the interferometer.
+
+\glsaddall
+\glossarystyle{altlist}
+\printglossaries
+
+\end{document}
