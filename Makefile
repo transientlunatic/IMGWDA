@@ -8,10 +8,11 @@ PRE =  $(TEX) -ini -job-name="preamble" "&pdflatex preamble.tex\dump"
 all : document.pdf
 
 view :
-	evince document.pdf
+	evince document.pdf &
 
 document.pdf : document.pdf
 	$(TEXMK) $<
 
 clean:
 	latexmk -CA
+	rm -rf *.glo *.glg *.ist

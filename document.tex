@@ -11,7 +11,7 @@
 \usepackage{physicsplus}
 \usepackage{caption}
 
-\title{Gravitational Waves : A Handbook}
+\title{Year 1 Report}
 \author{Daniel Williams}
 
 \usepackage[export]{adjustbox}
@@ -32,10 +32,27 @@
 \maketitle
 
 \newpage
+\vfill
+\lettrine{I}{'ve had} the pleasure of being a member of the Institute for
+Gravitational Research at the University of Glasgow for a little over
+seven months. It would be difficult to deny that this has been an
+unexpectedly eventful period in the life of the group, and it's been
+great fun to experience the excitement of the first detection of a
+gravitational wave as an insider (although an insider only by the skin
+of my teeth), and to see the department's work on the LISA Pathfinder
+mission come to fruition just a few months later.  
+
+The work outlined in this report comprises a number of projects which
+I have spent these seven months working on, however the first
+observing run of Advanced LIGO proved more disruptive to my schedule
+than was, perhaps, initially envisaged.
+\vfill
+\newpage
+
 
 \tableofcontents
 
-\part{Introduction}
+\part{Outline \& Review of Gravitational Wave Literature}
 \label{part:introduction}
 
 
@@ -48,7 +65,7 @@
   observed; their detection was the catalyst for the beginning of a
   new era of astrophysics}
 
-\epigraph{I Guess we need the detection checklist...}{\textbf{Sergey Klimencko}, \emph{Internal communication}}
+\epigraph{I guess we need to do the detection checklist...}{\textbf{Sergey Klimencko}, \emph{Internal LSC communication}, 14 September 2015}
 
 \lettrine[lines=3]{T}{he 14 September 2016} will likely be remembered as one of the most
 significant in the history of astronomy and of astrophysics. Early in
@@ -58,7 +75,7 @@ large movement in the mirrors and test masses of the detectors of the
 Laser Interferometer Gravitational-wave Observatory (\gls{LIGO}), as to be
 detected.
 
-Over five months' of data analysis, detector characterisation, and
+Over five months of data analysis, detector characterisation, and
 detection verification were conducted by a global team of scientists,
 in the LIGO and VIRGO Scientific Collaboration (LVC). This process
 resulted in a slew of journal papers being written, vast quantities of
@@ -71,7 +88,8 @@ make the announcement of the first detection of gravitational waves on
 \section{Gravitational Waves and General Relativity}
 \label{sec:grav-waves-gener}
 
-Gravitational waves are one of the prediction of Einstein's 1915 Theory of General Relativity.
+Gravitational waves are one of the predictions of Einstein's 1915
+Theory of General Relativity.
 
 \chapter{Detectors}
 \label{cha:detectors}
@@ -92,17 +110,90 @@ laser interferometric observatories run by CalTech and VIRGO.
 \subsection{Resonant bar detectors}
 \label{sec:reson-bar-detect}
 
-\subsection{Ground-based interferometers}
+\section{Ground-based interferometers}
 \label{sec:ground-based-interf}
 
-\begin{figure*}
+The cutting-edge of current ground-based interferometers are the twin
+Advanced LIGO detectors \cite{2015CQGra..32g4001L} located in Hanford,
+WA, USA, and Livingston, LA, USA. These interferometers are Michelson
+interferometers with a large number of additional components, which
+allow detection of differential changes in their arm lengths (strains)
+on the order of $10^{-22}$.
+
+\begin{figure}
 \begin{adjustwidth*}{-5.5in}{-2in}
   \centering
-  \input{figures/interferometer.pgf}
+  %\input{figures/interferometer.pgf}
   \caption{An interferometer.}
   \label{fig:interferometer}
 \end{adjustwidth*}
-\end{figure*}
+\end{figure}
+
+\subsection{Detecting gravitational waves with light}
+\label{sec:interferometricdetection}
+
+Gravitational-wave detectors which use beams of light, such as
+interferometers and pulsar timing arrays rely on measuring the the
+travel time of a beam of electromagnetic radiation between two points,
+and the effect that a gravitational wave has on this time. A full
+treatment of this is given in \cite{2009LRR....12....2S}, but in
+summary, if a gravitational wave is not present within a detector, the
+travel time of a beam will be constant. If a gravitational waev is
+introduced, which has a polarisation component $h_+(t)$ in the plane
+of the beam, the change in the arrival time of the beam will be
+\begin{equation}
+  \label{eq:arrival-times-gw}
+  \dv{t_f}{t} = 1 + \half (1 + \cos(\theta)) \qty{ 
+    h_+\qty( t + [1- \cos(\theta) ] L) - h_+(t) 
+  }
+\end{equation}
+where $\theta$ is the angle separating the detector beam and the
+gravitational wave plane, and $L$ is the proper distance separating
+the clocks when no gravitational wave is present.
+
+By arranging the detector to reflect the beam back to the originating
+clock, it is possible to measure the round-triop time using only one
+clock. In this arrangement we must account for the gravitational wave
+having a different strength one the return trip, and so equation
+(\ref{eq:arrival-times-gw}) becomes 
+\begin{align}
+  \label{eq:three-term}
+  \dv{t~{round}}{t} = 1 + \half \Big(  (& 1-\cos(\theta) )h_+ (t+2L) - (1+\cos(\theta))h_+(t) \nonumber \\ & + 2 \cos(\theta) h_+ [t+L(1 - \cos(\theta))] \Big)
+\end{align}
+the \emph{three-term} relation.
+
+\subsection{Operation of a Michelson interferometer}
+\label{sec:Michelson}
+%
+\sidepar{
+\begin{center}
+  \begin{tikzpicture}
+    \draw [thick, red] (0,0.25) -- (3,0.25);
+    \draw [thick, red] (1.1, 0.25) -- (1.1, 2.15);
+    \draw [thick, red, dashed] (1.1, 0.25) -- (1.1, -0.5);
+    \fill (0,0) rectangle (0.5, 0.5);
+    \draw [ultra thick] (0.95, 0.1) -- +(45:.4);
+    \draw [ultra thick] (3, 0) rectangle (3.2, .5);
+    \draw [ultra thick] (0.8, 2.15) rectangle (1.4, 2.35);
+  \end{tikzpicture}
+\end{center}
+\captionof{figure}{A simple Michelson interferometer, composed of a
+    light source (black box), a beam splitter (heavy black line), and
+    two end mirrors (white boxes). \label{fig:michelson}}
+} 
+%
+A Michelson interferometer is an optical device which is capable of
+measuring the difference in length between two optical paths to
+sub-wavelength precision. A Michelson interferometer can be
+constructed using a beamsplitter and two mirrors, in the configuration
+presented in figure \ref{fig:michelson}. The input beam is split along
+the $x$ and $y$ directions, and reflected back to the
+beam-splitter. At the beam-splitter the two beams will interfere: in
+the standard Michelson setup this will result in constructive
+interference if the arms have identical lengths, and a beam will be
+produced at the output (the dashed red line). If the arms' relative
+lengths change a pattern of interference fringes will be visible at
+the output of the interferometer.
 
 \subsection{Space-based interferometers}
 \label{sec:space-based-interf}
@@ -185,26 +276,166 @@ There are numerous additional noise sources within the interferometer.
 \chapter{Sources of Gravitational Waves}
 \label{cha:sourc-grav-waves}
 
-\chapterprecis{Gravitational waves are produced by any situation containing accelerating }
+\chapterprecis{Gravitational waves are produced by any situation
+  containing accelerating masses which are arranged in an asymmetrical
+  manner, for example binary star systems, or non-spherical pulsars. A
+  wide range of astrophysical sources are capable of producing
+  gravitational waves, although only a handful of these are likely to
+  be luminous enough to detect, or produce radiation over a frequency
+  band which can be detected by current-generation detectors.}
+
+The astrophysical sources of gravitational waves can be divided
+roughly into three categories\cite{2009LRR....12....2S}. Continuous
+sources are expected to produce radiation constantly, or at least over
+long periods of time. Transient sources, on the other hand, produce
+high-intensity radiation for a short period of time. We also expect an
+underlying background of gravitational waves to exist, which result
+from the superposition of waves from the multitudes of sources
+throughout the universe, in addition to the remnants of the big bang
+itself.
 
 \section{Transient Sources}
 \label{sec:transient-sources}
 
 Transient sources of gravitational waves...
 
+\subsection{Compact Binary Coalescence}
+\label{sec:cbc}
+
+A pair of orbiting objects can also produce gravitational waves, and
+as they do so their orbit loses energy, causing the radius of the
+orbit to shrink. The objects spiral in towards each other. This
+behaviour has already been observed in the Hulse-Taylor
+pulsar\cite{1975ApJ...195L..51H}\cite{2005ASPC..328...25W}, a system
+of two neutron stars---one of which is a pulsar--- which, through
+precise pulsar timing measurements, have been inferred to be
+inspiralling, and producing gravitational waves.
+
+The binary system will continue to lose energy via gravitational
+radiation until it reaches its \emph{last stable orbit}, after which
+the objects will `touch', and eventually coalesce. This coalescence
+will be a powerful source of gravitational waves, and the chirp
+produced by the coalescence may be sufficiently luminous to be
+detected by current, advanced detectors, (attempts to detect signals
+from such coalescing systems were also made during the initial run of
+the detectors\cite{2012PhRvD..85h2002A}) and would be characterised by
+the distinct pattern of the pseudo-sinusoidal inspiral waveform,
+followed by a bright burst of radiation, and then a sinusoidal
+``ringdown'' as the post-coalescence remnant
+vibrates\cite{2009LRR....12....2S}. Binary coalescences are thus
+classified as transient, or burst sources.
+
+The potential objects which may be involved in an observable binary
+coalescence are black holes and neutron stars: both compact
+objects. White dwarf binaries may also be observable, and these
+systems are expected to be much more abundant than either neutron star
+or black hole binaries, but their emission lies within the passband of
+LISA---a planned space-based gravitational wave observatory. These
+never reach a last stable orbit, as it lies within their physical
+diameter, and so the inspiral component of the waveform is the
+principle source of gravitational waves. These are expected to be so
+numerous in LISA results\cite{2013GWN.....6....4A} that entirely new statistical methods will be
+needed to process the observations, and to allow observations of other
+phenomena to be made in their background.
+
+Supermassive binary black holes (SMBBH) are believed to collide and
+merge as part of the merging processes of galaxies. Again these
+binaries should produce signals within the passband of LISA\cite{2012CQGra..29l4016A}, and
+should be so spectacuarly strong that they are visible in the LISA
+data without the \emph{matched filtering} techniques which are
+required to extract other signals from the data\cite{2009LRR....12....2S}. The observation of
+these objects would provide much-needed information about the
+evolution of galaxies and of super-massive black holes.
+
+Inspiralling compact binaries can act as a cosmological distance
+measure: they have two parameters, their period, and the rate at which
+that period changes (which is calculated by measuring the \emph{chirp
+  mass} of the system) which characterise the system, and the
+amplitude of the gravitational waves produced is dependent only on the
+chirp mass of the source, and the distance from the observer to the
+object. As a result it is possible to determine the distance to an
+inspiralling system simply by determining the chirp mass and measuring
+the brightness of the event. This would provide an additional means of
+measuring cosmic acceleration, and, in the LISA era, this would allow
+the measurement of acceleration at high redshift using high-mass
+binary black holes.
+
+
 \marginpar{
-    \input{figures/cbc_spectrum.pgf}
+    %\input{figures/cbc_spectrum.pgf}
     \captionof{figure}{The frequency spectrum of a compact binary coalescence, alongside the power spectrum of the advanced LIGO detector.}
 }
 
+\subsection{Core-collapse Supernovae}
+\label{sec:sn}
+
+In the most energetic explosions in the
+universe---supernovae---enormous quantities of mass travel at close to
+the speed of light. The explosion of a supernova is likely to be a
+highly chaotic event, and as a result, highly asymmetrical. This
+asymmetrical explosion can therefore produce gravitational waves. Our
+understanding of the precise dynamics of supernovae are quite poorly
+understood, but thanks to the large quantities of energy involved in a
+supernova it is possible (albeit optimistically) to predict that
+core-collapse supernovae should produce gravitational waves in the
+LIGO bandpass at an amplitude which could have been detected with the
+initial LIGO detector\cite{2009LRR....12....2S}.
 
 \section{Continuous Sources}
 \label{sec:continuous-sources}
 
+\subsection{Gravitational-wave Pulsars}
+\label{sec:pulsar}
+
+The discovery of pulsars by Bell and Hewish in 1967 was an unexpected
+discovery for radio astronomy---objects which produce beams of
+radiation, and rotate rapidly, like a lighthouse. Not long after their
+discovery it became apparent that they were a specific form of neutron
+star---the tightly-packed remnant of a massive star which has ended
+its life as a supernova.
+
+Being highly-dense, and having a rapid rotation (and hence an
+acceleration), pulsars are strong candidates for producing
+gravitational radiation. Any irregularity in their structure, such as
+a bulge (or a mountain) on their surface. These gravitational waves
+will produce a weak signal in the detector, but by observing for long
+periods of time, it is possible to make very sensitive measurements,
+thanks to the periodicity of the signal.
+
+While no observations of gravitational waves from a pulsar have been
+made so far, the lack of any detection by the initial LIGO and VIRGO
+interferometers has provided a result in its own right. The
+sensitivity of these detectors is well understood, and the
+\emph{sensitive distance}, the distance to which the detector is
+capable of making an observation, has been calculated. This allows us
+to exclude the Crab pulsar, for example, from having any asymmetry
+greater than one part in 10\,000 in its shape\cite{2009LRR....12....2S}, corresponding to a maximum surface
+irregularity of 30\,cm\cite{2014ApJ...785..119A}.
+
 \section{Stochastic Sources}
 \label{sec:stochastic-sources}
 
+While the gravitational wave detections which we expect to make with
+the aLIGO and aVIRGO detectors in the next five years all correspond
+to radiation from specific sources, in the LISA era we expect to
+encounter a new phenomenon: the gravitational wave
+background\cite{2009LRR....12....2S}. This is likely to come from a
+number of sources. LISA will be sensitive to compact binary systems
+for a much longer period of their evolution, and so rather than just
+detecting the final few orbits and the coalescense of objects, we will
+be able to observe decades or more of their inspiral. Given the large
+population of binary objects in the universe, and the ability of LISA
+to detect white dwarf binaries, we can expect the existence of a rich
+gravitational wave background at low frequencies: so much so that the
+data-handling task will be many orders of magnitude more complicated
+than that for the advanced era detectors.  Super-massive binary black
+holes throughout the universe will also contribute to this background.
 
+Currently-favoured theories of cosmology favour the existence of a
+period of cosmological inflation, a process which should have produced
+very low-frequency gravitational waves.  These were the focus of the
+ultimately-refuted BICEP2 announcement\cite{2014PhRvL.112x1101B} of
+the discovery of gravitational waves.
 
 \chapter{Data analysis of gravitational wave data}
 \label{cha:data-analys-grav}
@@ -212,10 +443,32 @@ Transient sources of gravitational waves...
 \chapterprecis{The identification of gravitational wave signals in the
   interferometer data.}
 
+\part{Summary of work thus far}
+\label{part:work}
 
-\part{The development of a new analysis technique}
-\label{part:devel-new-analys}
+\chapter{Training \& lecture courses}
+\label{chap:lectures}
 
+\chapter{Presentations \& publications}
+\label{chap:pandp}
+
+During the period September 2015 --- April 2016 I contributed to one
+LSC author-list paper, the so-called \emph{Burst Companion Paper}, for
+which I was the figures editor. At present I am not on the general LSC
+author-list, and as such I am not a named contributor on any of the
+other collaboration papers produced over this time period.
+
+During the same period I have been a co-author on a short-author list
+paper, and the lead author on a paper composing the write-up of my
+MSci project.
+
+\part{Outline of future work}
+\label{part:future}
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{introduction, detectors}
 
 \glsaddall
 \glossarystyle{altlist}
