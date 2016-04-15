@@ -2,50 +2,30 @@
 
 \usepackage{lipsum}
 \usepackage[toc]{glossaries}
+\usepackage{siunitx}
 
 \makeglossaries
 
+\usepackage{type1cm}
+\usepackage{lettrine}
+\usepackage{physicsplus}
+\usepackage{caption}
 
 \title{Gravitational Waves : A Handbook}
 \author{Daniel Williams}
 
+\usepackage[export]{adjustbox}
+\usepackage{letltxmacro}
+\LetLtxMacro{\originalfigure}{\figure}
+\LetLtxMacro{\originalendfigure}{\endfigure}
+\renewenvironment{figure}[1][htb]%
+  {\originalfigure[#1]% \begin{figure}[htb]
+   \begin{adjustwidth*}{-1.5in}{-2.5in}
+  }%
+  {\end{adjustwidth*}\originalendfigure}% \end{figure}
 
-\newglossaryentry{gravitational wave}{
-  name = {gravitational wave},
-  description = {A gravitational wave is a propogating perturbation of spacetime.}
-}
 
-\newglossaryentry{GW150914}{
-  name = {GW150914},
-  description = {The first gravitational wave event to be observed. The observation was made by the two \gls{LIGO} detectors in the United States of America, located at Hanford, Washington; and Livingston, Louisiana}
-}
-
-\newglossaryentry{LIGO}{
-  name = LIGO,
-  description = {
-    The Laser Interferometer Gravitational-wave Observatory is a
-    joint project of California Institute of Technology (CalTech) and
-    the Massechusets Institute of Technology (MIT), in which laser
-    interferometers of a similar design to the Michelson
-    interferometer, famous for its use in disproving the existence of
-    the ``luminous aether'', are used to detect small length
-    perturbations over distances of 4km. }
-}
-
-\newglossaryentry{DetChar}{
-  name = detector characterisation,
-  description = {DetChar, or detector characterisation, is the process of analysing the noise sources and calibration of the detector, as well as identifying ``glitches'', transient noise events which can interfere with burst searches, and ``lines'', sources of noise which exist in a narrow frequency band which can interfere with long-integration time searches.}
-}
-
-\newglossaryentry{burst}{
-  name = burst,
-  description = {A burst is a short-lived, transient gravitational wave event.}
-}
-
-\newglossaryentry{chirp mass}{
-  name = {chirp mass, $\mathcal{M}$},
-  description = {What the chirp mass is.}
-}
+\input{glossary.tex}
 
 
 \begin{document}
@@ -54,6 +34,11 @@
 \newpage
 
 \tableofcontents
+
+\part{Introduction}
+\label{part:introduction}
+
+
 
 \chapter{Gravitational Waves}
 \label{cha:grav-waves}
@@ -65,7 +50,7 @@
 
 \epigraph{I Guess we need the detection checklist...}{\textbf{Sergey Klimencko}, \emph{Internal communication}}
 
-The 14 September 2016 will likely be remembered as one of the most
+\lettrine[lines=3]{T}{he 14 September 2016} will likely be remembered as one of the most
 significant in the history of astronomy and of astrophysics. Early in
 the morning of this autumn day, shortly after 9am UT, a gravitational
 wave passed through the Earth, and on its way produced a sufficiently
@@ -96,21 +81,141 @@ Gravitational waves are one of the prediction of Einstein's 1915 Theory of Gener
   science. They are the most sensitive measuring devices ever
   constructed, but they face numerous technical challenges.}
 
-Gravitational Wave detectors were first conceived in the 1960s by...
+The earliest attempts to develop a gravitational wave detector were
+made in the 1960s with the experiments of Jospeh Weber at California
+Institute of Technology. The field has since evolved to the sensitive
+laser interferometric observatories run by CalTech and VIRGO.
 
-\section{An overview of noise sources}
+\section{Detector architectures}
+\label{sec:detect-arch}
+
+\subsection{Resonant bar detectors}
+\label{sec:reson-bar-detect}
+
+\subsection{Ground-based interferometers}
+\label{sec:ground-based-interf}
+
+\begin{figure*}
+\begin{adjustwidth*}{-5.5in}{-2in}
+  \centering
+  \input{figures/interferometer.pgf}
+  \caption{An interferometer.}
+  \label{fig:interferometer}
+\end{adjustwidth*}
+\end{figure*}
+
+\subsection{Space-based interferometers}
+\label{sec:space-based-interf}
+
+\subsection{Earth normal modes}
+\label{sec:earth-normal-modes}
+
+\subsection{Spacecraft telemetry}
+\label{sec:spacecraft-telemetry}
+
+
+
+\section{Noise sources}
 \label{sec:an-overview-noise}
 
-\section{Newtonian Noise}
+\subsection{Shot noise}
+\label{sec:shot-noise}
+
+\subsection{Radiation pressure noise}
+\label{sec:radi-press-noise}
+
+\subsection{Thermal noise---Coatings}
+\label{sec:therm-noise-coat}
+
+\subsection{Thermal noise---suspensions}
+\label{sec:therm-noise-susp}
+
+
+\subsection{Newtonian Noise}
 \label{sec:newtonian-noise}
 
-\section{Seismic Noise}
+Newtonian noise, or gravitational gradient noise, is the strain
+produced by gravitational coupling between local mass density
+variations and the test masses in the interferometer. Examples of
+significant sources of Newtonian noise include clouds passing overhead
+the detector, and seismic perturbations in the local ground density.
+
+\subsection{Seismic Noise}
 \label{sec:seismic-noise}
 
-\section{Other noise sources}
+Seismic noise is the result of strain introduced into the
+interferometer through movement of the ground, which can be the result
+of geophysical activity, tidal activity, or anthropogenic sources of
+seismic noise, such as road traffic or railways. Seismic noise is also
+a source of Newtonian noise (see section \ref{sec:newtonian-noise})
+due to density fluctuations as the seismic wave passes through the
+ground.
+
+% \marginpar{
+%   \begin{tabular}{ccl}
+%     $f$ [Hz] & $D$ [km] & Sources \\
+%     0.01--1.0    &  1000         & earthquakes, microseism
+%   \end{tabular}
+% }
+
+Seismic noise limits the sensitivity of the second generation
+detectors at low frequencies ($f < \SI{10}{\hertz}$), but it is
+present as a noise source across the passband of the detector. The
+seismic noise shows a pair of notable peaks below the $\SI{1}{\hertz}$
+level, one caused by ocean swell, which has a period around 4 to 30
+seconds, and a second caused by standing seismic modes in the Earth
+which spans the range of 30 to 1000 seconds.
+
+Seismic isolation is used in detectors to reduce the noise level due
+to seismic activity. This takes two forms: active isolation, and
+passive isolation. The former is accomplished by mounting optical
+components on servo-controlled systems which are controlled, via a
+feedback-loop, to a seismometer. The latter is reduced by suspending
+the optics as a component in a pendulum system. In the Advanced LIGO
+design this involves the test masses and their associated mirrors
+composing the final component in a quadruple pendulum suspension.
+
+
+
+\subsection{Other noise sources}
 \label{sec:other-noise-sources}
 
 There are numerous additional noise sources within the interferometer.
+
+\chapter{Sources of Gravitational Waves}
+\label{cha:sourc-grav-waves}
+
+\chapterprecis{Gravitational waves are produced by any situation containing accelerating }
+
+\section{Transient Sources}
+\label{sec:transient-sources}
+
+Transient sources of gravitational waves...
+
+\marginpar{
+    \input{figures/cbc_spectrum.pgf}
+    \captionof{figure}{The frequency spectrum of a compact binary coalescence, alongside the power spectrum of the advanced LIGO detector.}
+}
+
+
+\section{Continuous Sources}
+\label{sec:continuous-sources}
+
+\section{Stochastic Sources}
+\label{sec:stochastic-sources}
+
+
+
+\chapter{Data analysis of gravitational wave data}
+\label{cha:data-analys-grav}
+
+\chapterprecis{The identification of gravitational wave signals in the
+  interferometer data.}
+
+
+\part{The development of a new analysis technique}
+\label{part:devel-new-analys}
+
 
 \glsaddall
 \glossarystyle{altlist}

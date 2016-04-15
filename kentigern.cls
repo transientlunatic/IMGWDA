@@ -39,7 +39,7 @@
 % % 
 
 % %%%% Colours what'll be useful
-% \definecolor{muted-blue}{HTML}{195073}
+\definecolor{muted-blue}{HTML}{195073}
 \definecolor{muted-green}{HTML}{7F8C1F}
 % \definecolor{muted-orange}{HTML}{EE913F}
 % \definecolor{muted-cream}{HTML}{F2E5BD}
@@ -52,14 +52,14 @@
 
 % % %%%% Counters
 % % \renewcommand{\fnum@bigderiv}{\textbf{Derivation~\thebigderiv}}
-% % \renewcommand{\fnum@figure}{\textbf{\figurename~\thefigure}}
+\renewcommand{\fnum@figure}{\textbf{\figurename~\thefigure}}
 % % \renewcommand{\fnum@table}{\textbf{\tablename~\thetable}}
 % % \renewcommand\@memmain@floats{%
 % %   \counterwithin{figure}{section}
 % %   \counterwithin{table}{section}
 % %   \counterwithin{bigderiv}{section}
 % % }
-% % \captiondelim{: }
+\captiondelim{| }
 
 % %%%% Fonts
 
