@@ -25,7 +25,7 @@
 %   {\end{adjustwidth*}\originalendfigure}% \end{figure}
 
 
-\input{glossary.tex}
+\input{glossary/glossary.tex}
 
 
 \begin{document}
@@ -99,10 +99,7 @@ Theory of General Relativity.
   science. They are the most sensitive measuring devices ever
   constructed, but they face numerous technical challenges.}
 
-The earliest attempts to develop a gravitational wave detector were
-made in the 1960s with the experiments of Jospeh Weber at California
-Institute of Technology. The field has since evolved to the sensitive
-laser interferometric observatories run by CalTech and VIRGO.
+\input{tex/1-detectors/1-1-introduction}
 
 \section{Detector architectures}
 \label{sec:detect-arch}
@@ -569,10 +566,10 @@ MSci project.
 
 
 \bibliographystyle{unsrt}
-\bibliography{introduction,detectors}
+\bibliography{bibliography/introduction,bibliography/detectors}
 
 \glsaddall
-\useglossarystyle{altlist}
+%\useglossarystyle{altlist}
 \printglossaries
 
 \end{document}

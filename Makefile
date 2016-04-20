@@ -13,6 +13,10 @@ view :
 document.pdf : document.pdf
 	$(TEXMK) $<
 
+document.gls :
+	makeglossaries document.tex
+
 clean:
 	latexmk -CA
 	rm -rf *.glo *.glg *.ist
+	rm -rf *.bbl *.gls *.glsdefs
