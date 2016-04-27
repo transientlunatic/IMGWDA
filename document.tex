@@ -14,17 +14,7 @@
 \title{Year 1 Report}
 \author{Daniel Williams}
 
-% \usepackage[export]{adjustbox}
-% \usepackage{letltxmacro}
-% \LetLtxMacro{\originalfigure}{\figure}
-% \LetLtxMacro{\originalendfigure}{\endfigure}
-% \renewenvironment{figure}[1][htb]%
-%   {\originalfigure[#1]% \begin{figure}[htb]
-%    \begin{adjustwidth*}{-1.5in}{-2.5in}
-%   }%
-%   {\end{adjustwidth*}\originalendfigure}% \end{figure}
-
-
+% The glossary
 \input{glossary/glossary.tex}
 
 
@@ -32,23 +22,7 @@
 \maketitle
 
 \newpage
-\vfill
-\lettrine{I}{'ve had} the pleasure of being a member of the Institute for
-Gravitational Research at the University of Glasgow for a little over
-seven months. It would be difficult to deny that this has been an
-unexpectedly eventful period in the life of the group, and it's been
-great fun to experience the excitement of the first detection of a
-gravitational wave as an insider (although an insider only by the skin
-of my teeth), and to see the department's work on the LISA Pathfinder
-mission come to fruition just a few months later.  
-
-The work outlined in this report comprises a number of projects which
-I have spent these seven months working on, however the first
-observing run of Advanced LIGO proved more disruptive to my schedule
-than was, perhaps, initially envisaged.
-\vfill
-\newpage
-
+%\input{tex/dedication}
 
 \tableofcontents
 
@@ -60,36 +34,17 @@ than was, perhaps, initially envisaged.
 \chapter{Gravitational Waves}
 \label{cha:grav-waves}
 
-\chapterprecis{\Glspl{gravitational wave} were perhaps the last of the
-  predictions of Einstein's General Theory of Relativity to be
-  observed; their detection was the catalyst for the beginning of a
-  new era of astrophysics}
-
-\epigraph{I guess we need to do the detection checklist...}{\textbf{Sergey Klimencko}, \emph{Internal LSC communication}, 14 September 2015}
-
-\lettrine[lines=3]{T}{he 14 September 2016} will likely be remembered as one of the most
-significant in the history of astronomy and of astrophysics. Early in
-the morning of this autumn day, shortly after 9am UT, a gravitational
-wave passed through the Earth, and on its way produced a sufficiently
-large movement in the mirrors and test masses of the detectors of the
-Laser Interferometer Gravitational-wave Observatory (\gls{LIGO}), as to be
-detected.
-
-Over five months of data analysis, detector characterisation, and
-detection verification were conducted by a global team of scientists,
-in the LIGO and VIRGO Scientific Collaboration (LVC). This process
-resulted in a slew of journal papers being written, vast quantities of
-data produced, and an enormous public outreach effort to be
-launched. Eventually, the collaboration found itself in a position to
-make the announcement of the first detection of gravitational waves on
-11 February 2016.
+\input{tex/0-gravitationalwaves/0-1-introduction}
 
 
 \section{Gravitational Waves and General Relativity}
 \label{sec:grav-waves-gener}
+\input{tex/0-gravitationalwaves/0-2-generalrelativity}
 
-Gravitational waves are one of the predictions of Einstein's 1915
-Theory of General Relativity.
+\section{GW150914: The first detection}
+\label{sec:gw150914:-first-dete}
+\input{tex/0-gravitationalwaves/0-3-gw150914}
+
 
 \chapter{Detectors}
 \label{cha:detectors}
@@ -223,7 +178,7 @@ laser, and by placing a mirror between the laser and the beam splitter
 a resonant cavity can be formed (see figure \ref{fig:power-recycle}),
 allowing the power in the interferometer to build up. This allows a
 less powerful laser to be used as the input for the interferometer,
-with a $10\,\watt$ laser capable of providing several kilowatts of
+with a \SI{10}{\watt} laser capable of providing several kilowatts of
 power inside the interferometer \cite{2011LRR....14....5P}.
 
 \subsection{Signal Recycling}
@@ -286,7 +241,7 @@ The arms of modern interferometers used in the detection of
 gravitational-waves store the beam for a period of time comparable to
 the timescale of the signals which are being searched for. In the case
 of kilometre-scale detectors and signals with a period around
-$1\,\milli\second$ this implies the need for the light to reflect
+\SI{1}{\milli\second} this implies the need for the light to reflect
 up-and-down the detector around $50$ times. This is achieved by laying
 the reflected beams atop each other in a Fabry-Perot cavity, with a
 \gls{finesse}, $\mathcal{F}=50$. A Fabry-Perot cavity is formed by
@@ -392,154 +347,29 @@ from the superposition of waves from the multitudes of sources
 throughout the universe, in addition to the remnants of the big bang
 itself.
 
-\section{Transient Sources}
-\label{sec:transient-sources}
 
-Transient sources of gravitational waves...
-
-\subsection{Compact Binary Coalescence}
+\section{Compact Binary Coalescence}
 \label{sec:cbc}
-\sidebar{
-    \input{figures/cbc_spectrum.pgf}
-    \captionof{figure}{The frequency spectrum of a compact binary coalescence, alongside the power spectrum of the advanced LIGO detector.}
-}
-A pair of orbiting objects can also produce gravitational waves, and
-as they do so their orbit loses energy, causing the radius of the
-orbit to shrink. The objects spiral in towards each other. This
-behaviour has already been observed in the Hulse-Taylor
-pulsar\cite{1975ApJ...195L..51H}\cite{2005ASPC..328...25W}, a system
-of two neutron stars---one of which is a pulsar--- which, through
-precise pulsar timing measurements, have been inferred to be
-inspiralling, and producing gravitational waves.
-
-The binary system will continue to lose energy via gravitational
-radiation until it reaches its \emph{last stable orbit}, after which
-the objects will `touch', and eventually coalesce. This coalescence
-will be a powerful source of gravitational waves, and the chirp
-produced by the coalescence may be sufficiently luminous to be
-detected by current, advanced detectors, (attempts to detect signals
-from such coalescing systems were also made during the initial run of
-the detectors\cite{2012PhRvD..85h2002A}) and would be characterised by
-the distinct pattern of the pseudo-sinusoidal inspiral waveform,
-followed by a bright burst of radiation, and then a sinusoidal
-``ringdown'' as the post-coalescence remnant
-vibrates\cite{2009LRR....12....2S}. Binary coalescences are thus
-classified as transient, or burst sources.
-
-The potential objects which may be involved in an observable binary
-coalescence are black holes and neutron stars: both compact
-objects. White dwarf binaries may also be observable, and these
-systems are expected to be much more abundant than either neutron star
-or black hole binaries, but their emission lies within the passband of
-LISA---a planned space-based gravitational wave observatory. These
-never reach a last stable orbit, as it lies within their physical
-diameter, and so the inspiral component of the waveform is the
-principle source of gravitational waves. These are expected to be so
-numerous in LISA results\cite{2013GWN.....6....4A} that entirely new statistical methods will be
-needed to process the observations, and to allow observations of other
-phenomena to be made in their background.
-
-Supermassive binary black holes (SMBBH) are believed to collide and
-merge as part of the merging processes of galaxies. Again these
-binaries should produce signals within the passband of LISA\cite{2012CQGra..29l4016A}, and
-should be so spectacuarly strong that they are visible in the LISA
-data without the \emph{matched filtering} techniques which are
-required to extract other signals from the data\cite{2009LRR....12....2S}. The observation of
-these objects would provide much-needed information about the
-evolution of galaxies and of super-massive black holes.
-
-Inspiralling compact binaries can act as a cosmological distance
-measure: they have two parameters, their period, and the rate at which
-that period changes (which is calculated by measuring the \emph{chirp
-  mass} of the system) which characterise the system, and the
-amplitude of the gravitational waves produced is dependent only on the
-chirp mass of the source, and the distance from the observer to the
-object. As a result it is possible to determine the distance to an
-inspiralling system simply by determining the chirp mass and measuring
-the brightness of the event. This would provide an additional means of
-measuring cosmic acceleration, and, in the LISA era, this would allow
-the measurement of acceleration at high redshift using high-mass
-binary black holes.
-
-
-
+\input{tex/2-sources/2-1-cbc}
 
 \subsection{Core-collapse Supernovae}
 \label{sec:sn}
+\input{tex/2-sources/2-2-cc-supernovae}
 
-In the most energetic explosions in the
-universe---supernovae---enormous quantities of mass travel at close to
-the speed of light. The explosion of a supernova is likely to be a
-highly chaotic event, and as a result, highly asymmetrical. This
-asymmetrical explosion can therefore produce gravitational waves. Our
-understanding of the precise dynamics of supernovae are quite poorly
-understood, but thanks to the large quantities of energy involved in a
-supernova it is possible (albeit optimistically) to predict that
-core-collapse supernovae should produce gravitational waves in the
-LIGO bandpass at an amplitude which could have been detected with the
-initial LIGO detector\cite{2009LRR....12....2S}.
-
-\section{Continuous Sources}
-\label{sec:continuous-sources}
-
-\subsection{Gravitational-wave Pulsars}
+\section{Gravitational-wave Pulsars}
 \label{sec:pulsar}
-
-The discovery of pulsars by Bell and Hewish in 1967 was an unexpected
-discovery for radio astronomy---objects which produce beams of
-radiation, and rotate rapidly, like a lighthouse. Not long after their
-discovery it became apparent that they were a specific form of neutron
-star---the tightly-packed remnant of a massive star which has ended
-its life as a supernova.
-
-Being highly-dense, and having a rapid rotation (and hence an
-acceleration), pulsars are strong candidates for producing
-gravitational radiation. Any irregularity in their structure, such as
-a bulge (or a mountain) on their surface. These gravitational waves
-will produce a weak signal in the detector, but by observing for long
-periods of time, it is possible to make very sensitive measurements,
-thanks to the periodicity of the signal.
-
-While no observations of gravitational waves from a pulsar have been
-made so far, the lack of any detection by the initial LIGO and VIRGO
-interferometers has provided a result in its own right. The
-sensitivity of these detectors is well understood, and the
-\emph{sensitive distance}, the distance to which the detector is
-capable of making an observation, has been calculated. This allows us
-to exclude the Crab pulsar, for example, from having any asymmetry
-greater than one part in 10\,000 in its shape\cite{2009LRR....12....2S}, corresponding to a maximum surface
-irregularity of 30\,cm\cite{2014ApJ...785..119A}.
+\input{tex/2-sources/2-3-pulsar}
 
 \section{Stochastic Sources}
 \label{sec:stochastic-sources}
-
-While the gravitational wave detections which we expect to make with
-the aLIGO and aVIRGO detectors in the next five years all correspond
-to radiation from specific sources, in the LISA era we expect to
-encounter a new phenomenon: the gravitational wave
-background\cite{2009LRR....12....2S}. This is likely to come from a
-number of sources. LISA will be sensitive to compact binary systems
-for a much longer period of their evolution, and so rather than just
-detecting the final few orbits and the coalescense of objects, we will
-be able to observe decades or more of their inspiral. Given the large
-population of binary objects in the universe, and the ability of LISA
-to detect white dwarf binaries, we can expect the existence of a rich
-gravitational wave background at low frequencies: so much so that the
-data-handling task will be many orders of magnitude more complicated
-than that for the advanced era detectors.  Super-massive binary black
-holes throughout the universe will also contribute to this background.
-
-Currently-favoured theories of cosmology favour the existence of a
-period of cosmological inflation, a process which should have produced
-very low-frequency gravitational waves.  These were the focus of the
-ultimately-refuted BICEP2 announcement\cite{2014PhRvL.112x1101B} of
-the discovery of gravitational waves.
+\input{tex/2-sources/2-4-stochasticbackground}
 
 \chapter{Data analysis of gravitational wave data}
 \label{cha:data-analys-grav}
 
-\chapterprecis{The identification of gravitational wave signals in the
-  interferometer data.}
+\chapterprecis{Identifying gravitational wave signals in
+  interferometer data is not a trivial task, with signals appearing at
+  low signal-to-noise ratios.}
 
 \part{Summary of work thus far}
 \label{part:work}
@@ -566,7 +396,7 @@ MSci project.
 
 
 \bibliographystyle{unsrt}
-\bibliography{bibliography/introduction,bibliography/detectors}
+\bibliography{bibliography/introduction,bibliography/detectors,bibliography/gw150914,bibliography/sources}
 
 \glsaddall
 %\useglossarystyle{altlist}
