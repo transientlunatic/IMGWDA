@@ -1,0 +1,28 @@
+The discovery of pulsars by Bell and Hewish in 1967 was an unexpected
+discovery for radio astronomy---objects which produce beams of
+radiation, and rotate rapidly, like a lighthouse. Not long after their
+discovery it became apparent that they were a specific form of neutron
+star---the tightly-packed remnant of a massive star which has ended
+its life as a supernova.
+
+Being highly-dense, and having a rapid rotation (and hence an
+acceleration), pulsars are strong candidates for producing
+gravitational radiation. Any irregularity in their structure, such as
+a bulge (or a mountain) on their surface. These gravitational waves
+will produce a weak signal in the detector, but by observing for long
+periods of time, it is possible to make very sensitive measurements,
+thanks to the periodicity of the signal.
+
+While no observations of gravitational waves from a pulsar have been
+made so far, the lack of any detection by the initial LIGO and VIRGO
+interferometers has provided a result in its own right. The
+sensitivity of these detectors is well understood, and the
+\emph{sensitive distance}, the distance to which the detector is
+capable of making an observation, has been calculated. This allows us
+to exclude the Crab pulsar, for example, from having any asymmetry
+greater than one part in 10\,000 in its shape\cite{2009LRR....12....2S}, corresponding to a maximum surface
+irregularity of 30\,cm\cite{2014ApJ...785..119A}.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../document"
