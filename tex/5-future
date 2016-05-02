@@ -1,0 +1,29 @@
+\begin{figure*}
+  \centering
+  
+%\begin{sideways}
+\begin{ganttchart}{1}{12}
+  \gantttitle{2016}{8} 
+  \gantttitle{2017}{4}\\
+  \gantttitlelist{5,...,12,1,2,3,4}{1} \\
+  %\ganttgroup{ER9}{1}{1} \ganttgroup{O2}{3}{8} \\
+  \ganttgroup{Minke}{1}{12}\\
+  \ganttbar{SNe waveforms}{1}{1} \\
+  \ganttbar{O1 Review}{1}{1} \\
+  %\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+  \ganttmilestone{v1.0.0}{2} \ganttnewline
+  \ganttbar{BBH Waveforms}{3}{4} \\
+  %\ganttlink{elem2}{elem3}
+  %\ganttlink{elem3}{elem4}
+  %\ganttlink{elem4}{elem5}
+  \ganttmilestone{v1.1.0}{4} \\
+
+  \ganttgroup{LHO}{10}{12}\\
+  
+  \ganttgroup{Heron}{1}{4}\\
+  %\ganttbar{
+
+\end{ganttchart}
+%\end{sideways}
+
+\end{figure*}

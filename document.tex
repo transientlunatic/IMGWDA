@@ -11,6 +11,9 @@
 \usepackage{physicsplus}
 \usepackage{caption}
 
+\usepackage{rotating}
+\usepackage{pgfgantt}
+
 \title{Year 1 Report}
 \author{Daniel Williams}
 
@@ -83,70 +86,8 @@
 
 \section{Noise sources}
 \label{sec:an-overview-noise}
+\input{tex/1-detectors/noise}
 
-\subsection{Shot noise}
-\label{sec:shot-noise}
-
-\subsection{Radiation pressure noise}
-\label{sec:radi-press-noise}
-
-\subsection{Thermal noise---Coatings}
-\label{sec:therm-noise-coat}
-
-\subsection{Thermal noise---suspensions}
-\label{sec:therm-noise-susp}
-
-
-\subsection{Newtonian Noise}
-\label{sec:newtonian-noise}
-
-Newtonian noise, or gravitational gradient noise, is the strain
-produced by gravitational coupling between local mass density
-variations and the test masses in the interferometer. Examples of
-significant sources of Newtonian noise include clouds passing overhead
-the detector, and seismic perturbations in the local ground density.
-
-\subsection{Seismic Noise}
-\label{sec:seismic-noise}
-
-Seismic noise is the result of strain introduced into the
-interferometer through movement of the ground, which can be the result
-of geophysical activity, tidal activity, or anthropogenic sources of
-seismic noise, such as road traffic or railways. Seismic noise is also
-a source of Newtonian noise (see section \ref{sec:newtonian-noise})
-due to density fluctuations as the seismic wave passes through the
-ground.
-
-% \marginpar{
-%   \begin{tabular}{ccl}
-%     $f$ [Hz] & $D$ [km] & Sources \\
-%     0.01--1.0    &  1000         & earthquakes, microseism
-%   \end{tabular}
-% }
-
-Seismic noise limits the sensitivity of the second generation
-detectors at low frequencies ($f < \SI{10}{\hertz}$), but it is
-present as a noise source across the passband of the detector. The
-seismic noise shows a pair of notable peaks below the $\SI{1}{\hertz}$
-level, one caused by ocean swell, which has a period around 4 to 30
-seconds, and a second caused by standing seismic modes in the Earth
-which spans the range of 30 to 1000 seconds.
-
-Seismic isolation is used in detectors to reduce the noise level due
-to seismic activity. This takes two forms: active isolation, and
-passive isolation. The former is accomplished by mounting optical
-components on servo-controlled systems which are controlled, via a
-feedback-loop, to a seismometer. The latter is reduced by suspending
-the optics as a component in a pendulum system. In the Advanced LIGO
-design this involves the test masses and their associated mirrors
-composing the final component in a quadruple pendulum suspension.
-
-
-
-\subsection{Other noise sources}
-\label{sec:other-noise-sources}
-
-There are numerous additional noise sources within the interferometer.
 
 \chapter{Sources of Gravitational Waves}
 \label{cha:sourc-grav-waves}
@@ -159,16 +100,7 @@ There are numerous additional noise sources within the interferometer.
   be luminous enough to detect, or produce radiation over a frequency
   band which can be detected by current-generation detectors.}
 
-The astrophysical sources of gravitational waves can be divided
-roughly into three categories\cite{2009LRR....12....2S}. Continuous
-sources are expected to produce radiation constantly, or at least over
-long periods of time. Transient sources, on the other hand, produce
-high-intensity radiation for a short period of time. We also expect an
-underlying background of gravitational waves to exist, which result
-from the superposition of waves from the multitudes of sources
-throughout the universe, in addition to the remnants of the big bang
-itself.
-
+\input{tex/2-sources/introduction}
 
 \section{Compact Binary Coalescence}
 \label{sec:cbc}
@@ -213,11 +145,8 @@ itself.
 \part{Summary of work thus far}
 \label{part:work}
 
-\chapter{Training \& lecture courses}
-\label{chap:lectures}
-
 \chapter{Presentations \& publications}
-\label{chap:pandp}
+\label{chap:pandp} \newpage
 
 During the period September 2015 --- April 2016 I contributed to one
 LSC author-list paper, the so-called \emph{Burst Companion Paper}, for
@@ -229,10 +158,30 @@ During the same period I have been a co-author on a short-author list
 paper, and the lead author on a paper composing the write-up of my
 MSci project.
 
+I have presented work at three meetings since October, which are
+summarised in table \ref{tab:presentations}. These have included
+events in Scotland, the United Kingdom, and the United States of
+America. I have also been involved in a number of public outreach
+activities since October, mostly run through the \emph{Astronomy \&
+  Astrophysics} group, and have provided materials for the LIGO
+\emph{Education and Public Outreach} committee's activities, including
+an \emph{infographic} about GW150914 which was widely shared across
+the internet.
+
+\begin{table}
+  \centering
+  \begin{tabular}[b]{llcll}
+    Title & Meeting & Type & Date & Country \\ \hline
+    
+  \end{tabular}
+  \caption{Work presented as a poster or a talk}
+  \label{tab:presentations}
+\end{table}
+
 \part{Outline of future work}
 \label{part:future}
 
-
+\input{tex/5-future}
 
 \bibliographystyle{unsrt}
 \bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources}
