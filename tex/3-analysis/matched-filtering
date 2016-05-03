@@ -1,0 +1,13 @@
+Matched filtering is a powerful technique for the extraction of low
+SNR signals from noisy data. The method relies on the prior knowledge
+of the shape of the signal: this reference signal, called a
+\emph{template} is then cross-correlated with the data. By performing
+matched filtering with a large number of templates, and then using
+Bayesian model selection, it is possible to perform parameter
+estimation using matched filtering\cite{2007PhRvD..76d3003C}.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../document"
+%%% End: 

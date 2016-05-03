@@ -1,0 +1,58 @@
+Gaussian processes are Bayesian models which associate every point an
+some \emph{input space} with a probability distribution---specifically
+a normal distribution, and a collection of input points will form a
+multi-variate normal distribution. Gaussian processes are a
+non-parametric supervised machine learning
+technique\cite{barberBRML2012,mackay2003information}.
+
+To make a prediction, we need to first have a set of prior
+observations and information about the parameters of the physical
+system which produced those observations. These combined form the
+\emph{training data} for the predictor.
+% \[ \mathcal{D} = \{ (x^n, y^n), n=1,\dots,N \} = \mathcal{X} \cup
+%   \mathcal{Y}. \]
+
+A completely untrained Gaussian process forms the job of a prior
+probability distribution in a Bayesian analysis; where it is more
+conventional to consider a prior over a set of, for example, real
+values, such as a normal distribution, the Gaussian process forms a
+prior over the functions which might form the regression fit to any
+observed data. While this prior is intially untrained it still
+contains information about our preconceptions of the data, for
+example, whether or not we expect the fit to be analytic, and the
+average of the functions.
+
+By providing training data we can update the Gaussian process, in the
+same way that the posterior distribution is updated by the addition of
+new data in a standard Bayesian context, and a posterior on the set of
+all possible functions to fit the data is produced. We can take the
+mean of this posterior in the place of the ``best fit line'' which
+other techniques produce, and then use the variance to produce an
+estimate of the uncertainty of the prediction.
+
+The possibility of using Gaussian Processes in the analysis of data
+from gravitational wave detectors has been proposed by Moore and
+Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} who propose its use
+to calculate the uncertainties in current generation post-Newtonian
+approximants to numerical relativity simulations, and to incorporate
+this into the current matched-filtering analyses which are conducted
+on triggers from gravitational wave detectors.
+
+Gaussian processes trained with $N$ data require the ability to both
+store and invert an $N\times N$ matrix of covariances between
+observations; this can be a considerable computational challenge, and
+there are a number of approaches to get around this problem, including
+\emph{sparse Gaussian processes}, where a limit on the parameter-space
+distance between training points is set, and the covariance of points
+outside this radius are ignored\cite{EPFL-CONF-161319}, and heirarchical
+methods\cite{hodlr}.
+
+Gaussian processes can be extended from the case of a
+single-dimensional input predicting a single-dimensional output to the
+ability to predict a multi-dimensional output from a multi-dimensional
+input\cite{Alvarez2011,Alvarez2011a,Bonilla2007}.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../document"
+%%% End: 

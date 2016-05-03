@@ -1,0 +1,34 @@
+Bayesian inference is a method of statistical inference which is
+well-suited to situations where a body of evidence grows over time,
+with new results updating previous understanding of some phenomenon,
+and as such is well suited to the analysis of experimental data, and
+is well suited to the analysis of gravitational wave data, where
+measurements are frequently made at different sensitivities during
+different observing runs.
+
+If we have some hypothesis, some parameters of the hypothesis, $I$
+(so-called hyperparameters) and some experimental data, we can
+determine the probability of the hypothesis via
+\begin{equation}
+  \label{eq:bayestheorem}
+  p(\text{hypothesis} | \text{data}, I) \propto p( \text{data} | \text{hypothesis}) \times p(\text{hypothesis}, I)
+\end{equation}
+where $p(\text{data} | \text{hypothesis})$ represents the likelihood
+of the data, in-effect the degree to which we trust the measurements,
+for example, and $p(\text{hypothesis}|I)$ represents the \emph{prior}
+probability, which represents the understanding of the probability of
+the hypothesis before the experiment was
+conducted. $p({\text{hypothesis} | \text{data}, I)$ is the
+  \emph{posterior} probability of the
+  hypothesis\cite{skilling2006data}.
+
+  Bayesian inference can then be used as a powerful method for
+  \emph{model selection}, where the posterior probabilities of two
+  competing models are compared, with a greater posterior probability
+  indicating greater support for a given model.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../document"
+%%% End: 
