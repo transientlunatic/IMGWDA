@@ -157,9 +157,11 @@
 % \chapter{Presentations \& publications}
 % \label{chap:pandp} \newpage
 
+\hline
+
 \section{Work thus far}
 
-In the first sixmonths of my PhD my work has been focussed primarily
+In the first six months of my PhD my work has been focussed primarily
 on the use of Gaussian Processes in gravitational astrophysics, with a
 specific focus on using Gaussian processes to estimate the uncertainty
 in post-Newtonian approximants to numerical relativity waveforms. The
@@ -167,15 +169,98 @@ ultimate aim of this project is to identify the parameters at which
 new numerical relativity waveforms should be produced in an
 algorithmic and Bayesian manner.
 
+\section{Gaussian processes for gravitational wave detection}
+\label{sec:gauss-proc-grav}
+
+Gaussian processes have the attractive feature that they can be
+leveraged to produce a regression of data, which has both the
+equivalent of a ``best-fit'' line, which is represented by the mean
+function from the posterior, and an uncertainty, through the variance
+of the posterior. In matched filtering techniques used in LIGO data
+analysis it is often impractical to use numerical relativity (NR)
+waveforms, owing to their computational expense, and so approximants
+must be used to span the regions of parameter space between the
+``true'' NR waveforms.
+
+Moore and Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} propose a
+method to account for the uncertainty which is introduced through the
+use of an approximant, by training a Gaussian process on the
+differences between NR and approximant waveforms. They then use the
+posterior from the Gaussian process to form the likelihood in their
+analysis. While this approach is shown to improve the efficiency of
+bayesian inference techniques on parameter estimation, it relies on
+the availability of an analytic or a semi-analytic approximant to the
+true values.
+
+Instead, I have attempted to take the approach of training a Gaussian
+process directly using the numerical relativity waveforms produced by
+the Relativity Group at Georgia Tech\cite{gatechcat}: here the input
+parameters are multi-dimensional, composed of the time, and the
+simulation parameters, and the strain values at each of these points
+composing the targets.
+
+This approach allows two useful results to be obtained: first, it
+allows the production of gravitational waveforms, with associated
+error estimates, directly from the NR data, bypassing the need for an
+approximant; second, a fully trained Gaussian process, through its
+ability to estimate the uncertainty in any prediction, provides a
+means to indetify regions of parameter space where predictions are
+likely to be particuarly poor, and is thus a means of identifying the
+optimal regions of parameter space to focus future simulation efforts
+on.
+
+An extra direction has recently appeared which I have actively
+pursued, relating to Gaussian processes. Where previously Gaussian
+processes had been trained to produce a single-dimensional output from
+a multi-dimensional input, I have been attempting to develop a
+technique where a multiple-dimensional input is used to prouduce a
+multiple-dimensional output. The specific intention of this method is
+to provide a timeseries which contains a gravitational wave signal to
+a Gaussian process, and use it to predict the model parameters which
+produced it. In effect, this technique would be a means of performing
+parameter estimation using purely NR data. Perfecting this technique
+is likely to be difficult, however, as it poses formidable problems
+with computability, and will require careful thought about memory
+optimisation. An ultimate aim for such an algorithm would be the
+abiltiy to produce a posterior on multiple waveform parameters
+directly from noisy data from a gravitational wave detector.
+
+\section{Minke: Producing MDCs for gravitational wave transient analysis}
+\label{sec:mink-prod-mdcs}
+
+In order to characterise the efficiency of any gravitational wave
+analysis algorithm it must be tested on injected signals---simulated
+signals with known parameters, and hence a known shape---which are
+inserted into either simulated noise, or timeseries containing real
+noise from the detector. By determining the number of these injected
+signals which are detected by an algorithm it is possible to determine
+the detection efficiency of the method; additionally, this method
+allows a controlled method of determining the quietest events the
+algorithm is capable of detecting in the noise environment, and hence
+of calculating the sensitive distance of the detector and analysis to
+a physical system producing a waveform with those parameters.
+
+An important component of the 
+
+
+\section{Burst companion paper}
+\label{sec:burst-comp-paper}
+
 During the period September 2015 --- April 2016 I contributed to one
 LSC author-list paper, the so-called \emph{Burst Companion Paper}, for
 which I was the figures editor. At present I am not on the general LSC
 author-list, and as such I am not a named contributor on any of the
 other collaboration papers produced over this time period.
 
+\section{Estimating beaming angles from sGRBs}
+\label{sec:estim-beam-angl}
+
 During the same period I have been a co-author on a short-author list
 paper, and the lead author on a paper composing the write-up of my
 MSci project.
+
+\section{Presentations \& Outreach}
+\label{sec:pres--outr}
 
 I have presented work at three meetings since October, which are
 summarised in table \ref{tab:presentations}. These have included
