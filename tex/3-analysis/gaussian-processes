@@ -1,3 +1,79 @@
+\section{Linear regression}
+\label{sec:linear-regression}
+
+To motivate the development of Gaussian processes we first present the
+problem of linear regression, and how this task may be performed in a
+Bayesian framework.
+
+A very simple linear model has the form
+\begin{equation}
+  \label{eq:simple-linear-model}
+  y_i = m x_i + c
+\end{equation}
+for observations, $y_i$, which are made at a parameter $x_i$, and
+$m, c \in \mathbb{R}$ are parameters of our model. This model attempts
+to describe the observations by fitting a polynomial of order one to
+the data (a ``straight line''), however, we may reasonably want to
+generalise our model to allow higher orders of polynomial, and doing
+so achieve a model of the form
+\begin{equation}
+  \label{eq:less-simple-linear-model}
+  y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \vdot \vec{w}
+\end{equation}
+where the various parameters are now folded into a vector, $\vec{w}$,
+of weights. A further generalisation may be made, to allow for more
+complicated forms of model, by substituting the vector $\vec{x}$ for a
+matrix $\mat{X}$, the \emph{design matrix}, which can take an
+arbitrary form, so our model becomes
+\begin{equation}
+  \label{eq:general-noiseless-linear}
+  \vec{y} = \mat{X} \vec{w}
+\end{equation}
+Finally, we can introduce a term to account for any uncertainty in the
+measurement of the observations, $\vec{\epsilon}$, giving a complete
+linear model
+\begin{equation}
+  \label{eq:linear-model}
+  \vec{y} = \mat{X} \vec{w} + \vec{\epsilon}
+\end{equation}
+
+The quantities $\vec{y}$, $\mat{X}$, and $\vec{\epsilon}$ are well
+understood, but to have a complete and useful model we must find the
+values of the model parameters which best explain the data; this
+problem is regression. In a Bayesian framework we must assign a prior
+to each parameter, which represents our pre-existing knowledge of the
+situation. A sensible choice might be a normal, or \emph{Gaussian},
+distribution, with a mean of zero, and a variance $\sigma_i^2$:
+\[ w_i \sim \mathcal{G}(0, \sigma_i^2). \]
+
+\section{From Bayesian linear regression to Gaussian Process}
+\label{sec:blrtogpr}
+
+This choice of a Gaussian prior also implies that $y_i$ will have a
+Gaussian distribution, and we can take this to have the form
+\[ \vec{y} \sim \mathcal{G}(\vec{0}, \mat{C}) \]
+where $\mat{C}$ is the \emph{gram matrix}, which describes the
+covariance of the input data, as defined by some \emph{covariance
+  function}, or \emph{kernel}, $K$,
+\begin{align*}
+  C_{ij} &= K(\vec{x_i}, \vec{x_j}) = \ex(y_i y_j) = \ex(\vec{x}_i \vdot \vec{w} \vec{w} \vdot \vec{x}_j) + \ex(\epsilon_i \epsilon_j) \\
+&= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2
+\end{align*}
+for $\ex(x)$ the expectation of a variable $x$. As a result of this
+relationship between the weight vector, $\vec{w}$ and the gram matrix
+it is possible to perform the regression by means of a covariance
+function, rather than inferring the values $w_i$, and this is the
+justification by which Gaussian Process Regression (GPR) is often
+deemed a ``non-parameteric'' regression model\footnote{This claim
+  is rather sketchy, as we'll see when the forms of covariance
+  function are presented, as the parametricity is simply moved from
+  the model itself to the form of the covariance functions, and the
+  values of these \emph{hyperparameters} must be inferred, or learned,
+  from the data.}.
+
+\section{Gaussian Processes}
+\label{sec:gaussianprocess}
+
 Gaussian processes are Bayesian models which associate every point an
 some \emph{input space} with a probability distribution---specifically
 a normal distribution, and a collection of input points will form a
@@ -51,6 +127,335 @@ Gaussian processes can be extended from the case of a
 single-dimensional input predicting a single-dimensional output to the
 ability to predict a multi-dimensional output from a multi-dimensional
 input\cite{Alvarez2011,Alvarez2011a,Bonilla2007}.
+
+\section{Covariance Functions}
+\label{sec:covariance-func-gp}
+
+The covariance function defines the similarity of a pair of data
+points, according to some relationship with suitable properties. The
+similarity of input data is assumed to be related to the similarity of
+the output, and therefore the more similar two inputs are the more
+likely their outputs are to be similar.
+
+As such, the form of the covariance function represents prior
+knowledge about the data, and can encode understanding of effects such
+as periodicity within the data.
+
+\begin{definition}{Stationary Covariance Function.}
+  A stationary covariance function is a function
+  $f(\vec{x} - \vec{x}')$, and which is thus invariant to translations
+  in the input space.
+\end{definition}
+
+\begin{definition}{Isotropic Covariance Function.}
+  If a covariance function is a function of the form
+  $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant under
+  all rigid motions.
+\end{definition}
+
+One of the most frequently encountered covariance functions in the
+literature is the exponential squared covariance functions
+\cite{rasmussen2006gaussian} 
+\begin{equation}
+  \label{eq:squaredexponentialkernel}
+  k_{\mathrm{SE}}(r) = \exp( - \frac{r^2}{2 l^2} )
+\end{equation}
+for $r$ the Euclidean distance of a datum from the centre of the
+parameter space, and $l$ is a scale factor associated with the axis
+along which the data are defined.
+
+\subsection{Kernel algebra}
+\label{sec:kernelalgebra}
+
+It is possible to define new kernels from the standard set through a
+series of defined operations.
+
+Consider two covariance functions, $f_1$ and $f_2$, then
+\begin{definition}{Kernel Addition}
+  $f = f_1 + f_2$ is a covariance function.
+\end{definition}
+\begin{definition}{Kernel product}
+  $f = f_1 f_2$ is a covariance function.
+\end{definition}
+
+\section{Training the model}
+\label{sec:training-gp}
+
+
+
+\section{Making predictions}
+\label{sec:predictions-gp}
+
+In order to make a prediction using the Gaussian Process model we
+require a new input at which the prediction should be made, which is
+denoted $x^*$. In order to form the predictive distribution we must
+then calculate the covariance of the new input with the existing
+training data, which we denote $K_{x, x^*}$, and the autocovariance of
+the input, $K_{x^*, x^*}$. We then define a new covariance matrix,
+$K^{+}$, which has the block structure
+\begin{equation}
+  \label{eq:blockK-plus-mat}
+  K^+ =
+  \begin{bmatrix}
+    K_{x,x} & K_{x,x^*} \\ K_{x^*,x} & K_{x^*, x^*}
+  \end{bmatrix}
+\end{equation}
+for $K_{x,x}$ the covariance matrix of the training inputs, and
+$K_{x^*,x} = K_{x,x^*}^T$.
+
+The predictive distribution can then be found as
+\begin{equation}
+  \label{eq:predictive-gp}
+  p(y^* | x^*, \mathcal{D}) = \mathcal{N}(y^* | K_{x^*,x} K_{x,x}^{-1} y, K_{x^*, x^*} - K_{x^*,x}K^{-1}_{x,x} K_{x,x^*}).
+\end{equation}
+
+
+
+\section{Assessing the model}
+\label{sec:assessing-gpr}
+
+In order to assess the global accuracy of our Gaussian Process surrogate to
+the underlying function it is standing-in for we require some means of
+quantitatively measuring deviations between the two. We introduce two
+measures: the root-mean-squared error, and the correlation. Both
+methods require access to test data; some fraction of the available
+evaluations of the function which are not used to train the Gaussian
+process, but which are held aside, and to which predictions from the
+GP can be compared.
+
+Let $x_*$ and $y_*$ be respectively the test inputs and test outputs
+for the Gaussian process, then let $\hat{y}$ be the set of model
+predictions drawn from the Gaussian Process with inputs $\vec{x}_*$.
+
+\begin{definition}{Mean-squared error}
+\begin{equation}
+  \mathrm{RMSE} = \sqrt{
+    \frac{
+      \sum_{i=0}^{n_i} (y_*^{(i)} - \hat{y}^{(i)})^2
+    }
+    { n_t }
+  }
+\end{equation}
+for $n_t$ the size of the test set.
+\end{definition}
+
+\begin{definition}{Correlation}
+  \begin{equation}
+    \label{eq:correlation}
+    \rho^2 = \left(
+      \frac{ \cov(y^*, \hat{y})} { \sqrt{ \vary(y) \vary(\hat{y}) } } 
+    \right)^2
+  \end{equation}
+\end{definition}
+
+Forrester\cite{forrester2008engineering} suggests that a $\rho^2 \geq 0.8$
+provides a surrogate model with good global predictive abilities,
+which corresponds to an RMSE of around $0.1$.
+
+
+
+\section{Acquisition Functions}
+\label{sec:acquisition}
+
+When using our Gaussian Process as a surrogate model to the underlying
+generative model for the waveform we treat the function which
+generates waveforms as unknown, and we place a prior on it, and the
+training data is used to update the prior, providing a posterior. We
+may use the posterior to determine the appropriate location for future
+evaluations from the underlying model; an infill sampling criterion,
+or acquisition function. This approach of using a surrogate model to
+approximate an underlying function which is hard or costly to evaluate
+is treated in the discipline of \emph{Bayesian optimisation}.
+
+Increasing the accuracy of the surrogate to the underlying function
+can be achieved by sampling the function at various points through
+parameter space, however, a strategy for performing this in an optimal
+manner is desirable, given the properties of that function. For
+example, if one were attempting to find which combination of
+components in concrete produced the strongest building product one
+might require a lengthy period to allow it to set, and so minimising
+the number of sampling iterations is desirable. We define an
+acquisition function, $f$, such that for a desirable new sample, $x^+$,
+\begin{equation}
+  \label{eq:acquisition}
+  x^+ = \mathrm{argmax} f(x)
+\end{equation}
+
+\subsection{Probability of Improvement}
+\label{sec:probimprove}
+
+One possible acquisition function considers the probability that a
+sampled point improves the model, suggested first in
+\cite{Kushner1964},
+\begin{equation}
+  \label{eq:probabilityimprovement}
+  \mathrm{PI}(x) = P(f(x) \geq f(x^+)) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+)}{\sigma(x)} \right)
+\end{equation}
+This algorithm clearly attempts to \emph{exploit} the parameter space,
+that is, it samples areas only where the greatest improvement over the
+current observation are possible. In order to force \emph{exploration} of the parameter space---sampling areas of high uncertainity---a trade-off parameter, $\xi\geq 0$ may be instroduced, such that
+\begin{equation}
+  \label{eq:probabilityimprovementexplore}
+    \mathrm{PI}(x) = P(f(x) \geq f(x^+) + \xi) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+) - \xi}{\sigma(x)} \right)
+\end{equation}
+\cite{Kushner1964} suggests that this should be varied according to
+some pre-defined schedule, tending to 0 as the algorithm runs.
+
+\subsection{Expected Improvement}
+\label{sec:expimprove}
+
+In order to address the arbitrary nature of the choice of $\xi$ in the
+Probability of Improvement function we may consider not only the
+probability that a point provides an improvement, but also the
+magnitude of that improvement. In this situation we wish to minimise
+the expected deviation from the true $f(x^+)$ when choosing a trial
+point, so
+
+
+\subsection{Entropy Search}
+\label{sec:entropysearch}
+
+\subsection{Upper confidence bound}
+\label{sec:upperconfbound}
+
+\subsection{Waveform Match}
+\label{sec:waveformmatch}
+
+The match between two waveforms, $A$, and $B$, is defined as
+\begin{equation}
+  \label{eq:waveformmatch}
+  \mathcal{N} = \frac{
+    \max\limits_{t_0, \phi_0} \left< A , B \right>
+    }
+    {
+      \left< A, A\right>^{\half}
+      \left< B, B\right>^{\half}
+    }
+  \end{equation} for the initial time and phase respectively $t_0$ and $\phi_0$.
+
+  Suppose we wish to compare the surrogate model to an alternative
+  approximant, for example, \texttt{IMRPhenomP}, and identifying the
+  location in parameter space where the two have the greatest
+  disagreement. This can be achieved by finding the location in the
+  parameter space of the surrogate which has the minimum match to the
+  alternative model.
+
+
+\section{Computational Complexity}
+\label{sec:compcomp-gp}
+
+While Gaussian process regression is a powerful data analysis tool it
+has the serious drawback of having high complexity: the problem
+requires the construction of an $N\times N$-matrix, for $N$ the number
+of data points in the training data: even modern desktop computers
+with gigabytes of RAM will thus struggle to handle large datasets, and
+performing the inversion of the matrix is an $\mathcal{O}(N^3)$
+operation. To make the problem more tractible some approximations may
+be made, one such approximation is the use of covariance functions
+with compact support, and then taking advantage of sparse matrix
+inverters. A rival method uses the hierarchical near-diagonal
+structure of a covariance matrix\cite{hodlr} to perform the inversion
+in a piecewise manner.
+
+\section{Examples}
+\label{sec:examplesgaussianproc}
+
+\subsection{Concrete}
+\label{sec:concrete}
+
+\begin{figure}
+  \centering
+\hspace*{-3.2in}
+  \makebox[20cm]{\input{figures/concrete.pgf}}
+  \caption{The compressive strength of concrete.}
+  \label{fig:concrete}
+\end{figure}
+
+As a test of the Gaussian Process method as a surrogate for an high
+cost-per-evaluation function we selected a data set of tests of the
+compressive strength of concrete, which was originally used in a
+neural network analysis\cite{Yeh19981797}.
+
+An exponential-squared covariance function was used to model the data,
+which consisted of measurements of the failure strength of various
+forms of concrete under compression. Varying quantities of seven
+components were tested, and an eigth experimental variable was
+introduced by testing identically made mixtures at different
+ages. These variables represent the quantities of
+\marginpar{
+\vspace{-2in}
+\begin{enumerate}
+\item Cement [$\kilogram / \meter^3$]
+\item Fly ash  [$\kilogram / \meter^3$]
+\item Blast-furnace slag  [$\kilogram / \meter^3$]
+\item Water  [$\kilogram / \meter^3$]
+\item Superplasticiser  [$\kilogram / \meter^3$]
+\item Coarse Aggregate  [$\kilogram / \meter^3$]
+\item Fine Aggregate  [$\kilogram / \meter^3$]
+\item Age of Testing [Days]
+\end{enumerate}}
+
+\subsection{A single BBH waveform}
+\label{sec:singlewaveform}
+
+A trivial task is to reproduce a waveform from a Gaussian Process
+which is trained on a single waveform which is generated at one set of
+parameters.
+%\marginpar{
+  \begin{table}
+    \centering
+    \begin{tabular}{rc}
+      Mass (Primary) & 5 \solMass \\
+      Mass (Secondary) & 6 \solMass \\
+      Spin (Primary) & $(0,0,0)$ \\
+      Spin (Secondary) & $(0,0,0)$ \\
+      Distance & $\SI{400}{\mega\parsec}$ \\
+      Time range & $(\SI{-0.1}{\second}, \SI{0.005}{\second})$
+    \end{tabular}
+    \caption{Parameters used to generate a single test waveform from \imrphenomp.}
+    \label{tab:imrphenomparamssingle}
+  \end{table}
+%}
+  As a first test we generated a BBH waveform using the \imrphenomp
+  model, as implemented in the \lalsim package. The model was
+  evaluated at the parameters listed in table
+  \ref{tab:imrphenomparamssingle}, and 300 equally-spaced points from
+  the evaluation were used to train a Gaussian process, using an
+  exponential squared covariance function with a constant
+  pre-multiplier. The model was trained using the BFGS algorithm (a
+  Newtonian-like hill-climbing optimiser), which was provided with
+  initial values determined according to Jaakkola's
+  heuristic\footnote{Jaakkola's heuristic is a heuristic for global
+    optimisation of real functions; in this case it suggests that we
+    calculate the distances between all input pairs along a given
+    dimension of the data set, and take the inverse of the median of
+    these distances to be the initial value for each scale
+    factor.}. The samples were around $\SI{0.003}{\second}$ separated
+  along the time dimension, and so the initial value of
+  $\lambda_{\text{time}} = 300$ was selected. An initial value for the
+  constant term in the kernel was slected from the data's
+  variance. Following optimisation the values 
+  \[ \lambda_{\text{amp}} = 26.8, \qquad \lambda_{\text{time}} =
+    111.6 \]
+  were found to minimise the log-likelihood of the model.  The trained
+  model was tested against a set of data generated by \imrphenomp at
+  the same parameter values, but with 1000 samples in time rather than
+  300. In order to test the global accuracy of the model the
+  correlation and RMSE were calculated, with
+  \[ \rho^2 = 0.90, \qquad \rmse = 8.22\e{-23} \]
+
+  \begin{figure}[t]
+    \centering
+    \input{figures/simplewave1.pgf}
+    \caption{The Gaussian Process reconstruction of an \imrphenomp waveform. The upper panel presents the reconstruction, while the lower panel plots the training data. The shaded regions represent the 1-sigma (dark) and 2-sigma (light) confidence regions around the mean prediction (heavy line).}
+    \label{fig:simplewaveform1}
+  \end{figure}
+
+\subsection{A 2-D series of waveforms}
+\label{sec:massvariationwaveforms}
+
+A similar experiment was carried-out by producing a number of waveforms at varying masses and spins, allowing a correlation of 
+\[ \rho^2 = 0.44 \] to be achieved.
 
 %%% Local Variables: 
 %%% mode: latex
