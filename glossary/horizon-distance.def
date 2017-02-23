@@ -1,0 +1,22 @@
+---
+title: horizon distance
+---
+
+The horizon distance is the greatest luminosity distance at which a
+signal, typically an inspiral signal, can be detected by an
+interferometer with some given noise profile.
+
+The detection threshold is normally expressed in terms of a \gls{snr},
+$\glssymbol{snr}$, and in the case of a single detector a common
+choice is $\glssymbol{snr} = 8$.
+
+Given the \gls{psd} of the detector, $\glssymbol{psd}$, and a
+\gls{chirp mass}, $\glssymbol{chirp mass}$, then the horizon distance
+can be approximated as\cite{2012arXiv1203.2674T}
+\begin{equation}
+  \mathcal{D}_{\mathrm{hor}} = \frac{1}{\glssymbol{snr}}
+  %% \left(
+  %%  \frac{5 \pi}{24 c^3} \right)^{1/2} \left(G \glssymbol{chirp mass} \right)^{5/6} \pi^{-7/6} \sqrt{ 4 \int_f_{\mathrm low}^f_{\mathrm high} \frac{f^{-7/3}}{\glssymbol{psd}(f) } \dd{f} } 
+ \end{equation}
+
+for an inspiral signal, where the SNR of the merger and ringdown is neglected.

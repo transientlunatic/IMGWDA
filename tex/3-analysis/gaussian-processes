@@ -385,13 +385,13 @@ ages. These variables represent the quantities of
 \marginpar{
 \vspace{-2in}
 \begin{enumerate}
-\item Cement [$\kilogram / \meter^3$]
-\item Fly ash  [$\kilogram / \meter^3$]
-\item Blast-furnace slag  [$\kilogram / \meter^3$]
-\item Water  [$\kilogram / \meter^3$]
-\item Superplasticiser  [$\kilogram / \meter^3$]
-\item Coarse Aggregate  [$\kilogram / \meter^3$]
-\item Fine Aggregate  [$\kilogram / \meter^3$]
+\item Cement [$\si{\kilogram / \meter^3}$]
+\item Fly ash  [$\si{\kilogram / \meter^3}$]
+\item Blast-furnace slag  [$\si{\kilogram / \meter^3}$]
+\item Water  [$\si{\kilogram / \meter^3}$]
+\item Superplasticiser  [$\si{\kilogram / \meter^3}$]
+\item Coarse Aggregate  [$\si{\kilogram / \meter^3}$]
+\item Fine Aggregate  [$\si{\kilogram / \meter^3}$]
 \item Age of Testing [Days]
 \end{enumerate}}
 
