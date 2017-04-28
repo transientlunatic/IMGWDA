@@ -81,6 +81,11 @@ multi-variate normal distribution. Gaussian processes are a
 non-parametric supervised machine learning
 technique\cite{barberBRML2012,mackay2003information}.
 
+\sidebar{
+  \includegraphics{figures/gp-training-data.pdf}
+}
+
+
 To make a prediction, we need to first have a set of prior
 observations and information about the parameters of the physical
 system which produced those observations. These combined form the
@@ -178,10 +183,35 @@ Consider two covariance functions, $f_1$ and $f_2$, then
   $f = f_1 f_2$ is a covariance function.
 \end{definition}
 
+\subsection{Non-stationarity of the parameter space}
+\label{sec:nonstationaritygp}
+
+
+
 \section{Training the model}
 \label{sec:training-gp}
 
+When defining the covariance function for the \GP{} it may be
+desirable to specify a number of free hyperparameters, $\theta$, which
+allow the properties of the GP to be altered, effectively allowing
+Bayesian model comparison to be carried-out to select the Gaussian
+Process which optimally describes the data. The log-probability that a
+given set of strain values were drawn from a Gaussian process with
+zero mean and a covariance matrix $K_{ij} = k(x, x')$ is
+\begin{equation}
+  \label{eq:logevidencegp}
+  \log(p(\vec{f}| X)) = - \frac{1}{2} K^{-1} \vec{f} - \frac{1}{2} \log |K| - \frac{n}{2} \log 2\pi .
+\end{equation}
+This quantity is normally denoted the \emph{log-evidence} or the
+\emph{log-hyperlikelihood}. The model which best describes the
+training data may then be found by maximising the log-hyperlikelihood
+with respect to the hyperparameters, $\theta$ of the covariance
+function.
 
+This optimisation may be conducted using either a hill-climbing based
+optimisation algorithm, or in a hierarchical Bayesian framework,
+whereby priors are assigned to the value of each hyperparameter, and
+the optimal hyperparameters are found using a Monte Carlo algorithm.
 
 \section{Making predictions}
 \label{sec:predictions-gp}
@@ -208,6 +238,100 @@ The predictive distribution can then be found as
   \label{eq:predictive-gp}
   p(y^* | x^*, \mathcal{D}) = \mathcal{N}(y^* | K_{x^*,x} K_{x,x}^{-1} y, K_{x^*, x^*} - K_{x^*,x}K^{-1}_{x,x} K_{x,x^*}).
 \end{equation}
+
+
+
+\section{Computational Complexity}
+\label{sec:computationalcomplexity}
+
+One severe disadvantage of Gaussian Processes as a data analysis tool
+are their high computational complexity. Producing a prediction from a
+GP requires inverting the covariance matrix; matrix inversion is an
+$\mathcal{O}(N^3)$ process in time, and scales with $\mathcal{O}(N^2)$
+in memory use. This effectively limits the number of training points
+which can be input to a GP to fewer than $10^4$. A number of
+approaches have been developed in the literature to address this
+short-coming by utilising computationally tractable approximations to
+either the matrix inversion or the Gaussian process.
+
+These approaches can be grouped into three broad categories; sparse
+Gaussian processes, which use a modified covariance function to force
+the covariance matrix to have a near-diagonal structure; hierarchical
+approaches, which do not modify the covariancec function, but
+approximate the off-diagonal terms' influence on the inversion; and
+local expert approaches, in which the parameter space is divided into
+many sub-spaces, and each sub-space is modelled using an independent
+Gaussian process.
+
+\subsection{Sparse Gaussian proceses}
+\label{sec:sparsegp}
+
+\subsection{Hierarchical Gaussian processes}
+\label{sec:hierarchicalgp}
+
+\subsection{Gaussian process local experts}
+\label{sec:localexpertgp}
+
+Local expert approaches attempt to improve the computational
+performance of GPs by diving the parameter space of the model into
+multiple sub-spaces. In a conventional GP the training data,
+$\mathcal{D} = \{ (x^n, y^n), n=1,\dots,N \} = \mathcal{X} \cup
+\mathcal{Y},$ is used in its entirity to train a single GP. If these
+data were instead divided into $M$ subsets, of size $K$, we can train
+$M$ separate GPs, which will each provide an independent prediction
+for any given point in the parameter space. The network structure
+which is established by this subdivision of the parameter space is
+known as a \emph{gating network}.
+
+Early approaches to using local experts in GPs used
+kd-trees\cite{shen2005fast} to sub-divide the parameter space, and
+then modelled each subspace with its own GP. The GPs were trained
+together, with each having the same kernel hyper-parameters. Final
+predictions were then produced as a weighted sum of the individual
+GPs' predictions. While this approach was somewhat effective, it
+enforced a stationary structure on the covariance matrix, and the
+paper does not treat the combination of the prediction uncertainties.
+
+Approaches which follow the work of
+\cite{Jacobs:1991:AML:1351011.1351018} on mixtures of local experts
+have had some more promise, allowing each GP to have its own set of
+hyper-parameters, allowing greater freedom in modelling
+heteroscedastic and non-stationary data.
+
+Deciding on the number of sub-models is a non-trivial problem; one
+approach is to model the parameter space using an infinite mixture
+model (IMM)\cite{rasmussen2002infinite}, in which the gating network
+is effectively a Dirichlet process over the training data. The
+predictions from each sub-model are then summed to find the global
+prediction. While this approach offers greater flexibility for
+modelling more complex underlying functions, it does little to improve
+the speed of GP predictions. Additional IMM approaches are proposed by
+\cite{meeds2006alternative}, and a comparable, variational approach is
+taken by \cite{yuan2009variational}.
+
+All of these approaches have the difficulty of requiring the gating
+network to assign a weight (often called a \emph{responsibility} to
+each sub-model's prediction when calculating the global prediction,
+adding an additional layer of inference, which normally requires an
+MCMC sampler to perform. \emph{Product-of-experts} models avoid this
+complication by multiplying the sub-model predictions, but these
+models have either turned out to be excessively
+confident,\cite{2014arXiv1412.3078N}, or excessively
+conservative\cite{2014arXiv1410.7827C}.
+
+These problems have lead to the development of the Bayesian Committee
+Machine (BCM)\cite{tresp2000bayesian}, which assigns a weight to each
+sub-model's prediction which is equal to the inverse of the
+prediction's covariance, in order that sub-models which better observe
+the predicted region are given a greater weight in the global
+prediction. This approach can suffer as a result of models which
+contains week experts, and so the \emph{robust Bayesian Committee
+  Machine}\cite{deisenroth2015distributed} has been proposed to
+provide a more robust framework for Gaussian process regression with
+many experts. This approach also allows for the computation of the
+model's prediction to be highly-parallelised, with the potential for
+each sub-model being evaluated on separate compute nodes, and combined
+together by another process running on another node.
 
 
 
@@ -252,9 +376,25 @@ Forrester\cite{forrester2008engineering} suggests that a $\rho^2 \geq 0.8$
 provides a surrogate model with good global predictive abilities,
 which corresponds to an RMSE of around $0.1$.
 
+\section{Extending the Gaussian Process}
+\label{sec:extending}
+
+Standard implementations of Gaussian processes are capable of mapping
+a multi-dimensional input to a single-dimensional output, however
+there are many situations in which the ability to generate a
+multi-dimensional output would be advantageous. 
 
 
-\section{Acquisition Functions}
+\section{Bayesian Optimisation}
+\label{sec:optimisationbayes}
+
+While conventional optimisation methods, such as hill-climbing
+algorithms, rely on the ability to evaluate a function (and often its
+derivative) locally, the existence of a surrogate model allows optima
+to be found using the entire structure of the function as part of a
+Bayesian framework.
+
+\subsection{Acquisition Functions}
 \label{sec:acquisition}
 
 When using our Gaussian Process as a surrogate model to the underlying
@@ -340,60 +480,43 @@ The match between two waveforms, $A$, and $B$, is defined as
   parameter space of the surrogate which has the minimum match to the
   alternative model.
 
-
-\section{Computational Complexity}
-\label{sec:compcomp-gp}
-
-While Gaussian process regression is a powerful data analysis tool it
-has the serious drawback of having high complexity: the problem
-requires the construction of an $N\times N$-matrix, for $N$ the number
-of data points in the training data: even modern desktop computers
-with gigabytes of RAM will thus struggle to handle large datasets, and
-performing the inversion of the matrix is an $\mathcal{O}(N^3)$
-operation. To make the problem more tractible some approximations may
-be made, one such approximation is the use of covariance functions
-with compact support, and then taking advantage of sparse matrix
-inverters. A rival method uses the hierarchical near-diagonal
-structure of a covariance matrix\cite{hodlr} to perform the inversion
-in a piecewise manner.
-
 \section{Examples}
 \label{sec:examplesgaussianproc}
 
-\subsection{Concrete}
-\label{sec:concrete}
+% \subsection{Concrete}
+% \label{sec:concrete}
 
-\begin{figure}
-  \centering
-\hspace*{-3.2in}
-  \makebox[20cm]{\input{figures/concrete.pgf}}
-  \caption{The compressive strength of concrete.}
-  \label{fig:concrete}
-\end{figure}
+% \begin{figure}
+%   \centering
+% \hspace*{-3.2in}
+%   \input{figures/concrete.pgf}
+%   \caption{The compressive strength of concrete.}
+%   \label{fig:concrete}
+% \end{figure}
 
-As a test of the Gaussian Process method as a surrogate for an high
-cost-per-evaluation function we selected a data set of tests of the
-compressive strength of concrete, which was originally used in a
-neural network analysis\cite{Yeh19981797}.
+% As a test of the Gaussian Process method as a surrogate for an high
+% cost-per-evaluation function we selected a data set of tests of the
+% compressive strength of concrete, which was originally used in a
+% neural network analysis\cite{Yeh19981797}.
 
-An exponential-squared covariance function was used to model the data,
-which consisted of measurements of the failure strength of various
-forms of concrete under compression. Varying quantities of seven
-components were tested, and an eigth experimental variable was
-introduced by testing identically made mixtures at different
-ages. These variables represent the quantities of
-\marginpar{
-\vspace{-2in}
-\begin{enumerate}
-\item Cement [$\si{\kilogram / \meter^3}$]
-\item Fly ash  [$\si{\kilogram / \meter^3}$]
-\item Blast-furnace slag  [$\si{\kilogram / \meter^3}$]
-\item Water  [$\si{\kilogram / \meter^3}$]
-\item Superplasticiser  [$\si{\kilogram / \meter^3}$]
-\item Coarse Aggregate  [$\si{\kilogram / \meter^3}$]
-\item Fine Aggregate  [$\si{\kilogram / \meter^3}$]
-\item Age of Testing [Days]
-\end{enumerate}}
+% An exponential-squared covariance function was used to model the data,
+% which consisted of measurements of the failure strength of various
+% forms of concrete under compression. Varying quantities of seven
+% components were tested, and an eigth experimental variable was
+% introduced by testing identically made mixtures at different
+% ages. These variables represent the quantities of
+% \marginpar{
+% \vspace{-2in}
+% \begin{enumerate}
+% \item Cement [$\si{\kilogram / \meter^3}$]
+% \item Fly ash  [$\si{\kilogram / \meter^3}$]
+% \item Blast-furnace slag  [$\si{\kilogram / \meter^3}$]
+% \item Water  [$\si{\kilogram / \meter^3}$]
+% \item Superplasticiser  [$\si{\kilogram / \meter^3}$]
+% \item Coarse Aggregate  [$\si{\kilogram / \meter^3}$]
+% \item Fine Aggregate  [$\si{\kilogram / \meter^3}$]
+% \item Age of Testing [Days]
+% \end{enumerate}}
 
 \subsection{A single BBH waveform}
 \label{sec:singlewaveform}
@@ -451,11 +574,9 @@ parameters.
     \label{fig:simplewaveform1}
   \end{figure}
 
-\subsection{A 2-D series of waveforms}
+\subsection{A Waveform Catalogue}
 \label{sec:massvariationwaveforms}
 
-A similar experiment was carried-out by producing a number of waveforms at varying masses and spins, allowing a correlation of 
-\[ \rho^2 = 0.44 \] to be achieved.
 
 %%% Local Variables: 
 %%% mode: latex
