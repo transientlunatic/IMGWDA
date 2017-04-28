@@ -18,5 +18,5 @@ document.gls :
 
 clean:
 	latexmk -CA
-	rm -rf *.glo *.glg *.ist
+	rm -rf *.glo *.glg *.ist *.acn *.xdy
 	rm -rf *.bbl *.gls *.glsdefs

@@ -1,7 +1,8 @@
 \documentclass[openleft]{kentigern}
 
 \usepackage{lipsum}
-\usepackage[toc]{glossaries}
+%\usepackage[toc]{glossaries}
+\usepackage[acronym,toc]{glossaries}
 \usepackage{siunitx}
 
 \makeglossaries
@@ -20,30 +21,12 @@
 \title{Year 1 Report}
 \author{Daniel Williams}
 
-
-\providecommand{\msolar}{\mathrm{M{_\odot}}}
-\providecommand{\mat}[1]{\mathsf{#1}}
-\providecommand{\ex}{\mathbb{E}\,}
-
-% New Operators
-\DeclareMathOperator{\vary}{var}
-\DeclareMathOperator{\cov}{cov}
-\providecommand{\rmse}{\mathrm{RMSE}}
-
-% Software Packages
-\providecommand{\imrphenomp}{\texttt{IMRPhenomP}}
-\providecommand{\lalsim}{\texttt{LALSimulation}}
-
-% New Units
-\providecommand{\solMass}{\ensuremath{\mathrm{M}_{\odot}}}
-\DeclareSIUnit\parsec{pc}
-
-% The glossary
-\input{glossary/glossary.tex}
-\input{glossary/sources-glossary.tex}
+\input{macros/macros}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+
+\loadglsentries[main]{glossary/glossary.tex}
 
 \begin{document}
 \maketitle
@@ -51,9 +34,9 @@
 \newpage
 %
 
-\tableofcontents
+%\tableofcontents
 \newpage
-\input{tex/dedication}
+%\input{tex/dedication}
 % \part{Outline \& Review of Gravitational Wave Literature}
 % \label{part:introduction}
 
@@ -159,9 +142,9 @@
    interferometer data is not a trivial task, with signals appearing at
    low signal-to-noise ratios.}
 
-\section{Bayesian inference}
-\label{sec:bayesian-inference}
-\input{tex/3-analysis/bayesian-inference}
+%% \section{Bayesian inference}
+%% \label{sec:bayesian-inference}
+%% \input{tex/3-analysis/bayesian-inference}
 
 \section{Matched filtering}
 \label{sec:matched-filtering}
@@ -294,14 +277,17 @@
 
 % \part{Outline of future work}
 % \label{part:future}
-
 % \input{tex/5-future}
 
 \bibliographystyle{unsrt}
 \bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian}
 
-% \glsaddall
-% %\useglossarystyle{altlist}
-% \printglossaries
+% The glossary
+%\input{glossary/glossary.tex}
+%\input{glossary/sources-glossary.tex}
+
+%\glsaddall
+%\useglossarystyle{altlist}
+\printglossaries
 
 \end{document}

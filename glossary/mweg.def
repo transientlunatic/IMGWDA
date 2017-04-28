@@ -1,0 +1,14 @@
+---
+title: Milky Way Equivalent Galaxy
+abbreviation: MWEG
+---
+
+Given some horizon distance, $\horizonDistance$, we can approximate
+the number of MWEGs, $\numberGalaxies$, within an observable volume
+as\cite{2010CQGra..27q3001A}
+\begin{equation}
+\numberGalaxies = \frac{4}{3} \pi \qty(\frac{\horizonDistance}{\mega\parsec})^3 (2.26)^{-3} (0.0116)
+\end{equation}
+where the factor of $2.26$ is a correction from averaging over the
+whole sky and all orientations, while $1.16\e{-2} \mega\parsec^{-3}$
+is the extrapolated density of MWEGs in space.

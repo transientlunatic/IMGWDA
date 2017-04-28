@@ -1,0 +1,148 @@
+\newcommand{\convexpath}[2]{
+  [   
+  create hullcoords/.code={
+    \global\edef\namelist{#1}
+    \foreach [count=\counter] \nodename in \namelist {
+      \global\edef\numberofnodes{\counter}
+      \coordinate (hullcoord\counter) at (\nodename);
+    }
+    \coordinate (hullcoord0) at (hullcoord\numberofnodes);
+    \pgfmathtruncatemacro\lastnumber{\numberofnodes+1}
+    \coordinate (hullcoord\lastnumber) at (hullcoord1);
+  },
+  create hullcoords
+  ]
+  ($(hullcoord1)!#2!-90:(hullcoord0)$)
+  \foreach [
+  evaluate=\currentnode as \previousnode using \currentnode-1,
+  evaluate=\currentnode as \nextnode using \currentnode+1
+  ] \currentnode in {1,...,\numberofnodes} {
+    let \p1 = ($(hullcoord\currentnode) - (hullcoord\previousnode)$),
+    \n1 = {atan2(\y1,\x1) + 90},
+    \p2 = ($(hullcoord\nextnode) - (hullcoord\currentnode)$),
+    \n2 = {atan2(\y2,\x2) + 90},
+    \n{delta} = {Mod(\n2-\n1,360) - 360}
+    in 
+    {arc [start angle=\n1, delta angle=\n{delta}, radius=#2]}
+    -- ($(hullcoord\nextnode)!#2!-90:(hullcoord\currentnode)$) 
+  }
+}
+\usetikzlibrary{calc} 
+\begin{tikzpicture}[rotate=0]
+
+\tikzstyle{mirror}=[fill=white]
+\tikzstyle{FI}=[fill=yellow, thin]
+\tikzstyle{BS}=[fill=pink, ultra thick, draw=pink, opacity=0.7]
+\tikzstyle{IMC}=[draw=purple, ultra thick]
+\tikzstyle{IM}=[draw=black, ultra thick]
+\tikzstyle{PR}=[draw=lime, ultra thick]
+\tikzstyle{IO}=[draw=gray, ultra thick]
+\tikzstyle{laser}=[draw=red!80, ultra thick]
+\tikzstyle{ham}=[fill=gray, opacity=0.1]
+\tikzstyle{system}=[opacity=0.2]
+
+\begin{scope} 
+\draw [ham] (0,0) circle (2);
+\draw (0, 2.5) node {BSC2};
+
+\draw [BS, rotate around={45:(0,0)}] (0.5,0.1) rectangle (-0.5, -0.1) coordinate [midway] (BS1) {};
+
+\end{scope}
+
+\begin{scope} [xshift = 5cm]
+\draw [ham] (0,0) circle (2);
+\draw (0, 2.5) node {BSC3};
+\end{scope}
+
+\begin{scope} [xshift = 15cm]
+\draw [ham] (0,0) circle (2);
+\draw (0, 2.5) node {BSC4};
+\end{scope}
+
+\begin{scope} [yshift = 5cm]
+\draw [ham] (0,0) circle (2);
+\draw (0, 2.5) node {BSC1};
+\end{scope}
+
+\begin{scope} [yshift = 15cm]
+\draw [ham] (0,0) circle (2);
+\draw (0, 2.5) node {BSC10};
+\end{scope}
+
+\begin{scope}[xshift=-18cm]
+\fill (-0.5, -0.5) rectangle (0.5, 0.5) node [midway] (PSL) {};
+\draw (0., 0.75) node [above] {PSL};
+\end{scope}
+
+\begin{scope}[xshift=-15cm]
+\fill [ham] (0, 0) circle (2);
+\draw(0,2.5) node {HAM1};
+\end{scope}
+
+\begin{scope}[xshift=-10cm]
+%%% HAM 2
+\fill [ham] (0, 0) circle (2);
+\draw(0,2.5) node {HAM2};
+\draw [IMC, mirror, yshift = 0.75cm, rotate around={45:(0.5,0.6)}] (0,0.5) rectangle (0.75, 0.7) coordinate [midway] (MC3) {};
+\draw [IMC, mirror, yshift = 0.25cm, rotate around={-45:(0.5,0.1)}] (0,0) rectangle (0.75,.2) coordinate [midway] (MC1) {};
+
+\draw [IO, mirror, yshift = -0.95cm, xshift=0.3cm, rotate around={-45:(0.5,0.6)}] (0,0.5) -- (0, 0.7) coordinate [midway] (IO1) {};
+\draw [IO, mirror, yshift =-.5cm, xshift=-0.3cm, rotate around={-45:(0.5,0.6)}] (0,0.5) -- (0, 0.7) coordinate [midway] (IO2) {};
+
+\draw [PR, mirror,
+	xshift = 0.5cm,
+	 yshift = -0.63cm, rotate around={80:(0.5,0.6)}] (0,0.5) rectangle (0.75, 0.7) coordinate [ midway] (PR3) {};
+\draw [PR, mirror,
+	xshift = -0.4cm,
+	 yshift = -1.33cm, rotate around={90:(0.5,0.6)}] (0,0.5) rectangle (0.75, 0.7) coordinate [midway] (PRM) {};
+
+\draw [IM, mirror, xshift=-1.4cm,  yshift = 0.85cm, rotate around={25:(0.5,0.6)}] (0,0.5) rectangle (0.5, 0.7) coordinate [midway] (IM1) {};
+\draw [IM, mirror, xshift=-1.7cm,  yshift = -1.5cm, rotate around={-25:(0.5,0.6)}] (0,0.5) rectangle (0.5, 0.7) coordinate [midway] (IM2) {};
+\draw [IM, mirror, xshift=-1cm,  yshift = -0.2cm, rotate around={-25:(0.5,0.6)}] (0,0.5) rectangle (0.5, 0.7) coordinate [midway] (IM3) {};
+\draw [IM, mirror, xshift=-1cm,  yshift = -1.65cm, rotate around={-45:(0.5,0.6)}] (0,0.5) rectangle (0.5, 0.7) coordinate [midway] (IM4) {};
+
+\draw [IM, FI, xshift=-1.5cm,  yshift = -.60cm, rotate around={60:(0.5,0.6)}] (0,0.5) rectangle (0.3, 0.68) coordinate [midway] (FI1) {};
+
+
+\end{scope}
+
+\begin{scope}[xshift=-5cm]
+%%% HAM 3
+\fill [ham] (0, 0) circle (2);
+\draw(0,2.5) node {HAM3};
+\draw [IMC, mirror,
+	xshift = -1cm,
+	 yshift = 0.33cm, rotate around={90:(0.5,0.6)}] (0,0.5) rectangle (0.75, 0.7) coordinate [left=0.3cm, midway] (MC2) {};
+\draw [PR, mirror,
+	xshift = 0.3cm,
+	 yshift = -1.33cm, rotate around={80:(0.5,0.6)}] (0,0.5) rectangle (0.75, 0.7) coordinate [midway] (PR2) {};
+
+\end{scope}
+
+\begin{scope}[yshift=-5cm]
+\fill [ham] (0, 0) circle (2);
+\draw(0,2.5) node {HAM4};
+\end{scope}
+\begin{scope}[yshift=-10cm]
+\fill [ham] (0, 0) circle (2);
+\draw(0,2.5) node {HAM5};
+\end{scope}
+\begin{scope}[yshift=-15cm]
+\fill [ham] (0, 0) circle (2);
+\draw(0,2.5) node {HAM6};
+\end{scope}
+
+
+\draw [laser, thick] (PSL) -- (IO1) -- (IO2) -- (MC1);
+\draw [laser, thick] (MC3) -- (IM1) -- (IM2) -- (IM3) -- (IM4) -- (PRM);
+\fill [black, system] \convexpath{IM1, IM3, IM4, IM2}{0.4cm};
+%%% Mode-cleaner laser
+\draw [laser] (MC1)--(MC2)--(MC3) -- cycle;
+\fill [purple, system, thick, opacity=0.2] \convexpath{MC2, MC1, MC3}{.7cm};
+
+\draw [laser] (PRM) -- (PR2) -- (PR3);
+\fill[lime, system,] \convexpath{PR3, PR2, PRM}{0.7cm};
+
+\draw [laser] (PR3) -- (BS1);
+
+\end{tikzpicture}
