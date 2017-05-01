@@ -13,6 +13,12 @@ will produce a weak signal in the detector, but by observing for long
 periods of time, it is possible to make very sensitive measurements,
 thanks to the periodicity of the signal.
 
+\sidebar{ \includegraphics{figures/crab-strain-o1.pdf}
+\captionof{figure}{The upper limit of the strain of the Crab Pulsar\cite{2017ApJ...839...12A},
+as determined from observation during the first operating run of
+Advanced LIGO, plotted against the sensitivity curve of Advanced LIGO at design sensitivity,
+integrating over 1 year of data. \label{fig:pulsar-source}  }
+}
 While no observations of gravitational waves from a pulsar have been
 made so far, the lack of any detection by the initial LIGO and VIRGO
 interferometers has provided a result in its own right. The

@@ -82,7 +82,7 @@ with pm.Model() as model:
     y_obs = pm.gp.GP('y_obs', cov_func=signal_cov + drift_cov, sigma=s2_w, observed={'X':X, 'Y':y})
 
 with model:
-    trace = pm.sample(2000, step=pm.NUTS(integrator="two-stage"), init=None)
+    trace = pm.sample(10000, tune=1000, step=pm.Metropolis(), njobs=4)#2000, step=pm.NUTS())#integrator="two-stage"))#, init=None)
 
 pm.traceplot(trace[1000:], varnames=['l_per', 'l_drift', 's2_d', 's2_p', 's2_w'],
             lines={"l_per": l_per_true,
