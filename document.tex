@@ -1,12 +1,11 @@
 \documentclass[openleft]{kentigern}
 
 \usepackage{lipsum}
-%\usepackage[toc]{glossaries}
 \usepackage[acronym,toc]{glossaries}
 \usepackage{siunitx}
 
 \makeglossaries
-
+\usepackage{tabularx}
 \usepackage{type1cm}
 \usepackage{lettrine}
 \usepackage{physicsplus}
@@ -18,7 +17,7 @@
 \usepackage{setspace}
     \linespread{1.25}
 
-\title{Year 1 Report}
+\title{Year 2 Report}
 \author{Daniel Williams}
 
 \input{macros/macros}
@@ -28,8 +27,20 @@
 
 \loadglsentries[main]{glossary/glossary.tex}
 
+
+\usetikzlibrary{bayesnet}
+
 \begin{document}
+%\maketitle
+
+\begin{titlepage}
+  \newgeometry{margin=1in}
+\thispagestyle{empty}
+\author{Somebody Important}
+\title{Something just as important}
 \maketitle
+\restoregeometry
+\end{titlepage}
 
 \newpage
 %
@@ -135,24 +146,28 @@
  \label{sec:stochastic-sources}
  \input{tex/2-sources/2-4-stochasticbackground}
 
- \chapter{Data analysis of gravitational wave data}
- \label{cha:data-analys-grav}
+% \chapter{Bayesian inference}
+% \label{cha:bayesian-inference}
+% \input{tex/3-analysis/bayesian-inference}
 
- \chapterprecis{Identifying gravitational wave signals in
-   interferometer data is not a trivial task, with signals appearing at
-   low signal-to-noise ratios.}
+% \chapter[Data Analysis]{Analysis of \\gravitational wave data}
+% \label{cha:data-analys-grav}
 
-%% \section{Bayesian inference}
-%% \label{sec:bayesian-inference}
-%% \input{tex/3-analysis/bayesian-inference}
+%  \chapterprecis{Identifying gravitational wave signals in
+%    interferometer data is not a trivial task, with signals appearing at
+%    low signal-to-noise ratios.}
 
-\section{Matched filtering}
-\label{sec:matched-filtering}
-\input{tex/3-analysis/matched-filtering}
+% \section{Matched filtering}
+% \label{sec:matched-filtering}
+% \input{tex/3-analysis/matched-filtering}
 
-\section{Numerical Relativity}
-\label{sec:numerical-relativity}
-\input{tex/3-analysis/numerical-relativity}
+% \section{Pipeline overview}
+% \label{sec:pipeline-overview}
+% \input{tex/3-analysis/pipeline-overview}
+
+% \section{Numerical Relativity}
+% \label{sec:numerical-relativity}
+% \input{tex/3-analysis/numerical-relativity}
 
 \part{Data Analysis for Gravitational Wave Detectors}
 \label{part:data-analysis}
@@ -166,6 +181,13 @@
 
 \input{tex/3-analysis/gaussian-processes}
 
+%\appendices
+
+% \chapter{Covariance Functions}
+% \label{cha:covariance}
+
+% \chapterprecis{An entire menagerie of covariance functions for }
+
 % \part{Summary of work thus far}
 % \label{part:work}
 
@@ -173,121 +195,225 @@
 % \label{chap:pandp} \newpage
 
 
-% \section{Work thus far}
+\chapter{Work thus far}
+\chapterprecis{}
+The primary focus of my work thus far has been on the development of a
+Gaussian process-based method for determining the optimal parameters
+of future numerical relativity simulations. This has the added
+spin-off benefit of providing a means of producing waveform
+approximants which are trained directly off numerical relativity data.
 
-% In the first six months of my PhD my work has been focussed primarily
-% on the use of Gaussian Processes in gravitational astrophysics, with a
-% specific focus on using Gaussian processes to estimate the uncertainty
-% in post-Newtonian approximants to numerical relativity waveforms. The
-% ultimate aim of this project is to identify the parameters at which
-% new numerical relativity waveforms should be produced in an
-% algorithmic and Bayesian manner.
+I have also been involved in work to determine a Bayesian lower limit
+on the beaming angle of soft GRBs from the observed rate posterior
+probability distribution of neutron star merger events in advanced
+LIGO. I develop and maintain a software package, ``Minke'', which is
+used within the LIGO Scientific Collaboration (LSC) to generate the
+necessary data for testing and evaluating transient event searches
+(through software ``injections'', or mock data challenges), and for
+producing ``hardware injections'' which are used to test the effect of
+various detector calibrations on these searches.
 
-% \section{Gaussian processes for gravitational wave detection}
-% \label{sec:gauss-proc-grav}
+Additionally, in the last year I have presented at one conference, and
+been a member of the local organising committee for an LSC
+collaboration meeting which was held at the University of Glasgow in
+September 2016. Since March 2016 I have been on long term attachment
+to the LIGO site in Livingston, Louisiana.
 
-% Gaussian processes have the attractive feature that they can be
-% leveraged to produce a regression of data, which has both the
-% equivalent of a ``best-fit'' line, which is represented by the mean
-% function from the posterior, and an uncertainty, through the variance
-% of the posterior. In matched filtering techniques used in LIGO data
-% analysis it is often impractical to use numerical relativity (NR)
-% waveforms, owing to their computational expense, and so approximants
-% must be used to span the regions of parameter space between the
-% ``true'' NR waveforms.
+\section{Gaussian processes for gravitational wave detection}
+\label{sec:gauss-proc-grav}
 
-% Moore and Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} propose a
-% method to account for the uncertainty which is introduced through the
-% use of an approximant, by training a Gaussian process on the
-% differences between NR and approximant waveforms. They then use the
-% posterior from the Gaussian process to form the likelihood in their
-% analysis. While this approach is shown to improve the efficiency of
-% bayesian inference techniques on parameter estimation, it relies on
-% the availability of an analytic or a semi-analytic approximant to the
-% true values.
+\begin{figure}
+  \centering
+  \includegraphics{figures/georgiatech-density-plot.pdf}
+  \caption{A pair-plot of the parameter space sampling in the Georgia
+    Tech catalogue. The subplots on the diagonals show the histograms
+    of the distribution of waveforms generated with respect to each
+    individual parameter; the Gaussian kernel density estimate is also
+    plotted on these panels.}
+  \label{fig:georgiatech-pairplot}
+\end{figure}
+Gaussian processes have the attractive feature that they can be
+leveraged to produce a regression of data, which has both the
+equivalent of a ``best-fit'' line, which is represented by the mean
+function from the posterior, and an uncertainty, through the variance
+of the posterior. In matched filtering techniques used in LIGO data
+analysis it is often impractical to use numerical relativity (NR)
+waveforms, owing to their computational expense, and so approximants
+must be used to span the regions of parameter space between the
+``true'' NR waveforms.
 
-% Instead, I have attempted to take the approach of training a Gaussian
-% process directly using the numerical relativity waveforms produced by
-% the Relativity Group at Georgia Tech\cite{gatechcat}: here the input
-% parameters are multi-dimensional, composed of the time, and the
-% simulation parameters, and the strain values at each of these points
-% composing the targets.
-
-% This approach allows two useful results to be obtained: first, it
-% allows the production of gravitational waveforms, with associated
-% error estimates, directly from the NR data, bypassing the need for an
-% approximant; second, a fully trained Gaussian process, through its
-% ability to estimate the uncertainty in any prediction, provides a
-% means to indetify regions of parameter space where predictions are
-% likely to be particuarly poor, and is thus a means of identifying the
-% optimal regions of parameter space to focus future simulation efforts
-% on.
-
-% An extra direction has recently appeared which I have actively
-% pursued, relating to Gaussian processes. Where previously Gaussian
-% processes had been trained to produce a single-dimensional output from
-% a multi-dimensional input, I have been attempting to develop a
-% technique where a multiple-dimensional input is used to prouduce a
-% multiple-dimensional output. The specific intention of this method is
-% to provide a timeseries which contains a gravitational wave signal to
-% a Gaussian process, and use it to predict the model parameters which
-% produced it. In effect, this technique would be a means of performing
-% parameter estimation using purely NR data. Perfecting this technique
-% is likely to be difficult, however, as it poses formidable problems
-% with computability, and will require careful thought about memory
-% optimisation. An ultimate aim for such an algorithm would be the
-% abiltiy to produce a posterior on multiple waveform parameters
-% directly from noisy data from a gravitational wave detector.
-
-% \section{Minke: Producing MDCs for gravitational wave transient analysis}
-% \label{sec:mink-prod-mdcs}
-
-% In order to characterise the efficiency of any gravitational wave
-% analysis algorithm it must be tested on injected signals---simulated
-% signals with known parameters, and hence a known shape---which are
-% inserted into either simulated noise, or timeseries containing real
-% noise from the detector. By determining the number of these injected
-% signals which are detected by an algorithm it is possible to determine
-% the detection efficiency of the method; additionally, this method
-% allows a controlled method of determining the quietest events the
-% algorithm is capable of detecting in the noise environment, and hence
-% of calculating the sensitive distance of the detector and analysis to
-% a physical system producing a waveform with those parameters.
-
-% An important component of the 
+Moore and Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} propose a
+method to account for the uncertainty which is introduced through the
+use of an approximant, by training a Gaussian process on the
+differences between NR and approximant waveforms. They then use the
+posterior from the Gaussian process to form the likelihood in their
+analysis. While this approach is shown to improve the efficiency of
+bayesian inference techniques on parameter estimation, it relies on
+the availability of an analytic or a semi-analytic approximant to the
+true values.
 
 
-% \section{Burst companion paper}
-% \label{sec:burst-comp-paper}
+Instead, I have attempted to take the approach of training a Gaussian
+process directly using the numerical relativity waveforms produced by
+the Relativity Group at Georgia Tech\cite{gatechcat}: here the input
+parameters are multi-dimensional, composed of the time, and the
+simulation parameters, and the strain values at each of these points
+composing the targets. The distribution of the waveforms in the
+catalogue is plotted in figure \ref{fig:georgiatech-pairplot}, which
+shows both how uneven the sampling of the underlying parameter space
+is, and the low density of the sampling which necessitates the use of
+approximants to fully cover the parameter space.
 
-% During the period September 2015 --- April 2016 I contributed to one
-% LSC author-list paper, the so-called \emph{Burst Companion Paper}, for
-% which I was the figures editor. At present I am not on the general LSC
-% author-list, and as such I am not a named contributor on any of the
-% other collaboration papers produced over this time period.
+This approach allows two useful results to be obtained: first, it
+allows the production of gravitational waveforms, with associated
+error estimates, directly from the NR data, bypassing the need for an
+approximant; second, a fully trained Gaussian process, through its
+ability to estimate the uncertainty in any prediction, provides a
+means to indetify regions of parameter space where predictions are
+likely to be particuarly poor, and is thus a means of identifying the
+optimal regions of parameter space to focus future simulation efforts
+on.
 
-% \section{Estimating beaming angles from sGRBs}
-% \label{sec:estim-beam-angl}
+In the last year I've developed additionally developed a working
+protoype of multiple-input, multiple-output Gaussian process
+regression in Python, although due to the considerable computational
+resources required I have yet to apply this to real-world
+data. However, this approach should allow the production of a Gaussian
+process surrogate model which is capable of producing both
+polarisations of the gravitational waveform for a BBH event. A number
+of computational improvements could be made, including parallelising
+the training process, which may make this possible.
 
-% During the same period I have been a co-author on a short-author list
-% paper, and the lead author on a paper composing the write-up of my
-% MSci project.
+I am currently in the process of writing-up the initial stages of this
+work (the method of using a trained Gaussian process surrogate for
+waveform placement) into a paper.
+
+\section{Minke: Producing MDCs for gravitational wave transient analysis}
+\label{sec:mink-prod-mdcs}
+
+In order to characterise the efficiency of any gravitational wave
+analysis algorithm it must be tested on injected signals---simulated
+signals with known parameters, and hence a known shape---which are
+inserted into either simulated noise, or timeseries containing real
+noise from the detector. By determining the number of these injected
+signals which are detected by an algorithm it is possible to determine
+the detection efficiency of the method; additionally, this method
+allows a controlled method of determining the quietest events the
+algorithm is capable of detecting in the noise environment, and hence
+of calculating the sensitive distance of the detector and analysis to
+a physical system producing a waveform with those parameters. These
+tests are known as ``Mock Data Challenges'' (MDCs).
+
+So that consistent results can be produced between the various
+different search pipelines it is necessary to generate these
+injections via an independent method; previous methods for doing this
+within the LSC's burst group have been difficult to maintain or
+ad-hoc; ``Minke'' is an attempt to produce an extensible and pythonic
+framework for producing burst signal sets, either for use in MDCs, or
+for other purposes, such as training machine learning classifiers.
+
+The majority of the initial development on Minke was carried out in
+the first six months of my PhD, however I have continued its
+development over the last year, with major early achievements being
+the implementation and testing of supernova numerical relativity
+waveform support, where supernova waveforms which are pre-calculated
+by numerical relativity simulations can be injected into detector
+data, and the review of the code prior to the pulication of the O1
+Burst Search paper\cite{2017PhRvD..95d2003A}, which made use of MDC
+sets produced by Minke. Verion 1.0 of ``Minke'' was released on 14
+September 2016\footnote{``Minke'' is open source, and both the
+  source-code and releases are available on Github at
+  \www{http://www.github.com/transientunatic/minke}.}.
+During the same period I have been a co-author on a short-author list
+paper, and the lead author on a paper composing the write-up of my
+MSci project.
+
+I had initially planned development to continue in the direction of
+adding support for numerical relativity BBH waveforms to the package,
+however this proved difficult due to the lack of a firm standard for
+the storage of these waveforms (this standard was finally agreed upon
+in March 2017 \cite{2017arXiv170301076S}, and so adding support for
+these waveforms has become a short-term goal in the future. Instead I
+have focussed further development on adding support for numerical
+models such as accretion disk instabilities to the package, and the
+ability to generate data which can be used to generate hardware
+injections in the detectors. At the time of writing neither of these
+new features had been fully reviewed, however review of at least the
+hardware injection feature is likely to be required prior to the
+publication of a future joint O1/O2 supernova search paper.
+
+
+\section{Estimating beaming angles from sGRBs}
+\label{sec:estim-beam-angl}
+
+\sidebar{
+
+  \begin{tikzpicture}
+      % Y
+  \node[latent]  (theta)   {$\theta$}; %
+
+  % input distributions
+  \node[obs, above = 1.2 of theta] (Rbns)   {$R_{\mathrm{bns}}$}; %
+  
+  \node[latent, left = of Rbns]  (eff)   {$\epsilon$}; %
+  \node[obs, right = of Rbns] (Rgrb) {$R_{\mathrm{grb}}$};
+  % eff hyperparameters
+  \node[const, above=1.2 of eff, xshift=-0.5cm] (mw) {$h_1$} ; %
+  \node[const, above=1.2 of eff, xshift=0.5cm]  (aw) {$h_2$} ; %
+  % Rbns hyperparameters
+  %\node[const, above=1.2 of Rbns, xshift=-0.5cm] (mx) {$\mu_x$} ; %
+  %\node[const, above=1.2 of Rbns, xshift=0.5cm]  (ax) {$\alpha_x$} ; %
+   % Factors
+  \factor[above=of eff] {eff-f} {left:$\mathcal{D}$} {mw,aw} {eff} ; %
+  \edge[-] {eff, Rbns} {theta};
+  \edge[-] {Rgrb} {theta};
+\end{tikzpicture}
+\captionof{figure}{A graphical representation of the hierarchical model used to infer the beaming angle of soft gamma ray bursts from the observed binary neutron star coalesence rate. \label{fig:grb-graph-model}}
+}
+I have been working in collaboration with James Clark at Georgia
+Institute of Technology on developing a method for estimating the
+lower-limit on the beaming angle of soft gamma ray bursts (sGRBs)
+which result from binary neutron star (BNS) mergers.
+
+This is made possible thanks to knowledge of the posterior probability
+distribution on the rate of BNS mergers, which can be determined from
+the number of such events which are observed by Advanced LIGO
+(although, at the time of writing, this number was zero), and
+knowledge of the rate of observed soft gamma ray bursts. A
+hierarchical Bayesian analysis can then be used to infer the
+probability distribution on the ``opening angle'' of the sGRB.
+
+We can model the observed distribution of gamma ray bursts given
+knowledge of the rate of binary neutron star (BNS) mergers as
+\begin{equation}
+  \label{eq:grb-rate}
+  \mathcal{R}_{\mathrm{grb}} = \epsilon \mathcal{R}_{\mathrm{bns}} \left\langle 1 - \cos\theta \right\rangle,
+\end{equation}
+
+%
+% A little more detail here would not go amiss
+% 
 
 
 
-% \part{Outline of future work}
-% \label{part:future}
-% \input{tex/5-future}
+
+
+\chapter{Outline of future work}
+\label{part:future}
+\input{tex/5-future}
+\backmatter
+
+\newgeometry{left=3cm}
 
 \bibliographystyle{unsrt}
 \bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian}
 
 % The glossary
-%\input{glossary/glossary.tex}
+\input{glossary/glossary.tex}
 %\input{glossary/sources-glossary.tex}
 
-%\glsaddall
-%\useglossarystyle{altlist}
+\glsaddall
+\useglossarystyle{altlist}
 \printglossaries
 
 \end{document}

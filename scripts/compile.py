@@ -8,7 +8,7 @@ glossary_entry = """
 \\newglossaryentry{{{}}}{{
    name = {{{}}},
    description = {{{}}},
-symbol = {{\ensuremath {}}}
+symbol = {{{}}}
 }}
 """
 
@@ -24,7 +24,7 @@ for filename in files:
         label = content['label']
 
     if "symbol" in content.keys():
-        symbol = content['symbol']
+        symbol = "\ensuremath {}".format(content['symbol'])
     else:
         symbol = ""
         
