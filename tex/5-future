@@ -1,28 +1,46 @@
+In the next twelve month period I will spend two months on long-term
+attachment in the United States of America, at the LIGO site in
+Livingston, Louisiana, and the remainder in Glasgow. My principle
+goals for the following year are
+
+\begin{itemize}
+\item Complete my long-term attachment at Livingston, LA;
+\item Spend a month at Georgia Institute of Technology, working on deveelopment of the Gaussian process surrogate model project;
+\item Conduct investigations for handling non-stationarity in the parameter space of training data for Gaussian processes, with the aim of impoving the precision of this method for informing future sampling plans
+\item Complete work on the paper describing the sampling plan method
+\item Start investigations into using Gaussian processes to improve the precision of burst searches
+\item Complete work on the sGRB beaming paper [carried over from year 1, with some progress]
+\item Complete work on paper describing an Einstein delay-based method for detecting neutron stars
+\item Complete work on a test suite for Minke
+\item Implement numerical relativity BBH waveforms, and accretion disk instabilities in Minke
+\end{itemize}
+
 \begin{figure*}
   \centering
   
 %\begin{sideways}
 \begin{ganttchart}{1}{12}
-  \gantttitle{2016}{8} 
-  \gantttitle{2017}{4}\\
+  \gantttitle{2017}{8} 
+  \gantttitle{2018}{4}\\
   \gantttitlelist{5,...,12,1,2,3,4}{1} \\
   %\ganttgroup{ER9}{1}{1} \ganttgroup{O2}{3}{8} \\
   \ganttgroup{Minke}{1}{12}\\
-  \ganttbar{SNe waveforms}{1}{1} \\
-  \ganttbar{O1 Review}{1}{1} \\
+  \ganttbar{BBH \& ADI Waveforms}{3}{6} \\
+  \ganttbar{Test Suite}{3}{3} \\
   %\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{v1.0.0}{2} \ganttnewline
-  \ganttbar{BBH Waveforms}{3}{4} \\
-  %\ganttlink{elem2}{elem3}
-  %\ganttlink{elem3}{elem4}
-  %\ganttlink{elem4}{elem5}
-  \ganttmilestone{v1.1.0}{4} \\
-
-  \ganttgroup{LHO}{10}{12}\\
-  
-  \ganttgroup{Heron}{1}{4}\\
-  %\ganttbar{
-
+  \ganttmilestone{v1.1.0}{4} \ganttnewline
+  \ganttgroup{Gaussian processes}{1}{12}\\
+  \ganttbar{Method paper}{1}{2}\\
+  \ganttbar{Non-stationarity}{2}{4}\\
+  \ganttbar{Burst searches}{5}{12}\\
+  \ganttgroup{LTA}{1}{3}\\
+  \ganttbar{LLO}{1}{2}\\
+  \ganttbar{GT}{2}{3}\\
+  \ganttgroup{sGRB}{2}{3}\\
+  \ganttbar{Code review}{2}{3}\\
+  \ganttgroup{NS}{4}{4}\\
+  \ganttbar{Finalise analysis}{4}{4}\\
+  \ganttbar{Complete paper}{4}{4}
 \end{ganttchart}
 %\end{sideways}
 

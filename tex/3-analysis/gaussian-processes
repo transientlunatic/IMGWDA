@@ -191,22 +191,22 @@ for $r$ the Euclidean distance of a datum from the centre of the
 parameter space, and $l$ is a scale factor associated with the axis
 along which the data are defined.
 
-\subsection{Kernel algebra}
-\label{sec:kernelalgebra}
+% \subsection{Kernel algebra}
+% \label{sec:kernelalgebra}
 
-It is possible to define new kernels from the standard set through a
-series of defined operations.
+% It is possible to define new kernels from the standard set through a
+% series of defined operations.
 
-Consider two covariance functions, $f_1$ and $f_2$, then
-\begin{definition}{Kernel Addition}
-  $f = f_1 + f_2$ is a covariance function.
-\end{definition}
-\begin{definition}{Kernel product}
-  $f = f_1 f_2$ is a covariance function.
-\end{definition}
+% Consider two covariance functions, $f_1$ and $f_2$, then
+% \begin{definition}{Kernel Addition}
+%   $f = f_1 + f_2$ is a covariance function.
+% \end{definition}
+% \begin{definition}{Kernel product}
+%   $f = f_1 f_2$ is a covariance function.
+% \end{definition}
 
-\subsection{Non-stationarity of the parameter space}
-\label{sec:nonstationaritygp}
+% \subsection{Non-stationarity of the parameter space}
+% \label{sec:nonstationaritygp}
 
 
 
@@ -288,8 +288,36 @@ Gaussian process.
 \subsection{Sparse Gaussian proceses}
 \label{sec:sparsegp}
 
+Sparse Gaussian processes attempt to resolve the problems of high
+memory requirements by reducing the size of the covariance matrix
+which must be inverted. By defining a covariance function to have
+compact support it is possible to generate a matrix which is almost
+diagonal; the motiviation for this approach is clear from the form of
+popular covariance functions, such as the exponential squared function
+(see figure \ref{fig:gp-expsq-covar}) which tends to a value close to
+zero as the distance between training points increases.  Nearly
+diagonal matrices can be be broken-up and inverted piecewise, allowing
+for a larger number of jobs to be run conurrently, and thus skirting
+the memory-usage problem. Sparse Gaussian processes are still
+susceptible to problems if the covariance matrix cannot be efficiently
+split into sub-matrices, which can become the case if a large number
+of points in the training data are close together, or if the number of
+training points exceeds around $10^6$\cite{deisenroth2015distributed}.
+
 \subsection{Hierarchical Gaussian processes}
 \label{sec:hierarchicalgp}
+
+An alternative approach to defining compact support kernels is to
+hierarchically factor the covariance matrix into the product of
+low-rank updates of the identity matrix, which allows inversion to be
+carried out in $\mathcal{O}(n \log^2 n)$. This approach is possible
+because kernels such as the exponential squared kernel produce
+covaraince matrices which can be arranged to form Hierarchical
+off-diagonal low rank (HODLR) matrices\cite{hodlr}. The off-diagonal
+blocks are then factorised using partial-pivoted LU decomposition, and
+the on-diagonal blocks are factorised using a more accurate algorithm,
+such as Cholesky decomposition. The block inverses are then recombined
+to provide the overall matrix inverse.
 
 \subsection{Gaussian process local experts}
 \label{sec:localexpertgp}
@@ -398,206 +426,206 @@ Forrester\cite{forrester2008engineering} suggests that a $\rho^2 \geq 0.8$
 provides a surrogate model with good global predictive abilities,
 which corresponds to an RMSE of around $0.1$.
 
-\section{Extending the Gaussian Process}
-\label{sec:extending}
+% \section{Extending the Gaussian Process}
+% \label{sec:extending}
 
-Standard implementations of Gaussian processes are capable of mapping
-a multi-dimensional input to a single-dimensional output, however
-there are many situations in which the ability to generate a
-multi-dimensional output would be advantageous. 
-
-
-\section{Bayesian Optimisation}
-\label{sec:optimisationbayes}
-
-While conventional optimisation methods, such as hill-climbing
-algorithms, rely on the ability to evaluate a function (and often its
-derivative) locally, the existence of a surrogate model allows optima
-to be found using the entire structure of the function as part of a
-Bayesian framework.
-
-\subsection{Acquisition Functions}
-\label{sec:acquisition}
-
-When using our Gaussian Process as a surrogate model to the underlying
-generative model for the waveform we treat the function which
-generates waveforms as unknown, and we place a prior on it, and the
-training data is used to update the prior, providing a posterior. We
-may use the posterior to determine the appropriate location for future
-evaluations from the underlying model; an infill sampling criterion,
-or acquisition function. This approach of using a surrogate model to
-approximate an underlying function which is hard or costly to evaluate
-is treated in the discipline of \emph{Bayesian optimisation}.
-
-Increasing the accuracy of the surrogate to the underlying function
-can be achieved by sampling the function at various points through
-parameter space, however, a strategy for performing this in an optimal
-manner is desirable, given the properties of that function. For
-example, if one were attempting to find which combination of
-components in concrete produced the strongest building product one
-might require a lengthy period to allow it to set, and so minimising
-the number of sampling iterations is desirable. We define an
-acquisition function, $f$, such that for a desirable new sample, $x^+$,
-\begin{equation}
-  \label{eq:acquisition}
-  x^+ = \mathrm{argmax} f(x)
-\end{equation}
-
-\subsection{Probability of Improvement}
-\label{sec:probimprove}
-
-One possible acquisition function considers the probability that a
-sampled point improves the model, suggested first in
-\cite{Kushner1964},
-\begin{equation}
-  \label{eq:probabilityimprovement}
-  \mathrm{PI}(x) = P(f(x) \geq f(x^+)) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+)}{\sigma(x)} \right)
-\end{equation}
-This algorithm clearly attempts to \emph{exploit} the parameter space,
-that is, it samples areas only where the greatest improvement over the
-current observation are possible. In order to force \emph{exploration} of the parameter space---sampling areas of high uncertainity---a trade-off parameter, $\xi\geq 0$ may be instroduced, such that
-\begin{equation}
-  \label{eq:probabilityimprovementexplore}
-    \mathrm{PI}(x) = P(f(x) \geq f(x^+) + \xi) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+) - \xi}{\sigma(x)} \right)
-\end{equation}
-\cite{Kushner1964} suggests that this should be varied according to
-some pre-defined schedule, tending to 0 as the algorithm runs.
-
-\subsection{Expected Improvement}
-\label{sec:expimprove}
-
-In order to address the arbitrary nature of the choice of $\xi$ in the
-Probability of Improvement function we may consider not only the
-probability that a point provides an improvement, but also the
-magnitude of that improvement. In this situation we wish to minimise
-the expected deviation from the true $f(x^+)$ when choosing a trial
-point, so
+% Standard implementations of Gaussian processes are capable of mapping
+% a multi-dimensional input to a single-dimensional output, however
+% there are many situations in which the ability to generate a
+% multi-dimensional output would be advantageous. 
 
 
-\subsection{Entropy Search}
-\label{sec:entropysearch}
+% \section{Bayesian Optimisation}
+% \label{sec:optimisationbayes}
 
-\subsection{Upper confidence bound}
-\label{sec:upperconfbound}
+% While conventional optimisation methods, such as hill-climbing
+% algorithms, rely on the ability to evaluate a function (and often its
+% derivative) locally, the existence of a surrogate model allows optima
+% to be found using the entire structure of the function as part of a
+% Bayesian framework.
 
-\subsection{Waveform Match}
-\label{sec:waveformmatch}
+% \subsection{Acquisition Functions}
+% \label{sec:acquisition}
 
-The match between two waveforms, $A$, and $B$, is defined as
-\begin{equation}
-  \label{eq:waveformmatch}
-  \mathcal{N} = \frac{
-    \max\limits_{t_0, \phi_0} \left< A , B \right>
-    }
-    {
-      \left< A, A\right>^{\half}
-      \left< B, B\right>^{\half}
-    }
-  \end{equation} for the initial time and phase respectively $t_0$ and $\phi_0$.
+% When using our Gaussian Process as a surrogate model to the underlying
+% generative model for the waveform we treat the function which
+% generates waveforms as unknown, and we place a prior on it, and the
+% training data is used to update the prior, providing a posterior. We
+% may use the posterior to determine the appropriate location for future
+% evaluations from the underlying model; an infill sampling criterion,
+% or acquisition function. This approach of using a surrogate model to
+% approximate an underlying function which is hard or costly to evaluate
+% is treated in the discipline of \emph{Bayesian optimisation}.
 
-  Suppose we wish to compare the surrogate model to an alternative
-  approximant, for example, \texttt{IMRPhenomP}, and identifying the
-  location in parameter space where the two have the greatest
-  disagreement. This can be achieved by finding the location in the
-  parameter space of the surrogate which has the minimum match to the
-  alternative model.
+% Increasing the accuracy of the surrogate to the underlying function
+% can be achieved by sampling the function at various points through
+% parameter space, however, a strategy for performing this in an optimal
+% manner is desirable, given the properties of that function. For
+% example, if one were attempting to find which combination of
+% components in concrete produced the strongest building product one
+% might require a lengthy period to allow it to set, and so minimising
+% the number of sampling iterations is desirable. We define an
+% acquisition function, $f$, such that for a desirable new sample, $x^+$,
+% \begin{equation}
+%   \label{eq:acquisition}
+%   x^+ = \mathrm{argmax} f(x)
+% \end{equation}
 
-\section{Examples}
-\label{sec:examplesgaussianproc}
+% \subsection{Probability of Improvement}
+% \label{sec:probimprove}
 
-% \subsection{Concrete}
-% \label{sec:concrete}
+% One possible acquisition function considers the probability that a
+% sampled point improves the model, suggested first in
+% \cite{Kushner1964},
+% \begin{equation}
+%   \label{eq:probabilityimprovement}
+%   \mathrm{PI}(x) = P(f(x) \geq f(x^+)) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+)}{\sigma(x)} \right)
+% \end{equation}
+% This algorithm clearly attempts to \emph{exploit} the parameter space,
+% that is, it samples areas only where the greatest improvement over the
+% current observation are possible. In order to force \emph{exploration} of the parameter space---sampling areas of high uncertainity---a trade-off parameter, $\xi\geq 0$ may be instroduced, such that
+% \begin{equation}
+%   \label{eq:probabilityimprovementexplore}
+%     \mathrm{PI}(x) = P(f(x) \geq f(x^+) + \xi) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+) - \xi}{\sigma(x)} \right)
+% \end{equation}
+% \cite{Kushner1964} suggests that this should be varied according to
+% some pre-defined schedule, tending to 0 as the algorithm runs.
 
-% \begin{figure}
-%   \centering
-% \hspace*{-3.2in}
-%   \input{figures/concrete.pgf}
-%   \caption{The compressive strength of concrete.}
-%   \label{fig:concrete}
-% \end{figure}
+% \subsection{Expected Improvement}
+% \label{sec:expimprove}
 
-% As a test of the Gaussian Process method as a surrogate for an high
-% cost-per-evaluation function we selected a data set of tests of the
-% compressive strength of concrete, which was originally used in a
-% neural network analysis\cite{Yeh19981797}.
+% In order to address the arbitrary nature of the choice of $\xi$ in the
+% Probability of Improvement function we may consider not only the
+% probability that a point provides an improvement, but also the
+% magnitude of that improvement. In this situation we wish to minimise
+% the expected deviation from the true $f(x^+)$ when choosing a trial
+% point, so
 
-% An exponential-squared covariance function was used to model the data,
-% which consisted of measurements of the failure strength of various
-% forms of concrete under compression. Varying quantities of seven
-% components were tested, and an eigth experimental variable was
-% introduced by testing identically made mixtures at different
-% ages. These variables represent the quantities of
-% \marginpar{
-% \vspace{-2in}
-% \begin{enumerate}
-% \item Cement [$\si{\kilogram / \meter^3}$]
-% \item Fly ash  [$\si{\kilogram / \meter^3}$]
-% \item Blast-furnace slag  [$\si{\kilogram / \meter^3}$]
-% \item Water  [$\si{\kilogram / \meter^3}$]
-% \item Superplasticiser  [$\si{\kilogram / \meter^3}$]
-% \item Coarse Aggregate  [$\si{\kilogram / \meter^3}$]
-% \item Fine Aggregate  [$\si{\kilogram / \meter^3}$]
-% \item Age of Testing [Days]
-% \end{enumerate}}
 
-\subsection{A single BBH waveform}
-\label{sec:singlewaveform}
+% \subsection{Entropy Search}
+% \label{sec:entropysearch}
 
-A trivial task is to reproduce a waveform from a Gaussian Process
-which is trained on a single waveform which is generated at one set of
-parameters.
-%\marginpar{
-  \begin{table}
-    \centering
-    \begin{tabular}{rc}
-      Mass (Primary) & 5 \solMass \\
-      Mass (Secondary) & 6 \solMass \\
-      Spin (Primary) & $(0,0,0)$ \\
-      Spin (Secondary) & $(0,0,0)$ \\
-      Distance & $\SI{400}{\mega\parsec}$ \\
-      Time range & $(\SI{-0.1}{\second}, \SI{0.005}{\second})$
-    \end{tabular}
-    \caption{Parameters used to generate a single test waveform from \imrphenomp.}
-    \label{tab:imrphenomparamssingle}
-  \end{table}
-%}
-  As a first test we generated a BBH waveform using the \imrphenomp
-  model, as implemented in the \lalsim package. The model was
-  evaluated at the parameters listed in table
-  \ref{tab:imrphenomparamssingle}, and 300 equally-spaced points from
-  the evaluation were used to train a Gaussian process, using an
-  exponential squared covariance function with a constant
-  pre-multiplier. The model was trained using the BFGS algorithm (a
-  Newtonian-like hill-climbing optimiser), which was provided with
-  initial values determined according to Jaakkola's
-  heuristic\footnote{Jaakkola's heuristic is a heuristic for global
-    optimisation of real functions; in this case it suggests that we
-    calculate the distances between all input pairs along a given
-    dimension of the data set, and take the inverse of the median of
-    these distances to be the initial value for each scale
-    factor.}. The samples were around $\SI{0.003}{\second}$ separated
-  along the time dimension, and so the initial value of
-  $\lambda_{\text{time}} = 300$ was selected. An initial value for the
-  constant term in the kernel was slected from the data's
-  variance. Following optimisation the values 
-  \[ \lambda_{\text{amp}} = 26.8, \qquad \lambda_{\text{time}} =
-    111.6 \]
-  were found to minimise the log-likelihood of the model.  The trained
-  model was tested against a set of data generated by \imrphenomp at
-  the same parameter values, but with 1000 samples in time rather than
-  300. In order to test the global accuracy of the model the
-  correlation and RMSE were calculated, with
-  \[ \rho^2 = 0.90, \qquad \rmse = 8.22\e{-23} \]
+% \subsection{Upper confidence bound}
+% \label{sec:upperconfbound}
 
-  \begin{figure}[t]
-    \centering
-    \input{figures/simplewave1.pgf}
-    \caption{The Gaussian Process reconstruction of an \imrphenomp waveform. The upper panel presents the reconstruction, while the lower panel plots the training data. The shaded regions represent the 1-sigma (dark) and 2-sigma (light) confidence regions around the mean prediction (heavy line).}
-    \label{fig:simplewaveform1}
-  \end{figure}
+% \subsection{Waveform Match}
+% \label{sec:waveformmatch}
 
-\subsection{A Waveform Catalogue}
-\label{sec:massvariationwaveforms}
+% The match between two waveforms, $A$, and $B$, is defined as
+% \begin{equation}
+%   \label{eq:waveformmatch}
+%   \mathcal{N} = \frac{
+%     \max\limits_{t_0, \phi_0} \left< A , B \right>
+%     }
+%     {
+%       \left< A, A\right>^{\half}
+%       \left< B, B\right>^{\half}
+%     }
+%   \end{equation} for the initial time and phase respectively $t_0$ and $\phi_0$.
+
+%   Suppose we wish to compare the surrogate model to an alternative
+%   approximant, for example, \texttt{IMRPhenomP}, and identifying the
+%   location in parameter space where the two have the greatest
+%   disagreement. This can be achieved by finding the location in the
+%   parameter space of the surrogate which has the minimum match to the
+%   alternative model.
+
+% \section{Examples}
+% \label{sec:examplesgaussianproc}
+
+% % \subsection{Concrete}
+% % \label{sec:concrete}
+
+% % \begin{figure}
+% %   \centering
+% % \hspace*{-3.2in}
+% %   \input{figures/concrete.pgf}
+% %   \caption{The compressive strength of concrete.}
+% %   \label{fig:concrete}
+% % \end{figure}
+
+% % As a test of the Gaussian Process method as a surrogate for an high
+% % cost-per-evaluation function we selected a data set of tests of the
+% % compressive strength of concrete, which was originally used in a
+% % neural network analysis\cite{Yeh19981797}.
+
+% % An exponential-squared covariance function was used to model the data,
+% % which consisted of measurements of the failure strength of various
+% % forms of concrete under compression. Varying quantities of seven
+% % components were tested, and an eigth experimental variable was
+% % introduced by testing identically made mixtures at different
+% % ages. These variables represent the quantities of
+% % \marginpar{
+% % \vspace{-2in}
+% % \begin{enumerate}
+% % \item Cement [$\si{\kilogram / \meter^3}$]
+% % \item Fly ash  [$\si{\kilogram / \meter^3}$]
+% % \item Blast-furnace slag  [$\si{\kilogram / \meter^3}$]
+% % \item Water  [$\si{\kilogram / \meter^3}$]
+% % \item Superplasticiser  [$\si{\kilogram / \meter^3}$]
+% % \item Coarse Aggregate  [$\si{\kilogram / \meter^3}$]
+% % \item Fine Aggregate  [$\si{\kilogram / \meter^3}$]
+% % \item Age of Testing [Days]
+% % \end{enumerate}}
+
+% \subsection{A single BBH waveform}
+% \label{sec:singlewaveform}
+
+% A trivial task is to reproduce a waveform from a Gaussian Process
+% which is trained on a single waveform which is generated at one set of
+% parameters.
+% %\marginpar{
+%   \begin{table}
+%     \centering
+%     \begin{tabular}{rc}
+%       Mass (Primary) & 5 \solMass \\
+%       Mass (Secondary) & 6 \solMass \\
+%       Spin (Primary) & $(0,0,0)$ \\
+%       Spin (Secondary) & $(0,0,0)$ \\
+%       Distance & $\SI{400}{\mega\parsec}$ \\
+%       Time range & $(\SI{-0.1}{\second}, \SI{0.005}{\second})$
+%     \end{tabular}
+%     \caption{Parameters used to generate a single test waveform from \imrphenomp.}
+%     \label{tab:imrphenomparamssingle}
+%   \end{table}
+% %}
+%   As a first test we generated a BBH waveform using the \imrphenomp
+%   model, as implemented in the \lalsim package. The model was
+%   evaluated at the parameters listed in table
+%   \ref{tab:imrphenomparamssingle}, and 300 equally-spaced points from
+%   the evaluation were used to train a Gaussian process, using an
+%   exponential squared covariance function with a constant
+%   pre-multiplier. The model was trained using the BFGS algorithm (a
+%   Newtonian-like hill-climbing optimiser), which was provided with
+%   initial values determined according to Jaakkola's
+%   heuristic\footnote{Jaakkola's heuristic is a heuristic for global
+%     optimisation of real functions; in this case it suggests that we
+%     calculate the distances between all input pairs along a given
+%     dimension of the data set, and take the inverse of the median of
+%     these distances to be the initial value for each scale
+%     factor.}. The samples were around $\SI{0.003}{\second}$ separated
+%   along the time dimension, and so the initial value of
+%   $\lambda_{\text{time}} = 300$ was selected. An initial value for the
+%   constant term in the kernel was slected from the data's
+%   variance. Following optimisation the values 
+%   \[ \lambda_{\text{amp}} = 26.8, \qquad \lambda_{\text{time}} =
+%     111.6 \]
+%   were found to minimise the log-likelihood of the model.  The trained
+%   model was tested against a set of data generated by \imrphenomp at
+%   the same parameter values, but with 1000 samples in time rather than
+%   300. In order to test the global accuracy of the model the
+%   correlation and RMSE were calculated, with
+%   \[ \rho^2 = 0.90, \qquad \rmse = 8.22\e{-23} \]
+
+%   \begin{figure}[t]
+%     \centering
+%     \input{figures/simplewave1.pgf}
+%     \caption{The Gaussian Process reconstruction of an \imrphenomp waveform. The upper panel presents the reconstruction, while the lower panel plots the training data. The shaded regions represent the 1-sigma (dark) and 2-sigma (light) confidence regions around the mean prediction (heavy line).}
+%     \label{fig:simplewaveform1}
+%   \end{figure}
+
+% \subsection{A Waveform Catalogue}
+% \label{sec:massvariationwaveforms}
 
 
 %%% Local Variables: 

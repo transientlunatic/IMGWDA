@@ -34,10 +34,9 @@
 %\maketitle
 
 \begin{titlepage}
-  \newgeometry{margin=1in}
+\newgeometry{margin=2in}
 \thispagestyle{empty}
-\author{Somebody Important}
-\title{Something just as important}
+
 \maketitle
 \restoregeometry
 \end{titlepage}
@@ -62,7 +61,7 @@
 %\section{Gravitational waves}
 %\label{sec:gravwaves}
 \input{tex/0-gravitationalwaves/0-1-introduction}
-
+\chapterprecis{}
 
 % \section{Gravitational waves and general relativity}
 % \label{sec:grav-waves-gener}
@@ -76,10 +75,7 @@
  \chapter{Detectors}
  \label{cha:detectors}
 
- \chapterprecis{Gravitational wave detectors are one of the great
-   achievements of Twentieth and early Twenty-First Century
-   science. They are the most sensitive measuring devices ever
-   constructed, but they face numerous technical challenges.}
+ \chapterprecis{}
 
 %\section{Gravitational wave detectors}
 %\label{sec:detectors}
@@ -92,9 +88,9 @@
 % \section{Resonant bar detectors}
 % \label{sec:reson-bar-detect}
 
- \section{Ground-based interferometers}
- \label{sec:ground-based-interf}
- \input{tex/1-detectors/ground-based}
+ % \section{Ground-based interferometers}
+ % \label{sec:ground-based-interf}
+ % \input{tex/1-detectors/ground-based}
 
 
 % \subsection{Space-based interferometers}
@@ -108,21 +104,22 @@
 
 
 
- \section{Noise sources}
- \label{sec:an-overview-noise}
- \input{tex/1-detectors/noise}
+ % \section{Noise sources}
+ % \label{sec:an-overview-noise}
+ % \input{tex/1-detectors/noise}
 
 
  \chapter{Sources of Gravitational Waves}
  \label{cha:sourc-grav-waves}
-
- \chapterprecis{Gravitational waves are produced by any situation
-   containing accelerating masses which are arranged in an asymmetrical
-   manner, for example binary star systems, or non-spherical pulsars. A
-   wide range of astrophysical sources are capable of producing
-   gravitational waves, although only a handful of these are likely to
-   be luminous enough to detect, or produce radiation over a frequency
-   band which can be detected by current-generation detectors.}
+\chapterprecis{}
+ 
+ % \chapterprecis{Gravitational waves are produced by any situation
+ %   containing accelerating masses which are arranged in an asymmetrical
+ %   manner, for example binary star systems, or non-spherical pulsars. A
+ %   wide range of astrophysical sources are capable of producing
+ %   gravitational waves, although only a handful of these are likely to
+ %   be luminous enough to detect, or produce radiation over a frequency
+ %   band which can be detected by current-generation detectors.}
 
 %\section{Sources of gravitational radiation}
 %\label{sec:sources}
@@ -174,10 +171,10 @@
 
 \chapter{Gaussian processes}
 \label{cha:gaussian-process}
-
-\chapterprecis{ Gaussian processes are a powerful machine learning
-  tool capable of performing multi-dimensional regression in a
-  generalised Bayesian framework, which can be used as priors for further analysis operations.}
+\chapterprecis{}
+% \chapterprecis{ Gaussian processes are a powerful machine learning
+%   tool capable of performing multi-dimensional regression in a
+%   generalised Bayesian framework, which can be used as priors for further analysis operations.}
 
 \input{tex/3-analysis/gaussian-processes}
 
@@ -213,11 +210,18 @@ necessary data for testing and evaluating transient event searches
 producing ``hardware injections'' which are used to test the effect of
 various detector calibrations on these searches.
 
-Additionally, in the last year I have presented at one conference, and
-been a member of the local organising committee for an LSC
-collaboration meeting which was held at the University of Glasgow in
-September 2016. Since March 2016 I have been on long term attachment
-to the LIGO site in Livingston, Louisiana.
+Additionally, in the last year I have presented at two conferences
+(BritGrav and the National Astronomy Meeting), and been a member of
+the local organising committee for an LSC collaboration meeting which
+was held at the University of Glasgow in September 2016. I have
+written two popular science articles which have been published, one of
+which was awarded the College of Science and Engineering Science
+Writing Prize, and been involved with the Education and Public
+Outreach group within the LIGO Scientific Collaboration, contributing
+materials for events surrounding the announcement of GW151226 in June
+2016, and assisting with the running of the collaboration's Twitter
+account. Since March 2016 I have been on long term attachment to the
+LIGO site in Livingston, Louisiana.
 
 \section{Gaussian processes for gravitational wave detection}
 \label{sec:gauss-proc-grav}
@@ -273,6 +277,102 @@ means to indetify regions of parameter space where predictions are
 likely to be particuarly poor, and is thus a means of identifying the
 optimal regions of parameter space to focus future simulation efforts
 on.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{figures/spacings.pdf}
+    \caption{A corner plot of a `hyperslice' the parameter space of the numerical relativity waveforms centred on $(t=0,  q=1.5,    a_1=0.8,    a_2=0.8,   \theta_{1L}=60. ,  \phi_1 = 180. ,   \theta_{12} = 30. ,   \theta_{SL} = 75. ,   \theta_{JL} = 22. )$, showing the variation in the magnitude of the Gaussian process uncertainty over the parameter space in the colorplot, and the optimal spacing as implied by the width of the covariance function. The plots above each column are designed to provide a guide to the density of samples throughout the parameter space in that dimension, while the red point represents the point of intersection of the various planes. The Gaussian process used to produce these uncertainty estimates was trained off entire waveforms, including time domain information, but represents a series of slices which intersect at $(t=0,  q=1.5,    a_1=0.8,    a_2=0.8,   \theta_{1L}=60. ,  \phi_1 = 180. ,   \theta_{12} = 30. ,   \theta_{SL} = 75. ,   \theta_{JL} = 22. )$}
+  \label{fig:optimal-spacings}
+\end{figure}
+
+The magnitude of the Gaussian process error provides a means of
+detecting regions of the parameter-space which are poorly understood,
+and regions of high uncertainty should then be targeted for future
+simulations in order to improve the validity of the surrogate function
+across the entire parameter space. The values of $\lambda_{ab}$ define
+a metric on the parameter space, and thus a suggested spacing for
+these new waveforms, which should be sampled at intervals of
+$\log(\lambda_{ab})$, for $\lambda_{ab} \in \Lambda$, in regions with
+high uncertainty or regions outwith the parameter-space region defined
+by the original training data. Figure \ref{fig:optimal-spacings} shows an
+9-dimensional slice in the parameter space of the BBH waveforms from a
+Gaussian process trained off ten waveforms. We can see that even with
+a small number of waveforms it is possible to provide some estimate of
+the correct grid sampling scale-length required to complete the
+model\footnote{For simplicity a hypercube lattice is illustrated in
+  figure \ref{fig:optimal-spacings}, however, more efficient lattice patterns
+  exist to which the scale-length can be applied.}.
+
+In order to demonstrate that the parameter spacing is reasonably
+independent of the number of waveforms used in training the GP the
+model was generated with a differing number of training waveforms, and
+trained. The scale length for each parameter is found to be
+consistently similar, as can be seen in figure \ref{fig:convergence}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/convergence.pdf}
+  \caption{The difference in the scale-lengths of the trained Gaussian process given 10, 29, 72, 164, and 324 waveforms, compared to the GP trained from 10 waveforms.}
+  \label{fig:convergence}
+\end{figure}
+
+Having established the optimal spacing of future waveforms we must
+then turn to the question of the optimal order in which they should be
+created. Sampling the entire parameter space at the suggested density
+would require in excess of 250,000 waveforms, which is an unachievably
+large quantity of data.
+
+In other fields which exploit Gaussian processes the choice of future
+sample locations can be made using techniques from Bayesian
+optimisation. In these fields the Gaussian process is often emulating
+the behaviour of a complicated function surface, and the desired
+outcome is finding an optimum on this surface, for example, if a GP is
+used to model the distribution of pollutants in a lake, with the aim
+of identifying the source of the pollution we may want to find the
+region with the maximum amount of pollutant. 
+
+In the case of gravitational waveform modelling we are not terribly
+interested in the location of the function's maximum, but instead have
+the objective of achieving the greatest quantity of knowledge possible
+in the shortest possible period of time (or equivalently, with the
+smallest number of function evaluations). In this case the choice of
+future samples might be made to minimise the mean-squared error of the
+model.
+
+Using methods based-on the use of testing data requires some of the
+available training data to be set-aside, and not used to train the
+Gaussian process. Given the small number of samples available, and the
+large volume of the parameter space this is likely to have a
+considerable impact on the predictive capability of the model. Other
+options are available, such as comparing the output to an analytical
+model, for example \texttt{IMRPhenomP}, but these approaches suffer
+from the incomplete understanding of the uncertainties in these
+models.
+
+One possible approach is to simply use the metric defined on the
+parameter space by the Gaussian process to determine the location
+which is geometrically furthest from any pre-existing training point
+in the parameter space. A search of this type can be done efficiently
+using voronoi tesselations to rapidly indentify points in the
+parameter space which are most distant from any other point. This
+approach is clearly \emph{exploration}-driven, where the parameter
+space is sampled as widely as possible to get an overview of the
+entire underlying function.
+
+An alternative approach is to again use the grid spacing to identify
+the closest location to the pre-existing samples which has an
+uncertainty greater than some pre-defined threshold in the Gaussian
+process model. This approach would fill-in ``holes'' in the parameter
+space, working outwards from the existing samples.
+
+A third approach is to allow this planning stage to be informed by the
+population distribution of observed signals, and to attempt to improve
+the model in order to produce the highest quality waveforms in the
+regions of parameter space which are known to represent actualy BBH
+systems, that is, which have parameters comparable to those seen in
+previous observations.
+
+
 
 In the last year I've developed additionally developed a working
 protoype of multiple-input, multiple-output Gaussian process
@@ -389,17 +489,71 @@ knowledge of the rate of binary neutron star (BNS) mergers as
   \label{eq:grb-rate}
   \mathcal{R}_{\mathrm{grb}} = \epsilon \mathcal{R}_{\mathrm{bns}} \left\langle 1 - \cos\theta \right\rangle,
 \end{equation}
+with $\mathcal{R}_{\mathrm{grb}}$ the observed rate of gamma ray
+bursts, $\mathcal{R}_{\mathrm{bns}}$ the observed rate of binary
+neutron star coalescences, $\epsilon$ the efficiency at which a BNS
+produces a GRB, and $\theta$ the beaming angle. Since two of these
+quantities are observable, we can infer $\theta$ by placing a prior on
+$\epsilon$, producing a model as depicted in figure
+\ref{fig:grb-graph-model}, where $\mathcal{D}(h_1, h_2)$ represents
+some prior distribution with two hyperparameters.
+
+\begin{figure}
+  \centering
+  \includegraphics{figures/grbbeamingpymc.pdf}
+  \caption{Distributions in the modelling of the GRB beaming angle
+    given two observing scenarios; the first aLIGO observing run (O1)
+    in which no BNS events were seen, and a speculative, longer second
+    observing run (O2) in which one event is seen. Each column
+    represents evaluation of the model with a different prior, which
+    is specified at the top of the column. Between the top two rows an
+    additional conversion is made between the observed signal rate and
+    the actual BNS rate.}
+  \label{fig:grb-distributions}
+\end{figure}
+
+The distribution on $\theta$ can then be inferred using an MCMC
+process to sample the posterior. Results for an evaluation of such a
+model are shown in figure \ref{fig:grb-distributions}.
+
 
 %
 % A little more detail here would not go amiss
 % 
 
+\section{Filter Modeling for glitch tracing in Advanced LIGO}
+\label{sec:glitchtracing}
+
+During the course of my long-term attachment at the LIGO site at
+Livingston, Louisiana I have been working on developing a system for
+modelling the digital signal processing system employed during data
+acquisition and detector control at the site. When one of the filters
+in this system becomes unstable it can produce a ``glitch'', a
+transient noise event in the data from a sensor, or, in the worst
+cases, in the DARM read-out channel, which is used to calculate the
+gravitational wave strain observed by the detector.
+
+The majority of the digital signal processing system is designed using
+Simulink, and the entire system consists a few hundred models which
+work in parallel, and which combine multiple input signals. As a
+result, tracing the source of a signal which produces a glitch is
+non-trivial, and the structure of the signal processing chain acts to
+obfuscate the origin of glitch-producing faults.
+
+The signal processing system can be modelled as a directed graph,
+allowing graph theoretic algorithms to be used to traverse the system,
+and trace the processing of a signal across numerous Simulink models
+in order to identify the cause of filter instabilities. My work at
+LIGO thus far has mostly revolved around development of a Python
+codebase which is capable of parsing Simulink models and filter
+definition files in order to run such an analysis.
 
 
-
+\appendices
 
 \chapter{Outline of future work}
 \label{part:future}
+%\chapterprecis{}
 \input{tex/5-future}
 \backmatter
 
