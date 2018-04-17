@@ -1,8 +1,8 @@
 DESCRIPTION = "This is a Makefile for my Thesis"
 TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
-TEXMK = latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" #-use-make
+TEXMK = latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode"  #-use-make
 BIB = bibtex
-PRE =  $(TEX) -ini -job-name="preamble" "&pdflatex preamble.tex\dump"
+xPRE =  $(TEX) -ini -job-name="preamble" "&pdflatex preamble.tex\dump"
 
 BDIR = _build
 
@@ -28,13 +28,12 @@ html : $(HTML_FILES)
 
 pdf :	document.pdf ## Produce a PDF output
 
-document.pdf : document.tex glossary/glossaries.tex $(TEX_FILES)
-	$(TEXMK) $<
+document.pdf : document.tex  chapters/glossary/glossary.tex $(TEX_FILES)
+	$(TEXMK) $< 
 
-document.gls : document.tex
-	makeglossaries $<
 
-glossary/glossaries.tex : glossary/glossary.int_tex scripts/build/glossary.py
+
+chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex scripts/build/glossary.py
 	python scripts/build/glossary.py $< > $@
 
 %.int_tex : %.org 
@@ -62,8 +61,9 @@ glossary : tex/glossaries.tex ## Convert the glossary into a format acceptable t
 
 clean:	## Remove all of the temporary files which the various compilation steps produce
 	latexmk -CA
-	rm $(TEX_FILES)
-	rm $(BDIR)/tex/glossaries.tex
-	rm -rf $(BDIR)
-	rm -rf *.glo *.glg *.ist *.acn *.xdy
+	#rm $(TEX_FILES)
+	#rm $(BDIR)/tex/glossaries.tex
+	#rm -rf $(BDIR)
+	rm -rf *.glo *.glg *.ist *.acn *.xdy *.acr *.alg
 	rm -rf *.bbl *.gls *.glsdefs
+	rm -rf *.mtc*

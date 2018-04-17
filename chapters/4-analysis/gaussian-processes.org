@@ -1,0 +1,522 @@
+
+* Linear regression
+
+To motivate the development of Gaussian processes we first present the
+problem of linear regression, and how this task may be performed in a
+Bayesian framework.
+
+A very simple linear model has the form
+
+$$\label{eq:simple-linear-model}
+  y_i = m x_i + c$$
+
+for observations, $y_i$, which are made at a parameter $x_i$, and
+$m, c \in \mathbb{R}$ are parameters of our model. This model attempts
+to describe the observations by fitting a polynomial of order one to the
+data (a "straight line"), however, we may reasonably want to generalise
+our model to allow higher orders of polynomial, and doing so achieve a
+model of the form
+
+$$\label{eq:less-simple-linear-model}
+  y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \vdot \vec{w}$$
+
+where the various parameters are now folded into a vector, $\vec{w}$, of
+weights. A further generalisation may be made, to allow for more
+complicated forms of model, by substituting the vector $\vec{x}$ for a
+matrix $\mat{X}$, the /design matrix/, which can take an arbitrary form,
+so our model becomes
+
+$$\label{eq:general-noiseless-linear}
+  \vec{y} = \mat{X} \vec{w}$$
+
+Finally, we can introduce a term to account for any uncertainty in the
+measurement of the observations, $\vec{\epsilon}$, giving a complete
+linear model
+
+$$\label{eq:linear-model}
+  \vec{y} = \mat{X} \vec{w} + \vec{\epsilon}$$
+
+The quantities $\vec{y}$, $\mat{X}$, and $\vec{\epsilon}$ are well
+understood, but to have a complete and useful model we must find the
+values of the model parameters which best explain the data; this problem
+is regression. In a Bayesian framework we must assign a prior to each
+parameter, which represents our pre-existing knowledge of the situation.
+A sensible choice might be a normal, or /Gaussian/, distribution, with a
+mean of zero, and a variance $\sigma_i^2$:
+$$w_i \sim \mathcal{G}(0, \sigma_i^2).$$
+
+* From Bayesian linear regression to Gaussian Process
+
+This choice of a Gaussian prior also implies that $y_i$ will have a
+Gaussian distribution, and we can take this to have the form
+$$\vec{y} \sim \mathcal{G}(\vec{0}, \mat{C})$$ where $\mat{C}$ is the
+/gram matrix/, which describes the covariance of the input data, as
+defined by some /covariance function/, or /kernel/, $K$,
+
+$$\begin{aligned}
+  C_{ij} &= K(\vec{x_i}, \vec{x_j}) = \ex(y_i y_j) = \ex(\vec{x}_i \vdot \vec{w} \vec{w} \vdot \vec{x}_j) + \ex(\epsilon_i \epsilon_j) \\
+&= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2\end{aligned}$$
+
+for $\ex(x)$ the expectation of a variable $x$. As a result of this
+relationship between the weight vector, $\vec{w}$ and the gram matrix it
+is possible to perform the regression by means of a covariance function,
+rather than inferring the values $w_i$, and this is the justification by
+which Gaussian Process Regression (GPR) is often deemed a
+"non-parameteric" regression model [1].
+
+* Gaussian Processes
+\sidebar{
+  \includegraphics{figures/gp-training-data.pdf}
+  \captionof{figure}{[Step 1] An example of raw training data which is
+    suitable for training a Gaussian process. In this example the
+    input data ($x$-axis) are 1-dimensional, although GPs are also capable of
+    handling multi-dimensional data.\label{fig:gp-training-data}}
+  \includegraphics{figures/gp-prior.pdf}
+  \captionof{figure}{[Step 2] We choose a covariance function for the
+    Gaussian process, in this case an exponential-squared covariance
+    function. The Gaussian process containing no data and this
+    covariance matrix forms our prior probability distribution. Here
+    50 draws from the prior distribution are
+    plotted. \label{fig:gp-prior}}
+  \includegraphics{figures/gp-posterior.pdf}
+  \captionof{figure}{[Step 3] The trained Gaussian process can be
+    sampled multiple times to produce multiple different potential
+    fitting functions. Here 50 draws from the Gaussian process posterior are
+    displayed. \label{fig:gp-posterior}  }
+  \includegraphics{figures/gp-posterior-meancovar.pdf}
+  \captionof{figure}{[Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals. \label{fig-gp-posterior-best}}
+}
+Gaussian processes are Bayesian models which associate every point an
+some /input space/ with a probability distribution---specifically a
+normal distribution, and a collection of input points will form a
+multi-variate normal distribution. Gaussian processes are a
+non-parametric supervised machine learning
+technique\cite{barberBRML2012,mackay2003information}.
+
+To make a prediction, we need to first have a set of prior observations
+and information about the parameters of the physical system which
+produced those observations. These combined form the /training data/ for
+the predictor.
+
+A completely untrained Gaussian process forms the job of a prior
+probability distribution in a Bayesian analysis; where it is more
+conventional to consider a prior over a set of, for example, real
+values, such as a normal distribution, the Gaussian process forms a
+prior over the functions which might form the regression fit to any
+observed data. While this prior is intially untrained it still contains
+information about our preconceptions of the data, for example, whether
+or not we expect the fit to be analytic, and the average of the
+functions. By providing training data we can update the Gaussian
+process, in the same way that the posterior distribution is updated by
+the addition of new data in a standard Bayesian context, and a posterior
+on the set of all possible functions to fit the data is produced. We can
+take the mean of this posterior in the place of the "best fit line"
+which other techniques produce, and then use the variance to produce an
+estimate of the uncertainty of the prediction.
+
+The possibility of using Gaussian Processes in the analysis of data from
+gravitational wave detectors has been proposed by Moore and
+Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} who propose its use
+to calculate the uncertainties in current generation post-Newtonian
+approximants to numerical relativity simulations, and to incorporate
+this into the current matched-filtering analyses which are conducted on
+triggers from gravitational wave detectors.
+
+Gaussian processes trained with $N$ data require the ability to both
+store and invert an $N\times N$ matrix of covariances between
+observations; this can be a considerable computational challenge, and
+there are a number of approaches to get around this problem, including
+/sparse Gaussian processes/, where a limit on the parameter-space
+distance between training points is set, and the covariance of points
+outside this radius are ignored\cite{EPFL-CONF-161319}, and heirarchical
+methods\cite{hodlr}.
+
+Gaussian processes can be extended from the case of a single-dimensional
+input predicting a single-dimensional output to the ability to predict a
+multi-dimensional output from a multi-dimensional
+input\cite{Alvarez2011,Alvarez2011a,Bonilla2007}.
+
+* Covariance Functions
+
+The covariance function defines the similarity of a pair of data points,
+according to some relationship with suitable properties. The similarity
+of input data is assumed to be related to the similarity of the output,
+and therefore the more similar two inputs are the more likely their
+outputs are to be similar.
+
+As such, the form of the covariance function represents prior knowledge
+about the data, and can encode understanding of effects such as
+periodicity within the data.
+
+Stationary Covariance Function. A stationary covariance function is a
+function $f(\vec{x} - \vec{x}')$, and which is thus invariant to
+translations in the input space.
+
+Isotropic Covariance Function. If a covariance function is a function of
+the form $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant
+under all rigid motions.
+\sidebar{
+  \includegraphics{figures/gp-expsqcov.pdf}
+  \captionof{figure}{The exponential squared covariance function.\label{fig:gp-expsq-covar}}
+}
+
+One of the most frequently encountered covariance functions in the
+literature is the exponential squared covariance functions
+\cite{rasmussen2006gaussian}
+
+$$\label{eq:squaredexponentialkernel}
+  k_{\mathrm{SE}}(r) = \exp( - \frac{r^2}{2 l^2} )$$
+
+for $r$ the Euclidean distance of a datum from the centre of the
+parameter space, and $l$ is a scale factor associated with the axis
+along which the data are defined.
+
+** Kernel algebra
+
+It is possible to define new kernels from the standard set through a
+series of defined operations.
+
+Consider two covariance functions, $f_1$ and $f_2$, then
+
++ Kernel Addition::$f = f_1 + f_2$ is a covariance function.
++ Kernel Product::$f = f_1 f_2$ is a covariance function.
+
+We can use these two operations to form an arbitrarily complicated
+kernel structure, and to allow inference to be conducted over multiple
+dimensions.
+
+** A menagerie of kernels
+Different kernels can be used to model different aspects of the
+variation within the input data. For example, the training data may be
+known to be periodic in one dimension, or to have white noise
+properties in another. Here I adopt the convention from
+cite:duvenaud-thesis-2014, and do not specify the parameters of each
+kernel for compactness.
+
+| Kernel              | Symbol | Form | Properties                         |
+|---------------------+--------+------+------------------------------------|
+| Squared-exponential | $SE$   |      | Smooth local variation             |
+| Periodic            | $Per$  |      | Smooth global periodic variation   |
+| Linear              | $Lin$  |      | Global continuous linear variation |
+
+For example, we may be able to model a yearly growing trend which
+contains a seasonal variation with a combination of a linear and a
+periodic kernel, $Lin \times SE$.
+
+* Training the model
+
+When defining the covariance function for the it may be desirable to
+specify a number of free hyperparameters, $\theta$, which allow the
+properties of the GP to be altered, effectively allowing Bayesian model
+comparison to be carried-out to select the Gaussian Process which
+optimally describes the data. The log-probability that a given set of
+strain values were drawn from a Gaussian process with zero mean and a
+covariance matrix $K_{ij} = k(x, x')$ is
+
+$$\label{eq:logevidencegp}
+  \log(p(\vec{f}| X)) = - \frac{1}{2} K^{-1} \vec{f} - \frac{1}{2} \log |K| - \frac{n}{2} \log 2\pi .$$
+
+This quantity is normally denoted the /log-evidence/ or the
+/log-hyperlikelihood/. The model which best describes the training data
+may then be found by maximising the log-hyperlikelihood with respect to
+the hyperparameters, $\theta$ of the covariance function.
+
+This optimisation may be conducted using either a hill-climbing based
+optimisation algorithm, or in a hierarchical Bayesian framework, whereby
+priors are assigned to the value of each hyperparameter, and the optimal
+hyperparameters are found using a Monte Carlo algorithm.
+
+* Making predictions
+
+In order to make a prediction using the Gaussian Process model we
+require a new input at which the prediction should be made, which is
+denoted $x^*$. In order to form the predictive distribution we must then
+calculate the covariance of the new input with the existing training
+data, which we denote $K_{x, x^*}$, and the autocovariance of the input,
+$K_{x^*, x^*}$. We then define a new covariance matrix, $K^{+}$, which
+has the block structure
+
+$$\label{eq:blockK-plus-mat}
+  K^+ =
+  \begin{bmatrix}
+    K_{x,x} & K_{x,x^*} \\ K_{x^*,x} & K_{x^*, x^*}
+  \end{bmatrix}$$
+
+for $K_{x,x}$ the covariance matrix of the training inputs, and
+$K_{x^*,x} = K_{x,x^*}^T$.
+
+The predictive distribution can then be found as
+
+$$\label{eq:predictive-gp}
+  p(y^* | x^*, \mathcal{D}) = \mathcal{N}(y^* | K_{x^*,x} K_{x,x}^{-1} y, K_{x^*, x^*} - K_{x^*,x}K^{-1}_{x,x} K_{x,x^*}).$$
+
+* Computational Complexity
+
+One severe disadvantage of Gaussian Processes as a data analysis tool
+are their high computational complexity. Producing a prediction from a
+GP requires inverting the covariance matrix; matrix inversion is an
+$\mathcal{O}(N^3)$ process in time, and scales with $\mathcal{O}(N^2)$
+in memory use. This effectively limits the number of training points
+which can be input to a GP to fewer than $10^4$. A number of approaches
+have been developed in the literature to address this short-coming by
+utilising computationally tractable approximations to either the matrix
+inversion or the Gaussian process.
+
+These approaches can be grouped into three broad categories; sparse
+Gaussian processes, which use a modified covariance function to force
+the covariance matrix to have a near-diagonal structure; hierarchical
+approaches, which do not modify the covariancec function, but
+approximate the off-diagonal terms' influence on the inversion; and
+local expert approaches, in which the parameter space is divided into
+many sub-spaces, and each sub-space is modelled using an independent
+Gaussian process.
+
+** Sparse Gaussian proceses
+
+** Hierarchical Gaussian processes
+
+** Gaussian process local experts
+
+Local expert approaches attempt to improve the computational performance
+of GPs by diving the parameter space of the model into multiple
+sub-spaces. In a conventional GP the training data,
+$\mathcal{D} = \{ (x^n, y^n), n=1,\dots,N \} = \mathcal{X} \cup
+\mathcal{Y},$ is used in its entirity to train a single GP. If these
+data were instead divided into $M$ subsets, of size $K$, we can train
+$M$ separate GPs, which will each provide an independent prediction for
+any given point in the parameter space. The network structure which is
+established by this subdivision of the parameter space is known as a
+/gating network/.
+
+Early approaches to using local experts in GPs used
+kd-trees\cite{shen2005fast} to sub-divide the parameter space, and then
+modelled each subspace with its own GP. The GPs were trained together,
+with each having the same kernel hyper-parameters. Final predictions
+were then produced as a weighted sum of the individual GPs' predictions.
+While this approach was somewhat effective, it enforced a stationary
+structure on the covariance matrix, and the paper does not treat the
+combination of the prediction uncertainties.
+
+Approaches which follow the work of
+\cite{Jacobs:1991:AML:1351011.1351018} on mixtures of local experts have
+had some more promise, allowing each GP to have its own set of
+hyper-parameters, allowing greater freedom in modelling heteroscedastic
+and non-stationary data.
+
+Deciding on the number of sub-models is a non-trivial problem; one
+approach is to model the parameter space using an infinite mixture model
+(IMM)\cite{rasmussen2002infinite}, in which the gating network is
+effectively a Dirichlet process over the training data. The predictions
+from each sub-model are then summed to find the global prediction. While
+this approach offers greater flexibility for modelling more complex
+underlying functions, it does little to improve the speed of GP
+predictions. Additional IMM approaches are proposed by
+\cite{meeds2006alternative}, and a comparable, variational approach is
+taken by \cite{yuan2009variational}.
+
+All of these approaches have the difficulty of requiring the gating
+network to assign a weight (often called a /responsibility/ to each
+sub-model's prediction when calculating the global prediction, adding an
+additional layer of inference, which normally requires an MCMC sampler
+to perform. /Product-of-experts/ models avoid this complication by
+multiplying the sub-model predictions, but these models have either
+turned out to be excessively confident,\cite{2014arXiv1412.3078N}, or
+excessively conservative\cite{2014arXiv1410.7827C}.
+
+These problems have lead to the development of the Bayesian Committee
+Machine (BCM)\cite{tresp2000bayesian}, which assigns a weight to each
+sub-model's prediction which is equal to the inverse of the prediction's
+covariance, in order that sub-models which better observe the predicted
+region are given a greater weight in the global prediction. This
+approach can suffer as a result of models which contains week experts,
+and so the /robust Bayesian Committee
+Machine/\cite{deisenroth2015distributed} has been proposed to provide a
+more robust framework for Gaussian process regression with many experts.
+This approach also allows for the computation of the model's prediction
+to be highly-parallelised, with the potential for each sub-model being
+evaluated on separate compute nodes, and combined together by another
+process running on another node.
+
+* Assessing the model
+
+In order to assess the global accuracy of our Gaussian Process surrogate
+to the underlying function it is standing-in for we require some means
+of quantitatively measuring deviations between the two. We introduce two
+measures: the root-mean-squared error, and the correlation. Both methods
+require access to test data; some fraction of the available evaluations
+of the function which are not used to train the Gaussian process, but
+which are held aside, and to which predictions from the GP can be
+compared.
+
+Let $x_*$ and $y_*$ be respectively the test inputs and test outputs for
+the Gaussian process, then let $\hat{y}$ be the set of model predictions
+drawn from the Gaussian Process with inputs $\vec{x}_*$.
+
+Mean-squared error
+
+$$\mathrm{RMSE} = \sqrt{
+    \frac{
+      \sum_{i=0}^{n_i} (y_*^{(i)} - \hat{y}^{(i)})^2
+    }
+    { n_t }
+  }$$
+
+for $n_t$ the size of the test set.
+
+Correlation
+
+$$\label{eq:correlation}
+    \rho^2 = \left(
+      \frac{ \cov(y^*, \hat{y})} { \sqrt{ \vary(y) \vary(\hat{y}) } } 
+    \right)^2$$
+
+Forrester\cite{forrester2008engineering} suggests that a
+$\rho^2 \geq 0.8$ provides a surrogate model with good global predictive
+abilities, which corresponds to an RMSE of around $0.1$.
+
+* Extending the Gaussian Process
+
+Standard implementations of Gaussian processes are capable of mapping a
+multi-dimensional input to a single-dimensional output, however there
+are many situations in which the ability to generate a multi-dimensional
+output would be advantageous.
+
+* Bayesian Optimisation
+
+While conventional optimisation methods, such as hill-climbing
+algorithms, rely on the ability to evaluate a function (and often its
+derivative) locally, the existence of a surrogate model allows optima to
+be found using the entire structure of the function as part of a
+Bayesian framework.
+
+** Acquisition Functions
+
+When using our Gaussian Process as a surrogate model to the underlying
+generative model for the waveform we treat the function which generates
+waveforms as unknown, and we place a prior on it, and the training data
+is used to update the prior, providing a posterior. We may use the
+posterior to determine the appropriate location for future evaluations
+from the underlying model; an infill sampling criterion, or acquisition
+function. This approach of using a surrogate model to approximate an
+underlying function which is hard or costly to evaluate is treated in
+the discipline of /Bayesian optimisation/.
+
+Increasing the accuracy of the surrogate to the underlying function can
+be achieved by sampling the function at various points through parameter
+space, however, a strategy for performing this in an optimal manner is
+desirable, given the properties of that function. For example, if one
+were attempting to find which combination of components in concrete
+produced the strongest building product one might require a lengthy
+period to allow it to set, and so minimising the number of sampling
+iterations is desirable. We define an acquisition function, $f$, such
+that for a desirable new sample, $x^+$,
+
+$$\label{eq:acquisition}
+  x^+ = \mathrm{argmax} f(x)$$
+
+** Probability of Improvement
+
+One possible acquisition function considers the probability that a
+sampled point improves the model, suggested first in \cite{Kushner1964},
+
+$$\label{eq:probabilityimprovement}
+  \mathrm{PI}(x) = P(f(x) \geq f(x^+)) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+)}{\sigma(x)} \right)$$
+
+This algorithm clearly attempts to /exploit/ the parameter space, that
+is, it samples areas only where the greatest improvement over the
+current observation are possible. In order to force /exploration/ of the
+parameter space---sampling areas of high uncertainity---a trade-off
+parameter, $\xi\geq 0$ may be instroduced, such that
+
+$$\label{eq:probabilityimprovementexplore}
+    \mathrm{PI}(x) = P(f(x) \geq f(x^+) + \xi) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+) - \xi}{\sigma(x)} \right)$$
+
+\cite{Kushner1964} suggests that this should be varied according to some
+pre-defined schedule, tending to 0 as the algorithm runs.
+
+** Expected Improvement
+
+In order to address the arbitrary nature of the choice of $\xi$ in the
+Probability of Improvement function we may consider not only the
+probability that a point provides an improvement, but also the magnitude
+of that improvement. In this situation we wish to minimise the expected
+deviation from the true $f(x^+)$ when choosing a trial point, so
+
+** Entropy Search
+
+** Upper confidence bound
+
+** Waveform Match
+
+The match between two waveforms, $A$, and $B$, is defined as
+
+$$\label{eq:waveformmatch}
+  \mathcal{N} = \frac{
+    \max\limits_{t_0, \phi_0} \left< A , B \right>
+    }
+    {
+      \left< A, A\right>^{\half}
+      \left< B, B\right>^{\half}
+    }$$
+
+for the initial time and phase respectively $t_0$ and $\phi_0$.
+
+Suppose we wish to compare the surrogate model to an alternative
+approximant, for example, =IMRPhenomP=, and identifying the location in
+parameter space where the two have the greatest disagreement. This can
+be achieved by finding the location in the parameter space of the
+surrogate which has the minimum match to the alternative model.
+
+* Examples
+
+** A single BBH waveform
+
+A trivial task is to reproduce a waveform from a Gaussian Process which
+is trained on a single waveform which is generated at one set of
+parameters.
+
+#+CAPTION: The properties of the training waveform used for the model.
+#+NAME: tab:imrphenomparamssingle
+| Property         | Value                                       |
+|------------------+---------------------------------------------|
+| Mass (Primary)   | 5                                           |
+| Mass (Secondary) | 6                                           |
+| Spin (Primary)   | $(0,0,0)$                                   |
+| Spin (Secondary) | $(0,0,0)$                                   |
+| Distance         | $\SI{400}{\mega\parsec}$                    |
+| Time range       | $(\SI{-0.1}{\second}, \SI{0.005}{\second})$ |
+
+As a first test we generated a BBH waveform using the model, as
+implemented in the package. The model was evaluated at the parameters
+listed in table ref:tab:imrphenomparamssingle, and 300 equally-spaced
+points from the evaluation were used to train a Gaussian process, using
+an exponential squared covariance function with a constant
+pre-multiplier. The model was trained using the BFGS algorithm (a
+Newtonian-like hill-climbing optimiser), which was provided with initial
+values determined according to Jaakkola's heuristic [2]. The samples
+were around $\SI{0.003}{\second}$ separated along the time dimension,
+and so the initial value of $\lambda_{\text{time}} = 300$ was selected.
+An initial value for the constant term in the kernel was slected from
+the data's variance. Following optimisation the values
+$$\lambda_{\text{amp}} = 26.8, \qquad \lambda_{\text{time}} =
+    111.6$$ were found to minimise the log-likelihood of the model. The
+trained model was tested against a set of data generated by at the same
+parameter values, but with 1000 samples in time rather than 300. In
+order to test the global accuracy of the model the correlation and RMSE
+were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
+
+[ref:fig:simplewaveform1]
+
+** A Waveform Catalogue
+
+[1] This claim is rather sketchy, as we'll see when the forms of
+    covariance function are presented, as the parametricity is simply
+    moved from the model itself to the form of the covariance functions,
+    and the values of these /hyperparameters/ must be inferred, or
+    learned, from the data.
+
+[2] Jaakkola's heuristic is a heuristic for global optimisation of real
+    functions; in this case it suggests that we calculate the distances
+    between all input pairs along a given dimension of the data set, and
+    take the inverse of the median of these distances to be the initial
+    value for each scale factor.
