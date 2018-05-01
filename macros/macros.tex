@@ -3,6 +3,11 @@
 %% order to maintain notational consistency throughout the document and
 %% its glossary.
 
+% Margin notes
+
+\newcommand{\marginnote}[1]{
+        \refstepcounter{footnote}
+\footnotemar    k\marginpar{\footnotemark}\footnotetext{#1}}
 
 \providecommand{\msolar}{\mathrm{M{_\odot}}}
 \providecommand{\mat}[1]{\mathsf{#1}}
@@ -26,3 +31,20 @@
 
 % Gravitational wave detectors
 \providecommand{\horizonDistance}{\ensuremath\mathcal{D}_{\mathrm{hor}}}
+
+\providecommand{\GP}{\gls{gp}}
+
+% Pipelines
+\providecommand{\olib}{\texttt{oLIB}}
+\providecommand{\cwb}{\texttt{cWB}}
+\providecommand{\bayeswave}{\texttt{Bayeswave}}
+\providecommand{\minke}{\texttt{Minke}}
+
+% Software
+\providecommand{\lalsuite}{\texttt{LALSuite}}
+\providecommand{\lalsimulation}{\texttt{LALSimulation}}
+\providecommand{\imrp}{\texttt{IMRPhenom\,v2}}
+\providecommand{\seobnr}{\texttt{SEOBNR}}
+\providecommand{\heron}{\texttt{heron}}
+% latin
+\providecommand{\map}{maximum \emph{a posteriori}}
