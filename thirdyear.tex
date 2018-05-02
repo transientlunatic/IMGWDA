@@ -139,15 +139,19 @@ components:
 for $R_{\text{grb}}$ and $R$ respectively the observed GRB and BNS
 rates, $\theta$ the opening angle, and $\epsilon$ the efficiency,
 corresponding to the probability that a BNS event produces beamed
-electromagnetic emission. The inclusion of an efficiency parameter,
-which is latent (observable) requires that we place a prior
-distribution on the parameter, but marginalise it from the final
-posterior probability distribution. We demonstrate the posterior
-distribution which is generated from four different priors on the
-efficiency in the paper---two $\delta$-function priors, to represent
-50\% and 100\% jet production probabilities, a uniform (Haldane's)
-prior, and a $\beta(0.5, 0.5)$ (Jeffrey's) prior. These are reproduced
-here in figure \ref{fig:o1posterior}.
+electromagnetic emission. The quantity inside angle brackets indicates
+the \emph{population mean}\footnote{An important note with regard to
+  this method is that we infer the jet angle posterior for the
+  population of observed events, and not the individual events
+  themselves.} The inclusion of an efficiency parameter, which is
+latent (observable) requires that we place a prior distribution on the
+parameter, but marginalise it from the final posterior probability
+distribution. We demonstrate the posterior distribution which is
+generated from four different priors on the efficiency in the
+paper---two $\delta$-function priors, to represent 50\% and 100\% jet
+production probabilities, a uniform (Haldane's) prior, and a
+$\beta(0.5, 0.5)$ (Jeffrey's) prior. These are reproduced here in
+figure \ref{fig:o1posterior}.
 
 \begin{figure}
   \includegraphics{figures/sgrb/O1_beaming_posteriors_violin.pdf}
@@ -178,7 +182,7 @@ here in figure \ref{fig:o1posterior}.
 
 \begin{figure}[b]
   \checkoddpage
-  \makebox[\textwidth][\ifoddpage l\else l\fi]{
+  \makebox[\textwidth][\ifoddpage l\else r\fi]{
     \includegraphics[width=0.9\textwidth]{figures/sgrb/volume_v_nevents_lower_e1.pdf}
     \includegraphics[width=0.9\textwidth]{figures/sgrb/volume_v_nevents_e1.pdf}
   }
@@ -547,12 +551,14 @@ TODO: Insert the covariance function from the HERON model
     \begin{enumerate}
     
     \item The role of waveforms in GW searches and data analysis
+      
    This section will contain a brief overview of matched filtering in
    order to motivate the need for a waveform interpolant, and will
    discuss the probabilistic aspects of the technique to motivate the
    development of a template bank with a measure of interpolation
    uncertainty.   
  \item Building a Bayesian template bank for binary black hole waveforms
+   
    This section will cover the details of the construction of the
    HERON GPR model trained off waveforms from the Georgia Institute of
    Technology BBH waveform catalogue, its training, and the choice of
@@ -560,11 +566,13 @@ TODO: Insert the covariance function from the HERON model
    also contain details about the training catalogue and testing
    catalogues used to produce the surrogate.
  \item Testing and verifying the model
+   
    This section will detail the process of testing the predictions of
    the model against the test set which was held back from the
    original training process in order to validate the predictions of
    the surrogate.
  \item Planning future waveform simulations
+   
    The probabilistic nature of the Gaussian process surrogate provides
    a measure of the model's uncertainty across its entire parameter
    space. This section will describe a method for utilising this
@@ -573,7 +581,7 @@ TODO: Insert the covariance function from the HERON model
    surrogate model.
  \item Comparing systematics between template banks
    
-   [Potential section]
+   [Possible section]
 
    With a means of producing a probabilistic model conditioned on
    numerical relativity data, we are afforded a means of comparing the
@@ -582,7 +590,8 @@ TODO: Insert the covariance function from the HERON model
    locations in parameter space. This section would discuss an
    information-theoretic comparison of waveform catalogues using such
    a method.
- \item Gaussian processes for binary neutron star waveforms 
+ \item Gaussian processes for binary neutron star waveforms
+   
    Having developed a technique to interpolate BBH waveforms, this
    section will turn to the use of the same technique with an adapted
    covariance structure to the modelling of binary neutron star
@@ -597,25 +606,70 @@ TODO: Insert the covariance function from the HERON model
   This section will cover the use of hierarchical modelling for the
   measurement of astrophysical quantities from gravitational wave and
   electromagnetic observations. The bulk of this section will be based
-  around the work presented in Williams et al. (2018) relating to the
-  inference of GRB jet angles from astrophysical rates.
+  around the work presented in Williams et al. (2018)\footnote{In
+    press.} relating to the inference of GRB jet angles from
+  astrophysical rates. This section will then expand upon the material
+  in the paper, to include discussion of inference in situations where
+  the GRB rate is modelled as a posterior distribution, and to
+  situations where sub-luminous bursts, such as GRB170817A can be
+  accounted for within the framework.
+
+  The method used for EM/GW multimessenger observations can be readily
+  transferred to scenarios where the are either additional messengers
+  (for example high-energy neutrino emission), or where the messengers
+  are a mixture of beamed and non-beamed electromagnetic
+  emission. This chapter will therefore contain discussion about how
+  such a rates-based method can be extended to these regimes within a
+  hierarchical modelling framework.
+
+  Finally, this chapter will include discussion of on-going work and
+  development of a hierarchical Bayesian pipeline designed for
+  coincident detection of multimessenger SGRB events, which will take
+  data from both gamma ray observatories and gravitational wave
+  observatories to perform inference on the underlying physical
+  properties of the SGRB and its progenitor system.
 
   \begin{enumerate}
   \item Hierarchical inference to infer physical properties from astrophysical rates
   \item Inferring SGRB beaming angles from rate information
   \item Hierarchical modelling for general beamed emission scenarios
-  \item Damselfly: A hierarchical model for SGRB astrophysics
+  \item A hierarchical model for SGRB astrophysics
   \end{enumerate}
 \item Back matter
   \begin{enumerate}
   \item Appendix A: Mathematics for Gaussian process regression
+
+    This appendix will be reserved for derivations and mathematical
+    asides which would be disruptive to the flow of the main
+    discussion of Gaussian process regression, but which are a useful
+    aide to understanding this method. Examples of material which may
+    be included here are the algorithm for computing the predictions
+    of a Gaussian process, and detailed insights into the linear
+    algebra required for this process.
+    
   \item Appendix B: The effect of compact objects on pulsar timing arrays
+
+    This appendix will contain discussion of the additional work
+    completed on a project started in 2014 on using pulsar timings to
+    detect compact objects such as black holes and neutron stars, with
+    additional discussion of the effects these objects have on pulsar
+    timing arrays.
+    
   \item Appendix C: Minke, a toolkit for gravitational wave signal-set creation
+
+    This appendix will contain summary documentation\footnote{Full API
+      documentation will be included in a separate publication} of the
+    Minke package, along with usage examples.
+    
   \item Appendix D: Graphical methods for signal processing
-  \item Glossary 
+
+    This appendix will contain an overview of graph-theoretic concepts
+    vital to understanding the discussion of hierarchical Bayesian
+    modelling in the main body of the thesis.
+    
+  \item Glossary
   \item Index
   \item References \& bibliography
-  \item Glossary
   \end{enumerate}
 \end{enumerate}
 
