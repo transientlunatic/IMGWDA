@@ -41,7 +41,8 @@ chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex scripts/buil
 	bash scripts/build/replace-abb.sh $< > $@
 
 %.tex : %.int_tex
-	pandoc -f org -t latex -o $@ $<
+	emacs $< -Q --batch --eval "(require 'org)"  --eval "(org-latex-export-to-latex nil nil nil t)" --kill
+	#pandoc -f org -t latex -o $@ $<
 
 #$(INT_FILES) : %.int_tex : $(ORG_FILES)
 #	@mkdir -p $(@D)

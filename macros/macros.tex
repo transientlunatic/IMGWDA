@@ -7,7 +7,15 @@
 
 \newcommand{\marginnote}[1]{
         \refstepcounter{footnote}
-\footnotemar    k\marginpar{\footnotemark}\footnotetext{#1}}
+\footnotemark\marginpar{\footnotemark}\footnotetext{#1}}
+
+
+\NewEnviron{sidefigure}[2]{
+  \sidebar{
+    \BODY
+    \captionof{figure}{#1 \label{#2}}
+  }
+}
 
 \providecommand{\msolar}{\mathrm{M{_\odot}}}
 \providecommand{\mat}[1]{\mathsf{#1}}
@@ -61,10 +69,15 @@
 \providecommand{\trainingpoints}{\mathcal{X}}
 \providecommand{\trainingobservations}{\mathcal{Y}}
 \providecommand{\trainingdata}{(\trainingpoints, \trainingobservations)}
+
 \providecommand{\kernel}[1]{\mathsf{#1}}
 \providecommand{\SE}{\kernel{SE}}
 \providecommand{\Con}{\kernel{C}}
+\providecommand{\Lin}{\kernel{Lin}}
+\providecommand{\Per}{\kernel{Per}}
+\providecommand{\RQ}{\kernel{RQ}}
 \providecommand{\Mat}{\kernel{M52}}
 
 \providecommand{\numbertrainingpoints}{$12,325$}
 \providecommand{\numbertrainingwaveforms}{no. Waveforms}
+

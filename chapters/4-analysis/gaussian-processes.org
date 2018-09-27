@@ -1,5 +1,5 @@
 
-* Linear regression
+* Bayesian Linear regression
 
 To motivate the development of Gaussian processes we first present the
 problem of linear regression, and how this task may be performed in a
@@ -7,21 +7,25 @@ Bayesian framework.
 
 A very simple linear model has the form
 
-$$\label{eq:simple-linear-model}
-  y_i = m x_i + c$$
+\begin{equation
+\label{eq:simple-linear-model}
+  y_i = m x_i + c
+\end{equation}
 
-for observations, $y_i$, which are made at a parameter $x_i$, and
-$m, c \in \mathbb{R}$ are parameters of our model. This model attempts
-to describe the observations by fitting a polynomial of order one to the
-data (a "straight line"), however, we may reasonably want to generalise
-our model to allow higher orders of polynomial, and doing so achieve a
-model of the form
+for each observation, $y_i$, which are made at a location in parameter
+space $x_i$, where $m, c \in \mathbb{R}$ are the parameters of our
+model. This model attempts to describe the observations by fitting a
+polynomial of order one to the data, however, we
+may reasonably want to generalise our model to allow higher orders of
+polynomial, and doing so achieve a model of the form
 
-$$\label{eq:less-simple-linear-model}
-  y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \vdot \vec{w}$$
+\begin{equation}
+\label{eq:less-simple-linear-model}
+  y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \vdot \vec{w}
+\end{equation}
 
-where the various parameters are now folded into a vector, $\vec{w}$, of
-weights. A further generalisation may be made, to allow for more
+where the various parameters are now folded into a vector, $\vec{w}$, which is called the 
+weight vector. A further generalisation may be made, to allow for more
 complicated forms of model, by substituting the vector $\vec{x}$ for a
 matrix $\mat{X}$, the /design matrix/, which can take an arbitrary form,
 so our model becomes
@@ -65,27 +69,9 @@ which Gaussian Process Regression (GPR) is often deemed a
 "non-parameteric" regression model [1].
 
 * Gaussian Processes
-\sidebar{
-  \includegraphics{figures/gp-training-data.pdf}
-  \captionof{figure}{[Step 1] An example of raw training data which is
-    suitable for training a Gaussian process. In this example the
-    input data ($x$-axis) are 1-dimensional, although GPs are also capable of
-    handling multi-dimensional data.\label{fig:gp-training-data}}
-  \includegraphics{figures/gp-prior.pdf}
-  \captionof{figure}{[Step 2] We choose a covariance function for the
-    Gaussian process, in this case an exponential-squared covariance
-    function. The Gaussian process containing no data and this
-    covariance matrix forms our prior probability distribution. Here
-    50 draws from the prior distribution are
-    plotted. \label{fig:gp-prior}}
-  \includegraphics{figures/gp-posterior.pdf}
-  \captionof{figure}{[Step 3] The trained Gaussian process can be
-    sampled multiple times to produce multiple different potential
-    fitting functions. Here 50 draws from the Gaussian process posterior are
-    displayed. \label{fig:gp-posterior}  }
-  \includegraphics{figures/gp-posterior-meancovar.pdf}
-  \captionof{figure}{[Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals. \label{fig-gp-posterior-best}}
-}
+
+
+
 Gaussian processes are Bayesian models which associate every point an
 some /input space/ with a probability distribution---specifically a
 normal distribution, and a collection of input points will form a
@@ -136,6 +122,32 @@ input predicting a single-dimensional output to the ability to predict a
 multi-dimensional output from a multi-dimensional
 input\cite{Alvarez2011,Alvarez2011a,Bonilla2007}.
 
+#+ATTR_LATEX: :options {[Step 1] An example of raw training data which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.}{fig:gp-training-data}
+#+BEGIN_sidefigure
+\includegraphics{figures/gp-training-data.pdf}
+#+END_sidefigure
+
+#+ATTR_LATEX: :options { [Step 2] We choose a covariance function for the  Gaussian process, in this case an exponential-squared covariance    function. The Gaussian process containing no data and this    covariance matrix forms our prior probability distribution. Here    50 draws from the prior distribution are    plotted. }{fig:gp-prior}
+#+BEGIN_sidefigure
+  \includegraphics{figures/gp-example-prior-draws.pdf}
+#+END_sidefigure
+
+
+#+ATTR_LATEX: :options {[Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed.}{fig-gp-covariance-matrix}
+#+BEGIN_sidefigure
+   \includegraphics{figures/gp-example-posterior-draws.pdf}
+#+END_sidefigure
+
+#+ATTR_LATEX: :options {The covariance structure for the Gaussian process. }{fig:gp-covariance-matrix}
+#+BEGIN_sidefigure
+  \includegraphics{figures/gp-example-expsqcov-matrix.pdf}
+#+END_sidefigure
+
+#+ATTR_LATEX: :options {[Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.}{fig-gp-posterior-best}
+#+BEGIN_sidefigure
+   \includegraphics{figures/gp-posterior-meancovar.pdf}
+#+END_sidefigure
+
 * Covariance Functions
 
 The covariance function defines the similarity of a pair of data points,
@@ -148,24 +160,36 @@ As such, the form of the covariance function represents prior knowledge
 about the data, and can encode understanding of effects such as
 periodicity within the data.
 
-Stationary Covariance Function. A stationary covariance function is a
-function $f(\vec{x} - \vec{x}')$, and which is thus invariant to
-translations in the input space.
+#+ATTR_LATEX: :options [Stationary covariance function]
+#+BEGIN_definition
+A stationary covariance function is a function $f(\vec{x} - \vec{x}')$, and which is thus invariant to translations in the input space.
+#+END_definition
 
-Isotropic Covariance Function. If a covariance function is a function of
+#+ATTR_LATEX: :options [Isotropic Covariance Function]
+#+BEGIN_definition
+If a covariance function is a function of
 the form $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant
 under all rigid motions.
-\sidebar{
-  \includegraphics{figures/gp-expsqcov.pdf}
-  \captionof{figure}{The exponential squared covariance function.\label{fig:gp-expsq-covar}}
-}
+#+END_definition
+
+#+ATTR_LATEX: :options {The exponential-squared covariance function.}{fig:gp-expsq-covar}
+#+BEGIN_sidefigure
+   \includegraphics{figures/gp-expsqcov.pdf}
+#+END_sidefigure
+
+#+ATTR_LATEX: :options {Draws from the Exponential-squared covariance function at a selection of length scales.}{fig-expsq-draws}
+#+BEGIN_sidefigure
+   \includegraphics{figures/gp-expsqcov-draws.pdf}
+#+END_sidefigure
 
 One of the most frequently encountered covariance functions in the
 literature is the exponential squared covariance functions
 \cite{rasmussen2006gaussian}
 
-$$\label{eq:squaredexponentialkernel}
-  k_{\mathrm{SE}}(r) = \exp( - \frac{r^2}{2 l^2} )$$
+\begin{equation}
+   \label{eq:squaredexponentialkernel}
+  k_{\mathrm{SE}}(r) = \exp( - \frac{r^2}{2 l^2} )
+\end{equation}
 
 for $r$ the Euclidean distance of a datum from the centre of the
 parameter space, and $l$ is a scale factor associated with the axis
@@ -178,30 +202,55 @@ series of defined operations.
 
 Consider two covariance functions, $f_1$ and $f_2$, then
 
-+ Kernel Addition::$f = f_1 + f_2$ is a covariance function.
-+ Kernel Product::$f = f_1 f_2$ is a covariance function.
+#+ATTR_LATEX: :options [Kernel Addition]
+#+BEGIN_definition
+If $f₁$ and $f₂$ are both kernels, then 
+$f = f_1 + f_2$ is also a kernel.
+#+END_definition
 
-We can use these two operations to form an arbitrarily complicated
-kernel structure, and to allow inference to be conducted over multiple
-dimensions.
+#+ATTR_LATEX: :options [Kernel Multiplication]
+#+BEGIN_definition
+If $f₁$ and $f₂$ are both kernels, then 
+$f = f_1 × f_2$ is also a kernel.
+#+END_definition
+
+We can think of the sum of two kernels as representing the possibility that the data be described by one component kernel or another.
+As such addition represents the logical OR operation. 
+Similarly the product of two kernels represents the logical AND operation between the two.
+
+We can use these two operations to form an arbitrarily complicated kernel structure, and to allow inference to be conducted over multiple dimensions.
 
 ** A menagerie of kernels
-Different kernels can be used to model different aspects of the
-variation within the input data. For example, the training data may be
-known to be periodic in one dimension, or to have white noise
-properties in another. Here I adopt the convention from
-cite:duvenaud-thesis-2014, and do not specify the parameters of each
-kernel for compactness.
+Different kernels can be used to model different aspects of the variation within the input data. 
+For example, the training data may be known to be periodic in one dimension, or to have white noise properties in another. 
+Here I adopt the convention from cite:duvenaud-thesis-2014 and omit the hyperparameters from the description of the kernel.
+I also extend the notation to allow kernels with multiple input dimensions to be described, with superscript indices indicating the dimensions of the training data which the kernel applies to.
 
-| Kernel              | Symbol | Form | Properties                         |
-|---------------------+--------+------+------------------------------------|
-| Squared-exponential | $SE$   |      | Smooth local variation             |
-| Periodic            | $Per$  |      | Smooth global periodic variation   |
-| Linear              | $Lin$  |      | Global continuous linear variation |
+As a concrete example, for a kernel function in which the zeroth dimension is described by a squared-exponential kernel, but the first, second, and third dimensions are described by a rational quadratic kernel the kernel could be described as
+
+\begin{equation}
+\label{eq:example-kernel-notation}
+k = \SE^{(0)} \times \RQ^{(1,2,3)}
+\end{equation}
+
+A list of the symbols for each covariance function is given in table ref:tab:kernels, and definitions of the kernels are given at the end of the chapter.
+
+#+ATTR_LATEX: :environment tabularx 
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_LATEX: :align lcX
+#+CAPTION: A table of commonly encountered covariance functions.
+#+NAME: tab:kernels
+| Kernel              | Sym.   | Properties                          |
+|---------------------+--------+-------------------------------------|
+| Squared-exponential | $\SE$  | Smooth local variation.             |
+| Periodic            | $\Per$ | Smooth global periodic variation.   |
+| Linear              | $\Lin$ | Global continuous linear variation. |
+| Rational Quadratic  | $\RQ$  | Variation on multiple scales.       |
+
 
 For example, we may be able to model a yearly growing trend which
 contains a seasonal variation with a combination of a linear and a
-periodic kernel, $Lin \times SE$.
+periodic kernel, $\Lin \times \SE$.
 
 * Training the model
 
@@ -213,8 +262,10 @@ optimally describes the data. The log-probability that a given set of
 strain values were drawn from a Gaussian process with zero mean and a
 covariance matrix $K_{ij} = k(x, x')$ is
 
-$$\label{eq:logevidencegp}
-  \log(p(\vec{f}| X)) = - \frac{1}{2} K^{-1} \vec{f} - \frac{1}{2} \log |K| - \frac{n}{2} \log 2\pi .$$
+\begin{equation}
+\label{eq:logevidencegp}
+  \log(p(\vec{f}| X)) = - \frac{1}{2} K^{-1} \vec{f} - \frac{1}{2} \log |K| - \frac{n}{2} \log 2\pi.
+\end{equation}
 
 This quantity is normally denoted the /log-evidence/ or the
 /log-hyperlikelihood/. The model which best describes the training data
@@ -226,7 +277,7 @@ optimisation algorithm, or in a hierarchical Bayesian framework, whereby
 priors are assigned to the value of each hyperparameter, and the optimal
 hyperparameters are found using a Monte Carlo algorithm.
 
-* Making predictions
+* The predictive posterior distribution
 
 In order to make a prediction using the Gaussian Process model we
 require a new input at which the prediction should be made, which is
@@ -236,19 +287,23 @@ data, which we denote $K_{x, x^*}$, and the autocovariance of the input,
 $K_{x^*, x^*}$. We then define a new covariance matrix, $K^{+}$, which
 has the block structure
 
-$$\label{eq:blockK-plus-mat}
+\begin{equation}
+\label{eq:blockK-plus-mat}
   K^+ =
   \begin{bmatrix}
     K_{x,x} & K_{x,x^*} \\ K_{x^*,x} & K_{x^*, x^*}
-  \end{bmatrix}$$
+  \end{bmatrix}
+\end{equation}
 
 for $K_{x,x}$ the covariance matrix of the training inputs, and
 $K_{x^*,x} = K_{x,x^*}^T$.
 
 The predictive distribution can then be found as
 
-$$\label{eq:predictive-gp}
-  p(y^* | x^*, \mathcal{D}) = \mathcal{N}(y^* | K_{x^*,x} K_{x,x}^{-1} y, K_{x^*, x^*} - K_{x^*,x}K^{-1}_{x,x} K_{x,x^*}).$$
+\begin{equation}
+\label{eq:predictive-gp}
+  p(y^* | x^*, \mathcal{D}) = \mathcal{N}(y^* | K_{x^*,x} K_{x,x}^{-1} y, K_{x^*, x^*} - K_{x^*,x}K^{-1}_{x,x} K_{x,x^*}).
+\end{equation}
 
 * Computational Complexity
 
@@ -485,6 +540,8 @@ parameters.
 | Spin (Secondary) | $(0,0,0)$                                   |
 | Distance         | $\SI{400}{\mega\parsec}$                    |
 | Time range       | $(\SI{-0.1}{\second}, \SI{0.005}{\second})$ |
+
+
 
 As a first test we generated a BBH waveform using the model, as
 implemented in the package. The model was evaluated at the parameters

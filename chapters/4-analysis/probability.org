@@ -17,18 +17,22 @@ probability of $1$, maintaining consistency with boolean
 logic. Likewise, if we are certain that an event will not occur, then
 we assign it a value $0$. 
 
-+ *Definition*: Sample space. If a variable can take on a number of
-  different values, then the set of all its possible values is called
-  the sample space. In any given problem, the sample space composes
-  the universe set, and is often denoted $\Omega$.
+#+ATTR_LATEX: :options [Sample Space]
+#+BEGIN_definition
+If a variable can take on a number of
+different values, then the set of all its possible values is called
+the sample space. In any given problem, the sample space composes
+the universe set, and is often denoted $\Omega$.
+#+END_definition
 
-+ *Definition*: State. A state (or event) is any subset of zero or
-  more elements from the sample space. A state containing one element
-  is a simple state, while one containing more than one element is a
-  compound state. The states form a $\sigma$-algebra on the sample
-  space.
+#+ATTR_LATEX: :options [State]
+#+BEGIN_definition
+A state (or event) is any subset of zero or   more elements from the sample space. A state containing one element  is a simple state, while one containing more than one element is a compound state. The states form a $\sigma$-algebra on the sample space.
+#+END_definition
 
-+ *Definition*: Probability. Let $x$ be some variable which is capable
+#+ATTR_LATEX: :options [Probability]
+#+BEGIN_definition
+Let $x$ be some variable which is capable
   of having a state $E \in \Omega$ for $\Omega$ the /sample space/ of
   the variable. Probability $P$ is a mapping $P: E \to [0,1]$ which
   assigns a real value between $0$ and $1$ to every $E \in \Omega$. We
@@ -36,9 +40,13 @@ we assign it a value $0$.
   1. For every $E \in \Omega$, $P(E) \geq 0$.
   2. $P(\Omega) = \sum_{E \in \Omega} P(E) = 1$.
   3. If $E_{i} \cap E_{j} = \emptyset$ for $E_{i}, E_{j} \in \Omega$, then $P(\cup E_{i}) = \sum P(E_{i})$
+#+END_definition
 
-+ *Definition*: Joint probability. The probability of two events, $A,B
+#+ATTR_LATEX: :options [Joint probability]
+#+BEGIN_definition
+The probability of two events, $A,B
   \in \Omega$, occuring is a "joint probability", and is computed as \[ P(A \cap B) = P(A, B) = P(A) P(B). \]
+#+END_definition
 
 + *Corollary*: For two events, $A,B \in \Omega$, we have $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 
@@ -81,9 +89,10 @@ the state of a third variable is known.
 
 * Kernels
 
-+ *Definition*: Kernel. For all variables $x$ and $x'$ in the input
-  space, $\set{X}$ of a probability distribution, a mapping $k:
-  \set{X} \times \set{X} \to \mathbb{R}$ is a kernel function.
+#+LATEX_ATTR: :options [Kernel]
+#+BEGIN_definition
+For all variables $x$ and $x'$ in the input   space, $\set{X}$ of a probability distribution, a mapping $k:  \set{X} \times \set{X} \to \mathbb{R}$ is a kernel function.
+#+END_definition
 
 If the kernel function can be written in the form of a dot-product
 between two /feature maps/, $\phi: \set{X} \to \set{V}$, \[ k(x, x') =
