@@ -25,7 +25,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
-\loadglsentries[main]{tex/glossaries.tex}
+\loadglsentries[main]{glossary/glossaries.tex}
 
 
 \usetikzlibrary{bayesnet}
@@ -46,7 +46,7 @@
 
 %\tableofcontents
 \newpage
-%\input{tex/dedication}
+\input{chapters/0-frontmatter/dedication}
 % \part{Outline \& Review of Gravitational Wave Literature}
 % \label{part:introduction}
 
@@ -60,7 +60,7 @@
 
 %\section{Gravitational waves}
 %\label{sec:gravwaves}
-\input{tex/0-gravitationalwaves/0-1-introduction}
+\input{chapters/0-frontmatter/introduction}
 \chapterprecis{}
 
 % \section{Gravitational waves and general relativity}
@@ -560,11 +560,11 @@ definition files in order to run such an analysis.
 \newgeometry{left=3cm}
 
 \bibliographystyle{unsrt}
-\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian}
+\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian,bibliography/grb}
 
 % The glossary
-\input{tex/glossaries.tex}
-%\input{glossary/sources-glossary.tex}
+\input{glossary/glossaries.tex}
+
 
 \glsaddall
 \useglossarystyle{altlist}
