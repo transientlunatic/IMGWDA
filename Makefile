@@ -32,8 +32,7 @@ document.pdf : document.tex  chapters/glossary/glossary.tex $(TEX_FILES)
 	$(TEXMK) $< 
 
 
-
-chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex scripts/build/glossary.py
+chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex
 	python scripts/build/glossary.py $< > $@
 
 %.int_tex : %.org 
@@ -41,7 +40,7 @@ chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex scripts/buil
 	bash scripts/build/replace-abb.sh $< > $@
 
 %.tex : %.int_tex
-	pandoc -f org -t latex -o $@ $<
+	emacs $< -Q --batch --eval "(require 'org)"  --eval "(org-latex-export-to-latex nil nil nil t)" --eval "(setq org-latex-caption-above nil)" --kill
 
 #$(INT_FILES) : %.int_tex : $(ORG_FILES)
 #	@mkdir -p $(@D)
@@ -61,9 +60,8 @@ glossary : tex/glossaries.tex ## Convert the glossary into a format acceptable t
 
 clean:	## Remove all of the temporary files which the various compilation steps produce
 	latexmk -CA
-	#rm $(TEX_FILES)
-	#rm $(BDIR)/tex/glossaries.tex
-	#rm -rf $(BDIR)
+	rm $(TEX_FILES)
+	rm $(INT_FILES)
 	rm -rf *.glo *.glg *.ist *.acn *.xdy *.acr *.alg
 	rm -rf *.bbl *.gls *.glsdefs
 	rm -rf *.mtc*

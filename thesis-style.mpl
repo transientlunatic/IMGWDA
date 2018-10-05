@@ -5,7 +5,7 @@ patch.antialiased: True
 
 font.size: 8
 text.usetex: True
-font.family: 'URW Bookman L',
+font.family: 'Lato' #'URW Bookman L',
 text.color: k
 
 axes.facecolor: white

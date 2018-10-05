@@ -1,0 +1,20 @@
+The 14th September 2016 will likely be remembered as one of the most
+significant in the history of astronomy and of astrophysics. Early in
+the morning of this autumn day, shortly after 9am UT, a gravitational
+wave passed through the Earth, and on its way produced a sufficiently
+large movement in the mirrors and test masses of the detectors of the
+[[abbr:ligo]], as to be detected.
+
+Over five months of data analysis, detector characterisation, and
+detection verification were conducted by a global team of scientists, in
+the [[abbr:lvc]]. This process resulted
+in a slew of journal papers being written, vast quantities of data
+produced, and an enormous public outreach effort to be launched.
+Eventually, the collaboration found itself in a position to make the
+announcement of the first direct detection of gravitational waves,
+[[gls:gw150914]], on 11 February 2016.
+
+[[gls:gw150914]] is not the first evidence for gravitational waves, with the
+Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W having
+provided compelling indirect evidence which lead to its discoverers
+receiving the 1993 Nobel Prize.

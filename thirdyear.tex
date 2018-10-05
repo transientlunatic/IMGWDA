@@ -1,9 +1,8 @@
-\documentclass{kentigern}
+\documentclass[openleft]{kentigern}
 
 \usepackage{lipsum}
 \usepackage[acronym,toc,nopostdot,xindy]{glossaries}
 %\usepackage{siunitx}
-
 \makeglossaries
 \usepackage{tabularx}
 \usepackage{type1cm}
@@ -16,9 +15,10 @@
 
 \usepackage{minitoc}
 
+\usepackage{multicol}
+
 \usepackage{setspace}
     \linespread{1.25}
-%\usepackage{geometry}
 \title{Year 3 Report}
 \author{Daniel Williams}
 
@@ -139,15 +139,19 @@ components:
 for $R_{\text{grb}}$ and $R$ respectively the observed GRB and BNS
 rates, $\theta$ the opening angle, and $\epsilon$ the efficiency,
 corresponding to the probability that a BNS event produces beamed
-electromagnetic emission. The inclusion of an efficiency parameter,
-which is latent (observable) requires that we place a prior
-distribution on the parameter, but marginalise it from the final
-posterior probability distribution. We demonstrate the posterior
-distribution which is generated from four different priors on the
-efficiency in the paper---two $\delta$-function priors, to represent
-50\% and 100\% jet production probabilities, a uniform (Haldane's)
-prior, and a $\beta(0.5, 0.5)$ (Jeffrey's) prior. These are reproduced
-here in figure \ref{fig:o1posterior}.
+electromagnetic emission. The quantity inside angle brackets indicates
+the \emph{population mean}\footnote{An important note with regard to
+  this method is that we infer the jet angle posterior for the
+  population of observed events, and not the individual events
+  themselves.} The inclusion of an efficiency parameter, which is
+latent (observable) requires that we place a prior distribution on the
+parameter, but marginalise it from the final posterior probability
+distribution. We demonstrate the posterior distribution which is
+generated from four different priors on the efficiency in the
+paper---two $\delta$-function priors, to represent 50\% and 100\% jet
+production probabilities, a uniform (Haldane's) prior, and a
+$\beta(0.5, 0.5)$ (Jeffrey's) prior. These are reproduced here in
+figure \ref{fig:o1posterior}.
 
 \begin{figure}
   \includegraphics{figures/sgrb/O1_beaming_posteriors_violin.pdf}
@@ -178,7 +182,7 @@ here in figure \ref{fig:o1posterior}.
 
 \begin{figure}[b]
   \checkoddpage
-  \makebox[\textwidth][\ifoddpage l\else l\fi]{
+  \makebox[\textwidth][\ifoddpage l\else r\fi]{
     \includegraphics[width=0.9\textwidth]{figures/sgrb/volume_v_nevents_lower_e1.pdf}
     \includegraphics[width=0.9\textwidth]{figures/sgrb/volume_v_nevents_e1.pdf}
   }
@@ -264,9 +268,10 @@ fitting function, and an associated variance to be inferred from the
 observed data.
 
 We use a Gaussian Process conditioned off data from around 350
-waveforms from the Georgia Tech waveform catalogue to produce our
-interpolation model, which contains around $12\,000$ observations over
-$11$ parameters, producing an $11$-dimensional \emph{input} space.
+waveforms from the Georgia Tech waveform catalogue\cite{gatechcat} to
+produce our interpolation model, which contains around $12\,000$
+observations over $11$ parameters, producing an $11$-dimensional
+\emph{input} space.
 
 Gaussian Processes are \emph{kernel methods}, and as such they model
 data in an inner product space in which distances are relative to
@@ -274,16 +279,55 @@ other points within the data, and not to an absolute point. These
 methods require that a metric be defined on the data space, which
 forms the \emph{covariance function} of the GP.
 
-TODO: Insert the covariance function from the HERON model
+The covariance function from the HERON model takes the form
+\begin{align}
+  \label{eq:heron-kernel}
+  \Con_0 ( \Con_1 \Mat^{t}_1 + \Con_2 \Mat^{t}_2 ) &\times \Con_3 \SE^{q} 
+  \times \Con_4 \SE^{L_x,L_y,L_z} \nonumber \\ 
+  &\times \Con_5 \SE^{s_{1,x}, s_{1,y}, s_{1,z}} \nonumber\\ &\times \Con_6 \SE^{s_{2,x}, s_{2,y}, s_{2,z}}
+\end{align}
+where the superscripts indicate which dimensions of the dataspace are
+modelled by each kernel. In the case of the squared exponential
+kernels acting on the dimensions of $\vec{L}$, $\vec{s_1}$, and
+$\vec{s_2}$, each kernel has three hyperparameters, for the scale
+parameter of each dimension, which results in a kernel with eighteen
+hyperparameters. The sans serif quantities represent the various
+component kernel functions, $\SE$ is the squared-exponential, $\Con$
+is a constant kernel, and $\Mat$ represents a Matern-5/2
+kernel\footnote{In the interests of brevity the descriptions of these
+  functions are omitted from this report, but the interested reader is
+  directed towards \cite{rasmussen2006gaussian} and
+  \cite{barberBRML2012} for discussion of these functions.}. The total
+HERON covariance function is a product of several kernels, allowing
+different behaviour of each physical parameter when mapped to the
+feature space.
 
 \begin{figure}
-  \includegraphics[width=\textwidth, trim={1cm 8cm 2cm 8cm},clip]{figures/heron/monster_qplane.pdf}
+  \includegraphics[width=\textwidth, trim={1cm 6cm 2cm 7cm},clip]{figures/heron/monster_qplane.pdf}
   \caption{The output of the full \heron{} model over the $t-q$-
     (time/mass-ratio)-plane for non-spinning waveforms. The panel on
     the left represents the predicted mean function value at each
     point, while the right panel represents the variance of the
     prediction at each point. \label{fig:qtplane}}
 \end{figure}
+
+In the case of a surrogate model such as HERON it is important that
+the predictions of the model can be tested against data which is known
+to be accurate; to accomplish this with our model we set-aside a
+number of the training waveforms from the available training
+catalogue, and then compare the predictions of the model at the
+locations in parameter space at which these waveforms were produced to
+the test data itself.
+
+Having a working surrogate model which can produce a measure of the
+uncertainty (in the form of the prediction variance) throughout the
+model parameter space allows regions which are poorly informed to be
+located; such poorly-informed locations are an indication that future
+numerical relaitivity simulations should be conducted at those
+locations in order to improve our understanding of the waveform
+manifold. Gaussian process regression is therefore a promising method
+for guiding future waveform placement in a principled and
+evidence-based manner. 
 
 \chapter{Thesis Plan}
 \chapterprecis{}
@@ -479,7 +523,7 @@ TODO: Insert the covariance function from the HERON model
   detectors. First an overview of numerical relativity-derived
   waveforms for CBC gravitational wave sources, which is of great
   relevance to the work of chapter 4 will be given, and similarly an
-  overview of NR-derived BNS waveforms, a prime candidate for
+  overview of NR-derived BNS postmerger waveforms, a prime candidate for
   surrogate-modelling will be included. The available modelled
   supernova waveform morphologies will be summarised, with relation to
   burst searches, and the morphologies which are used in the
@@ -502,7 +546,7 @@ TODO: Insert the covariance function from the HERON model
   \item Modelled waveforms: Binary black holes and binary neutron stars
     \begin{enumerate}
       \item Numerical relativity simulations of BBH
-      \item Numerical relativity simulations of BNS
+      \item Numerical relativity simulations of BNS post-merger signals
     \end{enumerate}
     
   \item Modelled waveforms: Supernovae
@@ -547,12 +591,14 @@ TODO: Insert the covariance function from the HERON model
     \begin{enumerate}
     
     \item The role of waveforms in GW searches and data analysis
+      
    This section will contain a brief overview of matched filtering in
    order to motivate the need for a waveform interpolant, and will
    discuss the probabilistic aspects of the technique to motivate the
    development of a template bank with a measure of interpolation
    uncertainty.   
  \item Building a Bayesian template bank for binary black hole waveforms
+   
    This section will cover the details of the construction of the
    HERON GPR model trained off waveforms from the Georgia Institute of
    Technology BBH waveform catalogue, its training, and the choice of
@@ -560,11 +606,13 @@ TODO: Insert the covariance function from the HERON model
    also contain details about the training catalogue and testing
    catalogues used to produce the surrogate.
  \item Testing and verifying the model
+   
    This section will detail the process of testing the predictions of
    the model against the test set which was held back from the
    original training process in order to validate the predictions of
    the surrogate.
  \item Planning future waveform simulations
+   
    The probabilistic nature of the Gaussian process surrogate provides
    a measure of the model's uncertainty across its entire parameter
    space. This section will describe a method for utilising this
@@ -573,7 +621,7 @@ TODO: Insert the covariance function from the HERON model
    surrogate model.
  \item Comparing systematics between template banks
    
-   [Potential section]
+   [Possible section]
 
    With a means of producing a probabilistic model conditioned on
    numerical relativity data, we are afforded a means of comparing the
@@ -582,7 +630,8 @@ TODO: Insert the covariance function from the HERON model
    locations in parameter space. This section would discuss an
    information-theoretic comparison of waveform catalogues using such
    a method.
- \item Gaussian processes for binary neutron star waveforms 
+ \item Gaussian processes for binary neutron star waveforms
+   
    Having developed a technique to interpolate BBH waveforms, this
    section will turn to the use of the same technique with an adapted
    covariance structure to the modelling of binary neutron star
@@ -597,34 +646,213 @@ TODO: Insert the covariance function from the HERON model
   This section will cover the use of hierarchical modelling for the
   measurement of astrophysical quantities from gravitational wave and
   electromagnetic observations. The bulk of this section will be based
-  around the work presented in Williams et al. (2018) relating to the
-  inference of GRB jet angles from astrophysical rates.
+  around the work presented in Williams et al. (2018)\footnote{In
+    press.} relating to the inference of GRB jet angles from
+  astrophysical rates. This section will then expand upon the material
+  in the paper, to include discussion of inference in situations where
+  the GRB rate is modelled as a posterior distribution, and to
+  situations where sub-luminous bursts, such as GRB170817A can be
+  accounted for within the framework.
+
+  The method used for EM/GW multimessenger observations can be readily
+  transferred to scenarios where the are either additional messengers
+  (for example high-energy neutrino emission), or where the messengers
+  are a mixture of beamed and non-beamed electromagnetic
+  emission. This chapter will therefore contain discussion about how
+  such a rates-based method can be extended to these regimes within a
+  hierarchical modelling framework.
+
+  Finally, this chapter will include discussion of on-going work and
+  development of a hierarchical Bayesian pipeline designed for
+  coincident detection of multimessenger SGRB events, which will take
+  data from both gamma ray observatories and gravitational wave
+  observatories to perform inference on the underlying physical
+  properties of the SGRB and its progenitor system.
 
   \begin{enumerate}
   \item Hierarchical inference to infer physical properties from astrophysical rates
   \item Inferring SGRB beaming angles from rate information
   \item Hierarchical modelling for general beamed emission scenarios
-  \item Damselfly: A hierarchical model for SGRB astrophysics
+  \item A hierarchical model for SGRB astrophysics
   \end{enumerate}
 \item Back matter
   \begin{enumerate}
   \item Appendix A: Mathematics for Gaussian process regression
+
+    This appendix will be reserved for derivations and mathematical
+    asides which would be disruptive to the flow of the main
+    discussion of Gaussian process regression, but which are a useful
+    aide to understanding this method. Examples of material which may
+    be included here are the algorithm for computing the predictions
+    of a Gaussian process, and detailed insights into the linear
+    algebra required for this process.
+    
   \item Appendix B: The effect of compact objects on pulsar timing arrays
+
+    This appendix will contain discussion of the additional work
+    completed on a project started in 2014 on using pulsar timings to
+    detect compact objects such as black holes and neutron stars, with
+    additional discussion of the effects these objects have on pulsar
+    timing arrays.
+    
   \item Appendix C: Minke, a toolkit for gravitational wave signal-set creation
+
+    This appendix will contain summary documentation\footnote{Full API
+      documentation will be included in a separate publication} of the
+    Minke package, along with usage examples.
+    
   \item Appendix D: Graphical methods for signal processing
-  \item Glossary 
+
+    This appendix will contain an overview of graph-theoretic concepts
+    vital to understanding the discussion of hierarchical Bayesian
+    modelling in the main body of the thesis.
+    
+  \item Glossary
   \item Index
   \item References \& bibliography
-  \item Glossary
   \end{enumerate}
 \end{enumerate}
 
 
-\chapter{Future Plan}
+\chapter{Future Plan}\chapterprecis{}
 
-\bibliographystyle{unsrt}
-\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian}
+In the next ten months I intend to start completing a number of
+projects, with the major work being required on the completion and
+writing-up of the Gaussian process regression work, and the LSC
+collaboration paper on the results of the O2 all-sky burst searches. A
+number of smaller projects are also very close to completion, leaving
+space for a number of projects to continue previous projects,
+especially with regard to gamma ray burst astrophysics and Gaussian
+processes. I currently plan to start writing my thesis around October
+2018, and aim to have completed most of these projects, or at least
+brought them to a mature state by the end of January 2019 in order to
+focus on thesis-writing in spring 2019. An approximate overview of
+these projects, and their dependent relationships is shown as a Gantt
+chart in figure \ref{fig:gantt}.
+
+\section{Near-completion projects}
+
+I currently have two projects which are very close to completion, and
+are in the process of being written-up as potential publications; the
+first, on the use of pulsar timings to detect EM-dark compact objects
+in the local neighbourhood of the Earth (or to place limits on the
+nearest such objects) is in a mature state, with work still required
+on the manuscript. The second project, on publishing the documentation
+for Minke, the MDC-creation tool for GW burst searches is similarly
+mature, with the need to refactor existing material for publication in
+some form.
+
+\section{Gamma ray burst astrophysics}
+
+Following the publication of \cite{2017arXiv171202585W} as an initial
+description of a method to infer jet astrophysics from SGRB and BNS
+rates I aim to extend this method to include a more astrophysically
+reasonable SGRB rate which takes the distance to the source into
+account\footnote{The published version assumes a constant rate
+  throughout space}, which would allow the method to take
+``subluminous'' SGRB events into account, and would allow inference on
+the parameters of more complex models than the ``top-hat'' model
+assumed in the published method.
+
+In addition to work on a rates-based method for examining jet physics,
+I am collaborating with Fergus Hayes, Connor Isaacs, John Veitch,
+Chris Messenger, and Siong Heng on development of a hierarchical
+analysis of gravitational wave data to determine astrophysical
+parameters, which we hope will eventually be capable of folding-in our
+rates-based method. This project is approaching a publishable state,
+however I do not anticipating having major involvement in the writing
+of this paper.
+
+\section{LSC Collaboration}
+
+I am currently involved with producing the mock data challenge for the
+O2 all-sky burst search within the LIGO Scientific Collaboration, and
+I am a member of the paper-writing team for the results paper
+following this analysis. Under the current schedule this paper is
+expected to be finished in late July 2018.
+
+\section{Gaussian process regression projects}
+
+The first strand of the GPR project, the production of a surrogate
+model for BBH waveforms, is nearing completion, with a hopeful
+timeline of having a publication ready for submission in early summer
+2018. Beyond this I hope to complete the second strand of the project,
+on a method for the placement of future waveform simulations, by late
+summer or early autumn 2018. Additionally, I hope to be able to
+build-out the work I have done in collaboration with James Clark at
+Georgia Tech on the modelling of BNS post-merger signals in order to
+produce a surrogate model for these in a similar manner to the BBH
+surrogate.
+
+I also have the possibility of working on GPR as a method for
+improving the measurement of Newtonian Noise in gravitational wave
+detectors; this project is in very preliminary stages however, and it
+is not clear what the probability of this returning substantial
+results in the next year is.
+
+\begin{figure}[t]
+
+  \begin{ganttchart}[
+%x unit=1cm,
+y unit title=.6cm,
+y unit chart=.7cm
+]{1}{12}
+\gantttitle{2018 / 2019 Academic Year}{12} \\
+\gantttitlelist{5,...,12}{1} \gantttitlelist{1,...,4}{1} \\
+\ganttgroup{Near-completion projects}{1}{3} \\
+\ganttbar{Minke documentation}{2}{3} \\
+\ganttmilestone{Minke documentation}{3}\\
+\ganttlink{elem1}{elem2}
+
+\ganttbar{Pulsar timings}{2}{2}\\
+\ganttmilestone{Pulsar timings}{3}\\
+\ganttlink{elem3}{elem4}
+
+\ganttgroup{GRB Astrophysics}{1}{10}\\
+
+\ganttbar{Subluminous GRB Beaming}{4}{7}\\
+\ganttmilestone{GRB Beaming II}{7}\\
+\ganttlink{elem6}{elem7}
+
+\ganttbar{Hierarchical GRB Model}{1}{3}\\
+\ganttmilestone{GRB Astrophysics I}{4}\\
+\ganttlink{elem8}{elem9}
 
 
+\ganttgroup{LSC Collaboration Work}{1}{5}\\
+\ganttbar{O2 All-sky Analysis}{1}{3}\\
+\ganttmilestone{O2 All-sky Analysis}{5}\\
+\ganttlink{elem11}{elem12}
 
+\ganttgroup{GPR Projects}{1}{8}\\
+
+\ganttbar{GPR Predictive Surrogate}{1}{1} \\
+\ganttbar{GPR Placement Criteria}{3}{4} \ganttnewline
+\ganttmilestone{GPR Surrogate I}{2}\\
+\ganttlink{elem14}{elem15}
+\ganttlink{elem14}{elem16}
+\ganttmilestone{GPR Surrogate II}{5} \\
+\ganttlink{elem15}{elem17}
+\ganttbar{GPR Newtonian Noise}{4}{5}\\
+\ganttbar{GPR BNS Postmerger}{3}{5}\\
+
+\ganttgroup[
+group/.append style={fill=muted-blue}
+]{Thesis}{6}{11}\\
+\end{ganttchart}
+
+\caption{A Gantt Chart for the next ten months' worth of work and
+  publications. Diamonds represent publications, while un-filled boxes
+  represent distinct sub-projects. Filled bars indicate project groupings.\label{fig:gantt}}
+  
+\end{figure}
+
+\chapterstyle{minimalist}
+\newgeometry{left=1.5in,right=1.5in, top=6cm}
+\bibliographystyle{unsrt85}
+%\begin{multicols*}{2}% two columns
+  \linespread{.8}
+  \bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian}
+%  \end{multicols*}
+%\restoregeometry
 \end{document}
