@@ -4,12 +4,13 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -q && apt-get install -qy \
     texlive-full \
-    emacs25 \
+    emacs \
     wget \
     python-pygments gnuplot \
+    python-pip \
     make git \
 && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://tug.org/fonts/getnonfreefonts/install-getnonfreefonts &&
-    texlua install-getnonfreefonts -a
-
+RUN wget https://tug.org/fonts/getnonfreefonts/install-getnonfreefonts \
+    && texlua install-getnonfreefonts && getnonfreefonts --sys -a \
+    && pip install pyorgmode
