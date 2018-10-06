@@ -21,7 +21,7 @@ build-image-master:
 
 
 build-thesis-pdf:
-  image: $CI_REGISTRY/$MASTER
+  image: $MASTER
   stage: build
   script:
     - make pdf
