@@ -1,14 +1,20 @@
-build_image:
-   image: docker:stable
-   services:
-     - docker:dind
-       # command: ["--insecure-registry=containers.ligo.org"]
-   variables:
-     DOCKER_HOST: tcp://docker:2375
-     DOCKER_DRIVER: overlay2
-   stage: build
-   script:
-     - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token containers.ligo.org --password-stdin
-     #- docker login -u gitlab-ci-token -p $CI_JOB_TOKEN containers.ligo.org
-     - docker build -t containers.ligo.org/daniel-williams/thesis:latest .
+variables:
+  BRANCH: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  COMMIT: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  MASTER: $CI_REGISTRY_IMAGE:master
+  TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+
+stages:
+    - build
+    # - test
+
+build-image-master:
+    only:
+        - master
+    stage: build
+    script:
+        - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+        - docker build --rm --no-cache -t $MASTER  ./
+        - docker push $MASTER
+
 
