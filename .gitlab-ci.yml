@@ -8,12 +8,14 @@ stages:
     - build
     # - test
 
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    
 build-image-master:
     only:
         - master
     stage: build
     script:
-        - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
         - docker build --rm --no-cache -t $MASTER  ./
         - docker push $MASTER
 
