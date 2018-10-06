@@ -1,3 +1,7 @@
+image: docker:git
+services:
+- docker:dind
+
 variables:
   BRANCH: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   COMMIT: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
