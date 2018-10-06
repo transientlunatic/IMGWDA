@@ -8,6 +8,7 @@ build_image:
      DOCKER_DRIVER: overlay2
    stage: build
    script:
-     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN containers.ligo.org
+     - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token containers.ligo.org --password-stdin
+     #- docker login -u gitlab-ci-token -p $CI_JOB_TOKEN containers.ligo.org
      - docker build -t containers.ligo.org/daniel-williams/thesis:latest .
 
