@@ -18,3 +18,15 @@ build-image-master:
         - docker push $MASTER
 
 
+build-thesis-pdf:
+  image: $CI_REGISTRY/$MASTER
+  stage: build
+  script:
+    - make pdf
+    - mkdir public
+    - cp document.pdf public/
+  artifacts:
+    paths:
+    - public
+
+  
