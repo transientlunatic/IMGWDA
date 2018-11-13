@@ -93,19 +93,35 @@ the state of a third variable is known.
   \[ P(x,y | z) = P(x|z)P(y|z).\] We can denote conditional
   independence as $x\!\perp\!\!\!\perp\!y \ | z$.
 
-* Kernels
+* Feature spaces and Kernels
+#+LABEL: sec:features-and-kernels
+#+NAME: sec:features-and-kernels
+
+A feature map is a projection from a lower-dimensional data space to a higher-dimensional one, which can be represented by a mapping, $\phi$. 
+
+#+LATEX_ATTR: :options [Feature map]
+#+BEGIN_definition
+For a $D$-dimensional vector $\vec{x}$, a feature map, $\phi : \mathbb{R}^{D} \to \mathbb{R}^{N}$ is a mapping which projects $\vec{x}$ into an $N$-dimensional space, the \emph{feature space}.
+#+END_definition
+
+This can be a valuable technique in statistical regression and classification, where data may become linearly separable in a higher dimensional space, or can be described by a simpler function than in the original data space. 
+An example of such a mapping is $\phi : \mathbb{R} \to \mathbb{R}^{3}, \quad \phi(x) = (1, x, x^2)^{\transpose}$, which can be used to implement quadratic regression, as 
+\begin{equation}
+\label{eq:quadratic-regression}
+f(\vec{x}) = w_0 + w_{1} \vec{x} + w_{2} \vec{x} = \phi(\vec{x})^{\transpose} \cdot \vec{w}
+\end{equation}
+which remains linear (and therefore analytically solvable) provided $\phi$ is independent of $\vec{w}$.
+
+*Some notes to bridge the jump from feature maps to kernels*.
 
 #+LATEX_ATTR: :options [Kernel]
 #+BEGIN_definition
 For all variables $x$ and $x'$ in the input   space, $\set{X}$ of a probability distribution, a mapping $k:  \set{X} \times \set{X} \to \mathbb{R}$ is a kernel function.
 #+END_definition
 
-If the kernel function can be written in the form of a dot-product
-between two /feature maps/, $\phi: \set{X} \to \set{V}$, \[ k(x, x') =
-\langle \phi(x), \phi(x') \rangle v, \] for $\set{V}$ some inner
-product space, then we can perform the "kernel trick", allowing us to
-define the kernel in terms of the inner products within the data,
-without resorting to an external coordinate system.
+If the kernel function can be written in the form of a dot-product between two /feature maps/, $\phi: \set{X} \to \set{V}$, 
+\[ k(x, x') = \langle \phi(x), \phi(x') \rangle v, \] 
+for $\set{V}$ some inner product space, then we can perform the "kernel trick", allowing us to define the kernel in terms of the inner products within the data, without resorting to an external coordinate system.
 
 * Structured probability distributions
 

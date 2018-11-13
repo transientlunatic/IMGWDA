@@ -1,0 +1,324 @@
+The earliest attempts to develop a gravitational wave detector were made in the 1960s with the experiments of Joseph Weber (1919--2000) at the University of Maryland, from which he claimed the first detection in 1969\cite{1969PhRvL..22.1320W,1970PhRvL..24..276W} of signals originating in the galactic centre\cite{1970PhRvL..25..180W}. 
+Numerous attempts to confirm his findings were unsuccessful, including searches in Ronald Drever's (1931--1917) group at the University of Glasgow \cite{1973Natur.246..340D} in the UK; at Bell Labs \cite{1973PhRvL..31..173L,1973PhRvL..31..176G,1974PhRvL..33..794L} in the USA; at Munich\cite{1975NCimL..12..111B,1975NCimL..12..111B} in Germany; at Moscow\cite{1973PhLA...45..271B} in Russia; and at Tokyo\cite{1975PhRvL..35..890H} in Japan. 
+While Weber's original detections were soundly refuted by the community there is little doubt that the announcement led to a flurry of activity in the field. 
+This ultimately lead to the development of modern cryogenic resonant bars, such as gls:altair cite:1992NCimC..15..943B , gls:allegro cite:2000IJMPD...9..229M , gls:nautilus cite:1997APh.....7..231A , and gls:explorer cite:1993PhRvD..47..362A ; and laser interferometers.
+
+Laser interferometers, of which advanced gls:ligo is an implementation, were the result of a quest for both higher sensitivities and greater bandwidth. 
+The possibility of using a Michelson interferometer to measure the distance between test masses in order to detect gravitational radiation originated in Moscow\cite{1963JETP...16..433G} in 1963. 
+This approach was followed early-on by Scottish and German groups as a means of improving on resonant bar sensitivities, with a 3-meter and later a 30-meter prototype detector constructed at Garching in the late 1970s\cite{1979JPhE...12.1043B,1988PhRvD..38..423S} which used optical delay lines, and a 1-meter prototype, and later a 10-meter instrument were built at Glasgow in the early 1980s\cite{1979RSPSA.368...11D,1995RScI...66.4447R}, which used Fabry-Perot cavities. 
+The Glasgow detector was the spiritual predecessor to the CalTech 40-meter prototype\cite{1996PhLA..218..157A}.
+
+The increasing maturity of technology developed by these prototypes lead to the construction of the first generation of long-baseline detectors, starting with gls:tama in Tokyo cite:1996JKASS..29..279K, the joint UK-German gls:geo600 detector\cite{1997CQGra..14.1471L} near Hannover, and the two kilometre-scale detectors, the joint CalTech-MIT detectors LIGO\cite{1992Sci...256..325A}, located at two sites in the USA, and the joint Italian-French detector VIRGO\cite{1990NIMPA.289..518B}, near Cascina. 
+These detectors were operated during the 2000s, and while none of them made a detection of gravitational waves, they provided valuable astrophysical results by placing astrophysical limits on the strength of the stochastic gravitational wave background \cite{2014PhRvL.113w1101A}, production of gravitational waves by pulsars\cite{2014ApJ...785..119A} and gamma ray bursts\cite{2012ApJ...760...12A}, and the rate of compact binary coalescence in the local universe\cite{2012PhRvD..85h2002A,2013PhRvD..87b2002A}.
+
+Figure [fig:first-gen-asd] is a plot of the abbr:asd of the first generation
+of interferometric detectors, in which it is clear that these detectors
+have considerable advantages not only in senstivity compared to resonant
+bar detectors, but can also observe over a much greater bandwidth.
+
+The initial-generation of detectors were upgraded during the first half of the 2010s, leading to Advanced LIGO\cite{2015CQGra..32g4001L} which resumed observations in September 2015, and the imminent start of observations from the Advanced VIRGO detector\cite{2015CQGra..32b4001A}, with the prospect of a joint run occuring during the second half of 2016. 
+The gls:geo600 detector was the first of the initial detectors to be fully upgraded becoming gls:geo-hf \cite{2006CQGra..23S.207W}, with improved
+sensitivity at high frequencies. Japanese efforts have focussed on the
+development of gls:kagra (formerly gls:lcgt), a cryogenic interferometer located
+deep underground in the Kamioka mine cite:1999IJMPD...8..557K, although
+the project has suffered from a number of set-backs. The construction of
+a third LIGO detector interferometer in India using the mothballed
+second detector from the Washington site has now moved into its initial
+stages, with the prospect of this detector joining the network around
+the end of the decade. Figure [fig:aligo-design-asd] depicts the
+anticipated ASD of the advanced LIGO detectors once they have reached
+their design sensitivity, which is anticipated within the next five
+years.
+
+The second-generation detectors, specifically the two gls:advanced-ligo detectors were responsible for the first discovery of gravitational waves cite:2016PhRvL.116m1103A, and have successfully demonstrated the ability of interferometry to observe the gravitational universe. 
+This said, future improvements in sensitivity are highly desirable, but are likely to be even more technically challenging than the transition from resonant bars to laser interferometers. 
+In order to improve the bandwidth of detectors a location free of /Newtonian noise/ must be found, which ultimately mandates the placement of an interferometer in space. 
+There have been a number of proposals for a space-based interferometer, with gls:elisa cite:2013GWN.....6....4A likely to be the
+first to launch in the 2030s; the technology demonstration mission for gls:lisa, /LISA Pathfinder/ was launched in December 2015, and its main mission was completed in early 2016\cite{2016PhRvL.116w1101A}. 
+The gls:lisa detector will be sensitive in the milli-hertz region of the gravitational wave spectrum, and will be capable of observing binary inspirals at a much earlier stage in their evolution than the advanced ground-based detectors, as well as the galactic population of low-mass binaries, such as binary white dwarfs. 
+A Japanese proposal, gls:decigo cite:2011CQGra..28i4011K, would observe in the decihertz regime using a complex arrangement of six spacecraft in a star-of-David configuration. 
+There are also plans for more sensitive detectors on the ground. 
+The Einstein telescope is a European proposal for an underground kilometre-scale detector in a triangular configuration, using a
+"xylophone" configuration to improve broadband sensitivity compared to the second-generation of detectors; its scientific aims include providing more sensitive tests of general relativity than are possible with the advanced detectors cite:2012CQGra..29l4013S. 
+There are also proposals for upgrades of the advanced detectors to use squeezed light to reduce quantum noise cite:2015PhRvD..91f2005M, the use of speedmeters\cite{2014MUPB...69..519V,2002gr.qc....11088K}, or atom interferometry\cite{2013PhRvL.110q1102G,2016PhRvD..93b1101C,2008PhRvD..78l2002D}.
+
+At the very low-frequency limit of the gravitational wave spectrum the
+bulk of detection efforts rotate around pulsar timing arrays, which
+promise the detection of gravitational waves by precision measurements
+of pulse arrival times from a number of pulsars distributed across the
+sky. By observing correlated delays\cite{1983ApJ...265L..39H} in arrival
+times the presence of a very long wavelength gravitational wave can be
+inferred. There are a number of collaborations actively producing pulsar
+observations with the aim of detecting gravitational waves: the
+\cite{2013CQGra..30v4009K}, NANOGrav\cite{2009arXiv0909.1058J}, the
+Parkes Pulsar Timing Array (PPTA)\cite{2013PASA...30...17M}, and the
+International Pulsar Timing Array (IPTA)
+collaboration\cite{2013CQGra..30v4010M}.
+The cutting-edge of current ground-based interferometers are the twin
+Advanced LIGO detectors \cite{2015CQGra..32g4001L} located in Hanford,
+WA, USA, and Livingston, LA, USA. These interferometers are Michelson
+interferometers with a large number of additional components, which
+allow detection of differential changes in their arm lengths (strains)
+on the order of $10^{-22}$.
+
+* Resonant Bar Detectors
+
+* Interferometric Detectors
+
+** Detecting gravitational waves with light
+
+Gravitational-wave detectors which use beams of light, such as interferometers and pulsar timing arrays rely on measuring the the travel time of a beam of electromagnetic radiation between two points, and the effect that a gravitational wave has on this time. 
+A full treatment of this is given in cite:2009LRR....12....2S, but in summary, if a gravitational wave is not present within a  detector, the travel time of a beam will be constant. 
+If a gravitational wave is introduced, which has a polarisation component $h_+(t)$ in the plane of the beam, the change in the arrival time of the beam will be 
+\begin{equation}
+\label{eq:arrival-times-gw}
+\frac{\dd t_f}{\dd t} = 1 + \frac{1}{2} (1 + \cos \theta) \left\{ 
+    h_+\left( t + [1- \cos \theta ] L \right) - h_+(t) 
+  \right\}
+\end{equation}
+ where $\theta$ is the angle separating the detector beam and the
+gravitational wave plane, and $L$ is the proper distance separating the
+clocks when no gravitational wave is present.
+
+By arranging the detector to reflect the beam back to the originating
+clock, it is possible to measure the round-triop time using only one
+clock. In this arrangement we must account for the gravitational wave
+having a different strength one the return trip, and so equation
+(ref:eq:arrival-times-gw) becomes 
+\begin{align}
+  \label{eq:three-term}
+  \frac{\dd t_{\text{round}}}{\dd t} = 1 + \half \Big(  (& 1-\cos(\theta) )h_+ (t+2L) - (1+\cos(\theta))h_+(t) \nonumber \\ & + 2 \cos(\theta) h_+ [t+L(1 - \cos(\theta))] \Big),
+\end{align}
+the /three-term/ relation.
+
+** Operation of a Michelson interferometer
+
+\begin{figure}
+\begin{minipage}[c]{0.28\textwidth}
+  \begin{tikzpicture}
+    \draw [thick, red] (0,0.25) -- (3,0.25);
+    \draw [thick, red] (1.1, 0.25) -- (1.1, 2.15);
+    \draw [thick, red, dashed] (1.1, 0.25) -- (1.1, -1.0);
+    \fill (0,0) rectangle (0.5, 0.5);
+    \draw [ultra thick] (0.95, 0.1) -- +(45:.4);
+    \draw [ultra thick] (3, 0) rectangle (3.2, .5);
+    \draw [ultra thick] (0.8, 2.15) rectangle (1.4, 2.35);
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[c]{0.35\textwidth}
+  \begin{tikzpicture}
+    \draw [ultra thick, red] (0,0.25) -- (3,0.25);
+    \draw [ultra thick, red] (1.1, 0.25) -- (1.1, 2.15);
+    \draw [ultra thick, red] (-1,0.25) -- (0, 0.25);
+    \draw [thick, red, dashed] (1.1, 0.25) -- (1.1, -1.0);
+    \fill (-1,0) rectangle (-0.5, 0.5);
+    \draw [ultra thick] (0.95, 0.1) -- +(45:.4);
+    \draw [ultra thick] (3, 0) rectangle (3.2, .5);
+    \draw [ultra thick] (0.8, 2.15) rectangle (1.4, 2.35);
+    \draw [ultra thick] (-0.25, 0) rectangle (-0, 0.5);
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[c]{0.32\textwidth}
+  \begin{tikzpicture}
+    \draw [thick, red] (0,0.25) -- (3,0.25);
+    \draw [thick, red] (1.1, 0.25) -- (1.1, 2.15);
+    \draw [thick, red] (-1,0.25) -- (0, 0.25);
+    \draw [thick, red, dashed] (1.1, 0.25) -- (1.1, -1.0);
+    \fill (-1,0) rectangle (-0.5, 0.5);
+    \draw [ultra thick] (0.95, 0.1) -- +(45:.4);
+    \draw [ultra thick] (3, 0) rectangle (3.2, .5);
+    \draw [ultra thick] (0.8, 2.15) rectangle (1.4, 2.35);
+    \draw [ultra thick] (0.9, -0.5) rectangle (1.3, -0.7);
+  \end{tikzpicture}
+\end{minipage}
+
+\caption{\textbf{Left}: A simple Michelson interferometer, composed of a light source (black box), a beam splitter (heavy black line), and two end mirrors (white boxes). 
+\textbf{Center}: A Michelson interferometer with an additional power recycling mirror, placed between the beam source and the beam splitter. 
+\textbf{Right}: A Michelson interferometer with a signal recycling mirror, placed between the beam splitter and the output port.  \label{fig:michelson}}
+\end{figure}
+
+A Michelson interferometer is an optical device which is capable of
+measuring the difference in length between two optical paths to
+sub-wavelength precision. A Michelson interferometer can be constructed
+using a beamsplitter and two mirrors, in the configuration presented in
+figure [fig:michelson]. The input beam is split along the $x$ and $y$
+directions, and reflected back to the beam-splitter. At the
+beam-splitter the two beams will interfere: in the standard Michelson
+setup this will result in constructive interference if the arms have
+identical lengths, and a beam will be produced at the output (the dashed
+red line). If the arms' relative lengths change a pattern of
+interference fringes will be visible at the output of the
+interferometer.
+
+** Power Recycling
+
+The optimal signal-to-noise ratio can be achieved from an interferometer
+when the arm lengths are configured so that when no gravitational wave
+is present in the interferometer the interferometer beams interfere
+destructively \cite{1978JPhE...11..710E}. If the mirrors are low loss
+the light will then be reflected back towards the laser, and by placing
+a mirror between the laser and the beam splitter a resonant cavity can
+be formed (see figure [fig:power-recycle]), allowing the power in the
+interferometer to build up. This allows a less powerful laser to be used
+as the input for the interferometer, with a laser capable of providing
+several kilowatts of power inside the interferometer
+\cite{2011LRR....14....5P}.
+
+** Signal Recycling
+
+Signal recycling can be used to tune the bandwidth of an interferometer,
+and to increase its sensitivity by re-injecting the interferometer's
+output signal to the interferometer, achieving resonance, which
+increases the signal-to-noise ratio of the signal. This is possible
+thanks to the sidebands on the beam which are produced by the
+gravitational wave not interfering destructively.
+
+To perform signal recycling a mirror is added between the beam-splitter
+and the readout port of the interferometer, with this configuration
+illustrated in figure [fig:signal-recycle].
+
+** Fabry-Perot Cavities
+
+The arms of modern interferometers used in the detection of
+gravitational-waves store the beam for a period of time comparable to
+the timescale of the signals which are being searched for. In the case
+of kilometre-scale detectors and signals with a period around this
+implies the need for the light to reflect up-and-down the detector
+around $50$ times. This is achieved by laying the reflected beams atop
+each other in a Fabry-Perot cavity, with a , $\mathcal{F}=50$. A
+Fabry-Perot cavity is formed by placing a mirror between the
+beam-splitter and the end mirror in each arm, as illustrated in figure
+[fig:fabry-perot].
+
+
+* Ground-based interferometers
+
+** Advanced LIGO
+
+The Advanced LIGO detectors are 4-kilometre long interferometers with
+Fabry-Perot cavities, with a finesse of 50. The detectors improve their
+sensitivity compared to the initial generation detectors through the use
+of signal recycling, a technology pioneered in the GEO detector, and
+have quadruple mirror suspensions which use fused silica fibres to
+provide seismic
+islolation\cite{2002CQGra..19.4043R,2012CQGra..29w5004A}.
+
+#+ATTR_LATEX: :float t 
+#+ATTR_LATEX: :placement {t}
+#+CAPTION: The gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity.
+[[./figures/aligo-asd.pdf]]
+
+* Space-based interferometers
+  #+NAME:sec:SpaceBasedIfo
+  
+  While ground-based interferometers have the advantage of accessibility, and consequently fairly affordable construction costs, great advantage is to be had in placing an interferometer in space. Some noise sources which detectors such as abbr:LIGO must contend with, such as seismic noise, are completely absent, and greater freedom is afforded in the size of the interferometer, with the absence of a need to purchase and prepare land for the observatory. 
+In exchange for these advantages space-based interferometers present a number of technological hurdles, such as maintaining a sufficiently stable orbital orbital configuration to allow interferometry to be carried-out, and reduced sensitivity, as constructing a Fabry-Perot cavity in the comparitively poor vacuum around the L1 point is not feasible.
+
+Despite these difficulties, space-based detectors represent the majority of feasible concepts for detectors sensitive to low frequency emission.
+
+** Laser Interferometer Space Antenna
+   #+NAME:sec:lisadetector
+
+#+ATTR_LATEX: :float t 
+#+ATTR_LATEX: :placement {t}
+#+CAPTION: The gls:amplitude-spectral-density of the gls:lisa detector within their sensitive band, at design sensitivity.
+[[./figures/elisa-asd.pdf]]
+
+   abbr:lisa is a planned space-based gravitational wave observatory, under development by the European Space Agency, which would be placed in a heliocentric orbit at the L1 Lagrange point. In comparison to the kilometre-scale arms of second-generation ground-based detectors such as abbr:ligo, abbr:lisa is proposed to have arms which are 2.5 million kilometres long, giving the detector much greater sensitivity at low frequencies than is possible with ground-based detectors.
+
+The abbr:lisa mission was preceeded by abbr:LISA Pathfinder, a technology demonstration mission, launched in December 2015.
+
+** DECIGO
+   gls:decigo is a proposed space-based abbr:gw observatory.
+
+* Pulsar timing
+#+ATTR_LATEX: :float t 
+#+ATTR_LATEX: :placement {t}
+#+CAPTION: The gls:amplitude-spectral-density of the gls:ipta pulsar timing array.
+[[./figures/ipta-psd.pdf]]
+
+* Other approaches
+** Spacecraft telemetry
+** Earth normal modes
+** Atom interferometry
+
+
+* Noise sources
+** Shot noise
+
+** Radiation pressure noise
+
+** Newtonian Noise
+
+Newtonian noise, or gravitational gradient noise, is the strain produced
+by gravitational coupling between local mass density variations and the
+test masses in the interferometer. Examples of significant sources of
+Newtonian noise include clouds passing overhead the detector, and
+seismic perturbations in the local ground density.
+
+** Seismic, Newtonian, and thermal noise
+
+Seismic noise is the result of strain introduced into the interferometer
+through movement of the ground, which can be the result of geophysical
+activity, tidal activity, or anthropogenic sources of seismic noise,
+such as road traffic or railways. Seismic noise is also a source of
+Newtonian noise (see section [sec:newtonian-noise]) due to density
+fluctuations as the seismic wave passes through the ground. One of the
+important considerations in choosing a site for an interferometer is the
+presence of seismic noise, and for this reason they are normally located
+far from urban areas. Despite this, both of the Advanced LIGO sites are
+affected by the presence of loud anthropogenic noise sources (LHO is
+affected by a nearby Department of Energy site; LLO is affected by
+logging activity and a nearby railway track)\cite{2004CQGra..21.2255D}.
+LLO is also strongly affected by severe storms due to its proximity to
+the Gulf of Mexico.
+
+| $f$ [Hz]    | $D$ [km]   | Sources                                   |
+|-------------+------------+-------------------------------------------|
+| 0.01--1.0   | 1000       | Earthquakes, microseism                   |
+| 1--3        | 10         | Anthropogenic, nearby earthquakes, wind   |
+| 3--10       | 1          | Anthropogenic, wind                       |
+| 10--100     | 0.1        | Nearby Anthropogenic noise                |
+#+CAPTION: The principle seismic noise frequency bands which affect
+ground-based detectors, their sources, and the distance over which the
+band affects advanced-generation detectors.
+
+Seismic noise limits the sensitivity of the second generation detectors
+at low frequencies ($f < \SI{50}{\hertz}$), but it is present as a noise
+source across the passband of the detector. The seismic noise shows a
+pair of notable peaks below the $\SI{1}{\hertz}$ level, one caused by
+ocean swell, which has a period around 4 to 30 seconds, and a second
+caused by standing seismic modes in the Earth which spans the range of
+30 to 1000 seconds. The presence of seismic noise below
+$\SI{30}{\hertz}$ is still problematic for ground-based interferometers,
+depsite this being outside the design frequency range, due to
+/upconversion/, where low-frequency noise couples non-linearly into
+higher frequency noise.
+
+Coupling of seismic noise into a detector's Differential Arm Length
+Displacement read-out (DARM) is given by $$\label{eq:darm-seismic}
+  L(f) = 2 \frac{N_{\rm grav}(f)}{(2 \pi f)^2}, \quad N_{\rm grav}(f) =  \beta G \rho  N_{\rm sei}(f)$$
+for $N_{\rm grav}$ the fluctuation of the local gravitational field
+projected onto the axis of the arm cavity, $\rho$ is the ground density
+near the test mass, $\beta \sim 10$ is a geometrical factor, and
+$N_{\rm sei}$ is the seismic motion near the test
+mass\cite{2016PhRvD..93k2004M}.
+
+Seismic isolation is used in detectors to reduce the noise level due to
+seismic activity. This takes two forms: active isolation, and passive
+isolation. The former is accomplished by mounting optical components on
+hydraulic external pre-isolator (HEPI) systems which are controlled, via
+a feed-forward system, to a seismometer. The latter is reduced by
+suspending the optics as a component in a pendulum system. In the
+Advanced LIGO design this involves the test masses and their associated
+mirrors composing the final component in a quadruple pendulum
+suspension.
+
+In addition to seismic noise other phenomena may cause a change in the
+local gravitational field which will couple into DARM; these noise
+sources are normally grouped-together as "Newtonian noise", and can
+include the effect
+
+** Other noise sources
+
+There are numerous additional noise sources within the interferometer.

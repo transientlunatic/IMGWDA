@@ -74,28 +74,15 @@ which Gaussian Process Regression (GPR) is often deemed a
 
 
 
-Gaussian processes are Bayesian models which associate every point an
-some /input space/ with a probability distribution---specifically a
-normal distribution, and a collection of input points will form a
-multi-variate normal distribution. Gaussian processes are a
-non-parametric supervised machine learning
-technique\cite{barberBRML2012,mackay2003information}.
+Gaussian processes are Bayesian models which associate every point an some /input space/ with a probability distribution---specifically a normal distribution, and a collection of input points will form a multi-variate normal distribution. 
+Gaussian processes are a non-parametric supervised machine learning technique\cite{barberBRML2012,mackay2003information}.
 
-To make a prediction, we need to first have a set of prior observations
-and information about the parameters of the physical system which
-produced those observations. These combined form the /training data/ for
-the predictor.
+To make a prediction, we need to first have a set of prior observations and information about the parameters of the physical system which produced those observations. 
+These combined form the /training data/ for the predictor.
 
-A completely untrained Gaussian process forms the job of a prior
-probability distribution in a Bayesian analysis; where it is more
-conventional to consider a prior over a set of, for example, real
-values, such as a normal distribution, the Gaussian process forms a
-prior over the functions which might form the regression fit to any
-observed data. While this prior is intially untrained it still contains
-information about our preconceptions of the data, for example, whether
-or not we expect the fit to be analytic, and the average of the
-functions. By providing training data we can update the Gaussian
-process, in the same way that the posterior distribution is updated by
+A completely untrained Gaussian process forms the job of a prior probability distribution in a Bayesian analysis; where it is more conventional to consider a prior over a set of, for example, real values, such as a normal distribution, the Gaussian process forms a prior over the functions which might form the regression fit to any observed data. 
+While this prior is intially untrained it still contains information about our preconceptions of the data, for example, whether or not we expect the fit to be analytic, and the average of the functions. 
+By providing training data we can update the Gaussian process, in the same way that the posterior distribution is updated by
 the addition of new data in a standard Bayesian context, and a posterior
 on the set of all possible functions to fit the data is produced. We can
 take the mean of this posterior in the place of the "best fit line"
@@ -113,26 +100,24 @@ triggers from gravitational wave detectors.
 Gaussian processes trained with $N$ data require the ability to both store and invert an $N\times N$ matrix of covariances between observations; this can be a considerable computational challenge.
 There are a number of approaches to get around this problem, including /sparse Gaussian processes/, where a limit on the parameter-space distance between training points is set, and the covariance of points outside this radius are ignored\cite{EPFL-CONF-161319}, and hierarchical matrix inversion methods\cite{hodlr}.
 
-Gaussian processes can be extended from the case of a single-dimensional
-input predicting a single-dimensional output to the ability to predict a
-multi-dimensional output from a multi-dimensional
-input\cite{Alvarez2011,Alvarez2011a,Bonilla2007}.
+Gaussian processes can be extended from the case of a single-dimensional input predicting a single-dimensional output to the ability to predict a multi-dimensional output from a multi-dimensional input\cite{Alvarez2011,Alvarez2011a,Bonilla2007}.
 
-#+ATTR_LATEX: :options {[Step 1] An example of raw training data which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.}{fig:gp-training-data}
-#+BEGIN_sidefigure
+#+CAPTION: [Step 1] An example of raw training data which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.
+#+NAME: fig:gp-training-data
+#+BEGIN_figure
 \includegraphics{figures/gp-training-data.pdf}
-#+END_sidefigure
+#+END_figure
 
-#+ATTR_LATEX: :options { [Step 2] We choose a covariance function for the  Gaussian process, in this case an exponential-squared covariance    function. The Gaussian process containing no data and this    covariance matrix forms our prior probability distribution. Here    50 draws from the prior distribution are    plotted. }{fig:gp-prior}
-#+BEGIN_sidefigure
+#+CAPTION: [Step 2] We choose a covariance function for the  Gaussian process, in this case an exponential-squared covariance    function. The Gaussian process containing no data and this    covariance matrix forms our prior probability distribution. Here    50 draws from the prior distribution are plotted.
+#+LABEL: fig:gp-prior
+#+BEGIN_figure
   \includegraphics{figures/gp-example-prior-draws.pdf}
-#+END_sidefigure
-
+#+END_figure
 
 #+ATTR_LATEX: :options {[Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed.}{fig-gp-covariance-matrix}
-#+BEGIN_sidefigure
+#+BEGIN_figure
    \includegraphics{figures/gp-example-posterior-draws.pdf}
-#+END_sidefigure
+#+END_figure
 
 #+ATTR_LATEX: :options {The covariance structure for the Gaussian process. }{fig:gp-covariance-matrix}
 #+BEGIN_sidefigure
@@ -182,6 +167,7 @@ One of the most frequently encountered covariance functions in the
 literature is the exponential squared covariance functions
 \cite{rasmussen2006gaussian}
 
+#+NAME: eq:squaredexponentialkernel
 \begin{equation}
    \label{eq:squaredexponentialkernel}
   k_{\mathrm{SE}}(r) = \exp \left( - \frac{r^2}{2 l^2} \right)
@@ -234,7 +220,8 @@ A list of the symbols for each covariance function is given in table ref:tab:ker
 
 #+ATTR_LATEX: :environment tabularx 
 #+ATTR_LATEX: :width \textwidth
-#+ATTR_LATEX: :align lcX
+#+ATTR_LATEX: :align lcX :booktabs
+#+ATTR_LATEX: :placement [b]
 #+CAPTION: A table of commonly encountered covariance functions.
 #+NAME: tab:kernels
 #+tblname: kernels-table
@@ -395,50 +382,53 @@ process running on another node.
 
 * Assessing the model
 
-In order to assess the global accuracy of our Gaussian Process surrogate
-to the underlying function it is standing-in for we require some means
-of quantitatively measuring deviations between the two. We introduce two
-measures: the root-mean-squared error, and the correlation. Both methods
-require access to test data; some fraction of the available evaluations
-of the function which are not used to train the Gaussian process, but
-which are held aside, and to which predictions from the GP can be
-compared.
+Having produced a statistical regression model it is crucial that its efficacy is assessed.
+There are broadly two scenarios under which such testing can occur. 
+In situations where a large amount of data is available to condition the model it is often appropriate to partition the data into a "training set" and a "test set"; 
+the latter is held-aside, and not used to condition the model, and can then be used after the model is trained to compare against the model predictions.
 
-Let $x_*$ and $y_*$ be respectively the test inputs and test outputs for
-the Gaussian process, then let $\hat{y}$ be the set of model predictions
-drawn from the Gaussian Process with inputs $\vec{x}_*$.
+Alternatively scenarios may arise where there is insufficient data to form such a test set without adversely affecting the model's predictive power.
+Examples of such a scenario include timeseries modelling, where the predictions of the model may represent future (an therefore inaccessible) observations, 
+or computational experiments, where the acquisition of training data is sufficiently costly that producing a test set is not viable.
 
-Mean-squared error
+In the case where test data is available two straight-forward metrics are available: the root-mean-squared error, and the correlation. 
 
+Let $\vec{x}_*$ and $\vec{y}_*$ be respectively the test inputs and test outputs from the test set, 
+then let $\hat{y}$ be the set of model predictions drawn from the Gaussian Process with inputs $\vec{x}_*$.
+
+The root mean squared error (RMSE) gives an estimate of the total deviation between the mean prediction of the model and the true value from the test data:
 #+NAME:eq:rmse
 \begin{equation}
 \mathrm{RMSE} = \sqrt{
     \frac{
       \sum_{i=0}^{n_i} (y_*^{(i)} - \hat{y}^{(i)})^2
     }
-    { n_t }
+    { n_t },
   }
 \end{equation}
 
-for $n_t$ the size of the test set.
+for $n_t$ the size of the test set. While the RMSE can represent a good metric for conventional regression methods, it does not consider the estimate of the variance which is provided by Gaussian process models; 
+as such it is an insufficient measure on its own of these models.
 
-Correlation
+It is possible to use the Gaussian process variance to form a metric of the efficacy by considering the correlation between the test data and the prediction
 
-$$\label{eq:correlation}
+#+NAME:eq:correlation
+\begin{equation}
     \rho^2 = \left(
       \frac{ \cov(y^*, \hat{y})} { \sqrt{ \vary(y) \vary(\hat{y}) } } 
-    \right)^2$$
+    \right)^2
+\end{equation}
 
-Forrester\cite{forrester2008engineering} suggests that a
-$\rho^2 \geq 0.8$ provides a surrogate model with good global predictive
-abilities, which corresponds to an RMSE of around $0.1$.
+These two metrics, together, allow the model to be assessed either during the training of the model 
+(or indeed, they can be used as training metrics if using a cross validation approach while determining the model hyperparameters)
+given a judicious partitioning of the available data.
 
-* Extending the Gaussian Process
+Forrester\cite{forrester2008engineering} suggests that a $\rho^2 \geq 0.8$ provides a surrogate model with good global predictive abilities, which corresponds to an RMSE of around $0.1$.
 
-Standard implementations of Gaussian processes are capable of mapping a
-multi-dimensional input to a single-dimensional output, however there
-are many situations in which the ability to generate a multi-dimensional
-output would be advantageous.
+In situations where test data is not available suchstraightforward tests are often impractical. 
+In the case of timeseries forecasting it may be possible to assess the forecast by forming a test set from the most recent observations, and comparing these to the output of the model, 
+however, if only a small number of past observations are available the predictive capability of the model may be sufficiently poor to render this test almost meaningless.
+
 
 * Bayesian Optimisation
 
@@ -587,3 +577,13 @@ were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
 ** Latin hypercubes
 ** Voronoi tesselation
 ** Fully information-driven design
+
+* Extending the Gaussian Process
+
+Standard implementations of Gaussian processes are capable of mapping a
+multi-dimensional input to a single-dimensional output, however there
+are many situations in which the ability to generate a multi-dimensional
+output would be advantageous.
+
+* General elliptical processes
+/This section should be a discussion of more general elliptical processes, such as student-t processes. Given that these haven't featured in the development of the surrogate model it would be appropriate to only spend a few lines on this, although finding and presenting a suitable astrophysical example could be valuable./

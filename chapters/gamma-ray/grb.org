@@ -1,27 +1,29 @@
 * Short gamma-ray bursts and compact binary coalescences
 #+NAME:sec:sgrbs
 
+/This chapter is composed principally from the method presented in cite:williams-rates-paper, with expanded discussion on the use of this method not only to estimate the average opening angle of GRB beams, but also its potential application to more general beamed emission./
+
+/An introduction to short gamma ray bursts should go here, which needs to be re-written compared to the discussion of SGRBs from the original paper, since that was written mainly by Andrew./
+
+\begin{equation}
+\label{eq:rate2angle}
+    \grbrate = \epsilon\cbcrate \left \langle 1-\cos \theta \right \rangle,
+\end{equation}
 
 * From Rates To Beaming Angles
+#+NAME:sec:grb-rate-to-beaming
 
-In this section, we discuss our approach to estimating the \ac{SGRB} beaming angle based on the binary neutron star inspiral rate, estimated through a number of \ac{GW} observations of \BNS coalescence.
-We demonstrate the approach by considering plausible detection scenarios for \ac{aLIGO}~\cite{Aasi:2013wya}.
-Our ultimate goal is to develop a generic approach that folds in uncertainties in the \BNS merger rate and our ignorance about the probability with which such mergers actually result in \acp{SGRB}.
-%
+In this section, we discuss our approach to estimating the abbr:sgrb beaming angle based on the binary neutron star inspiral rate, estimated through a number of abbr:gw observations of abbr:bns coalescence.
+We demonstrate the approach by considering plausible detection scenarios for advanced abbr:ligo, which are summarised in table ref:tab:ratescenarios.
+Our ultimate goal is to develop a generic approach that folds in uncertainties in the abbr:bns merger rate and our ignorance about the probability with which such mergers actually result in \acp{SGRB}.
+
 An overview of the general method is as follows:
 
-1. Estimate the posterior probability distribution on the \BNS merger rate
-    in the local universe from a number of observed gravitational wave signals
-    and our knowledge of the sensitivity of the detectors.  We construct a joint
-    posterior distribution on the \BNS rate and the (unknown) probability
-    $\epsilon$ that a given merger results in a \ac{SGRB}.
-2. Use equation~\ref{eq:rate2angle}, which relates the \BNS merger and
-    \ac{SGRB} rates via the geometry of the beaming angle, to transform the rate
-    posterior probability to a posterior probability on the mean \ac{SGRB}
-    beaming angle.
-3. Marginalize over $\epsilon$. We choose to consider $\epsilon$ a nuisance
-    parameter because, to date, there is no accurate estimate of this parameter
-    and it is not the main focus of our analysis. 
+1. Estimate the posterior probability distribution on the abbr:bns merger rate in the local universe from a number of observed gravitational wave signals and our knowledge of the sensitivity of the detectors. We construct a joint posterior distribution on the abbr:bns rate and the (unknown) probability $\epsilon$ that a given merger results in a abbr:sgrb. 
+
+2. Use equation ref:eq:rate2angle, which relates the abbr:bns merger and abbr:sgrb rates via the geometry of the beaming angle, to transform the rate posterior probability to a posterior probability on the mean abbr:sgrb beaming angle.
+
+3. Marginalize over $\epsilon$. We choose to consider $\epsilon$ a nuisance parameter because, to date, there is no accurate estimate of this parameter and it is not the main focus of our analysis. 
 
 
 ** Constructing The Rate Posterior
@@ -51,7 +53,7 @@ the detector data and a set of template \BNS coalescence waveforms.  The
 measured rate $r$ of these events consists of two components: a population of
 true \ac{GW} signals, $s$; and a background rate, $b$, due to noise fluctuations
 due to instrumental and environmental disturbances.
-%
+
 \begin{equation}
 r = s + b
 \begin{cases}
@@ -59,7 +61,7 @@ s = \text{signal rate} \\
 b = \text{background rate}.
 \end{cases}
 \end{equation}
-%
+
 Typically for an all-sky, all-time analysis, like that described
 in~\cite{Usman:2015kfa}, the significance of a candidate event is
 empirically measured against `background' data representative of the
@@ -75,17 +77,17 @@ Assuming a uniform prior on $s$ and a Poisson process underlying the
 events, it may be shown (e.g.,~\cite{2010blda.book.....G}) that the
 posterior for the signal rate, given a known background rate $b$ and
 $n$ events observed over a time period $T$ is,
-%
+
 \begin{equation}
 p(s|n,b,I) = C \frac{ T\left[(s+b)T\right]^n e^{-(s+b)T}}{n!},
 \end{equation}
-%
+
 where,
 \begin{eqnarray}
 C^{-1} & = &\frac{e^{-bT}}{n!} \int_0^{\infty}\diff(sT)(s+b)^n T^n e^{-sT}\\
 & = & \sum_{i=0}^n \frac{ (bT)^i e^{-bT}}{i!}.
 \end{eqnarray}
-%
+
 Finally, we can transform the posterior on the \emph{signal} rate to
 the underlying \emph{coalescence} rate via our knowledge of the
 sensitivity of the \ac{GW} analysis.  In particular, the signal
@@ -96,12 +98,12 @@ rate in terms of the number of mergers per \ac{MWEG}, per year then we
 require the number of galaxies $N_{\mathrm{G}}$ which may be probed by
 the \ac{GW} analysis.  At large distances, this is well approximated
 by~\cite{rates_paper},
-%
+
 \begin{equation}
     N_G = \frac{4}{3} \pi \left( \frac{\dhor}{\mpc}
 \right)^3 (2.26)^{-3} (0.0116),
 \end{equation}
-%
+
 where $\dhor$ is the horizon distance (defined as the distance at which an
 optimally-oriented \BNS merger yields $\rho_c\geq12$), the factor of 2.26
 results from averaging over sky-locations and orientations, and
@@ -109,12 +111,12 @@ $1.16\times 10^{-2}$\,Mpc$^{-3}$ is the extrapolated density of \ac{MWEG} in
 space.
 
 Finally, the posterior on the binary coalescence rate $\cbcrate$ is obtained from a trivial transformation of the posterior on the signal rate $s$,
-%
+
 \begin{eqnarray}
     p(\cbcrate|n,T,b,\dhor) & = & p(s|n,T,b) \left|\frac{\diff s}{\diff \cbcrate}\right| \\
                                    & = & N_G(\dhor)p(s|n,T,b).
 \end{eqnarray}
-%
+
 We see that in this approach, the rate posterior depends only on the
 number of signal detections $n$, the observation time $T$, the
 background rate $b$, and the horizon distance of the search $\dhor$.
@@ -129,7 +131,7 @@ usual, $D$ indicates some set of observations and $I$ unenumerated
 prior knowledge.  Our goal is to transform the measured posterior
 probability density on the rate $\cbcrate$ to a posterior on the
 beaming angle.
-%
+
 First, note that we can express the joint distribution
 $p(\theta, \epsilon|D,I)$ as a Jacobian transformation of the joint
 distribution $p(\cbcrate, \epsilon|D,I)$:
@@ -139,11 +141,11 @@ p(\theta,\epsilon) = p(\cbcrate,\epsilon)
 \frac{\partial(\cbcrate,\epsilon)}{\partial(\theta,\epsilon)}
 \right\rvert\right\rvert,
 \end{equation}
-%
+
 where we have dropped conditioning statements for notational convenience.
 The Jacobian determinant can be  computed from equation~\ref{eq:rate2angle}.
 It is then straightforward to marginalize over $\epsilon$ to yield the posterior on $\theta$ itself:
-%
+
 \begin{eqnarray}
     \label{eq:beam_posterior}
     p(\theta) & = & \int_{\epsilon} p(\theta,\epsilon)~\diff \epsilon\\
@@ -155,12 +157,12 @@ It is then straightforward to marginalize over $\epsilon$ to yield the posterior
 \theta~p(\cbcrate)}{(\cos\theta-1)^2}\int_{\epsilon}
 \frac{p(\epsilon)}{\epsilon} ~\diff \epsilon,
 \end{eqnarray}
-%
+
 where we have assumed $\epsilon$ and $\cbcrate$ are logically independent such that,
 \begin{equation}
 p(\epsilon,\cbcrate) = p(\epsilon|\cbcrate)p(\cbcrate) = p(\epsilon)p(\cbcrate).
 \end{equation}
-%
+
 It is important to note that the entire procedure of deriving the jet
 angle posterior is completely independent of the approach used to
 derive the rate posterior.  In the preceding section we adopted a
@@ -174,7 +176,7 @@ in this approach is the specification of some prior distribution for
 $\epsilon$. Given the lack of information on the value and distribution
 of $\epsilon$, we choose three plausible priors and study their effects
 on our beaming angle inference. Our choice of priors are:
-%
+
 \begin{description}
 \item [Delta-function] $p(\epsilon) = \delta(\epsilon=0.5)$;
         the probability that \BNS mergers yield \acp{SGRB} is known to be 50\%
@@ -215,7 +217,7 @@ analysis,
     \label{eq:search_volume}
     V_{\mathrm{search}} = \frac{4}{3}\pi \left(\frac{\dhor}{2.26}\right)^3 \times \gamma T,
 \end{equation}
-%
+
 where the factor 2.26 arises from averaging over source sky location
 and orientation, $T$ is the observation time and $\gamma$ is the
 \emph{duty cycle} for the science run.  Following~\cite{Aasi:2013wya},
@@ -227,7 +229,7 @@ uncertainty in the sensitivity of the early configuration of the
 detectors, we use the arithmetic mean of the lower and upper bounds
 when computing the search volume.  Table~\ref{tab:scenarios} lists
 the details of each observing scenario.
-%
+
 \begin{table}
 \centering
 \begin{tabular}{lccccc}
@@ -259,7 +261,7 @@ the details of each observing scenario.
   year.
   \label{tab:scenarios}}
 \end{table}
-%
+
 
 \subsection{Posterior Results}
 Figure~\ref{fig:aligorate} shows the \BNS rate posteriors resulting
@@ -329,7 +331,7 @@ equation~\ref{eq:beam_posterior} when we compute the posterior on the
 beaming angle, with the understanding that the resulting posterior
 should yield an inference consistent with the `true' value
 $\theta=10^{\circ}$.
-%
+
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/O1_injections_violin.pdf}
@@ -364,8 +366,6 @@ $\theta=10^{\circ}$.
   angle of $\theta = 10^{\circ}$.
   \label{tab:summaryinj2015}}
 \end{table}
-
-%
 
 \begin{figure}
 \centering
