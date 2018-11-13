@@ -7,12 +7,13 @@ xPRE =  $(TEX) -ini -job-name="preamble" "&pdflatex preamble.tex\dump"
 BDIR = _build
 
 ORG_FILES=$(wildcard chapters/*/*.org)
+ORG_BIB=$(wildcard bibliography/*.org)
 INT_FILES=$(ORG_FILES:.org=.int_tex)
 TEX_FILES=$(ORG_FILES:.org=.tex)
 #$(patsubst chapters/%.org,$(BDIR)/org/%.int_tex,$(ORG_FILES))
 #TEX_FILES=$(patsubst chapters/%.org,$(BDIR)/tex/%.tex,$(ORG_FILES))
 HTML_FILES=$(patsubst chapters/%.org,$(BDIR)/html/%.html,$(ORG_FILES))
-.PHONY: document.pdf all clean glossary pdf help tex
+.PHONY: document.pdf all clean glossary pdf help tex figures
 
 help :  ## Show this help message.
 # This code snippet came from https://gist.github.com/prwhite/8168133
@@ -28,9 +29,11 @@ html : $(HTML_FILES)
 
 pdf :	document.pdf ## Produce a PDF output
 
-document.pdf : document.tex  chapters/glossary/glossary.tex $(TEX_FILES)
+document.pdf : document.tex  chapters/glossary/glossary.tex $(TEX_FILES) figures
 	$(TEXMK) $< 
 
+figures:
+	cd figures && $(MAKE)
 
 chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex
 	python scripts/build/glossary.py $< > $@
@@ -41,6 +44,9 @@ chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex
 
 %.tex : %.int_tex
 	emacs $< -Q --batch --eval "(require 'org)"  --eval "(org-latex-export-to-latex nil nil nil t)" --eval "(setq org-latex-caption-above nil)" --kill
+
+%.bib : %.int_tex
+	emacs $< -Q --batch --eval "(require 'org)"   --eval "(org-bibtex \"$@\")" --kill
 
 #$(INT_FILES) : %.int_tex : $(ORG_FILES)
 #	@mkdir -p $(@D)
