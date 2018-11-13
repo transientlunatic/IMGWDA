@@ -29,12 +29,19 @@ html : $(HTML_FILES)
 
 pdf :	document.pdf ## Produce a PDF output
 
-document.pdf : document.tex  chapters/glossary/glossary.tex $(TEX_FILES) figures
-	$(TEXMK) $< 
+document.pdf : git-info.tex document.tex  chapters/glossary/glossary.tex $(TEX_FILES) figures
+	$(TEXMK) $<
 
 figures:
 	cd figures && $(MAKE)
 
+glossary: chapters/glossary/glossary.tex ## Convert the org table to a glossary
+
+git-info.tex :
+	git describe --tags --long --always --dirty='-*' 2>/dev/null > git-info.tex
+
+chapters/glossary/glossary.org:
+chapters/glossary/glossary.tex_int: chapters/glossary/glossary.org
 chapters/glossary/glossary.tex : chapters/glossary/glossary.int_tex
 	python scripts/build/glossary.py $< > $@
 
@@ -62,7 +69,7 @@ $(HTML_FILES) : $(ORG_FILES)
 
 
 
-glossary : tex/glossaries.tex ## Convert the glossary into a format acceptable to one of the languages supported.
+#glossary : tex/glossaries.tex ## Convert the glossary into a format acceptable to one of the languages supported.
 
 clean:	## Remove all of the temporary files which the various compilation steps produce
 	latexmk -CA
