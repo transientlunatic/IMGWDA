@@ -4,15 +4,17 @@
 \usepackage[acronym,toc,nopostdot,xindy]{glossaries}
 \usepackage{siunitx}
 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tensor}
 \makeglossaries
 \usepackage{tabularx}
 \usepackage{type1cm}
 \usepackage{lettrine}
 %\usepackage{physicsplus}
 \usepackage{caption}
-
+\usepackage{pgfplots}
 \usepackage{rotating}
-\usepackage{pgfgantt}
+%\usepackage{pgfgantt}
 \usepackage{environ}
 \usepackage{setspace}
 
@@ -41,6 +43,7 @@
 
 
 \input{title}
+
 
 \begin{document}
 \openleft
@@ -72,6 +75,11 @@ This document was built with version \input{git-info} of the git repository.
 % \part{Outline \& Review of Gravitational Wave Literature}
 % \label{part:introduction}
 
+\section{Notational conventions}
+\label{sec:notation-conventions}
+
+Throughout this work I take the convention that the metric tensor, $\ten{g}$ should be positive, having the signature $(-,+,+,+)$, and likewise the Riemann, $\ten{R}$, and Einstein, $\ten{E}$ tensors should also be positive, following the ``spacelike convention'' of Landau \& Lifshitz, and the convention of Misner, Thorne, and Wheeler (1973). I also adopt the convention of using greek indices for four-dimensional tensor quantities, such as 4-vectors, and latin indices otherwise. The Einstein summation convention is also assumed throughout for repeated indices. The reader should note that while the discussion of metrics in the context of general relativity is limited to four-dimensions, those metrics used in feature-space descriptions of data, especially in the context of Gaussian process regression, are not. 
+
 \mainmatter
 \part{Introduction}
 \label{part:intro}
@@ -86,33 +94,8 @@ This document was built with version \input{git-info} of the git repository.
 
  \section{Gravitational wave detectors}
  \label{sec:detectors}
-
- \input{tex/1-detectors/1-1-introduction}
-
- \section{Detector architectures}
- \label{sec:detect-arch}
-
- \section{Resonant bar detectors}
- \label{sec:reson-bar-detect}
-
- \section{Ground-based interferometers}
- \label{sec:ground-based-interf}
- \input{tex/1-detectors/ground-based}
-
-
- \subsection{Space-based interferometers}
- \label{sec:space-based-interf}
-
- \subsection{Earth normal modes}
- \label{sec:earth-normal-modes}
-
- \subsection{Spacecraft telemetry}
- \label{sec:spacecraft-telemetry}
+ \input{chapters/detectors/detectors}
  
- \section{Noise sources}
- \label{sec:an-overview-noise}
- \input{tex/1-detectors/noise}
-
 
  \chapter{Sources of Gravitational Waves and their Waveforms}
  \label{cha:sourc-grav-waves}
@@ -125,28 +108,7 @@ This document was built with version \input{git-info} of the git repository.
  %   be luminous enough to detect, or produce radiation over a frequency
  %   band which can be detected by current-generation detectors.}
 
-%\section{Sources of gravitational radiation}
-%\label{sec:sources}
-
-\input{chapters/sources/sources}
-% \input{tex/2-sources/introduction}
-
-%  \section{Compact Binary Coalescence}
-%  \label{sec:cbc}
-%  \input{tex/2-sources/2-1-cbc}
-
-%  \section{Supernovae}
-%  \label{sec:sn}
-%  \input{tex/2-sources/2-2-cc-supernovae}
-
-%  \section{Gravitational-wave Pulsars}
-%  \label{sec:pulsar}
-%  \input{tex/2-sources/2-3-pulsar}
-
-%  \section{Stochastic Sources}
-%  \label{sec:stochastic-sources}
-%  \input{tex/2-sources/2-4-stochasticbackground}
-
+ \input{chapters/sources/sources}
 
 \part{Data Analysis for Gravitational Wave Detectors}
 \label{part:data-analysis}
@@ -156,25 +118,6 @@ This document was built with version \input{git-info} of the git repository.
 
 \input{chapters/4-analysis/probability}
 
-%\input{tex/3-analysis/bayesian-inference}
-
-\chapter[Data Analysis]{Analysis of gravitational wave data}
-\label{cha:data-analys-grav}
-
-\section{Matched filtering}
-\label{sec:matched-filtering}
-\input{tex/3-analysis/matched-filtering}
-
-\section{Pipeline overview}
-\label{sec:pipeline-overview}
-%% \input{tex/3-analysis/pipeline-overview}
-
-\section{Numerical Relativity}
-\label{sec:numerical-relativity}
-\input{tex/3-analysis/numerical-relativity}
-
-\section{Hierarchical Bayesian Models}
-\label{sec:hierarchical-models}
 
 \chapter{Hierarchical Modelling of Gamma Ray Bursts}
 \label{cha:gamma-ray-burst}
@@ -197,8 +140,10 @@ This document was built with version \input{git-info} of the git repository.
 
 
 
+
+\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian,bibliography/grb,bibliography/observing-runs}
 \bibliographystyle{unsrt85}
-\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian,bibliography/grb}
+%\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian,bibliography/grb}
 
 % The glossary
 \glsaddall
