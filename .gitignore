@@ -1,3 +1,11 @@
+## Stuff specific to this pipeline
+*.int-tex
+*.org~
+*.tex~
+*.*~
+*__pycache__/
+*.ipynb_checkpoints/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
