@@ -114,20 +114,23 @@ Gaussian processes can be extended from the case of a single-dimensional input p
   \includegraphics{figures/gp-example-prior-draws.pdf}
 #+END_figure
 
-#+ATTR_LATEX: :options {[Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed.}{fig-gp-covariance-matrix}
+#+CAPTION: [Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed.}
+#+LABEL: fig:gp-covariance-matrix
 #+BEGIN_figure
    \includegraphics{figures/gp-example-posterior-draws.pdf}
 #+END_figure
 
-#+ATTR_LATEX: :options {The covariance structure for the Gaussian process. }{fig:gp-covariance-matrix}
-#+BEGIN_sidefigure
-  \includegraphics{figures/gp-example-expsqcov-matrix.pdf}
-#+END_sidefigure
+# #+CAPTION: The covariance structure for the Gaussian process.
+# #+LABEL: fig:gp-covariance-matrix
+# #+BEGIN_figure
+#   \includegraphics{figures/gp-example-expsqcov-matrix.pdf}
+# #+END_figure
 
-#+ATTR_LATEX: :options {[Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.}{fig-gp-posterior-best}
-#+BEGIN_sidefigure
+#+CAPTION: [Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.
+#+LABEL: fig-gp-posterior-best
+#+BEGIN_figure
    \includegraphics{figures/gp-posterior-meancovar.pdf}
-#+END_sidefigure
+#+END_figure
 
 * Covariance Functions
 
@@ -153,15 +156,17 @@ the form $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant
 under all rigid motions.
 #+END_definition
 
-#+ATTR_LATEX: :options {The exponential-squared covariance function.}{fig:gp-expsq-covar}
-#+BEGIN_sidefigure
+#+CAPTION: The exponential-squared covariance function.
+#+LABEL: fig:gp-expsq-covar
+#+BEGIN_figure
    \includegraphics{figures/gp-expsqcov.pdf}
-#+END_sidefigure
+#+END_figure
 
-#+ATTR_LATEX: :options {Draws from the Exponential-squared covariance function at a selection of length scales.}{fig-expsq-draws}
-#+BEGIN_sidefigure
+#+CAPTION: Draws from the Exponential-squared covariance function at a selection of length scales.
+#+LABEL: fig:expsq-draws
+#+BEGIN_figure
    \includegraphics{figures/gp-expsqcov-draws.pdf}
-#+END_sidefigure
+#+END_figure
 
 One of the most frequently encountered covariance functions in the
 literature is the exponential squared covariance functions

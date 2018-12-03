@@ -1,5 +1,8 @@
 \documentclass{kentigern}
 
+\makeatletter
+\input{journal-macros}
+\makeatother
 \usepackage{lipsum}
 \usepackage[acronym,toc,nopostdot,xindy]{glossaries}
 \usepackage{siunitx}
@@ -19,6 +22,7 @@
 \usepackage{setspace}
 
 
+
 \linespread{1.25}
 %\usepackage{geometry}
 \title{Plausible inference methods for gravitational wave data analysis}
@@ -28,13 +32,14 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
 % allows for temporary adjustment of side margins
-\usepackage{chngpage}
+%\usepackage{chngpage}
 
 
 \usetikzlibrary{bayesnet}
-
-
 
 
 % The glossary
@@ -141,7 +146,7 @@ Throughout this work I take the convention that the metric tensor, $\ten{g}$ sho
 
 
 
-\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian,bibliography/grb,bibliography/observing-runs}
+\bibliography{bibliography/books,bibliography/mypapers,bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian,bibliography/grb}
 \bibliographystyle{unsrt85}
 %\bibliography{bibliography/introduction,bibliography/relativity,bibliography/detectors,bibliography/gw150914,bibliography/sources,bibliography/analysis,bibliography/gaussian,bibliography/grb}
 

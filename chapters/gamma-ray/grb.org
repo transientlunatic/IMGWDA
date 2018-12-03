@@ -1,7 +1,8 @@
+
+/This chapter is composed principally from the method presented in cite:dw-sgrb-bayesian-contraint, with expanded discussion on the use of this method not only to estimate the average opening angle of GRB beams, but also its potential application to more general beamed emission./
+
 * Short gamma-ray bursts and compact binary coalescences
 #+NAME:sec:sgrbs
-
-/This chapter is composed principally from the method presented in cite:williams-rates-paper, with expanded discussion on the use of this method not only to estimate the average opening angle of GRB beams, but also its potential application to more general beamed emission./
 
 /An introduction to short gamma ray bursts should go here, which needs to be re-written compared to the discussion of SGRBs from the original paper, since that was written mainly by Andrew./
 
@@ -15,7 +16,7 @@
 
 In this section, we discuss our approach to estimating the abbr:sgrb beaming angle based on the binary neutron star inspiral rate, estimated through a number of abbr:gw observations of abbr:bns coalescence.
 We demonstrate the approach by considering plausible detection scenarios for advanced abbr:ligo, which are summarised in table ref:tab:ratescenarios.
-Our ultimate goal is to develop a generic approach that folds in uncertainties in the abbr:bns merger rate and our ignorance about the probability with which such mergers actually result in \acp{SGRB}.
+Our ultimate goal is to develop a generic approach that folds in uncertainties in the abbr:bns merger rate and our ignorance about the probability with which such mergers actually result in abbr:SGRB.
 
 An overview of the general method is as follows:
 
@@ -33,7 +34,7 @@ Our goal is to infer the posterior probability distribution for the mean
 abbr:SGRB beaming angle $\theta$ from abbr:GW constraints on the rate of \BNS
 coalescence $\cbcrate$.  The core ingredient to the analysis is the posterior
 probability distribution on the coalescence rate $p(\cbcrate|D,I)$, where $D$
-represents some \ac{GW} observation and $I$ denotes other unenumerated prior
+represents some abbr:gw observation and $I$ denotes other unenumerated prior
 information.  We will first demonstrate how $p(\cbcrate|D,I)$ may be constructed
 for a few projected observing scenarios from~cite:Aasi:2013wya.  Later, in
 section~\ref{sec:beaming_limits}, we will extend the analysis to place
@@ -44,14 +45,14 @@ in cite:Abbott:2016ymx.
 To form the posterior on the coalescence rate, we begin by constructing the
 posterior on the \emph{signal} rate.  Note that these are not identical since
 only those \BNS mergers which occur within a certain range yield a detectable
-signal.  \ac{GW} data analysis pipelines (e.g. {\tt
+signal.  abbr:gw data analysis pipelines (e.g. {\tt
 FINDCHIRP}~\cite{2012PhRvD..85l2006A}, {\tt
 PyCBC}~\cite{Canton:2014ena,Usman:2015kfa,alex_nitz_2017_844934}) identify
 discrete `candidate events' which are characterised by network \acp{SNR},
-$\rho_c$, which, for the case of \BNS searches, indicate the similarity between
-the detector data and a set of template \BNS coalescence waveforms.  The
+$\rho_c$, which, for the case of abbr:bns searches, indicate the similarity between
+the detector data and a set of template abbr:bns coalescence waveforms.  The
 measured rate $r$ of these events consists of two components: a population of
-true \ac{GW} signals, $s$; and a background rate, $b$, due to noise fluctuations
+true abbr:gw signals, $s$; and a background rate, $b$, due to noise fluctuations
 due to instrumental and environmental disturbances.
 
 \begin{equation}
@@ -90,13 +91,13 @@ C^{-1} & = &\frac{e^{-bT}}{n!} \int_0^{\infty}\diff(sT)(s+b)^n T^n e^{-sT}\\
 
 Finally, we can transform the posterior on the \emph{signal} rate to
 the underlying \emph{coalescence} rate via our knowledge of the
-sensitivity of the \ac{GW} analysis.  In particular, the signal
+sensitivity of the abbr:gw analysis.  In particular, the signal
 detection rate is simply the product of the intrinsic coalescence rate
 $\cbcrate$ and the number of \BNS mergers which would result in a
-\ac{GW} signal with $\rho_c\geq12$.  Expressing the binary coalescence
+abbr:gw signal with $\rho_c\geq12$.  Expressing the binary coalescence
 rate in terms of the number of mergers per \ac{MWEG}, per year then we
 require the number of galaxies $N_{\mathrm{G}}$ which may be probed by
-the \ac{GW} analysis.  At large distances, this is well approximated
+the abbr:gw analysis.  At large distances, this is well approximated
 by~\cite{rates_paper},
 
 \begin{equation}
@@ -197,7 +198,7 @@ on our beaming angle inference. Our choice of priors are:
 \section{Prospects For Beaming Angle Constraints With Advanced LIGO}
 We now demonstrate the derivation of the rate posterior $p(\cbcrate)$
 and the subsequent transformation to the beaming angle posterior
-$p(\theta)$.  We consider four \ac{GW} observation scenarios with
+$p(\theta)$.  We consider four abbr:gw observation scenarios with
 \ac{aLIGO} based on the work in~\cite{Aasi:2013wya}.  An observing
 scenario essentially consists of an epoch of \ac{aLIGO} operation,
 which defines an expected search sensitivity (i.e., \BNS{} horizon
@@ -250,7 +251,7 @@ the details of each observing scenario.
   achieved at the given epoch, which is equal to $\dhor / 2.26$.
   $V_{\mathrm{search}}$ is the sensitive volume of the search, defined
   by equation~\ref{eq:search_volume}; the final column contains the
-  estimated range of the number of \ac{GW} detections.  Note that the
+  estimated range of the number of abbr:gw detections.  Note that the
   quoted search volume accounts for a network duty cycle of
   $\sim 80\%$ per detector.  These scenarios are derived from those detailed
   in~\cite{Aasi:2013wya}. While the 2020+ and 2024+ scenarios appear
@@ -271,7 +272,7 @@ section~\ref{sec:rate_posterior}. Where a range of potential inspiral
 distances is given for a scenario we choose the median value, so for
 the 2015--2016 scenario we take \dinsp{} to be $60\,\mpc$, for
 example. Likewise we choose an illustrative value of $n$, the number
-of expected \ac{GW} detections, from each range; these are listed in
+of expected abbr:gw detections, from each range; these are listed in
 table \ref{tab:rateposteriors}.
 
 We now use these posteriors together with the prior distributions
@@ -311,7 +312,7 @@ to derive the corresponding beaming angle posteriors.
 
 \caption{Summary of the \BNS rate posteriors for each of the observing
   scenarios which are considered in this work; these posteriors are plotted
-  in figure \ref{fig:aligorate}. Here $n$ is the number of \ac{GW} events which were assumed to be observed in each scenario, chosen from the ranges in table \ref{tab:scenarios}.
+  in figure \ref{fig:aligorate}. Here $n$ is the number of abbr:gw events which were assumed to be observed in each scenario, chosen from the ranges in table \ref{tab:scenarios}.
   \label{tab:rateposteriors}
 }
 \end{table}
@@ -444,7 +445,7 @@ a prior on the \ac{SGRB} efficiency which dictates that all \BNS produce a
 \ac{SGRB}, $p(\epsilon|I)=\delta(\epsilon=1)$, as well as our previous
 strong $\delta$-function prior.  For the 2016-2017 scenario where
 inferences are somewhat weak (i.e., broad posteriors) due to the
-sparsity of \ac{GW} detections, the uncertainties are large enough
+sparsity of abbr:gw detections, the uncertainties are large enough
 that the results from each prior are broadly consistent.  In the 2024+
 scenario, where the posterior is more peaked, it is clear that the
 strong $\delta$-function priors lead to inconsistent inferences on the

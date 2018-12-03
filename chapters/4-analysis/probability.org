@@ -56,6 +56,7 @@ there can be no smoke without fire, then the probability of smoke can
 be conditional on the probability of fire.
 
 #+ATTR_LATEX: :options [Conditional probability]
+#+LABEL: def:probability:conditional
 #+BEGIN_definition
 Given two events, $A,B \in
 \Omega$, then the probability of $A$ /given/ $B$ is \[ P(A | B) =
@@ -66,11 +67,12 @@ Given that $P(A,B) = P(A)P(B) = P(B)P(A) = P(B,A)$, we have $P(A,B) =
 P(B,A) = P(B|A)P(A)$, which leads us to a powerful result in
 probability; *Bayes Theorem*.
 
-+ *Corollary*: Bayes Theorem. Given two events, $A$ and $B$, we may
-  represent the probability of $A$ given $B$ in terms of the
-  probability of $B$ given $A$.
+#+ATTR_LATEX: :options [Bayes Theorem]
+#+LABEL: the:probability:bayes-theorem
+#+BEGIN_theorem
+Given two events, $A$ and $B$, we may represent the probability of $A$ given $B$ in terms of the probability of $B$ given $A$.
   \[ P(A|B) = \frac{ P(A) P(B|A) }{ P(B) } \]
-
+#+END_theorem
 Intuitively, there are likely to be situations where our
 degree-of-belief in the state of one variable does not affect our
 belief in another; in this case the variables are said to be
@@ -88,14 +90,21 @@ indendent iff \[ P(x,y) = P(x) P(y) \]
 There may also be situations where two variables become independent if
 the state of a third variable is known.
 
-+ *Definition*: Conditional independence. Two variables, $x,y$ are
-  said to be conditionally independent given a third variable, $z$, if
-  \[ P(x,y | z) = P(x|z)P(y|z).\] We can denote conditional
-  independence as $x\!\perp\!\!\!\perp\!y \ | z$.
+#+ATTR_LATEX: :options [Conditional independence]
+#+BEGIN_definition
+Two variables, $x,y$ are said to be conditionally independent given a third variable, $z$, if \[ P(x,y | z) = P(x|z)P(y|z).\] 
+We can denote conditional independence as $x\!\perp\!\!\!\perp\!y \ | z$.
+#+END_definition
+
+* Uninformative priors
+
+* Information theory
+** Entropy
+** KL / SJ Divergence
 
 * Feature spaces and Kernels
-#+LABEL: sec:features-and-kernels
-#+NAME: sec:features-and-kernels
+#+LABEL: sec:probability:features-and-kernels
+#+NAME: sec:probability:features-and-kernels
 
 A feature map is a projection from a lower-dimensional data space to a higher-dimensional one, which can be represented by a mapping, $\phi$. 
 
@@ -124,61 +133,138 @@ If the kernel function can be written in the form of a dot-product between two /
 for $\set{V}$ some inner product space, then we can perform the "kernel trick", allowing us to define the kernel in terms of the inner products within the data, without resorting to an external coordinate system.
 
 * Structured probability distributions
+#+NAME: sec:probability:structured
+#+LABEL: sec:probability:structured
+A complicated joint probability distribution can often be factorised into lower-dimensional factor distributions if there are conditional independences within the model which that distribution describes.
+For example, 
+\[ 
+p(a,b,c) = p(a | b , c) p(b, c) = p(a | b, c) p (b | c) p(c).
+\] 
+We can then represent these factorisations in the form of a directed graph, with
+\[ c \to b \to a \] 
+representing $p(a,b,c)$. In such a graph we use the direction of an arrow to imply a conditional relationship. 
+When expressed in this form we can call the probability distribution a belief network, or a graphical model.
 
-A complicated joint probability distribution can always be factorised
-into lower-dimensional factor distributions. For example, \[ p(a,b,c)
-= p(a | b , c) p(b, c) = p(a | b, c) p (b | c) p(c).\] We can then
-represent these factorisations in the form of a directed graph, with
-\[ c \to b \to a \] representing $p(a,b,c)$. In such a graph we use
-the direction of an arrow to imply a conditional relationship. When
-expressed in this form we can call the probability distribution a
-belief network.
+As a concrete (if rather naive) example, consider a situation in which observations are made continuously over the whole sky with two detectors. 
+One is sensitive to gls:gravitational-wave emission, and the other to gamma ray emission.
+An observing program is estabilised to analyse transient signals detected with one or both of these telescopes, with the belief that gravitational wave bursts can be produced by either a binary neutron star coalesence, or a binary black hole coalesence.
 
+A simple model is constructed which contains four variables
+1) $\Gamma \in \{ 0, 1 \}$ which takes the value $1$ iff a gamma ray burst is detected,
+2) $G \in \{ 0, 1 \}$ which takes the value $1$ iff a gravitational wave burst is detected,
+3) $B \in \{ 0, 1 \}$ which takes the value $1$ iff a black hole coalescence has occurred, and
+4) $N \in \{ 0, 1 \}$ which takes the value $1$ iff a neutron star coalescence has occurred.
+
+The joint probability distribution of this model is then $p(\Gamma, G, B, N)$, however we can break this down into a structured form by applying the definition of conditional probability (definition ref:def:probability:conditional),
+
+\begin{align}
+\label{probability:structured:example:breakdown}
+p ( \Gamma, G, B, N) &= p(\Gamma | G, B, N) p(G, B, N)\\
+                     &= p(\Gamma | G, B, N) p(G | B, N) p(B, N) \\
+                     &= p(\Gamma | G, B, N) p(G | B, N) p(B | N) p(N)
+\end{align}
+
+We can represent this model as a graph
+
+#+attr_latex: :height 2in :float wrap
+[[file:figures/probability-structured-example-dense-1.pdf]]
+
+Our observers have access to a number of up to date astrophysical theories which they can use to further develop the model; these place /conditional independence/ constraints on the model.
+- Binary black hole coalescences and binary neutron star coalescences are independent (one does not cause the other)
+This statement implies that $p(B | N) = p(B)$, and $p(N | B) = p(N)$, which we can represent in the graphical form of the model by removing the edge connecting $B$ and $N$.
+
+#+attr_latex: :height 2in
+file:figures/probability-structured-example-dense-2.pdf
+
+- A binary black hole coalescence does not produce any electromagnetic emission (and therefore cannot produce a gamma ray burst)
+This statement implies that $p(\Gamma | B) = p(\Gamma)$, which can be represented in the graphical form of the model by removing the edge connecting $\Gamma$ and $B$.
+
+#+attr_latex: :height 2in
+file:figures/probability-structured-example-dense-3.pdf
+
+These two constraints considerably simplify the model, and we are now left with the distribution in the form 
+\begin{equation}
+\label{probability:structured:example:final}
+p ( \Gamma, G, B, N) = p(\Gamma | N, G) p(G | N, B) p(B) p(N),
+\end{equation}
+which is easily interpreted from the graphical form of the model, but could have been tedious to derive algebraically. 
+
+We can define a belief network more generally as follows.
 #+LATEX_ATTR: :options [Belief Network]
 #+BEGIN_definition
-A belief network is a probability
-distribution of the form \[ p(x_{1}, \dots, x_{N}) = \prod_{i=1}^{N}
-p(x_{i} | pa(x_{i})), \] where $pa(x)$ represents the parental set
-of the variable $x$; that is, the set of all variables in the graph
-which have a directed edge ending at $x$, or the set of all
-variables on which $x$ is directly conditional.
+#+LABEL: probability:structured:belief-network
+A belief network is a probability distribution of the form 
+\[ p(x_{1}, \dots, x_{N}) = \prod_{i=1}^{N} p(x_{i} | pa(x_{i})), \] 
+where $pa(x)$ represents the parental set of the variable $x$; that is, the set of all variables in the graph which have a directed edge ending at $x$, or the set of all variables on which $x$ is directly conditional.
 #+END_definition
 
-Clearly not all probability distributions will take the above form,
-however, as there may be conditional independences within the
-structure of the distribution, leading to factors dropping out. We can
-construct a belief network from knowledge of these independence
-constraints, starting with a fully connected graph of all variables in
-a problem, and then removing edges which connect independent
-variables.
+** Equivalence of graphical models
 
+An important caveat with the use of graphical models is that two graphically distinct models may be mathematically equivalent. 
+The reason for this becomes clear when considering the procedure used to factorise the probability distribution starting at equation ref:probability:structured:example:breakdown.
+If we had chosen to re-arrange the variables such that the joint distribution was $p(N,B,G, \Gamma)$ we would have been left with a factorised distribution in which the arrows of the graph pointed in opposite directions, yet this is clearly still the same probability distribution, since probabilities are commutative.
+To overcome this problem we need to have a definition of equivalence in the graph. 
+A suitable definition is that of /Markov equivalence/ cite:barberBRML2012:
+#+ATTR_LATEX: :options [Markov equivalence]
+#+LABEL: def:probability:structured:markov-equivalence
+#+BEGIN_definition
+Two graphs are Markov equivalent if they both represent the same set of conditional independence statements.
+#+END_definition
 
-* Bayesian inference
+Clearly some method to determine this graphically is warranted. To do so it is helpful to define a (rather judgementally-named) property:
 
-Bayesian inference is a method of statistical inference which is
-well-suited to situations where a body of evidence grows over time,
-with new results updating previous understanding of some phenomenon,
-and as such is well suited to the analysis of experimental data, and
-is well suited to the analysis of gravitational wave data, where
-measurements are frequently made at different sensitivities during
-different observing runs.
+#+ATTR_LATEX: :options [Immorality]
+#+BEGIN_definition
+Consider three nodes, $A$, $B$, and $C$ in a abbr:dag. If $C$ is a child of both $A$ and $B$, but $A$ and $B$ are not directly connected, then the configuration $A \rightarrow C \leftarrow B$ is denoted an immorality.
+#+END_definition
 
-If we have some hypothesis, some parameters of the hypothesis, $I$
-(so-called hyperparameters) and some experimental data, we can
-determine the probability of the hypothesis via
+In order to determine Markov equivalence we remove all of the directionality from the edges of the graph, producing the skeleton graph. 
+Two graphs are Markov equivalent if they share the same skeleton, and if they share the same set of immoralities.
+
+# We can construct a belief network from knowledge of these independence constraints, starting with a fully connected graph of all variables in a problem, and then removing edges which connect independent variables.
+
+* Inference
+
+In section ref:sec:probability:structured we introduced a probabilistic model which consisted of the joint probability of all of the model parameters.
+Such a model if some of the quantities in the model are unknown, and therefore the probability of some of the modelled outcomes can be calculated from the model.
+
+Taking the example of joint abbr:gw and gamma ray observations, if we know the probability that at any given time there will be a abbr:bns event, we can infer the probability that a gamma ray burst and a abbr:gw burst will occur.
+A model of this form is often considered a "forward model", in that it predicts the probability of an observable, and calculation through the graph follows the arrows.
+While such forward models are of considerable utility when attempting to make predictions about unknown variables, often with pre-existing data, they are unable to answer a question such as "given that I have seen a gravitational wave, but no gamma ray burst, what is the probability that I have observed a abbr:bbh event?".
+In order to answer such a question we must traverse the graphical model /backwards/, against the direction of the arrows. This process is known as /inference/.
+
+In order to produce the /reverse model/ we can turn to Bayes theorem (theorem ref:the:probability:bayes-theorem). This allows us to derive an expression for $p(B = 1 | G = 1, \Gamma = 0)$, that is, the probability that we observe a abbr:bbh given that we've observed a abbr:gw but no gamma ray burst.
+\begin{align}
+\label{eq:probability:inference:bayes-example}
+p(B = 1 | G = 1, \Gamma = 0) &= \frac{p(B=1,G=1,\Gamma=0)}{p(G=1, \Gamma=0)} \\
+                             &= \frac{\int_{N} p(B=1,G=1,\Gamma=0, N)}{ \int_{B,N} p(G=1, \Gamma=0, B, N)} \\
+                             &= \frac{\int_{N} p(\Gamma=0 | G=1, B=1, N) p(G =1 | B=1, N) p(B=1 | N) p(N)} 
+                                     {\int_{B,N} p(\Gamma=0 | G=1, B, N) p(G =1 | B, N) p(B | N) p(N)}      \\
+                             &= \frac{\int_{N} p(\Gamma=0 | G=1, B=1, N) p(G =1 | B=1, N) p(B=1 | N) p(N)}
+                                     {\int_{B,N} p(\Gamma=0 | G=1, B, N) p(G =1 | B, N) p(N)}
+\end{align}
+the probability $p(B = 1 | G = 1, \Gamma = 0)$ is called the /posterior probability of $B$/.
+
+Inference which is based on Bayes theorem, is a method of statistical inference which is well-suited to situations where a body of evidence grows over time, with new results updating previous understanding of some phenomenon, and as such is well suited to the analysis of experimental data.
+It is well suited to the analysis of gravitational wave data, where measurements are frequently made at different sensitivities during different observing runs.
+
+If we have some hypothesis, some parameters of the hypothesis, $I$ (so-called hyperparameters) and some experimental data, we can
+determine the probability of the hypothesis via 
+
 \begin{equation}
-  \label{eq:bayestheorem}
+  \label{eq:probability:inference:bayes-theorem-hypothesis}
   p(\text{hypothesis} | \text{data}, I) \propto p( \text{data} | \text{hypothesis}) \times p(\text{hypothesis}, I)
 \end{equation}
-where $p(\text{data} | \text{hypothesis})$ represents the likelihood
-of the data, in-effect the degree to which we trust the measurements,
-for example, and $p(\text{hypothesis}|I)$ represents the /prior/
-probability, which represents the understanding of the probability of
-the hypothesis before the experiment was
-conducted. $p({\text{hypothesis} | \text{data}, I)$ is the /posterior/
+
+where $p(\text{data} | \text{hypothesis})$ represents the likelihood of the data, in-effect the degree to which we trust the measurements, for example, and $p(\text{hypothesis}|I)$ represents the /prior/ probability, which represents the understanding of the probability of the hypothesis before the experiment was conducted. $p({\text{hypothesis} | \text{data}, I)$ is the /posterior/
 probability of the hypothesis cite:skilling2006data.
 
-Bayesian inference can then be used as a powerful method for /model
-  selection/, where the posterior probabilities of two competing
-  models are compared, with a greater posterior probability indicating
-  greater support for a given model.
+Bayesian inference can then be used as a powerful method for /model selection/, where the posterior probabilities of two competing
+  models are compared, with a greater posterior probability indicating greater support for a given model.
+
+* Approximate inference methods
+** MCMC
+** Nested sampling
+
+* Hierarchical modelling
+

@@ -76,7 +76,7 @@ for a null wavevector, $\vec{k}$, orthonormal to an amplitude $\ten{A}$. Provide
    \end{bmatrix}.
 \end{equation}
 
-It is clear from the form of the plane-wave solution, in equation ref:eq:planewavegw that a wave propagates in spacetime in a manner quite different from a wave on, for example, the surface of a loch: rather than a vector perturbation, a gls:gw propagates as a tensoric perturbation. The conventional method used to visualise this effect involves considering the effect of a gravitational wave traveling perpendicular to a ring of test particles. 
+It is clear from the form of the plane-wave solution, in equation ref:eq:planewavegw that a wave propagates in spacetime in a manner quite different from a wave on, for example, the surface of a loch: rather than a vector perturbation, a abb:GW propagates as a tensoric perturbation. The conventional method used to visualise this effect involves considering the effect of a gravitational wave traveling perpendicular to a ring of test particles. 
 For such a wave, propagating along the $z$-axis, in the transverse-traceless gauge, the only non-vanishing components of the strain are
 \[ h_{xx} = - h_{yy} = \real[ A_{xx} \exp(- \ii \omega (t-z) ], \]
 and 

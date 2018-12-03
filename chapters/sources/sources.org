@@ -3,24 +3,11 @@
 The astrophysical sources of gravitational waves can be divided
 roughly into three categories cite:2009LRR....12....2S
 
-+ Continuous :: sources are expected to produce radiation
-  constantly, or at least over long periods of time. The primary
-  source of continuous sources for gls:aLIGO are expected to be
-  gravitational wave pulsars, but in detectors which are sensitive at
-  lower frequencies, such as the proposed gls:LISA mission, the radiation
-  from inspiralling binary systems should also be detectable.
-+ Transient :: sources produce a strong \emph{burst} of
-  gravitational waves over a period of seconds or less. These are
-  sources which are primarily expected in the advanced LIGO passband,
-  with compact binary coalesences and supernovae being major targets
-  for burst searches in the advanced observing runs, however there are
-  prospects for burst sources in the gls:LISA regime, for example from
-  hyperbolic encounters between compact objects and stars or other
-  compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G.
-+ Stochastic :: sources are expected to produce a background of
-  gravitational waves, from the black holes at the centres of
-  galaxies cite:1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S,
-  and from the universe's inflationary period cite:1988PhRvD..37.2078A.
++ Continuous :: sources are expected to produce radiation   constantly, or at least over long periods of time. 
+  The primary source of continuous sources for gls:aLIGO are expected to be gravitational wave pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:LISA mission, the radiation from inspiralling binary systems should also be detectable.
++ Transient :: sources produce a strong /burst/ of gravitational waves over a period of seconds or less. 
+  These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:LISA regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
++ Stochastic :: sources are expected to produce a background of gravitational waves, from the black holes at the centres of galaxies cite:1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S, and from the universe's inflationary period cite:1988PhRvD..37.2078A.
 
 * Compact Binary Coalescences
 
@@ -28,16 +15,14 @@ roughly into three categories cite:2009LRR....12....2S
 #+CAPTION: The frequency spectrum of a compact binary coalescence, alongside the design sensitivity power spectrum of the advanced LIGO detector.
 [[./figures/aligo-cbc.pdf]]
 
-  A pair of orbiting objects can also produce gravitational waves, and   as they do so their orbit loses energy, causing the radius of the orbit to shrink cite:1995PhRvL..74.3515B. 
-The objects spiral in towards each other. 
-This behaviour has already been observed in the Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W, a system of two neutron stars---one of which is a pulsar--- which, through precise pulsar timing measurements, have been inferred to be  inspiralling, and producing gravitational waves.
+The moment of inertia tensor of a two-body system will lead to non-spherical motion within the system, which will in turn produce gravitational radiation, and gradual orbital decay cite:1995PhRvL..74.3515B. 
+This effect was first observed in the Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W, a system containing two neutron stars---one of which is a pulsar--- which, through precise pulsar timing measurements, were been inferred to be  inspiralling, and producing gravitational waves. This observation was the first strong, indirect evidence for the reality of gravitational wave production.
 
 The binary system will continue to lose energy via gravitational radiation until it reaches its /innermost stable circular orbit/, after which the objects will merge, and eventually coalesce. 
 These coalescence events are powerful sources of gravitational waves, and the chirp produced by the coalescence may be sufficiently luminous to be detected by current, advanced detectors. 
 Attempts to detect signals from such coalescing systems were also made during the initial run of the detectors cite:2012PhRvD..85h2002A.
 These would be characterised by the distinct pattern of the pseudo-sinusoidal inspiral waveform, followed by a bright burst of radiation, and then a sinusoidal ``ringdown'' as the post-coalescence remnant vibrates\cite{2009LRR....12....2S}. 
-Binary coalescences are thus
-  classified as transient, or burst sources.
+Binary coalescences are thus classified as transient, or burst sources.
 
 The potential objects which may be involved in an observable binary
 coalescence are black holes and neutron stars: both compact
@@ -68,6 +53,14 @@ the brightness of the event. This would provide an additional means of
 measuring cosmic acceleration, and, in the gls:LISA era, this would allow
 the measurement of acceleration at high redshift using high-mass
 binary black holes.
+
+As a first-order approximation the amplitude of a gls:GW from an inspiralling compact binary system can be approximated as cite:strain-conventions
+\begin{equation}
+  \label{eq:cbcinspiral}
+  h_{\text{c}}(f) = 
+\end{equation}
+where $f$ is the frequency of the gravitational wave, and $\dot{f}$ its time derivative.
+
 
 ** Numerical relativity 
 
