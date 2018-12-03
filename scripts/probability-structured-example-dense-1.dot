@@ -1,0 +1,10 @@
+ digraph graphname {
+  rankdir="LR";
+  size = "5,2";
+  N -> Gamma;
+  N -> B;
+  N -> G;
+  B -> G;
+  B -> Gamma;
+  G -> Gamma;
+ }
