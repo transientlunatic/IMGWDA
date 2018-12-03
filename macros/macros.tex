@@ -24,10 +24,18 @@
 % New Operators
 \DeclareMathOperator{\vary}{var}
 \DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\real}{Re}
 \providecommand{\rmse}{\mathrm{RMSE}}
 
 % Calculus operators
 \providecommand{\dd}{\,\mathrm{d}}
+\providecommand{\dalembert}{\square\,}
+\providecommand{\ii}{\text{i}}
+
+% Linear algebra operators
+\providecommand{\transpose}{\intercal}
+\providecommand{\tt}{\transpose}
+\providecommand{\ten}[1]{\mathsf{#1}}
 
 % Software Packages
 \providecommand{\imrphenomp}{\texttt{IMRPhenomP}}
@@ -40,9 +48,11 @@
 % Galactic astronomy
 \providecommand{\numberGalaxies}{N_\mathrm{G}}
 
+% Gravitational waves : tensors
+\providecommand{\barh}{\bar{h}\indices{_{\mu\nu}}}
+
 % Gravitational wave detectors
 \providecommand{\horizonDistance}{\ensuremath\mathcal{D}_{\mathrm{hor}}}
-
 \providecommand{\GP}{\gls{gp}}
 
 % Pipelines
@@ -84,3 +94,15 @@
 \providecommand{\numbertrainingpoints}{$12,325$}
 \providecommand{\numbertrainingwaveforms}{no. Waveforms}
 
+\newcommand{\subgw}{_{\textrm{\scriptsize{GW}}}}
+\newcommand{\ee}[1]{\ensuremath{\!\times\!10^{#1}}}
+\newcommand{\prob}{{\rm Pr}}
+\newcommand{\grbrate}{{{\mathcal R}_{\mathrm{grb}}}}
+\newcommand{\cbcrate}{{{\mathcal R}}}
+\newcommand{\diff}{{\mathrm d}}
+\newcommand{\rhostar}{{\rho^*}}
+\newcommand{\dhor}{\ensuremath{{\mathcal D}_{\mathrm{hor}}}}
+\newcommand{\dinsp}{\ensuremath{{\mathcal D}_{\mathrm{insp}}}}
+\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\mpc}{\mathrm{Mpc}}
+\newcommand{\yr}{\mathrm{yr}}
