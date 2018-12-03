@@ -10,7 +10,7 @@ text.color: k
 
 axes.facecolor: white
 axes.linewidth: 1
-axes.labelsize: 8
+axes.labelsize: 10
 axes.edgecolor     : bcbcbc
 axes.grid: True
 axes.titlesize: x-large
