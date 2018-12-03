@@ -24,24 +24,24 @@ fig.savefig("../figures/aligo-asd.pdf", dpi=300)
 #########################
 
 
-aligo = ifo.AdvancedLIGO()
+# aligo = ifo.AdvancedLIGO()
 
 
-figsize = (5.0, 2.5) # Fix this to use the Golden ratio please
+# figsize = (5.0, 2.5) # Fix this to use the Golden ratio please
 
-fig, ax = plt.subplots(1,1, figsize=figsize)
-aligo.plot(ax)
+# fig, ax = plt.subplots(1,1, figsize=figsize)
+# aligo.plot(ax)
 
-for mass in [30, 32, 50, 100]:
-    for mass2 in [30, 100, 2000]:
-        cbc = sources.CBC(frequencies=np.logspace(-4, 5, 1000) * u.hertz,
-                       m1=mass*u.solMass, m2=mass2*u.solMass, r=0.8*1e9*u.parsec)
-        cbc.plot(ax, label="{}, {}".format(mass, mass2))
+# for mass in [30, 32, 50, 100]:
+#     for mass2 in [30, 100, 2000]:
+#         cbc = sources.CBC(frequencies=np.logspace(-4, 5, 1000) * u.hertz,
+#                        m1=mass*u.solMass, m2=mass2*u.solMass, r=0.8*1e9*u.parsec)
+#         cbc.plot(ax, label="{}, {}".format(mass, mass2))
 
-ax.set_xlim([1e1, 2e3]);
-ax.set_ylim([1e-23, 1e-19]);
-fig.tight_layout()
-fig.savefig("../figures/aligo-cbc.pdf", dpi=300)
+# ax.set_xlim([1e1, 2e3]);
+# ax.set_ylim([1e-23, 1e-19]);
+# fig.tight_layout()
+# fig.savefig("../figures/aligo-cbc.pdf", dpi=300)
 
 
 ###########################

@@ -2,7 +2,8 @@
 This file builds the figures which demonstrate the training of a Gaussian process.
 """
 
-figwidth = 2.5
+figwidth = 6 # 2.5
+figheight = 6/1.616
 
 import matplotlib.pyplot as plt
 import matplotlib.cm as cmap
@@ -45,7 +46,7 @@ with pm.Model() as model:
 K = theano.function([], signal_cov(X, X) + noise_cov)()
 y = np.random.multivariate_normal(np.zeros(n), K)
 
-fig = plt.figure(figsize=(figwidth,2)); ax = fig.add_subplot(111)
+fig = plt.figure(figsize=(figwidth,figheight)); ax = fig.add_subplot(111)
 #ax.plot(X, y, '--', color=cm(0.4))
 ax.plot(X, y, '.');
 ax.set_xlabel("x");
@@ -97,7 +98,7 @@ with model:
     gp_samples = pm.gp.sample_gp(trace[1000:], y_obs, Z, samples=50, random_seed=42, progressbar=False)
 
 
-fig, ax = plt.subplots(figsize=(figwidth,2))
+fig, ax = plt.subplots(figsize=(figwidth,figheight))
 
 [ax.plot(Z, x, color=cm(0.3), alpha=0.3) for x in gp_samples]
 # overlay the observed data
