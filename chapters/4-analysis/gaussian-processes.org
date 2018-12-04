@@ -104,21 +104,15 @@ Gaussian processes can be extended from the case of a single-dimensional input p
 
 #+CAPTION: [Step 1] An example of raw training data which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.
 #+NAME: fig:gp-training-data
-#+BEGIN_figure
-\includegraphics{figures/gp-training-data.pdf}
-#+END_figure
+file:figures/gp-training-data.pdf
 
 #+CAPTION: [Step 2] We choose a covariance function for the  Gaussian process, in this case an exponential-squared covariance    function. The Gaussian process containing no data and this    covariance matrix forms our prior probability distribution. Here    50 draws from the prior distribution are plotted.
 #+LABEL: fig:gp-prior
-#+BEGIN_figure
-  \includegraphics{figures/gp-example-prior-draws.pdf}
-#+END_figure
+file:figures/gp-example-prior-draws.pdf
 
 #+CAPTION: [Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed.}
 #+LABEL: fig:gp-covariance-matrix
-#+BEGIN_figure
-   \includegraphics{figures/gp-example-posterior-draws.pdf}
-#+END_figure
+file:figures/gp-example-posterior-draws.pdf
 
 # #+CAPTION: The covariance structure for the Gaussian process.
 # #+LABEL: fig:gp-covariance-matrix
@@ -128,9 +122,8 @@ Gaussian processes can be extended from the case of a single-dimensional input p
 
 #+CAPTION: [Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.
 #+LABEL: fig-gp-posterior-best
-#+BEGIN_figure
-   \includegraphics{figures/gp-posterior-meancovar.pdf}
-#+END_figure
+file:figures/gp-posterior-meancovar.pdf
+
 
 * Covariance Functions
 
@@ -158,15 +151,11 @@ under all rigid motions.
 
 #+CAPTION: The exponential-squared covariance function.
 #+LABEL: fig:gp-expsq-covar
-#+BEGIN_figure
-   \includegraphics{figures/gp-expsqcov.pdf}
-#+END_figure
+file:figures/gp-expsqcov.pdf
 
 #+CAPTION: Draws from the Exponential-squared covariance function at a selection of length scales.
 #+LABEL: fig:expsq-draws
-#+BEGIN_figure
-   \includegraphics{figures/gp-expsqcov-draws.pdf}
-#+END_figure
+file:figures/gp-expsqcov-draws.pdf
 
 One of the most frequently encountered covariance functions in the
 literature is the exponential squared covariance functions
@@ -236,6 +225,7 @@ A list of the symbols for each covariance function is given in table ref:tab:ker
 | Periodic            | $\Per$ | Smooth global periodic variation.   |
 | Linear              | $\Lin$ | Global continuous linear variation. |
 | Rational Quadratic  | $\RQ$  | Variation on multiple scales.       |
+| Constant            | $\Con$ | Scaling factor.                     |
 
 
 
@@ -430,7 +420,7 @@ given a judicious partitioning of the available data.
 
 Forrester\cite{forrester2008engineering} suggests that a $\rho^2 \geq 0.8$ provides a surrogate model with good global predictive abilities, which corresponds to an RMSE of around $0.1$.
 
-In situations where test data is not available suchstraightforward tests are often impractical. 
+In situations where test data is not available such straightforward tests are often impractical. 
 In the case of timeseries forecasting it may be possible to assess the forecast by forming a test set from the most recent observations, and comparing these to the output of the model, 
 however, if only a small number of past observations are available the predictive capability of the model may be sufficiently poor to render this test almost meaningless.
 
@@ -500,26 +490,26 @@ deviation from the true $f(x^+)$ when choosing a trial point, so
 
 ** Upper confidence bound
 
-** Waveform Match
+# ** Waveform Match
 
-The match between two waveforms, $A$, and $B$, is defined as
+# The match between two waveforms, $A$, and $B$, is defined as
 
-$$\label{eq:waveformmatch}
-  \mathcal{N} = \frac{
-    \max\limits_{t_0, \phi_0} \left< A , B \right>
-    }
-    {
-      \left< A, A\right>^{\half}
-      \left< B, B\right>^{\half}
-    }$$
+# $$\label{eq:waveformmatch}
+#   \mathcal{N} = \frac{
+#     \max\limits_{t_0, \phi_0} \left< A , B \right>
+#     }
+#     {
+#       \left< A, A\right>^{\half}
+#       \left< B, B\right>^{\half}
+#     }$$
 
-for the initial time and phase respectively $t_0$ and $\phi_0$.
+# for the initial time and phase respectively $t_0$ and $\phi_0$.
 
-Suppose we wish to compare the surrogate model to an alternative
-approximant, for example, =IMRPhenomP=, and identifying the location in
-parameter space where the two have the greatest disagreement. This can
-be achieved by finding the location in the parameter space of the
-surrogate which has the minimum match to the alternative model.
+# Suppose we wish to compare the surrogate model to an alternative
+# approximant, for example, =IMRPhenomP=, and identifying the location in
+# parameter space where the two have the greatest disagreement. This can
+# be achieved by finding the location in the parameter space of the
+# surrogate which has the minimum match to the alternative model.
 
 * Examples
 
@@ -563,7 +553,16 @@ were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
 
 [ref:fig:simplewaveform1]
 
-** A Waveform Catalogue
+** Estimating contours
+
+#+LABEL: fig:gp:examples:mountains1
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: Trained off a small number of spot-heights, a Gaussian process is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
+file:figures/arrochar-alps.pdf
+
+** A concrete example
+
+* Heron: A precessing waveform model
 
 [1] This claim is rather sketchy, as we'll see when the forms of
     covariance function are presented, as the parametricity is simply
@@ -583,12 +582,10 @@ were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
 ** Voronoi tesselation
 ** Fully information-driven design
 
+
 * Extending the Gaussian Process
 
-Standard implementations of Gaussian processes are capable of mapping a
-multi-dimensional input to a single-dimensional output, however there
-are many situations in which the ability to generate a multi-dimensional
-output would be advantageous.
+Standard implementations of Gaussian processes are capable of mapping a multi-dimensional input to a single-dimensional output, however there are many situations in which the ability to generate a multi-dimensional output would be advantageous.
 
 * General elliptical processes
 /This section should be a discussion of more general elliptical processes, such as student-t processes. Given that these haven't featured in the development of the surrogate model it would be appropriate to only spend a few lines on this, although finding and presenting a suitable astrophysical example could be valuable./
