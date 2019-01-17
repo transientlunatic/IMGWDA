@@ -416,14 +416,14 @@ the uniform and Jeffreys distribution priors are broadly equivalent.
 
 \begin{figure}
 \centering
-{\includegraphics[width=\linewidth]{O1_beaming_posteriors_violin.pdf}}
+{\includegraphics[width=\linewidth]{figures/O1_beaming_posteriors_violin.pdf}}
 \caption{Beaming angle posteriors using different priors on \ac{SGRB} efficiency $\epsilon$ in the 2015--2016 observing scenario.
     \label{fig:jetposterior2016}}
 \end{figure}
 
 \begin{figure}
 \centering
-{\includegraphics[width=\linewidth]{O2_beaming_posteriors_violin.pdf}}
+{\includegraphics[width=\linewidth]{figures/O2_beaming_posteriors_violin.pdf}}
 \caption{Beaming angle posteriors using different priors on \ac{SGRB} efficiency $\epsilon$ in the 2016--2017 observing scenario.
     \label{fig:jetposterior2017}}
 \end{figure}

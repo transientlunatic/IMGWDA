@@ -12,7 +12,7 @@ roughly into three categories cite:2009LRR....12....2S
 * Compact Binary Coalescences
 
 #+NAME:fig:cbc_spectrum
-#+CAPTION: The frequency spectrum of a compact binary coalescence, alongside the design sensitivity power spectrum of the advanced LIGO detector.
+#+CAPTION: The frequency spectrum of two types of compact binary coalescence—a binary neutron star coalescence, and a binary black hole coalescence—alongside the design sensitivity power spectrum of the Advanced LIGO detector at its design sensitivity. *Should update this to use the IMRPhenom frequency line*.
 [[./figures/aligo-cbc.pdf]]
 
 The moment of inertia tensor of a two-body system will lead to non-spherical motion within the system, which will in turn produce gravitational radiation, and gradual orbital decay cite:1995PhRvL..74.3515B. 
@@ -62,7 +62,11 @@ As a first-order approximation the amplitude of a gls:GW from an inspiralling co
 where $f$ is the frequency of the gravitational wave, and $\dot{f}$ its time derivative.
 
 
+
 ** Numerical relativity 
+   :PROPERTIES:
+   :custom_id: sec:sources:cbc:nr
+   :END:
 
 The study of compact binary systems using gravitational waves relies on solving the relativistic two-body problem; the classical, Newtonian solutions to this problem are Keplerian orbits, however post-Newtonian gravity requires that a mass with orbital angular momentum loses energy in the form of gravitational waves; as such there are no stable solutions of the (general) relativistic two body problem.
 
@@ -71,6 +75,11 @@ The study of compact binary systems using gravitational waves relies on solving 
 The complexity of gls:nr simulations has lead to their adoption of parallelisation technology for multiprocessing and message-passing between processes, however these simulations can still require around a month to produce on computing clusters containing thousands of processors. 
 
 *Should include detail about the different codes which are used for GT and SXS*
+
+** Analytical approximants
+   :PROPERTIES:
+   :custom_id: sec:sources:cbc:approximants
+   :END:
    
 * Continuous wave sources
 The discovery of pulsars by Bell and Hewish in 1967 was an unexpected
@@ -127,6 +136,10 @@ discovery of gravitational waves.
 *** Burst waveform models
 ** Parabolic and hyperbolic encounters
 *** Encounter waveforms
+    #+CAPTION: The abbr:snr of a $q=16$ hyperbolic encounter waveform in advanced abbr:ligo at design sensitivity.
+    [[./figures/hyperbolic-m16-l024.pdf]]
+
+
 ** Supernovae
 
 *** Core-collapse supernovae
@@ -195,3 +208,4 @@ discovery of gravitational waves.
 ** Cosmic string cusps
 ** Accretion disk instability
 * Mock data challenges
+** Minke

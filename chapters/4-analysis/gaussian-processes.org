@@ -1,5 +1,12 @@
+#+COLUMNS: %50ITEM %custom_id
+
+/This chapter covers the introductory theory of Gaussian process regression, and the development of the ~Heron~ model for binary black hole coalescence waveforms./
+
 
 * Bayesian Linear regression
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:blr
+  :END:
 
 To motivate the development of Gaussian processes we first present the
 problem of linear regression, and how this task may be performed in a
@@ -50,6 +57,9 @@ mean of zero, and a variance $\sigma_i^2$:
 $$w_i \sim \mathcal{G}(0, \sigma_i^2).$$
 
 * From Bayesian linear regression to Gaussian Process
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:gpr-from-blr
+  :END:
 
 This choice of a Gaussian prior also implies that $y_i$ will have a
 Gaussian distribution, and we can take this to have the form
@@ -60,7 +70,7 @@ defined by some /covariance function/, or /kernel/, $K$,
 #+NAME:eq:covariance-matrix-derivation
 \begin{aligned}
   C_{ij} &= K(\vec{x_i}, \vec{x_j}) = \ex(y_i y_j) = \ex(\vec{x}_i \vdot \vec{w} \vec{w} \vdot \vec{x}_j) + \ex(\epsilon_i \epsilon_j) \\
-&= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2
+&= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2,
 \end{aligned}
 
 for $\ex(x)$ the expectation of a variable $x$. As a result of this
@@ -68,10 +78,55 @@ relationship between the weight vector, $\vec{w}$ and the gram matrix it
 is possible to perform the regression by means of a covariance function,
 rather than inferring the values $w_i$, and this is the justification by
 which Gaussian Process Regression (GPR) is often deemed a
-"non-parameteric" regression model [1].
+"non-parameteric" regression model[fn:parametric].
+
+
+[fn:parametric] This claim is rather sketchy, as we'll see when the forms of
+    covariance function are presented, as the parametricity is simply
+    moved from the model itself to the form of the covariance functions,
+    and the values of these /hyperparameters/ must be inferred, or
+    learned, from the data.
 
 * Gaussian Processes
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:gp
+  :END:
 
+#+CAPTION: A graphical model of a Gaussian process, represented as a chain graph. The inputs (on the bottom row) are all observed quantities, while outputs are observed only at the location of training points. The latent variables, $f$ from the Gaussian field (the heavy black line connecting these nodes indicates that they are fully connected) connect the two, and so any given observation is independent of all other nodes given it connected latent $f$ variable. Thus the marginalisation (removal) or addition of input nodes to the abbr:gp does not change the distribution of the other variables.
+#+NAME: fig:gp:chain-diagram
+#+BEGIN_figure
+\begin{center}
+\begin{tikzpicture}
+
+	 \node[obs] (x1) {$\vec{x}_{1}$};	 	
+	 \node[latent, above = of x1] (f1) {$f_{1}$};
+	 \node[obs, above = of f1] (y1) {$y_{1}$};
+	 \edge{x1}{f1};
+	 \edge{f1}{y1};
+
+	 \node[obs, right = of x1] (x2) {$\vec{x}_{2}$};	 	
+	 \node[latent, above = of x2] (f2) {$f_{2}$};
+	 \node[obs, above = of f2] (y2) {$y_{2}$};
+	 \edge{x2}{f2};
+	 \edge{f2}{y2};
+
+	 \node[obs, right = of x2] (xstar) {$\vec{x}_{\star}$};	 	
+	 \node[latent, above = of xstar] (fstar) {$f_{\star}$};
+	 \node[latent, above = of fstar] (ystar) {$y_{\star}$};
+	 \edge{xstar}{fstar};
+	 \edge{fstar}{ystar};
+
+	 \node[obs, right = 2 of xstar] (xN) {$\vec{x}_{N}$};	 	
+	 \node[latent, above = of xN] (fN) {$f_{N}$};
+	 \node[obs, above = of fN] (yN) {$y_{N}$};
+	 \edge{xN}{fN};
+	 \edge{fN}{yN};
+
+	 \draw [black, line width=0.1cm] (f1) -- (f2) -- (fstar);
+	 \draw [black, dashed, line width=0.1cm] (fstar) -- (fN);
+\end{tikzpicture}
+\end{center}
+#+END_figure
 
 
 Gaussian processes are Bayesian models which associate every point an some /input space/ with a probability distribution---specifically a normal distribution, and a collection of input points will form a multi-variate normal distribution. 
@@ -80,22 +135,24 @@ Gaussian processes are a non-parametric supervised machine learning technique\ci
 To make a prediction, we need to first have a set of prior observations and information about the parameters of the physical system which produced those observations. 
 These combined form the /training data/ for the predictor.
 
+#+LATEX_ATTR: :options [Gaussian process]
+#+BEGIN_definition
+A gls:gaussian-process is a collection of random variables, any finite number of which have a joint Gaussian distribution\nbsp{}cite:gpr.book.rw.
+#+END_definition
+
 A completely untrained Gaussian process forms the job of a prior probability distribution in a Bayesian analysis; where it is more conventional to consider a prior over a set of, for example, real values, such as a normal distribution, the Gaussian process forms a prior over the functions which might form the regression fit to any observed data. 
 While this prior is intially untrained it still contains information about our preconceptions of the data, for example, whether or not we expect the fit to be analytic, and the average of the functions. 
 By providing training data we can update the Gaussian process, in the same way that the posterior distribution is updated by
-the addition of new data in a standard Bayesian context, and a posterior
-on the set of all possible functions to fit the data is produced. We can
-take the mean of this posterior in the place of the "best fit line"
-which other techniques produce, and then use the variance to produce an
-estimate of the uncertainty of the prediction.
+the addition of new data in a standard Bayesian context, and a posterior on the set of all possible functions to fit the data is produced. 
+We can take the mean of this posterior in the place of the "best fit line" which other techniques produce, and then use the variance to produce an estimate of the uncertainty of the prediction.
 
-The possibility of using Gaussian Processes in the analysis of data from
-gravitational wave detectors has been proposed by Moore and
-Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} who propose its use
-to calculate the uncertainties in current generation post-Newtonian
-approximants to numerical relativity simulations, and to incorporate
-this into the current matched-filtering analyses which are conducted on
-triggers from gravitational wave detectors.
+# The possibility of using Gaussian Processes in the analysis of data from
+# gravitational wave detectors has been proposed by Moore and
+# Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} who propose its use
+# to calculate the uncertainties in current generation post-Newtonian
+# approximants to numerical relativity simulations, and to incorporate
+# this into the current matched-filtering analyses which are conducted on
+# triggers from gravitational wave detectors.
 
 Gaussian processes trained with $N$ data require the ability to both store and invert an $N\times N$ matrix of covariances between observations; this can be a considerable computational challenge.
 There are a number of approaches to get around this problem, including /sparse Gaussian processes/, where a limit on the parameter-space distance between training points is set, and the covariance of points outside this radius are ignored\cite{EPFL-CONF-161319}, and hierarchical matrix inversion methods\cite{hodlr}.
@@ -126,6 +183,9 @@ file:figures/gp-posterior-meancovar.pdf
 
 
 * Covariance Functions
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:covariance
+  :END:
 
 The covariance function defines the similarity of a pair of data points,
 according to some relationship with suitable properties. The similarity
@@ -227,13 +287,13 @@ A list of the symbols for each covariance function is given in table ref:tab:ker
 | Rational Quadratic  | $\RQ$  | Variation on multiple scales.       |
 | Constant            | $\Con$ | Scaling factor.                     |
 
-
-
-For example, we may be able to model a yearly growing trend which
-contains a seasonal variation with a combination of a linear and a
+For example, we may be able to model a yearly growing trend which contains a seasonal variation with a combination of a linear and a
 periodic kernel, $\Lin \times \SE$.
 
 * Training the model
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:training
+  :END:
 
 When defining the covariance function for the it may be desirable to
 specify a number of free hyperparameters, $\theta$, which allow the
@@ -259,6 +319,9 @@ priors are assigned to the value of each hyperparameter, and the optimal
 hyperparameters are found using a Monte Carlo algorithm.
 
 * The predictive posterior distribution
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:predictive
+  :END:
 
 In order to make a prediction using the Gaussian Process model we
 require a new input at which the prediction should be made, which is
@@ -287,6 +350,9 @@ The predictive distribution can then be found as
 \end{equation}
 
 * Computational Complexity
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:complexity
+  :END:
 
 One severe disadvantage of Gaussian Processes as a data analysis tool
 are their high computational complexity. Producing a prediction from a
@@ -376,6 +442,9 @@ process running on another node.
 ** Stochastic Variational Inference
 
 * Assessing the model
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:assessing
+  :END:
 
 Having produced a statistical regression model it is crucial that its efficacy is assessed.
 There are broadly two scenarios under which such testing can occur. 
@@ -426,6 +495,9 @@ however, if only a small number of past observations are available the predictiv
 
 
 * Bayesian Optimisation
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:optimisation
+  :END:
 
 While conventional optimisation methods, such as hill-climbing
 algorithms, rely on the ability to evaluate a function (and often its
@@ -512,6 +584,9 @@ deviation from the true $f(x^+)$ when choosing a trial point, so
 # surrogate which has the minimum match to the alternative model.
 
 * Examples
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:examples
+  :END:
 
 ** A single BBH waveform
 
@@ -557,18 +632,28 @@ were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
 
 #+LABEL: fig:gp:examples:mountains1
 #+ATTR_LATEX: :width \textwidth
-#+CAPTION: Trained off a small number of spot-heights, a Gaussian process is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
+#+CAPTION: Trained off a small number of spot-heights, a abbr:gp is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
 file:figures/arrochar-alps.pdf
 
 ** A concrete example
 
 * Heron: A precessing waveform model
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:heron:introduction
+  :END:
 
-[1] This claim is rather sketchy, as we'll see when the forms of
-    covariance function are presented, as the parametricity is simply
-    moved from the model itself to the form of the covariance functions,
-    and the values of these /hyperparameters/ must be inferred, or
-    learned, from the data.
+The difficulties of producing accurate abbr:bbh waveforms for any arbitrary configuration of the system of two black holes are described in section ref:sec:sources:cbc:nr, with the speed of evaluation making the production of new waveforms from abbr:nr codes in conjunction with a matched filtering process impractical. 
+As a result a fairly small number of abbr:nr waveforms are available, and analyses must interpolate between these in order to produce waveforms at arbitrary locations within the parameter space. A number of such analytical approximants, calibrated against a small number of abbr:nr waveforms are available, for example the ~IMRPhenomP~ and ~SEOBNR~ families of approximants (see section ref:sec:sources:cbc:approximants), which attempt to combine fitting to abbr:nr data with prior physical information to produce an analytical approximant waveform for any arbitrary configuration. 
+Understanding the accuracy of these models throughout the physical parameter space can be difficult, and incorporating this uncertainty in a Bayesian parameter estimation process more so.
+The ~Heron~ model is an attempt to overcome these challenges by producing an interpolative model using abbr:gp regression, for a abbr:gp model conditioned on data derived from abbr:nr waveforms.
+The output of a abbr:gp regressor is not a single function, but rather a distribution of functions, and as a result the variance of the waveform prediction at each point in the parameter space of the system can be determined simultaneously with the mean prediction. 
+This uncertainty can then be included in a Bayesian matched filtering process.
+
+#+CAPTION: Samples from the Heron predictive posterior distribution evaluated at ($q=1$, $\vec{S}_{1} = (0,0,0)$, $\vec{S}_{2} = (0,0,0)$), representing a non-spinning, equal-mass system. One-hundred draws from the posterior are plotted in grey, alongside the mean of the abbr:gp (dashed grey line), and the variance (shaded grey region).
+#+ATTR_LATEX: :width \textwidth 
+[[file:figures/heron-nonspinning-gt.pdf]]
+
+
 
 [2] Jaakkola's heuristic is a heuristic for global optimisation of real
     functions; in this case it suggests that we calculate the distances
@@ -578,14 +663,32 @@ file:figures/arrochar-alps.pdf
 
 
 * Gaussian processes for experimental design
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:design
+  :END:
 ** Latin hypercubes
+   :PROPERTIES:
+   :CUSTOM_ID: sec:gpr:design:hypercubes
+   :END:
 ** Voronoi tesselation
+   :PROPERTIES:
+   :CUSTOM_ID: sec:gpr:design:voronoi
+   :END:
 ** Fully information-driven design
+   :PROPERTIES:
+   :CUSTOM_ID: sec:gpr:design:information
+   :END:
 
 
 * Extending the Gaussian Process
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:extending
+  :END:
 
 Standard implementations of Gaussian processes are capable of mapping a multi-dimensional input to a single-dimensional output, however there are many situations in which the ability to generate a multi-dimensional output would be advantageous.
 
 * General elliptical processes
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:elliptical
+  :END:
 /This section should be a discussion of more general elliptical processes, such as student-t processes. Given that these haven't featured in the development of the surrogate model it would be appropriate to only spend a few lines on this, although finding and presenting a suitable astrophysical example could be valuable./
