@@ -22,6 +22,7 @@ def parse_org_file(filename):
         if hasattr(line, "heading"):
             entry['name'] = line.heading
             entry['description'] = ""
+            entry['pluralabb'] = ""
             for descline in line.content:
                 if hasattr(descline, "content"):
                     for orgproperty in descline.content:
@@ -48,7 +49,7 @@ def export_latex(entries):
 
     for entry in entries:
         if ("name" in entry) and ("description" in entry):
-            print("\\newglossaryentry{{{}}} {{ name={{{}}}, description={{{}}} }}".format(entry['name'].lower().replace(" ", "-"), entry['name'], entry['description']))
+            print("\\newglossaryentry{{{}}} {{ name={{{}}}, description={{{}}}, plural={{{}}} }}".format(entry['name'].lower().replace(" ", "-"), entry['name'], entry['description'], entry['pluralabb']))
 
 
 def main():

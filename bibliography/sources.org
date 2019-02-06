@@ -1,0 +1,1717 @@
+* Compact binary coalesence events
+** Binary black holes
+*** Post-Newtonian approximants
+**** Gravitational Radiation from Post-Newtonian Sources and Inspiralling Compact Binaries
+     :PROPERTIES:
+     :TITLE:    Gravitational Radiation from Post-Newtonian Sources and Inspiralling Compact Binaries
+     :BTYPE:    article
+     :CUSTOM_ID: 2014LRR....17....2B
+     :AUTHOR:   {Blanchet}, Luc
+     :JOURNAL:  Living Reviews in Relativity
+     :KEYWORDS: Post-Newtonian approximation, Gravitational radiation, Multipolar expansion, Inspiralling compact binary, Post-Newtonian approximations, General Relativity and Quantum Cosmology
+     :YEAR:     2014
+     :MONTH:    Feb
+     :VOLUME:   17
+     :EID:      2
+     :PAGES:    2
+     :DOI:      10.12942/lrr-2014-2
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1310.1528
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014LRR....17....2B
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+*** Analytical models
+**** General 
+***** Gravitational waves from inspiraling compact binaries: Validity of the stationary-phase approximation to the Fourier transform
+      :PROPERTIES:
+      :TITLE:    Gravitational waves from inspiraling compact binaries: Validity of the stationary-phase approximation to the Fourier transform
+      :BTYPE:    article
+      :CUSTOM_ID: 1999PhRvD..59l4016D
+      :AUTHOR:   {Droz}, Serge and {Knapp}, Daniel J. and {Poisson}, Eric and {Owen}, Benjamin J.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.Nx, 04.30.Db, 04.80.Nn, Post-Newtonian approximation, perturbation theory, related approximations, Wave generation and sources, Gravitational wave detectors and experiments, General Relativity and Quantum Cosmology
+      :YEAR:     1999
+      :MONTH:    Jun
+      :VOLUME:   59
+      :EID:      124016
+      :PAGES:    124016
+      :DOI:      10.1103/PhysRevD.59.124016
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/9901076
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1999PhRvD..59l4016D
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+**** SEOBNR
+***** Improved effective-one-body model of spinning, nonprecessing binary black holes for the era of gravitational-wave astrophysics with advanced detectors
+      :PROPERTIES:
+      :TITLE:    Improved effective-one-body model of spinning, nonprecessing binary black holes for the era of gravitational-wave astrophysics with advanced detectors
+      :BTYPE:    article
+      :CUSTOM_ID: 2017PhRvD..95d4028B
+      :AUTHOR:   {Boh{\'e}}, Alejandro and {Shao}, Lijing and {Taracchini}, Andrea and {Buonanno}, Alessandra and {Babak}, Stanislav and {Harry}, Ian W. and {Hinder}, Ian and {Ossokine}, Serguei and {P{\"u}rrer}, Michael and {Raymond}, Vivien and {Chu}, Tony and {Fong}, Heather and {Kumar}, Prayush and {Pfeiffer}, Harald P. and {Boyle}, Michael and {Hemberger}, Daniel A. and {Kidder}, Lawrence E. and {Lovelace}, Geoffrey and {Scheel}, Mark A. and {Szil{\'a}gyi}, B{\'e}la
+      :JOURNAL:  \prd
+      :KEYWORDS: General Relativity and Quantum Cosmology
+      :YEAR:     2017
+      :MONTH:    Feb
+      :VOLUME:   95
+      :EID:      044028
+      :PAGES:    044028
+      :DOI:      10.1103/PhysRevD.95.044028
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1611.03703
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017PhRvD..95d4028B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Inspiral-merger-ringdown waveforms of spinning, precessing black-hole binaries in the effective-one-body formalism
+      :PROPERTIES:
+      :TITLE:    Inspiral-merger-ringdown waveforms of spinning, precessing black-hole binaries in the effective-one-body formalism
+      :BTYPE:    article
+      :CUSTOM_ID: 2014PhRvD..89h4006P
+      :AUTHOR:   {Pan}, Yi and {Buonanno}, Alessandra and {Taracchini}, Andrea and {Kidder}, Lawrence E. and {Mrou{\'e}}, Abdul H. and {Pfeiffer}, Harald P. and {Scheel}, Mark A. and {Szil{\'a}gyi}, B{\'e}la
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.D-, 04.25.dg, 04.25.Nx, 04.30.-w, Numerical relativity, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory, General Relativity and Quantum Cosmology
+      :YEAR:     2014
+      :MONTH:    Apr
+      :VOLUME:   89
+      :EID:      084006
+      :PAGES:    084006
+      :DOI:      10.1103/PhysRevD.89.084006
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1307.6232
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014PhRvD..89h4006P
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      + SEOBNRv3
+***** Effective-one-body model for black-hole binaries with generic mass ratios and spins
+      :PROPERTIES:
+      :TITLE:    Effective-one-body model for black-hole binaries with generic mass ratios and spins
+      :BTYPE:    article
+      :CUSTOM_ID: 2014PhRvD..89f1502T
+      :AUTHOR:   {Taracchini}, Andrea and {Buonanno}, Alessandra and {Pan}, Yi and {Hinderer}, Tanja and {Boyle}, Michael and {Hemberger}, Daniel A. and {Kidder}, Lawrence E. and {Lovelace}, Geoffrey and {Mrou{\'e}}, Abdul H. and {Pfeiffer}, Harald P. and {Scheel}, Mark A. and {Szil{\'a}gyi}, B{\'e}la and {Taylor}, Nicholas W. and {Zenginoglu}, Anil
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.D-, 04.25.dg, 04.25.Nx, 04.30.-w, Numerical relativity, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory, General Relativity and Quantum Cosmology
+      :YEAR:     2014
+      :MONTH:    Mar
+      :VOLUME:   89
+      :EID:      061502
+      :PAGES:    061502
+      :DOI:      10.1103/PhysRevD.89.061502
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1311.2544
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014PhRvD..89f1502T
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      + SEOBNRv2
+
+***** Prototype effective-one-body model for nonprecessing spinning inspiral-merger-ringdown waveforms
+      :PROPERTIES:
+      :TITLE:    Prototype effective-one-body model for nonprecessing spinning inspiral-merger-ringdown waveforms
+      :BTYPE:    article
+      :CUSTOM_ID: 2012PhRvD..86b4011T
+      :AUTHOR:   {Taracchini}, Andrea and {Pan}, Yi and {Buonanno}, Alessandra and {Barausse}, Enrico and {Boyle}, Michael and {Chu}, Tony and {Lovelace}, Geoffrey and {Pfeiffer}, Harald P. and {Scheel}, Mark A.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.D-, 04.25.dg, 04.25.Nx, 04.30.-w, Numerical relativity, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory, General Relativity and Quantum Cosmology
+      :YEAR:     2012
+      :MONTH:    Jul
+      :VOLUME:   86
+      :EID:      024011
+      :PAGES:    024011
+      :DOI:      10.1103/PhysRevD.86.024011
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1202.0790
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2012PhRvD..86b4011T
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      + SEOBNRv1
+
+***** Inspiral-merger-ringdown multipolar waveforms of nonspinning black-hole binaries using the effective-one-body formalism
+      :PROPERTIES:
+      :TITLE:    Inspiral-merger-ringdown multipolar waveforms of nonspinning black-hole binaries using the effective-one-body formalism
+      :BTYPE:    article
+      :CUSTOM_ID: 2011PhRvD..84l4052P
+      :AUTHOR:   {Pan}, Yi and {Buonanno}, Alessandra and {Boyle}, Michael and {Buchman}, Luisa T. and {Kidder}, Lawrence E. and {Pfeiffer}, Harald P. and {Scheel}, Mark A.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.D-, 04.25.dg, 04.25.Nx, 04.30.-w, Numerical relativity, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory, General Relativity and Quantum Cosmology
+      :YEAR:     2011
+      :MONTH:    Dec
+      :VOLUME:   84
+      :EID:      124052
+      :PAGES:    124052
+      :DOI:      10.1103/PhysRevD.84.124052
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1106.1021
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2011PhRvD..84l4052P
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      EOBNRv2
+
+***** Approaching faithful templates for nonspinning binary black holes using the effective-one-body approach
+      :PROPERTIES:
+      :TITLE:    Approaching faithful templates for nonspinning binary black holes using the effective-one-body approach
+      :BTYPE:    article
+      :CUSTOM_ID: 2007PhRvD..76j4049B
+      :AUTHOR:   {Buonanno}, Alessandra and {Pan}, Yi and {Baker}, John G. and {Centrella}, Joan and {Kelly}, Bernard J. and {McWilliams}, Sean T. and {van Meter}, James R.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.Nx, 04.25.Dm, 04.30.Db, 04.70.Bw, Post-Newtonian approximation, perturbation theory, related approximations, Numerical relativity, Wave generation and sources, Classical black holes, General Relativity and Quantum Cosmology
+      :YEAR:     2007
+      :MONTH:    Nov
+      :VOLUME:   76
+      :EID:      104049
+      :PAGES:    104049
+      :DOI:      10.1103/PhysRevD.76.104049
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   0706.3732
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2007PhRvD..76j4049B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      + EOBNRv1
+
+
+***** The Effective One Body description of the Two-Body problem
+      :PROPERTIES:
+      :TITLE:    The Effective One Body description of the Two-Body problem
+      :BTYPE:    article
+      :CUSTOM_ID: 2009arXiv0906.1769D
+      :AUTHOR:   {Damour}, Thibault and {Nagar}, Alessandro
+      :JOURNAL:  arXiv e-prints
+      :KEYWORDS: General Relativity and Quantum Cosmology
+      :YEAR:     2009
+      :MONTH:    Jun
+      :EID:      arXiv:0906.1769
+      :PAGES:    arXiv:0906.1769
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   0906.1769
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2009arXiv0906.1769D
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Inspiral-merger-ringdown multipolar waveforms of nonspinning black-hole binaries using the effective-one-body formalism
+      :PROPERTIES:
+      :TITLE:    Inspiral-merger-ringdown multipolar waveforms of nonspinning black-hole binaries using the effective-one-body formalism
+      :BTYPE:    article
+      :CUSTOM_ID: 2011PhRvD..84l4052P
+      :AUTHOR:   {Pan}, Yi and {Buonanno}, Alessandra and {Boyle}, Michael and {Buchman}, Luisa T. and {Kidder}, Lawrence E. and {Pfeiffer}, Harald P. and {Scheel}, Mark A.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.D-, 04.25.dg, 04.25.Nx, 04.30.-w, Numerical relativity, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory, General Relativity and Quantum Cosmology
+      :YEAR:     2011
+      :MONTH:    Dec
+      :VOLUME:   84
+      :EID:      124052
+      :PAGES:    124052
+      :DOI:      10.1103/PhysRevD.84.124052
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1106.1021
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2011PhRvD..84l4052P
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      SEOBNR
+***** Inspiral-merger-ringdown waveforms of spinning, precessing black-hole binaries in the effective-one-body formalism
+      :PROPERTIES:
+      :TITLE:    Inspiral-merger-ringdown waveforms of spinning, precessing black-hole binaries in the effective-one-body formalism
+      :BTYPE:    article
+      :CUSTOM_ID: 2014PhRvD..89h4006P
+      :AUTHOR:   {Pan}, Yi and {Buonanno}, Alessandra and {Taracchini}, Andrea and {Kidder}, Lawrence E. and {Mrou{\'e}}, Abdul H. and {Pfeiffer}, Harald P. and {Scheel}, Mark A. and {Szil{\'a}gyi}, B{\'e}la
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.D-, 04.25.dg, 04.25.Nx, 04.30.-w, Numerical relativity, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory, General Relativity and Quantum Cosmology
+      :YEAR:     2014
+      :MONTH:    Apr
+      :VOLUME:   89
+      :EID:      084006
+      :PAGES:    084006
+      :DOI:      10.1103/PhysRevD.89.084006
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1307.6232
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014PhRvD..89h4006P
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Effective one-body approach to general relativistic two-body dynamics
+      :PROPERTIES:
+      :TITLE:    Effective one-body approach to general relativistic two-body dynamics
+      :BTYPE:    article
+      :CUSTOM_ID: 1999PhRvD..59h4006B
+      :AUTHOR:   {Buonanno}, A. and {Damour}, T.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.30.Db, 04.25.Nx, 97.80.Fk, Wave generation and sources, Post-Newtonian approximation, perturbation theory, related approximations, Spectroscopic binaries, close binaries, General Relativity and Quantum Cosmology, Astrophysics
+      :YEAR:     1999
+      :MONTH:    Apr
+      :VOLUME:   59
+      :EID:      084006
+      :PAGES:    084006
+      :DOI:      10.1103/PhysRevD.59.084006
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/9811091
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1999PhRvD..59h4006B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Transition from inspiral to plunge in binary black hole coalescences
+      :PROPERTIES:
+      :TITLE:    Transition from inspiral to plunge in binary black hole coalescences
+      :BTYPE:    article
+      :CUSTOM_ID: 2000PhRvD..62f4015B
+      :AUTHOR:   {Buonanno}, Alessandra and {Damour}, Thibault
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.30.-w, 04.25.Nx, Gravitational waves: theory, Post-Newtonian approximation, perturbation theory, related approximations, General Relativity and Quantum Cosmology
+      :YEAR:     2000
+      :MONTH:    Sep
+      :VOLUME:   62
+      :EID:      064015
+      :PAGES:    064015
+      :DOI:      10.1103/PhysRevD.62.064015
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/0001013
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2000PhRvD..62f4015B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+**** IMRPhenom
+***** Frequency-domain gravitational waves from nonprecessing black-hole binaries. II. A phenomenological model for the advanced detector era
+      :PROPERTIES:
+      :TITLE:    Frequency-domain gravitational waves from nonprecessing black-hole binaries. II. A phenomenological model for the advanced detector era
+      :BTYPE:    article
+      :CUSTOM_ID: 2016PhRvD..93d4007K
+      :AUTHOR:   {Khan}, Sebastian and {Husa}, Sascha and {Hannam}, Mark and {Ohme}, Frank and {P{\"u}rrer}, Michael and {Forteza}, Xisco Jim{\'e}nez and {Boh{\'e}}, Alejandro
+      :JOURNAL:  \prd
+      :KEYWORDS: General Relativity and Quantum Cosmology
+      :YEAR:     2016
+      :MONTH:    Feb
+      :VOLUME:   93
+      :EID:      044007
+      :PAGES:    044007
+      :DOI:      10.1103/PhysRevD.93.044007
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1508.07253
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2016PhRvD..93d4007K
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Constructing gravitational waves from generic spin-precessing compact binary inspirals
+      :PROPERTIES:
+      :TITLE:    Constructing gravitational waves from generic spin-precessing compact binary inspirals
+      :BTYPE:    article
+      :CUSTOM_ID: 2017PhRvD..95j4004C
+      :AUTHOR:   {Chatziioannou}, Katerina and {Klein}, Antoine and {Yunes}, Nicol{\'a}s and {Cornish}, Neil
+      :JOURNAL:  \prd
+      :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+      :YEAR:     2017
+      :MONTH:    May
+      :VOLUME:   95
+      :EID:      104004
+      :PAGES:    104004
+      :DOI:      10.1103/PhysRevD.95.104004
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1703.03967
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017PhRvD..95j4004C
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Template bank for gravitational waveforms from coalescing binary black holes: Nonspinning binaries
+      :PROPERTIES:
+      :ANNOTATION: IMRPhenomA
+      :TITLE:    Template bank for gravitational waveforms from coalescing binary black holes: Nonspinning binaries
+      :BTYPE:    article
+      :CUSTOM_ID: 2008PhRvD..77j4017A
+      :AUTHOR:   {Ajith}, P. and {Babak}, S. and {Chen}, Y. and {Hewitson}, M. and {Krishnan}, B. and {Sintes}, A.~M. and {Whelan}, J.~T. and {Br{\"u}gmann}, B. and {Diener}, P. and {Dorband}, N. and {Gonzalez}, J. and {Hannam}, M. and {Husa}, S. and {Pollney}, D. and {Rezzolla}, L. and {Santamar{\'\i}a}, L. and {Sperhake}, U. and {Thornburg}, J.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.dg, 04.25.Nx, 04.30.Db, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Wave generation and sources, General Relativity and Quantum Cosmology, Astrophysics
+      :YEAR:     2008
+      :MONTH:    May
+      :VOLUME:   77
+      :EID:      104017
+      :PAGES:    104017
+      :DOI:      10.1103/PhysRevD.77.104017
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   0710.2335
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2008PhRvD..77j4017A
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+
+      The form of the gravitational wave signal from a BBH can be divided fairly neatly into three parts.
+      + inspiral :: two CBCs treated as point masses moving in quasi-circular orbits. Eccentricity is quickly radiated away. Well described by PN approximation.
+      + merger :: PN breaks down as CBs become ultra-relativistic; this stage must be calculated numerically.
+      + ringdown :: The CBC produces a single, perturbed black hole, which loses its deviations from a Kerr black hole through GW emission. This is modelled as a superposition of exponentially damped "quasi-normal" modes, which decay in a "ringdown" in analogy with a bell. For ground based detectors only the principle mode is likely to be detectable, but in the LISA band the ringdown is xpected to be the dominant source of signal for supermassive binaries.
+		    
+      By 2007 numerical relativity had advanced to the point that a number of groups to calculate waveforms containing the last few orbits and the merger.
+      The small number of cycles from NR simulations can be augmented with a PN approximant to produce a longer hybridised waveform, as generating long signals is computationally intensive and prohibitve, given that the PN formalism is known to be adequate in the weak-field regime.
+
+      The expense of NR waveforms means that they cannot be used directly to densely cover the BBH parameter space which is required for searches in the advanced detector era. 
+      + effectual :: ability to detect BBH signals
+      + faithful :: ability to estimate the parameters of a binary
+
+      + TaylorT1 :: a PN-approximant waveform
+
+      Target signals are produced by matching NR simulations to PN waveforms
+
+      Numerical simulations which are used for this paper are BAM and CCATIE which use the moving-puncture approach.
+
+***** A phenomenological template family for black-hole coalescence waveforms
+      :PROPERTIES:
+      :TITLE:    A phenomenological template family for black-hole coalescence waveforms
+      :BTYPE:    article
+      :CUSTOM_ID: 2007CQGra..24S.689A
+      :AUTHOR:   {Ajith}, P. and {Babak}, S. and {Chen}, Y. and {Hewitson}, M. and {Krishnan}, B. and {Whelan}, J.~T. and {Br{\"u}gmann}, B. and {Diener}, P. and {Gonzalez}, J. and {Hannam}, M. and {Husa}, S. and {Koppitz}, M. and {Pollney}, D. and {Rezzolla}, L. and {Santamar{\'\i}a}, L. and {Sintes}, A.~M. and {Sperhake}, U. and {Thornburg}, J.
+      :JOURNAL:  Classical and Quantum Gravity
+      :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics
+      :YEAR:     2007
+      :MONTH:    Oct
+      :VOLUME:   24
+      :PAGES:    S689-S699
+      :DOI:      10.1088/0264-9381/24/19/S31
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   0704.3764
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2007CQGra..24S.689A
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+
+***** Phenomenological model for the gravitational-wave signal from precessing binary black holes with two-spin effects
+      :PROPERTIES:
+      :TITLE:    Phenomenological model for the gravitational-wave signal from precessing binary black holes with two-spin effects
+      :BTYPE:    article
+      :CUSTOM_ID: 2018arXiv180910113K
+      :AUTHOR:   {Khan}, Sebastian and {Chatziioannou}, Katerina and {Hannam}, Mark and {Ohme}, Frank
+      :JOURNAL:  arXiv e-prints
+      :KEYWORDS: General Relativity and Quantum Cosmology
+      :YEAR:     2018
+      :MONTH:    Sep
+      :EID:      arXiv:1809.10113
+      :PAGES:    arXiv:1809.10113
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1809.10113
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018arXiv180910113K
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+*** NR Codes
+**** SPEC
+***** Black hole evolution by spectral methods
+      :PROPERTIES:
+      :TITLE:    Black hole evolution by spectral methods
+      :BTYPE:    article
+      :CUSTOM_ID: 2000PhRvD..62h4032K
+      :AUTHOR:   {Kidder}, Lawrence E. and {Scheel}, Mark A. and {Teukolsky}, Saul A. and {Carlson}, Eric D. and {Cook}, Gregory B.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.Dm, 02.70.Hm, Numerical relativity, Spectral methods, General Relativity and Quantum Cosmology
+      :YEAR:     2000
+      :MONTH:    Oct
+      :VOLUME:   62
+      :EID:      084032
+      :PAGES:    084032
+      :DOI:      10.1103/PhysRevD.62.084032
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/0005056
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2000PhRvD..62h4032K
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Simulations of binary black hole mergers using spectral methods
+      :PROPERTIES:
+      :TITLE:    Simulations of binary black hole mergers using spectral methods
+      :BTYPE:    article
+      :CUSTOM_ID: 2009PhRvD..80l4010S
+      :AUTHOR:   {Szil{\'a}gyi}, B{\'e}la and {Lindblom}, Lee and {Scheel}, Mark A.
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.D-, 02.70.-c, 02.70.Hm, 04.25.dg, Numerical relativity, Computational techniques, simulations, Spectral methods, Numerical studies of black holes and black-hole binaries, General Relativity and Quantum Cosmology
+      :YEAR:     2009
+      :MONTH:    Dec
+      :VOLUME:   80
+      :EID:      124010
+      :PAGES:    124010
+      :DOI:      10.1103/PhysRevD.80.124010
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   0909.3557
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2009PhRvD..80l4010S
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+**** BAM
+***** Numerical Simulation of Orbiting Black Holes
+      :PROPERTIES:
+      :TITLE:    Numerical Simulation of Orbiting Black Holes
+      :BTYPE:    article
+      :CUSTOM_ID: 2004PhRvL..92u1101B
+      :AUTHOR:   {Br{\"u}gmann}, Bernd and {Tichy}, Wolfgang and {Jansen}, Nina
+      :JOURNAL:  \prl
+      :KEYWORDS: 04.25.Dm, 04.30.Db, 95.30.Sf, Numerical relativity, Wave generation and sources, Relativity and gravitation, General Relativity and Quantum Cosmology
+      :YEAR:     2004
+      :MONTH:    May
+      :VOLUME:   92
+      :EID:      211101
+      :PAGES:    211101
+      :DOI:      10.1103/PhysRevLett.92.211101
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/0312112
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2004PhRvL..92u1101B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Calibration of moving puncture simulations
+      :PROPERTIES:
+      :TITLE:    Calibration of moving puncture simulations
+      :BTYPE:    article
+      :CUSTOM_ID: 2008PhRvD..77b4027B
+      :AUTHOR:   {Br{\"u}gmann}, Bernd and {Gonz{\'a}lez}, Jos{\'e} A. and {Hannam}, Mark and {Husa}, Sascha and {Sperhake}, Ulrich and {Tichy}, Wolfgang
+      :JOURNAL:  \prd
+      :KEYWORDS: 04.25.dg, 04.30.Db, 95.30.Sf, Numerical studies of black holes and black-hole binaries, Wave generation and sources, Relativity and gravitation, General Relativity and Quantum Cosmology
+      :YEAR:     2008
+      :MONTH:    Jan
+      :VOLUME:   77
+      :EID:      024027
+      :PAGES:    024027
+      :DOI:      10.1103/PhysRevD.77.024027
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/0610128
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2008PhRvD..77b4027B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Numerical Simulation of Orbiting Black Holes
+      :PROPERTIES:
+      :TITLE:    Numerical Simulation of Orbiting Black Holes
+      :BTYPE:    article
+      :CUSTOM_ID: 2004PhRvL..92u1101B
+      :AUTHOR:   {Br{\"u}gmann}, Bernd and {Tichy}, Wolfgang and {Jansen}, Nina
+      :JOURNAL:  \prl
+      :KEYWORDS: 04.25.Dm, 04.30.Db, 95.30.Sf, Numerical relativity, Wave generation and sources, Relativity and gravitation, General Relativity and Quantum Cosmology
+      :YEAR:     2004
+      :MONTH:    May
+      :VOLUME:   92
+      :EID:      211101
+      :PAGES:    211101
+      :DOI:      10.1103/PhysRevLett.92.211101
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/0312112
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2004PhRvL..92u1101B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** Binary Black Hole Mergers in 3d Numerical Relativity
+      :PROPERTIES:
+      :TITLE:    Binary Black Hole Mergers in 3d Numerical Relativity
+      :BTYPE:    article
+      :CUSTOM_ID: 1999IJMPD...8...85B
+      :AUTHOR:   {Br{\"u}gmann}, Bernd
+      :JOURNAL:  International Journal of Modern Physics D
+      :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics
+      :YEAR:     1999
+      :MONTH:    Jan
+      :VOLUME:   8
+      :PAGES:    85-100
+      :DOI:      10.1142/S0218271899000080
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   gr-qc/9708035
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1999IJMPD...8...85B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+*** Numerical relativity
+**** Last orbit of binary black holes
+     :PROPERTIES:
+     :TITLE:    Last orbit of binary black holes
+     :BTYPE:    article
+     :CUSTOM_ID: 2006PhRvD..73f1501C
+     :AUTHOR:   {Campanelli}, M. and {Lousto}, C.~O. and {Zlochower}, Y.
+     :JOURNAL:  \prd
+     :KEYWORDS: 04.25.Dm, 04.25.Nx, 04.30.Db, 04.70.Bw, Numerical relativity, Post-Newtonian approximation, perturbation theory, related approximations, Wave generation and sources, Classical black holes, General Relativity and Quantum Cosmology
+     :YEAR:     2006
+     :MONTH:    Mar
+     :VOLUME:   73
+     :EID:      061501
+     :PAGES:    061501
+     :DOI:      10.1103/PhysRevD.73.061501
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/0601091
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2006PhRvD..73f1501C
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Binary Black Hole Mergers in 3d Numerical Relativity
+     :PROPERTIES:
+     :TITLE:    Binary Black Hole Mergers in 3d Numerical Relativity
+     :BTYPE:    article
+     :CUSTOM_ID: 1999IJMPD...8...85B
+     :AUTHOR:   {Br{\"u}gmann}, Bernd
+     :JOURNAL:  International Journal of Modern Physics D
+     :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics
+     :YEAR:     1999
+     :MONTH:    Jan
+     :VOLUME:   8
+     :PAGES:    85-100
+     :DOI:      10.1142/S0218271899000080
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/9708035
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1999IJMPD...8...85B
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+     One of the early papers to present an ADM-based NR waveform. 
+     Notes some of the history of the field and the problems associated with NR simulations at the time.
+**** Numerical Relativity and Astrophysics
+     :PROPERTIES:
+     :TITLE:    Numerical Relativity and Astrophysics
+     :BTYPE:    article
+     :CUSTOM_ID: 2014ARA&A..52..661L
+     :AUTHOR:   {Lehner}, Luis and {Pretorius}, Frans
+     :JOURNAL:  Annual Review of Astronomy and Astrophysics
+     :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+     :YEAR:     2014
+     :MONTH:    Aug
+     :VOLUME:   52
+     :PAGES:    661-694
+     :DOI:      10.1146/annurev-astro-081913-040031
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1405.4840
+     :PRIMARYCLASS: astro-ph.HE
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014ARA&A..52..661L
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Numerical relativity using a generalized harmonic decomposition
+     :PROPERTIES:
+     :TITLE:    Numerical relativity using a generalized harmonic decomposition
+     :BTYPE:    article
+     :CUSTOM_ID: 2005CQGra..22..425P
+     :AUTHOR:   {Pretorius}, Frans
+     :JOURNAL:  Classical and Quantum Gravity
+     :KEYWORDS: General Relativity and Quantum Cosmology
+     :YEAR:     2005
+     :MONTH:    Jan
+     :VOLUME:   22
+     :PAGES:    425-451
+     :DOI:      10.1088/0264-9381/22/2/014
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/0407110
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2005CQGra..22..425P
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Evolution of Binary Black-Hole Spacetimes
+     :PROPERTIES:
+     :TITLE:    Evolution of Binary Black-Hole Spacetimes
+     :BTYPE:    article
+     :CUSTOM_ID: 2005PhRvL..95l1101P
+     :AUTHOR:   {Pretorius}, Frans
+     :JOURNAL:  \prl
+     :KEYWORDS: 04.25.Dm, 04.30.Db, 04.70.Bw, Numerical relativity, Wave generation and sources, Classical black holes, General Relativity and Quantum Cosmology, Astrophysics, High Energy Physics - Theory
+     :YEAR:     2005
+     :MONTH:    Sep
+     :VOLUME:   95
+     :EID:      121101
+     :PAGES:    121101
+     :DOI:      10.1103/PhysRevLett.95.121101
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/0507014
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2005PhRvL..95l1101P
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+     Pioneers the use of Generalised Harmonic coordinates (cite:2005CQGra..22..425P) as a numerically stable formalism for use in NR simulations.
+**** Wave zone extraction of gravitational radiation in three-dimensional numerical relativity
+     :PROPERTIES:
+     :TITLE:    Wave zone extraction of gravitational radiation in three-dimensional numerical relativity
+     :BTYPE:    article
+     :CUSTOM_ID: 2005PhRvD..71j4036F
+     :AUTHOR:   {Fiske}, David R. and {Baker}, John G. and {van Meter}, James R. and {Choi}, Dae-Il and {Centrella}, Joan M.
+     :JOURNAL:  \prd
+     :KEYWORDS: 04.25.Dm, 04.30.Db, 04.30.Nk, Numerical relativity, Wave generation and sources, Wave propagation and interactions, General Relativity and Quantum Cosmology
+     :YEAR:     2005
+     :MONTH:    May
+     :VOLUME:   71
+     :EID:      104036
+     :PAGES:    104036
+     :DOI:      10.1103/PhysRevD.71.104036
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/0503100
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2005PhRvD..71j4036F
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Gravitational-Wave Extraction from an Inspiraling Configuration of Merging Black Holes
+     :PROPERTIES:
+     :TITLE:    Gravitational-Wave Extraction from an Inspiraling Configuration of Merging Black Holes
+     :BTYPE:    article
+     :CUSTOM_ID: 2006PhRvL..96k1102B
+     :AUTHOR:   {Baker}, John G. and {Centrella}, Joan and {Choi}, Dae-Il and {Koppitz}, Michael and {van Meter}, James
+     :JOURNAL:  \prl
+     :KEYWORDS: 04.25.Dm, 04.30.Db, 04.70.Bw, 95.30.Sf, Numerical relativity, Wave generation and sources, Classical black holes, Relativity and gravitation, General Relativity and Quantum Cosmology, Astrophysics, Physics - Computational Physics
+     :YEAR:     2006
+     :MONTH:    Mar
+     :VOLUME:   96
+     :EID:      111102
+     :PAGES:    111102
+     :DOI:      10.1103/PhysRevLett.96.111102
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/0511103
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2006PhRvL..96k1102B
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Accurate Evolutions of Orbiting Black-Hole Binaries without Excision
+     :PROPERTIES:
+     :TITLE:    Accurate Evolutions of Orbiting Black-Hole Binaries without Excision
+     :BTYPE:    article
+     :CUSTOM_ID: 2006PhRvL..96k1101C
+     :AUTHOR:   {Campanelli}, M. and {Lousto}, C.~O. and {Marronetti}, P. and {Zlochower}, Y.
+     :JOURNAL:  \prl
+     :KEYWORDS: 04.25.Dm, 04.25.Nx, 04.30.Db, 04.70.Bw, Numerical relativity, Post-Newtonian approximation, perturbation theory, related approximations, Wave generation and sources, Classical black holes, General Relativity and Quantum Cosmology, Astrophysics
+     :YEAR:     2006
+     :MONTH:    Mar
+     :VOLUME:   96
+     :EID:      111101
+     :PAGES:    111101
+     :DOI:      10.1103/PhysRevLett.96.111101
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/0511048
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2006PhRvL..96k1101C
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Calibration of moving puncture simulations
+     :PROPERTIES:
+     :ANNOTATION: BAM
+     :TITLE:    Calibration of moving puncture simulations
+     :BTYPE:    article
+     :CUSTOM_ID: 2008PhRvD..77b4027B
+     :AUTHOR:   {Br{\"u}gmann}, Bernd and {Gonz{\'a}lez}, Jos{\'e} A. and {Hannam}, Mark and {Husa}, Sascha and {Sperhake}, Ulrich and {Tichy}, Wolfgang
+     :JOURNAL:  \prd
+     :KEYWORDS: 04.25.dg, 04.30.Db, 95.30.Sf, Numerical studies of black holes and black-hole binaries, Wave generation and sources, Relativity and gravitation, General Relativity and Quantum Cosmology
+     :YEAR:     2008
+     :MONTH:    Jan
+     :VOLUME:   77
+     :EID:      024027
+     :PAGES:    024027
+     :DOI:      10.1103/PhysRevD.77.024027
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   gr-qc/0610128
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2008PhRvD..77b4027B
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+
+     This paper marked an early ability to produce waveforms with NR techniques. 
+     Building on the results of cite:2006PhRvD..73f1501C 
+
+*** Surrogate models
+**** Splines
+***** Numerical relativity waveform surrogate model for generically precessing binary black hole mergers
+      :PROPERTIES:
+      :TITLE:    Numerical relativity waveform surrogate model for generically precessing binary black hole mergers
+      :BTYPE:    article
+      :CUSTOM_ID: 2017PhRvD..96b4058B
+      :AUTHOR:   {Blackman}, Jonathan and {Field}, Scott E. and {Scheel}, Mark A. and {Galley}, Chad R. and {Ott}, Christian D. and {Boyle}, Michael and {Kidder}, Lawrence E. and {Pfeiffer}, Harald P. and {Szil{\'a}gyi}, B{\'e}la
+      :JOURNAL:  \prd
+      :KEYWORDS: General Relativity and Quantum Cosmology
+      :YEAR:     2017
+      :MONTH:    Jul
+      :VOLUME:   96
+      :EID:      024058
+      :PAGES:    024058
+      :DOI:      10.1103/PhysRevD.96.024058
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1705.07089
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017PhRvD..96b4058B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      NRSur7d2s paper.
+***** Fast and Accurate Prediction of Numerical Relativity Waveforms from Binary Black Hole Coalescences Using Surrogate Models
+      :PROPERTIES:
+      :TITLE:    Fast and Accurate Prediction of Numerical Relativity Waveforms from Binary Black Hole Coalescences Using Surrogate Models
+      :BTYPE:    article
+      :CUSTOM_ID: 2015PhRvL.115l1102B
+      :AUTHOR:   {Blackman}, Jonathan and {Field}, Scott E. and {Galley}, Chad R. and {Szil{\'a}gyi}, B{\'e}la and {Scheel}, Mark A. and {Tiglio}, Manuel and {Hemberger}, Daniel A.
+      :JOURNAL:  \prl
+      :KEYWORDS: 04.25.dg, 02.60.-x, 04.30.-w, 04.30.Db, Numerical studies of black holes and black-hole binaries, Numerical approximation and analysis, Gravitational waves: theory, Wave generation and sources, General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Computer Science - Computational Engineering, Finance, and Science, Physics - Data Analysis, Statistics and Probability
+      :YEAR:     2015
+      :MONTH:    Sep
+      :VOLUME:   115
+      :EID:      121102
+      :PAGES:    121102
+      :DOI:      10.1103/PhysRevLett.115.121102
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1502.07758
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2015PhRvL.115l1102B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      NRSur proof-of-concept paper.
+***** A Surrogate model of gravitational waveforms from numerical relativity simulations of precessing binary black hole mergers
+      :PROPERTIES:
+      :TITLE:    A Surrogate model of gravitational waveforms from numerical relativity simulations of precessing binary black hole mergers
+      :BTYPE:    article
+      :CUSTOM_ID: 2017PhRvD..95j4023B
+      :AUTHOR:   {Blackman}, Jonathan and {Field}, Scott E. and {Scheel}, Mark A. and {Galley}, Chad R. and {Hemberger}, Daniel A. and {Schmidt}, Patricia and {Smith}, Rory
+      :JOURNAL:  \prd
+      :KEYWORDS: General Relativity and Quantum Cosmology
+      :YEAR:     2017
+      :MONTH:    May
+      :VOLUME:   95
+      :EID:      104023
+      :PAGES:    104023
+      :DOI:      10.1103/PhysRevD.95.104023
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1701.00550
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017PhRvD..95j4023B
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+      NRSur4d2s paper.
+***** Surrogate model of hybridized numerical relativity binary black hole waveforms
+      :PROPERTIES:
+      :TITLE:    Surrogate model of hybridized numerical relativity binary black hole waveforms
+      :BTYPE:    article
+      :CUSTOM_ID: 2018arXiv181207865V
+      :AUTHOR:   {Varma}, Vijay and {Field}, Scott E. and {Scheel}, Mark A. and {Blackman}, Jonathan and {Kidder}, Lawrence E. and {Pfeiffer}, Harald P.
+      :JOURNAL:  arXiv e-prints
+      :KEYWORDS: General Relativity and Quantum Cosmology
+      :YEAR:     2018
+      :MONTH:    Dec
+      :EID:      arXiv:1812.07865
+      :PAGES:    arXiv:1812.07865
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1812.07865
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018arXiv181207865V
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+*** NR Catalogues
+**** Catalog of 174 Binary Black Hole Simulations for Gravitational Wave Astronomy
+     :PROPERTIES:
+     :TITLE:    Catalog of 174 Binary Black Hole Simulations for Gravitational Wave Astronomy
+     :BTYPE:    article
+     :CUSTOM_ID: 2013PhRvL.111x1104M
+     :AUTHOR:   {Mrou{\'e}}, Abdul H. and {Scheel}, Mark A. and {Szil{\'a}gyi}, B{\'e}la and {Pfeiffer}, Harald P. and {Boyle}, Michael and {Hemberger}, Daniel A. and {Kidder}, Lawrence E. and {Lovelace}, Geoffrey and {Ossokine}, Serguei and {Taylor}, Nicholas W. and {Zengino{\u{g}}lu}, An{\i}l and {Buchman}, Luisa T. and {Chu}, Tony and {Foley}, Evan and {Giesler}, Matthew and {Owen}, Robert and {Teukolsky}, Saul A.
+     :JOURNAL:  \prl
+     :KEYWORDS: 04.25.dg, 04.25.Nx, 04.30.-w, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory, General Relativity and Quantum Cosmology
+     :YEAR:     2013
+     :MONTH:    Dec
+     :VOLUME:   111
+     :EID:      241104
+     :PAGES:    241104
+     :DOI:      10.1103/PhysRevLett.111.241104
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1304.6077
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2013PhRvL.111x1104M
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Georgia tech catalog of gravitational waveforms
+     :PROPERTIES:
+     :TITLE:    Georgia tech catalog of gravitational waveforms
+     :BTYPE:    article
+     :CUSTOM_ID: 2016CQGra..33t4001J
+     :AUTHOR:   {Jani}, Karan and {Healy}, James and {Clark}, James A. and {London}, Lionel and {Laguna}, Pablo and {Shoemaker}, Deirdre
+     :JOURNAL:  Classical and Quantum Gravity
+     :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+     :YEAR:     2016
+     :MONTH:    Oct
+     :VOLUME:   33
+     :EID:      204001
+     :PAGES:    204001
+     :DOI:      10.1088/0264-9381/33/20/204001
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1605.03204
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2016CQGra..33t4001J
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+
+* Burst sources
+** Supernovae
+*** Neutrino and gravitational wave signal of a delayed-detonation model of type Ia supernovae
+    :PROPERTIES:
+    :TITLE:    Neutrino and gravitational wave signal of a delayed-detonation model of type Ia supernovae
+    :BTYPE:    article
+    :CUSTOM_ID: 2015PhRvD..92l4013S
+    :AUTHOR:   {Seitenzahl}, I.~R. and {Herzog}, M. and {Ruiter}, A.~J. and {Marquardt}, K. and {Ohlmann}, S.~T. and {R{\"o}pke}, F.~K.
+    :JOURNAL:  \prd
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1511.02542
+    :PRIMARYCLASS: astro-ph.SR
+    :KEYWORDS: Wave generation and sources, Gravitational-wave astrophysics, Nuclear physics aspects of novae supernovae and other explosive environments, Supernovae
+    :YEAR:     2015
+    :MONTH:    dec
+    :VOLUME:   92
+    :NUMBER:   12
+    :EID:      124013
+    :PAGES:    124013
+    :DOI:      10.1103/PhysRevD.92.124013
+    :ADSURL:   http://adsabs.harvard.edu/abs/2015PhRvD..92l4013S
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Observing gravitational waves from core-collapse supernovae in the advanced detector era
+    :PROPERTIES:
+    :TITLE:    Observing gravitational waves from core-collapse supernovae in the advanced detector era
+    :BTYPE:    article
+    :CUSTOM_ID: 2016PhRvD..93d2002G
+    :AUTHOR:   {Gossan}, S.~E. and {Sutton}, P. and {Stuver}, A. and {Zanolin}, M. and {Gill}, K. and {Ott}, C.~D.
+    :JOURNAL:  \prd
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1511.02836
+    :PRIMARYCLASS: astro-ph.HE
+    :YEAR:     2016
+    :MONTH:    feb
+    :VOLUME:   93
+    :NUMBER:   4
+    :EID:      042002
+    :PAGES:    042002
+    :DOI:      10.1103/PhysRevD.93.042002
+    :ADSURL:   http://adsabs.harvard.edu/abs/2016PhRvD..93d2002G
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** TOPICAL REVIEW: The gravitational-wave signature of core-collapse supernovae
+    :PROPERTIES:
+    :TITLE:    TOPICAL REVIEW: The gravitational-wave signature of core-collapse supernovae
+    :BTYPE:    article
+    :CUSTOM_ID: 2009CQGra..26f3001O
+    :AUTHOR:   {Ott}, C.~D
+    :JOURNAL:  Classical and Quantum Gravity
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   0809.0695
+    :YEAR:     2009
+    :MONTH:    mar
+    :VOLUME:   26
+    :NUMBER:   6
+    :EID:      063001
+    :PAGES:    063001
+    :DOI:      10.1088/0264-9381/26/6/063001
+    :ADSURL:   http://adsabs.harvard.edu/abs/2009CQGra..26f3001O
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Probing the core-collapse supernova mechanism with gravitational waves
+    :PROPERTIES:
+    :TITLE:    Probing the core-collapse supernova mechanism with gravitational waves
+    :BTYPE:    article
+    :CUSTOM_ID: 2009CQGra..26t4015O
+    :AUTHOR:   {Ott}, C.~D.
+    :JOURNAL:  Classical and Quantum Gravity
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   0905.2797
+    :PRIMARYCLASS: astro-ph.HE
+    :YEAR:     2009
+    :MONTH:    oct
+    :VOLUME:   26
+    :NUMBER:   20
+    :EID:      204015
+    :PAGES:    204015
+    :DOI:      10.1088/0264-9381/26/20/204015
+    :ADSURL:   http://adsabs.harvard.edu/abs/2009CQGra..26t4015O
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Normal Modes of Radial Pulsation of Stars at the End Point of Thermonuclear Evolution
+    :PROPERTIES:
+    :TITLE:    Normal Modes of Radial Pulsation of Stars at the End Point of Thermonuclear Evolution
+    :BTYPE:    article
+    :CUSTOM_ID: 1966ApJ...145..514M
+    :AUTHOR:   {Meltzer}, D.~W. and {Thorne}, K.~S.
+    :JOURNAL:  \apj
+    :YEAR:     1966
+    :MONTH:    aug
+    :VOLUME:   145
+    :PAGES:    514
+    :DOI:      10.1086/148792
+    :ADSURL:   http://adsabs.harvard.edu/abs/1966ApJ...145..514M
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** The generation of gravitational radiation by escaping supernova neutrinos
+    :PROPERTIES:
+    :TITLE:    The generation of gravitational radiation by escaping supernova neutrinos
+    :BTYPE:    article
+    :CUSTOM_ID: 1978ApJ...223.1037E
+    :AUTHOR:   {Epstein}, R.
+    :JOURNAL:  \apj
+    :KEYWORDS: Gravitation Theory, Gravitational Waves, Neutrinos, Supernovae, Wave Generation, Anisotropy, Einstein Equations, Energy Conservation, Gravitational Collapse, Quadrupoles, Wave Equations
+    :YEAR:     1978
+    :MONTH:    aug
+    :VOLUME:   223
+    :PAGES:    1037-1045
+    :DOI:      10.1086/156337
+    :ADSURL:   http://adsabs.harvard.edu/abs/1978ApJ...223.1037E
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Erratum: ''The generation of gravitational radiation by escaping supernova neutrinos'' [Astrophys. J., Vol. 223, p. 1037 - 1045 (1978)].
+    :PROPERTIES:
+    :TITLE:    Erratum: ''The generation of gravitational radiation by escaping supernova neutrinos'' [Astrophys. J., Vol. 223, p. 1037 - 1045 (1978)].
+    :BTYPE:    article
+    :CUSTOM_ID: 1979ApJ...231Q.644E
+    :AUTHOR:   {Epstein}, R.
+    :JOURNAL:  \apj
+    :KEYWORDS: Supernovae:Individual Supernovae
+    :YEAR:     1979
+    :MONTH:    aug
+    :VOLUME:   231
+    :PAGES:    644
+    :ADSURL:   http://adsabs.harvard.edu/abs/1979ApJ...231Q.644E
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Gravitational radiation from supernova neutrino bursts
+    :PROPERTIES:
+    :TITLE:    Gravitational radiation from supernova neutrino bursts
+    :BTYPE:    article
+    :CUSTOM_ID: 1978Natur.274..565T
+    :AUTHOR:   {Turner}, M.~S.
+    :JOURNAL:  \nat
+    :KEYWORDS: Astronomical Models, Gravitational Waves, Neutrinos, Supernovae, Angular Distribution, Feynman Diagrams, Fourier Transformation, Minkowski Space, Particle Interactions, Riemann Manifold
+    :YEAR:     1978
+    :MONTH:    aug
+    :VOLUME:   274
+    :PAGES:    565
+    :DOI:      10.1038/274565a0
+    :ADSURL:   http://adsabs.harvard.edu/abs/1978Natur.274..565T
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** The influence of model parameters on the prediction of gravitational wave signals from stellar core collapse
+    :PROPERTIES:
+    :TITLE:    The influence of model parameters on the prediction of gravitational wave signals from stellar core collapse
+    :BTYPE:    article
+    :CUSTOM_ID: 2010A&A...514A..51S
+    :AUTHOR:   {Scheidegger}, S. and {K{\"a}ppeli}, R. and {Whitehouse}, S.~C. and {Fischer}, T. and {Liebend{\"o}rfer}, M.
+    :JOURNAL:  \aap
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1001.1570
+    :PRIMARYCLASS: astro-ph.HE
+    :KEYWORDS: gravitational waves, supernovae: general, hydrodynamics, neutrinos, stars: rotation, stars: neutron
+    :YEAR:     2010
+    :MONTH:    may
+    :VOLUME:   514
+    :EID:      A51
+    :PAGES:    A51
+    :DOI:      10.1051/0004-6361/200913220
+    :ADSURL:   http://adsabs.harvard.edu/abs/2010A%26A...514A..51S
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Gravitational wave burst signal from core collapse of rotating stars
+    :PROPERTIES:
+    :TITLE:    Gravitational wave burst signal from core collapse of rotating stars
+    :BTYPE:    article
+    :CUSTOM_ID: 2008PhRvD..78f4056D
+    :AUTHOR:   {Dimmelmeier}, H. and {Ott}, C.~D. and {Marek}, A. and {Janka}, H.-T.
+    :JOURNAL:  \prd
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   0806.4953
+    :KEYWORDS: Numerical relativity, Finite-difference methods, Wave generation and sources, Supernovae
+    :YEAR:     2008
+    :MONTH:    sep
+    :VOLUME:   78
+    :NUMBER:   6
+    :EID:      064056
+    :PAGES:    064056
+    :DOI:      10.1103/PhysRevD.78.064056
+    :ADSURL:   http://adsabs.harvard.edu/abs/2008PhRvD..78f4056D
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Parametrized 3D models of neutrino-driven supernova explosions. Neutrino emission asymmetries and gravitational-wave signals
+    :PROPERTIES:
+    :TITLE:    Parametrized 3D models of neutrino-driven supernova explosions. Neutrino emission asymmetries and gravitational-wave signals
+    :BTYPE:    article
+    :CUSTOM_ID: 2012A&A...537A..63M
+    :AUTHOR:   {M{\"u}ller}, E. and {Janka}, H.-T. and {Wongwathanarat}, A.
+    :JOURNAL:  \aap
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1106.6301
+    :PRIMARYCLASS: astro-ph.SR
+    :KEYWORDS: stars: neutron, hydrodynamics, neutrinos, stars: massive, supernovae: general, gravitational waves
+    :YEAR:     2012
+    :MONTH:    jan
+    :VOLUME:   537
+    :EID:      A63
+    :PAGES:    A63
+    :DOI:      10.1051/0004-6361/201117611
+    :ADSURL:   http://adsabs.harvard.edu/abs/2012A%26A...537A..63M
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** General-relativistic Simulations of Three-dimensional Core-collapse Supernovae
+    :PROPERTIES:
+    :TITLE:    General-relativistic Simulations of Three-dimensional Core-collapse Supernovae
+    :BTYPE:    article
+    :CUSTOM_ID: 2013ApJ...768..115O
+    :AUTHOR:   {Ott}, C.~D. and {Abdikamalov}, E. and {M{\"o}sta}, P. and {Haas}, R. and {Drasco}, S. and {O'Connor}, E.~P. and {Reisswig}, C. and {Meakin}, C.~A. and {Schnetter}, E.
+    :JOURNAL:  \apj
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1210.6674
+    :PRIMARYCLASS: astro-ph.HE
+    :KEYWORDS: gravitation, gravitational waves, hydrodynamics, neutrinos, supernovae: general
+    :YEAR:     2013
+    :MONTH:    may
+    :VOLUME:   768
+    :EID:      115
+    :PAGES:    115
+    :DOI:      10.1088/0004-637X/768/2/115
+    :ADSURL:   http://adsabs.harvard.edu/abs/2013ApJ...768..115O
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Three-dimensional delayed-detonation models with nucleosynthesis for Type Ia supernovae
+    :PROPERTIES:
+    :TITLE:    Three-dimensional delayed-detonation models with nucleosynthesis for Type Ia supernovae
+    :BTYPE:    article
+    :CUSTOM_ID: 2013MNRAS.429.1156S
+    :AUTHOR:   {Seitenzahl}, I.~R. and {Ciaraldi-Schoolmann}, F. and {R{\"o}pke}, F.~K. and {Fink}, M. and {Hillebrandt}, W. and {Kromer}, M. and {Pakmor}, R. and {Ruiter}, A.~J. and {Sim}, S.~A. and {Taubenberger}, S.
+    :JOURNAL:  \mnras
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1211.3015
+    :PRIMARYCLASS: astro-ph.SR
+    :KEYWORDS: nuclear reactions, nucleosynthesis, abundances, supernovae: general, white dwarfs
+    :YEAR:     2013
+    :MONTH:    feb
+    :VOLUME:   429
+    :PAGES:    1156-1172
+    :DOI:      10.1093/mnras/sts402
+    :ADSURL:   http://adsabs.harvard.edu/abs/2013MNRAS.429.1156S
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Improved Upper Limits on the Stochastic Gravitational-Wave Background from 2009-2010 LIGO and Virgo Data
+    :PROPERTIES:
+    :TITLE:    Improved Upper Limits on the Stochastic Gravitational-Wave Background from 2009-2010 LIGO and Virgo Data
+    :BTYPE:    article
+    :CUSTOM_ID: 2014PhRvL.113w1101A
+    :AUTHOR:   {Aasi}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T. and {Abernathy}, M.~R. and {Accadia}, T. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and et al.
+    :JOURNAL:  Physical Review Letters
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1406.4556
+    :PRIMARYCLASS: gr-qc
+    :KEYWORDS: Gravitational radiation magnetic fields and other observations, Gravitational waves: theory, Experimental tests of gravitational theories, Gravitational wave detectors and experiments
+    :YEAR:     2014
+    :MONTH:    dec
+    :VOLUME:   113
+    :NUMBER:   23
+    :EID:      231101
+    :PAGES:    231101
+    :DOI:      10.1103/PhysRevLett.113.231101
+    :ADSURL:   http://adsabs.harvard.edu/abs/2014PhRvL.113w1101A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+* Gamma ray bursts
+** Search for Gravitational Waves Associated with Gamma-Ray Bursts during LIGO Science Run 6 and Virgo Science Runs 2 and 3
+   :PROPERTIES:
+   :TITLE:    Search for Gravitational Waves Associated with Gamma-Ray Bursts during LIGO Science Run 6 and Virgo Science Runs 2 and 3
+   :BTYPE:    article
+   :CUSTOM_ID: 2012ApJ...760...12A
+   :AUTHOR:   {Abadie}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M. and {Accadia}, T. and {Acernese}, F. and {Adams}, C. and {Adhikari}, R.~X. and {Affeldt}, C. and et al.
+   :JOURNAL:  \apj
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1205.2216
+   :PRIMARYCLASS: astro-ph.HE
+   :KEYWORDS: binaries: close, gamma-ray burst: general, gravitational waves
+   :YEAR:     2012
+   :MONTH:    nov
+   :VOLUME:   760
+   :EID:      12
+   :PAGES:    12
+   :DOI:      10.1088/0004-637X/760/1/12
+   :ADSURL:   http://adsabs.harvard.edu/abs/2012ApJ...760...12A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+* Search for gravitational waves from binary black hole inspiral, merger, and ringdown in LIGO-Virgo data from 2009-2010
+  :PROPERTIES:
+  :TITLE:    Search for gravitational waves from binary black hole inspiral, merger, and ringdown in LIGO-Virgo data from 2009-2010
+  :BTYPE:    article
+  :CUSTOM_ID: 2013PhRvD..87b2002A
+  :AUTHOR:   {Aasi}, J. and {Abadie}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M. and {Accadia}, T. and {Acernese}, F. and {Adams}, C. and {Adams}, T. and et al.
+  :JOURNAL:  \prd
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1209.6533
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: Gravitational waves: theory, Gravitational-wave astrophysics, Gravitational radiation magnetic fields and other observations, Black holes
+  :YEAR:     2013
+  :MONTH:    jan
+  :VOLUME:   87
+  :NUMBER:   2
+  :EID:      022002
+  :PAGES:    022002
+  :DOI:      10.1103/PhysRevD.87.022002
+  :ADSURL:   http://adsabs.harvard.edu/abs/2013PhRvD..87b2002A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Search for gravitational waves from low mass compact binary coalescence in LIGO's sixth science run and Virgo's science runs 2 and 3
+  :PROPERTIES:
+  :TITLE:    Search for gravitational waves from low mass compact binary coalescence in LIGO's sixth science run and Virgo's science runs 2 and 3
+  :BTYPE:    article
+  :CUSTOM_ID: 2012PhRvD..85h2002A
+  :AUTHOR:   {Abadie}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M. and {Accadia}, T. and {Acernese}, F. and {Adams}, C. and {Adhikari}, R. and {Affeldt}, C. and et al.
+  :JOURNAL:  \prd
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1111.7314
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: Wave generation and sources, Experimental tests of gravitational theories
+  :YEAR:     2012
+  :MONTH:    apr
+  :VOLUME:   85
+  :NUMBER:   8
+  :EID:      082002
+  :PAGES:    082002
+  :DOI:      10.1103/PhysRevD.85.082002
+  :ADSURL:   http://adsabs.harvard.edu/abs/2012PhRvD..85h2002A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational-Radiation Damping of Compact Binary Systems to Second Post-Newtonian Order
+  :PROPERTIES:
+  :TITLE:    Gravitational-Radiation Damping of Compact Binary Systems to Second Post-Newtonian Order
+  :BTYPE:    article
+  :CUSTOM_ID: 1995PhRvL..74.3515B
+  :AUTHOR:   {Blanchet}, L. and {Damour}, T. and {Iyer}, B.~R. and {Will}, C.~M. and {Wiseman}, A.~G.
+  :JOURNAL:  Physical Review Letters
+  :EPRINT:   gr-qc/9501027
+  :YEAR:     1995
+  :MONTH:    may
+  :VOLUME:   74
+  :PAGES:    3515-3518
+  :DOI:      10.1103/PhysRevLett.74.3515
+  :ADSURL:   http://adsabs.harvard.edu/abs/1995PhRvL..74.3515B
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational radiation reaction along general orbits in the effective one-body formalism
+  :PROPERTIES:
+  :TITLE:    Gravitational radiation reaction along general orbits in the effective one-body formalism
+  :BTYPE:    article
+  :CUSTOM_ID: 2012PhRvD..86l4012B
+  :AUTHOR:   {Bini}, D. and {Damour}, T.
+  :JOURNAL:  \prd
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1210.2834
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: Gravitational waves: theory, Post-Newtonian approximation, perturbation theory, related approximations
+  :YEAR:     2012
+  :MONTH:    dec
+  :VOLUME:   86
+  :NUMBER:   12
+  :EID:      124012
+  :PAGES:    124012
+  :DOI:      10.1103/PhysRevD.86.124012
+  :ADSURL:   http://adsabs.harvard.edu/abs/2012PhRvD..86l4012B
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational wave energy spectrum of hyperbolic encounters
+  :PROPERTIES:
+  :TITLE:    Gravitational wave energy spectrum of hyperbolic encounters
+  :BTYPE:    article
+  :CUSTOM_ID: 2012PhRvD..86d4017D
+  :AUTHOR:   {De Vittori}, L. and {Jetzer}, P. and {Klein}, A.
+  :JOURNAL:  \prd
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1207.5359
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: Gravitational waves: theory, Gravitational wave detectors and experiments, Black holes
+  :YEAR:     2012
+  :MONTH:    aug
+  :VOLUME:   86
+  :NUMBER:   4
+  :EID:      044017
+  :PAGES:    044017
+  :DOI:      10.1103/PhysRevD.86.044017
+  :ADSURL:   http://adsabs.harvard.edu/abs/2012PhRvD..86d4017D
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational Waves from Hyperbolic Encounters
+  :PROPERTIES:
+  :TITLE:    Gravitational Waves from Hyperbolic Encounters
+  :BTYPE:    article
+  :CUSTOM_ID: 2008MPLA...23...99C
+  :AUTHOR:   {Capozziello}, S. and {de Laurentis}, M. and {de Paolis}, F. and {Ingrosso}, G. and {Nucita}, A.
+  :JOURNAL:  Modern Physics Letters A
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   0801.0122
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: Gravitational radiation, quadrupole approximation, theory of orbits
+  :YEAR:     2008
+  :VOLUME:   23
+  :PAGES:    99-107
+  :DOI:      10.1142/S0217732308026236
+  :ADSURL:   http://adsabs.harvard.edu/abs/2008MPLA...23...99C
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational waves from stellar encounters
+  :PROPERTIES:
+  :TITLE:    Gravitational waves from stellar encounters
+  :BTYPE:    article
+  :CUSTOM_ID: 2008APh....30..105C
+  :AUTHOR:   {Capozziello}, S. and {Laurentis}, M.~D.
+  :JOURNAL:  Astroparticle Physics
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   0806.4117
+  :YEAR:     2008
+  :MONTH:    sep
+  :VOLUME:   30
+  :PAGES:    105-112
+  :DOI:      10.1016/j.astropartphys.2008.07.005
+  :ADSURL:   http://adsabs.harvard.edu/abs/2008APh....30..105C
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational waves production from stellar encounters around massive black holes
+  :PROPERTIES:
+  :TITLE:    Gravitational waves production from stellar encounters around massive black holes
+  :BTYPE:    article
+  :CUSTOM_ID: 2010MmSAI..81...87D
+  :AUTHOR:   {De Laurentis}, M. and {Capozziello}, S.
+  :JOURNAL:  \memsai
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   0906.4923
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: Theory of orbits, Gravitational Waves
+  :YEAR:     2010
+  :VOLUME:   81
+  :PAGES:    87
+  :ADSURL:   http://adsabs.harvard.edu/abs/2010MmSAI..81...87D
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Semirelativistic approximation to gravitational radiation from encounters with nonspinning black holes
+  :PROPERTIES:
+  :TITLE:    Semirelativistic approximation to gravitational radiation from encounters with nonspinning black holes
+  :BTYPE:    article
+  :CUSTOM_ID: 2005PhRvD..72h4009G
+  :AUTHOR:   {Gair}, J.~R. and {Kennefick}, D.~J. and {Larson}, S.~L.
+  :JOURNAL:  \prd
+  :EPRINT:   gr-qc/0508049
+  :KEYWORDS: Wave generation and sources
+  :YEAR:     2005
+  :MONTH:    oct
+  :VOLUME:   72
+  :NUMBER:   8
+  :EID:      084009
+  :PAGES:    084009
+  :DOI:      10.1103/PhysRevD.72.084009
+  :ADSURL:   http://adsabs.harvard.edu/abs/2005PhRvD..72h4009G
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational wave energy spectrum of a parabolic encounter
+  :PROPERTIES:
+  :TITLE:    Gravitational wave energy spectrum of a parabolic encounter
+  :BTYPE:    article
+  :CUSTOM_ID: 2010PhRvD..82j7501B
+  :AUTHOR:   {Berry}, C.~P.~L. and {Gair}, J.~R.
+  :JOURNAL:  \prd
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1010.3865
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: Gravitational waves: theory, Post-Newtonian approximation, perturbation theory, related approximations, Black holes, Galactic center bar circumnuclear matter and bulge
+  :YEAR:     2010
+  :MONTH:    nov
+  :VOLUME:   82
+  :NUMBER:   10
+  :EID:      107501
+  :PAGES:    107501
+  :DOI:      10.1103/PhysRevD.82.107501
+  :ADSURL:   http://adsabs.harvard.edu/abs/2010PhRvD..82j7501B
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational Pulse Astronomy
+  :PROPERTIES:
+  :TITLE:    Gravitational Pulse Astronomy
+  :BTYPE:    article
+  :CUSTOM_ID: 2011ApJ...729L..23G
+  :AUTHOR:   {Gould}, A.
+  :JOURNAL:  \apjl
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1011.4518
+  :PRIMARYCLASS: astro-ph.SR
+  :KEYWORDS: gravitational waves, supernovae: general, white dwarfs
+  :YEAR:     2011
+  :MONTH:    mar
+  :VOLUME:   729
+  :EID:      L23
+  :PAGES:    L23
+  :DOI:      10.1088/2041-8205/729/2/L23
+  :ADSURL:   http://adsabs.harvard.edu/abs/2011ApJ...729L..23G
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Stochastic gravity-wave background in inflationary-universe models
+  :PROPERTIES:
+  :TITLE:    Stochastic gravity-wave background in inflationary-universe models
+  :BTYPE:    article
+  :CUSTOM_ID: 1988PhRvD..37.2078A
+  :AUTHOR:   {Allen}, B.
+  :JOURNAL:  \prd
+  :KEYWORDS: Origin and formation of the Universe
+  :YEAR:     1988
+  :MONTH:    apr
+  :VOLUME:   37
+  :PAGES:    2078-2085
+  :DOI:      10.1103/PhysRevD.37.2078
+  :ADSURL:   http://adsabs.harvard.edu/abs/1988PhRvD..37.2078A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Placing limits on the stochastic gravitational-wave background using European Pulsar Timing Array data
+  :PROPERTIES:
+  :TITLE:    Placing limits on the stochastic gravitational-wave background using European Pulsar Timing Array data
+  :BTYPE:    article
+  :CUSTOM_ID: 2011MNRAS.414.3117V
+  :AUTHOR:   {van Haasteren}, R. and {Levin}, Y. and {Janssen}, G.~H. and {Lazaridis}, K. and {Kramer}, M. and {Stappers}, B.~W. and {Desvignes}, G. and {Purver}, M.~B. and {Lyne}, A.~G. and {Ferdman}, R.~D. and {Jessner}, A. and {Cognard}, I. and {Theureau}, G. and {D'Amico}, N. and {Possenti}, A. and {Burgay}, M. and {Corongiu}, A. and {Hessels}, J.~W.~T. and {Smits}, R. and {Verbiest}, J.~P.~W.
+  :JOURNAL:  \mnras
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1103.0576
+  :KEYWORDS: gravitational waves, methods: data analysis, pulsars: general
+  :YEAR:     2011
+  :MONTH:    jul
+  :VOLUME:   414
+  :PAGES:    3117-3128
+  :DOI:      10.1111/j.1365-2966.2011.18613.x
+  :ADSURL:   http://adsabs.harvard.edu/abs/2011MNRAS.414.3117V
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Constructing a pulsar timing array
+  :PROPERTIES:
+  :TITLE:    Constructing a pulsar timing array
+  :BTYPE:    article
+  :CUSTOM_ID: 1990ApJ...361..300F
+  :AUTHOR:   {Foster}, R.~S. and {Backer}, D.~C.
+  :JOURNAL:  \apj
+  :KEYWORDS: Atomic Clocks, Error Analysis, Pulsars, Time Measuring Instruments, Time Signals, Earth Rotation, Gravitational Waves, Polynomials, Telescopes, Time Measurement
+  :YEAR:     1990
+  :MONTH:    sep
+  :VOLUME:   361
+  :PAGES:    300-308
+  :DOI:      10.1086/169195
+  :ADSURL:   http://adsabs.harvard.edu/abs/1990ApJ...361..300F
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Massive black hole binaries in active galactic nuclei
+  :PROPERTIES:
+  :TITLE:    Massive black hole binaries in active galactic nuclei
+  :BTYPE:    article
+  :CUSTOM_ID: 1980Natur.287..307B
+  :AUTHOR:   {Begelman}, M.~C. and {Blandford}, R.~D. and {Rees}, M.~J.
+  :JOURNAL:  \nat
+  :KEYWORDS: Active Galactic Nuclei, Binary Stars, Black Holes (Astronomy), Stellar Evolution, Supermassive Stars, Astrophysics, Orbital Elements
+  :YEAR:     1980
+  :MONTH:    sep
+  :VOLUME:   287
+  :PAGES:    307-309
+  :DOI:      10.1038/287307a0
+  :ADSURL:   http://adsabs.harvard.edu/abs/1980Natur.287..307B
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* A Practical Theorem on Gravitational Wave Backgrounds
+  :PROPERTIES:
+  :TITLE:    A Practical Theorem on Gravitational Wave Backgrounds
+  :BTYPE:    article
+  :CUSTOM_ID: 2001astro.ph..8028P
+  :AUTHOR:   {Phinney}, E.~S.
+  :JOURNAL:  ArXiv Astrophysics e-prints
+  :EPRINT:   astro-ph/0108028
+  :KEYWORDS: Astrophysics, General Relativity and Quantum Cosmology
+  :YEAR:     2001
+  :MONTH:    aug
+  :ADSURL:   http://adsabs.harvard.edu/abs/2001astro.ph..8028P
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Gravitational Waves Probe the Coalescence Rate of Massive Black Hole Binaries
+  :PROPERTIES:
+  :TITLE:    Gravitational Waves Probe the Coalescence Rate of Massive Black Hole Binaries
+  :BTYPE:    article
+  :CUSTOM_ID: 2003ApJ...583..616J
+  :AUTHOR:   {Jaffe}, A.~H. and {Backer}, D.~C.
+  :JOURNAL:  \apj
+  :EPRINT:   astro-ph/0210148
+  :KEYWORDS: Black Hole Physics, Galaxies: Interactions, Gravitational Waves
+  :YEAR:     2003
+  :MONTH:    feb
+  :VOLUME:   583
+  :PAGES:    616-631
+  :DOI:      10.1086/345443
+  :ADSURL:   http://adsabs.harvard.edu/abs/2003ApJ...583..616J
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* The stochastic gravitational-wave background from massive black hole binary systems: implications for observations with Pulsar Timing Arrays
+  :PROPERTIES:
+  :TITLE:    The stochastic gravitational-wave background from massive black hole binary systems: implications for observations with Pulsar Timing Arrays
+  :BTYPE:    article
+  :CUSTOM_ID: 2008MNRAS.390..192S
+  :AUTHOR:   {Sesana}, A. and {Vecchio}, A. and {Colacino}, C.~N.
+  :JOURNAL:  \mnras
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   0804.4476
+  :KEYWORDS: black hole physics , gravitational waves , pulsars: general , cosmology: theory
+  :YEAR:     2008
+  :MONTH:    oct
+  :VOLUME:   390
+  :PAGES:    192-209
+  :DOI:      10.1111/j.1365-2966.2008.13682.x
+  :ADSURL:   http://adsabs.harvard.edu/abs/2008MNRAS.390..192S
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* TOPICAL REVIEW: Predictions for the rates of compact binary coalescences observable by ground-based gravitational-wave detectors
+  :PROPERTIES:
+  :TITLE:    TOPICAL REVIEW: Predictions for the rates of compact binary coalescences observable by ground-based gravitational-wave detectors
+  :BTYPE:    article
+  :CUSTOM_ID: 2010CQGra..27q3001A
+  :AUTHOR:   {Abadie}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abernathy}, M. and {Accadia}, T. and {Acernese}, F. and {Adams}, C. and {Adhikari}, R. and {Ajith}, P. and {Allen}, B. and et al.
+  :JOURNAL:  Classical and Quantum Gravity
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1003.2480
+  :PRIMARYCLASS: astro-ph.HE
+  :YEAR:     2010
+  :MONTH:    sep
+  :VOLUME:   27
+  :NUMBER:   17
+  :EID:      173001
+  :PAGES:    173001
+  :DOI:      10.1088/0264-9381/27/17/173001
+  :ADSURL:   http://adsabs.harvard.edu/abs/2010CQGra..27q3001A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* First Search for Gravitational Waves from Known Pulsars with Advanced LIGO
+  :PROPERTIES:
+  :TITLE:    First Search for Gravitational Waves from Known Pulsars with Advanced LIGO
+  :BTYPE:    article
+  :CUSTOM_ID: 2017ApJ...839...12A
+  :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M.~R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and et al.
+  :JOURNAL:  \apj
+  :KEYWORDS: gravitational waves, pulsars: general
+  :YEAR:     2017
+  :MONTH:    apr
+  :VOLUME:   839
+  :EID:      12
+  :PAGES:    12
+  :DOI:      10.3847/1538-4357/aa677f
+  :ADSURL:   http://adsabs.harvard.edu/abs/2017ApJ...839...12A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+
+
+
+
+
+* Lots of stuff after here needs to be resorted
+** Gravitational-wave sensitivity curves
+   :PROPERTIES:
+   :TITLE:    Gravitational-wave sensitivity curves
+   :BTYPE:    article
+   :CUSTOM_ID: strain.conventions
+   :AUTHOR:   C J Moore and R H Cole and C P L Berry
+   :JOURNAL:  Classical and Quantum Gravity
+   :VOLUME:   32
+   :NUMBER:   1
+   :PAGES:    015014
+   :URL:      http://stacks.iop.org/0264-9381/32/i=1/a=015014
+   :YEAR:     2015
+   :ABSTRACT: There are several common conventions in use by the gravitational-wave community to describe the amplitude of sources and the sensitivity of detectors. These are frequently confused. We outline the merits of and differences between the various quantities used for parameterizing noise curves and characterizing gravitational-wave amplitudes. We conclude by producing plots that consistently compare different detectors. Similar figures can be generated on-line for general use at http://rhcole.com/apps/GWplotter [http://rhcole.com/apps/GWplotter] .
+   :END:
+** Physics, Astrophysics and Cosmology with Gravitational Waves
+   :PROPERTIES:
+   :TITLE:    Physics, Astrophysics and Cosmology with Gravitational Waves
+   :BTYPE:    article
+   :CUSTOM_ID: 2009LRR....12....2S
+   :AUTHOR:   {Sathyaprakash}, B.~S. and {Schutz}, B.~F.
+   :JOURNAL:  Living Reviews in Relativity
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   0903.0338
+   :PRIMARYCLASS: gr-qc
+   :KEYWORDS: Gravitational waves, Gravitational wave sources, Gravitational wave detectors, Data analysis
+   :YEAR:     2009
+   :MONTH:    mar
+   :VOLUME:   12
+   :DOI:      10.12942/lrr-2009-2
+   :ADSURL:   http://adsabs.harvard.edu/abs/2009LRR....12....2S
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Advanced LIGO
+   :PROPERTIES:
+   :TITLE:    Advanced LIGO
+   :BTYPE:    article
+   :CUSTOM_ID: 2015CQGra..32g4001L
+   :AUTHOR:   {LIGO Scientific Collaboration} and {Aasi}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T. and {Abernathy}, M.~R. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and et al.
+   :JOURNAL:  Classical and Quantum Gravity
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1411.4547
+   :PRIMARYCLASS: gr-qc
+   :YEAR:     2015
+   :MONTH:    apr
+   :VOLUME:   32
+   :NUMBER:   7
+   :EID:      074001
+   :PAGES:    074001
+   :DOI:      10.1088/0264-9381/32/7/074001
+   :ADSURL:   http://adsabs.harvard.edu/abs/2015CQGra..32g4001L
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Prospects for Observing and Localizing Gravitational-Wave Transients with Advanced LIGO and Advanced Virgo
+   :PROPERTIES:
+   :TITLE:    Prospects for Observing and Localizing Gravitational-Wave Transients with Advanced LIGO and Advanced Virgo
+   :BTYPE:    article
+   :CUSTOM_ID: 2013arXiv1304.0670T
+   :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration} and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M.~R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and et al.
+   :JOURNAL:  ArXiv e-prints
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1304.0670
+   :PRIMARYCLASS: gr-qc
+   :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+   :YEAR:     2013
+   :MONTH:    apr
+   :ADSURL:   http://adsabs.harvard.edu/abs/2013arXiv1304.0670T
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Advanced Virgo: a second-generation interferometric gravitational wave detector
+   :PROPERTIES:
+   :TITLE:    Advanced Virgo: a second-generation interferometric gravitational wave detector
+   :BTYPE:    article
+   :CUSTOM_ID: 2015CQGra..32b4001A
+   :AUTHOR:   {Acernese}, F. and {Agathos}, M. and {Agatsuma}, K. and {Aisa}, D. and {Allemandou}, N. and {Allocca}, A. and {Amarni}, J. and {Astone}, P. and {Balestri}, G. and {Ballardin}, G. and et al.
+   :JOURNAL:  Classical and Quantum Gravity
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1408.3978
+   :PRIMARYCLASS: gr-qc
+   :YEAR:     2015
+   :MONTH:    jan
+   :VOLUME:   32
+   :NUMBER:   2
+   :EID:      024001
+   :PAGES:    024001
+   :DOI:      10.1088/0264-9381/32/2/024001
+   :ADSURL:   http://adsabs.harvard.edu/abs/2015CQGra..32b4001A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** The VIRGO Project: A wide band antenna for gravitational wave detection
+   :PROPERTIES:
+   :TITLE:    The VIRGO Project: A wide band antenna for gravitational wave detection
+   :BTYPE:    article
+   :CUSTOM_ID: 1990NIMPA.289..518B
+   :AUTHOR:   {Bradaschia}, C. and {Del Fabbro}, R. and {Di Virgilio}, A. and {Giazotto}, A. and {Kautzky}, H. and {Montelatici}, V. and {Passuello}, D. and {Brillet}, A. and {Cregut}, O. and {Hello}, P. and {Man}, C.~N. and {Manh}, P.~T. and {Marraud}, A. and {Shoemaker}, D. and {Vinet}, J.~Y. and {Barone}, F. and {Di Fiore}, L. and {Milano}, L. and {Russo}, G. and {Aguirregabiria}, J.~M. and {Bel}, H. and {Duruisseau}, J.~P. and {Le Denmat}, G. and {Tourrenc}, P. and {Capozzi}, M. and {Longo}, M. and {Lops}, M. and {Pinto}, I. and {Rotoli}, G. and {Damour}, T. and {Bonazzola}, S. and {Marck}, J.~A. and {Gourghoulon}, Y. and {Holloway}, L.~E. and {Fuligni}, F. and {Iafolla}, V. and {Natale}, G.
+   :JOURNAL:  Nuclear Instruments and Methods in Physics Research A
+   :YEAR:     1990
+   :MONTH:    apr
+   :VOLUME:   289
+   :PAGES:    518-525
+   :DOI:      10.1016/0168-9002(90)91525-G
+   :ADSURL:   http://adsabs.harvard.edu/abs/1990NIMPA.289..518B
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Gravitational Waves from Known Pulsars: Results from the Initial Detector Era
+   :PROPERTIES:
+   :TITLE:    Gravitational Waves from Known Pulsars: Results from the Initial Detector Era
+   :BTYPE:    article
+   :CUSTOM_ID: 2014ApJ...785..119A
+   :AUTHOR:   {Aasi}, J. and {Abadie}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T. and {Abernathy}, M.~R. and {Accadia}, T. and {Acernese}, F. and {Adams}, C. and {Adams}, T. and et al.
+   :JOURNAL:  \apj
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1309.4027
+   :PRIMARYCLASS: astro-ph.HE
+   :KEYWORDS: gravitational waves, pulsars: general
+   :YEAR:     2014
+   :MONTH:    apr
+   :VOLUME:   785
+   :EID:      119
+   :PAGES:    119
+   :DOI:      10.1088/0004-637X/785/2/119
+   :ADSURL:   http://adsabs.harvard.edu/abs/2014ApJ...785..119A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Discovery of a pulsar in a binary system
+   :PROPERTIES:
+   :TITLE:    Discovery of a pulsar in a binary system
+   :BTYPE:    article
+   :CUSTOM_ID: 1975ApJ...195L..51H
+   :AUTHOR:   {Hulse}, R.~A. and {Taylor}, J.~H.
+   :JOURNAL:  \apjl
+   :KEYWORDS: Binary Stars, Orbital Elements, Pulsars, Relativistic Effects, Black Holes (Astronomy), Companion Stars, Eccentric Orbits, Mass Ratios, Neutron Stars, Radial Velocity, Velocity Distribution
+   :YEAR:     1975
+   :MONTH:    jan
+   :VOLUME:   195
+   :PAGES:    L51-L53
+   :DOI:      10.1086/181708
+   :ADSURL:   http://adsabs.harvard.edu/abs/1975ApJ...195L..51H
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** The Relativistic Binary Pulsar B1913+16: Thirty Years of Observations and Analysis
+   :PROPERTIES:
+   :TITLE:    The Relativistic Binary Pulsar B1913+16: Thirty Years of Observations and Analysis
+   :BTYPE:    inproceedings
+   :CUSTOM_ID: 2005ASPC..328...25W
+   :AUTHOR:   {Weisberg}, J.~M. and {Taylor}, J.~H.
+   :BOOKTITLE: Binary Radio Pulsars
+   :YEAR:     2005
+   :SERIES:   Astronomical Society of the Pacific Conference Series
+   :VOLUME:   328
+   :EPRINT:   astro-ph/0407149
+   :EDITOR:   {Rasio}, F.~A. and {Stairs}, I.~H.
+   :MONTH:    jul
+   :PAGES:    25
+   :ADSURL:   http://adsabs.harvard.edu/abs/2005ASPC..328...25W
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Search for gravitational waves from low mass compact binary coalescence in LIGO's sixth science run and Virgo's science runs 2 and 3
+   :PROPERTIES:
+   :TITLE:    Search for gravitational waves from low mass compact binary coalescence in LIGO's sixth science run and Virgo's science runs 2 and 3
+   :BTYPE:    article
+   :CUSTOM_ID: 2012PhRvD..85h2002A
+   :AUTHOR:   {Abadie}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M. and {Accadia}, T. and {Acernese}, F. and {Adams}, C. and {Adhikari}, R. and {Affeldt}, C. and et al.
+   :JOURNAL:  \prd
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1111.7314
+   :PRIMARYCLASS: gr-qc
+   :KEYWORDS: Wave generation and sources, Experimental tests of gravitational theories
+   :YEAR:     2012
+   :MONTH:    apr
+   :VOLUME:   85
+   :NUMBER:   8
+   :EID:      082002
+   :PAGES:    082002
+   :DOI:      10.1103/PhysRevD.85.082002
+   :ADSURL:   http://adsabs.harvard.edu/abs/2012PhRvD..85h2002A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Low-frequency gravitational-wave science with eLISA/NGO
+   :PROPERTIES:
+   :TITLE:    Low-frequency gravitational-wave science with eLISA/NGO
+   :BTYPE:    article
+   :CUSTOM_ID: 2012CQGra..29l4016A
+   :AUTHOR:   {Amaro-Seoane}, P. and {Aoudia}, S. and {Babak}, S. and {Bin{\'e}truy}, P. and {Berti}, E. and {Boh{\'e}}, A. and {Caprini}, C. and {Colpi}, M. and {Cornish}, N.~J. and {Danzmann}, K. and {Dufaux}, J.-F. and {Gair}, J. and {Jennrich}, O. and {Jetzer}, P. and {Klein}, A. and {Lang}, R.~N. and {Lobo}, A. and {Littenberg}, T. and {McWilliams}, S.~T. and {Nelemans}, G. and {Petiteau}, A. and {Porter}, E.~K. and {Schutz}, B.~F. and {Sesana}, A. and {Stebbins}, R. and {Sumner}, T. and {Vallisneri}, M. and {Vitale}, S. and {Volonteri}, M. and {Ward}, H.
+   :JOURNAL:  Classical and Quantum Gravity
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1202.0839
+   :PRIMARYCLASS: gr-qc
+   :YEAR:     2012
+   :MONTH:    jun
+   :VOLUME:   29
+   :NUMBER:   12
+   :EID:      124016
+   :PAGES:    124016
+   :DOI:      10.1088/0264-9381/29/12/124016
+   :ADSURL:   http://adsabs.harvard.edu/abs/2012CQGra..29l4016A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** eLISA: Astrophysics and cosmology in the millihertz regime
+   :PROPERTIES:
+   :TITLE:    eLISA: Astrophysics and cosmology in the millihertz regime
+   :BTYPE:    article
+   :CUSTOM_ID: 2013GWN.....6....4A
+   :AUTHOR:   {Amaro-Seoane}, P. and {Aoudia}, S. and {Babak}, S. and {Bin{\'e}truy}, P. and {Berti}, E. and {Boh{\'e}}, A. and {Caprini}, C. and {Colpi}, M. and {Cornish}, N.~J. and {Danzmann}, K. and {Dufaux}, J.-F. and {Gair}, J. and {Hinder}, I. and {Jennrich}, O. and {Jetzer}, P. and {Klein}, A. and {Lang}, R.~N. and {Lobo}, A. and {Littenberg}, T. and {McWilliams}, S.~T. and {Nelemans}, G. and {Petiteau}, A. and {Porter}, E.~K. and {Schutz}, B.~F. and {Sesana}, A. and {Stebbins}, R. and {Sumner}, T. and {Vallisneri}, M. and {Vitale}, S. and {Volonteri}, M. and {Ward}, H. and {Wardell}, B.
+   :JOURNAL:  GW Notes, Vol.~6, p.~4-110
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1201.3621
+   :PRIMARYCLASS: astro-ph.CO
+   :KEYWORDS: Astrophysics - Cosmology and Extragalactic Astrophysics, Astrophysics - Galaxy Astrophysics, General Relativity and Quantum Cosmology, black holes, gravitational waves
+   :YEAR:     2013
+   :MONTH:    may
+   :VOLUME:   6
+   :PAGES:    4-110
+   :ADSURL:   http://adsabs.harvard.edu/abs/2013GWN.....6....4A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Detection of B-Mode Polarization at Degree Angular Scales by BICEP2
+   :PROPERTIES:
+   :TITLE:    Detection of B-Mode Polarization at Degree Angular Scales by BICEP2
+   :BTYPE:    article
+   :CUSTOM_ID: 2014PhRvL.112x1101B
+   :AUTHOR:   {BICEP2 Collaboration} and {Ade}, P.~A.~R. and {Aikin}, R.~W. and {Barkats}, D. and {Benton}, S.~J. and {Bischoff}, C.~A. and {Bock}, J.~J. and {Brevik}, J.~A. and {Buder}, I. and {Bullock}, E. and {Dowell}, C.~D. and {Duband}, L. and {Filippini}, J.~P. and {Fliescher}, S. and {Golwala}, S.~R. and {Halpern}, M. and {Hasselfield}, M. and {Hildebrandt}, S.~R. and {Hilton}, G.~C. and {Hristov}, V.~V. and {Irwin}, K.~D. and {Karkare}, K.~S. and {Kaufman}, J.~P. and {Keating}, B.~G. and {Kernasovskiy}, S.~A. and {Kovac}, J.~M. and {Kuo}, C.~L. and {Leitch}, E.~M. and {Lueker}, M. and {Mason}, P. and {Netterfield}, C.~B. and {Nguyen}, H.~T. and {O'Brient}, R. and {Ogburn}, R.~W. and {Orlando}, A. and {Pryke}, C. and {Reintsema}, C.~D. and {Richter}, S. and {Schwarz}, R. and {Sheehy}, C.~D. and {Staniszewski}, Z.~K. and {Sudiwala}, R.~V. and {Teply}, G.~P. and {Tolan}, J.~E. and {Turner}, A.~D. and {Vieregg}, A.~G. and {Wong}, C.~L. and {Yoon}, K.~W.
+   :JOURNAL:  Physical Review Letters
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1403.3985
+   :KEYWORDS: Background radiations, Gravitational wave detectors and experiments, Radio microwave, Observational cosmology
+   :YEAR:     2014
+   :MONTH:    jun
+   :VOLUME:   112
+   :NUMBER:   24
+   :EID:      241101
+   :PAGES:    241101
+   :DOI:      10.1103/PhysRevLett.112.241101
+   :ADSURL:   http://adsabs.harvard.edu/abs/2014PhRvL.112x1101B
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:

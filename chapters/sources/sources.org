@@ -43,25 +43,66 @@ and should be so spectacuarly strong that they are visible in the gls:lisa
 data without the \emph{matched filtering} techniques which are required to extract other signals from the data cite:2009LRR....12....2S. 
 The observation of these objects would provide much-needed information about the evolution of galaxies and of super-massive black holes.
 
-Inspiralling compact binaries can act as a cosmological distance measure: 
-they have two parameters, their period, and the rate at which that period changes (which is calculated by measuring the gls:chirp-mass of the system) which characterise the system, and the
-amplitude of the gravitational waves produced is dependent only on the
-chirp mass of the source, and the distance from the observer to the
-object. As a result it is possible to determine the distance to an
-inspiralling system simply by determining the chirp mass and measuring
-the brightness of the event. This would provide an additional means of
-measuring cosmic acceleration, and, in the gls:LISA era, this would allow
-the measurement of acceleration at high redshift using high-mass
-binary black holes.
+Inspiralling compact binaries can act as a cosmological distance measure: they have two parameters, their period, and the rate at which that period changes (which is calculated by measuring the gls:chirp-mass of the system) which characterise the system, and the amplitude of the gravitational waves produced is dependent only on the chirp mass of the source, and the distance from the observer to the object. 
+As a result it is possible to determine the distance to an inspiralling system simply by determining the chirp mass and measuring the brightness of the event. 
+This would provide an additional means of measuring cosmic acceleration, and, in the gls:LISA era, this would allow the measurement of acceleration at high redshift using high-mass binary black holes.
 
-As a first-order approximation the amplitude of a gls:GW from an inspiralling compact binary system can be approximated as cite:strain-conventions
+
+** Dynamics of compact binaries
+   :PROPERTIES:
+   :CUSTOM_ID: sec:sources:cbc:dynamics
+   :END:
+
+
+   The dynamics of binary systems are well-understood in Newtonian mechanics, where the two-body problem can be reduced to a pair of independent one-body problems. 
+In contrast no exact solutions have been found to this problem in abbr:gr; while the Schwarzschild solution *cite* is sufficient for some situations where the mass of one of the two bodies is much smaller than the other (where the problem is effectively a single one body problem) it is insufficient for systems such as abbp:bbh.
+
+When the two component bodies of the system are at large separation (and their local velocities are much smaller than the speed of light) a abbr:pn expansion can be used.
+In this regime the two objects are treated as point-particles with slow internal dynamics. 
+In such a post-Newtonian system, the parameter $\epsilon$, defined as 
+\begin{equation}
+	\epsilon = \max\left\{ \left| \frac{ \tensor{T}{^{0i}}}{\tensor{T}{^{00}}} \right|,
+                              \left| \frac{ \tensor{T}{^{ij}}}{\tensor{T}{^{00}}} \right|^{1/2},
+			      \left| \frac{ U }{c²} \right|^{1/2} 
+		       \right\},
+\end{equation}
+(with $U$ the Newtonian potential in the system) must be much less than one cite:2014LRR....17....2B.
+Through an abuse of notation this term is normally written as $\epsilon \equiv 1/c$ [fn:pn-epsilon].
+The abbr:pn correction to the Newtonian limit on the order $\mathcal{O}(1/c^{n})$ is generally called the $(n/2)$-abbr:pn order.
+
+*More work is needed on this, but this is rather heavy lifting stuff.*
+
+As a first-order approximation the amplitude of a gls:GW from an inspiralling compact binary system can be approximated as cite:strain.conventions
 \begin{equation}
   \label{eq:cbcinspiral}
   h_{\text{c}}(f) = 
 \end{equation}
 where $f$ is the frequency of the gravitational wave, and $\dot{f}$ its time derivative.
 
+*Tidal effects in NS systems*
 
+[fn:pn-epsilon] With $1/c$ /not/being dimensionless.
+
+
+** The compact binary waveform
+   :PROPERTIES:
+   :CUSTOM_ID: sec:sources:cbc:waveform
+   :END:
+
+   *figure: It would be good to have a plot of a waveform here with some cartoons of each period overlaid.*
+
+   The gravitational waveform for a compact binary system can be split into three broad periods, which are each associated with the dominant energy loss mechanisms within the system. 
+The first, and longest stage of the binary's evolution is the /gls:inspiral/. Gravitational radiation carries energy out of the binary system, causing the orbit to slowly decay.[fn:generalbinary] 
+For the majority of the inspiral the gravitational waves produced have a very low amplitude, and are to weak to be detected by the current generation of detectors, however this amplitude increases as the radius of the orbits decrease.
+Eventually this amplitude becomes observable, for a period ranging from minutes (in the case of abbr:bns events *cite gw170817*), to fractions of a second (for most abbr:bbh events *cite gw150914*).
+
+As the binary reaches its innermost stable circular orbit the system evolves from the inspiral period to the merger.
+At this point the two black holes /plunge/ towards each other, and then coalesce. 
+This period contains the peak emission of abbp:gw. 
+
+Finally, the single black hole which remains will radiate energy through the /gls:ringdown/ period, during which the black hole oscillates, radiating energy until it becomes a stable Kerr black hole.
+
+[fn:generalbinary] This in fact occurs in /all/ orbits, however most objects will not get close enough that the current generation of detectors will be able to observe the low-amplitude radiation produced by such systems. In the future, however, inspirals of objects such as white dwarf binaries are expected to be noise sources for space-based detectors, such as gls:lisa.
 
 ** Numerical relativity 
    :PROPERTIES:
@@ -70,10 +111,53 @@ where $f$ is the frequency of the gravitational wave, and $\dot{f}$ its time der
 
 The study of compact binary systems using gravitational waves relies on solving the relativistic two-body problem; the classical, Newtonian solutions to this problem are Keplerian orbits, however post-Newtonian gravity requires that a mass with orbital angular momentum loses energy in the form of gravitational waves; as such there are no stable solutions of the (general) relativistic two body problem.
 
-*Should definitely include more details about the actual implementation of NR simulations*
+The field of abbr:nr, while now capable of producing accurate waveforms for a wide variety of initial abbr:bbh conditions, had a lengthy period of development. 
+As recently as 1999 Brügmann cite:1999IJMPD...8...85B notes that "the binary black hole problem is essentially unsolved".
+The major stumbling-blocks for abbr:nr were specific to abbr:gr. 
+The first of these, the gauge freedom of the theory, which generally makes specifying a numerical coordinate grid on the simulated spacetime impossible in advance.
+As a result an effective method of producing such a coordinate grid during the evolution of the numerical simulation must be employed, which avoids the introduction of coordinate singularities.
+Coordinate singularities represented the second major challenge to the field; in the case of abbr:bbh spacetimes these are typical features. 
+Additionally, finding a formalism for the representation of the field equations throughout the evolution of the simulation which would remain stable had proved challenging.
 
-The complexity of gls:nr simulations has lead to their adoption of parallelisation technology for multiprocessing and message-passing between processes, however these simulations can still require around a month to produce on computing clusters containing thousands of processors. 
+By the mid-2000s a number of breakthroughs occured. 
+In 2004 Pretorius cite:2005CQGra..22..425P introduced the "generalised harmonic coordinate" formalism which remained stable into the evolution of the abbr:BBH merger.
+This was followed cite:2005PhRvL..95l1101P by the demonstration of an abbr:nr simulation which evolved the abbr:bbh through the inspiral and merger to the ringdown produced in this formalism.
+Late in 2005 Campanelli et al. cite:2006PhRvL..96k1101C demonstrated the use of an algorithm which overcame the difficulties of coordinate singularities inherent in black hole simulations.
+These had previously been overcome through the "excission" of the black hole, where a boundary was placed inside the black hole event horizon, excising its interior, containing the singularity, from the computational domain.
+Instead, their technique employed "punctures", where the poles which represented the black holes were factored-out analytically, allowing the production of accurate and complete waveforms.
+Also in 2005 Baker et. al cite:2006PhRvL..96k1102B developed a technique for extracting the abbr:bbh waveform directly from the outer region of the simulation, based on the work of Fiske et. al. cite:2005PhRvD..71j4036F.
 
+The covariant nature of the abbp:efe makes choosing a frame of reference in which to evaluate the metric difficult, and complicates the process of defining an initial value problem to solve.
+To get around this the abbp:efe are often decomposed into a (3+1)-dimensional foliation, in which the dynamics at each time slice can be solved.
+A large range of scales must be resolved within abbr:nr simulations in order to model both the behaviour of spacetime close to the merging system and at the location that the gravitational wave is extracted. 
+This range of scales makes evolving an abbr:nr simulation computationally burdensome, even with techniques such as adaptive mesh refinement which aim to make this process efficient. 
+A recent review by Lehner and Pretorius cite:2014ARA&A..52..661L of the techniques involved in running abbr:nr simulations summarises a number of the techniques which are used to make abbr:nr tractable.
+
+
+The complexity of abbr:nr simulations has lead to their adoption of parallelisation technology for multiprocessing and message-passing between processes, however these simulations can still require around a month to produce on computing clusters containing thousands of processors. 
+
+*** SpEC
+    The abbr:spec is a abbr:nr method which leverages spectral methods during the evolution of the black hole spacetime in abbr:bbh simulations, in an attempt to circumvent instabilities which are present when using finite difference methods cite:2000PhRvD..62h4032K. 
+The code is capable of generating the merger and ringdown component of the abbr:gw waveform for a generic abbr:bbh configuration cite:2009PhRvD..80l4010S.
+
+*** BAM
+    The abbr:bam code uses a modified abbr:bssn regime. cite:2004PhRvL..92u1101B,2008PhRvD..77b4027B,2004PhRvL..92u1101B,1999IJMPD...8...85B
+
+*** Einstein Toolkit & MAYA
+    The gls:maya code is based on the abbr:bssn formalism with a moving puncture gauge condition.
+
+*** Georgia Tech Waveform catalogue
+    The Georgia Tech waveform catalogue cite:2016CQGra..33t4001J is composed of 452 waveforms which were generated using the gls:maya abbr:nr code at the Centre for Relativistic Astrophysics at Georgia Institute of Technology.
+The catalogue includes both non-spinning simulations for quasi-circular systems with mass-ratios $q \leq 15$, and precessing quasi-circular systems with $q \leq 8$. 
+Within the set of waveeforms derived from spinning systems are two subsets: aligned-spin, where the spin axis of each black hole is parallel to the orbital angular momentum, $\vec{L}$; and precessing, where the spin axes are not parallel to $\vec{L}$. The distribution of abbr:bbh parameters for the waveforms in the cataloue are plotted in the corner plot of figure ref:fig:sources:cbc:nr:gtcoverage.
+
+\begin{figure}
+\caption{The coverage of the Georgia Tech catalogue. \label{fig:sources:cbc:nr:gtcoverage}}
+\includegraphics{figures/gt-coverage.pdf}
+\end{figure}
+
+*** SXS waveform catalogue
+    cite:2013PhRvL.111x1104M
 *Should include detail about the different codes which are used for GT and SXS*
 
 ** Analytical approximants
@@ -81,6 +165,104 @@ The complexity of gls:nr simulations has lead to their adoption of parallelisati
    :custom_id: sec:sources:cbc:approximants
    :END:
    
+   The impossibility of producing enough abbr:nr waveforms to densely cover even the two dimensional parameter space of non-spinning abbr:bbh systems has lead to the development of algorithms capable of producing approximations of the waveform across the parameter space.
+   While abbr:pn approximants provide a powerful approximation to the waveform in the gls:inspiral phase, as the characteristic velocity of the binary approaches the speed of light the abbr:pn expansion will lose accuracy, and an alternative method for approximating the waveform around the merger is required. 
+   There are currently two major implementations of such approximants; the gls:imrphenom family, and the gls:seobnr family of approximants.
+
+*** IMRPhenom
+    :PROPERTIES:
+    :CUSTOM_ID: sec:sources:cbc:approximants:imrphenom
+    :END:
+
+
+   The gls:imrphenom models take advantage of the three-component structure of abbr:bbh signals (see ref:sec:sources:cbc:waveform); calibration waveforms for the models are produced by a abbr:nr simulation, which is then hybridised with a abbr:pn inspiral waveform (since the abbr:pn is known to be a good approximation for this part of the waveform).
+For hybridisation to be effective the abbr:pn and abbr:nr waveforms must be well-matched. 
+This match is determined by their integrated squared absolute difference, 
+\begin{equation}
+\delta = \int_{t_{1}}^{t_{2}} \left| \ten{h}^{\text{PN}}(t, \vec{\mu}) - a \ten{h}^{\text{NR}}(t, \vec{\mu}) \right|^{2} \dd{t}
+\end{equation}
+with $\ten{h}^{\text{NR}}$ an abbr:nr-derived waveform, $\ten{h}^{\text{PN}}$ a abbr:pn waveform evaluated at the same parameters, $a$ is an amplitude scaling factor, and $\vec{\mu}$ a vector of extrinsic parameters, $\vec{\mu} = {\phi_{0}, t_{0}}$, the initial phase and start time of the waveform, respectively cite:2008PhRvD..77j4017A.
+
+The resulting hybridised waveforms are then parameterised in the Fourier domain. 
+These /phenomenological/ waveforms, $u(f)$ take the form
+\begin{equation}
+\label{eq:source:cbc:imrphenoma}
+u(f) = A(f) \exp(i \Psi(f) )
+\end{equation}
+for $\Psi$ the phase, and with a piecewise function describing the amplitude, $A$ as a function of frequency, $f$:
+\begin{equation}
+\label{eq:sources:cbc:imrphenoma:amp}
+A(f) = C
+\begin{cases}
+(f/f_{\text{merge}})^{-7/6} & \text{if} f < f_{\text{merge}} \\
+(f/f_{\text{merge}})^{-2/3} & \text{if} f_{\text{merge}} < f < f_{\text{ring}} \\
+w \mathcal{L}(f, f_{\text{ring}}, \simga) & \text{if} f_{\text{ring}} < f < f_{\text{cut}} \\
+\end{cases}
+\end{equation}
+where $f_{\text{merge}}$, $f_{\text{ring}}$, and $f_{\text{cut}}$ are respectively the initial merger frequency, initial ringdown frequency, and the cutoff frequency of the template. $\mathcal{L}$ is a Lorenzian distribution of width $\sigma$, and $w$ is a normalisation constant which describe the quasi-normal mode frequencies, and $C$ is a numerical constant (details of these parameters, and the stationary phase approximation expansion which is used for $\Psi$ can be found in cite:2008PhRvD..77j4017A).
+
+The amplitude and phase parameters of these phenomenological waveforms are then determined by fitting the model to around thirty hybridised waveforms. 
+Finally, the best-matching amplitudes and phases for the phenomenological waveforms are fitted to the physical parameters of the binary in order to produce a physically parameterised model.
+
+The first model to take this approach, IMRPhenomA, was calibrated only against non-spinning hybrid waveforms. Further development produced the IMRPhenomD model cite:2016PhRvD..93d4007K, which is calibrated against 19 hybrid abbr:pn-abbr:nr waveforms (a mixture of public SXS and BAM-derived waveforms) to produce aligned-spin spinning waveforms. The IMRPhenomD model is then verified against 29 additional hybrid waveforms. 
+
+The IMRPhenomP series of waveform models (the most recent of which is version 3 cite:2018arXiv180910113K) add the ability to model precession effects within the waveform; for versions 1 and 2 this was limited to single-spin effects, but version 3 has been designed to allow for generic abbr:bbh systems.
+In order to introduce the effects of precession into the waveform, IMRPhenomPv1 and IMRPhenomPv2 built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the "twisting-up" produced by orbital precession.
+For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation[[fn:stat-phase]], which is not strictly valid outwith the inspiral phase.
+IMRPhenomPv3 uses a two-spin model developed by Chatziioannou et al. cite:2017PhRvD..95j4004C in order to allow for the calculation of precession angles in generic abbr:bbh systems.
+
+In summary:
+   + IMRPhenomA :: The simplest of the IMRPhenom models, designed to produce waveforms for non-spinning, non-precessing systems.
+   + IMRPhenomD :: The successor to the IMRPhenomB and IMRPhenomC models, designed to produce waveforms for spinning, non-precessing systems.
+   + IMRPhenomPv3 :: A model capable of producing generically spinning, precessing waveforms.
+
+*** Effective one-body   
+    :PROPERTIES:
+    :CUSTOM_ID: sec:sources:cbc:approximants:eob
+    :END:
+
+An alternative approach to the phenomenological fitting of the gls:imrphenom algorithms is the abbr:eob approach.
+The abbr:eob approach cite:1999PhRvD..59h4006B,2000PhRvD..62f4015B,2009arXiv0906.1769D maps the dynamics of two compact objects into that of a single test particle moving in a deformed Kerr metric.
+In contrast to the piecewise approach to building the waveform taken in the gls:imrphenom model (see section ref:sec:sources:cbc:approximants:imrphenom), the abbr:eob approach constructs the entire waveform in a single process cite:2011PhRvD..84l4052P. 
+The waveform is constructed by assuming that the merger is short but with a broad range of frequencies; this section of the waveform is built by attaching the signal from a plunge signal to quasinormal modes.
+
+Similarly to gls:imrphenom, the abbr:eob derived waveforms are calibrated against a number of abbr:nr derived waveforms. 
+For the non-spinning model, \texttt{EOBv2} this involved five waveforms produced by the \texttt{SPEC} code.
+
++ EOBNRv1 :: This was the prototype abbr:eob approximant. 4-abbr:pn corrections to the abbr:eob radial potential, calibrated between $q = 1$ and $q=4$. It is a non-spinning approximant. cite:2007PhRvD..76j4049B
++ EOBNRv2 :: A non-spinning calibrated between $q=1$ and $q=6$. Uses four sub-leading EOB modes.   cite:2011PhRvD..84l4052P
++ SEOBNRv1 :: cite:2012PhRvD..86b4011T
++ SEOBNRv2 :: cite:2014PhRvD..89f1502T
++ SEOBNRv3 :: cite:2014PhRvD..89h4006P
++ SEOBNRv4 :: cite:2017PhRvD..95d4028B
+
+[[fn:stat-phase]] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D
+
+** Numerical relativity surrogate models
+
+   Recently, an entirely different approach to approximating the abbr:bbh waveform has started to emerge, based on /surrogate modelling/.
+These models attempt to directly model abbr:nr waveforms without introducing phenomenological assumptions, or approximations to abbr:gr, and take what might be considered a /data-driven/, or statistical approach to the problem. 
+While the ability to abandon these assumptions and approximations is attractive, it comes at the expense of requiring a large number of abbr:nr waveforms with which to condition the model.
+To date, there have been two approaches to building such models: those using spline regression, and those using /Gaussian process regression/. 
+This section will contain a broad overview of the former, but a thorough discussion of the latter will be given later in this work (in chapter cha:gaussian-process).
+
+*** Spline surrogate models
+
+    The NRSur family of surrogate models, developed by Blackman /et al./ cite:2015PhRvL.115l1102B,2017PhRvD..95j4023B,2017PhRvD..96b4058B employ spline interpolation to waveforms generated by the SpEC abbr:nr code.
+The two analysis-ready versions of this model, NRSur4d2s and NRSur7d2s are capable of producing waveforms for systems with a mass-ratio $<2$ and an effective spin-parameter $< 0.8$. 
+In contrast to phenomenological models, the NRSur models are currently capable of producing only a small number of cycles of the waveform, being limited by the length of the abbr:nr waveforms off which they are conditioned.
+Recent efforts have been made, however, to produce similar surrogate models which are conditioned on hybridised waveforms cite:2018arXiv181207865V.
+The number of waveforms required to produce the surrogate model is also considerably larger than thise requqired for the phenomenological models, with NRSur7d2s being conditioned on 744 abbr:nr waveforms.
+
++ Prototype :: A non-spinning model capable of producing waveforms between $q=1$ and $q=20$. cite:2015PhRvL.115l1102B
++ NRSur4d2s :: The first production-ready surrogate model, which was capable of modelling waveforms with $q<2$ and effective spin parameters $< 0.8$. cite:2017PhRvD..95j4023B
++ NRSur7d2s :: A generically spinning surrogate model cite:2017PhRvD..96b4058B.
+
+*** Gaussian process surrogate models
+
++ DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
++ HERON :: A prototype, fully precessing waveform model trained using waveforms from the Georgia Tech catalogue.
+
 * Continuous wave sources
 The discovery of pulsars by Bell and Hewish in 1967 was an unexpected
 discovery for radio astronomy---objects which produce beams of
