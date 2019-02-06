@@ -1,10 +1,54 @@
 
-/This chapter is composed principally from the method presented in cite:dw-sgrb-bayesian-contraint, with expanded discussion on the use of this method not only to estimate the average opening angle of GRB beams, but also its potential application to more general beamed emission./
+/This chapter is composed principally from the method presented in cite:dwsgrbbayesianconstraint, with expanded discussion on the use of this method not only to estimate the average opening angle of GRB beams, but also its potential application to more general beamed emission./
 
 * Short gamma-ray bursts and compact binary coalescences
 #+NAME:sec:sgrbs
 
-/An introduction to short gamma ray bursts should go here, which needs to be re-written compared to the discussion of SGRBs from the original paper, since that was written mainly by Andrew./
+abpl:grb are highly energetic astrophysical phenomena which were first observed by the VELA nuclear proliferation monitoring satellites cite:1973ApJ...182L..85K, and rapidly corroborated cite:1975NYASA.262..145S, in the early 1970s.
+Twenty years of observations of the events, which occur at around a daily cadence cite:1995ARA&A..33..415F, with instruments such as abbr:batse on the abbr:cgro had shown that the distribution of events was isotropic within the sky, but not homogeneous, muddying the waters when trying to identify the progenitor to these events cite:1993ApJ...407..126B. 
+Instead attempts to classify observed abpl:grb based on their duration cite:1993ApJ...413L.101K. 
+This division, into abb:lgrb, with a duration in excess of two seconds, and abb:sgrb, which had a duration shorter than two seconds, also demonstrated a bimodality in the distribution of spectral hardness of the events.
+abb:sgrb were found to be harder, and abb:lgrb softer.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{figures/grb/fermi-duration-hist.pdf}
+\caption{A histogram of the $T_{90}$ duration of each abbr:grb in the gls:fermi GRB catalogue cite:2014ApJS..211...12G,2014ApJS..211...13V,2016ApJS..223...28N. The $T_{90}$ measure represents the interval between when 5\% of the fluence has been detected, and when 95\% of the fluence has been detected.
+By-eye the distribution appears to have a single peak, with a lengthy tail of short-duration events, but there is generally confidence that the distribution in fact best described by a mixture of two Gaussian distributions cite:2015A&A...581A..29T, which correspond to the short and long-duration categories.
+\label{fig:grb:distribution}
+}
+\end{figure}
+
+abb:lgrb have come to be associated with abbr:ccsn. 
+The observation of SN 1998bw cite:1998Natur.395..670G, which was observed as an optical transient within the localisation region of GRB 980425. 
+This transient was shown to be the result of a type Ic supernova. 
+Subsequent numerical modelling cite:1999ApJ...524..262M of core-collapse supernovae corroborated the connection of the observed supernova and abbr:lgrb, although SN 1998bw was unusual, likely through being closer than other abbr:grb, and possibly with a weaker-than-average energy production, allowing the optical transient to be observed.
+The observation of SN 2003dh, alongside a more normal abbr:grb, and subsequent potential abbr:sn-abbr:lgrb associations have added considerably to the evidence of a connection between abbr:lgrb and abbr:ccsn.
+
+While a connection between abbr:sn and abbr:lgrb seems plausible, producing the quantity of energy required for a short-lived burst through this mecahnism is impractical in abbr:ccsn models.
+Predictions that an entirely different mecahnism may be responsible for these events were made as early as 1984 cite:1984SvAL...10..177B: namely a abbr:bns or abbr:nsbh system.
+While either of these systems are potentially capable of producing the quantity of energy required to expalin observed abbr:sgrb, there is no strong evidence to suggest that all of them will; indeed modelling suggests that a substantial fraction of abbr:nsbh systems will be incapable of producing the required energy cite:2014ApJ...791L...7P.
+
+The association between abbr:sgrb and abbr:bns mergers (or at least, a subset thereof) was cemented by the first observation of a abbr:grb event, GRB 170817A cite:2017ApJ...848L..14G, which coincided with a gravitational wave observation: gls:gw170817 cite:2017PhRvL.119p1101A. 
+
+** Jet production
+
+At the time of their discovery the properties of abpl:sgrb did not fit any known astrophysical system. 
+The requirement that the events be distributed uniformly in the sky, and have a high observed gamma-ray flux emitted over a short period of time made the events difficult to explain.
+The sharply-peaked nature of the gamma-ray lightcurve implied that the progenitors must be small ($< \si{10^{7}}{\meter}$), moving non-relativistically. 
+A number of early theories included flare stars, antimatter, and neutron star binaries as progenitors (see cite:1975NYASA.262..164R for a review of these early theories[fn:amusing]).
+The favoured theory (especially given the discovery of GRB 170817A, discussed above) for the abbr:sgr is now abbr:bns merger events, which are expected to produce the required energy to produce a abbr:grb, provided the emission is beamed.
+
+*Fireball model*. The determination by abbr:batse that abbr:grb have a cosmological, rather than Galactic, origin implied that the events must be extremely luminous (and, indeed, the most electromagnetically luminous events observed in the Universe). 
+The fireball model cite:1999PhR...314..575P, explains the production of energy by the abbr:bns through the kinetic energy of ultra-relativistic particles (or through electromagnetic Poynting flux) being converted to EM emission in an optically thin region of material surrounding the merger. 
+This may be a result of interaction with the ISM, or due to interactions within the outflowing material from the merger.
+
+
+
+[fn:amusing] And also a rather satirical commentary on the state of contemporary astrophysics!
+
+
+
+
 
 \begin{equation}
 \label{eq:rate2angle}
@@ -16,7 +60,7 @@
 
 In this section, we discuss our approach to estimating the abbr:sgrb beaming angle based on the binary neutron star inspiral rate, estimated through a number of abbr:gw observations of abbr:bns coalescence.
 We demonstrate the approach by considering plausible detection scenarios for advanced abbr:ligo, which are summarised in table ref:tab:ratescenarios.
-Our ultimate goal is to develop a generic approach that folds in uncertainties in the abbr:bns merger rate and our ignorance about the probability with which such mergers actually result in abbr:SGRB.
+Our ultimate goal is to develop a generic approach that folds in uncertainties in the abbr:bns merger rate and our ignorance about the probability with which such mergers actually result in abbr:sgrb.
 
 An overview of the general method is as follows:
 
@@ -31,13 +75,13 @@ An overview of the general method is as follows:
 #+NAME:sec:grb-rate-posterior
 
 Our goal is to infer the posterior probability distribution for the mean
-abbr:SGRB beaming angle $\theta$ from abbr:GW constraints on the rate of \BNS
+abbr:sgrb beaming angle $\theta$ from abbr:gw constraints on the rate of \BNS
 coalescence $\cbcrate$.  The core ingredient to the analysis is the posterior
 probability distribution on the coalescence rate $p(\cbcrate|D,I)$, where $D$
 represents some abbr:gw observation and $I$ denotes other unenumerated prior
 information.  We will first demonstrate how $p(\cbcrate|D,I)$ may be constructed
-for a few projected observing scenarios from~cite:Aasi:2013wya.  Later, in
-section~\ref{sec:beaming_limits}, we will extend the analysis to place
+for a few projected observing scenarios from cite:Aasi:2013wya.  Later, in
+section ref:sec:beaming_limits}, we will extend the analysis to place
 limits on $\theta$ based upon the lack of detection during O1. Previously, a
 comparison of rates was used to place a lower limit on the beaming angle
 in cite:Abbott:2016ymx.
