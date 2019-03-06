@@ -62,12 +62,12 @@ These interferometers are Michelsoninterferometers with a large number of additi
  The 1990s brought a second generation of resonant detector design, and an international network of five detectors, which were cooled to cryogenic temperatures to reduce thermal Nyquist noise within the bar. 
  A mechanical resonator, which was tuned to a specific frequency was then attached elastically to one face of the bar. 
  The displacement between this resonator and the bar face was measured via the capacitance between the bar face and the secondary resonator. 
- The cryogenic generation of detectors were capable of reducing the noise strain in the detector to around $10^{-22} \hertz^{-1/2}$.
+ The cryogenic generation of detectors were capable of reducing the noise strain in the detector to around $\SI{10^{-22}}{\hertz^{-1/2}}$.
 
- While the sensitivity of bar detectors was much improved over three decades of development, the narrow bandwidth (around $1\,\hertz$ centred around the resonance frequency of the detector) substantially reduced the quantity of the gravitational wave signal which can be measured from most plausible astrophysical sources. 
- This has caused resonant bar technology to struggle to compete with detectors based around laser interferometry (see section ref:sec:detectors:interferometric) which typically have bandwidths on the order of $10^{3}\,\hertz$.
+ While the sensitivity of bar detectors was much improved over three decades of development, the narrow bandwidth (around $\SI{1}{\hertz}$ centred around the resonance frequency of the detector) substantially reduced the quantity of the gravitational wave signal which can be measured from most plausible astrophysical sources. 
+ This has caused resonant bar technology to struggle to compete with detectors based around laser interferometry (see section ref:sec:detectors:interferometric) which typically have bandwidths on the order of $\SI{10^{3}}{\hertz}$.
 
- Despite this, development of resonant mass antennas is ongoing. In addition to both gls:nautilus and gls:auriga, two spherical cryogenic detectors, gls:minigrail cite:2007PhRvD..76j2005G, and gls:mario-schenberg cite:2016BrJPh..46..596O, which hope to be able to make abb:gw measurements at higher frequencies than the current generation of interferometric detectors through cooling to $50\,\micro\kelvin$.
+ Despite this, development of resonant mass antennas is ongoing. In addition to both gls:nautilus and gls:auriga, two spherical cryogenic detectors, gls:minigrail cite:2007PhRvD..76j2005G, and gls:mario-schenberg cite:2016BrJPh..46..596O, which hope to be able to make abb:gw measurements at higher frequencies than the current generation of interferometric detectors through cooling to $\SI{50}{\micro\kelvin}$.
 
  # *could also mention TOBAR here, if you feel like adding more stuff*
 
@@ -96,7 +96,7 @@ These interferometers are Michelsoninterferometers with a large number of additi
     In this arrangement we must account for the gravitational wave having a different strength one the return trip, and so equation ref:eq:detectors:interferometric:theory:arrival-times-gw becomes 
  \begin{align}	       
    \label{eq:detectors:interferometric:theory:three-term}	
-   \frac{\dd t_{\text{round}}}{\dd t} = 1 + \half \Big(  (& 1-\cos(\theta) )h_+ (t+2L) - (1+\cos(\theta))h_+(t) \nonumber \\ & + 2 \cos(\theta) h_+ [t+L(1 - \cos(\theta))] \Big),
+   \frac{\dd t_{\text{round}}}{\dd t} = 1 + \frac{1}{2} \Big(  (& 1-\cos(\theta) )h_+ (t+2L) - (1+\cos(\theta))h_+(t) \nonumber \\ & + 2 \cos(\theta) h_+ [t+L(1 - \cos(\theta))] \Big),
  \end{align}
  which is often called the /three-term/ relation.
 
@@ -265,7 +265,7 @@ These interferometers are Michelsoninterferometers with a large number of additi
  #+ATTR_LATEX: :float t 
  #+ATTR_LATEX: :placement {t}
  #+CAPTION: The gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity.
- [[./figures/aligo-asd.pdf]]
+ [[./figures/intro/aligo-asd.pdf]]
 
  The first continuous observations with the advanced detectors started in September 2015.
  During the first observing run[fn:o1] the detectors made three detections of coalescing abbr:bbh.
@@ -351,7 +351,7 @@ These interferometers are Michelsoninterferometers with a large number of additi
  #+ATTR_LATEX: :float t 
  #+ATTR_LATEX: :placement {t}
  #+CAPTION: The gls:amplitude-spectral-density of the gls:ipta pulsar timing array.
- [[./figures/ipta-psd.pdf]]
+ # [[./figures/ipta-psd.pdf]]
 
  Pulsar timing relies on observations made of the arrival times of pulses from millisecond pulsars. In comparison to an interferometer, where the measurement of the detector's arm is made by observing the phase of the laser beam over a scale of a few kilometres (in the case of a ground-based detector such as gls:ligo), or even a few gigametres (in the case of gls:lisa), pulsar timing arrays provide an arm length on the scale of parsecs. 
  Accordingly, they are sensitive to much lower frequencies than man-made detectors.
