@@ -1,0 +1,12 @@
+#+TITLE: Daniel's Bibliographic Index
+
+Lots of papers, and notes on those papers.
+
+* Gravitational Waves
+
++ [[file:data-analysis.org][Data Analysis Techniques]]
++ [[file:detectors.org][Detectors and Instrument Science]]
+
+* Statistics, Machine Learning, and Artificial Intelligence
+
++ [[file:gaussianprocess.org][Gaussian processes]]

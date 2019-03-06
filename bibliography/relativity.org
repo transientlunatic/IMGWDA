@@ -1,0 +1,38 @@
+* {\"U}ber Gravitationswellen
+  :PROPERTIES:
+  :TITLE:    {\"U}ber Gravitationswellen
+  :BTYPE:    article
+  :CUSTOM_ID: 1918SPAW.......154E
+  :AUTHOR:   {Einstein}, A.
+  :JOURNAL:  Sitzungsberichte der K{\"o}niglich Preu{\ss}ischen Akademie der Wissenschaften (Berlin), Seite 154-167.
+  :YEAR:     1918
+  :ADSURL:   http://adsabs.harvard.edu/abs/1918SPAW.......154E
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* On Gravitational Waves
+  :PROPERTIES:
+  :TITLE:    On Gravitational Waves
+  :BTYPE:    article
+  :CUSTOM_ID: 1937FrInJ.223...43E
+  :AUTHOR:   {Einstein}, A. and {Rosen}, N.
+  :JOURNAL:  Journal of The Franklin Institute
+  :YEAR:     1937
+  :MONTH:    jan
+  :VOLUME:   223
+  :PAGES:    43-54
+  :DOI:      10.1016/S0016-0032(37)90583-0
+  :ADSURL:   http://adsabs.harvard.edu/abs/1937FrInJ.223...43E
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Die Feldgleichungen der Gravitation
+  :PROPERTIES:
+  :TITLE:    Die Feldgleichungen der Gravitation
+  :BTYPE:    article
+  :CUSTOM_ID: 1915SPAW.......844E
+  :AUTHOR:   {Einstein}, A.
+  :JOURNAL:  Sitzungsberichte der K{\"o}niglich Preu{\ss}ischen Akademie der Wissenschaften (Berlin), Seite 844-847.
+  :YEAR:     1915
+  :ADSURL:   http://adsabs.harvard.edu/abs/1915SPAW.......844E
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+

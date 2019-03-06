@@ -1,0 +1,470 @@
+* Observation of Gravitational Waves from a Binary Black Hole Merger
+  :PROPERTIES:
+  :TITLE:    Observation of Gravitational Waves from a Binary Black Hole Merger
+  :BTYPE:    article
+  :CUSTOM_ID: 2016PhRvL.116f1102A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  Physical Review Letters
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03837
+  :PRIMARYCLASS: gr-qc
+  :YEAR:     2016
+  :MONTH:    feb
+  :VOLUME:   116
+  :NUMBER:   6
+  :EID:      061102
+  :PAGES:    061102
+  :DOI:      10.1103/PhysRevLett.116.061102
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016PhRvL.116f1102A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Observing gravitational-wave transient GW150914 with minimal assumptions
+  :PROPERTIES:
+  :TITLE:    Observing gravitational-wave transient GW150914 with minimal assumptions
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203843T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration}
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03843
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203843T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* GW150914: The Advanced LIGO Detectors in the Era of First Discoveries
+  :PROPERTIES:
+  :TITLE:    GW150914: The Advanced LIGO Detectors in the Era of First Discoveries
+  :BTYPE:    article
+  :CUSTOM_ID: 2016PhRvL.116m1103A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  Physical Review Letters
+  :YEAR:     2016
+  :MONTH:    apr
+  :VOLUME:   116
+  :NUMBER:   13
+  :EID:      131103
+  :PAGES:    131103
+  :DOI:      10.1103/PhysRevLett.116.131103
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016PhRvL.116m1103A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* GW150914: Implications for the Stochastic Gravitational-Wave Background from Binary Black Holes
+  :PROPERTIES:
+  :TITLE:    GW150914: Implications for the Stochastic Gravitational-Wave Background from Binary Black Holes
+  :BTYPE:    article
+  :CUSTOM_ID: 2016PhRvL.116m1102A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  Physical Review Letters
+  :YEAR:     2016
+  :MONTH:    apr
+  :VOLUME:   116
+  :NUMBER:   13
+  :EID:      131102
+  :PAGES:    131102
+  :DOI:      10.1103/PhysRevLett.116.131102
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016PhRvL.116m1102A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* The Sensitivity of the Advanced LIGO Detectors at the Beginning of Gravitational Wave Astronomy
+  :PROPERTIES:
+  :TITLE:    The Sensitivity of the Advanced LIGO Detectors at the Beginning of Gravitational Wave Astronomy
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160400439T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {Martynov}, D. V. and {Hall}, E. D. and {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Ackley}, K. and {Adams}, C. and {Addesso}, P. and et al.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1604.00439
+  :PRIMARYCLASS: astro-ph.IM
+  :KEYWORDS: Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
+  :YEAR:     2016
+  :MONTH:    apr
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160400439T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Localization and broadband follow-up of the gravitational-wave transient GW150914
+  :PROPERTIES:
+  :TITLE:    Localization and broadband follow-up of the gravitational-wave transient GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160208492A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.08492
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160208492A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* High-energy Neutrino follow-up search of Gravitational Wave Event GW150914 with ANTARES and IceCube
+  :PROPERTIES:
+  :TITLE:    High-energy Neutrino follow-up search of Gravitational Wave Event GW150914 with ANTARES and IceCube
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160205411A
+  :AUTHOR:   {ANTARES Collaboration} and {IceCube Collaboration} and {LIGO Scientific Collaboration} and {Virgo Collaboration} and {Adri{\'a}n-Mart{\'{\i}}nez}, S. and {Albert}, A. and {Andr{\'e}}, M. and {Anton}, G. and {Ardid}, M. and {Aubert}, J.-J. and et al.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.05411
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160205411A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Calibration of the Advanced LIGO detectors for the discovery of the binary black-hole merger GW150914
+  :PROPERTIES:
+  :TITLE:    Calibration of the Advanced LIGO detectors for the discovery of the binary black-hole merger GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203845T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {Abbott}, B. P.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03845
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203845T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Characterization of transient noise in Advanced LIGO relevant to gravitational wave signal GW150914
+  :PROPERTIES:
+  :TITLE:    Characterization of transient noise in Advanced LIGO relevant to gravitational wave signal GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203844T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration}
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03844
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203844T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Observing gravitational-wave transient GW150914 with minimal assumptions
+  :PROPERTIES:
+  :TITLE:    Observing gravitational-wave transient GW150914 with minimal assumptions
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203843T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration}
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03843
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203843T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* The Rate of Binary Black Hole Mergers Inferred from Advanced LIGO Observations Surrounding GW150914
+  :PROPERTIES:
+  :TITLE:    The Rate of Binary Black Hole Mergers Inferred from Advanced LIGO Observations Surrounding GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203842A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03842
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203842A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Tests of general relativity with GW150914
+  :PROPERTIES:
+  :TITLE:    Tests of general relativity with GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203841T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration}
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03841
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203841T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Properties of the binary black hole merger GW150914
+  :PROPERTIES:
+  :TITLE:    Properties of the binary black hole merger GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203840T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration}
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03840
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203840T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* GW150914: First results from the search for binary black hole coalescence with Advanced LIGO
+  :PROPERTIES:
+  :TITLE:    GW150914: First results from the search for binary black hole coalescence with Advanced LIGO
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203839T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration} and {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and et al.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03839
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203839T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* GW150914: The Advanced LIGO Detectors in the Era of First Discoveries
+  :PROPERTIES:
+  :TITLE:    GW150914: The Advanced LIGO Detectors in the Era of First Discoveries
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203838T
+  :AUTHOR:   {The LIGO Scientific Collaboration} and {The Virgo Collaboration}
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03838
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203838T
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Astrophysical Implications of the Binary Black Hole Merger GW150914
+  :PROPERTIES:
+  :TITLE:    Astrophysical Implications of the Binary Black Hole Merger GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016ApJ...818L..22A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  \apjl
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03846
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: gravitational waves, stars: black holes, stars: massive
+  :YEAR:     2016
+  :MONTH:    feb
+  :VOLUME:   818
+  :EID:      L22
+  :PAGES:    L22
+  :DOI:      10.3847/2041-8205/818/2/L22
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016ApJ...818L..22A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* The origin and evolution of LIGO's first gravitational-wave source
+  :PROPERTIES:
+  :TITLE:    The origin and evolution of LIGO's first gravitational-wave source
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160204531B
+  :AUTHOR:   {Belczynski}, K. and {Holz}, D. E. and {Bulik}, T. and {O'Shaughnessy}, R.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.04531
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160204531B
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Did LIGO detect dark matter?
+  :PROPERTIES:
+  :TITLE:    Did LIGO detect dark matter?
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160300464B
+  :AUTHOR:   {Bird}, S. and {Cholis}, I. and {Mu{\ n}oz}, J. B. and {Ali-Ha{\"i}moud}, Y. and {Kamionkowski}, M. and {Kovetz}, E. D. and {Raccanelli}, A. and {Riess}, A. G.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1603.00464
+  :KEYWORDS: Astrophysics - Cosmology and Nongalactic Astrophysics, High Energy Physics - Phenomenology
+  :YEAR:     2016
+  :MONTH:    mar
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160300464B
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Primordial black hole scenario for the gravitational wave event GW150914
+  :PROPERTIES:
+  :TITLE:    Primordial black hole scenario for the gravitational wave event GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160308338S
+  :AUTHOR:   {Sasaki}, M. and {Suyama}, T. and {Tanaka}, T. and {Yokoyama}, S.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1603.08338
+  :KEYWORDS: Astrophysics - Cosmology and Nongalactic Astrophysics, General Relativity and Quantum Cosmology
+  :YEAR:     2016
+  :MONTH:    mar
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160308338S
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Supplement: Localization and broadband follow-up of the gravitational-wave transient GW150914
+  :PROPERTIES:
+  :TITLE:    Supplement: Localization and broadband follow-up of the gravitational-wave transient GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160407864A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1604.07864
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+  :YEAR:     2016
+  :MONTH:    apr
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160407864A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Fermi GBM Observations of LIGO Gravitational Wave event GW150914
+  :PROPERTIES:
+  :TITLE:    Fermi GBM Observations of LIGO Gravitational Wave event GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160203920C
+  :AUTHOR:   {Connaughton}, V. and {Burns}, E. and {Goldstein}, A. and {Briggs}, M. S. and {Zhang}, B.-B. and {Hui}, C. M. and {Jenke}, P. and {Racusin}, J. and {Wilson-Hodge}, C. A. and {Bhat}, P. N. and {Bissaldi}, E. and {Cleveland}, W. and {Fitzpatrick}, G. and {Giles}, M. M. and {Gibby}, M. H. and {Greiner}, J. and {von Kienlin}, A. and {Kippen}, R. M. and {McBreen}, S. and {Mailyan}, B. and {Meegan}, C. A. and {Paciesas}, W. S. and {Preece}, R. D. and {Roberts}, O. and {Sparke}, L. and {Stanbro}, M. and {Toelge}, K. and {Veres}, P. and {Yu}, H.-F. and {authors}, o.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03920
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160203920C
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* INTEGRAL Upper Limits on Gamma-Ray Emission Associated with the Gravitational Wave Event GW150914
+  :PROPERTIES:
+  :TITLE:    INTEGRAL Upper Limits on Gamma-Ray Emission Associated with the Gravitational Wave Event GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016ApJ...820L..36S
+  :AUTHOR:   {Savchenko}, V. and {Ferrigno}, C. and {Mereghetti}, S. and {Natalucci}, L. and {Bazzano}, A. and {Bozzo}, E. and {Brandt}, S. and {Courvoisier}, T. J.-L. and {Diehl}, R. and {Hanlon}, L. and {von Kienlin}, A. and {Kuulkers}, E. and {Laurent}, P. and {Lebrun}, F. and {Roques}, J. P. and {Ubertini}, P. and {Weidenspointner}, G.
+  :JOURNAL:  \apjl
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.04180
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: gamma-ray burst: general, gravitational waves
+  :YEAR:     2016
+  :MONTH:    apr
+  :VOLUME:   820
+  :EID:      L36
+  :PAGES:    L36
+  :DOI:      10.3847/2041-8205/820/2/L36
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016ApJ...820L..36S
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Swift follow-up of the Gravitational Wave source GW150914
+  :PROPERTIES:
+  :TITLE:    Swift follow-up of the Gravitational Wave source GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016MNRAS.tmpL..45E
+  :AUTHOR:   {Evans}, P. A. and {Kennea}, J. A. and {Barthelmy}, S. D. and {Beardmore}, A. P. and {Burrows}, D. N. and {Campana}, S. and {Cenko}, S. B. and {Gehrels}, N. and {Giommi}, P. and {Gronwall}, C. and {Marshall}, F. E. and {Malesani}, D. and {Markwardt}, C. B. and {Mingo}, B. and {Nousek}, J. A. and {O'Brien}, P. T. and {Osborne}, J. P. and {Pagani}, C. and {Page}, K. L. and {Palmer}, D. M. and {Perri}, M. and {Racusin}, J. L. and {Siegel}, M. H. and {Sbarufatti}, B. and {Tagliaferri}, G.
+  :JOURNAL:  \mnras
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.03868
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Gravitional Waves, Xrays: general, methods: data analysis
+  :YEAR:     2016
+  :MONTH:    apr
+  :DOI:      10.1093/mnrasl/slw065
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016MNRAS.tmpL..45E
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Fermi-LAT Observations of the LIGO event GW150914
+  :PROPERTIES:
+  :TITLE:    Fermi-LAT Observations of the LIGO event GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160204488F
+  :AUTHOR:   {Fermi-LAT collaboration}
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.04488
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+  :YEAR:     2016
+  :MONTH:    feb
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160204488F
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Electromagnetic Counterparts to Black Hole Mergers Detected by LIGO
+  :PROPERTIES:
+  :TITLE:    Electromagnetic Counterparts to Black Hole Mergers Detected by LIGO
+  :BTYPE:    article
+  :CUSTOM_ID: 2016ApJ...819L..21L
+  :AUTHOR:   {Loeb}, A.
+  :JOURNAL:  \apjl
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1602.04735
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: gamma-ray burst: general, gravitational waves
+  :YEAR:     2016
+  :MONTH:    mar
+  :VOLUME:   819
+  :EID:      L21
+  :PAGES:    L21
+  :DOI:      10.3847/2041-8205/819/2/L21
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016ApJ...819L..21L
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* On the gamma-ray burst -- gravitational wave association in GW150914
+  :PROPERTIES:
+  :TITLE:    On the gamma-ray burst -- gravitational wave association in GW150914
+  :BTYPE:    article
+  :CUSTOM_ID: 2016arXiv160407132J
+  :AUTHOR:   {Janiuk}, A. and {Bejger}, M. and {Charzynski}, S. and {Sukova}, P.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1604.07132
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+  :YEAR:     2016
+  :MONTH:    apr
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv160407132J
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* All-sky search for short gravitational-wave bursts in the first Advanced LIGO run
+  :PROPERTIES:
+  :TITLE:    All-sky search for short gravitational-wave bursts in the first Advanced LIGO run
+  :BTYPE:    article
+  :CUSTOM_ID: 2017PhRvD..95d2003A
+  :AUTHOR:   {Abbott}, B. P. and {Abbott}, R. and {Abbott}, T. D. and {Abernathy}, M. R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R. X. and et al.
+  :JOURNAL:  \prd
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1611.02972
+  :PRIMARYCLASS: gr-qc
+  :YEAR:     2017
+  :MONTH:    feb
+  :VOLUME:   95
+  :NUMBER:   4
+  :EID:      042003
+  :PAGES:    042003
+  :DOI:      10.1103/PhysRevD.95.042003
+  :ADSURL:   http://adsabs.harvard.edu/abs/2017PhRvD..95d2003A
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Numerical Relativity Injection Infrastructure
+  :PROPERTIES:
+  :TITLE:    Numerical Relativity Injection Infrastructure
+  :BTYPE:    article
+  :CUSTOM_ID: 2017arXiv170301076S
+  :AUTHOR:   {Schmidt}, P. and {Harry}, I. W. and {Pfeiffer}, H. P.
+  :JOURNAL:  ArXiv e-prints
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1703.01076
+  :PRIMARYCLASS: gr-qc
+  :KEYWORDS: General Relativity and Quantum Cosmology
+  :YEAR:     2017
+  :MONTH:    mar
+  :ADSURL:   http://adsabs.harvard.edu/abs/2017arXiv170301076S
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+

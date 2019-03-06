@@ -1,0 +1,78 @@
+* Sample selection
+** TO READ Accounting for sample selection in Bayesian analyses :bayesian:sampling:
+   :PROPERTIES:
+   :TITLE:    Accounting for sample selection in Bayesian analyses
+   :BTYPE:    article
+   :CUSTOM_ID: 2017arXiv170603856H
+   :AUTHOR:   {Hinton}, S.~R. and {Kim}, A. and {Davis}, T.~M.
+   :JOURNAL:  ArXiv e-prints
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1706.03856
+   :KEYWORDS: Astrophysics - Cosmology and Nongalactic Astrophysics
+   :YEAR:     2017
+   :MONTH:    jun
+   :ADSURL:   http://adsabs.harvard.edu/abs/2017arXiv170603856H
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+   [[../papers/1706.03856.pdf][PDF]]
+*** Abstract
+    Astronomers are often confronted with funky populations and
+    distributions of objects: brighter objects are more likely to be
+    detected; targets are selected based on colour cuts; imperfect
+    classification yields impure samples. Failing to account for these
+    effects leads to biased analyses. In this paper we present a simple
+    overview of a Bayesian consideration of sample selection, giving
+    solutions to both analytically tractable and intractable models. This
+    is accomplished via a combination of analytic approximations and
+    Monte Carlo integration, in which dataset simulation is efficiently
+    used to correct for issues in the observed dataset. This methodology
+    is also applicable for data truncation, such as requiring densities
+    to be strictly positive. Toy models are included for demonstration,
+    along with discussions of numerical considerations and how to
+    optimise for implementation. We provide sample code to demonstrate
+    the techniques. The methods in this paper should be widely applicable
+    in fields beyond astronomy, wherever sample selection effects occur.
+
+** TO READ Avoiding selection bias in gravitational wave astronomy :bayesian:sampling:
+   :PROPERTIES:
+   :TITLE:    Avoiding selection bias in gravitational wave astronomy
+   :BTYPE:    article
+   :CUSTOM_ID: 2013NJPh...15e3027M
+   :AUTHOR:   {Messenger}, C. and {Veitch}, J.
+   :JOURNAL:  New Journal of Physics
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1206.3461
+   :PRIMARYCLASS: astro-ph.IM
+   :YEAR:     2013
+   :MONTH:    may
+   :VOLUME:   15
+   :NUMBER:   5
+   :EID:      053027
+   :PAGES:    053027
+   :DOI:      10.1088/1367-2630/15/5/053027
+   :ADSURL:   http://ukads.nottingham.ac.uk/abs/2013NJPh...15e3027M
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+   [[../papers/1206.3461.pdf][PDF]]
+*** Abstract
+    When searching for gravitational waves in the data from
+    ground-based gravitational wave detectors it is common to use a
+    detection threshold to reduce the number of background events
+    which are unlikely to be the signals of interest. However,
+    imposing such a threshold will also discard some real signals with
+    low amplitude, which can potentially bias any inferences drawn
+    from the population of detected signals. We show how this
+    selection bias is naturally avoided by using the full information
+    from the search, considering both the selected data and our
+    ignorance of the data that are thrown away, and considering all
+    relevant signal and noise models. This approach produces unbiased
+    estimates of parameters even in the presence of false alarms and
+    incomplete data. This can be seen as an extension of previous
+    methods into the high false rate regime where we are able to show
+    that the quality of parameter inference can be optimised by
+    lowering thresholds and increasing the false alarm rate.
+   
+
+
+
+

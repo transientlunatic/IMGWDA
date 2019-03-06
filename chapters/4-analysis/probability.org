@@ -96,11 +96,57 @@ Two variables, $x,y$ are said to be conditionally independent given a third vari
 We can denote conditional independence as $x\!\perp\!\!\!\perp\!y \ | z$.
 #+END_definition
 
-* Uninformative priors
+* Prior knowledge
+** Uninformative priors
+   :PROPERTIES:
+   :CUSTOM_ID: sec:probability:priors:uninformative
+   :END:
 
-* Information theory
-** Entropy
+*** Fisher information
+*** Haldane and Jeffreys priors
+
+* Information
+
+  Understanding how informative an random variable, $X$ is can provide insight into how well observations of that variable will inform our knowledge of the probability distribution from which it is drawn.
+  
+  #+ATTR_LATEX: :options [Fisher information]
+  #+BEGIN_definition
+  Given a abbr:pdf, $p$, for a random variable, $X$, which is parameterised by a variable $\theta$, $f(X, \theta)$, the /score/, $V$ of the abbr:pdf is defined
+  \begin{equation}
+  \label{eq:probability:score}
+  V(\theta, X) = \frac{\partial}{\partial X} \log p(X, \theta)
+  \end{equation}
+  The variance of the score is the /Fisher information/ of the distribution:
+  \begin{equation}
+  \label{eq:probability:fisher}
+  I(\theta, X) = \mathbb{E}(V^{2} | \theta) = \int V^{2} p(X, \theta) \dd{x}
+  \end{equation}
+  #+END_definition
+
+  Knowledge of the Fisher information for a given distribution is particuarly valuable in selecting an /uninformative prior/ (see section ref:sec:probability:priors:uninformative) when designing a Bayesian  analysis, where it can be valuable for the prior probability distribution to contribute no information to the inference.
+
+  #+ATTR_LATEX: :options [Shannon information]
+  #+BEGIN_definition
+  Given a abbr:pdf, $p$, for a random variable $X$ the /Shannon information content/ of a given value $x$ of $X$ is defined as
+  \begin{equation}
+  \label{eq:probability:shannon}
+  h(x) = \log_{2} p^{-1}(x)
+  \end{equation}
+  where the information is measured in /bits/ (assuming that a base-2 logarithm is used; if the natural logarithm is used the units are /nats/, and the base-10 gives rise to the /dit/).
+  #+END_definition
+
+  #+ATTR_LATEX: :options [Entropy]
+  #+BEGIN_definition
+  The entropy of a random variable $X$ with a abbr:pdf, $p$ is the average Shannon information of the random variable across all its possible values:
+  \begin{equation}
+  H(X) = \int p(X) h(X) \dd X
+  \end{equation}
+  taking $0 \log (1/0) \equiv 0$.
+  #+END_definition
+
 ** KL / SJ Divergence
+
+
 
 * Feature spaces and Kernels
 #+LABEL: sec:probability:features-and-kernels
@@ -322,3 +368,56 @@ where $pa(x)$ represents the parental set of the variable $x$; that is, the set 
 
 * Hierarchical modelling
 
+
+* Bayesian Linear regression
+  :PROPERTIES:
+  :CUSTOM_ID: sec:probability:blr
+  :END:
+
+To motivate the development of Gaussian processes we first present the
+problem of linear regression, and how this task may be performed in a
+Bayesian framework.
+
+A very simple linear model has the form
+
+#+NAME:eq-simple-linear-model
+\begin{equation}
+  y_i = m x_i + c
+\end{equation}
+
+for each observation, $y_i$, which are made at a location in parameter
+space $x_i$, where $m, c \in \mathbb{R}$ are the parameters of our
+model. This model attempts to describe the observations by fitting a
+polynomial of order one to the data, however, we
+may reasonably want to generalise our model to allow higher orders of
+polynomial, and doing so achieve a model of the form
+
+\begin{equation}
+\label{eq:less-simple-linear-model}
+  y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \vdot \vec{w}
+\end{equation}
+
+where the various parameters are now folded into a vector, $\vec{w}$, which is called the 
+weight vector. A further generalisation may be made, to allow for more
+complicated forms of model, by substituting the vector $\vec{x}$ for a
+matrix $\mat{X}$, the /design matrix/, which can take an arbitrary form,
+so our model becomes
+
+$$\label{eq:general-noiseless-linear}
+  \vec{y} = \mat{X} \vec{w}$$
+
+Finally, we can introduce a term to account for any uncertainty in the
+measurement of the observations, $\vec{\epsilon}$, giving a complete
+linear model
+
+$$\label{eq:linear-model}
+  \vec{y} = \mat{X} \vec{w} + \vec{\epsilon}$$
+
+The quantities $\vec{y}$, $\mat{X}$, and $\vec{\epsilon}$ are well
+understood, but to have a complete and useful model we must find the
+values of the model parameters which best explain the data; this problem
+is regression. In a Bayesian framework we must assign a prior to each
+parameter, which represents our pre-existing knowledge of the situation.
+A sensible choice might be a normal, or /Gaussian/, distribution, with a
+mean of zero, and a variance $\sigma_i^2$:
+$$w_i \sim \mathcal{G}(0, \sigma_i^2).$$

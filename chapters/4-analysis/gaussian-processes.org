@@ -2,59 +2,27 @@
 
 /This chapter covers the introductory theory of Gaussian process regression, and the development of the ~Heron~ model for binary black hole coalescence waveforms./
 
+* Surrogate modelling
 
-* Bayesian Linear regression
-  :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:blr
-  :END:
+Many experimental scenarios in science and engineering are expensive, laborious, or both to perform, and therefore difficult or off-putting to repeat.
+The ability to perform such an experiment with a specific set of parameters may however be valuable.
 
-To motivate the development of Gaussian processes we first present the
-problem of linear regression, and how this task may be performed in a
-Bayesian framework.
+While in engineering the difficulties of performing repeatative experiments may relate to the nature of the experiment (which might, for example, be destructive to a tested material), in astrophysics we are more frequently hampered by the computational expense of running a numerical simulation.
 
-A very simple linear model has the form
+A number of techniques exist to perform interpolation between experimentally measured data. 
+If a well-defined physical theory is known to explain the observations an appropriate function can be derived to make predictions outwith the sampled parameter space for the experiment, and this can be calibrated (fitted) to the data.
 
-#+NAME:eq-simple-linear-model
-\begin{equation}
-  y_i = m x_i + c
-\end{equation}
+Surrogate models are often desirable in situations where little physical intuition is available (or where the underlying physics is extremely complicated).
+These attempt to model the observed data with limited assumptions about the form of the generating function.
 
-for each observation, $y_i$, which are made at a location in parameter
-space $x_i$, where $m, c \in \mathbb{R}$ are the parameters of our
-model. This model attempts to describe the observations by fitting a
-polynomial of order one to the data, however, we
-may reasonably want to generalise our model to allow higher orders of
-polynomial, and doing so achieve a model of the form
+** Polynomial response surfaces
 
-\begin{equation}
-\label{eq:less-simple-linear-model}
-  y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \vdot \vec{w}
-\end{equation}
 
-where the various parameters are now folded into a vector, $\vec{w}$, which is called the 
-weight vector. A further generalisation may be made, to allow for more
-complicated forms of model, by substituting the vector $\vec{x}$ for a
-matrix $\mat{X}$, the /design matrix/, which can take an arbitrary form,
-so our model becomes
 
-$$\label{eq:general-noiseless-linear}
-  \vec{y} = \mat{X} \vec{w}$$
-
-Finally, we can introduce a term to account for any uncertainty in the
-measurement of the observations, $\vec{\epsilon}$, giving a complete
-linear model
-
-$$\label{eq:linear-model}
-  \vec{y} = \mat{X} \vec{w} + \vec{\epsilon}$$
-
-The quantities $\vec{y}$, $\mat{X}$, and $\vec{\epsilon}$ are well
-understood, but to have a complete and useful model we must find the
-values of the model parameters which best explain the data; this problem
-is regression. In a Bayesian framework we must assign a prior to each
-parameter, which represents our pre-existing knowledge of the situation.
-A sensible choice might be a normal, or /Gaussian/, distribution, with a
-mean of zero, and a variance $\sigma_i^2$:
-$$w_i \sim \mathcal{G}(0, \sigma_i^2).$$
+** Support vector machines
+** Gaussian process regression
+** Artificial neural networks
+** Bayesian networks
 
 * From Bayesian linear regression to Gaussian Process
   :PROPERTIES:
@@ -130,14 +98,14 @@ which Gaussian Process Regression (GPR) is often deemed a
 
 
 Gaussian processes are Bayesian models which associate every point an some /input space/ with a probability distribution---specifically a normal distribution, and a collection of input points will form a multi-variate normal distribution. 
-Gaussian processes are a non-parametric supervised machine learning technique\cite{barberBRML2012,mackay2003information}.
+Gaussian processes are a non-parametric supervised machine learning technique\cite{barberBRML2012,2003itil.book.....M}.
 
 To make a prediction, we need to first have a set of prior observations and information about the parameters of the physical system which produced those observations. 
 These combined form the /training data/ for the predictor.
 
 #+LATEX_ATTR: :options [Gaussian process]
 #+BEGIN_definition
-A gls:gaussian-process is a collection of random variables, any finite number of which have a joint Gaussian distribution\nbsp{}cite:gpr.book.rw.
+A gls:gaussian-process is a collection of random variables, any finite number of which have a joint Gaussian distribution cite:gpr.book.rw.
 #+END_definition
 
 A completely untrained Gaussian process forms the job of a prior probability distribution in a Bayesian analysis; where it is more conventional to consider a prior over a set of, for example, real values, such as a normal distribution, the Gaussian process forms a prior over the functions which might form the regression fit to any observed data. 
@@ -161,14 +129,17 @@ Gaussian processes can be extended from the case of a single-dimensional input p
 
 #+CAPTION: [Step 1] An example of raw training data which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.
 #+NAME: fig:gp-training-data
+#+ATTR_LATEX: :width \textwidth
 file:figures/gp-training-data.pdf
 
 #+CAPTION: [Step 2] We choose a covariance function for the  Gaussian process, in this case an exponential-squared covariance    function. The Gaussian process containing no data and this    covariance matrix forms our prior probability distribution. Here    50 draws from the prior distribution are plotted.
 #+LABEL: fig:gp-prior
+#+ATTR_LATEX: :width \textwidth
 file:figures/gp-example-prior-draws.pdf
 
 #+CAPTION: [Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed.}
 #+LABEL: fig:gp-covariance-matrix
+#+ATTR_LATEX: :width \textwidth
 file:figures/gp-example-posterior-draws.pdf
 
 # #+CAPTION: The covariance structure for the Gaussian process.
@@ -179,6 +150,7 @@ file:figures/gp-example-posterior-draws.pdf
 
 #+CAPTION: [Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.
 #+LABEL: fig-gp-posterior-best
+#+ATTR_LATEX: :width \textwidth
 file:figures/gp-posterior-meancovar.pdf
 
 
@@ -187,15 +159,10 @@ file:figures/gp-posterior-meancovar.pdf
   :CUSTOM_ID: sec:gpr:covariance
   :END:
 
-The covariance function defines the similarity of a pair of data points,
-according to some relationship with suitable properties. The similarity
-of input data is assumed to be related to the similarity of the output,
-and therefore the more similar two inputs are the more likely their
-outputs are to be similar.
+The covariance function defines the similarity of a pair of data points, according to some relationship with suitable properties. 
+The similarity of input data is assumed to be related to the similarity of the output, and therefore the more similar two inputs are the more likely their outputs are to be similar.
 
-As such, the form of the covariance function represents prior knowledge
-about the data, and can encode understanding of effects such as
-periodicity within the data.
+As such, the form of the covariance function represents prior knowledge about the data, and can encode understanding of effects such as periodicity within the data.
 
 #+ATTR_LATEX: :options [Stationary covariance function]
 #+BEGIN_definition
@@ -204,32 +171,75 @@ A stationary covariance function is a function $f(\vec{x} - \vec{x}')$, and whic
 
 #+ATTR_LATEX: :options [Isotropic Covariance Function]
 #+BEGIN_definition
-If a covariance function is a function of
-the form $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant
-under all rigid motions.
+If a covariance function is a function of the form $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant under all rigid motions.
 #+END_definition
 
-#+CAPTION: The exponential-squared covariance function.
-#+LABEL: fig:gp-expsq-covar
-file:figures/gp-expsqcov.pdf
+A covariance function which is both stationary and isotropic has the property that it can be expressed as a function of a single variable, $r = | \vec{x} - \vec{x}' |$ is known as a abbr:rbf.
+Functions of the form $k : (\vec{x}, \vec{x}') \to \mathbb{C}$, for two vectors $\vec{x}, \vec{x}' \in \mathcal{X}$ are often known as /kernels/, and I will frequently refer interchangably to covariance functions and kernels where the covariance function has this form.
 
-#+CAPTION: Draws from the Exponential-squared covariance function at a selection of length scales.
-#+LABEL: fig:expsq-draws
-file:figures/gp-expsqcov-draws.pdf
+For a set of points $\setbuilder{ \vec{x}_{i} | i = 1, \dots, n }$ a kernel, $k$ can be used to construct the gram matrix, $K_{i,j} = k(x_{i}, x_{j})$.
+If the kernel is also a covariance function then $K$ is known as a /covariance matrix/.
 
-One of the most frequently encountered covariance functions in the
-literature is the exponential squared covariance functions
-\cite{rasmussen2006gaussian}
+For a kernel to be a valid covariance function for a abbr:gp it must produce a positive semidefinite covariance matrix $K$. 
+Such a matrix, $K \in \mathbb{R}^{n \times n}$ must satisfy $\vec{x}^{\transpose} K \vec{x} \geq 0 \forall \vec{x} \in \mathbb{R}^{n}$.
 
-#+NAME: eq:squaredexponentialkernel
+
+** Example covariance functions
+
+
+
+
+One of the most frequently encountered covariance functions in the literature is the abbr:se covariance functions cite:gpr.book.rw.
+Perhaps as a result of its near-ubiquity this kernel is known under a number of similar, but confusing names (which are often inaccurate).
+These include the /exponential quadratic/, /quadratic exponential/, /squared exponential/, and even /Gaussian/ covariance function.
+
+The reason for this is its form, which closely resembles that of the Gaussian function:
+
+#+NAME: eq:gp:kernels:se
 \begin{equation}
-   \label{eq:squaredexponentialkernel}
+   \label{eq:gp:kernels:se}
   k_{\mathrm{SE}}(r) = \exp \left( - \frac{r^2}{2 l^2} \right)
 \end{equation}
 
-for $r$ the Euclidean distance of a datum from the centre of the
-parameter space, and $l$ is a scale factor associated with the axis
-along which the data are defined.
+for $r$ the Euclidean distance of a datum from the centre of the parameter space, and $l$ is a scale factor associated with the axis along which the data are defined.
+
+#+CAPTION: The *squared exponential* covariance function (defined in equation ref:eq:gp:kernels:se). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes with abbr:se covariance with the same length scales as the left panel.
+#+LABEL: fig:gp-expsq-covar
+#+ATTR_LATEX: :width \textwidth
+file:figures/gp/covariance-se-overview.pdf
+
+The squared exponential function imposes strong smoothness constraints on the model, as it is infinitely differentiable.
+
+The scale factor, $l$ in ref:eq:gp:kernels:se, also known as its /scale-length/ defines the size of the effect within the process. 
+This characteristic length-scale can be undnerstood cite:adler1976,gpr.book.rw in terms of the number of times the abbr:gp should cross some given level (for example, zero).
+Indeed, for a abbr:gp with a covariance function $k$ which has well-defined first and second derivatives the expected number of times, $N_{u}$ the process will cross a value $u$ is 
+
+\begin{equation}
+\label{eq:gp:kernels:crossings}
+\mathbb{E}(Nᵤ) = \frac{1}{2 \pi} \sqrt{ - \frac{ k''(0) }{k(0)} } \exp \left( - \frac{u²}{2k(0)} \right)
+\end{equation} 
+
+A zero-mean abbr:gp which has an abbr:se covariance structure will then cross zero $1/(2 \pi l)$ times on average.
+
+#+CAPTION: The *squared exponential* covariance function (defined in equation ref:eq:gp:kernels:se). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes with abbr:se covariance with the same length scales as the left panel.
+#+LABEL: fig:gp-exp-covar
+#+ATTR_LATEX: :width \textwidth
+file:figures/gp/covariance-ex-overview.pdf
+
+#+CAPTION: The *squared exponential* covariance function (defined in equation ref:eq:gp:kernels:se). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes with abbr:se covariance with the same length scales as the left panel.
+#+LABEL: fig:gp-m32-covar
+#+ATTR_LATEX: :width \textwidth
+file:figures/gp/covariance-mat32-overview.pdf
+
+#+CAPTION: The *squared exponential* covariance function (defined in equation ref:eq:gp:kernels:se). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes with abbr:se covariance with the same length scales as the left panel.
+#+LABEL: fig:gp-m52-covar
+#+ATTR_LATEX: :width \textwidth
+file:figures/gp/covariance-mat52-overview.pdf
+
+#+CAPTION: The *squared exponential* covariance function (defined in equation ref:eq:gp:kernels:se). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes with abbr:se covariance with the same length scales as the left panel.
+#+LABEL: fig:gp-rq-covar
+#+ATTR_LATEX: :width \textwidth
+file:figures/gp/covariance-rq-overview.pdf
 
 ** Kernel algebra
 
@@ -255,11 +265,9 @@ As such addition represents the logical OR operation.
 Similarly the product of two kernels represents the logical AND operation between the two.
 
 We can use these two operations to form an arbitrarily complicated kernel structure, and to allow inference to be conducted over multiple dimensions.
-
-** A menagerie of kernels
 Different kernels can be used to model different aspects of the variation within the input data. 
 For example, the training data may be known to be periodic in one dimension, or to have white noise properties in another. 
-Here I adopt the convention from cite:duvenaud-thesis-2014 and omit the hyperparameters from the description of the kernel.
+Here I adopt the convention from cite:duvenaud.thesis.2014 and omit the hyperparameters from the description of the kernel.
 I also extend the notation to allow kernels with multiple input dimensions to be described, with superscript indices indicating the dimensions of the training data which the kernel applies to.
 
 As a concrete example, for a kernel function in which the zeroth dimension is described by a squared-exponential kernel, but the first, second, and third dimensions are described by a rational quadratic kernel the kernel could be described as
@@ -278,17 +286,24 @@ A list of the symbols for each covariance function is given in table ref:tab:ker
 #+ATTR_LATEX: :placement [b]
 #+CAPTION: A table of commonly encountered covariance functions.
 #+NAME: tab:kernels
-#+tblname: kernels-table
-| Kernel              | Sym.   | Properties                          |
-|---------------------+--------+-------------------------------------|
-| Squared-exponential | $\SE$  | Smooth local variation.             |
-| Periodic            | $\Per$ | Smooth global periodic variation.   |
-| Linear              | $\Lin$ | Global continuous linear variation. |
-| Rational Quadratic  | $\RQ$  | Variation on multiple scales.       |
-| Constant            | $\Con$ | Scaling factor.                     |
+#+LABEL: tab:kernels
+#+tblname: tab:kernels
+| Kernel              | Sym.     | Properties                          |
+|---------------------+----------+-------------------------------------|
+| Squared-exponential | $\SE$    | Smooth local variation.             |
+| Matern-3/2          | $\M32$   |                                     |
+| Matern-5/2          | $\M52$ |                                     |
+| Periodic            | $\Per$   | Smooth global periodic variation.   |
+| Linear              | $\Lin$   | Global continuous linear variation. |
+| Rational Quadratic  | $\RQ$    | Variation on multiple scales.       |
+| Constant            | $\Con$   | Scaling factor.                     |
 
 For example, we may be able to model a yearly growing trend which contains a seasonal variation with a combination of a linear and a
 periodic kernel, $\Lin \times \SE$.
+
+
+** Higher-dimensional problems
+
 
 * Training the model
   :PROPERTIES:
@@ -390,54 +405,26 @@ any given point in the parameter space. The network structure which is
 established by this subdivision of the parameter space is known as a
 /gating network/.
 
-Early approaches to using local experts in GPs used
-kd-trees\cite{shen2005fast} to sub-divide the parameter space, and then
-modelled each subspace with its own GP. The GPs were trained together,
-with each having the same kernel hyper-parameters. Final predictions
-were then produced as a weighted sum of the individual GPs' predictions.
-While this approach was somewhat effective, it enforced a stationary
-structure on the covariance matrix, and the paper does not treat the
-combination of the prediction uncertainties.
+Early approaches to using local experts in GPs used kd-trees cite:shen2005fast to sub-divide the parameter space, and then modelled each subspace with its own GP. 
+The GPs were trained together, with each having the same kernel hyper-parameters. 
+Final predictions were then produced as a weighted sum of the individual GPs' predictions. 
+While this approach was somewhat effective, it enforced a stationary structure on the covariance matrix, and the paper does not treat the combination of the prediction uncertainties.
 
-Approaches which follow the work of
-\cite{Jacobs:1991:AML:1351011.1351018} on mixtures of local experts have
-had some more promise, allowing each GP to have its own set of
-hyper-parameters, allowing greater freedom in modelling heteroscedastic
-and non-stationary data.
+Approaches which follow the work of cite:Jacobs:1991:AML:1351011.1351018 on mixtures of local experts have had some more promise, allowing each GP to have its own set of hyper-parameters, allowing greater freedom in modelling heteroskedastic and non-stationary data.
 
 Deciding on the number of sub-models is a non-trivial problem; one
-approach is to model the parameter space using an infinite mixture model
-(IMM)\cite{rasmussen2002infinite}, in which the gating network is
-effectively a Dirichlet process over the training data. The predictions
-from each sub-model are then summed to find the global prediction. While
-this approach offers greater flexibility for modelling more complex
-underlying functions, it does little to improve the speed of GP
-predictions. Additional IMM approaches are proposed by
-\cite{meeds2006alternative}, and a comparable, variational approach is
-taken by \cite{yuan2009variational}.
+approach is to model the parameter space using an abbr:imm cite:rasmussen2002infinite, in which the gating network is effectively a Dirichlet process over the training data. 
+The predictions from each sub-model are then summed to find the global prediction. 
+While this approach offers greater flexibility for modelling more complex underlying functions, it does little to improve the speed of GP predictions. 
+Additional abbr:imm approaches are proposed by cite:meeds2006alternative, and a comparable, variational approach is taken by cite:yuan2009variational.
 
-All of these approaches have the difficulty of requiring the gating
-network to assign a weight (often called a /responsibility/ to each
-sub-model's prediction when calculating the global prediction, adding an
-additional layer of inference, which normally requires an MCMC sampler
-to perform. /Product-of-experts/ models avoid this complication by
-multiplying the sub-model predictions, but these models have either
-turned out to be excessively confident,\cite{2014arXiv1412.3078N}, or
-excessively conservative\cite{2014arXiv1410.7827C}.
+All of these approaches have the difficulty of requiring the gating network to assign a weight (often called a /responsibility/ to each sub-model's prediction when calculating the global prediction, adding an
+additional layer of inference, which normally requires an MCMC sampler to perform. 
+/Product-of-experts/ models avoid this complication by multiplying the sub-model predictions, but these models have either turned out to be excessively confident,\cite{2014arXiv1412.3078N}, or excessively conservative\cite{2014arXiv1410.7827C}.
 
-These problems have lead to the development of the Bayesian Committee
-Machine (BCM)\cite{tresp2000bayesian}, which assigns a weight to each
-sub-model's prediction which is equal to the inverse of the prediction's
-covariance, in order that sub-models which better observe the predicted
-region are given a greater weight in the global prediction. This
-approach can suffer as a result of models which contains week experts,
-and so the /robust Bayesian Committee
-Machine/\cite{deisenroth2015distributed} has been proposed to provide a
-more robust framework for Gaussian process regression with many experts.
-This approach also allows for the computation of the model's prediction
-to be highly-parallelised, with the potential for each sub-model being
-evaluated on separate compute nodes, and combined together by another
-process running on another node.
+These problems have lead to the development of the Bayesian Committee Machine (BCM)\cite{tresp2000bayesian}, which assigns a weight to each sub-model's prediction which is equal to the inverse of the prediction's covariance, in order that sub-models which better observe the predicted region are given a greater weight in the global prediction. 
+This approach can suffer as a result of models which contains week experts, and so the /robust Bayesian Committee Machine/\cite{deisenroth2015distributed} has been proposed to provide a more robust framework for Gaussian process regression with many experts.
+This approach also allows for the computation of the model's prediction to be highly-parallelised, with the potential for each sub-model being evaluated on separate compute nodes, and combined together by another process running on another node.
 
 ** Stochastic Variational Inference
 
@@ -594,6 +581,9 @@ A trivial task is to reproduce a waveform from a Gaussian Process which
 is trained on a single waveform which is generated at one set of
 parameters.
 
+# the script which is used for this section can be found in scripts/gp/single-waveform.py
+# this file is also available as an iPython notebook.
+
 #+CAPTION: The properties of the training waveform used for the model.
 #+NAME: tab:imrphenomparamssingle
 | Property         | Value                                       |
@@ -605,6 +595,9 @@ parameters.
 | Distance         | $\SI{400}{\mega\parsec}$                    |
 | Time range       | $(\SI{-0.1}{\second}, \SI{0.005}{\second})$ |
 
+#+CAPTION: A Gaussian process trained on data from a single abbr:bbh gravitational waveform.
+#+ATTR_LATEX: :width \textwidth
+file:figures/gp/single-waveform.pdf
 
 
 As a first test we generated a BBH waveform using the model, as
@@ -630,43 +623,60 @@ were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
 
 ** Estimating contours
 
-#+LABEL: fig:gp:examples:mountains1
-#+ATTR_LATEX: :width \textwidth
-#+CAPTION: Trained off a small number of spot-heights, a abbr:gp is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
-file:figures/arrochar-alps.pdf
+   #+LABEL: fig:gp:examples:mountains1
+   #+ATTR_LATEX: :width \textwidth
+   #+CAPTION: Trained off a small number of spot-heights, a abbr:gp is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
+   file:figures/gp/arrochar-alps.pdf
+
+   #+LABEL: fig:gp:examples:mountains1
+   #+ATTR_LATEX: :width \textwidth
+   #+CAPTION: The abbr:gp derived landscape, with a variety of different covariance functions used to produce the interpolated topology. 
+   file:figures/gp/arrochar-kernels.pdf
 
 ** A concrete example
 
-* Heron: A precessing waveform model
-  :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:heron:introduction
-  :END:
 
-The difficulties of producing accurate abbr:bbh waveforms for any arbitrary configuration of the system of two black holes are described in section ref:sec:sources:cbc:nr, with the speed of evaluation making the production of new waveforms from abbr:nr codes in conjunction with a matched filtering process impractical. 
-As a result a fairly small number of abbr:nr waveforms are available, and analyses must interpolate between these in order to produce waveforms at arbitrary locations within the parameter space. A number of such analytical approximants, calibrated against a small number of abbr:nr waveforms are available, for example the ~IMRPhenomP~ and ~SEOBNR~ families of approximants (see section ref:sec:sources:cbc:approximants), which attempt to combine fitting to abbr:nr data with prior physical information to produce an analytical approximant waveform for any arbitrary configuration. 
-Understanding the accuracy of these models throughout the physical parameter space can be difficult, and incorporating this uncertainty in a Bayesian parameter estimation process more so.
-The ~Heron~ model is an attempt to overcome these challenges by producing an interpolative model using abbr:gp regression, for a abbr:gp model conditioned on data derived from abbr:nr waveforms.
-The output of a abbr:gp regressor is not a single function, but rather a distribution of functions, and as a result the variance of the waveform prediction at each point in the parameter space of the system can be determined simultaneously with the mean prediction. 
-This uncertainty can then be included in a Bayesian matched filtering process.
-
-#+CAPTION: Samples from the Heron predictive posterior distribution evaluated at ($q=1$, $\vec{S}_{1} = (0,0,0)$, $\vec{S}_{2} = (0,0,0)$), representing a non-spinning, equal-mass system. One-hundred draws from the posterior are plotted in grey, alongside the mean of the abbr:gp (dashed grey line), and the variance (shaded grey region).
-#+ATTR_LATEX: :width \textwidth 
-[[file:figures/heron-nonspinning-gt.pdf]]
-
-
-
-[2] Jaakkola's heuristic is a heuristic for global optimisation of real
-    functions; in this case it suggests that we calculate the distances
-    between all input pairs along a given dimension of the data set, and
-    take the inverse of the median of these distances to be the initial
-    value for each scale factor.
-
-
-* Gaussian processes for experimental design
+* Gaussian processes and experimental design
   :PROPERTIES:
   :CUSTOM_ID: sec:gpr:design
   :END:
-** Latin hypercubes
+
+** Preparing training data
+
+   #+CAPTION: The Rosenbrock saddle function, a standard function used to test numerical optimisation algorithms.
+   #+ATTR_LATEX: :width \textwidth
+   file:figures/gp/rosenbrock-function.pdf
+
+   #+CAPTION: Twenty-five randomly selected samples from the Rosenbrock function.
+   #+LABEL: fig:gp:design:initial:rosen:random:training
+   #+ATTR_LATEX: :width \textwidth
+   file:figures/gp/rosen-random-training.pdf
+
+   #+CAPTION: The output of a abbr:gp trained on the 25 samples from figure ref:fig:gp:design:initial:rosen:random:training 
+   #+ATTR_LATEX: :width \textwidth
+   file:figures/gp/rosen-random-trained-25.pdf
+
+   #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at randomly selected locations within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
+   #+ATTR_LATEX: :width \textwidth
+   file:figures/gp/rosen-random-progress.pdf
+
+   #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at locations defined by a full factorial sampling plan within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
+   #+ATTR_LATEX: :width \textwidth
+   file:figures/gp/rosen-factorial-progress.pdf
+
+   #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at locations defined by a latin squares sampling plan within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
+   #+ATTR_LATEX: :width \textwidth
+   file:figures/gp/rosen-latin-progress.pdf
+
+** Model infill
+
+   #+CAPTION: A abbr:gp surrogate for the Rosenbrock saddle function, with the mean prediction in the left panel and the standard deviation of that prediction on the right. The 25 training points, which were devised using a latin hypercube sampling plan, are plotted as circles coloured according to the true value of the function at those points in the left plot, and as crosses on the right plot. A candidate location for a new sample is plotted as a blue circle on both plots. This point represents the location where the model has produces the largest variance in its prediction.
+   #+ATTR_LATEX: :width \textwidth
+   [[file:figures/gp/infill-max-uncertainty.pdf]]
+   
+
+** Conventional sample planning methods
+*** Latin hypercubes
    :PROPERTIES:
    :CUSTOM_ID: sec:gpr:design:hypercubes
    :END:
@@ -674,11 +684,6 @@ This uncertainty can then be included in a Bayesian matched filtering process.
    :PROPERTIES:
    :CUSTOM_ID: sec:gpr:design:voronoi
    :END:
-** Fully information-driven design
-   :PROPERTIES:
-   :CUSTOM_ID: sec:gpr:design:information
-   :END:
-
 
 * Extending the Gaussian Process
   :PROPERTIES:

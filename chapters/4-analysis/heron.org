@@ -1,0 +1,23 @@
+* Heron: A precessing waveform model
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gpr:heron:introduction
+  :END:
+
+The difficulties of producing accurate abbr:bbh waveforms for any arbitrary configuration of the system of two black holes are described in section ref:sec:sources:cbc:nr, with the speed of evaluation making the production of new waveforms from abbr:nr codes in conjunction with a matched filtering process impractical. 
+As a result a fairly small number of abbr:nr waveforms are available, and analyses must interpolate between these in order to produce waveforms at arbitrary locations within the parameter space. A number of such analytical approximants, calibrated against a small number of abbr:nr waveforms are available, for example the ~IMRPhenomP~ and ~SEOBNR~ families of approximants (see section ref:sec:sources:cbc:approximants), which attempt to combine fitting to abbr:nr data with prior physical information to produce an analytical approximant waveform for any arbitrary configuration. 
+Understanding the accuracy of these models throughout the physical parameter space can be difficult, and incorporating this uncertainty in a Bayesian parameter estimation process more so.
+The ~Heron~ model is an attempt to overcome these challenges by producing an interpolative model using abbr:gp regression, for a abbr:gp model conditioned on data derived from abbr:nr waveforms.
+The output of a abbr:gp regressor is not a single function, but rather a distribution of functions, and as a result the variance of the waveform prediction at each point in the parameter space of the system can be determined simultaneously with the mean prediction. 
+This uncertainty can then be included in a Bayesian matched filtering process.
+
+#+CAPTION: Samples from the Heron predictive posterior distribution evaluated at ($q=1$, $\vec{S}_{1} = (0,0,0)$, $\vec{S}_{2} = (0,0,0)$), representing a non-spinning, equal-mass system. One-hundred draws from the posterior are plotted in grey, alongside the mean of the abbr:gp (dashed grey line), and the variance (shaded grey region).
+#+ATTR_LATEX: :width \textwidth 
+[[file:figures/heron-nonspinning-gt.pdf]]
+
+
+
+[2] Jaakkola's heuristic is a heuristic for global optimisation of real
+    functions; in this case it suggests that we calculate the distances
+    between all input pairs along a given dimension of the data set, and
+    take the inverse of the median of these distances to be the initial
+    value for each scale factor.

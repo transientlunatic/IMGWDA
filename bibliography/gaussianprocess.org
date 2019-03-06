@@ -1,0 +1,253 @@
+* Basic Theory
+** Textbooks
+*** Gaussian Processes for Machine Learning (Adaptive Computation and Machine Learning)
+    :PROPERTIES:
+    :TITLE:    Gaussian Processes for Machine Learning (Adaptive Computation and Machine Learning)
+    :BTYPE:    book
+    :CUSTOM_ID: gpr.book.rw
+    :AUTHOR:   Rasmussen, Carl Edward and Williams, Christopher K. I.
+    :YEAR:     2005
+    :ISBN:     026218253X
+    :PUBLISHER: The MIT Press
+    :END:
+*** Engineering design via surrogate modelling: a practical guide
+    :PROPERTIES:
+    :TITLE:    Engineering design via surrogate modelling: a practical guide
+    :BTYPE:    book
+    :CUSTOM_ID: forrester2008engineering
+    :AUTHOR:   Forrester, Alexander and Sobester, Andras and Keane, Andy
+    :YEAR:     2008
+    :PUBLISHER: John Wiley \& Sons
+    :END:
+*** {Bayesian Reasoning and Machine Learning}
+    :PROPERTIES:
+    :TITLE:    {Bayesian Reasoning and Machine Learning}
+    :BTYPE:    book
+    :CUSTOM_ID: barberBRML2012
+    :AUTHOR:   Barber, D.
+    :PUBLISHER: {Cambridge University Press}
+    :YEAR:     2012
+    :END:
+*** Information Theory, Inference and Learning Algorithms
+    :PROPERTIES:
+    :TITLE:    Information Theory, Inference and Learning Algorithms
+    :BTYPE:    book
+    :CUSTOM_ID: 2003itil.book.....M
+    :AUTHOR:   {Mackay}, David J.~C.
+    :BOOKTITLE: Information Theory, Inference and Learning Algorithms, by David J. C. MacKay, pp. 640. ISBN 0521642981. Cambridge, UK: Cambridge University Press, October 2003.
+    :YEAR:     2003
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2003itil.book.....M
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+* Specialised models
+** Sparse Gaussian Processes
+** Hierarhical Gaussian Processes
+*** Fast Direct Methods for Gaussian Processes
+    :PROPERTIES:
+    :TITLE:    Fast Direct Methods for Gaussian Processes
+    :BTYPE:    article
+    :CUSTOM_ID: hodlr
+    :AUTHOR:   {Ambikasaran}, S. and {Foreman-Mackey}, D. and {Greengard}, L. and {Hogg}, D.~W. and {O'Neil}, M.
+    :YEAR:     2014
+    :MONTH:    mar
+    :URL:      http://arxiv.org/abs/1403.6015
+    :END:
+
+** Experts-based Gaussian Processes
+*** Generalized Product of Experts for Automatic and Principled Fusion of Gaussian Process Predictions
+    :PROPERTIES:
+    :TITLE:    Generalized Product of Experts for Automatic and Principled Fusion of Gaussian Process Predictions
+    :BTYPE:    article
+    :CUSTOM_ID: 2014arXiv1410.7827C
+    :AUTHOR:   {Cao}, Y. and {Fleet}, D.~J.
+    :JOURNAL:  ArXiv e-prints
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1410.7827
+    :PRIMARYCLASS: cs.LG
+    :KEYWORDS: Computer Science - Learning, Computer Science - Artificial Intelligence, Statistics - Machine Learning
+    :YEAR:     2014
+    :MONTH:    oct
+    :ADSURL:   http://adsabs.harvard.edu/abs/2014arXiv1410.7827C
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Distributed Gaussian Processes.
+    :PROPERTIES:
+    :TITLE:    Distributed Gaussian Processes.
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: deisenroth2015distributed
+    :AUTHOR:   Deisenroth, Marc Peter and Ng, Jun Wei
+    :BOOKTITLE: ICML
+    :PAGES:    1481--1490
+    :YEAR:     2015
+    :END:
+
+*** A Bayesian committee machine
+    :PROPERTIES:
+    :TITLE:    A Bayesian committee machine
+    :BTYPE:    article
+    :CUSTOM_ID: tresp2000bayesian
+    :AUTHOR:   Tresp, Volker
+    :JOURNAL:  Neural computation
+    :VOLUME:   12
+    :NUMBER:   11
+    :PAGES:    2719--2741
+    :YEAR:     2000
+    :PUBLISHER: MIT Press
+    :END:
+*** Fast Gaussian Process Regression using KD-Trees
+    :PROPERTIES:
+    :TITLE:    Fast Gaussian Process Regression using KD-Trees
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: shen2005fast
+    :AUTHOR:   Shen, Yirong and Ng, Andrew Y and Seeger, Matthias
+    :BOOKTITLE: Proceedings of the 18th International Conference on Neural Information Processing Systems
+    :PAGES:    1225--1232
+    :YEAR:     2005
+    :ORGANIZATION: MIT Press
+    :END:
+*** Adaptive Mixtures of Local Experts
+    :PROPERTIES:
+    :TITLE:    Adaptive Mixtures of Local Experts
+    :BTYPE:    article
+    :CUSTOM_ID: Jacobs:1991:AML:1351011.1351018
+    :AUTHOR:   Jacobs, Robert A. and Jordan, Michael I. and Nowlan, Steven J. and Hinton, Geoffrey E.
+    :JOURNAL:  Neural Comput.
+    :ISSUE_DATE: Spring 1991
+    :VOLUME:   3
+    :NUMBER:   1
+    :MONTH:    mar
+    :YEAR:     1991
+    :ISSN:     0899-7667
+    :PAGES:    79--87
+    :NUMPAGES: 9
+    :URL:      http://dx.doi.org/10.1162/neco.1991.3.1.79
+    :DOI:      10.1162/neco.1991.3.1.79
+    :ACMID:    1351018
+    :PUBLISHER: MIT Press
+    :ADDRESS:  Cambridge, MA, USA
+    :END:
+*** Infinite Mixtures of Gaussian Process Experts
+    :PROPERTIES:
+    :TITLE:    Infinite Mixtures of Gaussian Process Experts
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: rasmussen2002infinite
+    :AUTHOR:   Rasmussen, Carl E and Ghahramani, Zoubin
+    :BOOKTITLE: Advances in Neural Information Processing Systems
+    :PAGES:    881--888
+    :YEAR:     2002
+    :END:
+*** An Alternative Infinite Mixture Of Gaussian Process Experts
+    :PROPERTIES:
+    :TITLE:    An Alternative Infinite Mixture Of Gaussian Process Experts
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: meeds2006alternative
+    :AUTHOR:   Meeds, Edward and Osindero, Simon
+    :BOOKTITLE: Advances in Neural Information Processing Systems
+    :PAGES:    883--890
+    :YEAR:     2006
+    :END:
+*** Variational mixture of Gaussian process experts
+    :PROPERTIES:
+    :TITLE:    Variational mixture of Gaussian process experts
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: yuan2009variational
+    :AUTHOR:   Yuan, Chao and Neubauer, Claus
+    :BOOKTITLE: Advances in Neural Information Processing Systems
+    :PAGES:    1897--1904
+    :YEAR:     2009
+    :END:
+*** Hierarchical Mixture-of-Experts Model for Large-Scale Gaussian Process Regression
+    :PROPERTIES:
+    :TITLE:    Hierarchical Mixture-of-Experts Model for Large-Scale Gaussian Process Regression
+    :BTYPE:    article
+    :CUSTOM_ID: 2014arXiv1412.3078N
+    :AUTHOR:   {Ng}, J.~W. and {Deisenroth}, M.~P.
+    :JOURNAL:  ArXiv e-prints
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1412.3078
+    :PRIMARYCLASS: stat.ML
+    :KEYWORDS: Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Learning, Statistics - Computation
+    :YEAR:     2014
+    :MONTH:    dec
+    :ADSURL:   http://adsabs.harvard.edu/abs/2014arXiv1412.3078N
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+
+* Kernels
+** Basic theory
+** Level Crossings for Random Fields
+   :PROPERTIES:
+   :TITLE:    Level Crossings for Random Fields
+   :BTYPE:    article
+   :CUSTOM_ID: adler1976
+   :AUTHOR:   Adler, Robert J. and Hasofer, A. M.
+   :DOI:      10.1214/aop/1176996176
+   :FJOURNAL: The Annals of Probability
+   :JOURNAL:  Ann. Probab.
+   :MONTH:    02
+   :NUMBER:   1
+   :PAGES:    1--12
+   :PUBLISHER: The Institute of Mathematical Statistics
+   :URL:      https://doi.org/10.1214/aop/1176996176
+   :VOLUME:   4
+   :YEAR:     1976
+   :END:
+** Kernel design
+*** Automatic Model Construction with {G}aussian Processes
+    :PROPERTIES:
+    :TITLE:    Automatic Model Construction with {G}aussian Processes
+    :BTYPE:    phdthesis
+    :CUSTOM_ID: duvenaud.thesis.2014
+    :AUTHOR:   David Duvenaud
+    :YEAR:     2014
+    :SCHOOL:   {Computational and Biological Learning Laboratory, University of Cambridge}
+    :END:
+
+* Examples and data
+** Modeling of strength of high-performance concrete using artificial neural networks 
+   :PROPERTIES:
+   :TITLE:    Modeling of strength of high-performance concrete using artificial neural networks
+   :BTYPE:    article
+   :CUSTOM_ID: Yeh19981797
+   :JOURNAL:  Cement and Concrete Research
+   :VOLUME:   28
+   :NUMBER:   12
+   :PAGES:    1797 - 1808
+   :YEAR:     1998
+   :NOTE:
+   :ISSN:     0008-8846
+   :DOI:      http://dx.doi.org/10.1016/S0008-8846(98)00165-3
+   :URL:      http://www.sciencedirect.com/science/article/pii/S0008884698001653
+   :AUTHOR:   I.-C. Yeh
+   :ABSTRACT: Several studies independently have shown that concrete strength development is determined not only by the water-to-cement ratio, but that it also is influenced by the content of other concrete ingredients. High-performance concrete is a highly complex material, which makes modeling its behavior a very difficult task. This paper is aimed at demonstrating the possibilities of adapting artificial neural networks (ANN) to predict the compressive strength of high-performance concrete. A set of trial batches of \{HPC\} was produced in the laboratory and demonstrated satisfactory experimental results. This study led to the following conclusions: 1) A strength model based on \{ANN\} is more accurate than a model based on regression analysis; and 2) It is convenient and easy to use \{ANN\} models for numerical experiments to review the effects of the proportions of each variable on the concrete mix.
+   :END:
+
+
+* Books & Textbooks
+
+
+
+* Unsorted
+** {A New Method of Locating the Maximum Point of an Arbitrary Multipeak Curve in the Presence of Noise}
+   :PROPERTIES:
+   :TITLE:    {A New Method of Locating the Maximum Point of an Arbitrary Multipeak Curve in the Presence of Noise}
+   :BTYPE:    article
+   :CUSTOM_ID: Kushner1964
+   :AUTHOR:   Kushner, H. J.
+   :DOI:      10.1115/1.3653121
+   :FILE:     :home/daniel/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kushner - 1964 - A New Method of Locating the Maximum Point of an Arbitrary Multipeak Curve in the Presence of Noise.pdf:pdf
+   :ISSN:     00219223
+   :JOURNAL:  Journal of Basic Engineering
+   :KEYWORDS: Brownian motion,Gradient methods,Noise (Sound),Optimization,Sampling (Acoustical engineering),Stochastic processes
+   :NUMBER:   1
+   :PAGES:    97
+   :PUBLISHER: American Society of Mechanical Engineers
+   :URL:      http://fluidsengineering.asmedigitalcollection.asme.org/article.aspx?articleid=1431594
+   :VOLUME:   86
+   :YEAR:     1964
+   :END:
+
+
+
+
+

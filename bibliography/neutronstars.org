@@ -1,0 +1,33 @@
+* The equation of state of hot, dense matter and neutron stars
+  :PROPERTIES:
+  :TITLE:    The equation of state of hot, dense matter and neutron stars
+  :BTYPE:    article
+  :CUSTOM_ID: 2016PhR...621..127L
+  :AUTHOR:   {Lattimer}, J.~M. and {Prakash}, M.
+  :JOURNAL:  \physrep
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1512.07820
+  :PRIMARYCLASS: astro-ph.SR
+  :KEYWORDS: Neutron stars, Dense matter in equilibrium, Thermal effects, Heavy-ions, Dense matter off-equilibrium, Equation of state of dense matter
+  :YEAR:     2016
+  :MONTH:    mar
+  :VOLUME:   621
+  :PAGES:    127-164
+  :DOI:      10.1016/j.physrep.2015.12.005
+  :ADSURL:   http://adsabs.harvard.edu/abs/2016PhR...621..127L
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+
+  [[file:../papers/1512.07820.pdf][PDF]]
+** Abstract 
+    Recent developments in the theory of pure neutron matter and
+    experiments concerning the symmetry energy of nuclear matter,
+    coupled with recent measurements of high-mass neutron stars, now
+    allow for relatively tight constraints on the equation of state of
+    dense matter. We review how these constraints are formulated and
+    describe the implications they have for neutron stars and
+    core-collapse supernovae. We also examine thermal properties of
+    dense matter, which are important for supernovae and neutron star
+    mergers, but which cannot be nearly as well constrained at this
+    time by experiment. In addition, we consider the role of the
+    equation of state in medium-energy heavy-ion collisions.

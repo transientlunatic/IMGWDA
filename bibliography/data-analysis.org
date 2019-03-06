@@ -1,0 +1,265 @@
+* Burst search methods
+** Excess power statistic for detection of burst sources of gravitational radiation
+   :PROPERTIES:
+   :TITLE:    Excess power statistic for detection of burst sources of gravitational radiation
+   :BTYPE:    article
+   :CUSTOM_ID: PhysRevD.63.042003
+   :AUTHOR:   Anderson, Warren G. and Brady, Patrick R. and Creighton, Jolien D. E. and Flanagan, \'Eanna \'E.
+   :JOURNAL:  Phys. Rev. D
+   :VOLUME:   63
+   :ISSUE:    4
+   :PAGES:    042003
+   :NUMPAGES: 20
+   :YEAR:     2001
+   :MONTH:    Jan
+   :PUBLISHER: American Physical Society
+   :DOI:      10.1103/PhysRevD.63.042003
+   :URL:      https://link.aps.org/doi/10.1103/PhysRevD.63.042003
+   :END:
+
+   [[file:../papers/PhysRevD.63.042003.pdf][PDF]]
+** Comparison of filters for detecting gravitational wave bursts in interferometric detectors
+   :PROPERTIES:
+   :TITLE:    Comparison of filters for detecting gravitational wave bursts in interferometric detectors
+   :BTYPE:    article
+   :CUSTOM_ID: PhysRevD.67.062004
+   :AUTHOR:   Arnaud, Nicolas and Barsuglia, Matteo and Bizouard, Marie-Anne and Brisson, Violette and Cavalier, Fabien and Davier, Michel and Hello, Patrice and Kreckelbergh, Stephane and Porter, Edward K. and Pradier, Thierry
+   :JOURNAL:  Phys. Rev. D
+   :VOLUME:   67
+   :ISSUE:    6
+   :PAGES:    062004
+   :NUMPAGES: 13
+   :YEAR:     2003
+   :MONTH:    Mar
+   :PUBLISHER: American Physical Society
+   :DOI:      10.1103/PhysRevD.67.062004
+   :URL:      https://link.aps.org/doi/10.1103/PhysRevD.67.062004
+   :END:
+
+   [[file:../papers/PhysRevD.67.062004.pdf][PDF]]
+
+
+
+* Relativity Approximants
+** SEOBNR
+*** Approaching faithful templates for nonspinning binary black holes using the effective-one-body approach
+    :PROPERTIES:
+    :TITLE:    Approaching faithful templates for nonspinning binary black holes using the effective-one-body approach
+    :BTYPE:    article
+    :CUSTOM_ID: 2007PhRvD..76j4049B
+    :AUTHOR:   {Buonanno}, A. and {Pan}, Y. and {Baker}, J.~G. and {Centrella}, J. and {Kelly}, B.~J. and {McWilliams}, S.~T. and {van Meter}, J.~R.
+    :JOURNAL:  \prd
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   0706.3732
+    :PRIMARYCLASS: gr-qc
+    :KEYWORDS: Post-Newtonian approximation, perturbation theory, related approximations, Numerical relativity, Wave generation and sources, Classical black holes
+    :YEAR:     2007
+    :MONTH:    nov
+    :VOLUME:   76
+    :NUMBER:   10
+    :EID:      104049
+    :PAGES:    104049
+    :DOI:      10.1103/PhysRevD.76.104049
+    :ADSURL:   http://adsabs.harvard.edu/abs/2007PhRvD..76j4049B
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+
+*** Effective-one-body model for black-hole binaries with generic mass ratios and spins
+    :PROPERTIES:
+    :TITLE:    Effective-one-body model for black-hole binaries with generic mass ratios and spins
+    :BTYPE:    article
+    :CUSTOM_ID: 2014PhRvD..89f1502T
+    :AUTHOR:   {Taracchini}, A. and {Buonanno}, A. and {Pan}, Y. and {Hinderer}, T. and {Boyle}, M. and {Hemberger}, D.~A. and {Kidder}, L.~E. and {Lovelace}, G. and {Mrou{\'e}}, A.~H. and {Pfeiffer}, H.~P. and {Scheel}, M.~A. and {Szil{\'a}gyi}, B. and {Taylor}, N.~W. and {Zenginoglu}, A.
+    :JOURNAL:  \prd
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1311.2544
+    :PRIMARYCLASS: gr-qc
+    :KEYWORDS: Numerical relativity, Numerical studies of black holes and black-hole binaries, Post-Newtonian approximation, perturbation theory, related approximations, Gravitational waves: theory
+    :YEAR:     2014
+    :MONTH:    mar
+    :VOLUME:   89
+    :NUMBER:   6
+    :EID:      061502
+    :PAGES:    061502
+    :DOI:      10.1103/PhysRevD.89.061502
+    :ADSURL:   http://adsabs.harvard.edu/abs/2014PhRvD..89f1502T
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+** IMRPhenom
+*** Frequency-domain gravitational waves from nonprecessing black-hole binaries. I. New numerical waveforms and anatomy of the signal
+    :PROPERTIES:
+    :TITLE:    Frequency-domain gravitational waves from nonprecessing black-hole binaries. I. New numerical waveforms and anatomy of the signal
+    :BTYPE:    article
+    :CUSTOM_ID: 2016PhRvD..93d4006H
+    :AUTHOR:   {Husa}, S. and {Khan}, S. and {Hannam}, M. and {P{\"u}rrer}, M. and {Ohme}, F. and {Forteza}, X.~J. and {Boh{\'e}}, A.
+    :JOURNAL:  \prd
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1508.07250
+    :PRIMARYCLASS: gr-qc
+    :YEAR:     2016
+    :MONTH:    feb
+    :VOLUME:   93
+    :NUMBER:   4
+    :EID:      044006
+    :PAGES:    044006
+    :DOI:      10.1103/PhysRevD.93.044006
+    :ADSURL:   http://adsabs.harvard.edu/abs/2016PhRvD..93d4006H
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Frequency-domain gravitational waves from nonprecessing black-hole binaries. II. A phenomenological model for the advanced detector era
+    :PROPERTIES:
+    :TITLE:    Frequency-domain gravitational waves from nonprecessing black-hole binaries. II. A phenomenological model for the advanced detector era
+    :BTYPE:    article
+    :CUSTOM_ID: 2016PhRvD..93d4007K
+    :AUTHOR:   {Khan}, S. and {Husa}, S. and {Hannam}, M. and {Ohme}, F. and {P{\"u}rrer}, M. and {Forteza}, X.~J. and {Boh{\'e}}, A.
+    :JOURNAL:  \prd
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1508.07253
+    :PRIMARYCLASS: gr-qc
+    :YEAR:     2016
+    :MONTH:    feb
+    :VOLUME:   93
+    :NUMBER:   4
+    :EID:      044007
+    :PAGES:    044007
+    :DOI:      10.1103/PhysRevD.93.044007
+    :ADSURL:   http://adsabs.harvard.edu/abs/2016PhRvD..93d4007K
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+
+*** A phenomenological template family for black-hole coalescence waveforms
+    :PROPERTIES:
+    :TITLE:    A phenomenological template family for black-hole coalescence waveforms
+    :BTYPE:    article
+    :CUSTOM_ID: 2007CQGra..24S.689A
+    :AUTHOR:   {Ajith}, P. and {Babak}, S. and {Chen}, Y. and {Hewitson}, M. and {Krishnan}, B. and {Whelan}, J.~T. and {Br{\"u}gmann}, B. and {Diener}, P. and {Gonzalez}, J. and {Hannam}, M. and {Husa}, S. and {Koppitz}, M. and {Pollney}, D. and {Rezzolla}, L. and {Santamar{\'{\i}}a}, L. and {Sintes}, A.~M. and {Sperhake}, U. and {Thornburg}, J.
+    :JOURNAL:  Classical and Quantum Gravity
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   0704.3764
+    :PRIMARYCLASS: gr-qc
+    :YEAR:     2007
+    :MONTH:    oct
+    :VOLUME:   24
+    :PAGES:    S689-S699
+    :DOI:      10.1088/0264-9381/24/19/S31
+    :ADSURL:   http://adsabs.harvard.edu/abs/2007CQGra..24S.689A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+
+* Numerical Relativity
+** Georgia tech catalog of gravitational waveforms
+   :PROPERTIES:
+   :TITLE:    Georgia tech catalog of gravitational waveforms
+   :BTYPE:    article
+   :CUSTOM_ID: 2016CQGra..33t4001J
+   :AUTHOR:   {Jani}, K. and {Healy}, J. and {Clark}, J.~A. and {London}, L. and {Laguna}, P. and {Shoemaker}, D.
+   :JOURNAL:  Classical and Quantum Gravity
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1605.03204
+   :PRIMARYCLASS: gr-qc
+   :YEAR:     2016
+   :MONTH:    oct
+   :VOLUME:   33
+   :NUMBER:   20
+   :EID:      204001
+   :PAGES:    204001
+   :DOI:      10.1088/0264-9381/33/20/204001
+   :ADSURL:   http://adsabs.harvard.edu/abs/2016CQGra..33t4001J
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+** Numerical relativity reaching into post-Newtonian territory: a compact-object binary simulation spanning 350 gravitational-wave cycles
+   :PROPERTIES:
+   :TITLE:    Numerical relativity reaching into post-Newtonian territory: a compact-object binary simulation spanning 350 gravitational-wave cycles
+   :BTYPE:    article
+   :CUSTOM_ID: 2015arXiv150204953S
+   :AUTHOR:   {Szilagyi}, B. and {Blackman}, J. and {Buonanno}, A. and {Taracchini}, A. and {Pfeiffer}, H.~P. and {Scheel}, M.~A. and {Chu}, T. and {Kidder}, L.~E. and {Pan}, Y.
+   :JOURNAL:  ArXiv e-prints
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1502.04953
+   :PRIMARYCLASS: gr-qc
+   :KEYWORDS: General Relativity and Quantum Cosmology
+   :YEAR:     2015
+   :MONTH:    feb
+   :ADSURL:   http://adsabs.harvard.edu/abs/2015arXiv150204953S
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+
+* Surrogate Models
+** A Surrogate Model of Gravitational Waveforms from Numerical Relativity Simulations of Precessing Binary Black Hole Mergers
+   :PROPERTIES:
+   :TITLE:    A Surrogate Model of Gravitational Waveforms from Numerical Relativity Simulations of Precessing Binary Black Hole Mergers
+   :BTYPE:    article
+   :CUSTOM_ID:
+   :AUTHOR:   {Blackman}, J and {Field}, S and Scheel, M and Galley, C and Hemberger D, and Schmidt, P and Smith R
+   :JOURNAL:  DCC
+   :YEAR:     2017
+   :VOLUME:
+   :NUMBER:
+   :PAGES:
+   :MONTH:
+   :NOTE:
+   :ANNOTE:
+   :END:
+
+** Fast and efficient evaluation of gravitational waveforms via reduced-order spline interpolation
+   :PROPERTIES:
+   :TITLE:    Fast and efficient evaluation of gravitational waveforms via reduced-order spline interpolation
+   :BTYPE:    article
+   :CUSTOM_ID: 2016arXiv161107529G
+   :AUTHOR:   {Galley}, C.~R. and {Schmidt}, P.
+   :JOURNAL:  ArXiv e-prints
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1611.07529
+   :PRIMARYCLASS: gr-qc
+   :KEYWORDS: General Relativity and Quantum Cosmology
+   :YEAR:     2016
+   :MONTH:    nov
+   :ADSURL:   http://adsabs.harvard.edu/abs/2016arXiv161107529G
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+** Optimizing spinning time-domain gravitational waveforms for advanced LIGO data analysis
+   :PROPERTIES:
+   :TITLE:    Optimizing spinning time-domain gravitational waveforms for advanced LIGO data analysis
+   :BTYPE:    article
+   :CUSTOM_ID: 2016CQGra..33l5025D
+   :AUTHOR:   {Devine}, C. and {Etienne}, Z.~B. and {McWilliams}, S.~T.
+   :JOURNAL:  Classical and Quantum Gravity
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1601.03393
+   :PRIMARYCLASS: astro-ph.HE
+   :YEAR:     2016
+   :MONTH:    jun
+   :VOLUME:   33
+   :NUMBER:   12
+   :EID:      125025
+   :PAGES:    125025
+   :DOI:      10.1088/0264-9381/33/12/125025
+   :ADSURL:   http://adsabs.harvard.edu/abs/2016CQGra..33l5025D
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+
+* Gaussian Processes
+** Improving gravitational-wave parameter estimation using Gaussian process regression
+   :PROPERTIES:
+   :TITLE:    Improving gravitational-wave parameter estimation using Gaussian process regression
+   :BTYPE:    article
+   :CUSTOM_ID: 2016PhRvD..93f4001M
+   :AUTHOR:   {Moore}, C.~J. and {Berry}, C.~P.~L. and {Chua}, A.~J.~K. and {Gair}, J.~R.
+   :JOURNAL:  \prd
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1509.04066
+   :PRIMARYCLASS: gr-qc
+   :YEAR:     2016
+   :MONTH:    mar
+   :VOLUME:   93
+   :NUMBER:   6
+   :EID:      064001
+   :PAGES:    064001
+   :DOI:      10.1103/PhysRevD.93.064001
+   :ADSURL:   http://adsabs.harvard.edu/abs/2016PhRvD..93f4001M
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
