@@ -100,11 +100,6 @@ These interferometers are Michelsoninterferometers with a large number of additi
  \end{align}
  which is often called the /three-term/ relation.
 
-*** Localising a gravitational wave signal
-    :PROPERTIES:
-    :CUSTOM_ID: sec:detectors:localisation
-    :END:
-
 *** Operation of a Michelson interferometer
     :PROPERTIES:
     :CUSTOM_ID: sec:detectors:interferometric:michelson
@@ -161,33 +156,6 @@ These interferometers are Michelsoninterferometers with a large number of additi
 
  This means that we can consider an interferometer with two arms to consist of one arm which acts as the time standard, against which the variations of the other can be measured. 
  However, such an arrangement also means that if the effect of a gravitational wave is the same on both arms it will not be detectable, but will be most detectable if it only one arm is affected. 
- The angle between the propagation of the abbr:gw and the detector (in addition to the polarisation of the abbr:gw) will determine the effect on each arm.
- This results in an interferometric detector having a varying sensitivity to sources across the sky, which is conventionally treated as an antenna pattern, in analogy to the similar concept in radio astronomy.
-
- # In the case of even the largest ground-based abbr:gw detectors, such as gls:ligo, which have arm lengths on the order of 4-kilometres, the detector length will be far smaller than the wavelength of any observable abbr:gw. 
- # As a result it is possible to simplify the expression from ref:eq:detectors:interferometric:theory:three-term to 
- # \begin{equation}
- # \label{eq:detectors:interferometric:theory:groundreaction}
- #  \frac{\dd t_{\text{round}}}{\dd t}  = 1 + \sin^{2} \theta 
-
- \begin{figure}
- \label{fig:detectors:interferometers:antennapattern}
-
- \caption{The antenna pattern of a two-armed interferometric detector with a $90^{\circ}$ arm separation.}
- \end{figure}
-
- Any given detector will have two antenna patterns, corresponding to the response to $+$-polarised and $\times$-polarised radiation.
- These patterns are typically denoted $F_{+}$ and $F_{\times}$ respectively.
- The overall measured strain, $h(t)$ in a detector from a gravitational wave with components $(h_{+}, h_{\times})$ will then be
- \begin{equation}
- \label{eq:detectors:interferometers:measuredstrain}
- h(t) = F_{+}(t) h_{+}(t) + F_{\times} (t) h_{\times}(t)
- \end{equation}
-
- While this antenna pattern has the effect of reducing the sensitivity of the detector to some areas of the sky, it provides additional information relating to the direction of the gravitational wave.
- This information can be utilised if a network of detectors is available, as if a signal is detected in similar detectors located elsewhere, but not (or barely) detected by another, it may be possible to infer that the signal originated in the direction of the one of the non-detecting detector's "blind spots". 
- Such an inference was valuable in the localisation of the source of gls:gw170817, which had a noticeably weak signal in the gls:virgo detector.
-
 
 *** Power Recycling
     :PROPERTIES:
@@ -235,6 +203,62 @@ These interferometers are Michelsoninterferometers with a large number of additi
  In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a gls:finesse, $\mathcal{F}=450$.
  This is formed by placing a mirror between the beam-splitter and the end mirror in each arm, as illustrated in figure
  [fig:fabry-perot].
+
+
+
+*** Antenna response of the detector
+    :PROPERTIES:
+    :CUSTOM_ID: sec:detectors:antennaresponse
+    :END:
+
+    The arrangement described in section ref:sec:detectors:interferometric:michelson, whereby one arm is used as the timing reference causes the detector to be incapable of detecting signals if both arms are affected equally by a abbr:gw.
+    The angle between the propagation of the abbr:gw and the detector (in addition to the polarisation of the abbr:gw) will determine the effect on each arm.
+    This results in an interferometric detector having a varying sensitivity to sources across the sky, which is conventionally treated as an antenna pattern, in analogy to the similar concept in radio astronomy.
+    For a abbr:gw approaching the detector from a position $(\alpha, \delta)$ on the sky these patterns for the $+$- and $\times$-polarisations, $F_{+}$ and $F_{\times}$, will be 
+    \begin{align}
+    \label{eq:detectors:antennapattern:plus}
+    F_{+} &= \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\alpha \cos 2\psi - \sin\delta\sin 2 \alpha \sin 2 \psi \\
+    F_{\times} &=  \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\phi \sin 2\psi - \sin\delta\sin 2 \phi \cos 2 \psi 
+    \end{align}
+for $\psi$ the polarisation angle of the gravitational wave, which corresponds to the rotation of the basis vectors defining the polarisations of the abbr:gw compared to the detector.
+The $+$-polarised response is plotted in figure ref:fig:detectors:interferometers:antennapattern, which clearly depicts the four regions of low sensitivity. 
+    
+    \begin{figure}
+    \label{fig:detectors:interferometers:antennapattern}
+    \includegraphics{figures/intro/aligo-antenna-pattern.pdf}
+    \caption{The antenna pattern, in response to $+$-polarised gravitational waves, of a two-armed interferometric detector with a $90^{\circ}$ arm separation.}
+    \end{figure}
+    
+
+    The overall measured strain, $h(t)$ in a detector from a gravitational wave with components $(h_{+}, h_{\times})$ will then be
+    \begin{equation}
+    \label{eq:detectors:interferometers:measuredstrain}
+    h(t) = F_{+}(t) h_{+}(t) + F_{\times} (t) h_{\times}(t)
+    \end{equation}
+    
+    While this antenna pattern has the effect of reducing the sensitivity of the detector to some areas of the sky, it provides additional information relating to the direction of the gravitational wave.
+    This information can be utilised if a network of detectors is available, as if a signal is detected in similar detectors located elsewhere, but not (or barely) detected by another, it may be possible to infer that the signal originated in the direction of the one of the non-detecting detector's "blind spots". 
+ Such an inference was valuable in the localisation of the source of gls:gw170817, which had a noticeably weak signal in the gls:virgo detector.
+
+    
+
+*** Localising a gravitational wave signal
+    :PROPERTIES:
+    :CUSTOM_ID: sec:detectors:localisation
+    :END:
+    
+    If a network of at least two geographically separated detectors observes a signal it is possible to ascertain the location in the sky, $\hat{\vec{\Omega}}$ from the difference in arrival times between the two sites.
+    For a detector at a position $\vec{r}_{D}$, and an arbitrary reference location $\vec{r}_{0}$ this time delay, $\delta t$ will be
+    \begin{equation}
+    \label{eq:intro:detectors:timedelay}
+    \delta t (\hat{\vec{\Omega}}) = \frac{1}{c} (\vec{r}_{0} - \vec{r}_{D}) \cdot \hat{\vec{\Omega}}
+    \end{equation}
+    This allows the location of the signal to be confined to a ring on the sky corresponding to constant $\Delta t$.
+    Timing uncertainty in the signal, which arises both from clock uncertainties and uncertainties in defining a reference point in the received signal increase the area of this region.
+    As more detectors are added to the network it is possible to reduce this area, as increasing the number of detector pairs works to reduce the sky area compatible with the observed delay times.
+
+    Additional localisation information can be attained from the observed amplitude of the signal in each detector.
+    The signal will be convolved with the antenna pattern (see section ref:sec:detectors:antennaresponse); as each detector is insensitive to some regions of the sky, the total plausible localisation of the signal is reduced.
 
 
 ** Ground-based interferometers
@@ -328,10 +352,12 @@ These interferometers are Michelsoninterferometers with a large number of additi
     :END:
     #+NAME:sec:detectors:lisa
 
- #+ATTR_LATEX: :float t 
- #+ATTR_LATEX: :placement {t}
- #+CAPTION: The gls:amplitude-spectral-density of the gls:lisa detector within their sensitive band, at design sensitivity.
- [[./figures/elisa-asd.pdf]]
+ \begin{figure}
+ \caption{The gls:amplitude-spectral-density of the gls:lisa and gls:decigo detectors within their sensitive band, at design sensitivity.
+ \label{fig:detectors:space}
+ }
+ \includegraphics{figures/intro/space-asd.pdf}
+ \end{figure}
 
     abbr:lisa is a planned space-based gravitational wave observatory, under development by the European Space Agency, which would be placed in a heliocentric orbit at the L1 Lagrange point. In comparison to the kilometre-scale arms of second-generation ground-based detectors such as abbr:ligo, abbr:lisa is proposed to have arms which are 2.5 million kilometres long, giving the detector much greater sensitivity at low frequencies than is possible with ground-based detectors.
 
@@ -409,6 +435,15 @@ These interferometers are Michelsoninterferometers with a large number of additi
     :CUSTOM_ID: sec:detectors:noise:thermal
     :END:
 
+    Thermal noise primarily affects the low-frequency sensitivity of a ground-based interferometer.
+    This noise source is a result of the thermal vibration of both the mirror suspensions and coatings.
+
+    The spectral density of thermal noise in a pendulum is given as cite:PhysRevD.42.2437
+
+    \begin{equation}
+    x^{2}(\omega) = \frac{4 k_{\text{B}} T \omega_{0}^{2} \phi(\omega)}{\omega m [(\omega_{0}^{2} - \omega^{2})^{2} + \omega_{0}^{4} \phi^{2}(\omega)]}.
+    \end{equation}
+
 *** Radiation pressure noise
 
 *** Seismic
@@ -429,14 +464,15 @@ Table ref:tab:detectors:noise:seismic summarises the approximate frequency range
  Despite this, both of the Advanced LIGO sites are affected by the presence of loud anthropogenic noise sources (gls:lho is affected by a nearby Department of Energy site; gls:llo is affected by logging activity and a nearby railway track) cite:2004CQGra..21.2255D. 
 gls:llo is also strongly affected by severe storms due to its proximity to the Gulf of Mexico, especially in the microseismic band.
 
+ #+LABEL: tab:detectors:noise:seismic
+ #+CAPTION: The principle seismic noise frequency bands, $f$, which affect ground-based detectors, their sources, and the distance, $D$, over which the band affects advanced-generation detectors.
  | $f$ [Hz]    | $D$ [km]   | Sources                                   |
  |-------------+------------+-------------------------------------------|
  | 0.01--1.0   | 1000       | Earthquakes, microseism                   |
  | 1--3        | 10         | Anthropogenic, nearby earthquakes, wind   |
  | 3--10       | 1          | Anthropogenic, wind                       |
  | 10--100     | 0.1        | Nearby Anthropogenic noise                |
- #+LABEL: tab:detectors:noise:seismic
- #+CAPTION: The principle seismic noise frequency bands, $f$, which affect ground-based detectors, their sources, and the distance, $D$, over which the band affects advanced-generation detectors.
+
 
  Seismic noise limits the sensitivity of the second generation detectors at low frequencies ($f < \SI{50}{\hertz}$), but it is present as a noise source across the passband of the detector. 
 The seismic noise shows a pair of notable peaks below the $\SI{1}{\hertz}$ level, one caused by ocean swell, which has a period around 4 to 30 seconds, and a second caused by standing seismic modes in the Earth which spans the range of  30 to 1000 seconds. 

@@ -206,7 +206,7 @@ The first model to take this approach, IMRPhenomA, was calibrated only against n
 
 The IMRPhenomP series of waveform models (the most recent of which is version 3 cite:2018arXiv180910113K) add the ability to model precession effects within the waveform; for versions 1 and 2 this was limited to single-spin effects, but version 3 has been designed to allow for generic abbr:bbh systems.
 In order to introduce the effects of precession into the waveform, IMRPhenomPv1 and IMRPhenomPv2 built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the "twisting-up" produced by orbital precession.
-For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation[[fn:stat-phase]], which is not strictly valid outwith the inspiral phase.
+For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation[[ fn:stat-phase]], which is not strictly valid outwith the inspiral phase.
 IMRPhenomPv3 uses a two-spin model developed by Chatziioannou et al. cite:2017PhRvD..95j4004C in order to allow for the calculation of precession angles in generic abbr:bbh systems.
 
 In summary:
@@ -484,7 +484,7 @@ Additional limits have been placed thanks to astrometric measurements of active 
 
 #+NAME:fig:T1a-spectrum
 #+CAPTION: Type-1A supernova spectrum.
-[[./figures/source-t1asn.pdf]]
+[[./figures/sources/source-t1asn.pdf]]
 
  Type Ia supernovae (SNe Ia) are believed to be the result of
  white-dwarfs in binary systems accreting enough matter to exceed the
