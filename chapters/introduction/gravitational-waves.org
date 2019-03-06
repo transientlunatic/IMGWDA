@@ -108,12 +108,12 @@ Further, the behaviour of "strong-field gravity", which is essential to understa
 As a result both the analysis of gravitational waves, and their astrophysical interpretation, relies on the ability to solve the field equations numerically.
 
 \begin{equation}
-  \label{eq:1}
+  \label{eq:intro:gr:mass-quadrupole}
   Q_{jk} = \int \rho x_k x_k \frac{̣\dd^3}{\dd x^3}
 \end{equation}
 and the gravitational wave is described by the three-tensor
 \begin{equation}
-  \label{eq:2}
+  \label{eq:intro:gr:quadrupole2strain}
   h_{jk} = \frac{2}{r} \frac{̣\dd^2 Q_{jk}}{̣\dd t^2}
 \end{equation}
 
@@ -237,7 +237,9 @@ The noise can be treated similarly,
 \label{eq:characterstic-noise}
 \left[ h_{\text{n}}(f) \right]^{2} = f S_{\text{n}}(f).
 \end{equation}
-As noted by cite:strainConventions this allows the integration of the strain compared to the noise budget of a given detector to be estimated "by eye", when displayed on a log-log plot.
+As noted by cite:strain.conventions this allows the integration of the strain compared to the noise budget of a given detector to be estimated "by eye", when displayed on a log-log plot.
 
 ** Power spectral density
 ** Amplitude spectral density
+
+* Alternative theories of gravity

@@ -2,14 +2,14 @@
 
 * Detecting gravitational waves
 
-The earliest attempts to develop a gravitational wave detector were made in the 1960s with the experiments of Joseph Weber (1919--2000) at the University of Maryland, from which he claimed the first detection in 1969 cite:1969PhRvL..22.1320W,1970PhRvL..24..276W of signals originating in the centre of the Galaxy\nbsp{}cite:1970PhRvL..25..180W. 
-Numerous attempts to confirm his findings were unsuccessful, including searches in Ronald Drever's (1931--2017) group at the University of Glasgow\nbsp{}cite:1973Natur.246..340D in the UK; 
-at Bell Labs\nbsp{}cite:1973PhRvL..31..173L,1973PhRvL..31..176G,1974PhRvL..33..794L in the USA; 
-at Munich\nbsp{}cite:1975NCimL..12..111B,1975NCimL..12..111B in Germany; 
-at Moscow\nbsp{}cite:1973PhLA...45..271B in Russia; 
-and at Tokyo\nbsp{}cite:1975PhRvL..35..890H in Japan. 
+The earliest attempts to develop a gravitational wave detector were made in the 1960s with the experiments of Joseph Weber (1919--2000) at the University of Maryland, from which he claimed the first detection in 1969 cite:1969PhRvL..22.1320W,1970PhRvL..24..276W of signals originating in the centre of the Galaxy cite:1970PhRvL..25..180W. 
+Numerous attempts to confirm his findings were unsuccessful, including searches in Ronald Drever's (1931--2017) group at the University of Glasgow cite:1973Natur.246..340D in the UK; 
+at Bell Labs cite:1973PhRvL..31..173L,1973PhRvL..31..176G,1974PhRvL..33..794L in the USA; 
+at Munich cite:1975NCimL..12..111B,1975NCimL..12..111B in Germany; 
+at Moscow cite:1973PhLA...45..271B in Russia; 
+and at Tokyo cite:1975PhRvL..35..890H in Japan. 
 While Weber's original detections were soundly refuted by the community there is little doubt that the announcement led to a flurry of activity in the field. 
-This ultimately lead to the development of modern cryogenic resonant bars, such as gls:altair\nbsp{}cite:1992NCimC..15..943B, gls:allegro cite:2000IJMPD...9..229M, gls:nautilus\nbsp{}cite:1997APh.....7..231A, and gls:explorer cite:1993PhRvD..47..362A; and laser interferometers.
+This ultimately lead to the development of modern cryogenic resonant bars, such as gls:altair cite:1992NCimC..15..943B, gls:allegro cite:2000IJMPD...9..229M, gls:nautilus cite:1997APh.....7..231A, and gls:explorer cite:1993PhRvD..47..362A; and laser interferometers.
 
 Laser interferometers, of which advanced gls:ligo is an implementation, were the result of a quest for both higher sensitivities and greater bandwidth. 
 The possibility of using a Michelson interferometer to measure the distance between test masses in order to detect gravitational radiation originated in Moscow\cite{1963JETP...16..433G} in 1963. 
@@ -21,8 +21,8 @@ These detectors were operated during the 2000s, and while none of them made a de
 
 Figure ref:fig:first-gen-asd is a plot of the abbr:asd of the first generation of interferometric detectors, in which it is clear that these detectors have considerable advantages not only in senstivity compared to resonant bar detectors, but can also observe over a much greater bandwidth.
 
-The initial-generation of detectors were upgraded during the first half of the 2010s, leading to Advanced gls:ligo\nbsp{}cite:2015CQGra..32g4001L which resumed observations in September 2015, and the imminent start of observations from the Advanced gls:virgo detector\nbsp{}cite:2015CQGra..32b4001A, with the prospect of a joint run occuring during the second half of 2016. 
-The gls:geo600 detector was the first of the initial detectors to be fully upgraded becoming gls:geo-hf\nbsp{}cite:2006CQGra..23S.207W, with improved sensitivity at high frequencies. 
+The initial-generation of detectors were upgraded during the first half of the 2010s, leading to Advanced gls:ligo cite:2015CQGra..32g4001L which resumed observations in September 2015, and the imminent start of observations from the Advanced gls:virgo detector cite:2015CQGra..32b4001A, with the prospect of a joint run occuring during the second half of 2016. 
+The gls:geo600 detector was the first of the initial detectors to be fully upgraded becoming gls:geo-hf cite:2006CQGra..23S.207W, with improved sensitivity at high frequencies. 
 Japanese efforts have focussed on the development of gls:kagra (formerly gls:lcgt), a cryogenic interferometer located deep underground in the Kamioka mine cite:1999IJMPD...8..557K, although the project has suffered from a number of set-backs. 
 The construction of a third LIGO detector interferometer in India using the mothballed second detector from the Washington site has now moved into its initial stages, with the prospect of this detector joining the network around the end of the decade. 
 Figure ref:fig:aligo-design-asd depicts the anticipated ASD of the advanced LIGO detectors once they have reached their design sensitivity, which is anticipated within the next five years.
@@ -259,7 +259,7 @@ These interferometers are Michelsoninterferometers with a large number of additi
 
  The advanced gls:ligo detectors replaced the first-generation Initial gls:ligo detectors, and share the same facilities as their predecessors[fn:lho2k], and like them are 4-kilometre long interferometers with a gls:fabry-perot-cavity in each arm, with a gls:finesse of 450. 
  The detectors improve their sensitivity compared to the initial generation detectors through the use of signal recycling, a technology pioneered in the gls:geo600 detector, and have quadruple mirror suspensions which use fused silica fibres to
- provide seismic islolation\nbsp{}cite:2002CQGra..19.4043R,2012CQGra..29w5004A.
+ provide seismic islolation cite:2002CQGra..19.4043R,2012CQGra..29w5004A.
  Combined, the improvements to the design of the detectors allowed a ten-fold improvement in sensitivity in the most sensitive frequency region (around 100 hertz) compared to the Initial gls:ligo detectors.
 
  #+ATTR_LATEX: :float t 
