@@ -1019,7 +1019,26 @@
     :AUTHOR:   S Klimenko and I Yakushin and A Mercer and G Mitselmakher
     :JOURNAL:  Classical and Quantum Gravity
     :END:
-
+*** X-Pipeline: an analysis package for autonomous gravitational-wave burst searches
+    :PROPERTIES:
+    :TITLE:    X-Pipeline: an analysis package for autonomous gravitational-wave burst searches
+    :BTYPE:    article
+    :CUSTOM_ID: 2010NJPh...12e3034S
+    :AUTHOR:   {Sutton}, Patrick J. and {Jones}, Gareth and {Chatterji}, Shourov and {Kalmus}, Peter and {Leonor}, Isabel and {Poprocki}, Stephen and {Rollins}, Jameson and {Searle}, Antony and {Stein}, Leo and {Tinto}, Massimo and {Was}, Michal
+    :JOURNAL:  New Journal of Physics
+    :KEYWORDS: General Relativity and Quantum Cosmology
+    :YEAR:     2010
+    :MONTH:    May
+    :VOLUME:   12
+    :EID:      053034
+    :PAGES:    053034
+    :DOI:      10.1088/1367-2630/12/5/053034
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   0908.3665
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2010NJPh...12e3034S
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 ** Search (results)
 *** Upper limits from the LIGO and TAMA detectors on the rate of gravitational-wave bursts
     :PROPERTIES:
@@ -1655,6 +1674,74 @@
     :PUBLISHER: American Physical Society
     :DOI:      10.1103/PhysRevD.1.1559
     :URL:      https://link.aps.org/doi/10.1103/PhysRevD.1.1559
+    :END:
+*** The generation of gravitational waves. IV - Bremsstrahlung
+    :PROPERTIES:
+    :TITLE:    The generation of gravitational waves. IV - Bremsstrahlung
+    :BTYPE:    article
+    :CUSTOM_ID: 1978ApJ...224...62K
+    :AUTHOR:   {Kovacs}, Jr., S.~J. and {Thorne}, K.~S.
+    :JOURNAL:  \apj
+    :KEYWORDS: Bremsstrahlung, Gravitational Waves, Relativity, Wave Generation, Perturbation Theory, Plane Waves, Quadrupoles, Schwarzschild Metric, Waveforms
+    :YEAR:     1978
+    :MONTH:    aug
+    :VOLUME:   224
+    :PAGES:    62-85
+    :DOI:      10.1086/156350
+    :ADSURL:   http://adsabs.harvard.edu/abs/1978ApJ...224...62K
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Gravitational waves from compact binaries in post-Newtonian accurate hyperbolic orbits
+    :PROPERTIES:
+    :TITLE:    Gravitational waves from compact binaries in post-Newtonian accurate hyperbolic orbits
+    :BTYPE:    article
+    :CUSTOM_ID: 2018PhRvD..98b4039C
+    :AUTHOR:   {Cho}, Gihyuk and {Gopakumar}, Achamveedu and {Haney}, Maria and {Lee}, Hyung Mok
+    :JOURNAL:  \prd
+    :KEYWORDS: General Relativity and Quantum Cosmology
+    :YEAR:     2018
+    :MONTH:    Jul
+    :VOLUME:   98
+    :EID:      024039
+    :PAGES:    024039
+    :DOI:      10.1103/PhysRevD.98.024039
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1807.02380
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018PhRvD..98b4039C
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Gravitational radiation from point-masses in unbound orbits: Newtonian results.
+    :PROPERTIES:
+    :TITLE:    Gravitational radiation from point-masses in unbound orbits: Newtonian results.
+    :BTYPE:    article
+    :CUSTOM_ID: 1977ApJ...216..610T
+    :AUTHOR:   {Turner}, M.
+    :JOURNAL:  \apj
+    :KEYWORDS: Gravitational Waves, Point Sources, Relativity, Circular Orbits, Eccentric Orbits, Energy Spectra, Orbit Calculation, Sine Waves, Waveforms, Astrophysics
+    :YEAR:     1977
+    :MONTH:    Sep
+    :VOLUME:   216
+    :PAGES:    610-619
+    :DOI:      10.1086/155501
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1977ApJ...216..610T
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Gravitational radiation in black-hole collisions at the speed of light. III. Results and conclusions
+    :PROPERTIES:
+    :TITLE:    Gravitational radiation in black-hole collisions at the speed of light. III. Results and conclusions
+    :BTYPE:    article
+    :CUSTOM_ID: 1992PhRvD..46..694D
+    :AUTHOR:   {D'Eath}, P.~D. and {Payne}, P.~N.
+    :JOURNAL:  \prd
+    :KEYWORDS: 04.30.+x, 97.60.Lf, Black holes
+    :YEAR:     1992
+    :MONTH:    Jul
+    :VOLUME:   46
+    :PAGES:    694-701
+    :DOI:      10.1103/PhysRevD.46.694
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1992PhRvD..46..694D
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 *** Detection Rate Estimates of Gravity Waves Emitted during Parabolic Encounters of Stellar Black Holes in Globular Clusters
     :PROPERTIES:

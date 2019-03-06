@@ -343,6 +343,10 @@ Additional limits have been placed thanks to astrometric measurements of active 
 
 * Unmodelled and poorly modelled transient sources
 ** Burst waveform models
+   :PROPERTIES:
+   :CUSTOM_ID: sources:burst:models
+   :END:
+
 
    \begin{figure}
    \caption[A catalogue of unmodelled burst waveforms]{The three unmodelled burst ``waveforms'' which are typically considered by burst analyses; Gaussian-like bursts, Sine-Gaussian bursts, and White noise bursts. 
@@ -390,9 +394,13 @@ Additional limits have been placed thanks to astrometric measurements of active 
     The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
 
 *** White noise bursts
+    :PROPERTIES:
+    :CUSTOM_ID: sources:burst:models
+    :END:
     Astrophysical processes are unlikely to produce emission at a single frequency, or with a smooth evolution of amplitude, and so searches are normally expected to be sensitive to band-limited white noise bursts, which consist of band-limited uncorrelated noise within a Gaussian amplitude envelope.
     An example of a whitenoise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
     The second and third rows contain time-frequency representations of the plus-polarisation waveform as a spectrogram and a constant $q$-transform, respectively.
+
 
 *** Ringdown-like bursts
     Ringdown-like signals, with a sudden rise, and exponential decay in amplitude are expected in the post-merger signal of abbr:cbc systems, and in some models of neutron star model excitation cite:2004PhRvD..70l4015B. These take the form
@@ -402,12 +410,25 @@ Additional limits have been placed thanks to astrometric measurements of active 
     \end{equation}
     for a strain $h$ at time $t$, given a decay time $\tau$ and frequency $f$.
 
+
 ** Parabolic and hyperbolic encounters
+   :PROPERTIES:
+   :CUSTOM_ID: sources:burst:encounters
+   :END:
 
    Encounters between pairs of black holes, where the two bodies trajectories are affected by the total gravitational field, but where a closed orbit is not formed are expected to be possible in regions of space with a high density of compact objects, for example globular clusters and the centres of galaxies.
    In the case where the deflection angle of the trajectories is small this process can be considered analogous to bremsstrahlung processes in electromagnetic radiation production cite:PhysRevD.1.1559,1978ApJ...224...62K, but the emission production becomes more complicated as larger deflection angles are considered, and spin is included.
+   Approximate models are available for the waveforms of these encounters in the bremmstrahlung case, 
+   low-velocity cases with arbitrary deflection cite:1977ApJ...216..610T, and head-on collisions cite:1992PhRvD..46..694D. 
+   Recent advances have allowed the production of 3.5 abbr:pn accurate waveforms for hyperbolic encounters for non-spinning pairs of black holes cite:2018PhRvD..98b4039C
+
+   Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in section ref:sources:burst:encounters:waveforms I consider the detectability of some of these waveforms in current and future detectors.
 
 *** Encounter waveforms
+    :PROPERTIES:
+    :CUSTOM_ID: sources:burst:encounters:waveforms
+    :END:
+    
     #+CAPTION: The abbr:snr of a $q=16$ hyperbolic encounter waveform in advanced abbr:ligo at design sensitivity.
     [[./figures/hyperbolic-m16-l024.pdf]]
 
@@ -490,7 +511,9 @@ The gls:ligo results place a limit of $G \mu < 8.5\ee{-10}$, which agrees, but i
 *If the O2 paper is published in time, update this with the new results.*
    
 
-** Accretion disk instability and long bursts
+# ** Accretion disk instability and long bursts
+
+
 
 * Burst searches
 
@@ -561,18 +584,34 @@ Initial abbr:ligo searches were performed both between the detectors constitutin
    + Kleine Welle ::  The abbr:kw method uses either a wavelet or a Q-transform approach to produce a time-frequency representation of the measured signal. This is then thresholded, and clusters of outlier pixels (discrete regions of the time-frequency plane) are identified. By performing a number of Q-transforms with varying $q$ parameters it is possible to estimate the parameters of the detected waveform cite:2004CQGra..21S1809C.
    + Mean filter :: The mean filter is a time-series approach to burst detection, which searches for excesses in the moving average of the measured signal. The method is most sensitive to bursts which have a similar length to the moving window, so the search must be repeated for a number of different window lengths.
 
+   + Null stream
+   + Excess energy
+		      
+
 ** Seach pipelines
 
-   + x-pipeline
-   + spherical radiometer
-   + Coherent WaveBurst
+   + X-Pipeline :: X-Pipeline is designed to run coherent triggered searches for abbr:gw bursts, motivated by the detection of events such as abpl:sgrb cite:2010NJPh...12e3034S. The analysis constructs time-frequency spectrograms of the plus and cross strain polarisations, and the gls:null-stream, after they have been whitened and time-shifted. Pixels in the spectrograms are then clustered in order to identify significant outliers from the noise. This process is repeated for each location on the sky being searched, with appropriate time-shifts, for each detector's data. Events are vetoed if they have a strong correlation between the coherent energies and incoherent energies, a feature which indicates a noise glitch rather than a burst signal. 
+
+#   + spherical radiometer 
+   + Coherent WaveBurst :: The abbr:cwb pipeline cite:waveburst is a coherent, untriggered burst search method which performs a wavelet transform on blocks of detector data to first produce a time-frequency representation. The wavelet layers are then whitened with a linear prediction error filter, and time-delayed. Correlations and excess-power regions in the  time-frequency plane are then clustered to identify coherent triggers, which are then selected by thresholding based on the abbr:fap.
+
    + omicron / LALInference burst
    + Bayeswave
 
 * Mock data challenges
-** Gravitational wave burst detection
-   /This should be a brief overview of how Burst detection is attempted, and a summary of the various pipelines which exist, to motivate the need for a common MDC set./
 
+  Given the complexity of modern burst search algorithms, and their need to operate in a regime of non-Gaussian, non-stationary noise it is important to be able to demonstrate the efficacy of an individual pipeline.
+In addition to this, the nature of the noise in abbr:gw detectors makes estimating the sensitivity of each search method difficult, as the time-evolution of the noise abbr:psd will affect the sensitivity over time.
+To address these problems pipelines are tested against known signals which are "injected" into the recorded data from the detector.
 
+This process can be performed in two ways, either as a /hardware injection/, where the test mass of the detector is physically actuated (using either an electrostatic drive, or through photon pressure), or as a /software injection/, where the signal waveform is added to the pre-recorded data.
+The former process has the advantage of testing the performance of the pipeline "end-to-end", as the signal will be present in the analysed data at all times. 
+Indeed, prior to the detection of gls:gw150914 the use of "blind" injections to test the readiness of search algorithms was a standard practice. 
+In contrast software injections can be performed offline, and thus do not run the risk of obfuscating an astrophysical signal.
+However, as these are added to the recorded data it is necessary to ensure that a consistent set of signals is analysed by all pipelines to provide consistent sensitivity estimates.
+
+At the beginning of the advanced detector era it became clear that the production of these /mock data challenges/ required new infrastructure, and the /Minke/ project was initiated to handle this.
 
 ** Minke
+
+/Minke/ is a software library implemented in the ~python~ programming language which is designed to produce large-scale mock data challenges for burst waveforms.
