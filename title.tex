@@ -1,14 +1,14 @@
 %\usepackage{hyphenat}
-\newcommand*{\thesistitle}{%
+\newcommand*\thesistitle{%
   \thispagestyle{empty}
-  \begingroup
+  %\begingroup%
   \hbox{%
     \hspace*{-0.2\textwidth}%
     \parbox[b]{1.25\textwidth}{%
       \vbox{%
         \begin{center}
           {\noindent\HUGE\bfseries%
-            \nohyphens{Plausible Inference Methods\\\textit{for}\\ Gravitational Wave Data Analysis}}\\[2\baselineskip]
+            {Plausible Inference Methods\\\textit{for}\\ Gravitational Wave Data Analysis}}\\[2\baselineskip]
         \end{center}
         \begin{center}
           {\noindent\Large\itshape{On the application of Bayesian inference and modern modelling methods to astrophysical problems in the era of gravitational wave observation.}}\\[2\baselineskip]
@@ -30,8 +30,7 @@
       }%
     }%
   } 
-  \null
-  \endgroup
+  \null%
+  %\endgroup%
   \newpage
-  \pagestyle{kentigern}
 }%
