@@ -15,8 +15,8 @@ colors = {"blue": "#348ABD",
           "yellow": "#FBC15E",
 }
 
-figwidth = 6 # 2.5
-figheight = 6/1.616
+figwidth = 8.75 # 2.5
+figheight = figwidth/1.616
 figsize = (figwidth, figheight)
 
 
