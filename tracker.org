@@ -1,0 +1,58 @@
+* Topics in gravitational wave astronomy
+A thesis.
+
+
+* TODO Gravitational waves: generation, propagation, and detection [0/9]
+** TODO Gravitational waves and general relativity  [0/0]
+** TODO A network of detectors [0/0]
+   /This section should probably come after the section on detection./
+** TODO GW150914 [0/0]
+** TODO GW170817 [0/0]
+** TODO Catalogue of observations [0/0]
+** TODO Observing scenarios [0/0]
+** TODO Strain [0/0]
+** TODO Alternative theories of gravity [0/0]
+** TODO Detecting gravitational waves [0/0]
+*** TODO  Advanced LIGO [0/1]
+    + [ ] Should add discussion of the LIGO India project here.
+*** TODO Advanced VIRGO [0/0]
+
+* TODO Astrophysical sources of gravitational waves [%]
+
+** REVIEW Compact binary coalescences
+** REVIEW Continuous wave sources
+   + [ ] Add a P-Pdot diagram, possibly with some of the O1/O2 data.
+** REVIEW Stochastic sources
+   + [ ] Add a plot of the energy of the stochastic background.
+** TODO Burst sources [1/3]
+   + [X] Add a figure for the ad-hoc waveforms
+     This plot should probably still be checked over however.
+   + [ ] Add a figure for the semi-modelled waveforms
+   + [ ] Add a figure for the supernova waveforms
+** TODO Minke and burst searches [0/4]
+   + [ ] Discuss calibration uncertainties
+   + [ ] Various data formats required
+   + [ ] Signal production process (signal → ant pattern → noise)
+   + [ ] APPENDIX: Example script for MDC production
+
+
+* TODO Bayesian inference
+** Probability
+** Prior knowledge
+** Information
+** Feature space and kernels
+** Structured distributions
+** Inference
+** Approximate inference
+** Hierarchical models
+** Bayesian linear regression
+
+* TODO Hierarchical modelling of gamma ray bursts
+** Short GRBs and Jet production
+** Rates to beaming angles
+
+* TODO Gaussian processes
+
+
+* TODO HERON: A GPR waveform model
+
