@@ -2,7 +2,7 @@ FIGURES=(gw-spectum)
 
 all : gw-spectrum.pdf aligo-cbc.pdf gp-training-data.pdf gp-example-prior-draws.pdf probability-structured-example-dense-1.pdf probability-structured-example-dense-2.pdf probability-structured-example-dense-3.pdf
 
-gw-spectrum.pdf : ../scripts/spectrum.py
+gw-spectrum.pdf : ../scripts/intro/Spectrum.py
 	python $<
 
 aligo-cbc.pdf : ../scripts/cbc-aligo.py

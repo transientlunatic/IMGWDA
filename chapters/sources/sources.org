@@ -364,6 +364,10 @@ Additional limits have been placed thanks to astrometric measurements of active 
     # || h² || = ∫^∞_∞ |h(t)|² dt = ∫ |\tilde{h}(f)|² df \]
 
 **** Polarisation of signals
+
+*** Sky position
+    
+
 *** Gaussian
 
     Perhaps the simplest conceivable model of a burst of abpl:gw is one where energy is emitted across a broadband range of frequencies over a fixed period of time, with a smooth rise and decay in amplitude.
