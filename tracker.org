@@ -25,6 +25,7 @@ A thesis.
 ** REVIEW Stochastic sources
    + [ ] Add a plot of the energy of the stochastic background.
 ** TODO Burst sources [1/3]
+   + [ ] Fix CCSN plot- this is just wrong.
    + [X] Add a figure for the ad-hoc waveforms
      This plot should probably still be checked over however.
    + [ ] Add a figure for the semi-modelled waveforms

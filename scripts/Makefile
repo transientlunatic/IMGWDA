@@ -2,9 +2,9 @@
 # Right now I'm only doing this for the intro scripts, and should change this
 # in due course when I remove spaces from the names of the other notebooks.
 
-SCRIPT_DIR=./intro
-NOTEBOOK_DIR=../notebooks/intro
-NB_FILES=$(wildcard $(NOTEBOOK_DIR)/*.ipynb)
+SCRIPT_DIR=.
+NOTEBOOK_DIR=../notebooks
+NB_FILES=$(wildcard $(NOTEBOOK_DIR)/*/*.ipynb)
 PY_FILES=$(NB_FILES:.ipynb=.py)
 PY_DESTS=$(PY_FILES:$(NOTEBOOK_DIR)/%.py=$(SCRIPT_DIR)/%.py)
 
@@ -15,8 +15,9 @@ all : python
 python : $(PY_FILES)
 
 %.py : %.ipynb
+	@mkdir -p $(@D:$(NOTEBOOK_DIR)=$(SCRIPT_DIR))		
 	jupyter nbconvert --to python $<
-	@mkdir -p $(@D:$(NOTEBOOK_DIR)=$(SCRIPT_DIR))	
+	sed -i -e 's\../../figures\../figures\g' $@
 	cp $@ $(@:$(NOTEBOOK_DIR)/%.py=$(SCRIPT_DIR)/%.py)
 
 clean:

@@ -108,13 +108,13 @@ Further, the behaviour of "strong-field gravity", which is essential to understa
 As a result both the analysis of gravitational waves, and their astrophysical interpretation, relies on the ability to solve the field equations numerically.
 
 \begin{equation}
-  \label{eq:intro:gr:mass-quadrupole}
-  Q_{jk} = \int \rho x_k x_k \frac{̣\dd^3}{\dd x^3}
+\label{eq:intro:gr:mass-quadrupole}
+Q_{jk} = \int \rho x_k x_k \frac{\dd^3}{\dd x^3}
 \end{equation}
 and the gravitational wave is described by the three-tensor
 \begin{equation}
-  \label{eq:intro:gr:quadrupole2strain}
-  h_{jk} = \frac{2}{r} \frac{̣\dd^2 Q_{jk}}{̣\dd t^2}
+\label{eq:intro:gr:quadrupole2strain}
+  h_{jk} = \frac{2}{r} \frac{\dd^2 Q_{jk}}{}
 \end{equation}
 
 [fn:ricci-tensor] More precisely, the gls:ricci-tensor, which is the trace of the Riemann tensor, describes how the distance between the points within a volume varies as the entire volume is parallel-transported over a curved manifold, compared to the same movement over a flat manifold.

@@ -11,7 +11,7 @@ The astrophysical sources of gravitational waves can be divided roughly into thr
 
 #+NAME:fig:cbc_spectrum
 #+CAPTION: The frequency spectrum of two types of compact binary coalescence—a binary neutron star coalescence, and a binary black hole coalescence—alongside the design sensitivity power spectrum of the Advanced LIGO detector at its design sensitivity. *Should update this to use the IMRPhenom frequency line*.
-[[./figures/aligo-cbc.pdf]]
+[[./figures/sources/aligo-cbc.pdf]]
 
 The moment of inertia tensor of a two-body system will lead to non-spherical motion within the system, which will in turn produce gravitational radiation, and gradual orbital decay cite:1995PhRvL..74.3515B. 
 This effect was first observed in the Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W, a system containing two neutron stars---one of which is a pulsar--- which, through precise pulsar timing measurements, were been inferred to be  inspiralling, and producing gravitational waves. This observation was the first strong, indirect evidence for the reality of gravitational wave production.
@@ -206,7 +206,7 @@ The first model to take this approach, IMRPhenomA, was calibrated only against n
 
 The IMRPhenomP series of waveform models (the most recent of which is version 3 cite:2018arXiv180910113K) add the ability to model precession effects within the waveform; for versions 1 and 2 this was limited to single-spin effects, but version 3 has been designed to allow for generic abbr:bbh systems.
 In order to introduce the effects of precession into the waveform, IMRPhenomPv1 and IMRPhenomPv2 built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the "twisting-up" produced by orbital precession.
-For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation[[fn:stat-phase]], which is not strictly valid outwith the inspiral phase.
+For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation[[ fn:stat-phase]], which is not strictly valid outwith the inspiral phase.
 IMRPhenomPv3 uses a two-spin model developed by Chatziioannou et al. cite:2017PhRvD..95j4004C in order to allow for the calculation of precession angles in generic abbr:bbh systems.
 
 In summary:
@@ -443,7 +443,7 @@ Additional limits have been placed thanks to astrometric measurements of active 
 
 #+CAPTION: Core-collapse supernova spectrum.
 #+NAME:fig:ccsn-spectrum
-[[./figures/source-ccsn.pdf]]
+[[./figures/sources/source-ccsn.pdf]]
 
  Core collapse supernova (CCSNe) are driven by the release of
  gravitational energy as a massive star's core collapses. Progenitor
@@ -488,7 +488,7 @@ Additional limits have been placed thanks to astrometric measurements of active 
 
 #+NAME:fig:T1a-spectrum
 #+CAPTION: Type-1A supernova spectrum.
-[[./figures/source-t1asn.pdf]]
+[[./figures/sources/source-t1asn.pdf]]
 
  Type Ia supernovae (SNe Ia) are believed to be the result of
  white-dwarfs in binary systems accreting enough matter to exceed the

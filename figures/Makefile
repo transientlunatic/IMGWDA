@@ -1,11 +1,19 @@
 FIGURES=(gw-spectum)
 
-all : gw-spectrum.pdf aligo-cbc.pdf gp-training-data.pdf gp-example-prior-draws.pdf probability-structured-example-dense-1.pdf probability-structured-example-dense-2.pdf probability-structured-example-dense-3.pdf
+all : gw-spectrum.pdf intro/aligo-cbc.pdf gp-training-data.pdf gp-example-prior-draws.pdf probability-structured-example-dense-1.pdf probability-structured-example-dense-2.pdf probability-structured-example-dense-3.pdf
 
-gw-spectrum.pdf : ../scripts/intro/Spectrum.py
+%.py :
+	cd ../scripts & make
+
+intro/gw-spectrum.pdf : ../scripts/intro/Spectrum.py
 	python $<
 
-aligo-cbc.pdf : ../scripts/cbc-aligo.py
+sources/aligo-cbc.pdf : ../scripts/intro/sensitivity-curves.py #cbc-aligo.py
+	python $<
+
+# Sources
+
+sources/minke-adhoc.pdf : ../scripts/sources/minke-waveforms.py
 	python $<
 
 gp-training-data.pdf gp-example-prior-draws.pdf: ../scripts/gp-example-plots.py
