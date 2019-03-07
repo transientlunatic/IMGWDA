@@ -24,17 +24,20 @@ A thesis.
    + [ ] Add a P-Pdot diagram, possibly with some of the O1/O2 data.
 ** REVIEW Stochastic sources
    + [ ] Add a plot of the energy of the stochastic background.
-** TODO Burst sources [1/3]
+** TODO Burst sources [1/5]
    + [ ] Fix CCSN plot- this is just wrong.
    + [X] Add a figure for the ad-hoc waveforms
      This plot should probably still be checked over however.
    + [ ] Add a figure for the semi-modelled waveforms
    + [ ] Add a figure for the supernova waveforms
-** TODO Minke and burst searches [0/4]
+   + [ ] Complete the discussion of burst parameters
+   + [ ] Complete the discussion of null streams
+** TODO Minke and burst searches [2/4]
    + [ ] Discuss calibration uncertainties
-   + [ ] Various data formats required
-   + [ ] Signal production process (signal → ant pattern → noise)
+   + [X] Various data formats required
+   + [X] Signal production process (signal → ant pattern → noise)
    + [ ] APPENDIX: Example script for MDC production
+   + [ ] Add discussion of the sensitivity results from O1 and O2 MDCs.
 
 
 * TODO Bayesian inference

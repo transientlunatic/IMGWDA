@@ -1,3 +1,6 @@
+*~
+/dist/
+\#*#
 ## Stuff specific to this pipeline
 *.int-tex
 *.org~
@@ -261,3 +264,10 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+
+# project specific
+/bibliography/*.bib
+/chapters/*/*.tex
+*.int_tex
+
