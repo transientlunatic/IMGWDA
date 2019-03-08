@@ -15,7 +15,7 @@ colors = {"blue": "#348ABD",
           "yellow": "#FBC15E",
 }
 
-figwidth = 8.75 # 2.5
+figwidth = 5 # 2.5
 figheight = figwidth/1.616
 figsize = (figwidth, figheight)
 
@@ -55,7 +55,7 @@ def thesisify(f, height=1):
         ax.yaxis.get_offset_text().set_fontproperties(ticks_font)
         
         if len(ax.get_ygridlines()) > 0:
-            ax.grid(which="both", color='#348ABD', alpha=0.4, lw=0.3,)
+            ax.grid(which="both", color='#348ABD', alpha=0.2, lw=0.3,)
         
     f.tight_layout()
     return f
@@ -138,7 +138,7 @@ def labelLines(lines,align=True,xvals=None,**kwargs):
     if xvals is None:
         xvals = []
         for line in lines:
-            xvals.append(line.get_data()[0][-1].value*0.9)
+            xvals.append(line.get_data()[0][-1].value*0.8)
 
     for line,x,label in zip(labLines,xvals,labels):
         labelLine(line,x,label,align,**kwargs)
