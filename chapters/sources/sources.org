@@ -87,7 +87,12 @@ The abbr:pn correction to the Newtonian limit on the order $\mathcal{O}(1/c^{n})
    :CUSTOM_ID: sec:sources:cbc:waveform
    :END:
 
-   *figure: It would be good to have a plot of a waveform here with some cartoons of each period overlaid.*
+   \begin{figure}
+   \includegraphics{figures/sources/bbh-cartoon.pdf}
+   \caption{The waveform of a abbr:bbh from the inspiral (highlighted in red), to the merger (yellow), and the ringdown (purple).
+   \label{fig:sources:cbc:bbh-cartoon}}
+   \end{figure}
+
 
    The gravitational waveform for a compact binary system can be split into three broad periods, which are each associated with the dominant energy loss mechanisms within the system. 
 The first, and longest stage of the binary's evolution is the /gls:inspiral/. Gravitational radiation carries energy out of the binary system, causing the orbit to slowly decay.[fn:generalbinary] 
@@ -643,6 +648,9 @@ Initial abbr:ligo searches were performed both between the detectors constitutin
    + Mean filter :: The mean filter is a time-series approach to burst detection, which searches for excesses in the moving average of the measured signal. The method is most sensitive to bursts which have a similar length to the moving window, so the search must be repeated for a number of different window lengths.  
 
 ** Seach pipelines
+   :PROPERTIES:
+   :CUSTOM_ID: sec:sources:burst:pipelines
+   :END:
 
 While the fundamental methods described in section ref:sec:sources:burst:searchmethods are plausible methods for identifying burst signals in data, they are unable to operate in isolation. 
 This has lead to the need to construct /pipelines/ which are capable of pre-processing the detector data, performing searches to produce lists of potential events (triggers), estimate the significance of these triggers, and perform parameter estimation on the signals. 
