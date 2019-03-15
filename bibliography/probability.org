@@ -1,4 +1,17 @@
+* Textbooks
+** Information Theory, Inference and Learning Algorithms
+   :PROPERTIES:
+   :TITLE:    Information Theory, Inference and Learning Algorithms
+   :BTYPE:    book
+   :CUSTOM_ID: 2003itil.book.....M
+   :AUTHOR:   {Mackay}, David J.~C.
+   :BOOKTITLE: Information Theory, Inference and Learning Algorithms, by David J. C. MacKay, pp. 640. ISBN 0521642981. Cambridge, UK: Cambridge University Press, October 2003.
+   :YEAR:     2003
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2003itil.book.....M
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
 * Sample selection
+
 ** TO READ Accounting for sample selection in Bayesian analyses :bayesian:sampling:
    :PROPERTIES:
    :TITLE:    Accounting for sample selection in Bayesian analyses

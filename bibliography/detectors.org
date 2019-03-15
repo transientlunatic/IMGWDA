@@ -1336,6 +1336,27 @@ Such a detector is expected to detect CBC sources to z>10 at SNR>20.
 
 
 * Noise sources
+
+# ** Gravity Spy: integrating advanced LIGO detector characterization, machine learning, and citizen science
+#    :PROPERTIES:
+#    :TITLE:    Gravity Spy: integrating advanced LIGO detector characterization, machine learning, and citizen science
+#    :BTYPE:    article
+#    :CUSTOM_ID: 2017CQGra..34f4003Z
+#    :AUTHOR:   {Zevin}, M. and {Coughlin}, S. and {Bahaadini}, S. and {Besler}, E. and {Rohani}, N. and {Allen}, S. and {Cabero}, M. and {Crowston}, K. and {Katsaggelos}, A.~K. and {Larson}, S.~L. and {Lee}, T.~K. and {Lintott}, C. and {Littenberg}, T.~B. and {Lundgren}, A. and {{\O}sterlund}, C. and {Smith}, J.~R. and {Trouille}, L. and {Kalogera}, V.
+#    :JOURNAL:  Classical and Quantum Gravity
+#    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
+#    :YEAR:     2017
+#    :MONTH:    Mar
+#    :VOLUME:   34
+#    :EID:      064003
+#    :PAGES:    064003
+#    :DOI:      10.1088/1361-6382/aa5cea
+#    :ARCHIVEPREFIX: arXiv
+#    :EPRINT:   1611.04596
+#    :PRIMARYCLASS: gr-qc
+#    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017CQGra..34f4003Z
+#    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+#    :END:
 ** Gravitational Wave Detection by Interferometry (Ground and Space)
    :PROPERTIES:
    :TITLE:    Gravitational Wave Detection by Interferometry (Ground and Space)

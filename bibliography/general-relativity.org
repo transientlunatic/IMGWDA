@@ -1,4 +1,28 @@
-* General Relativity and Theory of Gravitational Waves
+* Textbooks
+** Gravitation
+   :PROPERTIES:
+   :TITLE:    Gravitation
+   :BTYPE:    book
+   :CUSTOM_ID: mtw
+   :AUTHOR:   {Misner}, Charles W. and {Thorne}, Kip S. and {Wheeler}, John Archibald
+   :BOOKTITLE: Gravitation, by Charles W. Misner, Kip S. Thorne, and John Archibald Wheeler. ISBN: 978-0-691-17779-3. Princeton NJ: Princeton University Press, 2017.
+   :YEAR:     2017
+   :ADSURL:   https://ui.adsabs.harvard.edu/#abs/2017grav.book.....M
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Geons, black holes and quantum foam : a life in physics
+   :PROPERTIES:
+   :TITLE:    Geons, black holes and quantum foam : a life in physics
+   :BTYPE:    book
+   :CUSTOM_ID: geonsblackholes
+   :AUTHOR:   {Wheeler}, John Archibald and {Ford}, Kenneth
+   :BOOKTITLE: Geons, black holes and quantum foam : a life in physics. Publisher: New York, NY: Norton, 1998. ISBN: 0393046427
+   :YEAR:     1998
+   :ADSURL:   https://ui.adsabs.harvard.edu/#abs/1998gbhq.book.....W
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+ 
+
 * GR solutions
 ** On the Gravitational Field of a Mass Point According to Einstein's Theory
    :PROPERTIES:
@@ -53,7 +77,8 @@
    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1956AcPP...15..389P
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
-* GW Observations
+
+* Gravitational Wave Observations
 ** GWTC-1: A Gravitational-Wave Transient Catalog of Compact Binary Mergers Observed by LIGO and Virgo during the First and Second Observing Runs :catalog:
    :PROPERTIES:
    :TITLE:    GWTC-1: A Gravitational-Wave Transient Catalog of Compact Binary Mergers Observed by LIGO and Virgo during the First and Second Observing Runs
@@ -151,7 +176,8 @@
    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017Sci...358.1556C
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
-* Gravitational waves
+
+* Gravitational wave-specific theory
 ** {\"U}ber Gravitationswellen
    :PROPERTIES:
    :TITLE:    {\"U}ber Gravitationswellen
