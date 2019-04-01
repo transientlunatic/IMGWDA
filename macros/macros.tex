@@ -37,13 +37,18 @@
 \providecommand{\tt}{\transpose}
 \providecommand{\ten}[1]{\mathsf{#1}}
 
+% Probability operators
+\providecommand{\expect}{\mathbb{E}} %expectation operator
+
 % Software Packages
 \providecommand{\imrphenomp}{\texttt{IMRPhenomP}}
 \providecommand{\lalsim}{\texttt{LALSimulation}}
 
 % New Units
 \providecommand{\solMass}{\ensuremath{\mathrm{M}_{\odot}}}
-%\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\msun{\mathrm{M}_{\odot}}
 
 % Galactic astronomy
 \providecommand{\numberGalaxies}{N_\mathrm{G}}
@@ -54,6 +59,7 @@
 % Gravitational wave detectors
 \providecommand{\horizonDistance}{\ensuremath\mathcal{D}_{\mathrm{hor}}}
 \providecommand{\GP}{\gls{gp}}
+\providecommand{\inspiralDistance}{\ensuremath\mathcal{D}_{\mathrm{insp}}}
 
 % Pipelines
 \providecommand{\olib}{\texttt{oLIB}}
@@ -72,6 +78,7 @@
 
 % Gaussian processes
 \providecommand{\set}[1]{\mathcal{#1}}
+\providecommand{\setbuilder}[1]{\left\{ #1 \right\}}
 \providecommand{\gp}{\mathcal{G\!P}}
 \providecommand{\GP}{Gaussian Process\renewcommand{\GP}{GP}}
 \providecommand{\NR}{Numerical Relativity\renewcommand{\NR}{NR}}

@@ -1,137 +1,145 @@
+#+TITLE: Gamma Ray Bursts Bibliography
+#+AUTHOR: Daniel Williams
+
+#+OPTIONS: prop:t
+#+OPTIONS: d:t
+#+EXCLUDE_TAGS: embargo noexport
+#+LANGUAGE: en
+#+EMAIL: daniel.williams@glasgow.ac.uk
 
 * Discovery & Early reviews
 ** Observations of Gamma-Ray Bursts of Cosmic Origin
-   :PROPERTIES:
-   :TITLE:    Observations of Gamma-Ray Bursts of Cosmic Origin
-   :BTYPE:    article
-   :CUSTOM_ID: 1973ApJ...182L..85K
-   :AUTHOR:   {Klebesadel}, R.~W. and {Strong}, I.~B. and {Olson}, R.~A.
-   :JOURNAL:  \apjl
-   :YEAR:     1973
-   :MONTH:    jun
-   :VOLUME:   182
-   :PAGES:    L85
-   :DOI:      10.1086/181225
-   :ADSURL:   http://adsabs.harvard.edu/abs/1973ApJ...182L..85K
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+    :PROPERTIES:
+    :TITLE:    Observations of Gamma-Ray Bursts of Cosmic Origin
+    :BTYPE:    article
+    :CUSTOM_ID: 1973ApJ...182L..85K
+    :AUTHOR:   {Klebesadel}, R.~W. and {Strong}, I.~B. and {Olson}, R.~A.
+    :JOURNAL:  \apjl
+    :YEAR:                                      1973
+    :MONTH:    jun
+    :VOLUME:                                     182
+    :PAGES:                                      L85
+    :DOI:      10.1086/181225
+    :ADSURL:   http://adsabs.harvard.edu/abs/1973ApJ...182L..85K
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 ** Observations of gamma -ray bursts.
-   :PROPERTIES:
-   :TITLE:    Observations of gamma -ray bursts.
-   :BTYPE:    inproceedings
-   :CUSTOM_ID: 1975NYASA.262..145S
-   :AUTHOR:   {Strong}, I.~B. and {Klebesadel}, R.~W. and {Evans}, W.~D.
-   :KEYWORDS: Cosmic Rays, Gamma Rays, Spaceborne Astronomy, X Ray Astronomy, Astronomical Spectroscopy, Fine Structure, Pulse Duration, Radiant Flux Density, Satellite Observation, Spectrum Analysis, Tables (Data), X Ray Sources, X Ray Spectra, Space Radiation
-   :BOOKTITLE: Seventh Texas Symposium on Relativistic Astrophysics
-   :YEAR:     1975
-   :EDITOR:   {Bergman}, P.~G. and {Fenyves}, E.~J. and {Motz}, L.
-   :VOLUME:   262
-   :MONTH:    Oct
-   :PAGES:    145-158
-   :DOI:      10.1111/j.1749-6632.1975.tb31428.x
-   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1975NYASA.262..145S
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+    :PROPERTIES:
+    :TITLE:    Observations of gamma -ray bursts.
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: 1975NYASA.262..145S
+    :AUTHOR:   {Strong}, I.~B. and {Klebesadel}, R.~W. and {Evans}, W.~D.
+    :KEYWORDS: Cosmic Rays, Gamma Rays, Spaceborne Astronomy, X Ray Astronomy, Astronomical Spectroscopy, Fine Structure, Pulse Duration, Radiant Flux Density, Satellite Observation, Spectrum Analysis, Tables (Data), X Ray Sources, X Ray Spectra, Space Radiation
+    :BOOKTITLE: Seventh Texas Symposium on Relativistic Astrophysics
+    :YEAR:                                      1975
+    :EDITOR:   {Bergman}, P.~G. and {Fenyves}, E.~J. and {Motz}, L.
+    :VOLUME:                                     262
+    :MONTH:    Oct
+    :PAGES:    145-158
+    :DOI:      10.1111/j.1749-6632.1975.tb31428.x
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1975NYASA.262..145S
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 ** Gamma-Ray Bursts
-   :PROPERTIES:
-   :TITLE:    Gamma-Ray Bursts
-   :BTYPE:    article
-   :CUSTOM_ID: 1995ARA&A..33..415F
-   :AUTHOR:   {Fishman}, Gerald J. and {Meegan}, Charles A.
-   :JOURNAL:  Annual Review of Astronomy and Astrophysics
-   :YEAR:     1995
-   :MONTH:    Jan
-   :VOLUME:   33
-   :PAGES:    415-458
-   :DOI:      10.1146/annurev.aa.33.090195.002215
-   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1995ARA&A..33..415F
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+    :PROPERTIES:
+    :TITLE:    Gamma-Ray Bursts
+    :BTYPE:    article
+    :CUSTOM_ID: 1995ARA&A..33..415F
+    :AUTHOR:   {Fishman}, Gerald J. and {Meegan}, Charles A.
+    :JOURNAL:  Annual Review of Astronomy and Astrophysics
+    :YEAR:                                      1995
+    :MONTH:    Jan
+    :VOLUME:                                      33
+    :PAGES:    415-458
+    :DOI:      10.1146/annurev.aa.33.090195.002215
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1995ARA&A..33..415F
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 * Reviews
 ** Short-Duration Gamma-Ray Bursts
-   :PROPERTIES:
-   :TITLE:    Short-Duration Gamma-Ray Bursts
-   :BTYPE:    article
-   :CUSTOM_ID: 2014ARA&A..52...43B
-   :AUTHOR:   {Berger}, Edo
-   :JOURNAL:  Annual Review of Astronomy and Astrophysics
-   :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
-   :YEAR:     2014
-   :MONTH:    Aug
-   :VOLUME:   52
-   :PAGES:    43-105
-   :DOI:      10.1146/annurev-astro-081913-035926
-   :ARCHIVEPREFIX: arXiv
-   :EPRINT:   1311.2603
-   :PRIMARYCLASS: astro-ph.HE
-   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014ARA&A..52...43B
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+    :PROPERTIES:
+    :TITLE:    Short-Duration Gamma-Ray Bursts
+    :BTYPE:    article
+    :CUSTOM_ID: 2014ARA&A..52...43B
+    :AUTHOR:   {Berger}, Edo
+    :JOURNAL:  Annual Review of Astronomy and Astrophysics
+    :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+    :YEAR:                                      2014
+    :MONTH:    Aug
+    :VOLUME:                                      52
+    :PAGES:    43-105
+    :DOI:      10.1146/annurev-astro-081913-035926
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:                               1311.2603
+    :PRIMARYCLASS: astro-ph.HE
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014ARA&A..52...43B
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 * Classification and distribution
 ** Analysis of Fermi gamma-ray burst duration distribution
-   :PROPERTIES:
-   :TITLE:    Analysis of Fermi gamma-ray burst duration distribution
-   :BTYPE:    article
-   :CUSTOM_ID: 2015A&A...581A..29T
-   :AUTHOR:   {Tarnopolski}, M.
-   :JOURNAL:  \aap
-   :KEYWORDS: gamma rays: general, methods: data analysis, methods: statistical, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Cosmology and Nongalactic Astrophysics, High Energy Physics - Phenomenology, Physics - Space Physics
-   :YEAR:     2015
-   :MONTH:    Sep
-   :VOLUME:   581
-   :EID:      A29
-   :PAGES:    A29
-   :DOI:      10.1051/0004-6361/201526415
-   :ARCHIVEPREFIX: arXiv
-   :EPRINT:   1506.07324
-   :PRIMARYCLASS: astro-ph.HE
-   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2015A&A...581A..29T
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+    :PROPERTIES:
+    :TITLE:    Analysis of Fermi gamma-ray burst duration distribution
+    :BTYPE:    article
+    :CUSTOM_ID: 2015A&A...581A..29T
+    :AUTHOR:   {Tarnopolski}, M.
+    :JOURNAL:  \aap
+    :KEYWORDS: gamma rays: general, methods: data analysis, methods: statistical, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Cosmology and Nongalactic Astrophysics, High Energy Physics - Phenomenology, Physics - Space Physics
+    :YEAR:                                      2015
+    :MONTH:    Sep
+    :VOLUME:                                     581
+    :EID:                                        A29
+    :PAGES:                                      A29
+    :DOI:      10.1051/0004-6361/201526415
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:                              1506.07324
+    :PRIMARYCLASS: astro-ph.HE
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2015A&A...581A..29T
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 ** Dipole and Quadrupole Tests of the Isotropy of Gamma-Ray Burst Locations
-   :PROPERTIES:
-   :TITLE:    Dipole and Quadrupole Tests of the Isotropy of Gamma-Ray Burst Locations
-   :BTYPE:    article
-   :CUSTOM_ID: 1993ApJ...407..126B
-   :AUTHOR:   {Briggs}, Michael S.
-   :JOURNAL:  \apj
-   :KEYWORDS: Gamma Ray Astronomy, Gamma Ray Bursts, Statistical Analysis, Astronomical Models, Milky Way Galaxy, Spherical Coordinates, Space Radiation, GAMMA RAYS: BURSTS
-   :YEAR:     1993
-   :MONTH:    Apr
-   :VOLUME:   407
-   :PAGES:    126
-   :DOI:      10.1086/172498
-   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1993ApJ...407..126B
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+    :PROPERTIES:
+    :TITLE:    Dipole and Quadrupole Tests of the Isotropy of Gamma-Ray Burst Locations
+    :BTYPE:    article
+    :CUSTOM_ID: 1993ApJ...407..126B
+    :AUTHOR:   {Briggs}, Michael S.
+    :JOURNAL:  \apj
+    :KEYWORDS: Gamma Ray Astronomy, Gamma Ray Bursts, Statistical Analysis, Astronomical Models, Milky Way Galaxy, Spherical Coordinates, Space Radiation, GAMMA RAYS: BURSTS
+    :YEAR:                                      1993
+    :MONTH:    Apr
+    :VOLUME:                                     407
+    :PAGES:                                      126
+    :DOI:      10.1086/172498
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1993ApJ...407..126B
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 
 ** Identification of Two Classes of Gamma-Ray Bursts
-   :PROPERTIES:
-   :TITLE:    Identification of Two Classes of Gamma-Ray Bursts
-   :BTYPE:    article
-   :CUSTOM_ID: 1993ApJ...413L.101K
-   :AUTHOR:   {Kouveliotou}, Chryssa and {Meegan}, Charles A. and {Fishman}, Gerald J. and {Bhat}, Narayana P. and {Briggs}, Michael S. and {Koshut}, Thomas M. and {Paciesas}, William S. and {Pendleton}, Geoffrey N.
-   :JOURNAL:  \apj
-   :KEYWORDS: Astronomical Catalogs, Gamma Ray Bursts, Gamma Ray Observatory, Frequency Distribution, Spatial Distribution, Transient Response, Space Radiation, GAMMA RAYS: BURSTS
-   :YEAR:     1993
-   :MONTH:    Aug
-   :VOLUME:   413
-   :PAGES:    L101
-   :DOI:      10.1086/186969
-   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1993ApJ...413L.101K
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+    :PROPERTIES:
+    :TITLE:    Identification of Two Classes of Gamma-Ray Bursts
+    :BTYPE:    article
+    :CUSTOM_ID: 1993ApJ...413L.101K
+    :AUTHOR:   {Kouveliotou}, Chryssa and {Meegan}, Charles A. and {Fishman}, Gerald J. and {Bhat}, Narayana P. and {Briggs}, Michael S. and {Koshut}, Thomas M. and {Paciesas}, William S. and {Pendleton}, Geoffrey N.
+    :JOURNAL:  \apj
+    :KEYWORDS: Astronomical Catalogs, Gamma Ray Bursts, Gamma Ray Observatory, Frequency Distribution, Spatial Distribution, Transient Response, Space Radiation, GAMMA RAYS: BURSTS
+    :YEAR:                                      1993
+    :MONTH:    Aug
+    :VOLUME:                                     413
+    :PAGES:                                     L101
+    :DOI:      10.1086/186969
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1993ApJ...413L.101K
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 ** Discerning the physical origins of cosmological Gamma-ray bursts based on multiple observational criteria: the cases of z=6.7 GRB 080913, z=8.3 GRB 090423, and some short/hard GRBs
-   :PROPERTIES:
-   :TITLE:    Discerning the physical origins of cosmological Gamma-ray bursts based on multiple observational criteria: the cases of z=6.7 GRB 080913, z=8.3 GRB 090423, and some short/hard GRBs
-   :BTYPE:    article
-   :CUSTOM_ID: Zhang:2009uf
-   :AUTHOR:   Zhang, Bing and others
-   :JOURNAL:  Astrophys. J.
-   :YEAR:     2009
-   :VOLUME:   703
-   :PAGES:    1696-1724
-   :END:
+    :PROPERTIES:
+    :TITLE:    Discerning the physical origins of cosmological Gamma-ray bursts based on multiple observational criteria: the cases of z=6.7 GRB 080913, z=8.3 GRB 090423, and some short/hard GRBs
+    :BTYPE:    article
+    :CUSTOM_ID: Zhang:2009uf
+    :AUTHOR:   Zhang, Bing and others
+    :JOURNAL:  Astrophys. J.
+    :YEAR:                                      2009
+    :VOLUME:                                     703
+    :PAGES:    1696-1724
+    :END:
 
 * Long gamma ray bursts
 ** Mechanism
@@ -143,9 +151,9 @@
     :AUTHOR:   {MacFadyen}, A.~I. and {Woosley}, S.~E.
     :JOURNAL:  \apj
     :KEYWORDS: ACCRETION, ACCRETION DISKS, BLACK HOLE PHYSICS, GAMMA RAYS: BURSTS, STARS: SUPERNOVAE: GENERAL, Accretion, Accretion Disks, Black Hole Physics, Gamma Rays: Bursts, Stars: Supernovae: General, Astrophysics
-    :YEAR:     1999
+    :YEAR:                                      1999
     :MONTH:    Oct
-    :VOLUME:   524
+    :VOLUME:                                     524
     :PAGES:    262-289
     :DOI:      10.1086/307790
     :ARCHIVEPREFIX: arXiv
@@ -164,9 +172,9 @@
     :AUTHOR:   {Galama}, T.~J. and {Vreeswijk}, P.~M. and {van Paradijs}, J. and {Kouveliotou}, C. and {Augusteijn}, T. and {B{\"o}hnhardt}, H. and {Brewer}, J.~P. and {Doublier}, V. and {Gonzalez}, J. -F. and {Leibundgut}, B. and {Lidman}, C. and {Hainaut}, O.~R. and {Patat}, F. and {Heise}, J. and {in't Zand}, J. and {Hurley}, K. and {Groot}, P.~J. and {Strom}, R.~G. and {Mazzali}, P.~A. and {Iwamoto}, K. and {Nomoto}, K. and {Umeda}, H. and {Nakamura}, T. and {Young}, T.~R. and {Suzuki}, T. and {Shigeyama}, T. and {Koshut}, T. and {Kippen}, M. and {Robinson}, C. and {de Wildt}, P. and {Wijers}, R.~A.~M.~J. and {Tanvir}, N. and {Greiner}, J. and {Pian}, E. and {Palazzi}, E. and {Frontera}, F. and {Masetti}, N. and {Nicastro}, L. and {Feroci}, M. and {Costa}, E. and {Piro}, L. and {Peterson}, B.~A. and {Tinney}, C. and {Boyle}, B. and {Cannon}, R. and {Stathakis}, R. and {Sadler}, E. and {Begam}, M.~C. and {Ianna}, P.
     :JOURNAL:  \nat
     :KEYWORDS: Astrophysics
-    :YEAR:     1998
+    :YEAR:                                      1998
     :MONTH:    Oct
-    :VOLUME:   395
+    :VOLUME:                                     395
     :PAGES:    670-672
     :DOI:      10.1038/27150
     :ARCHIVEPREFIX: arXiv
@@ -184,9 +192,9 @@
     :AUTHOR:   {Woosley}, S.~E. and {Bloom}, J.~S.
     :JOURNAL:  Annual Review of Astronomy and Astrophysics
     :KEYWORDS: Astrophysics
-    :YEAR:     2006
+    :YEAR:                                      2006
     :MONTH:    Sep
-    :VOLUME:   44
+    :VOLUME:                                      44
     :PAGES:    507-556
     :DOI:      10.1146/annurev.astro.43.072103.150558
     :ARCHIVEPREFIX: arXiv
@@ -196,6 +204,60 @@
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 * Short gamma ray bursts
+** Review papers
+*** Short-Hard Gamma-Ray Bursts
+    :PROPERTIES:
+    :TITLE:    Short-Hard Gamma-Ray Bursts
+    :BTYPE:    article
+    :CUSTOM_ID: Nakar:2007yr
+    :AUTHOR:   Nakar, Ehud
+    :JOURNAL:  Phys. Rept.
+    :VOLUME:                                     442
+    :PAGES:    166-236
+    :DOI:      10.1016/j.physrep.2007.02.005
+    :YEAR:                                      2007
+    :EPRINT:   astro-ph/0701748
+    :ARCHIVEPREFIX: arXiv
+    :PRIMARYCLASS: astro-ph
+    :SLACCITATION: %%CITATION = ASTRO-PH/0701748;%%
+    :END:
+** Rates
+*** Joint gravitational wave - gamma-ray burst detection rates in the aftermath of GW170817
+    :PROPERTIES:
+    :TITLE:    Joint gravitational wave - gamma-ray burst detection rates in the aftermath of GW170817
+    :BTYPE:    article
+    :CUSTOM_ID: 2019MNRAS.485.1435H
+    :AUTHOR:   {Howell}, E.~J. and {Ackley}, K. and {Rowlinson}, A. and {Coward}, D.
+    :JOURNAL:  \mnras
+    :KEYWORDS: gravitational waves, methods: data analysis, gamma-ray burst: general, cosmology: miscellaneous, Astrophysics - High Energy Astrophysical Phenomena
+    :YEAR:     2019
+    :MONTH:    May
+    :VOLUME:   485
+    :PAGES:    1435-1447
+    :DOI:      10.1093/mnras/stz455
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1811.09168
+    :PRIMARYCLASS: astro-ph.HE
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2019MNRAS.485.1435H
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Estimation of Compact Binary Coalescense Rates from Short Gamma-Ray Burst Redshift Measurements :cbc:rates:sgrb:gw:
+    :PROPERTIES:
+    :TITLE:    Estimation of Compact Binary Coalescense Rates from Short Gamma-Ray Burst Redshift Measurements
+    :BTYPE:    article
+    :CUSTOM_ID: Dietz:2010eh
+    :AUTHOR:   Dietz, Alexander
+    :JOURNAL:  Astron. Astrophys.
+    :VOLUME:   529
+    :PAGES:    A97
+    :DOI:      10.1051/0004-6361/201016166
+    :YEAR:     2011
+    :EPRINT:   1011.2059
+    :ARCHIVEPREFIX: arXiv
+    :PRIMARYCLASS: astro-ph.HE
+    :SLACCITATION: %%CITATION = ARXIV:1011.2059;%%
+    :END:
+
 ** Progenitor
 *** Prospects for Joint Gravitational-wave and Electromagnetic Observations of Neutron-star-Black-hole Coalescing Binaries
     :PROPERTIES:
@@ -307,27 +369,81 @@
     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1994ApJ...430L..93R
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
-** Observations
-*** GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral
+** Jet structure
+*** A Decade of Short-duration Gamma-ray Burst Broadband Afterglows: Energetics, Circumburst Densities, and jet Opening Angles
     :PROPERTIES:
-    :TITLE:    GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral
+    :TITLE:    A Decade of Short-duration Gamma-ray Burst Broadband Afterglows: Energetics, Circumburst Densities, and jet Opening Angles
     :BTYPE:    article
-    :CUSTOM_ID: 2017PhRvL.119p1101A
-    :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and {Adya}, V.~B. and {Affeldt}, C. and {Afrough}, M. and {Agarwal}, B. and {Agathos}, M. and {Agatsuma}, K. and {Aggarwal}, N. and {Aguiar}, O.~D. and {Aiello}, L. and {Ain}, A. and {Ajith}, P. and {Allen}, B. and {Allen}, G. and {Allocca}, A. and {Altin}, P.~A. and {Amato}, A. and {Ananyeva}, A. and {Anderson}, S.~B. and {Anderson}, W.~G. and {Angelova}, S.~V. and {Antier}, S. and {Appert}, S. and {Arai}, K. and {Araya}, M.~C. and {Areeda}, J.~S. and {Arnaud}, N. and {Arun}, K.~G. and {Ascenzi}, S. and {Ashton}, G. and {Ast}, M. and {Aston}, S.~M. and {Astone}, P. and {Atallah}, D.~V. and {Aufmuth}, P. and {Aulbert}, C. and {AultONeal}, K. and {Austin}, C. and {Avila-Alvarez}, A. and {Babak}, S. and {Bacon}, P. and {Bader}, M.~K.~M. and {Bae}, S. and {Bailes}, M. and {Baker}, P.~T. and {Baldaccini}, F. and {Ballardin}, G. and {Ballmer}, S.~W. and {Banagiri}, S. and {Barayoga}, J.~C. and {Barclay}, S.~E. and {Barish}, B.~C. and {Barker}, D. and {Barkett}, K. and {Barone}, F. and {Barr}, B. and {Barsotti}, L. and {Barsuglia}, M. and {Barta}, D. and {Barthelmy}, S.~D. and {Bartlett}, J. and {Bartos}, I. and {Bassiri}, R. and {Basti}, A. and {Batch}, J.~C. and {Bawaj}, M. and {Bayley}, J.~C. and {Bazzan}, M. and {B{\'e}csy}, B. and {Beer}, C. and {Bejger}, M. and {Belahcene}, I. and {Bell}, A.~S. and {Berger}, B.~K. and {Bergmann}, G. and {Bernuzzi}, S. and {Bero}, J.~J. and {Berry}, C.~P.~L. and {Bersanetti}, D. and {Bertolini}, A. and {Betzwieser}, J. and {Bhagwat}, S. and {Bhandare}, R. and {Bilenko}, I.~A. and {Billingsley}, G. and {Billman}, C.~R. and {Birch}, J. and {Birney}, R. and {Birnholtz}, O. and {Biscans}, S. and {Biscoveanu}, S. and {Bisht}, A. and {Bitossi}, M. and {Biwer}, C. and {Bizouard}, M.~A. and {Blackburn}, J.~K. and {Blackman}, J. and {Blair}, C.~D. and {Blair}, D.~G. and {Blair}, R.~M. and {Bloemen}, S. and {Bock}, O. and {Bode}, N. and {Boer}, M. and {Bogaert}, G. and {Bohe}, A. and {Bondu}, F. and {Bonilla}, E. and {Bonnand}, R. and {Boom}, B.~A. and {Bork}, R. and {Boschi}, V. and {Bose}, S. and {Bossie}, K. and {Bouffanais}, Y. and {Bozzi}, A. and {Bradaschia}, C. and {Brady}, P.~R. and {Branchesi}, M. and {Brau}, J.~E. and {Briant}, T. and {Brillet}, A. and {Brinkmann}, M. and {Brisson}, V. and {Brockill}, P. and {Broida}, J.~E. and {Brooks}, A.~F. and {Brown}, D.~A. and {Brown}, D.~D. and {Brunett}, S. and {Buchanan}, C.~C. and {Buikema}, A. and {Bulik}, T. and {Bulten}, H.~J. and {Buonanno}, A. and {Buskulic}, D. and {Buy}, C. and {Byer}, R.~L. and {Cabero}, M. and {Cadonati}, L. and {Cagnoli}, G. and {Cahillane}, C. and {Calder{\'o}n Bustillo}, J. and {Callister}, T.~A. and {Calloni}, E. and {Camp}, J.~B. and {Canepa}, M. and {Canizares}, P. and {Cannon}, K.~C. and {Cao}, H. and {Cao}, J. and {Capano}, C.~D. and {Capocasa}, E. and {Carbognani}, F. and {Caride}, S. and {Carney}, M.~F. and {Carullo}, G. and {Casanueva Diaz}, J. and {Casentini}, C. and {Caudill}, S. and {Cavagli{\`a}}, M. and {Cavalier}, F. and {Cavalieri}, R. and {Cella}, G. and {Cepeda}, C.~B. and {Cerd{\'a}-Dur{\'a}n}, P. and {Cerretani}, G. and {Cesarini}, E. and {Chamberlin}, S.~J. and {Chan}, M. and {Chao}, S. and {Charlton}, P. and {Chase}, E. and {Chassande-Mottin}, E. and {Chatterjee}, D. and {Chatziioannou}, K. and {Cheeseboro}, B.~D. and {Chen}, H.~Y. and {Chen}, X. and {Chen}, Y. and {Cheng}, H. -P. and {Chia}, H. and {Chincarini}, A. and {Chiummo}, A. and {Chmiel}, T. and {Cho}, H.~S. and {Cho}, M. and {Chow}, J.~H. and {Christensen}, N. and {Chu}, Q. and {Chua}, A.~J.~K. and {Chua}, S. and {Chung}, A.~K.~W. and {Chung}, S. and {Ciani}, G. and {Ciolfi}, R. and {Cirelli}, C.~E. and {Cirone}, A. and {Clara}, F. and {Clark}, J.~A. and {Clearwater}, P. and {Cleva}, F. and {Cocchieri}, C. and {Coccia}, E. and {Cohadon}, P. -F. and {Cohen}, D. and {Colla}, A. and {Collette}, C.~G. and {Cominsky}, L.~R. and {Constancio}, M. and {Conti}, L. and {Cooper}, S.~J. and {Corban}, P. and {Corbitt}, T.~R. and {Cordero-Carri{\'o}n}, I. and {Corley}, K.~R. and {Cornish}, N. and {Corsi}, A. and {Cortese}, S. and {Costa}, C.~A. and {Coughlin}, M.~W. and {Coughlin}, S.~B. and {Coulon}, J. -P. and {Countryman}, S.~T. and {Couvares}, P. and {Covas}, P.~B. and {Cowan}, E.~E. and {Coward}, D.~M. and {Cowart}, M.~J. and {Coyne}, D.~C. and {Coyne}, R. and {Creighton}, J.~D.~E. and {Creighton}, T.~D. and {Cripe}, J. and {Crowder}, S.~G. and {Cullen}, T.~J. and {Cumming}, A. and {Cunningham}, L. and {Cuoco}, E. and {Dal Canton}, T. and {D{\'a}lya}, G. and {Danilishin}, S.~L. and {D'Antonio}, S. and {Danzmann}, K. and {Dasgupta}, A. and {Da Silva Costa}, C.~F. and {Dattilo}, V. and {Dave}, I. and {Davier}, M. and {Davis}, D. and {Daw}, E.~J. and {Day}, B. and {De}, S. and {DeBra}, D. and {Degallaix}, J. and {De Laurentis}, M. and {Del{\'e}glise}, S. and {Del Pozzo}, W. and {Demos}, N. and {Denker}, T. and {Dent}, T. and {De Pietri}, R. and {Dergachev}, V. and {De Rosa}, R. and {DeRosa}, R.~T. and {De Rossi}, C. and {DeSalvo}, R. and {de Varona}, O. and {Devenson}, J. and {Dhurandhar}, S. and {D{\'\i}az}, M.~C. and {Dietrich}, T. and {Di Fiore}, L. and {Di Giovanni}, M. and {Di Girolamo}, T. and {Di Lieto}, A. and {Di Pace}, S. and {Di Palma}, I. and {Di Renzo}, F. and {Doctor}, Z. and {Dolique}, V. and {Donovan}, F. and {Dooley}, K.~L. and {Doravari}, S. and {Dorrington}, I. and {Douglas}, R. and {Dovale {\'A}lvarez}, M. and {Downes}, T.~P. and {Drago}, M. and {Dreissigacker}, C. and {Driggers}, J.~C. and {Du}, Z. and {Ducrot}, M. and {Dudi}, R. and {Dupej}, P. and {Dwyer}, S.~E. and {Edo}, T.~B. and {Edwards}, M.~C. and {Effler}, A. and {Eggenstein}, H. -B. and {Ehrens}, P. and {Eichholz}, J. and {Eikenberry}, S.~S. and {Eisenstein}, R.~A. and {Essick}, R.~C. and {Estevez}, D. and {Etienne}, Z.~B. and {Etzel}, T. and {Evans}, M. and {Evans}, T.~M. and {Factourovich}, M. and {Fafone}, V. and {Fair}, H. and {Fairhurst}, S. and {Fan}, X. and {Farinon}, S. and {Farr}, B. and {Farr}, W.~M. and {Fauchon-Jones}, E.~J. and {Favata}, M. and {Fays}, M. and {Fee}, C. and {Fehrmann}, H. and {Feicht}, J. and {Fejer}, M.~M. and {Fernandez-Galiana}, A. and {Ferrante}, I. and {Ferreira}, E.~C. and {Ferrini}, F. and {Fidecaro}, F. and {Finstad}, D. and {Fiori}, I. and {Fiorucci}, D. and {Fishbach}, M. and {Fisher}, R.~P. and {Fitz-Axen}, M. and {Flaminio}, R. and {Fletcher}, M. and {Fong}, H. and {Font}, J.~A. and {Forsyth}, P.~W.~F. and {Forsyth}, S.~S. and {Fournier}, J. -D. and {Frasca}, S. and {Frasconi}, F. and {Frei}, Z. and {Freise}, A. and {Frey}, R. and {Frey}, V. and {Fries}, E.~M. and {Fritschel}, P. and {Frolov}, V.~V. and {Fulda}, P. and {Fyffe}, M. and {Gabbard}, H. and {Gadre}, B.~U. and {Gaebel}, S.~M. and {Gair}, J.~R. and {Gammaitoni}, L. and {Ganija}, M.~R. and {Gaonkar}, S.~G. and {Garcia-Quiros}, C. and {Garufi}, F. and {Gateley}, B. and {Gaudio}, S. and {Gaur}, G. and {Gayathri}, V. and {Gehrels}, N. and {Gemme}, G. and {Genin}, E. and {Gennai}, A. and {George}, D. and {George}, J. and {Gergely}, L. and {Germain}, V. and {Ghonge}, S. and {Ghosh}, Abhirup and {Ghosh}, Archisman and {Ghosh}, S. and {Giaime}, J.~A. and {Giardina}, K.~D. and {Giazotto}, A. and {Gill}, K. and {Glover}, L. and {Goetz}, E. and {Goetz}, R. and {Gomes}, S. and {Goncharov}, B. and {Gonz{\'a}lez}, G. and {Gonzalez Castro}, J.~M. and {Gopakumar}, A. and {Gorodetsky}, M.~L. and {Gossan}, S.~E. and {Gosselin}, M. and {Gouaty}, R. and {Grado}, A. and {Graef}, C. and {Granata}, M. and {Grant}, A. and {Gras}, S. and {Gray}, C. and {Greco}, G. and {Green}, A.~C. and {Gretarsson}, E.~M. and {Groot}, P. and {Grote}, H. and {Grunewald}, S. and {Gruning}, P. and {Guidi}, G.~M. and {Guo}, X. and {Gupta}, A. and {Gupta}, M.~K. and {Gushwa}, K.~E. and {Gustafson}, E.~K. and {Gustafson}, R. and {Halim}, O. and {Hall}, B.~R. and {Hall}, E.~D. and {Hamilton}, E.~Z. and {Hammond}, G. and {Haney}, M. and {Hanke}, M.~M. and {Hanks}, J. and {Hanna}, C. and {Hannam}, M.~D. and {Hannuksela}, O.~A. and {Hanson}, J. and {Hardwick}, T. and {Harms}, J. and {Harry}, G.~M. and {Harry}, I.~W. and {Hart}, M.~J. and {Haster}, C. -J. and {Haughian}, K. and {Healy}, J. and {Heidmann}, A. and {Heintze}, M.~C. and {Heitmann}, H. and {Hello}, P. and {Hemming}, G. and {Hendry}, M. and {Heng}, I.~S. and {Hennig}, J. and {Heptonstall}, A.~W. and {Heurs}, M. and {Hild}, S. and {Hinderer}, T. and {Ho}, W.~C.~G. and {Hoak}, D. and {Hofman}, D. and {Holt}, K. and {Holz}, D.~E. and {Hopkins}, P. and {Horst}, C. and {Hough}, J. and {Houston}, E.~A. and {Howell}, E.~J. and {Hreibi}, A. and {Hu}, Y.~M. and {Huerta}, E.~A. and {Huet}, D. and {Hughey}, B. and {Husa}, S. and {Huttner}, S.~H. and {Huynh-Dinh}, T. and {Indik}, N. and {Inta}, R. and {Intini}, G. and {Isa}, H.~N. and {Isac}, J. -M. and {Isi}, M. and {Iyer}, B.~R. and {Izumi}, K. and {Jacqmin}, T. and {Jani}, K. and {Jaranowski}, P. and {Jawahar}, S. and {Jim{\'e}nez- Forteza}, F. and {Johnson}, W.~W. and {Johnson-McDaniel}, N.~K. and {Jones}, D.~I. and {Jones}, R. and {Jonker}, R.~J.~G. and {Ju}, L. and {Junker}, J. and {Kalaghatgi}, C.~V. and {Kalogera}, V. and {Kamai}, B. and {Kandhasamy}, S. and {Kang}, G. and {Kanner}, J.~B. and {Kapadia}, S.~J. and {Karki}, S. and {Karvinen}, K.~S. and {Kasprzack}, M. and {Kastaun}, W. and {Katolik}, M. and {Katsavounidis}, E. and {Katzman}, W. and {Kaufer}, S. and {Kawabe}, K. and {K{\'e}f{\'e}lian}, F. and {Keitel}, D. and {Kemball}, A.~J. and {Kennedy}, R. and {Kent}, C. and {Key}, J.~S. and {Khalili}, F.~Y. and {Khan}, I. and {Khan}, S. and {Khan}, Z. and {Khazanov}, E.~A. and {Kijbunchoo}, N. and {Kim}, Chunglee and {Kim}, J.~C. and {Kim}, K. and {Kim}, W. and {Kim}, W.~S. and {Kim}, Y. -M. and {Kimbrell}, S.~J. and {King}, E.~J. and {King}, P.~J. and {Kinley-Hanlon}, M. and {Kirchhoff}, R. and {Kissel}, J.~S. and {Kleybolte}, L. and {Klimenko}, S. and {Knowles}, T.~D. and {Koch}, P. and {Koehlenbeck}, S.~M. and {Koley}, S. and {Kondrashov}, V. and {Kontos}, A. and {Korobko}, M. and {Korth}, W.~Z. and {Kowalska}, I. and {Kozak}, D.~B. and {Kr{\"a}mer}, C. and {Kringel}, V. and {Krishnan}, B. and {Kr{\'o}lak}, A. and {Kuehn}, G. and {Kumar}, P. and {Kumar}, R. and {Kumar}, S. and {Kuo}, L. and {Kutynia}, A. and {Kwang}, S. and {Lackey}, B.~D. and {Lai}, K.~H. and {Landry}, M. and {Lang}, R.~N. and {Lange}, J. and {Lantz}, B. and {Lanza}, R.~K. and {Larson}, S.~L. and {Lartaux-Vollard}, A. and {Lasky}, P.~D. and {Laxen}, M. and {Lazzarini}, A. and {Lazzaro}, C. and {Leaci}, P. and {Leavey}, S. and {Lee}, C.~H. and {Lee}, H.~K. and {Lee}, H.~M. and {Lee}, H.~W. and {Lee}, K. and {Lehmann}, J. and {Lenon}, A. and {Leon}, E. and {Leonardi}, M. and {Leroy}, N. and {Letendre}, N. and {Levin}, Y. and {Li}, T.~G.~F. and {Linker}, S.~D. and {Littenberg}, T.~B. and {Liu}, J. and {Liu}, X. and {Lo}, R.~K.~L. and {Lockerbie}, N.~A. and {London}, L.~T. and {Lord}, J.~E. and {Lorenzini}, M. and {Loriette}, V. and {Lormand}, M. and {Losurdo}, G. and {Lough}, J.~D. and {Lousto}, C.~O. and {Lovelace}, G. and {L{\"u}ck}, H. and {Lumaca}, D. and {Lundgren}, A.~P. and {Lynch}, R. and {Ma}, Y. and {Macas}, R. and {Macfoy}, S. and {Machenschalk}, B. and {MacInnis}, M. and {Macleod}, D.~M. and {Maga{\~n}a Hernandez}, I. and {Maga{\~n}a-Sandoval}, F. and {Maga{\~n}a Zertuche}, L. and {Magee}, R.~M. and {Majorana}, E. and {Maksimovic}, I. and {Man}, N. and {Mandic}, V. and {Mangano}, V. and {Mansell}, G.~L. and {Manske}, M. and {Mantovani}, M. and {Marchesoni}, F. and {Marion}, F. and {M{\'a}rka}, S. and {M{\'a}rka}, Z. and {Markakis}, C. and {Markosyan}, A.~S. and {Markowitz}, A. and {Maros}, E. and {Marquina}, A. and {Marsh}, P. and {Martelli}, F. and {Martellini}, L. and {Martin}, I.~W. and {Martin}, R.~M. and {Martynov}, D.~V. and {Marx}, J.~N. and {Mason}, K. and {Massera}, E. and {Masserot}, A. and {Massinger}, T.~J. and {Masso-Reid}, M. and {Mastrogiovanni}, S. and {Matas}, A. and {Matichard}, F. and {Matone}, L. and {Mavalvala}, N. and {Mazumder}, N. and {McCarthy}, R. and {McClelland}, D.~E. and {McCormick}, S. and {McCuller}, L. and {McGuire}, S.~C. and {McIntyre}, G. and {McIver}, J. and {McManus}, D.~J. and {McNeill}, L. and {McRae}, T. and {McWilliams}, S.~T. and {Meacher}, D. and {Meadors}, G.~D. and {Mehmet}, M. and {Meidam}, J. and {Mejuto-Villa}, E. and {Melatos}, A. and {Mendell}, G. and {Mercer}, R.~A. and {Merilh}, E.~L. and {Merzougui}, M. and {Meshkov}, S. and {Messenger}, C. and {Messick}, C. and {Metzdorff}, R. and {Meyers}, P.~M. and {Miao}, H. and {Michel}, C. and {Middleton}, H. and {Mikhailov}, E.~E. and {Milano}, L. and {Miller}, A.~L. and {Miller}, B.~B. and {Miller}, J. and {Millhouse}, M. and {Milovich-Goff}, M.~C. and {Minazzoli}, O. and {Minenkov}, Y. and {Ming}, J. and {Mishra}, C. and {Mitra}, S. and {Mitrofanov}, V.~P. and {Mitselmakher}, G. and {Mittleman}, R. and {Moffa}, D. and {Moggi}, A. and {Mogushi}, K. and {Mohan}, M. and {Mohapatra}, S.~R.~P. and {Molina}, I. and {Montani}, M. and {Moore}, C.~J. and {Moraru}, D. and {Moreno}, G. and {Morisaki}, S. and {Morriss}, S.~R. and {Mours}, B. and {Mow-Lowry}, C.~M. and {Mueller}, G. and {Muir}, A.~W. and {Mukherjee}, Arunava and {Mukherjee}, D. and {Mukherjee}, S. and {Mukund}, N. and {Mullavey}, A. and {Munch}, J. and {Mu{\~n}iz}, E.~A. and {Muratore}, M. and {Murray}, P.~G. and {Nagar}, A. and {Napier}, K. and {Nardecchia}, I. and {Naticchioni}, L. and {Nayak}, R.~K. and {Neilson}, J. and {Nelemans}, G. and {Nelson}, T.~J.~N. and {Nery}, M. and {Neunzert}, A. and {Nevin}, L. and {Newport}, J.~M. and {Newton}, G. and {Ng}, K.~K.~Y. and {Nguyen}, P. and {Nguyen}, T.~T. and {Nichols}, D. and {Nielsen}, A.~B. and {Nissanke}, S. and {Nitz}, A. and {Noack}, A. and {Nocera}, F. and {Nolting}, D. and {North}, C. and {Nuttall}, L.~K. and {Oberling}, J. and {O'Dea}, G.~D. and {Ogin}, G.~H. and {Oh}, J.~J. and {Oh}, S.~H. and {Ohme}, F. and {Okada}, M.~A. and {Oliver}, M. and {Oppermann}, P. and {Oram}, Richard J. and {O'Reilly}, B. and {Ormiston}, R. and {Ortega}, L.~F. and {O'Shaughnessy}, R. and {Ossokine}, S. and {Ottaway}, D.~J. and {Overmier}, H. and {Owen}, B.~J. and {Pace}, A.~E. and {Page}, J. and {Page}, M.~A. and {Pai}, A. and {Pai}, S.~A. and {Palamos}, J.~R. and {Palashov}, O. and {Palomba}, C. and {Pal- Singh}, A. and {Pan}, Howard and {Pan}, Huang-Wei and {Pang}, B. and {Pang}, P.~T.~H. and {Pankow}, C. and {Pannarale}, F. and {Pant}, B.~C. and {Paoletti}, F. and {Paoli}, A. and {Papa}, M.~A. and {Parida}, A. and {Parker}, W. and {Pascucci}, D. and {Pasqualetti}, A. and {Passaquieti}, R. and {Passuello}, D. and {Patil}, M. and {Patricelli}, B. and {Pearlstone}, B.~L. and {Pedraza}, M. and {Pedurand}, R. and {Pekowsky}, L. and {Pele}, A. and {Penn}, S. and {Perez}, C.~J. and {Perreca}, A. and {Perri}, L.~M. and {Pfeiffer}, H.~P. and {Phelps}, M. and {Piccinni}, O.~J. and {Pichot}, M. and {Piergiovanni}, F. and {Pierro}, V. and {Pillant}, G. and {Pinard}, L. and {Pinto}, I.~M. and {Pirello}, M. and {Pitkin}, M. and {Poe}, M. and {Poggiani}, R. and {Popolizio}, P. and {Porter}, E.~K. and {Post}, A. and {Powell}, J. and {Prasad}, J. and {Pratt}, J.~W.~W. and {Pratten}, G. and {Predoi}, V. and {Prestegard}, T. and {Prijatelj}, M. and {Principe}, M. and {Privitera}, S. and {Prix}, R. and {Prodi}, G.~A. and {Prokhorov}, L.~G. and {Puncken}, O. and {Punturo}, M. and {Puppo}, P. and {P{\"u}rrer}, M. and {Qi}, H. and {Quetschke}, V. and {Quintero}, E.~A. and {Quitzow-James}, R. and {Raab}, F.~J. and {Rabeling}, D.~S. and {Radkins}, H. and {Raffai}, P. and {Raja}, S. and {Rajan}, C. and {Rajbhandari}, B. and {Rakhmanov}, M. and {Ramirez}, K.~E. and {Ramos-Buades}, A. and {Rapagnani}, P. and {Raymond}, V. and {Razzano}, M. and {Read}, J. and {Regimbau}, T. and {Rei}, L. and {Reid}, S. and {Reitze}, D.~H. and {Ren}, W. and {Reyes}, S.~D. and {Ricci}, F. and {Ricker}, P.~M. and {Rieger}, S. and {Riles}, K. and {Rizzo}, M. and {Robertson}, N.~A. and {Robie}, R. and {Robinet}, F. and {Rocchi}, A. and {Rolland}, L. and {Rollins}, J.~G. and {Roma}, V.~J. and {Romano}, J.~D. and {Romano}, R. and {Romel}, C.~L. and {Romie}, J.~H. and {Rosi{\'n}ska}, D. and {Ross}, M.~P. and {Rowan}, S. and {R{\"u}diger}, A. and {Ruggi}, P. and {Rutins}, G. and {Ryan}, K. and {Sachdev}, S. and {Sadecki}, T. and {Sadeghian}, L. and {Sakellariadou}, M. and {Salconi}, L. and {Saleem}, M. and {Salemi}, F. and {Samajdar}, A. and {Sammut}, L. and {Sampson}, L.~M. and {Sanchez}, E.~J. and {Sanchez}, L.~E. and {Sanchis-Gual}, N. and {Sandberg}, V. and {Sanders}, J.~R. and {Sassolas}, B. and {Sathyaprakash}, B.~S. and {Saulson}, P.~R. and {Sauter}, O. and {Savage}, R.~L. and {Sawadsky}, A. and {Schale}, P. and {Scheel}, M. and {Scheuer}, J. and {Schmidt}, J. and {Schmidt}, P. and {Schnabel}, R. and {Schofield}, R.~M.~S. and {Sch{\"o}nbeck}, A. and {Schreiber}, E. and {Schuette}, D. and {Schulte}, B.~W. and {Schutz}, B.~F. and {Schwalbe}, S.~G. and {Scott}, J. and {Scott}, S.~M. and {Seidel}, E. and {Sellers}, D. and {Sengupta}, A.~S. and {Sentenac}, D. and {Sequino}, V. and {Sergeev}, A. and {Shaddock}, D.~A. and {Shaffer}, T.~J. and {Shah}, A.~A. and {Shahriar}, M.~S. and {Shaner}, M.~B. and {Shao}, L. and {Shapiro}, B. and {Shawhan}, P. and {Sheperd}, A. and {Shoemaker}, D.~H. and {Shoemaker}, D.~M. and {Siellez}, K. and {Siemens}, X. and {Sieniawska}, M. and {Sigg}, D. and {Silva}, A.~D. and {Singer}, L.~P. and {Singh}, A. and {Singhal}, A. and {Sintes}, A.~M. and {Slagmolen}, B.~J.~J. and {Smith}, B. and {Smith}, J.~R. and {Smith}, R.~J.~E. and {Somala}, S. and {Son}, E.~J. and {Sonnenberg}, J.~A. and {Sorazu}, B. and {Sorrentino}, F. and {Souradeep}, T. and {Spencer}, A.~P. and {Srivastava}, A.~K. and {Staats}, K. and {Staley}, A. and {Steinke}, M. and {Steinlechner}, J. and {Steinlechner}, S. and {Steinmeyer}, D. and {Stevenson}, S.~P. and {Stone}, R. and {Stops}, D.~J. and {Strain}, K.~A. and {Stratta}, G. and {Strigin}, S.~E. and {Strunk}, A. and {Sturani}, R. and {Stuver}, A.~L. and {Summerscales}, T.~Z. and {Sun}, L. and {Sunil}, S. and {Suresh}, J. and {Sutton}, P.~J. and {Swinkels}, B.~L. and {Szczepa{\'n}czyk}, M.~J. and {Tacca}, M. and {Tait}, S.~C. and {Talbot}, C. and {Talukder}, D. and {Tanner}, D.~B. and {T{\'a}pai}, M. and {Taracchini}, A. and {Tasson}, J.~D. and {Taylor}, J.~A. and {Taylor}, R. and {Tewari}, S.~V. and {Theeg}, T. and {Thies}, F. and {Thomas}, E.~G. and {Thomas}, M. and {Thomas}, P. and {Thorne}, K.~A. and {Thorne}, K.~S. and {Thrane}, E. and {Tiwari}, S. and {Tiwari}, V. and {Tokmakov}, K.~V. and {Toland}, K. and {Tonelli}, M. and {Tornasi}, Z. and {Torres-Forn{\'e}}, A. and {Torrie}, C.~I. and {T{\"o}yr{\"a}}, D. and {Travasso}, F. and {Traylor}, G. and {Trinastic}, J. and {Tringali}, M.~C. and {Trozzo}, L. and {Tsang}, K.~W. and {Tse}, M. and {Tso}, R. and {Tsukada}, L. and {Tsuna}, D. and {Tuyenbayev}, D. and {Ueno}, K. and {Ugolini}, D. and {Unnikrishnan}, C.~S. and {Urban}, A.~L. and {Usman}, S.~A. and {Vahlbruch}, H. and {Vajente}, G. and {Valdes}, G. and {Vallisneri}, M. and {van Bakel}, N. and {van Beuzekom}, M. and {van den Brand}, J.~F.~J. and {Van Den Broeck}, C. and {Vander- Hyde}, D.~C. and {van der Schaaf}, L. and {van Heijningen}, J.~V. and {van Veggel}, A.~A. and {Vardaro}, M. and {Varma}, V. and {Vass}, S. and {Vas{\'u}th}, M. and {Vecchio}, A. and {Vedovato}, G. and {Veitch}, J. and {Veitch}, P.~J. and {Venkateswara}, K. and {Venugopalan}, G. and {Verkindt}, D. and {Vetrano}, F. and {Vicer{\'e}}, A. and {Viets}, A.~D. and {Vinciguerra}, S. and {Vine}, D.~J. and {Vinet}, J. -Y. and {Vitale}, S. and {Vo}, T. and {Vocca}, H. and {Vorvick}, C. and {Vyatchanin}, S.~P. and {Wade}, A.~R. and {Wade}, L.~E. and {Wade}, M. and {Walet}, R. and {Walker}, M. and {Wallace}, L. and {Walsh}, S. and {Wang}, G. and {Wang}, H. and {Wang}, J.~Z. and {Wang}, W.~H. and {Wang}, Y.~F. and {Ward}, R.~L. and {Warner}, J. and {Was}, M. and {Watchi}, J. and {Weaver}, B. and {Wei}, L. -W. and {Weinert}, M. and {Weinstein}, A.~J. and {Weiss}, R. and {Wen}, L. and {Wessel}, E.~K. and {We{\ss}els}, P. and {Westerweck}, J. and {Westphal}, T. and {Wette}, K. and {Whelan}, J.~T. and {Whitcomb}, S.~E. and {Whiting}, B.~F. and {Whittle}, C. and {Wilken}, D. and {Williams}, D. and {Williams}, R.~D. and {Williamson}, A.~R. and {Willis}, J.~L. and {Willke}, B. and {Wimmer}, M.~H. and {Winkler}, W. and {Wipf}, C.~C. and {Wittel}, H. and {Woan}, G. and {Woehler}, J. and {Wofford}, J. and {Wong}, K.~W.~K. and {Worden}, J. and {Wright}, J.~L. and {Wu}, D.~S. and {Wysocki}, D.~M. and {Xiao}, S. and {Yamamoto}, H. and {Yancey}, C.~C. and {Yang}, L. and {Yap}, M.~J. and {Yazback}, M. and {Yu}, Hang and {Yu}, Haocun and {Yvert}, M. and {Zadro{\.Z}ny}, A. and {Zanolin}, M. and {Zelenova}, T. and {Zendri}, J. -P. and {Zevin}, M. and {Zhang}, L. and {Zhang}, M. and {Zhang}, T. and {Zhang}, Y. -H. and {Zhao}, C. and {Zhou}, M. and {Zhou}, Z. and {Zhu}, S.~J. and {Zhu}, X.~J. and {Zimmerman}, A.~B. and {Zucker}, M.~E. and {Zweizig}, J. and {LIGO Scientific Collaboration} and {Virgo Collaboration}
-    :JOURNAL:  \prl
-    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
-    :YEAR:     2017
-    :MONTH:    Oct
-    :VOLUME:   119
-    :EID:      161101
-    :PAGES:    161101
-    :DOI:      10.1103/PhysRevLett.119.161101
+    :CUSTOM_ID: Fong:2015oha
+    :AUTHOR:   Fong, Wen-fai and Berger, Edo and Margutti, Raffaella and Zauderer, B. Ashley
+    :JOURNAL:  Astrophys. J.
+    :VOLUME:   815
+    :YEAR:     2015
+    :NUMBER:   2
+    :PAGES:    102
+    :DOI:      10.1088/0004-637X/815/2/102
+    :EPRINT:   1509.02922
     :ARCHIVEPREFIX: arXiv
-    :EPRINT:   1710.05832
-    :PRIMARYCLASS: gr-qc
-    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017PhRvL.119p1101A
+    :PRIMARYCLASS: astro-ph.HE
+    :SLACCITATION: %%CITATION = ARXIV:1509.02922;%%
+    :END:
+*** Gamma-Ray Burst Beaming: A Universal Configuration with a Standard Energy Reservoir? :sgrb:structuredjet:
+    :PROPERTIES:
+    :TITLE:    Gamma-Ray Burst Beaming: A Universal Configuration with a Standard Energy Reservoir?
+    :BTYPE:    article
+    :CUSTOM_ID: 2002ApJ...571..876Z
+    :AUTHOR:   {Zhang}, Bing and {M{\'e}sz{\'a}ros}, Peter
+    :JOURNAL:  \apj
+    :KEYWORDS: Gamma Rays: Bursts, ISM: Jets and Outflows, Shock Waves, Astrophysics
+    :YEAR:     2002
+    :MONTH:    Jun
+    :VOLUME:   571
+    :PAGES:    876-879
+    :DOI:      10.1086/339981
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   astro-ph/0112118
+    :PRIMARYCLASS: astro-ph
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2002ApJ...571..876Z
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
+** Observations
+*** Implications For The Origin Of GRB 051103 From LIGO Observations
+    :PROPERTIES:
+    :TITLE:    Implications For The Origin Of GRB 051103 From LIGO Observations
+    :BTYPE:    article
+    :CUSTOM_ID: Abadie:2012bz
+    :AUTHOR:   Abadie, J. and others
+    :COLLABORATION: LIGO Scientific Collaboration
+    :JOURNAL:  Astrophys. J.
+    :VOLUME:   755
+    :PAGES:    2
+    :DOI:      10.1088/0004-637X/755/1/2
+    :YEAR:     2012
+    :EPRINT:   1201.4413
+    :ARCHIVEPREFIX: arXiv
+    :PRIMARYCLASS: astro-ph.HE
+    :SLACCITATION: %%CITATION = ARXIV:1201.4413;%%
+    :END:
+
+*** Implications for the Origin of GRB 070201 from LIGO Observations
+    :PROPERTIES:
+    :TITLE:    Implications for the Origin of GRB 070201 from LIGO Observations
+    :BTYPE:    article
+    :CUSTOM_ID: Abbott:2007rh
+    :AUTHOR:   Abbott, B. and others
+    :COLLABORATION: LIGO Scientific Collaboration
+    :JOURNAL:  Astrophys. J.
+    :VOLUME:   681
+    :PAGES:    1419-1428
+    :DOI:      10.1086/587954
+    :YEAR:     2008
+    :EPRINT:   0711.1163
+    :ARCHIVEPREFIX: arXiv
+    :PRIMARYCLASS: astro-ph
+    :REPORTNUMBER: LIGO-P070081-A
+    :SLACCITATION: %%CITATION = ARXIV:0711.1163;%%
+    :END:
+
 *** An Ordinary Short Gamma-Ray Burst with Extraordinary Implications: Fermi-GBM Detection of GRB 170817A
     :PROPERTIES:
     :TITLE:    An Ordinary Short Gamma-Ray Burst with Extraordinary Implications: Fermi-GBM Detection of GRB 170817A
@@ -412,4 +528,907 @@
    :END:
 
 
+* Kilonova
+** A cocoon shock breakout as the origin of the $ \gamma $-ray emission in GW170817 :kilonova:
+   :PROPERTIES:
+   :TITLE:    A cocoon shock breakout as the origin of the $ \gamma $-ray emission in GW170817
+   :BTYPE:    article
+   :CUSTOM_ID: Gottlieb:2017pju
+   :AUTHOR:   Gottlieb, Ore and Nakar, Ehud and Piran, Tsvi and Hotokezaka, Kenta
+   :YEAR:     2017
+   :EPRINT:   1710.05896
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1710.05896;%%
+   :END:
 
+
+* Papers cited in the beaming paper
+
+** Exploding Neutron Stars in Close Binaries
+   :PROPERTIES:
+   :TITLE:    Exploding Neutron Stars in Close Binaries
+   :BTYPE:    article
+   :CUSTOM_ID: Blinnikov1984
+   :AUTHOR:   {Blinnikov}, S.~I. and {Novikov}, I.~D. and {Perevodchikova}, T.~V. and {Polnarev}, A.~G.
+   :JOURNAL:  SvAL
+   :YEAR:     1984
+   :MONTH:    apr
+   :VOLUME:   10
+   :PAGES:    177-179
+   :ADSURL:   http://adsabs.harvard.edu/abs/1984SvAL...10..177B
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+** Predictions for the rates of compact binary coalescences observable by ground-based gravitational-wave detectors :cbc:rates:ligo:virgo:geo:kagra:
+   :PROPERTIES:
+   :TITLE:    Predictions for the rates of compact binary coalescences observable by ground-based gravitational-wave detectors
+   :BTYPE:    article
+   :CUSTOM_ID: rates_paper
+   :AUTHOR:   {LIGO Scientific Collaboration} and {Virgo Collaboration}
+   :JOURNAL:  Classical and Quantum Gravity
+   :VOLUME:   27
+   :NUMBER:   17
+   :PAGES:    173001
+   :URL:      http://stacks.iop.org/0264-9381/27/i=17/a=173001
+   :YEAR:     2010
+   :END:
+
+
+
+** The loudest event statistic: general formulation, properties and applications :statistics:
+   :PROPERTIES:
+   :TITLE:    The loudest event statistic: general formulation, properties and applications
+   :BTYPE:    article
+   :CUSTOM_ID: Biswas09
+   :EPRINT:   gr-qc/0308069)
+   :AUTHOR:   Biswas, R. and Brady, P. R. and Creighton, J. D. E. and Fairhurst, S.
+   :JOURNAL:  Class. Quantum Grav.
+   :VOLUME:   26
+   :PAGES:    175009
+   :YEAR:     2009
+   :DOI:      10.1088/0264-9381/26/17/175009
+   :TAGS:     GW search method
+   :END:
+
+** Interpreting the results of searches for gravitational waves from coalescing binaries :cbc:searches:
+   :PROPERTIES:
+   :TITLE:    Interpreting the results of searches for gravitational waves from coalescing binaries
+   :BTYPE:    article
+   :CUSTOM_ID: BradyFairhurst08
+   :AUTHOR:   {Brady}, P.~R. and {Fairhurst}, S.
+   :JOURNAL:  Classical and Quantum Gravity
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   0707.2410
+   :PRIMARYCLASS: gr-qc
+   :YEAR:     2008
+   :MONTH:    may
+   :VOLUME:   25
+   :NUMBER:   10
+   :EID:      105002
+   :PAGES:    105002
+   :DOI:      10.1088/0264-9381/25/10/105002
+   :ADSURL:   http://adsabs.harvard.edu/abs/2008CQGra..25j5002B
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Search for gravitational waves from low mass compact binary coalescence in LIGO's sixth science run and Virgo's science runs 2 and 3 :searches:cbc:s6:ligo:virgo:
+   :PROPERTIES:
+   :TITLE:    Search for gravitational waves from low mass compact binary coalescence in LIGO's sixth science run and Virgo's science runs 2 and 3
+   :BTYPE:    article
+   :CUSTOM_ID: 2012PhRvD..85h2002A
+   :AUTHOR:   {Abadie}, J. and {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M. and {Accadia}, T. and {Acernese}, F. and {Adams}, C. and {Adhikari}, R. and {Affeldt}, C. and {Agathos}, M. and {Ajith}, P. and {Allen}, B. and {Allen}, G.~S. and {Amador Ceron}, E. and {Amariutei}, D. and {Amin}, R.~S. and {Anderson}, S.~B. and {Anderson}, W.~G. and {Arai}, K. and {Arain}, M.~A. and {Araya}, M.~C. and {Aston}, S.~M. and {Astone}, P. and {Atkinson}, D. and {Aufmuth}, P. and {Aulbert}, C. and {Aylott}, B.~E. and {Babak}, S. and {Baker}, P. and {Ballardin}, G. and {Ballmer}, S. and {Barker}, D. and {Barone}, F. and {Barr}, B. and {Barriga}, P. and {Barsotti}, L. and {Barsuglia}, M. and {Barton}, M.~A. and {Bartos}, I. and {Bassiri}, R. and {Bastarrika}, M. and {Basti}, A. and {Batch}, J. and {Bauchrowitz}, J. and {Bauer}, Th. S. and {Bebronne}, M. and {Behnke}, B. and {Beker}, M.~G. and {Bell}, A.~S. and {Belletoile}, A. and {Belopolski}, I. and {Benacquista}, M. and {Berliner}, J.~M. and {Bertolini}, A. and {Betzwieser}, J. and {Beveridge}, N. and {Beyersdorf}, P.~T. and {Bilenko}, I.~A. and {Billingsley}, G. and {Birch}, J. and {Biswas}, R. and {Bitossi}, M. and {Bizouard}, M.~A. and {Black}, E. and {Blackburn}, J.~K. and {Blackburn}, L. and {Blair}, D. and {Bland}, B. and {Blom}, M. and {Bock}, O. and {Bodiya}, T.~P. and {Bogan}, C. and {Bondarescu}, R. and {Bondu}, F. and {Bonelli}, L. and {Bonnand}, R. and {Bork}, R. and {Born}, M. and {Boschi}, V. and {Bose}, S. and {Bosi}, L. and {Bouhou}, B. and {Braccini}, S. and {Bradaschia}, C. and {Brady}, P.~R. and {Braginsky}, V.~B. and {Branchesi}, M. and {Brau}, J.~E. and {Breyer}, J. and {Briant}, T. and {Bridges}, D.~O. and {Brillet}, A. and {Brinkmann}, M. and {Brisson}, V. and {Britzger}, M. and {Brooks}, A.~F. and {Brown}, D.~A. and {Brummit}, A. and {Bulik}, T. and {Bulten}, H.~J. and {Buonanno}, A. and {Burguet─Castell}, J. and {Burmeister}, O. and {Buskulic}, D. and {Buy}, C. and {Byer}, R.~L. and {Cadonati}, L. and {Cagnoli}, G. and {Calloni}, E. and {Camp}, J.~B. and {Campsie}, P. and {Cannizzo}, J. and {Cannon}, K. and {Canuel}, B. and {Cao}, J. and {Capano}, C.~D. and {Carbognani}, F. and {Caride}, S. and {Caudill}, S. and {Cavagli{\`a}}, M. and {Cavalier}, F. and {Cavalieri}, R. and {Cella}, G. and {Cepeda}, C. and {Cesarini}, E. and {Chaibi}, O. and {Chalermsongsak}, T. and {Chalkley}, E. and {Charlton}, P. and {Chassande-Mottin}, E. and {Chelkowski}, S. and {Chen}, Y. and {Chincarini}, A. and {Chiummo}, A. and {Cho}, H. and {Christensen}, N. and {Chua}, S.~S.~Y. and {Chung}, C.~T.~Y. and {Chung}, S. and {Ciani}, G. and {Clara}, F. and {Clark}, D.~E. and {Clark}, J. and {Clayton}, J.~H. and {Cleva}, F. and {Coccia}, E. and {Cohadon}, P. -F. and {Colacino}, C.~N. and {Colas}, J. and {Colla}, A. and {Colombini}, M. and {Conte}, A. and {Conte}, R. and {Cook}, D. and {Corbitt}, T.~R. and {Cordier}, M. and {Cornish}, N. and {Corsi}, A. and {Costa}, C.~A. and {Coughlin}, M. and {Coulon}, J. -P. and {Couvares}, P. and {Coward}, D.~M. and {Coyne}, D.~C. and {Creighton}, J.~D.~E. and {Creighton}, T.~D. and {Cruise}, A.~M. and {Cumming}, A. and {Cunningham}, L. and {Cuoco}, E. and {Cutler}, R.~M. and {Dahl}, K. and {Danilishin}, S.~L. and {Dannenberg}, R. and {D'Antonio}, S. and {Danzmann}, K. and {Dattilo}, V. and {Daudert}, B. and {Daveloza}, H. and {Davier}, M. and {Davies}, G. and {Daw}, E.~J. and {Day}, R. and {Dayanga}, T. and {De Rosa}, R. and {DeBra}, D. and {Debreczeni}, G. and {Degallaix}, J. and {Del Pozzo}, W. and {del Prete}, M. and {Dent}, T. and {Dergachev}, V. and {DeRosa}, R. and {DeSalvo}, R. and {Dhurandhar}, S. and {Di Fiore}, L. and {Di Lieto}, A. and {Di Palma}, I. and {Di Paolo Emilio}, M. and {Di Virgilio}, A. and {D{\'\i}az}, M. and {Dietz}, A. and {DiGuglielmo}, J. and {Donovan}, F. and {Dooley}, K.~L. and {Dorsher}, S. and {Drago}, M. and {Drever}, R.~W.~P. and {Driggers}, J.~C. and {Du}, Z. and {Dumas}, J. -C. and {Dwyer}, S. and {Eberle}, T. and {Edgar}, M. and {Edwards}, M. and {Effler}, A. and {Ehrens}, P. and {Endr{\H{o}}czi}, G. and {Engel}, R. and {Etzel}, T. and {Evans}, K. and {Evans}, M. and {Evans}, T. and {Factourovich}, M. and {Fafone}, V. and {Fairhurst}, S. and {Fan}, Y. and {Farr}, B.~F. and {Farr}, W. and {Fazi}, D. and {Fehrmann}, H. and {Feldbaum}, D. and {Ferrante}, I. and {Fidecaro}, F. and {Finn}, L.~S. and {Fiori}, I. and {Fisher}, R.~P. and {Flaminio}, R. and {Flanigan}, M. and {Foley}, S. and {Forsi}, E. and {Forte}, L.~A. and {Fotopoulos}, N. and {Fournier}, J. -D. and {Franc}, J. and {Frasca}, S. and {Frasconi}, F. and {Frede}, M. and {Frei}, M. and {Frei}, Z. and {Freise}, A. and {Frey}, R. and {Fricke}, T.~T. and {Friedrich}, D. and {Fritschel}, P. and {Frolov}, V.~V. and {Fulda}, P.~J. and {Fyffe}, M. and {Galimberti}, M. and {Gammaitoni}, L. and {Ganija}, M.~R. and {Garcia}, J. and {Garofoli}, J.~A. and {Garufi}, F. and {G{\'a}sp{\'a}r}, M.~E. and {Gemme}, G. and {Geng}, R. and {Genin}, E. and {Gennai}, A. and {Gergely}, L. {\'A}. and {Ghosh}, S. and {Giaime}, J.~A. and {Giampanis}, S. and {Giardina}, K.~D. and {Giazotto}, A. and {Gill}, C. and {Goetz}, E. and {Goggin}, L.~M. and {Gonz{\'a}lez}, G. and {Gorodetsky}, M.~L. and {Go{\ss}ler}, S. and {Gouaty}, R. and {Graef}, C. and {Granata}, M. and {Grant}, A. and {Gras}, S. and {Gray}, C. and {Gray}, N. and {Greenhalgh}, R.~J.~S. and {Gretarsson}, A.~M. and {Greverie}, C. and {Grosso}, R. and {Grote}, H. and {Grunewald}, S. and {Guidi}, G.~M. and {Guido}, C. and {Gupta}, R. and {Gustafson}, E.~K. and {Gustafson}, R. and {Ha}, T. and {Hage}, B. and {Hallam}, J.~M. and {Hammer}, D. and {Hammond}, G. and {Hanks}, J. and {Hanna}, C. and {Hanson}, J. and {Hardt}, A. and {Harms}, J. and {Harry}, G.~M. and {Harry}, I.~W. and {Harstad}, E.~D. and {Hartman}, M.~T. and {Haughian}, K. and {Hayama}, K. and {Hayau}, J. -F. and {Heefner}, J. and {Heidmann}, A. and {Heintze}, M.~C. and {Heitmann}, H. and {Hello}, P. and {Hendry}, M.~A. and {Heng}, I.~S. and {Heptonstall}, A.~W. and {Herrera}, V. and {Hewitson}, M. and {Hild}, S. and {Hoak}, D. and {Hodge}, K.~A. and {Holt}, K. and {Hong}, T. and {Hooper}, S. and {Hosken}, D.~J. and {Hough}, J. and {Howell}, E.~J. and {Hughey}, B. and {Husa}, S. and {Huttner}, S.~H. and {Huynh-Dinh}, T. and {Ingram}, D.~R. and {Inta}, R. and {Isogai}, T. and {Ivanov}, A. and {Izumi}, K. and {Jacobson}, M. and {Jang}, H. and {Jaranowski}, P. and {Johnson}, W.~W. and {Jones}, D.~I. and {Jones}, G. and {Jones}, R. and {Ju}, L. and {Kalmus}, P. and {Kalogera}, V. and {Kamaretsos}, I. and {Kandhasamy}, S. and {Kang}, G. and {Kanner}, J.~B. and {Katsavounidis}, E. and {Katzman}, W. and {Kaufer}, H. and {Kawabe}, K. and {Kawamura}, S. and {Kawazoe}, F. and {Kells}, W. and {Keppel}, D.~G. and {Keresztes}, Z. and {Khalaidovski}, A. and {Khalili}, F.~Y. and {Khazanov}, E.~A. and {Kim}, B. and {Kim}, C. and {Kim}, D. and {Kim}, H. and {Kim}, K. and {Kim}, N. and {Kim}, Y. -M. and {King}, P.~J. and {Kinsey}, M. and {Kinzel}, D.~L. and {Kissel}, J.~S. and {Klimenko}, S. and {Kokeyama}, K. and {Kondrashov}, V. and {Kopparapu}, R. and {Koranda}, S. and {Korth}, W.~Z. and {Kowalska}, I. and {Kozak}, D. and {Kringel}, V. and {Krishnamurthy}, S. and {Krishnan}, B. and {Kr{\'o}lak}, A. and {Kuehn}, G. and {Kumar}, R. and {Kwee}, P. and {Lam}, P.~K. and {Land ry}, M. and {Lang}, M. and {Lantz}, B. and {Lastzka}, N. and {Lawrie}, C. and {Lazzarini}, A. and {Leaci}, P. and {Lee}, C.~H. and {Lee}, H.~M. and {Leindecker}, N. and {Leong}, J.~R. and {Leonor}, I. and {Leroy}, N. and {Letendre}, N. and {Li}, J. and {Li}, T.~G.~F. and {Liguori}, N. and {Lindquist}, P.~E. and {Lockerbie}, N.~A. and {Lodhia}, D. and {Lorenzini}, M. and {Loriette}, V. and {Lormand}, M. and {Losurdo}, G. and {Luan}, J. and {Lubinski}, M. and {L{\"u}ck}, H. and {Lundgren}, A.~P. and {Macdonald}, E. and {Machenschalk}, B. and {MacInnis}, M. and {Macleod}, D.~M. and {Mageswaran}, M. and {Mailand }, K. and {Majorana}, E. and {Maksimovic}, I. and {Man}, N. and {Mand el}, I. and {Mandic}, V. and {Mantovani}, M. and {Marandi}, A. and {Marchesoni}, F. and {Marion}, F. and {M{\'a}rka}, S. and {M{\'a}rka}, Z. and {Markosyan}, A. and {Maros}, E. and {Marque}, J. and {Martelli}, F. and {Martin}, I.~W. and {Martin}, R.~M. and {Marx}, J.~N. and {Mason}, K. and {Masserot}, A. and {Matichard}, F. and {Matone}, L. and {Matzner}, R.~A. and {Mavalvala}, N. and {Mazzolo}, G. and {McCarthy}, R. and {McClelland}, D.~E. and {McGuire}, S.~C. and {McIntyre}, G. and {McIver}, J. and {McKechan}, D.~J.~A. and {Meadors}, G.~D. and {Mehmet}, M. and {Meier}, T. and {Melatos}, A. and {Melissinos}, A.~C. and {Mendell}, G. and {Menendez}, D. and {Mercer}, R.~A. and {Meshkov}, S. and {Messenger}, C. and {Meyer}, M.~S. and {Miao}, H. and {Michel}, C. and {Milano}, L. and {Miller}, J. and {Minenkov}, Y. and {Mitrofanov}, V.~P. and {Mitselmakher}, G. and {Mittleman}, R. and {Miyakawa}, O. and {Moe}, B. and {Moesta}, P. and {Mohan}, M. and {Mohanty}, S.~D. and {Mohapatra}, S.~R.~P. and {Moraru}, D. and {Moreno}, G. and {Morgado}, N. and {Morgia}, A. and {Mori}, T. and {Mosca}, S. and {Mossavi}, K. and {Mours}, B. and {Mow-Lowry}, C.~M. and {Mueller}, C.~L. and {Mueller}, G. and {Mukherjee}, S. and {Mullavey}, A. and {M{\"u}ller-Ebhardt}, H. and {Munch}, J. and {Murphy}, D. and {Murray}, P.~G. and {Mytidis}, A. and {Nash}, T. and {Naticchioni}, L. and {Nawrodt}, R. and {Necula}, V. and {Nelson}, J. and {Newton}, G. and {Nishizawa}, A. and {Nocera}, F. and {Nolting}, D. and {Nuttall}, L. and {Ochsner}, E. and {O'Dell}, J. and {Oelker}, E. and {Ogin}, G.~H. and {Oh}, J.~J. and {Oh}, S.~H. and {Oldenburg}, R.~G. and {O'Reilly}, B. and {O'Shaughnessy}, R. and {Osthelder}, C. and {Ott}, C.~D. and {Ottaway}, D.~J. and {Ottens}, R.~S. and {Overmier}, H. and {Owen}, B.~J. and {Page}, A. and {Pagliaroli}, G. and {Palladino}, L. and {Palomba}, C. and {Pan}, Y. and {Pankow}, C. and {Paoletti}, F. and {Papa}, M.~A. and {Parisi}, M. and {Pasqualetti}, A. and {Passaquieti}, R. and {Passuello}, D. and {Patel}, P. and {Pedraza}, M. and {Peiris}, P. and {Pekowsky}, L. and {Penn}, S. and {Peralta}, C. and {Perreca}, A. and {Persichetti}, G. and {Phelps}, M. and {Pickenpack}, M. and {Piergiovanni}, F. and {Pietka}, M. and {Pinard}, L. and {Pinto}, I.~M. and {Pitkin}, M. and {Pletsch}, H.~J. and {Plissi}, M.~V. and {Poggiani}, R. and {P{\"o}ld}, J. and {Postiglione}, F. and {Prato}, M. and {Predoi}, V. and {Price}, L.~R. and {Prijatelj}, M. and {Principe}, M. and {Privitera}, S. and {Prix}, R. and {Prodi}, G.~A. and {Prokhorov}, L. and {Puncken}, O. and {Punturo}, M. and {Puppo}, P. and {Quetschke}, V. and {Raab}, F.~J. and {Rabeling}, D.~S. and {R{\'a}cz}, I. and {Radkins}, H. and {Raffai}, P. and {Rakhmanov}, M. and {Ramet}, C.~R. and {Rankins}, B. and {Rapagnani}, P. and {Raymond}, V. and {Re}, V. and {Redwine}, K. and {Reed}, C.~M. and {Reed}, T. and {Regimbau}, T. and {Reid}, S. and {Reitze}, D.~H. and {Ricci}, F. and {Riesen}, R. and {Riles}, K. and {Robertson}, N.~A. and {Robinet}, F. and {Robinson}, C. and {Robinson}, E.~L. and {Rocchi}, A. and {Roddy}, S. and {Rodriguez}, C. and {Rodruck}, M. and {Rolland}, L. and {Rollins}, J. and {Romano}, J.~D. and {Romano}, R. and {Romie}, J.~H. and {Rosi{\'n}ska}, D. and {R{\"o}ver}, C. and {Rowan}, S. and {R{\"u}diger}, A. and {Ruggi}, P. and {Ryan}, K. and {Ryll}, H. and {Sainathan}, P. and {Sakosky}, M. and {Salemi}, F. and {Samblowski}, A. and {Sammut}, L. and {Sancho de la Jordana}, L. and {Sand berg}, V. and {Sankar}, S. and {Sannibale}, V. and {Santamar{\'\i}a}, L. and {Santiago-Prieto}, I. and {Santostasi}, G. and {Sassolas}, B. and {Sathyaprakash}, B.~S. and {Sato}, S. and {Saulson}, P.~R. and {Savage}, R.~L. and {Schilling}, R. and {Schlamminger}, S. and {Schnabel}, R. and {Schofield}, R.~M.~S. and {Schulz}, B. and {Schutz}, B.~F. and {Schwinberg}, P. and {Scott}, J. and {Scott}, S.~M. and {Searle}, A.~C. and {Seifert}, F. and {Sellers}, D. and {Sengupta}, A.~S. and {Sentenac}, D. and {Sergeev}, A. and {Shaddock}, D.~A. and {Shaltev}, M. and {Shapiro}, B. and {Shawhan}, P. and {Shoemaker}, D.~H. and {Sibley}, A. and {Siemens}, X. and {Sigg}, D. and {Singer}, A. and {Singer}, L. and {Sintes}, A.~M. and {Skelton}, G. and {Slagmolen}, B.~J.~J. and {Slutsky}, J. and {Smith}, J.~R. and {Smith}, M.~R. and {Smith}, N.~D. and {Smith}, R.~J.~E. and {Somiya}, K. and {Sorazu}, B. and {Soto}, J. and {Speirits}, F.~C. and {Sperandio}, L. and {Stefszky}, M. and {Stein}, A.~J. and {Steinert}, E. and {Steinlechner}, J. and {Steinlechner}, S. and {Steplewski}, S. and {Stochino}, A. and {Stone}, R. and {Strain}, K.~A. and {Strigin}, S. and {Stroeer}, A.~S. and {Sturani}, R. and {Stuver}, A.~L. and {Summerscales}, T.~Z. and {Sung}, M. and {Susmithan}, S. and {Sutton}, P.~J. and {Swinkels}, B. and {Tacca}, M. and {Taffarello}, L. and {Talukder}, D. and {Tanner}, D.~B. and {Tarabrin}, S.~P. and {Taylor}, J.~R. and {Taylor}, R. and {Thomas}, P. and {Thorne}, K.~A. and {Thorne}, K.~S. and {Thrane}, E. and {Th{\"u}ring}, A. and {Titsler}, C. and {Tokmakov}, K.~V. and {Toncelli}, A. and {Tonelli}, M. and {Torre}, O. and {Torres}, C. and {Torrie}, C.~I. and {Tournefier}, E. and {Travasso}, F. and {Traylor}, G. and {Trias}, M. and {Tseng}, K. and {Tucker}, E. and {Ugolini}, D. and {Urbanek}, K. and {Vahlbruch}, H. and {Vajente}, G. and {Vallisneri}, M. and {van den Brand}, J.~F.~J. and {Van Den Broeck}, C. and {van der Putten}, S. and {van Veggel}, A.~A. and {Vass}, S. and {Vasuth}, M. and {Vaulin}, R. and {Vavoulidis}, M. and {Vecchio}, A. and {Vedovato}, G. and {Veitch}, J. and {Veitch}, P.~J. and {Veltkamp}, C. and {Verkindt}, D. and {Vetrano}, F. and {Vicer{\'e}}, A. and {Villar}, A.~E. and {Vinet}, J. -Y. and {Vitale}, S. and {Vitale}, S. and {Vocca}, H. and {Vorvick}, C. and {Vyatchanin}, S.~P. and {Wade}, A. and {Waldman}, S.~J. and {Wallace}, L. and {Wan}, Y. and {Wang}, X. and {Wang}, Z. and {Wanner}, A. and {Ward}, R.~L. and {Was}, M. and {Wei}, P. and {Weinert}, M. and {Weinstein}, A.~J. and {Weiss}, R. and {Wen}, L. and {Wen}, S. and {Wessels}, P. and {West}, M. and {Westphal}, T. and {Wette}, K. and {Whelan}, J.~T. and {Whitcomb}, S.~E. and {White}, D. and {Whiting}, B.~F. and {Wilkinson}, C. and {Willems}, P.~A. and {Williams}, H.~R. and {Williams}, L. and {Willke}, B. and {Winkelmann}, L. and {Winkler}, W. and {Wipf}, C.~C. and {Wiseman}, A.~G. and {Wittel}, H. and {Woan}, G. and {Wooley}, R. and {Worden}, J. and {Yablon}, J. and {Yakushin}, I. and {Yamamoto}, H. and {Yamamoto}, K. and {Yang}, H. and {Yeaton-Massey}, D. and {Yoshida}, S. and {Yu}, P. and {Yvert}, M. and {Zadro{\'z}ny}, A. and {Zanolin}, M. and {Zendri}, J. -P. and {Zhang}, F. and {Zhang}, L. and {Zhang}, W. and {Zhang}, Z. and {Zhao}, C. and {Zotov}, N. and {Zucker}, M.~E. and {Zweizig}, J.
+   :JOURNAL:  \prd
+   :KEYWORDS: 04.30.Db, 04.80.Cc, Wave generation and sources, Experimental tests of gravitational theories, General Relativity and Quantum Cosmology
+   :YEAR:     2012
+   :MONTH:    Apr
+   :VOLUME:   85
+   :EID:      082002
+   :PAGES:    082002
+   :DOI:      10.1103/PhysRevD.85.082002
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1111.7314
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2012PhRvD..85h2002A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Bayesian Logical Data Analysis for the Physical Sciences :book:statistics:data:bayesian:
+   :PROPERTIES:
+   :TITLE:    Bayesian Logical Data Analysis for the Physical Sciences
+   :BTYPE:    book
+   :CUSTOM_ID: 2010blda.book.....G
+   :AUTHOR:   {Gregory}, P.
+   :BOOKTITLE: Bayesian Logical Data Analysis for the Physical Sciences, by Phil Gregory, Cambridge, UK: Cambridge University Press, 2010
+   :YEAR:     2010
+   :MONTH:    may
+   :ADSURL:   http://adsabs.harvard.edu/abs/2010blda.book.....G
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** emcee: The MCMC Hammer                               :software:statistics:
+   :PROPERTIES:
+   :TITLE:    emcee: The MCMC Hammer
+   :BTYPE:    article
+   :CUSTOM_ID: 2013PASP..125..306F
+   :AUTHOR:   {Foreman-Mackey}, D. and {Hogg}, D.~W. and {Lang}, D. and {Goodman}, J.
+   :JOURNAL:  \pasp
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1202.3665
+   :PRIMARYCLASS: astro-ph.IM
+   :KEYWORDS: Data Analysis and Techniques
+   :YEAR:     2013
+   :MONTH:    mar
+   :VOLUME:   125
+   :PAGES:    306-312
+   :DOI:      10.1086/670067
+   :ADSURL:   http://adsabs.harvard.edu/abs/2013PASP..125..306F
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** The energetics and environment of the short-GRB afterglows 050709 and 050724 :sgrb:
+   :PROPERTIES:
+   :TITLE:    The energetics and environment of the short-GRB afterglows 050709 and 050724
+   :BTYPE:    article
+   :CUSTOM_ID: 2006MNRAS.367L..42P
+   :AUTHOR:   {Panaitescu}, A.
+   :JOURNAL:  \mnras
+   :EPRINT:   astro-ph/0511588
+   :KEYWORDS: radiation mechanisms: non-thermal, shock waves, ISM: jets and outflows, gamma-rays: bursts
+   :YEAR:     2006
+   :MONTH:    mar
+   :VOLUME:   367
+   :PAGES:    L42-L46
+   :DOI:      10.1111/j.1745-3933.2005.00134.x
+   :ADSURL:   http://adsabs.harvard.edu/abs/2006MNRAS.367L..42P
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** The late-time afterglow of the extremely energetic short burst GRB 090510 revisited :sgrb:kilonova:
+   :PROPERTIES:
+   :TITLE:    The late-time afterglow of the extremely energetic short burst GRB 090510 revisited
+   :BTYPE:    article
+   :CUSTOM_ID: 2012A&A...538L...7N
+   :AUTHOR:   {Nicuesa Guelbenzu}, A. and {Klose}, S. and {Kr{\"u}hler}, T. and {Greiner}, J. and {Rossi}, A. and {Kann}, D.~A. and {Olivares}, F. and {Rau}, A. and {Afonso}, P.~M.~J. and {Elliott}, J. and {Filgas}, R. and {K{\"u}pc{\"u} Yolda{\c s}}, A. and {McBreen}, S. and {Nardini}, M. and {Schady}, P. and {Schmidl}, S. and {Sudilovsky}, V. and {Updike}, A.~C. and {Yolda{\c s}}, A.
+   :JOURNAL:  \aap
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1201.3885
+   :PRIMARYCLASS: astro-ph.HE
+   :KEYWORDS: gamma-ray burst: individual: GRB 090510
+   :YEAR:     2012
+   :MONTH:    feb
+   :VOLUME:   538
+   :EID:      L7
+   :PAGES:    L7
+   :DOI:      10.1051/0004-6361/201118416
+   :ADSURL:   http://adsabs.harvard.edu/abs/2012A%26A...538L...7N
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** A "kilonova" associated with short-duration gamma-ray burst 130603B :kilonova:sgrb:
+   :PROPERTIES:
+   :TITLE:    A "kilonova" associated with short-duration gamma-ray burst 130603B
+   :BTYPE:    article
+   :CUSTOM_ID: Tanvir:2013pia
+   :AUTHOR:   Tanvir, N. R. and Levan, A. J. and Fruchter, A. S. and Hjorth, J. and Wiersema, K. and others
+   :JOURNAL:  Nature
+   :VOLUME:   500
+   :PAGES:    547-549
+   :DOI:      10.1038/nature12505
+   :YEAR:     2013
+   :EPRINT:   1306.4971
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1306.4971;%%
+   :END:
+** An r-process Kilonova Associated with the Short-hard GRB 130603B :kilonova:sgrb:
+   :PROPERTIES:
+   :TITLE:    An r-process Kilonova Associated with the Short-hard GRB 130603B
+   :BTYPE:    article
+   :CUSTOM_ID: Berger:2013wna
+   :AUTHOR:   Berger, E. and Fong, W. and Chornock, R.
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   774
+   :PAGES:    L23
+   :DOI:      10.1088/2041-8205/774/2/L23
+   :YEAR:     2013
+   :EPRINT:   1306.3960
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1306.3960;%%
+   :END:
+** Short GRB 130603B: Discovery of a Jet Break in the Optical and Radio Afterglows, and a Mysterious Late-time X-Ray Excess :sgrb:
+   :PROPERTIES:
+   :TITLE:    Short GRB 130603B: Discovery of a Jet Break in the Optical and Radio Afterglows, and a Mysterious Late-time X-Ray Excess
+   :BTYPE:    article
+   :CUSTOM_ID: Fong:2013lba
+   :AUTHOR:   Fong, W. and Berger, E. and Metzger, B. D. and Margutti, R. and Chornock, R. and others
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   780
+   :PAGES:    118
+   :DOI:      10.1088/0004-637X/780/2/118
+   :YEAR:     2014
+   :EPRINT:   1309.7479
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1309.7479;%%
+   :END:
+** Identification of two classes of gamma-ray bursts                   :sgrb:
+   :PROPERTIES:
+   :TITLE:    Identification of two classes of gamma-ray bursts
+   :BTYPE:    article
+   :CUSTOM_ID: Kouveliotou:1993yx
+   :AUTHOR:   Kouveliotou, Chryssa and Meegan, Charles A. and Fishman, Gerald J. and Bhyat, Narayana P. and Briggs, Michael S. and others
+   :JOURNAL:  \apj
+   :VOLUME:   413
+   :PAGES:    L101-104
+   :DOI:      10.1086/186969
+   :YEAR:     1993
+   :SLACCITATION: %%CITATION = ASJOA,413,L101;%%
+   :END:
+** Nucleosynthesis, Neutrino Bursts and Gamma-Rays from Coalescing Neutron Stars :cbc:bns:sgrb:
+   :PROPERTIES:
+   :TITLE:    Nucleosynthesis, Neutrino Bursts and Gamma-Rays from Coalescing Neutron Stars
+   :BTYPE:    article
+   :CUSTOM_ID: Eichler:1989ve
+   :AUTHOR:   Eichler, David and Livio, Mario and Piran, Tsvi and Schramm, David N.
+   :JOURNAL:  Nature
+   :VOLUME:   340
+   :PAGES:    126-128
+   :DOI:      10.1038/340126a0
+   :YEAR:     1989
+   :REPORTNUMBER: FERMILAB-PUB-89-102-A
+   :SLACCITATION: %%CITATION = NATUA,340,126;%%
+   :END:
+** Gamma-ray bursts as the death throes of massive binary stars        :sgrb:
+   :PROPERTIES:
+   :TITLE:    Gamma-ray bursts as the death throes of massive binary stars
+   :BTYPE:    article
+   :CUSTOM_ID: Narayan:1992iy
+   :AUTHOR:   Narayan, Ramesh and Paczynski, Bohdan and Piran, Tsvi
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   395
+   :PAGES:    L83-L86
+   :DOI:      10.1086/186493
+   :YEAR:     1992
+   :EPRINT:   astro-ph/9204001
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph
+   :REPORTNUMBER: CFA-3396
+   :SLACCITATION: %%CITATION = ASTRO-PH/9204001;%%
+   :END:
+** Cosmological gamma-ray bursts                                       :sgrb:
+   :PROPERTIES:
+   :TITLE:    Cosmological gamma-ray bursts
+   :BTYPE:    article
+   :CUSTOM_ID: Paczynski:1991aq
+   :AUTHOR:   Paczy\'{n}ski, Bohdan
+   :JOURNAL:  Acta Astron.
+   :VOLUME:   41
+   :PAGES:    257-267
+   :YEAR:     1991
+   :SLACCITATION: %%CITATION = AASWA,41,257;%%
+   :END:
+** The Progenitors of Short Gamma-Ray Bursts                :sgrb:progenitor:
+   :PROPERTIES:
+   :TITLE:    The Progenitors of Short Gamma-Ray Bursts
+   :BTYPE:    article
+   :CUSTOM_ID: Lee:2007js
+   :AUTHOR:   Lee, William H. and Ramirez-Ruiz, Enrico
+   :JOURNAL:  New J. Phys.
+   :VOLUME:   9
+   :YEAR:     2007
+   :PAGES:    17
+   :DOI:      10.1088/1367-2630/9/1/017
+   :EPRINT:   astro-ph/0701874
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: ASTRO-PH
+   :SLACCITATION: %%CITATION = ASTRO-PH/0701874;%%
+   :END:
+** The Supernova Gamma-Ray Burst Connection                   :supernova:grb:
+   :PROPERTIES:
+   :TITLE:    The Supernova Gamma-Ray Burst Connection
+   :BTYPE:    article
+   :CUSTOM_ID: Woosley:2006fn
+   :AUTHOR:   Woosley, S. E. and Bloom, J. S.
+   :JOURNAL:  Ann. Rev. Astron. Astrophys.
+   :VOLUME:   44
+   :YEAR:     2006
+   :PAGES:    507-556
+   :DOI:      10.1146/annurev.astro.43.072103.150558
+   :EPRINT:   astro-ph/0609142
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph
+   :REPORTNUMBER: UCSC-ASTRO-2006-1
+   :SLACCITATION: %%CITATION = ASTRO-PH/0609142;%%
+   :END:
+** Collapsars: Gamma-ray bursts and explosions in 'failed supernovae' :grb:supernova:
+   :PROPERTIES:
+   :TITLE:    Collapsars: Gamma-ray bursts and explosions in 'failed supernovae'
+   :BTYPE:    article
+   :CUSTOM_ID: MacFadyen:1998vz
+   :AUTHOR:   MacFadyen, A. and Woosley, S. E.
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   524
+   :YEAR:     1999
+   :PAGES:    262
+   :DOI:      10.1086/307790
+   :EPRINT:   astro-ph/9810274
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph
+   :SLACCITATION: %%CITATION = ASTRO-PH/9810274;%%
+   :END:
+** An unusual supernova in the error box of the gamma-ray burst of 25 April 1998 :observation:supernova:grb:
+   :PROPERTIES:
+   :TITLE:    An unusual supernova in the error box of the gamma-ray burst of 25 April 1998
+   :BTYPE:    article
+   :CUSTOM_ID: Galama:1998ea
+   :AUTHOR:   Galama, T. J. and others
+   :JOURNAL:  Nature
+   :VOLUME:   395
+   :YEAR:     1998
+   :PAGES:    670
+   :DOI:      10.1038/27150
+   :EPRINT:   astro-ph/9806175
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph
+   :SLACCITATION: %%CITATION = ASTRO-PH/9806175;%%
+   :END:
+** Electromagnetic extractions of energy from Kerr black holes :blackhole:kerr:em:
+   :PROPERTIES:
+   :TITLE:    Electromagnetic extractions of energy from Kerr black holes
+   :BTYPE:    article
+   :CUSTOM_ID: Blandford:1977ds
+   :AUTHOR:   Blandford, R. D. and Znajek, R. L.
+   :JOURNAL:  Mon. Not. Roy. Astron. Soc.
+   :VOLUME:   179
+   :YEAR:     1977
+   :PAGES:    433-456
+   :SLACCITATION: %%CITATION = MNRAA,179,433;%%
+   :END:
+** Jets, winds and bursts from coalescing neutron stars         :bns:cbc:grb:
+   :PROPERTIES:
+   :TITLE:    Jets, winds and bursts from coalescing neutron stars
+   :BTYPE:    article
+   :CUSTOM_ID: Rosswog:2002rt
+   :AUTHOR:   Rosswog, Stephan and Ramirez-Ruiz, Enrico
+   :JOURNAL:  Mon. Not. Roy. Astron. Soc.
+   :VOLUME:   336
+   :YEAR:     2002
+   :PAGES:    L7
+   :DOI:      10.1046/j.1365-8711.2002.05898.x
+   :EPRINT:   astro-ph/0207576
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph
+   :SLACCITATION: %%CITATION = ASTRO-PH/0207576;%%
+   :END:
+** Compact Binary Progenitors of Short Gamma-Ray Bursts        :sgrb:cbc:bns:
+   :PROPERTIES:
+   :TITLE:    Compact Binary Progenitors of Short Gamma-Ray Bursts
+   :BTYPE:    article
+   :CUSTOM_ID: Giacomazzo:2012zt
+   :AUTHOR:   Giacomazzo, Bruno and Perna, Rosalba and Rezzolla, Luciano and Troja, Eleonora and Lazzati, Davide
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   762
+   :YEAR:     2013
+   :PAGES:    L18
+   :DOI:      10.1088/2041-8205/762/2/L18
+   :EPRINT:   1210.8152
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1210.8152;%%
+   :END:
+** Prospects for joint gravitational wave and short gamma-ray burst observations :gw:grb:bns:cbc:
+   :PROPERTIES:
+   :TITLE:    Prospects for joint gravitational wave and short gamma-ray burst observations
+   :BTYPE:    article
+   :CUSTOM_ID: 2015ApJ...809...53C
+   :AUTHOR:   Clark, J. and Evans, H. and Fairhurst, S. and Harry, I. W. and Macdonald, E. and Macleod, D. and Sutton, P. J. and Williamson, A. R.
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   809
+   :YEAR:     2015
+   :NUMBER:   1
+   :PAGES:    53
+   :DOI:      10.1088/0004-637X/809/1/53
+   :EPRINT:   1409.8149
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :REPORTNUMBER: LIGO-P1400101
+   :SLACCITATION: %%CITATION = ARXIV:1409.8149;%%
+   :END:
+** Determining the Hubble Constant from Gravitational Wave Observations :grb:bns:gw:cosmology:
+   :PROPERTIES:
+   :TITLE:    Determining the Hubble Constant from Gravitational Wave Observations
+   :BTYPE:    article
+   :CUSTOM_ID: Schutz:1986gp
+   :AUTHOR:   Schutz, Bernard F.
+   :JOURNAL:  Nature
+   :VOLUME:   323
+   :YEAR:     1986
+   :PAGES:    310-311
+   :DOI:      10.1038/323310a0
+   :SLACCITATION: %%CITATION = NATUA,323,310;%%
+   :END:
+** Gamma-Ray-Burst Beaming and Gravitational-Wave Observations   :grb:gw:bns:
+   :PROPERTIES:
+   :TITLE:    Gamma-Ray-Burst Beaming and Gravitational-Wave Observations
+   :BTYPE:    article
+   :CUSTOM_ID: Chen:2012qh
+   :AUTHOR:   Chen, Hsin-Yu and Holz, Daniel E.
+   :JOURNAL:  Phys. Rev. Lett.
+   :VOLUME:   111
+   :YEAR:     2013
+   :NUMBER:   18
+   :PAGES:    181101
+   :DOI:      10.1103/PhysRevLett.111.181101
+   :EPRINT:   1206.0703
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.CO
+   :SLACCITATION: %%CITATION = ARXIV:1206.0703;%%
+   :END:
+
+** Unsteady outflow models for cosmological gamma-ray bursts    :sgrb:models:
+   :PROPERTIES:
+   :TITLE:    Unsteady outflow models for cosmological gamma-ray bursts
+   :BTYPE:    article
+   :CUSTOM_ID: Rees:1994nw
+   :AUTHOR:   Rees, M. J. and Meszaros, P.
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   430
+   :PAGES:    L93-L96
+   :DOI:      10.1086/187446
+   :YEAR:     1994
+   :EPRINT:   astro-ph/9404038
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph
+   :SLACCITATION: %%CITATION = ASTRO-PH/9404038;%%
+   :END:
+
+** Implications for the origin of short gamma-ray bursts from their observed positions around their host galaxies :sgrb:
+   :PROPERTIES:
+   :TITLE:    Implications for the origin of short gamma-ray bursts from their observed positions around their host galaxies
+   :BTYPE:    article
+   :CUSTOM_ID: Church:2011gk
+   :AUTHOR:   Church, Ross P. and Levan, Andrew J. and Davies, Melvyn B. and Tanvir, Nial
+   :JOURNAL:  \mnras 
+   :VOLUME:   413
+   :PAGES:    2004-2014
+   :YEAR:     2011
+   :DOI:      10.1111/j.1365-2966.2011.18277.x
+   :EPRINT:   1101.1088
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1101.1088;%%
+   :END:
+
+** Demographics of the Galaxies Hosting Short-duration Gamma-Ray Bursts :sgrb:
+   :PROPERTIES:
+   :TITLE:    Demographics of the Galaxies Hosting Short-duration Gamma-Ray Bursts
+   :BTYPE:    article
+   :CUSTOM_ID: Fong:2013eqa
+   :AUTHOR:   Fong, Wen-fai and others
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   769
+   :YEAR:     2013
+   :PAGES:    56
+   :DOI:      10.1088/0004-637X/769/1/56
+   :EPRINT:   1302.3221
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1302.3221;%%
+   :END:
+
+** Discerning the physical origins of cosmological Gamma-ray bursts based on multiple observational criteria: the cases of z=6.7 GRB 080913, z=8.3 GRB 090423, and some short/hard GRBs :sgrb:models:observation:
+   :PROPERTIES:
+   :TITLE:    Discerning the physical origins of cosmological Gamma-ray bursts based on multiple observational criteria: the cases of z=6.7 GRB 080913, z=8.3 GRB 090423, and some short/hard GRBs
+   :BTYPE:    article
+   :CUSTOM_ID: Zhang:2009uf
+   :AUTHOR:   Zhang, Bing and others
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   703
+   :YEAR:     2009
+   :PAGES:    1696-1724
+   :DOI:      10.1088/0004-637X/703/2/1696
+   :EPRINT:   0902.2419
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:0902.2419;%%
+   :END:
+
+** Upper limits on the rates of binary neutron star and neutron-star--black-hole mergers from Advanced LIGO's first observing run
+   :PROPERTIES:
+   :TITLE:    Upper limits on the rates of binary neutron star and neutron-star--black-hole mergers from Advanced LIGO's first observing run
+   :BTYPE:    article
+   :CUSTOM_ID: Abbott:2016ymx
+   :AUTHOR:   Abbott, Benjamin P. and others
+   :COLLABORATION: Virgo, LIGO Scientific
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   832
+   :YEAR:     2016
+   :NUMBER:   2
+   :PAGES:    L21
+   :DOI:      10.3847/2041-8205/832/2/L21
+   :EPRINT:   1607.07456
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1607.07456;%%
+   :END:
+
+** Short vs Long and Collapsars vs. non-Collapsar: a quantitative classification of GRBs
+   :PROPERTIES:
+   :TITLE:    Short vs Long and Collapsars vs. non-Collapsar: a quantitative classification of GRBs
+   :BTYPE:    article
+   :CUSTOM_ID: Bromberg:2012gp
+   :AUTHOR:   Bromberg, Omer and Nakar, Ehud and Piran, Tsvi and Sari, Re'em
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   764
+   :PAGES:    179
+   :DOI:      10.1088/0004-637X/764/2/179
+   :YEAR:     2013
+   :EPRINT:   1210.0068
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: astro-ph.HE
+   :SLACCITATION: %%CITATION = ARXIV:1210.0068;%%
+   :END:
+
+** Prospects for Observing and Localizing Gravitational-Wave Transients with Advanced LIGO, Advanced Virgo and KAGRA
+   :PROPERTIES:
+   :TITLE:    Prospects for Observing and Localizing Gravitational-Wave Transients with Advanced LIGO, Advanced Virgo and KAGRA
+   :BTYPE:    article
+   :CUSTOM_ID: Aasi:2013wya
+   :AUTHOR:   Abbott, Benjamin P. and others
+   :COLLABORATION: VIRGO, LIGO Scientific
+   :YEAR:     2013
+   :DOI:      10.1007/lrr-2016-1
+   :NOTE:     [Living Rev. Rel.19,1(2016)]
+   :EPRINT:   1304.0670
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: gr-qc
+   :REPORTNUMBER: LIGO-P1200087, VIR-0288A-12
+   :SLACCITATION: %%CITATION = ARXIV:1304.0670;%%
+   :END:
+
+
+** Prospects for joint gravitational-wave and electromagnetic observations of neutron-star--black-hole coalescing binaries
+   :PROPERTIES:
+   :TITLE:    Prospects for joint gravitational-wave and electromagnetic observations of neutron-star--black-hole coalescing binaries
+   :BTYPE:    article
+   :CUSTOM_ID: Pannarale:2014rea
+   :AUTHOR:   Pannarale, Francesco and Ohme, Frank
+   :JOURNAL:  Astrophys. J.
+   :VOLUME:   791
+   :PAGES:    L7
+   :DOI:      10.1088/2041-8205/791/1/L7
+   :YEAR:     2014
+   :EPRINT:   1406.6057
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: gr-qc
+   :REPORTNUMBER: LIGO-P1400096
+   :END:
+
+** Implementing a search for aligned-spin neutron star-black hole systems with advanced ground based gravitational wave detectors
+   :PROPERTIES:
+   :TITLE:    Implementing a search for aligned-spin neutron star-black hole systems with advanced ground based gravitational wave detectors
+   :BTYPE:    article
+   :CUSTOM_ID: Canton:2014ena
+   :AUTHOR:   Dal Canton, Tito and others
+   :JOURNAL:  Phys. Rev.
+   :VOLUME:   D90
+   :YEAR:     2014
+   :NUMBER:   8
+   :PAGES:    082004
+   :DOI:      10.1103/PhysRevD.90.082004
+   :EPRINT:   1405.6731
+   :ARCHIVEPREFIX: arXiv
+   :PRIMARYCLASS: gr-qc
+   :REPORTNUMBER: LIGO-P1400053
+   :SLACCITATION: %%CITATION = ARXIV:1405.6731;%%
+   :END:
+
+
+
+* Software
+** Algorithms
+*** FINDCHIRP: An algorithm for detection of gravitational waves from inspiraling compact binaries :software:detection:analysis:cbc:
+    :PROPERTIES:
+    :TITLE:    FINDCHIRP: An algorithm for detection of gravitational waves from inspiraling compact binaries
+    :BTYPE:    article
+    :CUSTOM_ID: 2012PhRvD..85l2006A
+    :AUTHOR:   {Allen}, B. and {Anderson}, W.~G. and {Brady}, P.~R. and {Brown}, D.~A. and {Creighton}, J.~D.~E.
+    :JOURNAL:  \prd
+    :EPRINT:   gr-qc/0509116
+    :KEYWORDS: Measurement and error theory, Gravitational wave detectors and experiments
+    :YEAR:     2012
+    :MONTH:    jun
+    :VOLUME:   85
+    :NUMBER:   12
+    :EID:      122006
+    :PAGES:    122006
+    :DOI:      10.1103/PhysRevD.85.122006
+    :ADSURL:   http://adsabs.harvard.edu/abs/2012PhRvD..85l2006A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+
+** Pipelines
+*** The PyCBC search for gravitational waves from compact binary coalescence :bns:bbh:cbc:ligo:pipelines:
+    :PROPERTIES:
+    :TITLE:    The PyCBC search for gravitational waves from compact binary coalescence
+    :BTYPE:    article
+    :CUSTOM_ID: Usman:2015kfa
+    :AUTHOR:   Usman, Samantha A. and others
+    :JOURNAL:  Class. Quant. Grav.
+    :VOLUME:   33
+    :YEAR:     2016
+    :NUMBER:   21
+    :PAGES:    215004
+    :DOI:      10.1088/0264-9381/33/21/215004
+    :EPRINT:   1508.02357
+    :ARCHIVEPREFIX: arXiv
+    :PRIMARYCLASS: gr-qc
+    :REPORTNUMBER: LIGO-P1500086
+    :SLACCITATION: %%CITATION = ARXIV:1508.02357;%%
+    :END:
+** Packages and libraries
+*** ligo-cbc/pycbc: O2 Production Release 17   :software:cbc:ligo:statistics:
+    :PROPERTIES:
+    :TITLE:    ligo-cbc/pycbc: O2 Production Release 17
+    :BTYPE:    misc
+    :CUSTOM_ID: software.pycbc.r17
+    :AUTHOR:   Alex Nitz and Ian Harry and Duncan Brown and Christopher M. Biwer and Josh Willis and Tito Dal Canton and Larne Pekowsky and Thomas Dent and Andrew R. Williamson and Collin Capano and Soumi De and Miriam Cabero and Bernd Machenschalk and Prayush Kumar and Thomas Massinger and Amber Lenon and Stephen Fairhurst and Steven Reyes and Alex Nielsen and shasvath and Francesco Pannarale and Leo Singer and Duncan Macleod and Stanislav Babak and Hunter Gabbard and John Veitch and CBC Sugar and Lorena Magaña Zertuche and Peter Couvares and Brian Bockelman
+    :MONTH:    aug
+    :YEAR:     2017
+    :DOI:      10.5281/zenodo.844934
+    :URL:      https://doi.org/10.5281/zenodo.844934
+    :END:
+*** The NumPy Array: A Structure for Efficient Numerical Computation :software:
+    :PROPERTIES:
+    :TITLE:    The NumPy Array: A Structure for Efficient Numerical Computation
+    :BTYPE:    article
+    :CUSTOM_ID: numpy
+    :AUTHOR:   Stéfan van der Walt and S. Chris Colbert and Gaël Varoquaux
+    :JOURNAL:  Computing in Science \& Engineering
+    :VOLUME:   13
+    :NUMBER:   2
+    :PAGES:    22-30
+    :YEAR:     2011
+    :DOI:      10.1109/MCSE.2011.37
+    :URL:      http://aip.scitation.org/doi/abs/10.1109/MCSE.2011.37
+    :EPRINT:   http://aip.scitation.org/doi/pdf/10.1109/MCSE.2011.37
+    :END:
+*** Matplotlib: A 2D graphics environment                          :software:
+    :PROPERTIES:
+    :TITLE:    Matplotlib: A 2D graphics environment
+    :BTYPE:    article
+    :CUSTOM_ID: Hunter:2007
+    :AUTHOR:   Hunter, J. D.
+    :JOURNAL:  Computing In Science \& Engineering
+    :VOLUME:   9
+    :NUMBER:   3
+    :PAGES:    90--95
+    :ABSTRACT: Matplotlib is a 2D graphics package used for Python for application development, interactive scripting, and publication-quality image generation across user interfaces and operating systems.
+    :PUBLISHER: IEEE COMPUTER SOC
+    :DOI:      10.1109/MCSE.2007.55
+    :YEAR:     2007
+    :END:
+*** Probabilistic programming in Python using PyMC3. :software:statistics:bayesian:
+    :PROPERTIES:
+    :TITLE:    Probabilistic programming in Python using PyMC3.
+    :BTYPE:    article
+    :CUSTOM_ID: software.pymc3
+    :ADDED-AT: 2016-06-22T00:00:00.000+0200
+    :AUTHOR:   Salvatier, John and Wiecki, Thomas V. and Fonnesbeck, Christopher
+    :BIBURL:   https://www.bibsonomy.org/bibtex/26ab34e5d272f050aa380db3f6465723f/dblp
+    :EE:       http://dx.doi.org/10.7717/peerj-cs.55
+    :INTERHASH: eef07a238aeeac284294fd85d15fb5d2
+    :INTRAHASH: 6ab34e5d272f050aa380db3f6465723f
+    :JOURNAL:  PeerJ Computer Science
+    :KEYWORDS: dblp
+    :PAGES:    e55
+    :TIMESTAMP: 2016-06-23T11:38:20.000+0200
+    :URL:      http://dblp.uni-trier.de/db/journals/peerj-cs/peerj-cs2.html#SalvatierWF16
+    :VOLUME:   2
+    :YEAR:     2016
+    :END:
+
+
+
+
+
+
+
+* GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral
+  :PROPERTIES:
+  :TITLE:    GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral
+  :BTYPE:    article
+  :CUSTOM_ID: TheLIGOScientific:2017qsa
+  :AUTHOR:   Abbott, Benjamin P. and others
+  :COLLABORATION: Virgo, LIGO Scientific
+  :JOURNAL:  Phys. Rev. Lett.
+  :VOLUME:   119
+  :YEAR:     2017
+  :NUMBER:   16
+  :PAGES:    161101
+  :DOI:      10.1103/PhysRevLett.119.161101
+  :EPRINT:   1710.05832
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: gr-qc
+  :REPORTNUMBER: LIGO-P170817
+  :SLACCITATION: %%CITATION = ARXIV:1710.05832;%%
+  :END:
+
+* Gravitational Waves and Gamma-Rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A
+  :PROPERTIES:
+  :TITLE:    Gravitational Waves and Gamma-Rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A
+  :BTYPE:    article
+  :CUSTOM_ID: Monitor:2017mdv
+  :AUTHOR:   Abbott, B. P. and others
+  :COLLABORATION: Virgo, Fermi-GBM, INTEGRAL, LIGO Scientific
+  :JOURNAL:  Astrophys. J.
+  :VOLUME:   848
+  :YEAR:     2017
+  :NUMBER:   2
+  :PAGES:    L13
+  :DOI:      10.3847/2041-8213/aa920c
+  :EPRINT:   1710.05834
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.HE
+  :REPORTNUMBER: LIGO-P1700308
+  :SLACCITATION: %%CITATION = ARXIV:1710.05834;%%
+  :END:
+
+* An Ordinary Short Gamma-Ray Burst with Extraordinary Implications: Fermi-GBM Detection of GRB 170817A
+  :PROPERTIES:
+  :TITLE:    An Ordinary Short Gamma-Ray Burst with Extraordinary Implications: Fermi-GBM Detection of GRB 170817A
+  :BTYPE:    article
+  :CUSTOM_ID: Goldstein:2017mmi
+  :AUTHOR:   Goldstein, A. and others
+  :JOURNAL:  Astrophys. J.
+  :VOLUME:   848
+  :YEAR:     2017
+  :NUMBER:   2
+  :PAGES:    L14
+  :DOI:      10.3847/2041-8213/aa8f41
+  :EPRINT:   1710.05446
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.HE
+  :SLACCITATION: %%CITATION = ARXIV:1710.05446;%%
+  :END:
+
+* INTEGRAL Detection of the First Prompt Gamma-Ray Signal Coincident with the Gravitational-wave Event GW170817
+  :PROPERTIES:
+  :TITLE:    INTEGRAL Detection of the First Prompt Gamma-Ray Signal Coincident with the Gravitational-wave Event GW170817
+  :BTYPE:    article
+  :CUSTOM_ID: Savchenko:2017ffs
+  :AUTHOR:   Savchenko, V. and others
+  :JOURNAL:  Astrophys. J.
+  :VOLUME:   848
+  :YEAR:     2017
+  :NUMBER:   2
+  :PAGES:    L15
+  :DOI:      10.3847/2041-8213/aa8f94
+  :EPRINT:   1710.05449
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.HE
+  :SLACCITATION: %%CITATION = ARXIV:1710.05449;%%
+  :END:
+
+* The Electromagnetic Counterpart of the Binary Neutron Star Merger LIGO/VIRGO GW170817. VIII. A Comparison to Cosmological Short-duration Gamma-ray Bursts
+  :PROPERTIES:
+  :TITLE:    The Electromagnetic Counterpart of the Binary Neutron Star Merger LIGO/VIRGO GW170817. VIII. A Comparison to Cosmological Short-duration Gamma-ray Bursts
+  :BTYPE:    article
+  :CUSTOM_ID: Fong:2017ekk
+  :AUTHOR:   Fong, W. and others
+  :JOURNAL:  Astrophys. J.
+  :VOLUME:   848
+  :YEAR:     2017
+  :NUMBER:   2
+  :PAGES:    L23
+  :DOI:      10.3847/2041-8213/aa9018
+  :EPRINT:   1710.05438
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.HE
+  :SLACCITATION: %%CITATION = ARXIV:1710.05438;%%
+  :END:
+
+* Illuminating Gravitational Waves: A Concordant Picture of Photons from a Neutron Star Merger
+  :PROPERTIES:
+  :TITLE:    Illuminating Gravitational Waves: A Concordant Picture of Photons from a Neutron Star Merger
+  :BTYPE:    article
+  :CUSTOM_ID: Kasliwal:2017ngb
+  :AUTHOR:   Kasliwal, M. M. and others
+  :DOI:      10.1126/science.aap9455
+  :JOURNAL:  Science
+  :YEAR:     2017
+  :EPRINT:   1710.05436
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.HE
+  :SLACCITATION: %%CITATION = ARXIV:1710.05436;%%
+  :END:
+
+
+
+* A Deep Chandra X-ray Study of Neutron Star Coalescence GW170817
+  :PROPERTIES:
+  :TITLE:    A Deep Chandra X-ray Study of Neutron Star Coalescence GW170817
+  :BTYPE:    article
+  :CUSTOM_ID: Haggard:2017qne
+  :AUTHOR:   Haggard, Daryl and Nynka, Melania and Ruan, John J. and Kalogera, Vicky and Bradley Cenko, S. and Evans, Phil and Kennea, Jamie A.
+  :JOURNAL:  Astrophys. J.
+  :VOLUME:   848
+  :YEAR:     2017
+  :NUMBER:   2
+  :PAGES:    L25
+  :DOI:      10.3847/2041-8213/aa8ede
+  :EPRINT:   1710.05852
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.HE
+  :SLACCITATION: %%CITATION = ARXIV:1710.05852;%%
+  :END:
+
+* Exploring short gamma-ray bursts as gravitational-wave standard sirens
+  :PROPERTIES:
+  :TITLE:    Exploring short gamma-ray bursts as gravitational-wave standard sirens
+  :BTYPE:    article
+  :CUSTOM_ID: Nissanke:2009kt
+  :AUTHOR:   Nissanke, Samaya and Holz, Daniel E. and Hughes, Scott A. and Dalal, Neal and Sievers, Jonathan L.
+  :JOURNAL:  Astrophys. J.
+  :VOLUME:   725
+  :YEAR:     2010
+  :PAGES:    496-514
+  :DOI:      10.1088/0004-637X/725/1/496
+  :EPRINT:   0904.1017
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.CO
+  :SLACCITATION: %%CITATION = ARXIV:0904.1017;%%
+  :END:
+
+* A gravitational-wave standard siren measurement of the Hubble constant
+  :PROPERTIES:
+  :TITLE:    A gravitational-wave standard siren measurement of the Hubble constant
+  :BTYPE:    article
+  :CUSTOM_ID: Abbott:2017xzu
+  :AUTHOR:   Abbott, B. P. and others
+  :COLLABORATION: LIGO Scientific, VINROUGE, Las Cumbres Observatory, DLT40, Virgo, 1M2H, MASTER
+  :JOURNAL:  Nature
+  :YEAR:     2017
+  :DOI:      10.1038/nature24471
+  :EPRINT:   1710.05835
+  :ARCHIVEPREFIX: arXiv
+  :PRIMARYCLASS: astro-ph.CO
+  :REPORTNUMBER: LIGO-P1700296, FERMILAB-PUB-17-472-A-AE
+  :SLACCITATION: %%CITATION = ARXIV:1710.05835;%%
+  :END:
+
+
+* The rate, luminosity function and time delay of non-Collapsar short GRBs
+  :PROPERTIES:
+  :TITLE:    The rate, luminosity function and time delay of non-Collapsar short GRBs
+  :BTYPE:    article
+  :CUSTOM_ID: 2015MNRAS.448.3026W
+  :AUTHOR:   {Wanderman}, D. and {Piran}, T.
+  :JOURNAL:  \mnras
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1405.5878
+  :PRIMARYCLASS: astro-ph.HE
+  :KEYWORDS: gravitational waves, nuclear reactions, nucleosynthesis, abundances, binaries: general, gamma-ray burst: general, stars: neutron
+  :YEAR:     2015
+  :MONTH:    apr
+  :VOLUME:   448
+  :PAGES:    3026-3037
+  :DOI:      10.1093/mnras/stv123
+  :ADSURL:   http://adsabs.harvard.edu/abs/2015MNRAS.448.3026W
+  :END:
+
+* Short GRB and binary black hole standard sirens as a probe of dark energy
+  :PROPERTIES:
+  :TITLE:    Short GRB and binary black hole standard sirens as a probe of dark energy
+  :BTYPE:    article
+  :CUSTOM_ID: 2006PhRvD..74f3006D
+  :AUTHOR:   {Dalal}, N. and {Holz}, D.~E. and {Hughes}, S.~A. and {Jain}, B.
+  :JOURNAL:  \prd
+  :EPRINT:   astro-ph/0601275
+  :KEYWORDS: Wave generation and sources, Dark energy, gamma-ray sources, gamma-ray bursts, Cosmology
+  :YEAR:     2006
+  :MONTH:    sep
+  :VOLUME:   74
+  :NUMBER:   6
+  :EID:      063006
+  :PAGES:    063006
+  :DOI:      10.1103/PhysRevD.74.063006
+  :ADSURL:   http://adsabs.harvard.edu/abs/2006PhRvD..74f3006D
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:

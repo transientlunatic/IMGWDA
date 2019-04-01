@@ -55,7 +55,7 @@ If $P(B) = 0$ then $P(A)$ is undefined.
 
 Given that $P(A,B) = P(A)P(B) = P(B)P(A) = P(B,A)$, we have $P(A,B) =
 P(B,A) = P(B|A)P(A)$, which leads us to a powerful result in
-probability; *Bayes Theorem*.
+probability; *Bayes Theorem* cite:bayesessay.
 
 #+ATTR_LATEX: :options [Bayes Theorem]
 #+LABEL: the:probability:bayes-theorem
@@ -86,14 +86,6 @@ Two variables, $x,y$ are said to be conditionally independent given a third vari
 We can denote conditional independence as $x\!\perp\!\!\!\perp\!y\,|\,z$.
 #+END_definition
 
-* Prior knowledge
-** Uninformative priors
-   :PROPERTIES:
-   :CUSTOM_ID: sec:probability:priors:uninformative
-   :END:
-
-*** Fisher information
-*** Haldane and Jeffreys priors
 
 * Information
 
@@ -134,9 +126,67 @@ We can denote conditional independence as $x\!\perp\!\!\!\perp\!y\,|\,z$.
   taking $0 \log (1/0) \equiv 0$.
   #+END_definition
 
-** KL / SJ Divergence
+** Comparing probability distributions
+
+   The information difference between two probability distributions, or indeed the information gain of one relative to another can be an important metric when producing inferential models.
 
 
+#+ATTR_LATEX: :options [Kullback-Lieblier Divergence]
+#+BEGIN_definition
+For two probability distributions, $P$ and $Q$ the Kullback-Liebler Divergence characterises the relative information content of the two, and is defined as 
+
+\begin{equation}
+\label{eq:probability:kl}
+D_{\text{KL}} (P, Q) = \int_{-\infty}^{\infty} \log \left( \frac{p(x)}{q(x)} \right) p(x) \dd{x}
+\end{equation}
+#+END_definition
+
+A related metric, the Shannon-Jensen divergence is symmetric and always finite.
+
+#+ATTR_LATEX: :options [Shannon-Jensen Divergence]
+#+BEGIN_definition
+For two probability distributions, $P$ and $Q$ the Shannon-Jensen Divergence characterises the relative information content of the two, and is defined as 
+
+\begin{equation}
+\label{eq:probability:kl}
+D_{\text{SJ}} (P, Q) = \frac{1}{2} D_{\text{KL}}(P,Q) + \frac{1}{2} D_{\text{KL}}(Q,P)
+\end{equation}
+#+END_definition
+
+* Prior knowledge
+
+  The /prior/ probability distribution is perhaps the characterising feature of the Bayesian approach to statistics, whereby the state of belief prior to any observation being made is encoded in a probability distribution.
+Bayes's Theorem allows the /updating/ of our state of belief, with the prior distribution being updated by data collected from observation or experiment.
+
+** Uninformative priors
+   :PROPERTIES:
+   :CUSTOM_ID: sec:probability:priors:uninformative
+   :END:
+   
+   While the ability to incorporate prior knowledge into an inference is valuable, there are clearly times when we have /no/ prior knowledge of a situation. 
+In these situations we must turn to /uninformative/ priors, which place the same probability on any possible event in the sample space.
+The simplest approach to constructing such a prior is through the /principle of indifference/, whereby equal probability is assigned to every possible state. 
+For example, if we wished to conduct an experiment to determine the fairness of a 20-sided die, but had no prior knowledge to assume that one side was more likely to be rolled (which is the desirable state for a fair die) then we would assume each side had a probability of $1/20$ of being rolled.
+In a continuous system such an arrangement is represented as a uniform distribution.
+Such an approach must be taken with care, however.
+
+Consider the situation in which cube is hidden behind a curtain. 
+We are told that each edge of the cube is between 3 and 5 metres long.
+We have no further information to indicate which length is most likely, so assign uniform probability to each possibility. 
+The mid-point of this uniform distribution is then $\SI{4}{\meter}$, so we might conclude that to be the most likely length of each side, giving a cube with $\SI{16}{\meter^2}$ faces, and a volume of $\SI{64}{\meter^3}$.
+We are then told that the surface area of each face is between $\SI{5}{\meter^2} and $\SI{25}{\meter^2}$. 
+Making similar assumptions we'd reach the conclusion that the surface area of each face was $\SI{15}{\meter^2}$. 
+This is clearly in tension with our estimate from the edge lengths; clearly the choice of a uniform prior in one set of variables implies a non-uniform one in another.
+
+It is therefore desirable to work with a prior distribution which will vary appropriately under a change of variables [fn:invariance]; such a prior is known as a /Jeffreys Prior/.
+A /Jeffreys Prior/ which will be invariant under reparameterisation of parameters $\vec{\theta}$ can be determined from the Fisher information, $I$: 
+
+\begin{equation}
+\label{eq:probability:jeffreys}
+p(\vec{\theta}) = \sqrt{\det{I(\vec{\theta})}}
+\end{equation}
+
+[fn:invariance] It's worth noting that in probability and statistics this property is known as \emph{invariance}, but in other areas of mathematics and physics is more likely to be called \emph{covariance}, for example in general relativity.
 
 * Feature spaces and Kernels
 #+LABEL: sec:probability:features-and-kernels
@@ -157,7 +207,8 @@ f(\vec{x}) = w_0 + w_{1} \vec{x} + w_{2} \vec{x} = \phi(\vec{x})^{\transpose} \c
 \end{equation}
 which remains linear (and therefore analytically solvable) provided $\phi$ is independent of $\vec{w}$.
 
-*Some notes to bridge the jump from feature maps to kernels*.
+Once data is mapped from the data space into the feature space it is desirable to have some notion of distance between the features (which we might interpret as the /similarity/ between pairs of data).
+We define a function which computes such a quantity as a /kernel/:
 
 #+LATEX_ATTR: :options [Kernel]
 #+BEGIN_definition
@@ -376,14 +427,115 @@ These processes are of considerable importance in Bayesian statistics thanks to 
 
 * Approximate inference methods
 
-In many problems the posterior probability distribution which we need to evaluate will be non-analytical, and drawing samples from it will be difficult.
-This problem is often further complicated by having access only to the likelihood and prior distributions, and not the evidence. 
+In many problems the posterior probability distribution which we need to evaluate will not be analytical.
+As a result identifying regions of the distribution where the probabilities are large (therefore the areas of interest within the distribution) is likely to require evaluating the function over its entire parameter space, which may be large.
+This problem is further complicated if the distribution is multi-modal, or contains narrow peaks which may be difficult to find.
+Further, the evidence term for the posterior is not normally known. 
+The combination of these issues for many distributions makes drawing samples from an arbitrary posterior probability distribution difficult.
+
+# In a Bayesian inference problem we have four quantities: the likelihood and prior distributions, which can be considered as "inputs" to the problem, and the posterior distribution and evidence, which are "outputs".
+
+For inference, we have two problems which must be solved: how to generate independent samples from a given probability distribution, and how to estimate the expectation of functions under the distribution.
+
+If we are able to solve the first problem the second can be estimated by using $R$ random samples, $\setbuilder{\vec{x}_r | r \in 1, \dots, R}$, drawn from the distribution, giving an estimator for the expectation, $\hat{\expect}(\phi)$ for the function $\phi$,
+\begin{equation}
+\label{eq:probability:mcmc:expectation}
+\hat{\expect}(\phi) = \frac{1}{R} \sum_{r} \phi(\vec{x}_r)
+\end{equation}
 
 Given that evaluating a continuous system at every location in its state space is not possible we need a means of producing samples from the distribution which are representative of the distribution.
 A straight-forward approach is to uniformly sample the state space (one strategy to do this would be to devise a grid and take samples at each grid point), however such an approach will work only for the simplest distributions (see chapters 4 and 29 of cite:2003itil.book.....M for a detailed information theoretic discussion on this).
 
+If sampling from the distribution is difficult, but evaluating it at a specific location in its parameter space is possible, a number of sampling methods are possible. 
+The simplest of these, /importance sampling/, and /rejection sampling/ rely on sampling from a tractable distribution, such as a Gaussian distribution, and then correcting the samples in some way based on the evaluation of the target distribution.
 
+\begin{figure}
+\providecommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} 
+\providecommand\complicated{ 0.5*( 1/(.2*sqrt(2*pi))*exp(-((x-1)^2)/(.2*2^2))) +  0.5*(1/(.5*sqrt(2*pi))*exp(-((x-5)^2)/(.5*2^2)) ) } 
+% Gauss function, parameters mu and sigma
+\centering
+\begin{tikzpicture}
+	\begin{scope}%[xshift=1cm,]
+	\begin{axis}[every axis plot post/.append style={
+	  mark=none,domain=-5:9,samples=50,smooth},
+	clip=false,
+	%xscale=0.3,
+	%yscale=0.2,
+	axis y line=none,
+	axis x line=bottom,
+	ymin=0,
+	xtick=\empty,
+	]
+	\addplot[thick]{0.5*\complicated};
+	\addplot[dashed] {2*\gauss{1.5}{2}};
+	
+	\node (x1) [text badly centered] at (axis cs:9.5,0) {$x$};
+	\end{axis}
+	\end{scope}
 
+\end{tikzpicture}
+\caption{In importance sampling the arbitrarily complicated distribution, $P^*(x)$ [depicted as a solid line], is not directly sampled, but instead a simpler distribution, $Q^*(x)$ [depicted as a dashed line], such as a normal distribution, is sampled. 
+In regions where $Q^*(x) > P^*(x)$ the samples will \emph{over-represent} $P^*(x)$, and vice versa in regions where $Q^*(x) < P^*$.
+As a result the relative \emph{importance} of each sample needs to be taken into account, by weighting each sample.
+}
+\label{fig:probability:importance-sampling}
+\end{figure}
+
+With /importance sampling/, rather than sampling from the complicated distribution, $P$, (the /target distribution/), we instead sample from a distribution, $Q$, which we do know how to sample from (such as a normal or a uniform distribution).
+(Since we do not necessarily know the normalisation of $P$ or $Q$ we can instead sample and evaluate within a scalar multiple, $Z$, such that $ZP^*(x) = P(x)$.
+We then draw the samples $\setbuilder{\vec{x}_r | r \in 1, \dots, R}$ from $Q$, and evaluate $Q(x)$ and $P(x)$ for each sample. 
+In regions where $Q(x)$ is greater than $P(x)$ the samples will over-represent $P(x)$ (and vice versa when $Q(x)$ is smaller than $P(x)$). 
+To account for this each sample is re-weighted to adjust its importance by the ratio
+\[ w_r = \frac{P^*(x_r)}{Q^*(x_r)} \]
+so then equation ref:eq:probability:mcmc:expectation becomes
+\[ \hat{\expect}(\phi) = \frac{ \sum_r w_r \phi(x_r) }{\sum_r w_r} \]
+
+While importance sampling is an improvement over uniform sampling, it will fail to converge in situations where the target distribution contains many separated peaks, and will struggle to explore a high-dimensional space efficiently.
+
+/Rejection sampling/ uses a similar principle to importance sampling, using a /proposal distribution/, $Q(x)$, which can be sampled directly, to generate the samples.
+The method assumes we know the value of a constant, $c$ such that $cQ^*(x) > P^*(x) \forall x$.
+
+\begin{figure}
+\providecommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} 
+\providecommand\complicated{ 0.5*( 1/(.2*sqrt(2*pi))*exp(-((x-1)^2)/(.2*2^2))) +  0.5*(1/(.5*sqrt(2*pi))*exp(-((x-5)^2)/(.5*2^2)) ) } 
+\centering
+\begin{tikzpicture}
+	\begin{scope}%[xshift=1cm,]
+	\begin{axis}[every axis plot post/.append style={
+	  mark=none,domain=-5:9,samples=50,smooth},
+	clip=false,
+	%xscale=0.3,
+	%yscale=0.2,
+	axis y line=none,
+	axis x line=bottom,
+	ymin=0,
+	xtick=\empty,
+	]
+	\addplot[thick]{0.5*\complicated};
+	\addplot[dashed] {5*\gauss{2.5}{3}};
+	
+	\node (x1) [text badly centered] at (axis cs:9.5,0) {$x$};
+	\end{axis}
+	\end{scope}
+
+\end{tikzpicture}
+\caption{In rejection sampling the arbitrarily complicated distribution, $P^*(x)$ [depicted as a solid line], is not directly sampled, but instead a simpler distribution, the proposal distribution, $cQ^*(x)$ [depicted as a dashed line], such as a normal distribution, is sampled. 
+}
+\label{fig:probability:importance-sampling}
+\end{figure}
+
+This method requires two random numbers to be generated: a sample $x$ is drawn from $Q(x)$, and $cQ(x)$ is calculated.
+Then a variable $u$ is drawn from the uniform distribution $U(0, cQ^*(x))$.
+If $u > P^*(x)$ (that is, it lies in the region between $P*(x)$ and $Q^*(x)$, it is rejected, and discarded.
+Otherwise, it is accepted, and kept.
+This method ensures that only points which lie within $P^*(x)$ are retained, preventing over-representation, and also that the density of samples is proportional to $P^*(x)$ thanks to the uniform distribution of samples under $P^*(x)$.
+
+Rejection sampling is fundamentally similar to /Buffon's Needle Problem/, in which needles dropped on floorboards can be used to estimate the value of $\pi$, and can be used to evaluate complex integrals outwith probability problems.
+
+Rejection sampling will struggle to converge if the target and proposal distributions are not similar, as the region $[P^*(x), Q^*(x)]$ between the two functions will be large, so the probability of generating samples with $u<P^*(x)$ will be small. 
+The method is also impractical in more than one-dimension, as similarly, the probability of generating a point within the volume described by $P^*(x)$ will diminish with growing dimensionality.
+
+The deficiencies of these two methods lead to the development of a more sophisticated approach: /Markov Chain Monte Carlo/.
 # #+ATTR_LATEX: :option [Stochastic process]
 # #+BEGIN_definition
 # # For a probability space $(\Omega, P, \mathcal{F})$
@@ -396,14 +548,44 @@ A straight-forward approach is to uniformly sample the state space (one strategy
 # Given a stochastic process
 # #+END_definition
 
-** MCMC
+** Markov-Chain Monte Carlo
+   
+As noted previously, rejection sampling struggles to efficiently sample a distribution if the proposal and target distributions are not similar.
+In order to address this failing, the /Metropolis-Hastings/ algorithm constructs a proposal distribution which depends on the sampling location (or more precisely, the current /state/ of the sampler).
+This proposal distribution will often be something simple, like a Normal distribution centred on the current $x_t$ being considered.
 
+As with rejection sampling, a tentative state, $x'$ is drawn from $Q^*(x', x_t)$, given the current state, $x_t$.
+The ratio
+\begin{equation}
+\label{eq:probability:metropolis:acceptance}
+a = \frac{P^*(x')}{P*(x_t)} \frac{Q^*(x_t, x')}{Q^*(x', x_t)}
+\end{equation}
+is evaluated.
+If $a \geq 1$ the new state is accepted; otherwise the new state is accepted with a probability $a$.
+If the new state is accepted it becomes the current state (i.e. $x_{t+1} = x'$); if it is rejected the current state is retained, so $x_{t+1} = x_t$.
 
+In the case that a symmetrical proposal distribution is chosen, such as a normal distribution, the second ratio in equation ref:eq:probability:metropolis:acceptance will always be equal to $1$, providing a simpler expression for $a$, which will be consequently faster to evaluate.
+The behaviour of the Metropolis-Hastings algorithm produces a stochastic process with the Markov property.
 
-** Nested sampling
+In order to improve the computational efficiency of an MCMC algorithm the gradient information of the problem can be taken into account, which will guide the process to the regions of high probability.
+These methods, known as /Hamiltonian/ MCMC methods can allow faster convergence, and therefore reduced computation perform Bayesian inference.
+The No-U-Turns sampler cite:2011arXiv1111.4246H is an example of such a method which includes various algorithmic refinements to allow the sampler to work efficiently in hierarchical models (see section
+ref:sec:probability:hierarchical) without requiring manual tuning.
 
 * Hierarchical modelling
+  :PROPERTIES:
+  :CUSTOM_ID: sec:probability:hierarchical
+  :END:
 
+
+Structured probability distributions, as introduced in section ref:sec:probability:structured have the useful property that the posterior distribution can be constructed as the product of a set of independent probability distributions.
+This structure is frequently useful when describing physical systems, where, for example, we wish to infer the properties of an underlying physical system from a set of individual observations.
+
+An example of such a hierarchical model, used to determine the mean jet opening angle (beaming angle) of abpl:sgrb is presented in chapter ref:cha:grb and in Williams /et al./ cite:dwsgrbbayesianconstraint, in which a hierarchical approach is taken to determining the probability distribution of the beaming angle via the rates at which observations of abpl:sgrb and abbr:bns events are observed.
+These are themselves determined from observed quantities, such as the number of observed events, the time over which detections were made, and the false alarm rate of the detection process. 
+A model such as this, which has two layers of inference, is comparatively easy to extend; the inferred beaming angle could, for example, be used as part of the inference of the generating phenomenon.
+
+Hierarchical models are gaining popularity in other areas of abbr:gw research, principally black hole population inference cite:2017MNRAS.471.2801S,2012PhRvD..86l4032A.
 
 * Bayesian Linear regression
   :PROPERTIES:

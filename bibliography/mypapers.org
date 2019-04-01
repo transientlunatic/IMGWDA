@@ -241,3 +241,21 @@
    :ADSURL:   https://ui.adsabs.harvard.edu/#abs/2018ApJ...858...79W
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
+** A Precessing Numerical Relativity Waveform Surrogate Model for Binary Black Holes: A Gaussian Process Regression Approach
+   :PROPERTIES:
+   :TITLE:    A Precessing Numerical Relativity Waveform Surrogate Model for Binary Black Holes: A Gaussian Process Regression Approach
+   :BTYPE:    article
+   :CUSTOM_ID: 2019arXiv190309204W
+   :AUTHOR:   {Williams}, Daniel and {Heng}, Ik Siong and {Gair}, Jonathan and {Clark}, James A and {Khamesra}, Bhavesh
+   :JOURNAL:  arXiv e-prints
+   :KEYWORDS: General Relativity and Quantum Cosmology, Physics - Data Analysis, Statistics and Probability
+   :YEAR:     2019
+   :MONTH:    Mar
+   :EID:      arXiv:1903.09204
+   :PAGES:    arXiv:1903.09204
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1903.09204
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2019arXiv190309204W
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:

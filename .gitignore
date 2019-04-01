@@ -267,7 +267,7 @@ TSWLatexianTemp*
 
 
 # project specific
-/bibliography/*.bib
-/chapters/*/*.tex
+bibliography/*.bib
+chapters/*/*.tex
 *.int_tex
 

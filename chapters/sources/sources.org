@@ -318,7 +318,7 @@ In contrast to the signal from transient sources, continuous waves can be observ
 
 * Stochastic backgrounds
 
-In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{10^{14}}{\hertz}$.
+In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{e14}{\hertz}$.
 
 The abbr:gw background is approximately analogous to the abbr:cmb.
 This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
