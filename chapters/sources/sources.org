@@ -4,8 +4,88 @@ The astrophysical sources of gravitational waves can be divided roughly into thr
 
 + Continuous :: sources are expected to produce radiation   constantly, or at least over long periods of time. 
   The primary source of continuous sources for gls:aLIGO are expected to be gravitational wave pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:LISA mission, the radiation from inspiralling binary systems should also be detectable.
-+ Transient :: sources produce a strong /burst/ of gravitational waves over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of this powerful analysis technique. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:LISA regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
 + Stochastic :: sources are expected to produce a background of gravitational waves, from the black holes at the centres of galaxies cite:1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S, and from the universe's inflationary period cite:1988PhRvD..37.2078A.
++ Transient :: sources produce a strong /burst/ of gravitational waves over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of this powerful analysis technique. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:LISA regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
+
+* Continuous wave sources
+# It's very weird; right now as I'm writing parts of this chapter I'm in the same lecture theatre as Bell. 2019-02-27 (JimFest).
+The discovery of pulsars by Bell and Hewish in 1967 was an unexpected discovery for radio astronomy---objects which produce beams of radiation, and rotate rapidly, like a lighthouse. 
+Not long after their discovery it became apparent that they were a specific form of abpl:ns---the tightly-packed remnant of a massive star which has ended its life as a supernova.
+
+Any rotating mass quadrupole (see equation ref:eq:intro:gr:mass-quadrupole) will produce gravitational waves as it rotates (see equation ref:eq:intro:gr:quadrupole2strain), and so it follows that a dense, massive object, such as a neutron star, will produce gravitational waves as they rotate, if they possess any mass asymmetry.
+Further, thanks to their highly stable rotation speed, the abbr:gw emission from abpl:ns ought to be produced continuously at a very stable frequency.
+As gravitational wave emission occurs in the quadrupole [(2,2)] mode [fn:gr-quadrupole], this emission should be at twice the rotational frequency of the abbr:ns.
+
+The rotation frequency of most pulsars is well-measured by radio observations, making these attractive prospective sources for ground-based abbr:gw detectors, such as gls:ligo and gls:virgo. 
+Indeed, targetted searches for abpl:gw from pulsars at twice their rotation frequency have been conducted since the "initial" detector period, using data from gls:ligo, gls:geo600, and later gls:virgo (which are summarised in cite:2014ApJ...785..119A), and continued into the advanced era cite:2017ApJ...839...12A.
+
+Pulsar spins are known to decelerate over time, through a process known as spin-down. 
+This process is often attributed to energy loss through gravitational radiation. 
+The spin-down limit of a pulsar is the abbr:gw strain which corresponds to this scenario, where the entirity of the energy being lost is radiated as abbr:gw, and is defined as
+\begin{equation}
+\label{eq:sources:cw:spindown}
+h = \left( \frac{5}{2} \frac{G I_{zz} | \dot{f} | }{c^{3} d^{2} f } \right)
+\end{equation}
+for a pulsar with a spin frequency $f$, moment-of-inertia tensor $I$, at a distance $d$ from the observer.
+
+To date no continuous abbr:gw source has been detected, but the failure to measure gravitational waves from known pulsars has allowed tight limits to be placed on the ellipticity of 222 known radio pulsars cite:2019arXiv190208507T, with the tightest limit that placed on J$0711-6830$, at $1.2\ee{-8}$. 
+# The latest results, from the analysis of the first two observing runs' data from advanced gls:ligo, show that the slow-down of the Crab pulsar cannot be explain
+
+Searches made for pulsars at around twice their rotation frequency were augmented with targetted searches for emission at the rotation frequency following the second observing run cite:2019arXiv190208507T. 
+This is possible if the rotating neutron star is either biaxial or triaxial, and exhibits free precession. 
+Emission at the rotation frequency may also be possible in abpl:ns with pinned superfluid interiors cite:2010MNRAS.402.2503J.
+
+Continuous wave searches can also be used to test abbr:gr, and to place limits on the parameters of alternative theories of gravity. 
+Searches for non-tensorial polarisations of abbr:gw were conducted on data from the first advanced observing run cite:2018PhRvL.120c1104A for all six potential polarisations allowed in general metric theories. 
+
+In comparison to transient signals, the waveforms for continuous wave sources are generally (semi-)analytical; the waveform model used for the search for the (2,2)-mode emission in cite:2019arXiv190208507T for example has the form 
+
+\begin{equation}
+\label{eq:sources:cw:signalmodel}
+\begin{align}
+h_{22}(t) = - C_{22} \big[ & F_{+}^{D}(\alpha, \delta, \psi, t) (1 + \cos^{2} \imath) \cos(2 \Phi(t) + \Phi_{22}^C) \\
++ 2 & F_{\times}^{D} (\alpha, \delta, \psi, t) \cos \imath \sin( 2 \Psi(t) + \Psi_{22}^{C} )
+\big] 
+\end{align}
+\end{equation}
+for $C_{22}$ the amplitude of the wave, and $\Psi_{22}^{C}$ its initial phase at some specific time.
+$\Phi(t)$ is the rotational phase of the source, and $\imath$ is the inclination of the source to the observer.
+In contrast to the signal from transient sources, continuous waves can be observed over long periods of time, and the observed signal will be convolved with the antenna pattern of the detector, $F_{+,\times}^{D}$, which varies with the sky position of the source, $(\alpha, \delta)$, the polarisation angle of the source, and thanks to the relative movement of the source and the detector, time, $t$.
+
+[fn:gr-quadrupole] In general relativity, at least.
+
+* Stochastic backgrounds
+
+In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{e14}{\hertz}$.
+
+The abbr:gw background is approximately analogous to the abbr:cmb.
+This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
+
+Since we expect that this background would be continuous and isotropic, it is likely to fall into the part of the measured abbr:gw data which is treated as noise by the majority of analyses.
+The noise produced by the detector will be greater than this signal, and so detection of a background is also reliant on correlations between a network of detectors.
+This reliance on correlations between a network of detectors significantly affects the sensitivity of the detector network to background sources cite:PhysRevD.88.124032. 
+*It might be nice to include a plot related to this, especially if this is coded-up in grasshopper.*
+   
+   The level of anisotropy in the abbr:cmb implies that the universe today must be very-nearly flat, and since any curvature would increase as the universe undergoes metric expansion, this would suggest that the early universe was even flatter.
+This poses a dilemma, as a flat universe requires the energy density of the universe to be equal to a critical energy density, with a small deviation becoming exagerated over time. 
+Inflation is an attempt to address this problem, by suggesting that the universe expanded extremely rapidly early in its evolution, through the effect of some scalar field.
+Such a scalar field would be subject to quantum fluctuations, and tensor fluctuations would be expected to produce gravitational waves cite:1988PhRvD..37.2078A. 
+abbr:gw production is not predicted in the early universe by non-inflationary models, and so discovery of an inflationary abbr:gw background would be strong evidence for the inflation model cite:2016arXiv160501615C.
+   
+   First-order phase transitions, which occur when the thermodynamic properties of a system are discontinuous (such as the sudden, discontinuous change in the entropy and volume of a liquid as it boils) could also be responsible for the production of abpl:gw in the early universe.
+A number of phase transitions are believed to have occured as, for example, the strong and electroweak forces decoupled cite:2016JCAP...04..001C.
+
+Cosmic strings may also be a viable source of background radiation. 
+These are topolgical defects which are caused by symmetry phase transitions in a number of grand unified theories. 
+As these defects move they interact with each other to form kinks and cusps, which can be the source of bursts of gravitational radiation.
+Over a sufficiently long period the signals from these events can superimpose to form apart of the abbr:gw background.
+
+The inspiral of the very large number of compact binary systems in the universe will also superimpose to contribute to this background radiation. 
+These systems include galactic white dwarf binaries, which are expected to produce such a strong signal that they will limit the sensitivity of the gls:lisa detector, as well as abbr:bbh and abbr:bns systems.
+
+Searches for a stochastic background have been made using the data from the advanced gls:ligo detectors during their first observing run cite:PhysRevLett.118.121101.
+To date no evidence of a background have been identified, which has allowed an upper limit to be placed on its strength. 
+Additional limits have been placed thanks to astrometric measurements of active galactic nuclei using radio data and the first GAIA data release cite:2018ApJ...861..113D, and through pulsar timing arrays cite:2015MNRAS.453.2576L,PhysRevLett.115.041101. 
 
 * Compact Binary Coalescences
 
@@ -139,29 +219,32 @@ A recent review by Lehner and Pretorius cite:2014ARA&A..52..661L of the techniqu
 
 The complexity of abbr:nr simulations has lead to their adoption of parallelisation technology for multiprocessing and message-passing between processes, however these simulations can still require around a month to produce on computing clusters containing thousands of processors. 
 
-*** SpEC
-    The abbr:spec is a abbr:nr method which leverages spectral methods during the evolution of the black hole spacetime in abbr:bbh simulations, in an attempt to circumvent instabilities which are present when using finite difference methods cite:2000PhRvD..62h4032K. 
+A number of codes are used to produce abbr:nr waveforms for the advanced-era abbr:gw detectors:
++ SPEC :: The abbr:spec is a abbr:nr method which leverages spectral methods during the evolution of the black hole spacetime in abbr:bbh simulations, in an attempt to circumvent instabilities which are present when using finite difference methods cite:2000PhRvD..62h4032K. 
 The code is capable of generating the merger and ringdown component of the abbr:gw waveform for a generic abbr:bbh configuration cite:2009PhRvD..80l4010S.
++ BAM ::  The abbr:bam code uses a modified abbr:bssn regime. cite:2004PhRvL..92u1101B,2008PhRvD..77b4027B,2004PhRvL..92u1101B,1999IJMPD...8...85B
++ MAYA :: The gls:maya code is based on the abbr:bssn formalism with a moving puncture gauge condition. *get citation*
 
-*** BAM
-    The abbr:bam code uses a modified abbr:bssn regime. cite:2004PhRvL..92u1101B,2008PhRvD..77b4027B,2004PhRvL..92u1101B,1999IJMPD...8...85B
-
-*** Einstein Toolkit & MAYA
-    The gls:maya code is based on the abbr:bssn formalism with a moving puncture gauge condition.
-
+** Catalogues
 *** Georgia Tech Waveform catalogue
     The Georgia Tech waveform catalogue cite:2016CQGra..33t4001J is composed of 452 waveforms which were generated using the gls:maya abbr:nr code at the Centre for Relativistic Astrophysics at Georgia Institute of Technology.
 The catalogue includes both non-spinning simulations for quasi-circular systems with mass-ratios $q \leq 15$, and precessing quasi-circular systems with $q \leq 8$. 
-Within the set of waveeforms derived from spinning systems are two subsets: aligned-spin, where the spin axis of each black hole is parallel to the orbital angular momentum, $\vec{L}$; and precessing, where the spin axes are not parallel to $\vec{L}$. The distribution of abbr:bbh parameters for the waveforms in the cataloue are plotted in the corner plot of figure ref:fig:sources:cbc:nr:gtcoverage.
+Within the set of waveeforms derived from spinning systems are two subsets: aligned-spin, where the spin axis of each black hole is parallel to the orbital angular momentum, $\vec{L}$; and precessing, where the spin axes are not parallel to $\vec{L}$. 
+The distribution of abbr:bbh parameters for the waveforms in the cataloue are plotted in the corner plot of figure ref:fig:sources:cbc:nr:gtcoverage.
 
 \begin{figure}
-\caption{The coverage of the Georgia Tech catalogue. \label{fig:sources:cbc:nr:gtcoverage}}
-\includegraphics{figures/gt-coverage.pdf}
+\caption{The coverage of the Georgia Tech catalogue over the intrinsic physical parameter space of abbr:bbh systems. \label{fig:sources:cbc:nr:gtcoverage}}
+\includegraphics[width=\textwidth]{figures/heron/coverage.pdf}
 \end{figure}
 
 *** SXS waveform catalogue
-    cite:2013PhRvL.111x1104M
-*Should include detail about the different codes which are used for GT and SXS*
+    The SXS waveform catalogue cite:2013PhRvL.111x1104M,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B includes over $400$ waveforms, both spinning and non-spinning. 
+The coverage of this catalogue is shown in the corner plot of figure ref:fig:sources:cbc:nr:sxscoverage.
+
+\begin{figure}
+\caption{The coverage of the SXS waveform catalogue over the intrinsic physical parameter space of abbr:bbh systems. \label{fig:sources:cbc:nr:sxscoverage}}
+\includegraphics[width=\textwidth]{figures/sources/sxs-catalogue.pdf}
+\end{figure}
 
 ** Analytical approximants
    :PROPERTIES:
@@ -269,85 +352,6 @@ The number of waveforms required to produce the surrogate model is also consider
 # + DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
 # + HERON :: A prototype, fully precessing waveform model trained using waveforms from the Georgia Tech catalogue.
 
-* Continuous wave sources
-# It's very weird; right now as I'm writing parts of this chapter I'm in the same lecture theatre as Bell. 2019-02-27 (JimFest).
-The discovery of pulsars by Bell and Hewish in 1967 was an unexpected discovery for radio astronomy---objects which produce beams of radiation, and rotate rapidly, like a lighthouse. 
-Not long after their discovery it became apparent that they were a specific form of abpl:ns---the tightly-packed remnant of a massive star which has ended its life as a supernova.
-
-Any rotating mass quadrupole (see equation ref:eq:intro:gr:mass-quadrupole) will produce gravitational waves as it rotates (see equation ref:eq:intro:gr:quadrupole2strain), and so it follows that a dense, massive object, such as a neutron star, will produce gravitational waves as they rotate, if they possess any mass asymmetry.
-Further, thanks to their highly stable rotation speed, the abbr:gw emission from abpl:ns ought to be produced continuously at a very stable frequency.
-As gravitational wave emission occurs in the quadrupole [(2,2)] mode [fn:gr-quadrupole], this emission should be at twice the rotational frequency of the abbr:ns.
-
-The rotation frequency of most pulsars is well-measured by radio observations, making these attractive prospective sources for ground-based abbr:gw detectors, such as gls:ligo and gls:virgo. 
-Indeed, targetted searches for abpl:gw from pulsars at twice their rotation frequency have been conducted since the "initial" detector period, using data from gls:ligo, gls:geo600, and later gls:virgo (which are summarised in cite:2014ApJ...785..119A), and continued into the advanced era cite:2017ApJ...839...12A.
-
-Pulsar spins are known to decelerate over time, through a process known as spin-down. 
-This process is often attributed to energy loss through gravitational radiation. 
-The spin-down limit of a pulsar is the abbr:gw strain which corresponds to this scenario, where the entirity of the energy being lost is radiated as abbr:gw, and is defined as
-\begin{equation}
-\label{eq:sources:cw:spindown}
-h = \left( \frac{5}{2} \frac{G I_{zz} | \dot{f} | }{c^{3} d^{2} f } \right)
-\end{equation}
-for a pulsar with a spin frequency $f$, moment-of-inertia tensor $I$, at a distance $d$ from the observer.
-
-To date no continuous abbr:gw source has been detected, but the failure to measure gravitational waves from known pulsars has allowed tight limits to be placed on the ellipticity of 222 known radio pulsars cite:2019arXiv190208507T, with the tightest limit that placed on J$0711-6830$, at $1.2\ee{-8}$. 
-# The latest results, from the analysis of the first two observing runs' data from advanced gls:ligo, show that the slow-down of the Crab pulsar cannot be explain
-
-Searches made for pulsars at around twice their rotation frequency were augmented with targetted searches for emission at the rotation frequency following the second observing run cite:2019arXiv190208507T. 
-This is possible if the rotating neutron star is either biaxial or triaxial, and exhibits free precession. 
-Emission at the rotation frequency may also be possible in abpl:ns with pinned superfluid interiors cite:2010MNRAS.402.2503J.
-
-Continuous wave searches can also be used to test abbr:gr, and to place limits on the parameters of alternative theories of gravity. 
-Searches for non-tensorial polarisations of abbr:gw were conducted on data from the first advanced observing run cite:2018PhRvL.120c1104A for all six potential polarisations allowed in general metric theories. 
-
-In comparison to transient signals, the waveforms for continuous wave sources are generally (semi-)analytical; the waveform model used for the search for the (2,2)-mode emission in cite:2019arXiv190208507T for example has the form 
-
-\begin{equation}
-\label{eq:sources:cw:signalmodel}
-\begin{align}
-h_{22}(t) = - C_{22} \big[ & F_{+}^{D}(\alpha, \delta, \psi, t) (1 + \cos^{2} \imath) \cos(2 \Phi(t) + \Phi_{22}^C) \\
-+ 2 & F_{\times}^{D} (\alpha, \delta, \psi, t) \cos \imath \sin( 2 \Psi(t) + \Psi_{22}^{C} )
-\big] 
-\end{align}
-\end{equation}
-for $C_{22}$ the amplitude of the wave, and $\Psi_{22}^{C}$ its initial phase at some specific time.
-$\Phi(t)$ is the rotational phase of the source, and $\imath$ is the inclination of the source to the observer.
-In contrast to the signal from transient sources, continuous waves can be observed over long periods of time, and the observed signal will be convolved with the antenna pattern of the detector, $F_{+,\times}^{D}$, which varies with the sky position of the source, $(\alpha, \delta)$, the polarisation angle of the source, and thanks to the relative movement of the source and the detector, time, $t$.
-
-[fn:gr-quadrupole] In general relativity, at least.
-
-* Stochastic backgrounds
-
-In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{e14}{\hertz}$.
-
-The abbr:gw background is approximately analogous to the abbr:cmb.
-This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
-
-Since we expect that this background would be continuous and isotropic, it is likely to fall into the part of the measured abbr:gw data which is treated as noise by the majority of analyses.
-The noise produced by the detector will be greater than this signal, and so detection of a background is also reliant on correlations between a network of detectors.
-This reliance on correlations between a network of detectors significantly affects the sensitivity of the detector network to background sources cite:PhysRevD.88.124032. 
-*It might be nice to include a plot related to this, especially if this is coded-up in grasshopper.*
-   
-   The level of anisotropy in the abbr:cmb implies that the universe today must be very-nearly flat, and since any curvature would increase as the universe undergoes metric expansion, this would suggest that the early universe was even flatter.
-This poses a dilemma, as a flat universe requires the energy density of the universe to be equal to a critical energy density, with a small deviation becoming exagerated over time. 
-Inflation is an attempt to address this problem, by suggesting that the universe expanded extremely rapidly early in its evolution, through the effect of some scalar field.
-Such a scalar field would be subject to quantum fluctuations, and tensor fluctuations would be expected to produce gravitational waves cite:1988PhRvD..37.2078A. 
-abbr:gw production is not predicted in the early universe by non-inflationary models, and so discovery of an inflationary abbr:gw background would be strong evidence for the inflation model cite:2016arXiv160501615C.
-   
-   First-order phase transitions, which occur when the thermodynamic properties of a system are discontinuous (such as the sudden, discontinuous change in the entropy and volume of a liquid as it boils) could also be responsible for the production of abpl:gw in the early universe.
-A number of phase transitions are believed to have occured as, for example, the strong and electroweak forces decoupled cite:2016JCAP...04..001C.
-
-Cosmic strings may also be a viable source of background radiation. 
-These are topolgical defects which are caused by symmetry phase transitions in a number of grand unified theories. 
-As these defects move they interact with each other to form kinks and cusps, which can be the source of bursts of gravitational radiation.
-Over a sufficiently long period the signals from these events can superimpose to form apart of the abbr:gw background.
-
-The inspiral of the very large number of compact binary systems in the universe will also superimpose to contribute to this background radiation. 
-These systems include galactic white dwarf binaries, which are expected to produce such a strong signal that they will limit the sensitivity of the gls:lisa detector, as well as abbr:bbh and abbr:bns systems.
-
-Searches for a stochastic background have been made using the data from the advanced gls:ligo detectors during their first observing run cite:PhysRevLett.118.121101.
-To date no evidence of a background have been identified, which has allowed an upper limit to be placed on its strength. 
-Additional limits have been placed thanks to astrometric measurements of active galactic nuclei using radio data and the first GAIA data release cite:2018ApJ...861..113D, and through pulsar timing arrays cite:2015MNRAS.453.2576L,PhysRevLett.115.041101. 
 
 * Unmodelled and poorly modelled transient sources
   :PROPERTIES:
@@ -375,7 +379,8 @@ Additional limits have been placed thanks to astrometric measurements of active 
     While signals from well-defined astrophysical systems, such as abbr:cbc signals, can be parameterised according to the intrinsic and extrinsic properties of the generating system, burst signals do not have a well-defined physical model.
     As a result we must define a number of parameters based purely on the properties of the signal.
 
-    The first of these is the /Characteristic squared amplitude/, $|| h^{2} ||$.
+    The first of these is the /Characteristic squared amplitude/, $|| h^{2} ||$. 
+    This quantity is frequently referred to as the abbr:hrss.
 
     #+BEGIN_definition
     The characteristic squared amplitude, $|| h^{2} ||$, is defined as
@@ -566,6 +571,10 @@ The gls:ligo results place a limit of $G \mu < 8.5\ee{-10}$, which agrees, but i
 
 
 * Burst searches
+  :PROPERTIES:
+  :CUSTOM_ID: sec:sources:burstsearch
+  :END:
+
 
 Burst searches cannot rely on well-known template waveforms in the way that compact binary searches can, and so matched filtering techniques cannot be used.
 Instead burst searches, similarly to searches for the stochastic background, make use of information gained from correlations between detectors in a network.
@@ -967,7 +976,75 @@ This can be seen in the Mueller waveform signal in the left column of figure ref
    \includegraphics[width=\textwidth]{figures/sources/minke-supernova.pdf}
    \end{figure}	
 
-** O1 and O2 all-sky searches
+* O1 and O2 all-sky search sensitivity
 
+The data from the first two observing runs of the advanced gls:ligo detector were analysed by three all-sky burst glspl:search-pipeline: abbr:cwb, abbr:olib, and abbr:bw.
+These pipelines, which employ techniques described in section ref:sec:sources:burstsearch, did not make detections of non abbr:cbc events during these two observing runs, but were able to place limits on the rate of such events within the sensitive volume of the detector.
+In order to determine this sensitive volume abpl:mdc were constructed using Minke (described in the previous section).
+Signals from each abbr:mdc were injected into the strain data collected from each detector every $\SI{50}{\second}$; these signals had a distribution of abbr:hrss values, such that the distance distribution of the events, $p(r) = r + 50/r$, for distance $r$.
+The resulting abbr:hrss distribution will contain both ``loud'' events, with a high abbr:hrss, and ``quiet'' events with low abbr:hrss.
 
-[[fn:stat-phase]] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D
+\begin{table}
+\centering
+\begin{tabular}{lllllllll}
+\toprule
+\multicolumn{3}{c}{Waveform parameters} & \multicolumn{3}{c}{Observing run 1} & \multicolumn{3}{c}{Observing run 2} \\
+&&                                      & abbr:cwb & abbr:olib & abbr:bw      & abbr:cwb & abbr:olib & abbr:bw \\
+\midrule
+\multicolumn{3}{c}{Gaussian}            &&&                                   &&& \\
+& $\tau/\si{\milli\second}$ &          &&&                                   &&& \\
+\midrule
+& 0.1                        &          & 34 & NA & NA                        & 8.4 & 6.2 & NA \\
+& 2.5                        &          & 33 & 7.4 & NA                       & 11  & 5.3 & NA \\
+\midrule
+\multicolumn{3}{c}{Sine-Gaussian}       &&&                                   &&& \\
+$f_0 / \si{\hertz}$ & $q$    &          &&&                                   &&& \\
+\midrule
+70                  & 3      &          &&&                                   & 4.9 & - & NA \\
+70                  & 100    &          & 24  & NA  & NA                      & 6.4 & - & NA \\
+153                 & 8.9    &          & 1.6 & 1.7 & 5.4                     & 1.4 & 1.3 & 16 \\
+253                 & 100    &          & 14  & 19  & NA                      & 3.3 & 1.1 & 1.4 \\
+554                 & 8.9    &          & 2.6 & 2.7 & 3.6                     & 1.8 & 1.5 & NA  \\
+849                 & 3      &          & 27  & 3.3 & 5.4                     & 5.5 & 2.0 & 17  \\
+1304                & 9      &          &&&                                   & 3.3 & 2.8 & -   \\
+1615                & 100    &          & 5.5 &  -  & -                       & 3.6 & 3.3 & -   \\
+2000                & 3      &          & 8.7 &  -  & -                       & 5.4 & 5.3 & -   \\
+2477                & 8.9    &          & 11  &  -  & -                       & 7.5 & -   & -   \\
+3067                & 3      &          & 15  &  -  & -                       & 9.7 & -   & -   \\
+\midrule
+\multicolumn{3}{c}{White-noise burst}   &&&                                   &&& \\
+$f_{\text{low}} / \si{\hertz}$ & $\Delta f / \si{\hertz}$ &  $\tau/\si{\milli\second}$   &&&  &&& \\
+\midrule
+100                 & 100    & 0.1      & 2.0 &     & 3.0                     & 1.4 & 3.0 & 3.0 \\
+250                 & 100    & 0.1      & 2.2 & NA  & 9.2                     & 1.4 & 3.8 & 3.8 \\
+750                 & 100    & 0.1      &&&                                   & 1.8 & 3.7 & 4.2 \\
+\bottomrule
+\end{tabular}
+\caption{The abbr:hrss values, in units of $\SI{E-22}{\hertz^{-1/2}}$ at which each pipeline achieves a $50\%$ detection efficiency at a abbr:far of $1$ in $\SI{100}{\year}$ in both the first and second advanced gls:ligo observing runs (Thus a lower value implies a more sensitive search). A value of NA indicated that $50\%$ efficiency could not be achieved, while - indicates that the search was not run on a given morphology, as the characteristic frequency did not meet the criteria of the search.
+The data in this table is derived from tables presented in cite:2017PhRvD..95d2003A (O1) and *cite O2 paper* (O2).
+\label{tab:sources:mdc:o1o2}
+}
+\end{table}
+
+The injection process was repeated for a number of waveform morphologies, listed in table ref:tab:sources:mdc:o1o2, allowing the pipelines to be assessed across a range of frequencies.
+The same table indicates the abbr:hrss of the weakest signal which was detected with $50\%$ efficiency given a abbr:far of one per hundred years.
+
+The gravitational wave energy, $E_{\text{GW}}$ can be found from the abbr:hrss through the relationship
+\begin{equation}
+\label{eq:sources:hrss2energy}
+E_{{\text{GW}}} = \frac{\pi^{2}c^{3}}{G} r_{0}^{2} f_{0}^{2} h_{0}^{2}
+\end{equation}
+for a distance $r_{0}$, (fixed) frequency $f_{0}$, and abbr:hrss $h_{0}$.
+
+Each result in table ref:tab:sources:mdc:o1o2 can then be converted into a representative energy, taking a fiducial distance $r_{0} = \SI{10}{\kilo\parsec}$, and these values are plotted in figure ref:fig:sources:mdc:o1o2.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[]{figures/sources/o1o2-sensitivity.pdf}}
+\caption[The sensitivity of the all-sky burst search algorithms in the first two observing runs of advanced gls:ligo.]{
+	The emitted abbr:gw energy, in units of solar masses, which correspond to a 50\% detection efficiency at a given frequency, for a abbr:far of 1 event per hundred years, and at a fiducial distance of $\SI{10}{\kilo\parsec}$. 
+	At each frequency the marker corresponds to the best performance from the three glspl:search-pipeline.
+	The data to produce this plot were derived from the values in table ref:tab:sources:mdc:o1o2, for the sine-Gaussian and white-noise burst waveforms.
+\label{fig:sources:mdc:o1o2}}
+\end{figure}
+
+[fn:stat-phase] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D
