@@ -91,6 +91,39 @@
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 ** Atom Interferometry
+*** Future Gravitational Wave Detectors Based on Atom Interferometry
+    :PROPERTIES:
+    :TITLE:    Future Gravitational Wave Detectors Based on Atom Interferometry
+    :BTYPE:    inbook
+    :CUSTOM_ID: 2017ogw..book..285G
+    :AUTHOR:   {Geiger}, Remi
+    :KEYWORDS: Physics - Instrumentation and Detectors, General Relativity and Quantum Cosmology, Physics - Atomic Physics
+    :BOOKTITLE: An Overview of Gravitational Waves: Theory, Sources and Detection. Edited by Augar Gerard and Plagnol Eric. Published by World Scientific Publishing Co. Pte. Ltd., 2017. ISBN \#9789813141766, pp. 285-313
+    :YEAR:     2017
+    :PAGES:    285-313
+    :DOI:      10.1142/9789813141766_0008
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017ogw..book..285G
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Atomic Interferometric Gravitational-Wave Space Observatory (AIGSO)
+    :PROPERTIES:
+    :TITLE:    Atomic Interferometric Gravitational-Wave Space Observatory (AIGSO)
+    :BTYPE:    article
+    :CUSTOM_ID: 2018CoTPh..69...37G
+    :AUTHOR:   {Gao}, Dong-Feng and {Wang}, Jin and {Zhan}, Ming-Sheng
+    :JOURNAL:  Communications in Theoretical Physics
+    :KEYWORDS: Physics - Atomic Physics, Astrophysics - Instrumentation and Methods for Astrophysics, General Relativity and Quantum Cosmology
+    :YEAR:     2018
+    :MONTH:    Jan
+    :VOLUME:   69
+    :PAGES:    37
+    :DOI:      10.1088/0253-6102/69/1/37
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1711.03690
+    :PRIMARYCLASS: physics.atom-ph
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018CoTPh..69...37G
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 *** New Method for Gravitational Wave Detection with Atomic Sensors
     :PROPERTIES:
     :TITLE:    New Method for Gravitational Wave Detection with Atomic Sensors
@@ -401,6 +434,7 @@
    :ADSURL:   http://adsabs.harvard.edu/abs/1975PhRvL..35..890H
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
+
 * Cryogenic Bar Detectors
 ** ALTAIR
 *** The ALTAIR cryogenic gravitational-wave experiment
@@ -519,6 +553,116 @@
     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2007PhRvD..76j2005G
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
+
+* Interferometry (theory)
+
+** Reviews of Topical Problems: Gravitational Radiation and the Prospect of its Experimental Discovery
+   :PROPERTIES:
+   :TITLE:    Reviews of Topical Problems: Gravitational Radiation and the Prospect of its Experimental Discovery
+   :BTYPE:    article
+   :CUSTOM_ID: 1966SvPhU...8..513B
+   :AUTHOR:   {Braginski{\u{i}}}, Vladimir B.
+   :JOURNAL:  Soviet Physics Uspekhi
+   :YEAR:     1966
+   :MONTH:    Apr
+   :VOLUME:   8
+   :PAGES:    513-521
+   :DOI:      10.1070/PU1966v008n04ABEH002989
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1966SvPhU...8..513B
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+** Photon-noise-limited laser transducer for gravitational antenna.
+   :PROPERTIES:
+   :TITLE:    Photon-noise-limited laser transducer for gravitational antenna.
+   :BTYPE:    article
+   :CUSTOM_ID: 1971ApOpt..10.2495M
+   :AUTHOR:   {Moss}, G.~E. and {Miller}, L.~R. and {Forward}, R.~L.
+   :JOURNAL:  \ao
+   :YEAR:     1971
+   :MONTH:    Jan
+   :VOLUME:   10
+   :PAGES:    2495-2498
+   :DOI:      10.1364/AO.10.002495
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1971ApOpt..10.2495M
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+** Wideband laser-interferometer gravitational-radiation experiment
+   :PROPERTIES:
+   :TITLE:    Wideband laser-interferometer gravitational-radiation experiment
+   :BTYPE:    article
+   :CUSTOM_ID: 1978PhRvD..17..379F
+   :AUTHOR:   {Forward}, Robert L.
+   :JOURNAL:  \prd
+   :YEAR:     1978
+   :MONTH:    Jan
+   :VOLUME:   17
+   :PAGES:    379-390
+   :DOI:      10.1103/PhysRevD.17.379
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1978PhRvD..17..379F
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+* Interferometric detectors [Prototype and proposals]
+** Noise behavior of the Garching 30-meter prototype gravitational-wave detector
+   :PROPERTIES:
+   :TITLE:    Noise behavior of the Garching 30-meter prototype gravitational-wave detector
+   :BTYPE:    article
+   :CUSTOM_ID: 1988PhRvD..38..423S
+   :AUTHOR:   {Shoemaker}, D. and {Schilling}, R. and {Schnupp}, L. and {Winkler}, W. and {Maischberger}, K. and {R{\"u}diger}, A.
+   :JOURNAL:  \prd
+   :KEYWORDS: 04.80.+z, 98.80.Es, Observational cosmology
+   :YEAR:     1988
+   :MONTH:    Jul
+   :VOLUME:   38
+   :PAGES:    423-432
+   :DOI:      10.1103/PhysRevD.38.423
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1988PhRvD..38..423S
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** A BRITISH LONG BASELINE GRAVITATIONAL WAVE OBSERVATORY. DESIGN STUDY REPORT
+   :PROPERTIES:
+   :TITLE:    A BRITISH LONG BASELINE GRAVITATIONAL WAVE OBSERVATORY. DESIGN STUDY REPORT
+   :BTYPE:    article
+   :CUSTOM_ID: Hough:1986bi
+   :AUTHOR:   Hough, J. and Meers, B. J. and Newton, G. P. and Robertson, N. A. and Ward, H. and Schutz, Bernard F. and Drever, R. W. P.
+   :YEAR:     1986
+   :REPORTNUMBER: GWD/RAL/86-001
+   :SLACCITATION: %%CITATION = GWD/RAL/86-001;%%
+   :END:
+** Proposal for a Joint German-British Interferometric Gravitational Wave Detector
+   :PROPERTIES:
+   :TITLE:    Proposal for a Joint German-British Interferometric Gravitational Wave Detector
+   :BTYPE:    techreport
+   :CUSTOM_ID: jointgermanbritish
+   :MONTH:    September
+   :AUTHOR:   James Hough and B.J. Meers and Gavin Newton and Norna Robertson and Henry Ward and G. Leuchs and T.M. Niebauer and A. Rudiger and R. Schilling and L. Schnupp and H. Walther and W. Winkler and B.F. Schutz and J. Ehlers and P. Kafka and G. Schafer and M.W. Hamilton and I. Schutz and H. Welling and J.R.J. Bennett and I.F. Corbett and B.W.H. Edwards and R.J.S. Greenhalgh and V. Kose
+   :NOTE:     Document number GWD/137/JH(89)
+   :ADDRESS:  Germany
+   :PUBLISHER: Max-Planck-Institut
+   :YEAR:     1989
+   :INSTITUTION: Max-Planck-Institut
+   :KEYWORDS: gravitational waves, interferometry
+   :URL:      http://eprints.gla.ac.uk/114852/
+   :ABSTRACT: For many years there has been steady progress towards the detection of gravitational radiation. It has now become clear that the next major step should be the construction of a number of long-baseline detectors around the world. An array of detectors of this type is expected to allow the observation of gravitational waves from a range of astrophysical sources, leading to improved insight in many areas including stellar collapse, binary coalescence and the expansion of the Universe. We propose that one of these detectors be built by a collaboration formed around the gravitational wave groups in Britain and Germany. In this document we present our case for this collaborative venture and outline the design philosophy of our proposed instrument - an interferometric detector with arms of length close to 3km. Two detectors of the same general type are planned for the USA (LIGO project), one is planned for Italy (Italian/French VIRGO project) and another is proposed for Australia (AIGO project). It is expected that all the long baseline detectors to be built will operate as part of a coordinated worldwide network.
+   :END:
+** An antenna for laser gravitational-wave observations in space
+   :PROPERTIES:
+   :TITLE:    An antenna for laser gravitational-wave observations in space
+   :BTYPE:    article
+   :CUSTOM_ID: 1989AdSpR...9..107F
+   :AUTHOR:   {Faller}, J.~E. and {Bender}, P.~L. and {Hall}, J.~L. and {Hils}, D. and {Stebbins}, R.~T. and {Vincent}, M.~A.
+   :JOURNAL:  Advances in Space Research
+   :KEYWORDS: Astronomical Observatories, Gravitational Wave Antennas, Laser Interferometry, Radiation Measurement, Spaceborne Lasers, Continuous Radiation, Large Space Structures, Noise Generators, Particle Collisions, Pulsed Radiation, Astrophysics
+   :YEAR:     1989
+   :MONTH:    Jan
+   :VOLUME:   9
+   :PAGES:    107-111
+   :DOI:      10.1016/0273-1177(89)90014-8
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1989AdSpR...9..107F
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
 * Interferometric Detectors [developed]
 ** LIGO
 *** LIGO Design
@@ -903,6 +1047,27 @@
      the triangle remain smaller than 3 arc-minutes, while the
      east–west angular variations of the three arms remain smaller
      than about 15 arc-minutes during the two-week period.
+** TianQin
+*** TianQin: a space-borne gravitational wave detector
+    :PROPERTIES:
+    :TITLE:    TianQin: a space-borne gravitational wave detector
+    :BTYPE:    article
+    :CUSTOM_ID: 2016CQGra..33c5010L
+    :AUTHOR:   {Luo}, J. and {Chen}, L.-S. and {Duan}, H.-Z. and {Gong}, Y.-G. and {Hu}, S. and {Ji}, J. and {Liu}, Q. and {Mei}, J. and {Milyukov}, V. and {Sazhin}, M. and {Shao}, C.-G. and {Toth}, V.~T. and {Tu}, H.-B. and {Wang}, Y. and {Wang}, Y. and {Yeh}, H.-C. and {Zhan}, M.-S. and {Zhang}, Y. and {Zharov}, V. and {Zhou}, Z.-B.
+    :JOURNAL:  Classical and Quantum Gravity
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1512.02076
+    :PRIMARYCLASS: astro-ph.IM
+    :YEAR:     2016
+    :MONTH:    feb
+    :VOLUME:   33
+    :NUMBER:   3
+    :EID:      035010
+    :PAGES:    035010
+    :DOI:      10.1088/0264-9381/33/3/035010
+    :ADSURL:   http://adsabs.harvard.edu/abs/2016CQGra..33c5010L
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 ** LISA
 *** eLISA: Astrophysics and cosmology in the millihertz regime
     :PROPERTIES:
@@ -959,6 +1124,23 @@
     :END:
 
 ** DECIGO
+
+*** The status of DECIGO
+    :PROPERTIES:
+    :TITLE:    The status of DECIGO
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: 2017JPhCS.840a2010S
+    :AUTHOR:   {Sato}, Shuichi and {Kawamura}, Seiji and {Ando}, Masaki and {Nakamura}, Takashi and {Tsubono}, Kimio and {Araya}, Akito and {Funaki}, Ikkoh and {Ioka}, Kunihito and {Kanda}, Nobuyuki and {Moriwaki}, Shigenori and {Musha}, Mitsuru and {Nakazawa}, Kazuhiro and {Numata}, Kenji and {Sakai}, Shin-ichiro and {Seto}, Naoki and {Takashima}, Takeshi and {Tanaka}, Takahiro and {Agatsuma}, Kazuhiro and {Aoyanagi}, Koh-suke and {Arai}, Koji and {Asada}, Hideki and {Aso}, Yoichi and {Chiba}, Takeshi and {Ebisuzaki}, Toshikazu and {Ejiri}, Yumiko and {Enoki}, Motohiro and {Eriguchi}, Yoshiharu and {Fujimoto}, Masa-Katsu and {Fujita}, Ryuichi and {Fukushima}, Mitsuhiro and {Futamase}, Toshifumi and {Ganzu}, Katsuhiko and {Harada}, Tomohiro and {Hashimoto}, Tatsuaki and {Hayama}, Kazuhiro and {Hikida}, Wataru and {Himemoto}, Yoshiaki and {Hirabayashi}, Hisashi and {Hiramatsu}, Takashi and {Hong}, Feng-Lei and {Horisawa}, Hideyuki and {Hosokawa}, Mizuhiko and {Ichiki}, Kiyotomo and {Ikegami}, Takeshi and {Inoue}, Kaiki T. and {Ishidoshiro}, Koji and {Ishihara}, Hideki and {Ishikawa}, Takehiko and {Ishizaki}, Hideharu and {Ito}, Hiroyuki and {Itoh}, Yousuke and {Kawashima}, Nobuki and {Kawazoe}, Fumiko and {Kishimoto}, Naoko and {Kiuchi}, Kenta and {Kobayashi}, Shiho and {Kohri}, Kazunori and {Koizumi}, Hiroyuki and {Kojima}, Yasufumi and {Kokeyama}, Keiko and {Kokuyama}, Wataru and {Kotake}, Kei and {Kozai}, Yoshihide and {Kudoh}, Hideaki and {Kunimori}, Hiroo and {Kuninaka}, Hitoshi and {Kuroda}, Kazuaki and {Maeda}, Kei-ichi and {Matsuhara}, Hideo and {Mino}, Yasushi and {Miyakawa}, Osamu and {Miyoki}, Shinji and {Morimoto}, Mutsuko Y. and {Morioka}, Tomoko and {Morisawa}, Toshiyuki and {Mukohyama}, Shinji and {Nagano}, Shigeo and {Naito}, Isao and {Nakamura}, Kouji and {Nakano}, Hiroyuki and {Nakao}, Kenichi and {Nakasuka}, Shinichi and {Nakayama}, Yoshinori and {Nishida}, Erina and {Nishiyama}, Kazutaka and {Nishizawa}, Atsushi and {Niwa}, Yoshito and {Noumi}, Taiga and {Obuchi}, Yoshiyuki and {Ohashi}, Masatake and {Ohishi}, Naoko and {Ohkawa}, Masashi and {Okada}, Norio and {Onozato}, Kouji and {Oohara}, Kenichi and {Sago}, Norichika and {Saijo}, Motoyuki and {Sakagami}, Masaaki and {Sakata}, Shihori and {Sasaki}, Misao and {Sato}, Takashi and {Shibata}, Masaru and {Shinkai}, Hisaaki and {Somiya}, Kentaro and {Sotani}, Hajime and {Sugiyama}, Naoshi and {Suwa}, Yudai and {Suzuki}, Rieko and {Tagoshi}, Hideyuki and {Takahashi}, Fuminobu and {Takahashi}, Kakeru and {Takahashi}, Keitaro and {Takahashi}, Ryutaro and {Takahashi}, Ryuichi and {Takahashi}, Tadayuki and {Takahashi}, Hirotaka and {Akiteru}, Takamori and {Takano}, Tadashi and {Taniguchi}, Keisuke and {Taruya}, Atsushi and {Tashiro}, Hiroyuki and {Torii}, Yasuo and {Toyoshima}, Morio and {Tsujikawa}, Shinji and {Tsunesada}, Yoshiki and {Ueda}, Akitoshi and {Ueda}, Ken-ichi and {Utashima}, Masayoshi and {Wakabayashi}, Yaka and {Yamakawa}, Hiroshi and {Yamamoto}, Kazuhiro and {Yamazaki}, Toshitaka and {Yokoyama}, Jun'ichi and {Yoo}, Chul-Moon and {Yoshida}, Shijun and {Yoshino}, Taizoh
+    :BOOKTITLE: Journal of Physics Conference Series
+    :YEAR:     2017
+    :VOLUME:   840
+    :MONTH:    May
+    :EID:      012010
+    :PAGES:    012010
+    :DOI:      10.1088/1742-6596/840/1/012010
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017JPhCS.840a2010S
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 *** The Japanese space gravitational wave antenna: DECIGO
     :PROPERTIES:
     :TITLE:    The Japanese space gravitational wave antenna: DECIGO
@@ -1154,6 +1336,27 @@ Such a detector is expected to detect CBC sources to z>10 at SNR>20.
 
 
 * Noise sources
+
+# ** Gravity Spy: integrating advanced LIGO detector characterization, machine learning, and citizen science
+#    :PROPERTIES:
+#    :TITLE:    Gravity Spy: integrating advanced LIGO detector characterization, machine learning, and citizen science
+#    :BTYPE:    article
+#    :CUSTOM_ID: 2017CQGra..34f4003Z
+#    :AUTHOR:   {Zevin}, M. and {Coughlin}, S. and {Bahaadini}, S. and {Besler}, E. and {Rohani}, N. and {Allen}, S. and {Cabero}, M. and {Crowston}, K. and {Katsaggelos}, A.~K. and {Larson}, S.~L. and {Lee}, T.~K. and {Lintott}, C. and {Littenberg}, T.~B. and {Lundgren}, A. and {{\O}sterlund}, C. and {Smith}, J.~R. and {Trouille}, L. and {Kalogera}, V.
+#    :JOURNAL:  Classical and Quantum Gravity
+#    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
+#    :YEAR:     2017
+#    :MONTH:    Mar
+#    :VOLUME:   34
+#    :EID:      064003
+#    :PAGES:    064003
+#    :DOI:      10.1088/1361-6382/aa5cea
+#    :ARCHIVEPREFIX: arXiv
+#    :EPRINT:   1611.04596
+#    :PRIMARYCLASS: gr-qc
+#    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017CQGra..34f4003Z
+#    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+#    :END:
 ** Gravitational Wave Detection by Interferometry (Ground and Space)
    :PROPERTIES:
    :TITLE:    Gravitational Wave Detection by Interferometry (Ground and Space)
@@ -1174,6 +1377,65 @@ Such a detector is expected to detect CBC sources to z>10 at SNR>20.
    :END:
 
 * Other
+
+** Constraining the gravitational wave energy density of the Universe using Earth's ring
+   :PROPERTIES:
+   :TITLE:    Constraining the gravitational wave energy density of the Universe using Earth's ring
+   :BTYPE:    article
+   :CUSTOM_ID: 2014PhRvD..90d2005C
+   :AUTHOR:   {Coughlin}, Michael and {Harms}, Jan
+   :JOURNAL:  \prd
+   :KEYWORDS: 04.80.Nn, 91.30.Fn, 95.75.Wx, Gravitational wave detectors and experiments, Surface waves and free oscillations, Time series analysis time variability, General Relativity and Quantum Cosmology
+   :YEAR:     2014
+   :MONTH:    Aug
+   :VOLUME:   90
+   :EID:      042005
+   :PAGES:    042005
+   :DOI:      10.1103/PhysRevD.90.042005
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1406.1147
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014PhRvD..90d2005C
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Gaia-like astrometry and gravitational waves
+   :PROPERTIES:
+   :TITLE:    Gaia-like astrometry and gravitational waves
+   :BTYPE:    article
+   :CUSTOM_ID: 2018CQGra..35d5005K
+   :AUTHOR:   {Klioner}, Sergei A.
+   :JOURNAL:  Classical and Quantum Gravity
+   :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics
+   :YEAR:     2018
+   :MONTH:    Feb
+   :VOLUME:   35
+   :EID:      045005
+   :PAGES:    045005
+   :DOI:      10.1088/1361-6382/aa9f57
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1710.11474
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018CQGra..35d5005K
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Low-Frequency Gravitational Wave Searches Using Spacecraft Doppler Tracking
+   :PROPERTIES:
+   :TITLE:    Low-Frequency Gravitational Wave Searches Using Spacecraft Doppler Tracking
+   :BTYPE:    article
+   :CUSTOM_ID: Armstrong2006
+   :AUTHOR:   Armstrong, J. W.
+   :JOURNAL:  Living Reviews in Relativity
+   :YEAR:     2006
+   :MONTH:    Jan
+   :DAY:      24
+   :VOLUME:   9
+   :NUMBER:   1
+   :PAGES:    1
+   :ABSTRACT: This paper discusses spacecraft Doppler tracking, the current-generation detector technology used in the low-frequency (∼millihertz) gravitational wave band. In the Doppler method the earth and a distant spacecraft act as free test masses with a ground-based precision Doppler tracking system continuously monitoring the earth-spacecraft relative dimensionless velocity 2$\Delta$v/c = $\Delta$$\nu$/$\nu$0, where $\Delta$$\nu$ is the Doppler shift and $\nu$0 is the radio link carrier frequency. A gravitational wave having strain amplitude h incident on the earth-spacecraft system causes perturbations of order h in the time series of $\Delta$$\nu$/$\nu$0. Unlike other detectors, the ∼ 1--10 AU earth-spacecraft separation makes the detector large compared with millihertz-band gravitational wavelengths, and thus times-of-flight of signals and radio waves through the apparatus are important. A burst signal, for example, is time-resolved into a characteristic signature: three discrete events in the Doppler time series. I discuss here the principles of operation of this detector (emphasizing transfer functions of gravitational wave signals and the principal noises to the Doppler time series), some data analysis techniques, experiments to date, and illustrations of sensitivity and current detector performance. I conclude with a discussion of how gravitational wave sensitivity can be improved in the low-frequency band.
+   :ISSN:     1433-8351
+   :DOI:      10.12942/lrr-2006-1
+   :URL:      https://doi.org/10.12942/lrr-2006-1
+   :END:
 ** Detection of gravitational waves
    :PROPERTIES:
    :TITLE:    Detection of gravitational waves

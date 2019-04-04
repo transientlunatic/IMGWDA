@@ -912,6 +912,63 @@
 
 * Burst sources
 ** Search (methods)
+*** {LIGO} {A}lgorithm {L}ibrary - {LALS}uite
+    :PROPERTIES:
+    :TITLE:    {LIGO} {A}lgorithm {L}ibrary - {LALS}uite
+    :BTYPE:    misc
+    :CUSTOM_ID: lalsuite
+    :AUTHOR:   LIGO Scientific Collaboration
+    :HOWPUBLISHED: free software (GPL)
+    :DOI:      10.7935/GT1W-FZ16
+    :YEAR:     2018
+    :END:
+*** Bayeswave: Bayesian inference for gravitational wave bursts and instrument glitches
+    :PROPERTIES:
+    :TITLE:    Bayeswave: Bayesian inference for gravitational wave bursts and instrument glitches
+    :BTYPE:    article
+    :CUSTOM_ID: 2015CQGra..32m5012C
+    :AUTHOR:   {Cornish}, Neil J. and {Littenberg}, Tyson B.
+    :JOURNAL:  Classical and Quantum Gravity
+    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics
+    :YEAR:     2015
+    :MONTH:    Jul
+    :VOLUME:   32
+    :EID:      135012
+    :PAGES:    135012
+    :DOI:      10.1088/0264-9381/32/13/135012
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1410.3835
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2015CQGra..32m5012C
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** An information-theoretic approach to the gravitational-wave burst detection problem
+    :PROPERTIES:
+    :TITLE:    An information-theoretic approach to the gravitational-wave burst detection problem
+    :BTYPE:    article
+    :CUSTOM_ID: 2015arXiv151105955L
+    :AUTHOR:   {Lynch}, Ryan and {Vitale}, Salvatore and {Essick}, Reed and {Katsavounidis}, Erik and {Robinet}, Florent
+    :JOURNAL:  arXiv e-prints
+    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - Instrumentation and Methods for Astrophysics
+    :YEAR:     2015
+    :MONTH:    Nov
+    :EID:      arXiv:1511.05955
+    :PAGES:    arXiv:1511.05955
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1511.05955
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2015arXiv151105955L
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Exploring Long Duration Gravitational-Wave Transients
+    :PROPERTIES:
+    :TITLE:    Exploring Long DurationGravitational-Wave Transients with Second Generation Detectors
+    :BTYPE:    thesis
+    :CUSTOM_ID: maxfayesthesis
+    :URL:      http://orca.cf.ac.uk/110245/
+    :YEAR:     2017
+    :AUTHOR:   Maxime Fayes
+    :END:
 *** A comparison of methods for gravitational wave burst searches from LIGO and Virgo
     :PROPERTIES:
     :TITLE:    A comparison of methods for gravitational wave burst searches from LIGO and Virgo

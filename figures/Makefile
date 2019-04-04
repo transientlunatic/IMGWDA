@@ -1,6 +1,13 @@
 FIGURES=(gw-spectum)
 
-all : gw-spectrum.pdf intro/aligo-cbc.pdf gp-training-data.pdf gp-example-prior-draws.pdf probability-structured-example-dense-1.pdf probability-structured-example-dense-2.pdf probability-structured-example-dense-3.pdf
+FILETYPE=".pdf"
+
+INTRO_FIGURES="gw-spectrum"
+
+
+.PHONY: all clean
+
+all : intro/gw-spectrum.pdf sources/aligo-cbc.pdf gp-training-data.pdf gp-example-prior-draws.pdf probability-structured-example-dense-1.pdf probability-structured-example-dense-2.pdf probability-structured-example-dense-3.pdf
 
 %.py :
 	cd ../scripts & make
@@ -27,3 +34,6 @@ probability-structured-example-dense-2.pdf: ../scripts/probability-structured-ex
 
 probability-structured-example-dense-3.pdf: ../scripts/probability-structured-example-dense-3.dot
 	circo -Tpdf $< > $@
+
+# clean :
+# 	rm $(INTRO_FIGURES)

@@ -1,4 +1,88 @@
+* Probability
+* An essay towards solving a problem in the doctrine of chances
+  :PROPERTIES:
+  :TITLE:    An essay towards solving a problem in the doctrine of chances
+  :BTYPE:    article
+  :AUTHOR:   Thomas Bayes and Richard Price
+  :JOURNAL:  Philosophical Transactions of the Royal Society of London
+  :YEAR:     1763
+  :CUSTOM_ID: bayesessay
+  :END:
+
+* Sampling
+** The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo
+   :PROPERTIES:
+   :TITLE:    The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo
+   :BTYPE:    article
+   :CUSTOM_ID: 2011arXiv1111.4246H
+   :AUTHOR:   {Hoffman}, Matthew D. and {Gelman}, Andrew
+   :JOURNAL:  arXiv e-prints
+   :KEYWORDS: Statistics - Computation, Computer Science - Machine Learning
+   :YEAR:     2011
+   :MONTH:    Nov
+   :EID:      arXiv:1111.4246
+   :PAGES:    arXiv:1111.4246
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1111.4246
+   :PRIMARYCLASS: stat.CO
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2011arXiv1111.4246H
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+* Hierarchical models
+** Astrophysical model selection in gravitational wave astronomy
+   :PROPERTIES:
+   :TITLE:    Astrophysical model selection in gravitational wave astronomy
+   :BTYPE:    article
+   :CUSTOM_ID: 2012PhRvD..86l4032A
+   :AUTHOR:   {Adams}, Matthew R. and {Cornish}, Neil J. and {Littenberg}, Tyson B.
+   :JOURNAL:  \prd
+   :KEYWORDS: 04.30.-w, 04.80.Nn, Gravitational waves: theory, Gravitational wave detectors and experiments, General Relativity and Quantum Cosmology, Astrophysics - Cosmology and Extragalactic Astrophysics
+   :YEAR:     2012
+   :MONTH:    Dec
+   :VOLUME:   86
+   :EID:      124032
+   :PAGES:    124032
+   :DOI:      10.1103/PhysRevD.86.124032
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1209.6286
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2012PhRvD..86l4032A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Hierarchical analysis of gravitational-wave measurements of binary black hole spin-orbit misalignments
+   :PROPERTIES:
+   :TITLE:    Hierarchical analysis of gravitational-wave measurements of binary black hole spin-orbit misalignments
+   :BTYPE:    article
+   :CUSTOM_ID: 2017MNRAS.471.2801S
+   :AUTHOR:   {Stevenson}, Simon and {Berry}, Christopher P.~L. and {Mandel}, Ilya
+   :JOURNAL:  \mnras
+   :KEYWORDS: black hole physics, gravitational waves, methods: data analysis, stars: evolution, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+   :YEAR:     2017
+   :MONTH:    Nov
+   :VOLUME:   471
+   :PAGES:    2801-2811
+   :DOI:      10.1093/mnras/stx1764
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1703.06873
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017MNRAS.471.2801S
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+* Textbooks
+** Information Theory, Inference and Learning Algorithms
+   :PROPERTIES:
+   :TITLE:    Information Theory, Inference and Learning Algorithms
+   :BTYPE:    book
+   :CUSTOM_ID: 2003itil.book.....M
+   :AUTHOR:   {Mackay}, David J.~C.
+   :BOOKTITLE: Information Theory, Inference and Learning Algorithms, by David J. C. MacKay, pp. 640. ISBN 0521642981. Cambridge, UK: Cambridge University Press, October 2003.
+   :YEAR:     2003
+   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2003itil.book.....M
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
 * Sample selection
+
 ** TO READ Accounting for sample selection in Bayesian analyses :bayesian:sampling:
    :PROPERTIES:
    :TITLE:    Accounting for sample selection in Bayesian analyses

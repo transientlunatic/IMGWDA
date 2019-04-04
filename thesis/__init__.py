@@ -15,7 +15,7 @@ colors = {"blue": "#348ABD",
           "yellow": "#FBC15E",
 }
 
-figwidth = 8.75 # 2.5
+figwidth = 5 # 2.5
 figheight = figwidth/1.616
 figsize = (figwidth, figheight)
 
@@ -40,11 +40,14 @@ ssp_ticks = {'family': 'Source Code Pro',
 ticks_font = font_manager.FontProperties(**ssp_ticks)
 
 def thesisify(f, height=1):
+    rc("mathtext", fontset="custom", sf="Source Code Pro", tt="Source Code Pro", rm="Source Code Pro")
     # make the figure look the correct size
     f.set_figwidth(figwidth)
     f.set_figheight(height * figheight)
     # individual axis manipulations
     for ax in f.axes:
+        #ax.get_yaxis().get_major_formatter()._useMathText=False
+        #ax.get_xaxis().get_major_formatter()._useMathText=False
         for label in ax.get_xticklabels():
             label.set_fontproperties(ticks_font)
         ax.set_xlabel(ax.get_xlabel(), fontdict=lato)  
@@ -55,13 +58,13 @@ def thesisify(f, height=1):
         ax.yaxis.get_offset_text().set_fontproperties(ticks_font)
         
         if len(ax.get_ygridlines()) > 0:
-            ax.grid(which="both", color='#348ABD', alpha=0.4, lw=0.3,)
+            ax.grid(which="both", color='#348ABD', alpha=0.2, lw=0.3,)
         
     f.tight_layout()
     return f
 
 
-def labelLine(line,x,label=None,align=True,**kwargs):
+def labelLine(line,x,label=None,align=True, yshift=2, **kwargs):
     
     ax = line.axes
     xdata = line.get_xdata().value
@@ -97,7 +100,7 @@ def labelLine(line,x,label=None,align=True,**kwargs):
     else:
         trans_angle = 0
 
-    y*=2
+    y*=yshift
         
     #Set a bunch of keyword arguments
     if 'color' not in kwargs:
@@ -138,7 +141,7 @@ def labelLines(lines,align=True,xvals=None,**kwargs):
     if xvals is None:
         xvals = []
         for line in lines:
-            xvals.append(line.get_data()[0][-1].value*0.9)
+            xvals.append(line.get_data()[0][-1].value*0.8)
 
     for line,x,label in zip(labLines,xvals,labels):
         labelLine(line,x,label,align,**kwargs)

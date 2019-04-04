@@ -1,0 +1,2 @@
+/In this chapter I introduce the ~HERON~ surrogate model./
+/The ~HERON~ model is capable of generating abbr:bbh signals with generic spin./

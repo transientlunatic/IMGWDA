@@ -10,7 +10,7 @@ The astrophysical sources of gravitational waves can be divided roughly into thr
 * Compact Binary Coalescences
 
 #+NAME:fig:cbc_spectrum
-#+CAPTION: The frequency spectrum of two types of compact binary coalescence—a binary neutron star coalescence, and a binary black hole coalescence—alongside the design sensitivity power spectrum of the Advanced LIGO detector at its design sensitivity. *Should update this to use the IMRPhenom frequency line*.
+#+CAPTION: The frequency spectrum of two types of compact binary coalescence—a binary neutron star coalescence, and a binary black hole coalescence—alongside the design sensitivity power spectrum of the Advanced LIGO detector at its design sensitivity.
 [[./figures/sources/aligo-cbc.pdf]]
 
 The moment of inertia tensor of a two-body system will lead to non-spherical motion within the system, which will in turn produce gravitational radiation, and gradual orbital decay cite:1995PhRvL..74.3515B. 
@@ -53,7 +53,7 @@ This would provide an additional means of measuring cosmic acceleration, and, in
 
 
    The dynamics of binary systems are well-understood in Newtonian mechanics, where the two-body problem can be reduced to a pair of independent one-body problems. 
-In contrast no exact solutions have been found to this problem in abbr:gr; while the Schwarzschild solution *cite* is sufficient for some situations where the mass of one of the two bodies is much smaller than the other (where the problem is effectively a single one body problem) it is insufficient for systems such as abbp:bbh.
+In contrast no exact solutions have been found to this problem in abbr:gr; while the Schwarzschild solution cite:1916AbhKP1916..189S is sufficient for some situations where the mass of one of the two bodies is much smaller than the other (where the problem is effectively a single one body problem) it is insufficient for systems such as abbp:bbh.
 
 When the two component bodies of the system are at large separation (and their local velocities are much smaller than the speed of light) a abbr:pn expansion can be used.
 In this regime the two objects are treated as point-particles with slow internal dynamics. 
@@ -68,16 +68,16 @@ In such a post-Newtonian system, the parameter $\epsilon$, defined as
 Through an abuse of notation this term is normally written as $\epsilon \equiv 1/c$ [fn:pn-epsilon].
 The abbr:pn correction to the Newtonian limit on the order $\mathcal{O}(1/c^{n})$ is generally called the $(n/2)$-abbr:pn order.
 
-*More work is needed on this, but this is rather heavy lifting stuff.*
+# *More work is needed on this, but this is rather heavy lifting stuff.*
 
-As a first-order approximation the amplitude of a gls:GW from an inspiralling compact binary system can be approximated as cite:strain.conventions
-\begin{equation}
-  \label{eq:cbcinspiral}
-  h_{\text{c}}(f) = 
-\end{equation}
-where $f$ is the frequency of the gravitational wave, and $\dot{f}$ its time derivative.
+# As a first-order approximation the amplitude of a gls:GW from an inspiralling compact binary system can be approximated as cite:strain.conventions
+# \begin{equation}
+#   \label{eq:cbcinspiral}
+#   h_{\text{c}}(f) = 
+# \end{equation}
+# where $f$ is the frequency of the gravitational wave, and $\dot{f}$ its time derivative.
 
-*Tidal effects in NS systems*
+# *Tidal effects in NS systems*
 
 [fn:pn-epsilon] With $1/c$ /not/being dimensionless.
 
@@ -87,12 +87,17 @@ where $f$ is the frequency of the gravitational wave, and $\dot{f}$ its time der
    :CUSTOM_ID: sec:sources:cbc:waveform
    :END:
 
-   *figure: It would be good to have a plot of a waveform here with some cartoons of each period overlaid.*
+   \begin{figure}
+   \includegraphics{figures/sources/bbh-cartoon.pdf}
+   \caption{The waveform of a abbr:bbh from the inspiral (highlighted in red), to the merger (yellow), and the ringdown (purple).
+   \label{fig:sources:cbc:bbh-cartoon}}
+   \end{figure}
+
 
    The gravitational waveform for a compact binary system can be split into three broad periods, which are each associated with the dominant energy loss mechanisms within the system. 
 The first, and longest stage of the binary's evolution is the /gls:inspiral/. Gravitational radiation carries energy out of the binary system, causing the orbit to slowly decay.[fn:generalbinary] 
 For the majority of the inspiral the gravitational waves produced have a very low amplitude, and are to weak to be detected by the current generation of detectors, however this amplitude increases as the radius of the orbits decrease.
-Eventually this amplitude becomes observable, for a period ranging from minutes (in the case of abbr:bns events *cite gw170817*), to fractions of a second (for most abbr:bbh events *cite gw150914*).
+Eventually this amplitude becomes observable, for a period ranging from minutes (in the case of abbr:bns events cite:2017PhRvL.119p1101A), to fractions of a second (for most abbr:bbh events cite:2016PhRvL.116f1102A).
 
 As the binary reaches its innermost stable circular orbit the system evolves from the inspiral period to the merger.
 At this point the two black holes /plunge/ towards each other, and then coalesce. 
@@ -206,7 +211,7 @@ The first model to take this approach, IMRPhenomA, was calibrated only against n
 
 The IMRPhenomP series of waveform models (the most recent of which is version 3 cite:2018arXiv180910113K) add the ability to model precession effects within the waveform; for versions 1 and 2 this was limited to single-spin effects, but version 3 has been designed to allow for generic abbr:bbh systems.
 In order to introduce the effects of precession into the waveform, IMRPhenomPv1 and IMRPhenomPv2 built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the "twisting-up" produced by orbital precession.
-For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation[[ fn:stat-phase]], which is not strictly valid outwith the inspiral phase.
+For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation [fn:stat-phase], which is not strictly valid outwith the inspiral phase.
 IMRPhenomPv3 uses a two-spin model developed by Chatziioannou et al. cite:2017PhRvD..95j4004C in order to allow for the calculation of precession angles in generic abbr:bbh systems.
 
 In summary:
@@ -227,14 +232,14 @@ The waveform is constructed by assuming that the merger is short but with a broa
 Similarly to gls:imrphenom, the abbr:eob derived waveforms are calibrated against a number of abbr:nr derived waveforms. 
 For the non-spinning model, \texttt{EOBv2} this involved five waveforms produced by the \texttt{SPEC} code.
 
-+ EOBNRv1 :: This was the prototype abbr:eob approximant. 4-abbr:pn corrections to the abbr:eob radial potential, calibrated between $q = 1$ and $q=4$. It is a non-spinning approximant. cite:2007PhRvD..76j4049B
-+ EOBNRv2 :: A non-spinning calibrated between $q=1$ and $q=6$. Uses four sub-leading EOB modes.   cite:2011PhRvD..84l4052P
-+ SEOBNRv1 :: cite:2012PhRvD..86b4011T
-+ SEOBNRv2 :: cite:2014PhRvD..89f1502T
-+ SEOBNRv3 :: cite:2014PhRvD..89h4006P
-+ SEOBNRv4 :: cite:2017PhRvD..95d4028B
+# + EOBNRv1 :: This was the prototype abbr:eob approximant. 4-abbr:pn corrections to the abbr:eob radial potential, calibrated between $q = 1$ and $q=4$. It is a non-spinning approximant. cite:2007PhRvD..76j4049B
+# + EOBNRv2 :: A non-spinning calibrated between $q=1$ and $q=6$. Uses four sub-leading EOB modes.   cite:2011PhRvD..84l4052P
+# + SEOBNRv1 :: cite:2012PhRvD..86b4011T
+# + SEOBNRv2 :: cite:2014PhRvD..89f1502T
+# + SEOBNRv3 :: cite:2014PhRvD..89h4006P
+# + SEOBNRv4 :: cite:2017PhRvD..95d4028B
 
-[[fn:stat-phase]] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D
+
 
 ** Numerical relativity surrogate models
 
@@ -258,8 +263,11 @@ The number of waveforms required to produce the surrogate model is also consider
 
 *** Gaussian process surrogate models
 
-+ DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
-+ HERON :: A prototype, fully precessing waveform model trained using waveforms from the Georgia Tech catalogue.
+    An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable. 
+    These development of these models is discussed in detail in chapter ref:cha:heron.
+
+# + DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
+# + HERON :: A prototype, fully precessing waveform model trained using waveforms from the Georgia Tech catalogue.
 
 * Continuous wave sources
 # It's very weird; right now as I'm writing parts of this chapter I'm in the same lecture theatre as Bell. 2019-02-27 (JimFest).
@@ -310,7 +318,7 @@ In contrast to the signal from transient sources, continuous waves can be observ
 
 * Stochastic backgrounds
 
-In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{10^{14}}{\hertz}$.
+In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{e14}{\hertz}$.
 
 The abbr:gw background is approximately analogous to the abbr:cmb.
 This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
@@ -342,6 +350,10 @@ To date no evidence of a background have been identified, which has allowed an u
 Additional limits have been placed thanks to astrometric measurements of active galactic nuclei using radio data and the first GAIA data release cite:2018ApJ...861..113D, and through pulsar timing arrays cite:2015MNRAS.453.2576L,PhysRevLett.115.041101. 
 
 * Unmodelled and poorly modelled transient sources
+  :PROPERTIES:
+  :CUSTOM_ID: sec:source:burst
+  :END:
+  
 ** Burst waveform models
    :PROPERTIES:
    :CUSTOM_ID: sources:burst:models
@@ -359,57 +371,101 @@ Additional limits have been placed thanks to astrometric measurements of active 
    \end{figure}	
 
 *** Parameterisation
-**** Characteristic squared amplitude   
 
-    # || h² || = ∫^∞_∞ |h(t)|² dt = ∫ |\tilde{h}(f)|² df \]
+    While signals from well-defined astrophysical systems, such as abbr:cbc signals, can be parameterised according to the intrinsic and extrinsic properties of the generating system, burst signals do not have a well-defined physical model.
+    As a result we must define a number of parameters based purely on the properties of the signal.
 
-**** Polarisation of signals
-*** Gaussian
+    The first of these is the /Characteristic squared amplitude/, $|| h^{2} ||$.
 
-    Perhaps the simplest conceivable model of a burst of abpl:gw is one where energy is emitted across a broadband range of frequencies over a fixed period of time, with a smooth rise and decay in amplitude.
-    Such a source can be modelled as with a Gaussian function, and may be a suitable model for broadband sources, such as the core-bounce during a core-collapse abbr:sn.
-
-    In searches the model for such a signal is
+    #+BEGIN_definition
+    The characteristic squared amplitude, $|| h^{2} ||$, is defined as
     \begin{equation}
-    \label{eq:sources:burst:waveforms:gaussian}
-    h(t) = A \exp\left( - \frac{ (t - t_{0})^{2} }{ 2 \sigma^{2} } \right)
+    || h^{2} || = \int_{\infty}^{\infty} | h(t)|^{2} \dd{t} =  \int_{\infty}^{\infty} | \tilde{h}(f) |^{2} \dd{f},
     \end{equation}
-    for a strain $h$ at time $t$, with an amplitude $A$, central time $t_{0}$ and duration $\sigma$.
+    for $h(t)$ and $\tilde{h}(f)$ respectively the strain in the time, $t$, and frequency $f$ representations.
+    #+END_definition
 
-    An example of a Gaussian burst ($\sigma = \SI{0.01}{\second}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$) is plotted in the left column of figure ref:fig:sources:burst:adhoc, with the time-domain waveform in the first row. 
-    In this figure the two polarisations of the signal are plotted, with only the plus polarisation containing abbr:gw power for this morphology. 
-    The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
-
-*** Sine-Gaussian
-    In addition to searching for broadband, time-constrained bursts of abbr:gw energy, some sources are expected to produce abpl:gw which are in a confined range of frequencies, in addition to being released over a short time-span. 
-    Such a source can be approximated by a sinusoidal signal which is enveloped by a Gaussian rise and decay in amplitude.
-    The model used in gls:ligo searches for such signals is: 
+    For bursts which are well-localised in time we can also define a central time and a duration.
+    #+BEGIN_definition
+    The central time, $t_{0}$, is defined as
     \begin{equation}
-    \label{eq:sources:burst:sinegaussian}
-    h(t) = A \exp \left( \frac{ - 2(t - t_{0})^{2} \pi^{2} f^{2}}{Q^{2}} \right) \cos\left( 2 \pi f (t - t_{0}) \right),
-    \end{equation} 
-    for a strain $h$ at time $t$, with $A$ the amplitude of the signal, $t_{0}$ its central time, $Q$ the quality factor of the burst, and $f$ is frequency.
-
-    An example of a sine-Gaussian burst ($q = 8$, $f = \SI{100}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the middle column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
-    The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
-
-*** White noise bursts
-    :PROPERTIES:
-    :CUSTOM_ID: sources:burst:models
-    :END:
-    Astrophysical processes are unlikely to produce emission at a single frequency, or with a smooth evolution of amplitude, and so searches are normally expected to be sensitive to band-limited white noise bursts, which consist of band-limited uncorrelated noise within a Gaussian amplitude envelope.
-    An example of a whitenoise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
-    The second and third rows contain time-frequency representations of the plus-polarisation waveform as a spectrogram and a constant $q$-transform, respectively.
-
-
-*** Ringdown-like bursts
-    Ringdown-like signals, with a sudden rise, and exponential decay in amplitude are expected in the post-merger signal of abbr:cbc systems, and in some models of neutron star model excitation cite:2004PhRvD..70l4015B. These take the form
-    \begin{equation}
-    \label{eq:sources:burst:ringdown}
-    h(t) = \exp (t / \tau) \sin( 2 \pi f t)
+    t_{0} = \int_{-\infty}^{\infty} t \frac{|h(t)|^{2}}{|| h^{2} ||} \dd{t}
     \end{equation}
-    for a strain $h$ at time $t$, given a decay time $\tau$ and frequency $f$.
+    and the duration, $\sigma^{2}$ is defined 
+    \begin{equation}
+    \sigma^{2} = \int_{-\infty}^{\infty} (t-t_{0})^{2} \frac{|h(t)|^{2}}{|| h^{2} ||} \dd{t}
+    \end{equation}
+    #+END_definition
 
+    Equivalently, for bursts well-localised in frequency we can define a central frequency and a bandwidth
+    #+BEGIN_definition
+    The central frequency, $f_{0}$, is defined as
+    \begin{equation}
+    f_{0} = \int_{-\infty}^{\infty} f \frac{|h(f)|^{2}}{|| h^{2} ||} \dd{f}
+    \end{equation}
+    and the duration, $b^{2}$ is defined 
+    \begin{equation}
+    b^{2} = \int_{-\infty}^{\infty} (f-f_{0})^{2} \frac{|h(f)|^{2}}{|| h^{2} ||} \dd{f}
+    \end{equation}
+    #+END_definition
+
+
+    We can also define a /quality factor/, $Q$ for a burst
+    
+#    #+BEGIN_definition
+    The quality factor, $Q$, of a burst signal is defined as 
+    \begin{equation}
+    \label{eq:sources:burst:quality}
+    Q = f_{0} / b^{2}
+    \end{equation}
+#    #+END_definiton
+
+** Gaussian bursts   
+
+   Perhaps the simplest conceivable model of a burst of abpl:gw is one where energy is emitted across a broadband range of frequencies over a fixed period of time, with a smooth rise and decay in amplitude.
+   Such a source can be modelled as with a Gaussian function, and may be a suitable model for broadband sources, such as the core-bounce during a core-collapse abbr:sn.
+
+   In searches the model for such a signal is
+   \begin{equation}
+   \label{eq:sources:burst:waveforms:gaussian}
+   h(t) = A \exp\left( - \frac{ (t - t_{0})^{2} }{ 2 \sigma^{2} } \right)
+   \end{equation}
+   for a strain $h$ at time $t$, with an amplitude $A$, central time $t_{0}$ and duration $\sigma$.
+
+   An example of a Gaussian burst ($\sigma = \SI{0.01}{\second}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$) is plotted in the left column of figure ref:fig:sources:burst:adhoc, with the time-domain waveform in the first row. 
+   In this figure the two polarisations of the signal are plotted, with only the plus polarisation containing abbr:gw power for this morphology. 
+   The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
+
+** Sine-Gaussian bursts 
+   In addition to searching for broadband, time-constrained bursts of abbr:gw energy, some sources are expected to produce abpl:gw which are in a confined range of frequencies, in addition to being released over a short time-span. 
+   Such a source can be approximated by a sinusoidal signal which is enveloped by a Gaussian rise and decay in amplitude.
+   The model used in gls:ligo searches for such signals is: 
+   \begin{equation}
+   \label{eq:sources:burst:sinegaussian}
+   h(t) = A \exp \left( \frac{ - 2(t - t_{0})^{2} \pi^{2} f^{2}}{Q^{2}} \right) \cos\left( 2 \pi f (t - t_{0}) \right),
+   \end{equation} 
+   for a strain $h$ at time $t$, with $A$ the amplitude of the signal, $t_{0}$ its central time, $Q$ the quality factor of the burst, and $f$ is frequency.
+
+   An example of a sine-Gaussian burst ($q = 8$, $f = \SI{100}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the middle column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
+   The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
+
+** White noise bursts
+   :PROPERTIES:
+   :CUSTOM_ID: sources:burst:models
+   :END:
+   Astrophysical processes are unlikely to produce emission at a single frequency, or with a smooth evolution of amplitude, and so searches are normally expected to be sensitive to band-limited white noise bursts, which consist of band-limited uncorrelated noise within a Gaussian amplitude envelope.
+   An example of a whitenoise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
+   The second and third rows contain time-frequency representations of the plus-polarisation waveform as a spectrogram and a constant $q$-transform, respectively.
+
+
+** Ringdown-like bursts
+   Ringdown-like signals, with a sudden rise, and exponential decay in amplitude are expected in the post-merger signal of abbr:cbc systems, and in some models of neutron star model excitation cite:2004PhRvD..70l4015B. These take the form
+   \begin{equation}
+   \label{eq:sources:burst:ringdown}
+   h(t) = \exp (t / \tau) \sin( 2 \pi f t)
+   \end{equation}
+   for a strain $h$ at time $t$, given a decay time $\tau$ and frequency $f$.
+    
 
 ** Parabolic and hyperbolic encounters
    :PROPERTIES:
@@ -437,9 +493,12 @@ Additional limits have been placed thanks to astrometric measurements of active 
 
 *** Core-collapse supernovae
 
-#+CAPTION: Core-collapse supernova spectrum.
-#+NAME:fig:ccsn-spectrum
-[[./figures/sources/source-ccsn.pdf]]
+\begin{figure}
+\includegraphics{figures/sources/source-ccsn.pdf}
+\caption{The characteristic strain spectra of a core collapse supernova and a Type 1A supernova, both at a distance of $\SI{10}{\kilo pc}$ from the earth. 
+The noise (sensitivity) curve of the advanced gls:ligo, gls:decigo, and gls:lisa detectors at their design sensitivity is plotted for reference.}
+\label{fig:sources:sn-spectrum}
+\end{figure}
 
  Core collapse supernova (CCSNe) are driven by the release of
  gravitational energy as a massive star's core collapses. Progenitor
@@ -479,24 +538,15 @@ Additional limits have been placed thanks to astrometric measurements of active 
  $\SI{50}{\kilo pc}$, the distance to the Large Magellanic Cloud. Extreme
  emission scenarios may be detectable as far as $\SI{0.77}{\mega pc}$,
  the distance to M31\cite{2016PhRvD..93d2002G}.
+The characteristic strain spectrum of a abbr:ccsn is plotted in figure ref:fig:sources:sn-spectrum, alongside the sensitivity curve of both advanced gls:ligo and two proposed space-based detectors.
 
 *** Type Ia supernovae
 
-#+NAME:fig:T1a-spectrum
-#+CAPTION: Type-1A supernova spectrum.
-[[./figures/sources/source-t1asn.pdf]]
 
- Type Ia supernovae (SNe Ia) are believed to be the result of
- white-dwarfs in binary systems accreting enough matter to exceed the
- Chandrasekhar-mass, and undergoing catastrophic
- core-collapse\cite{2013MNRAS.429.1156S}, however the evolution of the
- binary systems which are the progenitors of Type Ia supernovae is poorly
- understood. Recent work\cite{2015PhRvD..92l4013S} implies that the
- gravitational wave emission from a Type Ia supernova would produce
- decihertz gravitational-waves, peaking at a frequency around . This
- would position SNe Ia as a target for the proposed DECIGO and BBO
- space-based observatories.
-*** Supernova waveform models    
+ Type Ia supernovae (abpl:sn Ia) are believed to be the result of  white-dwarfs in binary systems accreting enough matter to exceed the  Chandrasekhar-mass, and undergoing catastrophic  core-collapse cite:2013MNRAS.429.1156S, however the evolution of the  binary systems which are the progenitors of Type Ia supernovae is poorly  understood. 
+Recent work cite:2015PhRvD..92l4013S implies that the abbr:gw emission from a abbr:sn Ia would produce emission in the decihertz abbr:gw band.
+This would position abpl:sn Ia as a target for the proposed gls:decigo and BBO space-based observatories.
+The approximate strain spectrum of a abbr:sn Ia is plotted in figure ref:fig:sources:sn-spectrum, alongside the sensitivity curves of a number of detectors.
 
 ** Cosmic strings
 
@@ -579,26 +629,236 @@ Initial abbr:ligo searches were performed both between the detectors constitutin
 
 \end{figure}
 
+** Definitions
+   /There is probably a neater place this section can go./
+
+   + Signal energy :: The summed squared absolute value of a segment of data.
+   + Null stream energy :: This is the minimum amount of energy in whitened detector data which is inconsistent with a gravitational wave signal from a given sky location, across a network of detectors.
+   + Excess energy :: A single detector measurement of the amount of energy which is not consistent with a noise hypothesis in whitened detector data.
+
 ** Fundamental search methods
+   :PROPERTIES:
+   :CUSTOM_ID: sec:sources:burst:searchmethods
+   :END:
+
+   While a large number of algorithms for searching for burst signals exist, most rely on a small number of fundamental techniques to identify burst events in detector data.
+
    + Power filter :: Calculates a weighted spectrogram of the data by splitting the whitened detector data into overlapping chunks.  cite:2004CQGra..21S.815G
    + Kleine Welle ::  The abbr:kw method uses either a wavelet or a Q-transform approach to produce a time-frequency representation of the measured signal. This is then thresholded, and clusters of outlier pixels (discrete regions of the time-frequency plane) are identified. By performing a number of Q-transforms with varying $q$ parameters it is possible to estimate the parameters of the detected waveform cite:2004CQGra..21S1809C.
-   + Mean filter :: The mean filter is a time-series approach to burst detection, which searches for excesses in the moving average of the measured signal. The method is most sensitive to bursts which have a similar length to the moving window, so the search must be repeated for a number of different window lengths.
-
-   + Null stream
-   + Excess energy
-		      
+   + Mean filter :: The mean filter is a time-series approach to burst detection, which searches for excesses in the moving average of the measured signal. The method is most sensitive to bursts which have a similar length to the moving window, so the search must be repeated for a number of different window lengths.  
 
 ** Seach pipelines
+   :PROPERTIES:
+   :CUSTOM_ID: sec:sources:burst:pipelines
+   :END:
 
-   + X-Pipeline :: X-Pipeline is designed to run coherent triggered searches for abbr:gw bursts, motivated by the detection of events such as abpl:sgrb cite:2010NJPh...12e3034S. The analysis constructs time-frequency spectrograms of the plus and cross strain polarisations, and the gls:null-stream, after they have been whitened and time-shifted. Pixels in the spectrograms are then clustered in order to identify significant outliers from the noise. This process is repeated for each location on the sky being searched, with appropriate time-shifts, for each detector's data. Events are vetoed if they have a strong correlation between the coherent energies and incoherent energies, a feature which indicates a noise glitch rather than a burst signal. 
+While the fundamental methods described in section ref:sec:sources:burst:searchmethods are plausible methods for identifying burst signals in data, they are unable to operate in isolation. 
+This has lead to the need to construct /pipelines/ which are capable of pre-processing the detector data, performing searches to produce lists of potential events (triggers), estimate the significance of these triggers, and perform parameter estimation on the signals. 
+There are at least four major pipelines in use during the advanced detector runs.
+
+\begin{figure}
+
+\begin{tikzpicture}[]
+
+%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
+
+\begin{scope}
+
+\fill [red!40] (-2,0.8) rectangle (10,-0.6);
+\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
+\fill [blue!40] (-2,-3.2) rectangle (10,-5.2);
+
+\fill [yellow!40] (-2,-5.2) rectangle (10,-8.2);
+
+\fill [orange!40] (-2,-8.2) rectangle (10, -13);
+
+\node (signal) {$h$};
+ 
+\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
+ \foreach \x in {1,..., 3} {
+ 	\node (convolution\x) at (\x, 0) { $\otimes$};
+	\draw (signal.south) -- (convolution\x.north);
+	\node  at (\x-0.3, 0) {$F_{\x}$};
+
+	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
+	\draw(convolution\x.south) -- (xi\x.north);
+
+	\node (addition\x) at (\x,-2.3) { $\oplus$};
+	\draw (xi\x.south) -- (addition\x.north);
+	\node at (\x-0.3, -2.3) {$N_{\x}$};
+
+	\node (s\x) at (\x, -3.6) {$s_{\x}$};
+	\draw (addition\x.south) -- (s\x.north);
+
+	\node [circle, fill] (segment\x) at (\x, -4.5) {};
+	\draw (s\x.south) -- (segment\x.north);
+
+	\node [circle, fill] (whiten\x) at (\x, -5.5) {};
+	\draw (segment\x.south) -- (whiten\x.north);
+
+	\node [circle, fill] (delay\x) at (\x, -6.5) {};
+	\draw (whiten\x.south) -- (delay\x.north);
+
+	\node [circle, fill] (tf\x) at (\x, -8) {};
+	\draw (delay\x.south) -- (tf\x.north);
+
+	\node [circle, fill] (excess\x) at (\x, -9.5) {};
+	\draw (tf\x.south) -- (excess\x.north);
+	
+}
+
+	\node [rectangle, fill, minimum width=1cm] (significance) at (2, -11) {};
+
+	\draw [bend left] (excess1.south) -- (significance.north);
+	\draw [bend left] (excess2.south) -- (significance.north);
+	\draw [bend left] (excess3.south) -- (significance.north);
+
+
+	\node [circle, fill] (triggers) at (2, -12.5)  {};
+	\draw (significance.south) -- (triggers.north);
+
+	
+
+\end{scope}
+\end{scope}
+
+\begin{scope}[xshift=6cm, every node/.style={text width=7cm}]
+
+\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
+\node (convolution-text) at (0, -2cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$.};
+
+\node (addition-text) at (0, -4) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
+
+\node (segment-text) at (0,-5.7) {The recorded signals are split into segments.};
+\node (segment-text) at (0,-6.7) {A filter is applied to whiten the data.};
+\node (segment-text) at (0,-7.7) {Each detector signal is time-delayed with respect to a given sky location.};
+
+\node (tf-text) at (0,-9.3) {The data from each detector is converted to a time-frequency representation.};
+\node (excess-text) at (0,-10.8) {Pixels with excess power are identified, and clusters of these pixels are identified.};
+
+\node (significance-text) at (0, -12.2) {The significance of the clusters are calculated jointly using the data from all detectors.};
+
+\node (trigger-text) at (0, -13.7) {A list of triggers is produced, which can be sorted by significance, and thresholded.};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+
+\caption{The principles of a coherent all-sky burst search pipeline.
+	     \label{fig:sources:burst:coherentsearch}
+}
+
+\end{figure}
+
+
+   + X-Pipeline :: X-Pipeline is designed to run coherent triggered searches for abbr:gw bursts, motivated by the detection of events such as abpl:sgrb cite:2010NJPh...12e3034S. The analysis constructs time-frequency spectrograms of the plus and cross strain polarisations, and the gls:null-stream, after they have been whitened and time-shifted. Pixels in the spectrograms are then clustered in order to identify significant outliers from the noise. This process is repeated for each location on the sky being searched, with appropriate time-shifts, for each detector's data. Events are vetoed if they have a strong correlation between the coherent energies and incoherent energies, a feature which indicates a noise glitch rather than a burst signal. The X-Pipeline can be combined with the SphRad pipeline to run all-sky, untargetted searches cite:maxfayesthesis in the XSphRad configuration.
 
 #   + spherical radiometer 
    + Coherent WaveBurst :: The abbr:cwb pipeline cite:waveburst is a coherent, untriggered burst search method which performs a wavelet transform on blocks of detector data to first produce a time-frequency representation. The wavelet layers are then whitened with a linear prediction error filter, and time-delayed. Correlations and excess-power regions in the  time-frequency plane are then clustered to identify coherent triggers, which are then selected by thresholding based on the abbr:fap.
 
-   + omicron / LALInference burst
-   + Bayeswave
+\begin{figure}
+\begin{tikzpicture}[]
 
-* Mock data challenges
+%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
+
+\begin{scope}
+
+\fill [red!40] (-2,0.8) rectangle (10,-0.6);
+\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
+\fill [blue!40] (-2,-3.2) rectangle (10,-5.2);
+
+\fill [yellow!40] (-2,-5.2) rectangle (10,-8.2);
+
+\fill [orange!40] (-2,-8.2) rectangle (10, -13);
+
+\node (signal) {$h$};
+ 
+\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
+ \foreach \x in {1,..., 3} {
+ 	\node (convolution\x) at (\x, 0) { $\otimes$};
+	\draw (signal.south) -- (convolution\x.north);
+	\node  at (\x-0.3, 0) {$F_{\x}$};
+
+	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
+	\draw(convolution\x.south) -- (xi\x.north);
+
+	\node (addition\x) at (\x,-2.3) { $\oplus$};
+	\draw (xi\x.south) -- (addition\x.north);
+	\node at (\x-0.3, -2.3) {$N_{\x}$};
+
+	\node (s\x) at (\x, -3.6) {$s_{\x}$};
+	\draw (addition\x.south) -- (s\x.north);
+
+	\node [circle, fill] (segment\x) at (\x, -4.5) {};
+	\draw (s\x.south) -- (segment\x.north);
+
+	\node [circle, fill] (whiten\x) at (\x, -5.5) {};
+	\draw (segment\x.south) -- (whiten\x.north);
+
+	\node [circle, fill] (delay\x) at (\x, -6.5) {};
+	\draw (whiten\x.south) -- (delay\x.north);
+
+	\node [circle, fill] (tf\x) at (\x, -8) {};
+	\draw (delay\x.south) -- (tf\x.north);
+
+	\node [circle, fill] (excess\x) at (\x, -9.5) {};
+	\draw (tf\x.south) -- (excess\x.north);
+	
+	\node [rectangle, fill] (significance\x) at (\x, -11) {};
+
+	\draw [bend left] (excess\x.south) -- (significance\x.north);
+
+	\node [circle, fill] (triggers\x) at (\x, -12.5)  {};
+	\draw (significance\x.south) -- (triggers\x.north);
+
+}
+
+\node (collection) [rectangle, fill, minimum width=2cm] at (2, -14) {};
+	
+\draw (triggers1.south) -- (collection.north);
+\draw (triggers2.south) -- (collection.north);
+\draw (triggers3.south) -- (collection.north);
+	
+
+\end{scope}
+\end{scope}
+
+\begin{scope}[xshift=6cm, every node/.style={text width=7cm}]
+
+\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
+\node (convolution-text) at (0, -2cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$.};
+
+\node (addition-text) at (0, -4) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
+
+\node (segment-text) at (0,-5.7) {The recorded signals are split into segments.};
+\node (segment-text) at (0,-6.7) {A filter is applied to whiten the data.};
+\node (segment-text) at (0,-7.7) {Each detector signal is time-delayed with respect to a given sky location.};
+
+\node (tf-text) at (0,-9.3) {The data from each detector is converted to a time-frequency representation.};
+\node (excess-text) at (0,-10.8) {Pixels with excess power are identified, and clusters of these pixels are identified.};
+
+\node (significance-text) at (0, -12.2) {The significance of the clusters are estimated for events in individual detectors.};
+
+\node (trigger-text) at (0, -13.7) {Lists of triggers are produced, which can be sorted by significance, and thresholded.};
+
+\node (collection-text) at (0, -15.2) {The trigger times from each detector are compared, and coincident events are identified.};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+
+\caption{A typical all-sky coincident burst search pipeline.
+\label{fig:sources:burst:coincidentsearch}}
+\end{figure}
+
+   + omicron / LALInference burst :: The abbr:olib pipeline cite:2015arXiv151105955L is a coincident all-sky burst search pipeline which relies on the use of contant-$q$ transforms to generate time-frequency representations of detector data, in order to identify regions of excess energy. the significance of single-detector triggers are then determined using Bayesian inference to produce a joint detection significance from the network of detectors.
+   + Bayeswave :: In contrast to other burst search pipelines, abbr:bayeswave cite:2015CQGra..32m5012C is designed to determine the significance of pre-determined triggers, and does not generate triggers on its own. It takes a direct approach to distinguishing signal transients (bursts) from noise transients (glitches) by directly modelling glitches with Morlet waveforms, and then performing Bayesian model selection to identify the favoured hypothesis (either a noise, glitch, or signal model).
+
+* Mock data challenges and all-sky searches
 
   Given the complexity of modern burst search algorithms, and their need to operate in a regime of non-Gaussian, non-stationary noise it is important to be able to demonstrate the efficacy of an individual pipeline.
 In addition to this, the nature of the noise in abbr:gw detectors makes estimating the sensitivity of each search method difficult, as the time-evolution of the noise abbr:psd will affect the sensitivity over time.
@@ -612,6 +872,102 @@ However, as these are added to the recorded data it is necessary to ensure that 
 
 At the beginning of the advanced detector era it became clear that the production of these /mock data challenges/ required new infrastructure, and the /Minke/ project was initiated to handle this.
 
-** Minke
+* Minke
 
-/Minke/ is a software library implemented in the ~python~ programming language which is designed to produce large-scale mock data challenges for burst waveforms.
+/Minke/ is a software library implemented in the ~python~ programming language which is designed to produce large-scale abpl:mdc for burst waveforms. 
+In order to ensure consistency with other abbr:gw analyses, and to make use of as much pre-existing, reviewed code as possible, gls:minke makes use of as much functionality as possible from gls:lalsuite, cite:lalsuite.
+While Minke was designed for the primary purpose of abbr:mdc production, it also provides a convenient python wrapper to a number of functions from the \texttt{LALSimulation} cite:lalsuite C library, making it a convenient means to generate abbr:gw signals, for example for machine learning training data.
+
+Burst searches are used to search for both totally unmodelled sources, and poorly modelled sources (see section ref:sec:source:burst for a discussion of the various morphologies of these signals). 
+gls:minke supports a large subset of these waveforms; analytical waveforms, such as Gaussians and sine-Gaussians are generated using \texttt{LALSimulation}, while more complicated models can be used (such as abbr:nr derived supernova waveforms) can be used to generate signals if the waveform is available either as precomputed strain values in the $+$- and $\times$-polarisations, or decomposed into a spherical harmonic basis.
+
+The process for producing an abbr:mdc using Minke is broken into a number of stages (which are also depicted in figure ref:fig:sources:minke:frame):
+
+1. The distributions of source parameters are specified; these include the probability distributions from which parameters of individual signals are drawn, and the hyperparameters defining those distributions. For example, the injections may be made uniformly across the sky, or a more specific distribution may be chosen.
+
+2. A specification for the signal set is generated as a table of source parameters, with each row specifying a single signal. This table can be stored in XML format for later use.
+
+3. Each signal can then be generated using \texttt{LALSimulation}. In the case of analytical waveforms the appropriate generating function is evaluated, and in the case of a precomputed signal the waveform data is interpolated appropriately for the desired sample rate, and where appropriate, is reconstructed from a spherical harmonic basis.
+
+4. The generated signal must then be convolved with the antenna pattern for each detector involved in the analysis, for the appropriate sky position and time, and must have the appropriate time delay applied relative to the geocentre. A random "jitter" may also be applied at this stage to the centre time and amplitude of the signal, to emulate timing and calibration uncertainties in the detector.
+
+5. The signals, which are now ready to be injected, can be stored either in a GWF frame file, or as ASCII data. The former is used for software injections, and the latter for hardware injections.
+
+6. The analysis-ready abbr:mdc is constructed by adding the injection signal to the detector data, allowing the sensitivity of the detector to a specific signal morphology to be tested over time, in the presence of real noise and glitches.
+
+When injecting signals which posess abbr:gw memory effects (that is, when the strain at the end of the signal does not equal the strain at the beginning) it is desirable to remove this effect.
+When adding a signal with memory to pre-recorded noise there will be a sharp discontinuity at the end of the signal which will produce artifacts in any frequency-domain representation of the signal.
+To account for this Minke adds a low-frequency half cosine decay to the end of the signal to present a smooth transition.
+This can be seen in the Mueller waveform signal in the left column of figure ref:fig:sources:burst:minke:supernova.
+
+
+\begin{figure}
+\begin{tikzpicture}[]
+
+%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
+
+\begin{scope}
+
+\fill [pink!40] (-2,2.8) rectangle (10,-3.5);
+%\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
+\fill [blue!40] (-2,-3.5) rectangle (10,-5);
+
+
+\node (parameters) at (0,1.5) {$\vec{p}$};
+
+\node (signal) at (0,0) {$h$};
+
+\draw (parameters) -- (signal);
+ 
+\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
+ \foreach \x in {1,..., 3} {
+ 	\node (convolution\x) at (\x, 0) { $\otimes$};
+	\draw (signal.south) -- (convolution\x.north);
+	\node  at (\x-0.3, 0) {$F_{\x}$};
+
+	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
+	\draw(convolution\x.south) -- (xi\x.north);
+
+	\node [rectangle, fill]  (frame\x) at (\x,-3) {};
+	\draw (xi\x.south) -- (frame\x.north);
+
+
+
+}
+
+
+\end{scope}
+\end{scope}
+
+\begin{scope}[xshift=5.5cm, every node/.style={text width=7cm}]
+
+\node (signal-text) at (0,1.5) {A set of waveform parameters is selected from the MDC specification.};
+\node (signal-text) at (0,.1) {A mock signal, $h$ is generated from defined source parameters.};
+\node (convolution-text) at (0, -2cm) {The signal is time-delayed and convolved with each detector's antenna pattern, $F$. A random jitter is added to the central time and amplitude of the signal to simulate calibration uncertainties. \\ This gives the injection-ready signal.};
+
+\node (addition-text) at (0, -4.2) {The injection ready signals are then stored in a form ready to be added to detector noise.};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+
+\caption{The process of frame production for a abbr:mdc using Minke. For software injections the injection-ready signals are normally stored in GWF frame files, ready to be injected into the signal recorded from the detector. For waveforms to be used for hardware injections the signals are simply written out as ASCII-format text files. \label{fig:sources:minke:frame}}
+\end{figure}
+
+   \begin{figure}
+   \caption[A catalogue of supernova burst waveforms]{Three of the supernova burst ``waveforms'' which can be smiluated and injected by Minke.
+   From left to right, Mueller, Dimmelmeier, Scheidegger waveforms.
+   The first row depicts each of these waveforms in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
+   The second row contains the time-frequency spectrogram of each waveform in the plus polarisaiton.
+   The third row contains the time-frequency constant-$q$ transform of each waveform.
+   \label{fig:sources:burst:minke:supernova}
+   }
+   \includegraphics[width=\textwidth]{figures/sources/minke-supernova.pdf}
+   \end{figure}	
+
+** O1 and O2 all-sky searches
+
+
+[[fn:stat-phase]] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D

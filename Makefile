@@ -36,7 +36,7 @@ html : $(HTML_FILES)
 
 pdf :	document.pdf ## Produce a PDF output
 
-document.pdf : document.tex git-info.tex chapters/glossary/glossary.tex $(BIB_FILES) $(TEX_FILES) figures
+document.pdf : document.tex git-info.tex chapters/glossary/glossary.tex $(BIB_FILES) $(TEX_FILES) #figures
 	$(TEXMK) $<
 	biber document
 	$(TEXMK) $<

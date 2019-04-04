@@ -1,8 +1,14 @@
-* Topics in gravitational wave astronomy
+#+TITLE: Topics in gravitational wave astronomy
 A thesis.
 
 
 * TODO Gravitational waves: generation, propagation, and detection [0/9]
+
++ Probably shouldn't use characteristic strain for the plots
++ Is equation 2.3 really in the right place?
++ No formalism for how we expect a CBC signal to evolve in phase as well as amplitude
++ Should I really call them spline surroagte models → just surrogate models?
+
 ** TODO Gravitational waves and general relativity  [0/0]
 ** TODO A network of detectors [0/0]
    /This section should probably come after the section on detection./
@@ -13,44 +19,60 @@ A thesis.
 ** TODO Strain [0/0]
 ** TODO Alternative theories of gravity [0/0]
 ** TODO Detecting gravitational waves [0/0]
+   + [ ] Add discussion of LIGO india
 *** TODO  Advanced LIGO [0/1]
     + [ ] Should add discussion of the LIGO India project here.
 *** TODO Advanced VIRGO [0/0]
 
-* TODO Astrophysical sources of gravitational waves [%]
-
-** REVIEW Compact binary coalescences
+* TODO Astrophysical sources of gravitational waves [0/5]
+** REVIEW Compact binary coalescences [0/4]
+   + [ ] Improve list of IMR and SEO versions
+   + [ ] Add discussion of SXS catalogue
+   + [ ] Waveform cartoon with inspiral merger ringdown marked on
+   + [ ] Discussion of tidal effects in NS
+   + [ ] Discussion of PN accurate waveforms
 ** REVIEW Continuous wave sources
    + [ ] Add a P-Pdot diagram, possibly with some of the O1/O2 data.
 ** REVIEW Stochastic sources
    + [ ] Add a plot of the energy of the stochastic background.
-** TODO Burst sources [1/3]
-   + [ ] Fix CCSN plot- this is just wrong.
+** TODO Burst sources [5/7]
+   + [X] Fix CCSN plot- this is just wrong.
+   + [ ] Complete discussion of search methods
    + [X] Add a figure for the ad-hoc waveforms
      This plot should probably still be checked over however.
-   + [ ] Add a figure for the semi-modelled waveforms
-   + [ ] Add a figure for the supernova waveforms
-** TODO Minke and burst searches [0/4]
-   + [ ] Discuss calibration uncertainties
-   + [ ] Various data formats required
-   + [ ] Signal production process (signal → ant pattern → noise)
+   + [X] Add a figure for the supernova waveforms
+   + [ ] Add a very brief discussion of SN models
+   + [X] Complete the discussion of burst parameters
+   + [X] Complete the discussion of null streams
++ Call characteristic squared "hrss"
++ Encounter waveforms reference from Siong
++ Supernova section needs work
++ Consider changing the searches section to a transient one
++ Fundamental search methods section
++ Cartoon to illustrate the signal construction diagrams
++ Make sure that coherent and incoherent diagrams visually distinct
+** TODO Minke and burst searches [3/5]
+   + [X] Discuss calibration uncertainties
+   + [X] Various data formats required
+   + [X] Signal production process (signal → ant pattern → noise)
    + [ ] APPENDIX: Example script for MDC production
+   + [ ] Add discussion of the sensitivity results from O1 and O2 MDCs.
 
 
-* TODO Bayesian inference
-** Probability
-** Prior knowledge
-** Information
-** Feature space and kernels
-** Structured distributions
-** Inference
-** Approximate inference
-** Hierarchical models
-** Bayesian linear regression
+* TODO Bayesian inference [0/9]
+** TODO Probability
+** TODO Prior knowledge
+** TODO Information
+** TODO Feature space and kernels
+** TODO Structured distributions
+** TODO Inference
+** TODO Approximate inference
+** TODO Hierarchical models
+** TODO Bayesian linear regression
 
 * TODO Hierarchical modelling of gamma ray bursts
-** Short GRBs and Jet production
-** Rates to beaming angles
+** TODO Short GRBs and Jet production
+** TODO Rates to beaming angles
 
 * TODO Gaussian processes
 
