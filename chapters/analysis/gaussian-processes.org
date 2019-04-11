@@ -1,8 +1,15 @@
 #+COLUMNS: %50ITEM %custom_id
 
-/This chapter covers the introductory theory of Gaussian process regression, and the development of the ~Heron~ model for binary black hole coalescence waveforms./
+This chapter introduces Gaussian processes, and Gaussian process regression, a probabilistic regression technique which is well suited to producing so-called surrogate models: statistical models which are informed primarily by observed data rather than prior physical knowledge.
+
+In section ref:sec:gp:surrogate I introduce the basic ideas of surrogate modelling, and briefly discuss various techniques which exist for producing such models.
+Then in section ref:sec:gp:gp I introduce the Gaussian process, a probabilistic model, and its use in Gaussian process regression.
 
 * Surrogate modelling
+  :PROPERTIES:
+  :CUSTOM_ID: sec:gp:surrogate
+  :END:
+
 
 Many experimental scenarios in science and engineering are expensive, laborious, or both to perform, and therefore difficult or off-putting to repeat.
 The ability to perform such an experiment with a specific set of parameters may however be valuable.
@@ -15,54 +22,22 @@ If a well-defined physical theory is known to explain the observations an approp
 Surrogate models are often desirable in situations where little physical intuition is available (or where the underlying physics is extremely complicated).
 These attempt to model the observed data with limited assumptions about the form of the generating function.
 
-** Polynomial response surfaces
++ Polynomial response surfaces :: Perhaps the most straight-forward means of producing a surrogate model is to assume that the generating process for measured data can be approximated by a polynomial function. In the case of many complex physical processes there may be a number of coefficients, leading to a polynomial (hyper-)surface. This method, formally introduced in 1951 cite:10.2307/2983966, is often referred to in the literature as the abbr:rsm, and is suitable for approximating generating models which have smooth variation, and non-oscillatory behaviour.  
+
++ Support Vector Machines ::  abbr:svr cite:Drucker1996SupportVR extends support vector machine classification to handle regression problems. This approach affords greater flexibility than polynomial model, as kernel methods can be used to perform non-linear fitting, projecting the data into a feature space.
+
++ Gaussian process regression :: abbr:gpr, which will be the focus of this chapter, is a technique which possesses similarities to abbr:svr, in that it makes use of kernel functions to project the data into a feature space, however abbr:gpr is a fundamentally Bayesian regression model, and as such provides not only a regressor to data, but also a measure of the fit's uncertainty.
+
++ Artificial neural networks :: Neural network techniques, including the use of convolutional neural networks, and deep learning techniques, are capable of producing non-linear fits to data. See cite:10.1007/978-3-642-39068-5_61 for an example of this technique used as a surrogate model, in this case to evaluate the strength of various concrete mixes.
 
 
-
-** Support vector machines
-** Gaussian process regression
-** Artificial neural networks
-** Bayesian networks
-
-* From Bayesian linear regression to Gaussian Process
-  :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:gpr-from-blr
-  :END:
-
-This choice of a Gaussian prior also implies that $y_i$ will have a
-Gaussian distribution, and we can take this to have the form
-$$\vec{y} \sim \mathcal{G}(\vec{0}, \mat{C})$$ where $\mat{C}$ is the
-/covariance matrix/, or /gram matrix/, which describes the covariance of the input data, as
-defined by some /covariance function/, or /kernel/, $K$,
-
-#+NAME:eq:covariance-matrix-derivation
-\begin{aligned}
-  C_{ij} &= K(\vec{x_i}, \vec{x_j}) = \ex(y_i y_j) = \ex(\vec{x}_i \vdot \vec{w} \vec{w} \vdot \vec{x}_j) + \ex(\epsilon_i \epsilon_j) \\
-&= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2,
-\end{aligned}
-
-for $\ex(x)$ the expectation of a variable $x$. As a result of this
-relationship between the weight vector, $\vec{w}$ and the gram matrix it
-is possible to perform the regression by means of a covariance function,
-rather than inferring the values $w_i$, and this is the justification by
-which Gaussian Process Regression (GPR) is often deemed a
-"non-parameteric" regression model[fn:parametric].
-
-
-[fn:parametric] This claim is rather sketchy, as we'll see when the forms of
-    covariance function are presented, as the parametricity is simply
-    moved from the model itself to the form of the covariance functions,
-    and the values of these /hyperparameters/ must be inferred, or
-    learned, from the data.
 
 * Gaussian Processes
   :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:gp
+  :CUSTOM_ID: sec:gp:gp
   :END:
 
-#+CAPTION: A graphical model of a Gaussian process, represented as a chain graph. The inputs (on the bottom row) are all observed quantities, while outputs are observed only at the location of training points. The latent variables, $f$ from the Gaussian field (the heavy black line connecting these nodes indicates that they are fully connected) connect the two, and so any given observation is independent of all other nodes given it connected latent $f$ variable. Thus the marginalisation (removal) or addition of input nodes to the abbr:gp does not change the distribution of the other variables.
-#+NAME: fig:gp:chain-diagram
-#+BEGIN_figure
+\begin{figure}
 \begin{center}
 \begin{tikzpicture}
 
@@ -94,62 +69,111 @@ which Gaussian Process Regression (GPR) is often deemed a
 	 \draw [black, dashed, line width=0.1cm] (fstar) -- (fN);
 \end{tikzpicture}
 \end{center}
-#+END_figure
+\caption{A graphical model of a Gaussian process, represented as a chain graph. The inputs (on the bottom row) are all observed quantities, while outputs are observed only at the location of training points. The latent variables, $f$ from the Gaussian field (the heavy black line connecting these nodes indicates that they are fully connected) connect the two, and so any given observation is independent of all other nodes given it connected latent $f$ variable. Thus the marginalisation (removal) or addition of input nodes to the abbr:gp does not change the distribution of the other variables.
+\label{fig:gp:chain-diagram}}
+\end{figure}
 
 
-Gaussian processes are Bayesian models which associate every point an some /input space/ with a probability distribution---specifically a normal distribution, and a collection of input points will form a multi-variate normal distribution. 
-Gaussian processes are a non-parametric supervised machine learning technique\cite{barberBRML2012,2003itil.book.....M}.
+Consider a regression problem with a set of data 
+\[ \set{D} = \setbuilder{(\vec{x}_i, y_i), i \in 1, dots, n} \]
+which is composed of $n$ pairs of inputs, $\vec{x}_i$, which are vectors which describe the location of the datum in parameter space, which are the inputs for the problem, and $y_i$, the outputs.
+The outputs may be noisy; in this work I will only consider situations where the noise is additive and Gaussian, so
+\begin{equation}
+\label{eq:gp:additive-noise}
+ y_i(\vec{x}_i) = f(\vec{x}_i) + \epsilon_i, \quad \text{for} \quad \epsilon_i \sim \mathcal{N}(0, \sigma^2)
+\end{equation}
+where $\sigma$ is the standard deviation of the noise, and $f$ is the (latent) generating function of the data.
 
-To make a prediction, we need to first have a set of prior observations and information about the parameters of the physical system which produced those observations. 
-These combined form the /training data/ for the predictor.
-
+This regression problem can be addressed using /Gaussian processes/:
 #+LATEX_ATTR: :options [Gaussian process]
 #+BEGIN_definition
 A gls:gaussian-process is a collection of random variables, any finite number of which have a joint Gaussian distribution cite:gpr.book.rw.
 #+END_definition
 
-A completely untrained Gaussian process forms the job of a prior probability distribution in a Bayesian analysis; where it is more conventional to consider a prior over a set of, for example, real values, such as a normal distribution, the Gaussian process forms a prior over the functions which might form the regression fit to any observed data. 
-While this prior is intially untrained it still contains information about our preconceptions of the data, for example, whether or not we expect the fit to be analytic, and the average of the functions. 
-By providing training data we can update the Gaussian process, in the same way that the posterior distribution is updated by
-the addition of new data in a standard Bayesian context, and a posterior on the set of all possible functions to fit the data is produced. 
-We can take the mean of this posterior in the place of the "best fit line" which other techniques produce, and then use the variance to produce an estimate of the uncertainty of the prediction.
+Where it is more conventional to consider a prior over a set of, for example, real values, such as a normal distribution, the Gaussian process forms a prior over the functions, $f$ from equation ref:eq:gp:additive-noise, which might form the regression fit to any observed data. 
+This assumes that the values of the function $f$ behave as
+\begin{equation}
+\label{eq:gp:function-values}
+p(\vec{f} | \vec{x}_1, \vec{x}_2, \dots, \vec{x}_n) = \mathcal{N}(0, \mat{K})
+\end{equation}
+where $\mat{K}$ is the covariance matrix of $\vec{x_1}$ and $\vec{x_2}$, which can be calculated with reference to some /covariance function/, $k$, such that $K_{ij} = k(\vec{x}_i, \vec{x}_j)$.
+Note that I have assumed that the abbr:gp is a /zero-mean/ process; this assumption is frequent within the literature.
+While this prior is initially untrained it still contains information about our preconceptions of the data through the form of the covariance function.
+For example, whether or not we expect the fit to be smooth, or periodic.
+Covariance functions will be discussed in greater detail in section ref:sec:gp:covariancefunctions.
 
-# The possibility of using Gaussian Processes in the analysis of data from
-# gravitational wave detectors has been proposed by Moore and
-# Gair\cite{2014PhRvL.113y1101M,2016PhRvD..93f4001M} who propose its use
-# to calculate the uncertainties in current generation post-Newtonian
-# approximants to numerical relativity simulations, and to incorporate
-# this into the current matched-filtering analyses which are conducted on
-# triggers from gravitational wave detectors.
+By providing training data we can use Bayes theorem to update the Gaussian process, in the same way that the posterior distribution is updated by the addition of new data in a standard Bayesian context, and a posterior on the set of all possible functions to fit the data is produced. 
+Thus, for a vector of test values of the generating function $\vec{f}_\star$, the joint posterior $p(\vec{f}, \vec{f}_* | \vec{y})$, given the observed outputs $\vec{y}$ can be found by updating the abbr:gp prior on the training and test function values $p(\vec{f}, \vec{f}_*)$ with the likelihood $p(\vec{y}|\vec{f})$:
+\begin{equation}
+\label{eq:gp:bayes}
+p(\vec{f}, \vec{f}_* | \vec{y}) = \frac{p(\vec{f}, \vec{f}_*) p(\vec{y}|\vec{f})}{p(\vec{y})}.
+\end{equation}
 
-Gaussian processes trained with $N$ data require the ability to both store and invert an $N\times N$ matrix of covariances between observations; this can be a considerable computational challenge.
-There are a number of approaches to get around this problem, including /sparse Gaussian processes/, where a limit on the parameter-space distance between training points is set, and the covariance of points outside this radius are ignored\cite{EPFL-CONF-161319}, and hierarchical matrix inversion methods\cite{hodlr}.
+Finally the (latent) training-set function values, $\vec{f}$ can be marginalised out:
+\begin{equation}
+p(\vec{f}_* | \vec{y}) = \int p(\vec{f}, \vec{f}_* | \vec{y}) \dd{\vec{f}} = \frac{1}{p(\vec{y})} \int p(\vec{y} | \vec{f}) p(\vec{f}, \vec{f}_*) \dd{\vec{f}}
+\end{equation}
 
-Gaussian processes can be extended from the case of a single-dimensional input predicting a single-dimensional output to the ability to predict a multi-dimensional output from a multi-dimensional input\cite{Alvarez2011,Alvarez2011a,Bonilla2007}.
+We can take the mean of this posterior in the place of the ``best fit line'' which other techniques produce, and then use the variance to produce an estimate of the uncertainty of the prediction.
+
+Both the prior $p(\vec{f}, \vec{f}_*)$ and the likelihood $p(\vec{y}|\vec{f})$ are Gaussian:
+\begin{equation}
+\label{eq:gp:prior-and-likelihood}
+p(\vec{f}, \vec{f}_*) = \mathcal{N}(\vec{0}, \mat{K}^+), \quad \text{and} \quad 
+p(\vec{y}|\vec{f}) = \mathcal{N}(\vec{f}, \sigma^2 \mat{I})
+\end{equation}
+with
+\begin{equation}
+  \label{eq:blockK-plus-mat}
+  \mat{K}^+ =
+  \begin{bmatrix}
+    K_{\vec{f},\vec{f}} & K_{\vec{f},\vec{f}_*} \\ K_{\vec{f}_*,\vec{f}} & K_{\vec{f}_*, \vec{f}_*}
+  \end{bmatrix},
+\end{equation}
+and $\mat{I}$ the identity matrix.
+
+This leaves the form of the marginalised posterior being analytical:
+
+\begin{equation}
+\label{eq:gp:posterior}
+p(\vec{f}_* | \vec{y}) = \mathcal{N} \left( 
+K_{\vec{f}_*,\vec{f}} (K_\vec{f},\vec{f} + \sigma^2 \mat{I})^{-1} \vec{y},
+K_{\vec{f}_*, \vec{f}_*} - K_{\vec{f},\vec{f}_*}( K_{\vec{f},\vec{f}}+\sigma^2 \mat{I})^{-1} K_{\vec{f},\vec{f}_*}).
+\end{equation}
+
+The mean and variance of this posterior distribution can be used to form a regressor for the data, $\set{D}$, with the mean taking the role of a ``line-of-best-fit'' in conventional regression techniques, while the variance describes the goodness of that fit.
+
+A graphical model of a abbr:gp is shown in figure ref:fig:gp:chain-diagram which illustrates an important property of the abpl:gp model: the addition (or removal) of any input point to the abbr:gp does not change the distribution of the other variables. 
+This property allows outputs to be generated at arbitrary locations throughout the parameter space.
+
+Gaussian processes trained with $N$ training data require the ability to both store and invert an $N\times N$ matrix of covariances between observations; this can be a considerable computational challenge.
+# There are a number of approaches to get around this problem, including /sparse Gaussian processes/, where a limit on the parameter-space distance between training points is set, and the covariance of points outside this radius are ignored cite:EPFL-CONF-161319, and hierarchical matrix inversion methods\cite{hodlr}.
+
+Gaussian processes can be extended from the case of a single-dimensional input predicting a single-dimensional output to the ability to predict a multi-dimensional output from a multi-dimensional input cite:Alvarez2011,Alvarez2011a,Bonilla2007.
 
 #+CAPTION: [Step 1] An example of raw training data which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.
-#+NAME: fig:gp-training-data
+#+NAME: fig:gp:training-data
 #+ATTR_LATEX: :width \textwidth
 file:figures/gp-training-data.pdf
 
 #+CAPTION: [Step 2] We choose a covariance function for the  Gaussian process, in this case an exponential-squared covariance    function. The Gaussian process containing no data and this    covariance matrix forms our prior probability distribution. Here    50 draws from the prior distribution are plotted.
-#+LABEL: fig:gp-prior
+#+LABEL: fig:gp:prior
 #+ATTR_LATEX: :width \textwidth
 file:figures/gp-example-prior-draws.pdf
 
 #+CAPTION: [Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed.}
-#+LABEL: fig:gp-covariance-matrix
+#+LABEL: fig:gp:covariance-matrix
 #+ATTR_LATEX: :width \textwidth
 file:figures/gp-example-posterior-draws.pdf
 
 # #+CAPTION: The covariance structure for the Gaussian process.
-# #+LABEL: fig:gp-covariance-matrix
+# #+LABEL: fig:gp:covariance-matrix
 # #+BEGIN_figure
 #   \includegraphics{figures/gp-example-expsqcov-matrix.pdf}
 # #+END_figure
 
 #+CAPTION: [Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.
-#+LABEL: fig-gp-posterior-best
+#+LABEL: fig:gp:posterior-best
 #+ATTR_LATEX: :width \textwidth
 file:figures/gp-posterior-meancovar.pdf
 
@@ -277,32 +301,52 @@ As a concrete example, for a kernel function in which the zeroth dimension is de
 k = \SE^{(0)} \times \RQ^{(1,2,3)}
 \end{equation}
 
-A list of the symbols for each covariance function is given in table ref:tab:kernels, and definitions of the kernels are given at the end of the chapter.
+A list of the symbols for each covariance function is given in table ref:tab:gp:kernels, and definitions of the kernels are given at the end of the chapter.
 
 
-#+ATTR_LATEX: :environment tabularx 
-#+ATTR_LATEX: :width \textwidth
-#+ATTR_LATEX: :align lcX :booktabs
-#+ATTR_LATEX: :placement [b]
-#+CAPTION: A table of commonly encountered covariance functions.
-#+NAME: tab:kernels
-#+LABEL: tab:kernels
-#+tblname: tab:kernels
-| Kernel              | Sym.     | Properties                          |
-|---------------------+----------+-------------------------------------|
-| Squared-exponential | $\SE$    | Smooth local variation.             |
-| Matern-3/2          | $\M32$   |                                     |
-| Matern-5/2          | $\M52$ |                                     |
-| Periodic            | $\Per$   | Smooth global periodic variation.   |
-| Linear              | $\Lin$   | Global continuous linear variation. |
-| Rational Quadratic  | $\RQ$    | Variation on multiple scales.       |
-| Constant            | $\Con$   | Scaling factor.                     |
+# #+ATTR_LATEX: :environment tabularx 
+# #+ATTR_LATEX: :width \textwidth
+# #+ATTR_LATEX: :align lcX :booktabs
+# #+ATTR_LATEX: :placement [b]
+# #+CAPTION: A table of commonly encountered covariance functions.
+# #+NAME: tab:kernels
+# #+LABEL: tab:kernels
+# #+tblname: tab:kernels
+# | Kernel              | Sym.     | Properties                          |
+# |---------------------+----------+-------------------------------------|
+# | Squared-exponential | $\SE$    | Smooth local variation.             |
+# | Matern-3/2          | $\M32$   |                                     |
+# | Matern-5/2          | $\M52$ |                                     |
+# | Periodic            | $\Per$   | Smooth global periodic variation.   |
+# | Linear              | $\Lin$   | Global continuous linear variation. |
+# | Rational Quadratic  | $\RQ$    | Variation on multiple scales.       |
+# | Constant            | $\Con$   | Scaling factor.                     |
+
+\begin{table}
+\centering
+\begin{tabular}{lcl}
+\toprule
+Kernel & Symbol & Properties \\
+\midrule
+ Squared-exponential & $\SE$    & $C^\infty$-smooth local variation.             \\
+ Matern-3/2          & $\M32$   & $C^3$-smooth local-variation               \\
+ Matern-5/2          & $\M52$   & $C^5$-smooth local-variation.                                    \\
+ Periodic            & $\Per$   & Smooth global periodic variation.   \\
+ Linear              & $\Lin$   & Global continuous linear variation. \\
+ Rational Quadratic  & $\RQ$    & Variation on multiple scales.       \\
+ Constant            & $\Con$   & Scaling factor.                     \\
+\bottomrule
+\end{tabular}
+\caption{Frequently used and encountered kernels used as covariance functions for abbr:gpr problems. The second column contains the abbreviation by which these kernels are referred in this work, and the third column lists properties of each function which affect its utility in a variety of problems.
+\label{tab:gp:kernels}
+}
+\end{table}
 
 For example, we may be able to model a yearly growing trend which contains a seasonal variation with a combination of a linear and a
 periodic kernel, $\Lin \times \SE$.
 
 
-** Higher-dimensional problems
+# ** Higher-dimensional problems
 
 
 * Training the model
@@ -310,100 +354,151 @@ periodic kernel, $\Lin \times \SE$.
   :CUSTOM_ID: sec:gpr:training
   :END:
 
-When defining the covariance function for the it may be desirable to
-specify a number of free hyperparameters, $\theta$, which allow the
-properties of the GP to be altered, effectively allowing Bayesian model
-comparison to be carried-out to select the Gaussian Process which
-optimally describes the data. The log-probability that a given set of
-strain values were drawn from a Gaussian process with zero mean and a
-covariance matrix $K_{ij} = k(x, x')$ is
+When defining the covariance function for the it may be desirable to specify a number of free hyperparameters, $\theta$, which allow the properties of the GP to be altered.
+Since the functional form of the covariance function defines the abbr:gp model, this allows the techniques of Bayesian model selection to be employed, in order to select the specific abbr:gp model which optimally describes the data. 
+The log-probability that a given set of strain values were drawn from a Gaussian process with zero mean and a covariance matrix $K_{ij} = k(x, x')$ is
 
 \begin{equation}
 \label{eq:logevidencegp}
   \log(p(\vec{f}| X)) = - \frac{1}{2} K^{-1} \vec{f} - \frac{1}{2} \log |K| - \frac{n}{2} \log 2\pi.
 \end{equation}
 
-This quantity is normally denoted the /log-evidence/ or the
-/log-hyperlikelihood/. The model which best describes the training data
-may then be found by maximising the log-hyperlikelihood with respect to
-the hyperparameters, $\theta$ of the covariance function.
+This quantity is normally denoted the /log-evidence/ or the /log-hyperlikelihood/. 
+The model which best describes the training data may then be found by maximising the log-hyperlikelihood with respect to the hyperparameters, $\theta$ of the covariance function.
 
-This optimisation may be conducted using either a hill-climbing based
-optimisation algorithm, or in a hierarchical Bayesian framework, whereby
-priors are assigned to the value of each hyperparameter, and the optimal
-hyperparameters are found using a Monte Carlo algorithm.
+This optimisation may be conducted using either a hill-climbing based optimisation algorithm, or in a hierarchical Bayesian framework, with priors probability distributions assigned to each hyperparameter, and the optimal hyperparameters then found using an abbr:mcmc algorithm.
 
-* The predictive posterior distribution
-  :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:predictive
-  :END:
+# * The predictive posterior distribution
+#   :PROPERTIES:
+#   :CUSTOM_ID: sec:gpr:predictive
+#   :END:
 
-In order to make a prediction using the Gaussian Process model we
-require a new input at which the prediction should be made, which is
-denoted $x^*$. In order to form the predictive distribution we must then
-calculate the covariance of the new input with the existing training
-data, which we denote $K_{x, x^*}$, and the autocovariance of the input,
-$K_{x^*, x^*}$. We then define a new covariance matrix, $K^{+}$, which
-has the block structure
+# In order to make a prediction using the Gaussian Process model we
+# require a new input at which the prediction should be made, which is
+# denoted $x^*$. In order to form the predictive distribution we must then
+# calculate the covariance of the new input with the existing training
+# data, which we denote $K_{x, x^*}$, and the autocovariance of the input,
+# $K_{x^*, x^*}$. We then define a new covariance matrix, $K^{+}$, which
+# has the block structure
 
-\begin{equation}
-\label{eq:blockK-plus-mat}
-  K^+ =
-  \begin{bmatrix}
-    K_{x,x} & K_{x,x^*} \\ K_{x^*,x} & K_{x^*, x^*}
-  \end{bmatrix}
-\end{equation}
+# \begin{equation}
+# \label{eq:blockK-plus-mat}
+#   K^+ =
+#   \begin{bmatrix}
+#     K_{x,x} & K_{x,x^*} \\ K_{x^*,x} & K_{x^*, x^*}
+#   \end{bmatrix}
+# \end{equation}
 
-for $K_{x,x}$ the covariance matrix of the training inputs, and
-$K_{x^*,x} = K_{x,x^*}^T$.
+# for $K_{x,x}$ the covariance matrix of the training inputs, and
+# $K_{x^*,x} = K_{x,x^*}^T$.
 
-The predictive distribution can then be found as
+# The predictive distribution can then be found as
 
-\begin{equation}
-\label{eq:predictive-gp}
-  p(y^* | x^*, \mathcal{D}) = \mathcal{N}(y^* | K_{x^*,x} K_{x,x}^{-1} y, K_{x^*, x^*} - K_{x^*,x}K^{-1}_{x,x} K_{x,x^*}).
-\end{equation}
+# \begin{equation}
+# \label{eq:predictive-gp}
+#   p(y^* | x^*, \mathcal{D}) = \mathcal{N}(y^* | K_{x^*,x} K_{x,x}^{-1} y, K_{x^*, x^*} - K_{x^*,x}K^{-1}_{x,x} K_{x,x^*}).
+# \end{equation}
 
-* Computational Complexity
+* Dealing with computational complexity and large data sets
   :PROPERTIES:
   :CUSTOM_ID: sec:gpr:complexity
   :END:
 
-One severe disadvantage of Gaussian Processes as a data analysis tool
-are their high computational complexity. Producing a prediction from a
-GP requires inverting the covariance matrix; matrix inversion is an
-$\mathcal{O}(N^3)$ process in time, and scales with $\mathcal{O}(N^2)$
-in memory use. This effectively limits the number of training points
-which can be input to a GP to fewer than $10^4$. A number of approaches
-have been developed in the literature to address this short-coming by
-utilising computationally tractable approximations to either the matrix
-inversion or the Gaussian process.
+  One severe disadvantage of Gaussian Processes as a data analysis tool are their high computational complexity. 
+  Producing a prediction from a GP requires inverting the covariance matrix; matrix inversion is an $\mathcal{O}(N^3)$ process in time, and scales with $\mathcal{O}(N^2)$ in memory use. 
+  This effectively limits the number of training points which can be input to a GP to fewer than $10^4$. 
 
-These approaches can be grouped into three broad categories; sparse
-Gaussian processes, which use a modified covariance function to force
-the covariance matrix to have a near-diagonal structure; hierarchical
-approaches, which do not modify the covariancec function, but
-approximate the off-diagonal terms' influence on the inversion; and
-local expert approaches, in which the parameter space is divided into
-many sub-spaces, and each sub-space is modelled using an independent
-Gaussian process.
+  A number of approaches have been developed in the literature to address this short-coming by utilising computationally tractable approximations to either the matrix inversion or the Gaussian process.
+  These approaches can be grouped into three broad categories; sparse Gaussian processes, which use a modified covariance function to force the covariance matrix to have a near-diagonal structure; hierarchical
+approaches, which do not modify the covariance function, but approximate the off-diagonal terms' influence on the inversion; and local expert approaches, in which the parameter space is divided into
+many sub-spaces, and each sub-space is modelled using an independent abbr:gp.
 
-** Sparse Gaussian proceses
+** Sparse Gaussian processes
+   
+   Sparse abbr:gpr approaches work by modifying the form of the joint prior distribution (from equation ref:eq:gp:prior-and-likelihood to include an additional $m$ latent variables,
+\[ \vec{u} = [u_1, \dots, u_m]^{\transpose}, \]
+which are termed ``inducing variables''.
+These correspond to values of the Gaussian process at inputs $X_\vec{u}$, which are the inducing inputs.
+These inducing variables can be chosen in various different ways, but their effect on the abbr:gp is the same.
 
-** Hierarchical Gaussian processes
+The original abbr:gp can be recovered by marginalising over $\vec{u}$:
+\begin{equation}
+\label{eq:gp:marginal-inducing}
+p(\vec{f}_*, \vec{f}) = \int p(\vec{f}_*, \vec{f}, \vec{u}) = \int p(\vec{f}_*, \vec{f} | \vec{u}) p(\vec{u}) \dd{\vec{u}}
+\end{equation}
+with $p(\vec{u}) = \mathcal{N}(\vec{0}, K_{\vec{u},\vec{u}})$.
+
+Sparse abbr:gp approaches make the assumption that $\vec{f}$ and $\vec{f_*}$ are conditionally independent given $\vec{u}$.
+This is depicted as a graphical model in figure ref:fig:gp:chain-diagram-sparse.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+
+	 \node[obs] (x1) {$\vec{x}_{1}$};	 	
+	 \node[latent, above = of x1] (f1) {$f_{1}$};
+	 \edge{x1}{f1};
+
+	 \node[obs, right = of x1] (x2) {$\vec{x}_{2}$};	 	
+	 \node[latent, above = of x2] (f2) {$f_{2}$};
+	 \edge{x2}{f2};
+
+	 \node[obs, right = 2 of x2] (xN) {$\vec{x}_{N}$};	 	
+	 \node[latent, above = of xN] (fN) {$f_{N}$};
+	 \edge{xN}{fN};
+
+	 \node[latent, above = of f2] (u) {$\vec{u}$};
+
+	 \node[obs, right = 2 of xN] (xstar) {$\vec{x}_{\star}$};	 	
+	 \node[latent, above = of xstar] (fstar) {$f_{\star}$};
+	 \edge{xstar}{fstar};
+
+	 \draw [black, line width=0.1cm] (f1) -- (f2);
+	 \draw [black, dashed, line width=0.1cm] (f2) -- (fN);
+	 \edge{fN}{u}; 	 \edge{f1}{u}; 	 \edge{f2}{u};
+	 \edge{u}{fstar};
+\end{tikzpicture}
+\end{center}
+\caption{A graphical model of a sparse Gaussian process, represented as a chain graph. The inputs (on the bottom row) are all observed quantities. For the sake of clarity the outputs have been omitted from this diagram. The latent variables, $f$ from the Gaussian field (the heavy black line connecting these nodes indicates that they are fully connected) connect the two, and so any given observation is independent of all other nodes given it connected latent $f$ variable. 
+In contrast to the fully-connected situation depicted in \ref{fig:gp:chain-diagram}, the values of the Gaussian process for the training data are taken to be conditionally independent from the values for test inputs.
+\label{fig:gp:chain-diagram-sparse}}
+\end{figure}
+
+This allows the construction of two conditional posterior probability distributions, for the training data and the test inputs cite:sparsegp.unifying: 
+\begin{subequations}\\
+\emph{training}:
+\begin{equation}
+p(\vec{f}|\vec{u}) = \mathcal{N}(K_{\vec{f},\vec{u}} K^{-1}_{\vec{u},\vec{u}} \vec{u},
+                                 K_{\vec{f},\vec{f}} - Q_{\vec{f},\vec{f}})
+\end{equation}
+\emph{test (predictive)}:
+\begin{equation}
+p(\vec{f_*}|\vec{u}) = \mathcal{N}(K_{\vec{f}_*,\vec{u}} K^{-1}_{\vec{u},\vec{u}} \vec{u},
+                                 K_{\vec{f}_*,\vec{f}_*} - Q_{\vec{f}_*,\vec{f}_*})
+\end{equation}
+\end{subequations}
+letting $Q_{\vec{a},\vec{b}} = K_{\vec{a},\vec{u}} K_{\vec{u},\vec{u}}^{-1} K_{\vec{u},\vec{b}}$.
+
+There are a number of approaches to choosing the inducing points, and further simplifying assumptions which can be applied to the sparse abbr:gp approach which are discussed in depth in cite:sparsegp.unifying.
+Thanks to the smaller matrix which must be inverted for the predictive case, formed only from the inducing points, this sparse approach is capable of handling much larger quantities of data than the direct, exact approach.
+
+** Hierarchical matrix solvers
+
+An alternative approach to introducing an inducing set is to take advantage of the structure of the covariance matrix, $\mat{K}$, which is produced by a number of covariance functions.
+Covariance functions will typically assign a small covariance to points which are distantly spaced in the data space; as a result, if the covariance matrix is suitably sorted, it is possible to conside the whole covariance matrix as a block matrix.
+Hierarchical solving methods such as cite:2014arXiv1405.0223A,Ambikasaran2013 produce an arrangement of low-rank matrices as off-diagonal components in the block matrix. 
+The on-diagonal sub-matrices are still treated as full rank matrices, and are solved using conventional methods, while the inverses of the off-diagonal components are found using a Chebyshev polynomial interpolation and $LU$-decomposition.
+This allows for inversion of the matrix in $\mathcal{O}(n \log^2 n)$ rather than $\mathcal{O}(n^3)$ time.
+This technique has been successfully applied to abpl:gp in the ~George~ library cite:hodlr.
 
 ** Gaussian process local experts
 
-Local expert approaches attempt to improve the computational performance
-of GPs by diving the parameter space of the model into multiple
-sub-spaces. In a conventional GP the training data,
-$\mathcal{D} = \{ (x^n, y^n), n=1,\dots,N \} = \mathcal{X} \cup \mathcal{Y}$, 
-is used in its entirity to train a single GP. If these
-data were instead divided into $M$ subsets, of size $K$, we can train
-$M$ separate GPs, which will each provide an independent prediction for
-any given point in the parameter space. The network structure which is
-established by this subdivision of the parameter space is known as a
-/gating network/.
+Local expert approaches attempt to improve the computational performance of GPs by diving the parameter space of the model into multiple sub-spaces. 
+In a conventional GP the training data
+# $\mathcal{D} = \{ (x^n, y^n), n=1,\dots,N \} = \mathcal{X} \cup \mathcal{Y}$, 
+is used in its entirity to train a single GP. 
+If these data were instead divided into $M$ subsets, of size $K$, we can train $M$ separate GPs, which will each provide an independent prediction for any given point in the parameter space. 
+The network structure which is established by this subdivision of the parameter space is known as a /gating network/.
 
 Early approaches to using local experts in GPs used kd-trees cite:shen2005fast to sub-divide the parameter space, and then modelled each subspace with its own GP. 
 The GPs were trained together, with each having the same kernel hyper-parameters. 
@@ -427,8 +522,33 @@ This approach can suffer as a result of models which contains week experts, and 
 This approach also allows for the computation of the model's prediction to be highly-parallelised, with the potential for each sub-model being evaluated on separate compute nodes, and combined together by another process running on another node.
 
 ** Stochastic Variational Inference
+   The abbr:svi algorithm is designed to allow inference to be carried out in situations where very large quantities of data are available. 
 
-* Assessing the model
+Variational inference, whereby a posterior distribution over some set of latent variables $\set{Z}$, given data $\set{D}$ is approximated with a /variational distribution/:
+\begin{equation}
+\label{eq:gp:svi:variational-posterior}
+P(\set{Z}|\set{D}) \approx Q(\set{Z}) 
+\end{equation}
+where the distribution $Q(\set{Z})$ is restricted to be simpler than the form of the exact posterior.
+The similarity between $Q$ and $P$ can be measured with the Kullback-Liebler divergence (see definition ref:def:probability:kl); as such, finding a suitable approximation of the posterior distribution becomes a standard optimisation problem, in which the KL divergence must be minimised.
+
+Stochastic optimisation is designed to find the maximum of an objective function by following noisy estimates of the function's gradient; these gradients must be unbiased.
+Variational inference has the attractive property that the objective function can be decomposed into additive terms, with one term for each datum in $\set{D}$.
+Noisy estimates of the gradient can be obtained by taking a subsample of $\set{D}$ and using it to compute a scaled gradient on that subsample. 
+If sampled independently the gradient of the noisy gradient will be equal to the true gradient cite:2012arXiv1206.7051H.
+
+This combination of stochastic optimisation and variational inference is suitable for models which have a set of global variables which factorise the observable and latent variables of the model, however, the graphical model of a abbr:gp, as depicted in ref:fig:gp:chain-diagram makes it clear that these models do not possess such a structure.
+However, /sparse/ abbr:gp models do possess a structure with global variables, thanks to the existence of the set of inducing points.
+The structure of these models, depicted in figure ref:fig:gp:chain-diagram-sparse is close to the requirement for abbr:svi, as the global variables factorise the observable variables.
+
+For a abbr:gp model to use abbr:svi a variational distribution is introduced over the inducing variables: $q(\vec{u})$. 
+This distribution is Gaussian, and can be parameterised as $q(\vec{u}) = \mathcal{N}(\vec{u} | \vec{m}, \vec{S})$.
+A lower bound can be set on the distribution (see equation 4 of cite:2013arXiv1309.6835H) by Jensen's inequality.
+This lower bound can be expressed as a sum of terms which correspond to single pairs $(\vec{x}, y)$ from the training set, which allows stochastic optimisation to be carried-out.
+
+The use of a posterior approximated by variational inference in this way allows for much larger datasets to be used in the conditioning of the abbr:gp than other methods, since only a subset (or ``minibatch'' of the training data must be used in any given training iteration).
+
+* Assessing Gaussian process regression models
   :PROPERTIES:
   :CUSTOM_ID: sec:gpr:assessing
   :END:
@@ -447,9 +567,10 @@ In the case where test data is available two straight-forward metrics are availa
 Let $\vec{x}_*$ and $\vec{y}_*$ be respectively the test inputs and test outputs from the test set, 
 then let $\hat{y}$ be the set of model predictions drawn from the Gaussian Process with inputs $\vec{x}_*$.
 
-The root mean squared error (RMSE) gives an estimate of the total deviation between the mean prediction of the model and the true value from the test data:
-#+NAME:eq:rmse
+The abbr:rmse gives an estimate of the total deviation between the mean prediction of the model and the true value from the test data:
+
 \begin{equation}
+\label{eq:gp:testing:rmse}
 \mathrm{RMSE} = \sqrt{
     \frac{
       \sum_{i=0}^{n_i} (y_*^{(i)} - \hat{y}^{(i)})^2
@@ -458,13 +579,13 @@ The root mean squared error (RMSE) gives an estimate of the total deviation betw
   }
 \end{equation}
 
-for $n_t$ the size of the test set. While the RMSE can represent a good metric for conventional regression methods, it does not consider the estimate of the variance which is provided by Gaussian process models; 
+for $n_t$ the size of the test set. While the abbr:rmse can represent a good metric for conventional regression methods, it does not consider the estimate of the variance which is provided by Gaussian process models; 
 as such it is an insufficient measure on its own of these models.
 
-It is possible to use the Gaussian process variance to form a metric of the efficacy by considering the correlation between the test data and the prediction
+It is possible to use the abbr:gp variance to form a metric of the efficacy by considering the correlation between the test data and the prediction
 
-#+NAME:eq:correlation
 \begin{equation}
+\label{eq:gp:correlation}
     \rho^2 = \left(
       \frac{ \cov(y^*, \hat{y})} { \sqrt{ \vary(y) \vary(\hat{y}) } } 
     \right)^2
@@ -474,166 +595,206 @@ These two metrics, together, allow the model to be assessed either during the tr
 (or indeed, they can be used as training metrics if using a cross validation approach while determining the model hyperparameters)
 given a judicious partitioning of the available data.
 
-Forrester\cite{forrester2008engineering} suggests that a $\rho^2 \geq 0.8$ provides a surrogate model with good global predictive abilities, which corresponds to an RMSE of around $0.1$.
+Forrester cite:forrester2008engineering suggests that a $\rho^2 \geq 0.8$ provides a surrogate model with good global predictive abilities, which corresponds to an abbr:rmse of around $0.1$.
 
 In situations where test data is not available such straightforward tests are often impractical. 
 In the case of timeseries forecasting it may be possible to assess the forecast by forming a test set from the most recent observations, and comparing these to the output of the model, 
 however, if only a small number of past observations are available the predictive capability of the model may be sufficiently poor to render this test almost meaningless.
 
+In situations where more data is available it may be possible to assess a abbr:gpr model using /leave-one-out/ cross validation, in which a single point is omitted from the training set, and used as test data. 
+The testing can then be repeated multiple times, leaving different points from the sample in order to form a comprehensive test statistic.
 
-* Bayesian Optimisation
-  :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:optimisation
-  :END:
+# * Bayesian Optimisation
+#   :PROPERTIES:
+#   :CUSTOM_ID: sec:gpr:optimisation
+#   :END:
 
-While conventional optimisation methods, such as hill-climbing
-algorithms, rely on the ability to evaluate a function (and often its
-derivative) locally, the existence of a surrogate model allows optima to
-be found using the entire structure of the function as part of a
-Bayesian framework.
+# While conventional optimisation methods, such as hill-climbing
+# algorithms, rely on the ability to evaluate a function (and often its
+# derivative) locally, the existence of a surrogate model allows optima to
+# be found using the entire structure of the function as part of a
+# Bayesian framework.
 
-** Acquisition Functions
+# ** Acquisition Functions
 
-When using our Gaussian Process as a surrogate model to the underlying
-generative model for the waveform we treat the function which generates
-waveforms as unknown, and we place a prior on it, and the training data
-is used to update the prior, providing a posterior. We may use the
-posterior to determine the appropriate location for future evaluations
-from the underlying model; an infill sampling criterion, or acquisition
-function. This approach of using a surrogate model to approximate an
-underlying function which is hard or costly to evaluate is treated in
-the discipline of /Bayesian optimisation/.
+# When using our Gaussian Process as a surrogate model to the underlying
+# generative model for the waveform we treat the function which generates
+# waveforms as unknown, and we place a prior on it, and the training data
+# is used to update the prior, providing a posterior. We may use the
+# posterior to determine the appropriate location for future evaluations
+# from the underlying model; an infill sampling criterion, or acquisition
+# function. This approach of using a surrogate model to approximate an
+# underlying function which is hard or costly to evaluate is treated in
+# the discipline of /Bayesian optimisation/.
 
-Increasing the accuracy of the surrogate to the underlying function can
-be achieved by sampling the function at various points through parameter
-space, however, a strategy for performing this in an optimal manner is
-desirable, given the properties of that function. For example, if one
-were attempting to find which combination of components in concrete
-produced the strongest building product one might require a lengthy
-period to allow it to set, and so minimising the number of sampling
-iterations is desirable. We define an acquisition function, $f$, such
-that for a desirable new sample, $x^+$,
+# Increasing the accuracy of the surrogate to the underlying function can
+# be achieved by sampling the function at various points through parameter
+# space, however, a strategy for performing this in an optimal manner is
+# desirable, given the properties of that function. For example, if one
+# were attempting to find which combination of components in concrete
+# produced the strongest building product one might require a lengthy
+# period to allow it to set, and so minimising the number of sampling
+# iterations is desirable. We define an acquisition function, $f$, such
+# that for a desirable new sample, $x^+$,
 
-$$\label{eq:acquisition}
-  x^+ = \mathrm{argmax} f(x)$$
+# $$\label{eq:acquisition}
+#   x^+ = \mathrm{argmax} f(x)$$
 
-** Probability of Improvement
+# ** Probability of Improvement
 
-One possible acquisition function considers the probability that a
-sampled point improves the model, suggested first in \cite{Kushner1964},
+# One possible acquisition function considers the probability that a
+# sampled point improves the model, suggested first in \cite{Kushner1964},
 
-$$\label{eq:probabilityimprovement}
-  \mathrm{PI}(x) = P(f(x) \geq f(x^+)) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+)}{\sigma(x)} \right)$$
+# $$\label{eq:probabilityimprovement}
+#   \mathrm{PI}(x) = P(f(x) \geq f(x^+)) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+)}{\sigma(x)} \right)$$
 
-This algorithm clearly attempts to /exploit/ the parameter space, that
-is, it samples areas only where the greatest improvement over the
-current observation are possible. In order to force /exploration/ of the
-parameter space---sampling areas of high uncertainity---a trade-off
-parameter, $\xi\geq 0$ may be instroduced, such that
+# This algorithm clearly attempts to /exploit/ the parameter space, that
+# is, it samples areas only where the greatest improvement over the
+# current observation are possible. In order to force /exploration/ of the
+# parameter space---sampling areas of high uncertainity---a trade-off
+# parameter, $\xi\geq 0$ may be instroduced, such that
 
-$$\label{eq:probabilityimprovementexplore}
-    \mathrm{PI}(x) = P(f(x) \geq f(x^+) + \xi) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+) - \xi}{\sigma(x)} \right)$$
+# $$\label{eq:probabilityimprovementexplore}
+#     \mathrm{PI}(x) = P(f(x) \geq f(x^+) + \xi) = \mathrm{CDF}\left(\frac{\mu(x) - f(x^+) - \xi}{\sigma(x)} \right)$$
 
-\cite{Kushner1964} suggests that this should be varied according to some
-pre-defined schedule, tending to 0 as the algorithm runs.
+# \cite{Kushner1964} suggests that this should be varied according to some
+# pre-defined schedule, tending to 0 as the algorithm runs.
 
-** Expected Improvement
+# ** Expected Improvement
 
-In order to address the arbitrary nature of the choice of $\xi$ in the
-Probability of Improvement function we may consider not only the
-probability that a point provides an improvement, but also the magnitude
-of that improvement. In this situation we wish to minimise the expected
-deviation from the true $f(x^+)$ when choosing a trial point, so
+# In order to address the arbitrary nature of the choice of $\xi$ in the
+# Probability of Improvement function we may consider not only the
+# probability that a point provides an improvement, but also the magnitude
+# of that improvement. In this situation we wish to minimise the expected
+# deviation from the true $f(x^+)$ when choosing a trial point, so
 
-** Entropy Search
+# ** Entropy Search
 
-** Upper confidence bound
+# ** Upper confidence bound
 
-# ** Waveform Match
+# # ** Waveform Match
 
-# The match between two waveforms, $A$, and $B$, is defined as
+# # The match between two waveforms, $A$, and $B$, is defined as
 
-# $$\label{eq:waveformmatch}
-#   \mathcal{N} = \frac{
-#     \max\limits_{t_0, \phi_0} \left< A , B \right>
-#     }
-#     {
-#       \left< A, A\right>^{\half}
-#       \left< B, B\right>^{\half}
-#     }$$
+# # $$\label{eq:waveformmatch}
+# #   \mathcal{N} = \frac{
+# #     \max\limits_{t_0, \phi_0} \left< A , B \right>
+# #     }
+# #     {
+# #       \left< A, A\right>^{\half}
+# #       \left< B, B\right>^{\half}
+# #     }$$
 
-# for the initial time and phase respectively $t_0$ and $\phi_0$.
+# # for the initial time and phase respectively $t_0$ and $\phi_0$.
 
-# Suppose we wish to compare the surrogate model to an alternative
-# approximant, for example, =IMRPhenomP=, and identifying the location in
-# parameter space where the two have the greatest disagreement. This can
-# be achieved by finding the location in the parameter space of the
-# surrogate which has the minimum match to the alternative model.
+# # Suppose we wish to compare the surrogate model to an alternative
+# # approximant, for example, =IMRPhenomP=, and identifying the location in
+# # parameter space where the two have the greatest disagreement. This can
+# # be achieved by finding the location in the parameter space of the
+# # surrogate which has the minimum match to the alternative model.
 
-* Examples
+* Estimating contours: an example GPR problem
   :PROPERTIES:
   :CUSTOM_ID: sec:gpr:examples
   :END:
 
-** A single BBH waveform
+# ** A single BBH waveform
 
-A trivial task is to reproduce a waveform from a Gaussian Process which
-is trained on a single waveform which is generated at one set of
-parameters.
+# A trivial task is to reproduce a waveform from a Gaussian Process which
+# is trained on a single waveform which is generated at one set of
+# parameters.
 
-# the script which is used for this section can be found in scripts/gp/single-waveform.py
-# this file is also available as an iPython notebook.
+# # the script which is used for this section can be found in scripts/gp/single-waveform.py
+# # this file is also available as an iPython notebook.
 
-#+CAPTION: The properties of the training waveform used for the model.
-#+NAME: tab:imrphenomparamssingle
-| Property         | Value                                       |
-|------------------+---------------------------------------------|
-| Mass (Primary)   | 5                                           |
-| Mass (Secondary) | 6                                           |
-| Spin (Primary)   | $(0,0,0)$                                   |
-| Spin (Secondary) | $(0,0,0)$                                   |
-| Distance         | $\SI{400}{\mega\parsec}$                    |
-| Time range       | $(\SI{-0.1}{\second}, \SI{0.005}{\second})$ |
+# #+CAPTION: The properties of the training waveform used for the model.
+# #+NAME: tab:imrphenomparamssingle
+# | Property         | Value                                       |
+# |------------------+---------------------------------------------|
+# | Mass (Primary)   | 5                                           |
+# | Mass (Secondary) | 6                                           |
+# | Spin (Primary)   | $(0,0,0)$                                   |
+# | Spin (Secondary) | $(0,0,0)$                                   |
+# | Distance         | $\SI{400}{\mega\parsec}$                    |
+# | Time range       | $(\SI{-0.1}{\second}, \SI{0.005}{\second})$ |
 
-#+CAPTION: A Gaussian process trained on data from a single abbr:bbh gravitational waveform.
-#+ATTR_LATEX: :width \textwidth
-file:figures/gp/single-waveform.pdf
+# #+CAPTION: A Gaussian process trained on data from a single abbr:bbh gravitational waveform.
+# #+ATTR_LATEX: :width \textwidth
+# file:figures/gp/single-waveform.pdf
 
 
-As a first test we generated a BBH waveform using the model, as
-implemented in the package. The model was evaluated at the parameters
-listed in table ref:tab:imrphenomparamssingle, and 300 equally-spaced
-points from the evaluation were used to train a Gaussian process, using
-an exponential squared covariance function with a constant
-pre-multiplier. The model was trained using the BFGS algorithm (a
-Newtonian-like hill-climbing optimiser), which was provided with initial
-values determined according to Jaakkola's heuristic [2]. The samples
-were around $\SI{0.003}{\second}$ separated along the time dimension,
-and so the initial value of $\lambda_{\text{time}} = 300$ was selected.
-An initial value for the constant term in the kernel was slected from
-the data's variance. Following optimisation the values
-$$\lambda_{\text{amp}} = 26.8, \qquad \lambda_{\text{time}} =
-    111.6$$ were found to minimise the log-likelihood of the model. The
-trained model was tested against a set of data generated by at the same
-parameter values, but with 1000 samples in time rather than 300. In
-order to test the global accuracy of the model the correlation and RMSE
-were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
+# As a first test we generated a BBH waveform using the model, as
+# implemented in the package. The model was evaluated at the parameters
+# listed in table ref:tab:imrphenomparamssingle, and 300 equally-spaced
+# points from the evaluation were used to train a Gaussian process, using
+# an exponential squared covariance function with a constant
+# pre-multiplier. The model was trained using the BFGS algorithm (a
+# Newtonian-like hill-climbing optimiser), which was provided with initial
+# values determined according to Jaakkola's heuristic [2]. The samples
+# were around $\SI{0.003}{\second}$ separated along the time dimension,
+# and so the initial value of $\lambda_{\text{time}} = 300$ was selected.
+# An initial value for the constant term in the kernel was slected from
+# the data's variance. Following optimisation the values
+# $$\lambda_{\text{amp}} = 26.8, \qquad \lambda_{\text{time}} =
+#     111.6$$ were found to minimise the log-likelihood of the model. The
+# trained model was tested against a set of data generated by at the same
+# parameter values, but with 1000 samples in time rather than 300. In
+# order to test the global accuracy of the model the correlation and RMSE
+# were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
 
-[ref:fig:simplewaveform1]
+# [ref:fig:simplewaveform1]
 
 ** Estimating contours
 
-   #+LABEL: fig:gp:examples:mountains1
-   #+ATTR_LATEX: :width \textwidth
-   #+CAPTION: Trained off a small number of spot-heights, a abbr:gp is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
-   file:figures/gp/arrochar-alps.pdf
+   While in figures ref:fig:gp:training-data to ref:fig:gp:posterior-best showed the process of constructing a abbr:gp regressor for data generated from a single-dimensional function, in this section I demonstrate how a higher-dimensional problem can be treated with abbr:gp regression.
+For the sake of clarity I have chosen a two-dimensional function; anything with more dimensions is likely to be hard to represent on paper, and the same concepts can be extended to higher-dimensional models.
 
-   #+LABEL: fig:gp:examples:mountains1
-   #+ATTR_LATEX: :width \textwidth
-   #+CAPTION: The abbr:gp derived landscape, with a variety of different covariance functions used to produce the interpolated topology. 
-   file:figures/gp/arrochar-kernels.pdf
+In figure ref:fig:gp:examples:mountainspoints a number of spot-heights are plotted for hills in the /Arrochar Alps/, a region of the Scottish Highlands around 50-kilometres North of the City of Glasgow. 
+Each point corresponds to the summit of a hill (derived from the /Database of British and Irish Hills/ cite:hilldb).
+In order to interpolate a ``landscape'' based on these measurements I trained a abbr:gp with an $\RQ$ kernel on the latitude and the longitude. 
+The $\alpha$ parameter of the kernel was set to be the same in both dimensions, and a $\Gamma$-function prior was placed on it with shape parameters $(\alpha_\Gamma = 5, \beta_\Gamma = 0.5)$.
+A normal distribution prior was placed on the lengthscale of each dimension, each with $(\mu=0.012, \sigma=1)$.
+Finally, the covariance function was multiplied constant kernel scaling factor ($\Con$), the amplitude of which was drawn from a normal distribution prior with parameters $(\mu = 1, \sigma=1)$.
 
-** A concrete example
+\begin{figure}
+\includegraphics{figures/gp/arrochar-heights.pdf}
+\caption[Summit heights in the Arrochar Alps]{The location of summits within the \emph{Arrochar Alps}, an uplands region of Western Scotland. These will be used as the training data for a abbr:gp regression model designed to emulate the landscape.
+\label{fig:gp:examples:mountainspoints}}
+\end{figure}
+
+In order to determine the appropriate hyperparameter values the log-evidence was maximised using a Newtonian optimiser, in order to determine the abbr:map estimate of the hyperparameters.
+The resulting abbr:map estimate of the mean landscape is shown in figure ref:fig:gp:examples:mountains1.
+A number of /irregularities/ can be spotted with a map produced using this technique, rather than a more standard method.
+The first is the absence of a flat region of land occupied by a large reservoir between /Ben Vane/ and /Ben Vorlich/; as the map is informed only by summits this surrogate model for the landscape is bound to struggle to find low points like this in the landscape.
+The second is the very smooth nature of the landscape, for example the near-conical shape of /Beinn \`{I}me/; this is a result of the choice of a smooth kernel (the $\RQ$ kernel).
+In figure ref:fig:gp:examples:mountains2 I show the same landscape created using abpl:gp with a variety of covariance functions which show how drastically this choice affects the model.
+
+\begin{figure}
+\includegraphics{figures/gp/arrochar-alps.pdf}
+\caption[A ``landscape'' created by GPR for the Arrochar Alps]{Trained off a small number of spot-heights, a abbr:gp is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
+\label{fig:gp:examples:mountains1}
+}
+\end{figure}
+
+Four different covariance functions are shown; constructed from the rational quadratic ($\RQ$), Matern-5/2 ($\M52$), exponential quadratic ($EQ$), and the exponential kernels respectively. 
+The differences in the variance of the predictions from each abbr:gp are shown in figure ref:fig:gp:examples:mountainsvar.
+
+\begin{figure}
+\includegraphics{figures/gp/arrochar-kernels.pdf}
+\caption[GPR-derived landscapes for the Arrochar Alps using a selection of covariance functions]{The abbr:gp derived mean landscape, with a variety of different covariance functions used to produce the interpolated topology. 
+The upper-left panel is generated from a abbr:gp with a rational quadratic kernel (this is a repeat of figure ref:fig:gp:examples:mountains1); then the upper right is generated using a Matern-5/2 kernel, lower left an exponential quadratic kernel, and lower right an exponential kernel.
+Each panel also contains the training points marked as black dots.
+\label{fig:gp:examples:mountainsvar}}
+\end{figure}
+
+\begin{figure}
+\includegraphics{figures/gp/arrochar-kernels-var.pdf}
+\caption[The variance of GPR-derived landscapes for the Arrochar Alps.]{The variance of the abbr:gp derived landscape, with a variety of different covariance functions used to produce the interpolated topology. 
+The panels represent the same scenarios as those of ref:fig:gp:examples:mountains2, with the uncertainty underlaid as a colourmap, which runs from dark in regions of low variance to light in regions of high variance (and hence high uncertainty).
+\label{fig:gp:examples:mountains2}}
+\end{figure}
+
+# ** A concrete example
 
 
 * Gaussian processes and experimental design
@@ -641,59 +802,119 @@ were calculated, with $$\rho^2 = 0.90, \qquad \rmse = 8.22\e{-23}$$
   :CUSTOM_ID: sec:gpr:design
   :END:
 
+The ability of abbr:gp regression to model the entire parameter space of a function, but to also provide an estimate of the uncertainty of the model throughout the parameter space makes them well-suited to /experimental design/ as regions of the parameter space with a high uncertainty can be targeted for future data collection.
+
+   \begin{figure}
+   \includegraphics{figures/gp/rosenbrock-function.pdf}
+   \caption[The Rosenbrock function]{The Rosenbrock saddle function, a standard function used to test numerical optimisation algorithms.
+   \label{fig:gp:design:rosenbrock}}
+   \end{figure}
+
+In this section, in order to illustrate the basic process of using abbr:gp regression for this purpose, I will train a abbr:gp model as a surrogate of the /Rosenbrock saddle function/.
+This function,
+\begin{equation}
+\label{eq:gp:design:rosenbrock}
+f(x, y) = (a-x)^2 + b(y-x^2)^2
+\end{equation}
+is frequently used in the testing of optimisation problems, as it has a global minimum which lies within a long, parabolic valley (see the plot of the function in figure ref:fig:gp:design:rosenbrock).
+The unusual shape of this function also makes it an interesting test for the predictive power of a surrogate model.
+
 ** Preparing training data
 
-   #+CAPTION: The Rosenbrock saddle function, a standard function used to test numerical optimisation algorithms.
-   #+ATTR_LATEX: :width \textwidth
-   file:figures/gp/rosenbrock-function.pdf
+   Before turning to more sophisticated approaches to experimental design, I'll first consider methods by which we might choose the initial training data. 
+   The most straight-forward approach is /full-factorial/ sampling, in which an evenly-spaced grid is designed for the parameter space, and a measurement is made at each of these points, and those measurements are used as the training data for the surrogate model.
 
-   #+CAPTION: Twenty-five randomly selected samples from the Rosenbrock function.
-   #+LABEL: fig:gp:design:initial:rosen:random:training
-   #+ATTR_LATEX: :width \textwidth
-   file:figures/gp/rosen-random-training.pdf
+ #+CAPTION: 
 
-   #+CAPTION: The output of a abbr:gp trained on the 25 samples from figure ref:fig:gp:design:initial:rosen:random:training 
-   #+ATTR_LATEX: :width \textwidth
-   file:figures/gp/rosen-random-trained-25.pdf
+ \begin{figure}
+ \includegraphics{figures/gp/rosen-factorial-progress.pdf}
+ \caption[]{The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at locations defined by a full factorial sampling plan within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
+ \label{fig:gp:design:fullfactorial}
+ }
+ \end{figure}
+In figure ref:fig:gp:design:fullfactorial the panels in the left column show the mean output of a Gaussian process across the same domain as figure ref:fig:gp:design:rosenbrock, having been trained off samples drawn from the Rosenbrock function according to a full-factorial sampling plan. 
+The number of samples used to form the sampling plan varies with the columns in the plot.
+The right column depicts variance of the Gaussian process over the same domain; the abbr:rmse for each abbr:gp prediction is also calculated for each row.
+All full factorial approach to sampling is suitable in this problem, since the number of points required will scale with the square of the desired sampling density.
+However, in problems with higher dimensionality it may be more efficient to sample randomly across the parameter space, or use a /latin hypercube/ design cite:latinhypercubes.
 
-   #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at randomly selected locations within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
-   #+ATTR_LATEX: :width \textwidth
-   file:figures/gp/rosen-random-progress.pdf
+   # #+CAPTION: Twenty-five randomly selected samples from the Rosenbrock function.
+   # #+LABEL: fig:gp:design:initial:rosen:random:training
+   # #+ATTR_LATEX: :width \textwidth
+   # file:figures/gp/rosen-random-training.pdf
 
-   #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at locations defined by a full factorial sampling plan within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
-   #+ATTR_LATEX: :width \textwidth
-   file:figures/gp/rosen-factorial-progress.pdf
+   # #+CAPTION: The output of a abbr:gp trained on the 25 samples from figure ref:fig:gp:design:initial:rosen:random:training 
+   # #+ATTR_LATEX: :width \textwidth
+   # file:figures/gp/rosen-random-trained-25.pdf
 
-   #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at locations defined by a latin squares sampling plan within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
-   #+ATTR_LATEX: :width \textwidth
-   file:figures/gp/rosen-latin-progress.pdf
+   # #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at randomly selected locations within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
+   # #+ATTR_LATEX: :width \textwidth
+   # file:figures/gp/rosen-random-progress.pdf
+
+   # #+CAPTION: The output of abbr:gp models trained with an increasing number of samples from the Rosenbrock function at locations defined by a latin squares sampling plan within the function's parameter space, with the left panel representing the mean prediction of the abbr:gp and the right panel the standard deviation across the domain of the function.
+   # #+ATTR_LATEX: :width \textwidth
+   # file:figures/gp/rosen-latin-progress.pdf
 
 ** Model infill
+
+   Frequently datasets which are available for training a surrogate model will not have been sampled according to an optimal sampling plan.
+   For example, the data may not have been produced with the intention of forming a surrogate model.
+   In such a situation it can be helpful to be able to direct future experiments in such a way as to improve the model, while taking best advantage possible of the existing training data.
+   In figure ref:fig:gp:design:infillrandom I have produced a abbr:gp regression model for the Rosenbrock function which has been trained on $25$ randomly sampled points.
+
+   An optimisation algorithm was then used to find the location in the parameter space where the variance of the model was greatest.
+   The location of the suggested next experiment is plotted with a blue marker.
+
+   This process can then be repeated once the new experiment is carried out, and its data added to the surrogate model, until a sufficient level of precision is acquired by the model.
 
    #+CAPTION: A abbr:gp surrogate for the Rosenbrock saddle function, with the mean prediction in the left panel and the standard deviation of that prediction on the right. The 25 training points, which were devised using a latin hypercube sampling plan, are plotted as circles coloured according to the true value of the function at those points in the left plot, and as crosses on the right plot. A candidate location for a new sample is plotted as a blue circle on both plots. This point represents the location where the model has produces the largest variance in its prediction.
    #+ATTR_LATEX: :width \textwidth
    [[file:figures/gp/infill-max-uncertainty.pdf]]
    
 
-** Conventional sample planning methods
-*** Latin hypercubes
-   :PROPERTIES:
-   :CUSTOM_ID: sec:gpr:design:hypercubes
-   :END:
-** Voronoi tesselation
-   :PROPERTIES:
-   :CUSTOM_ID: sec:gpr:design:voronoi
-   :END:
+# ** Conventional sample planning methods
+# *** Latin hypercubes
+#    :PROPERTIES:
+#    :CUSTOM_ID: sec:gpr:design:hypercubes
+#    :END:
+# ** Voronoi tesselation
+#    :PROPERTIES:
+#    :CUSTOM_ID: sec:gpr:design:voronoi
+#    :END:
 
-* Extending the Gaussian Process
-  :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:extending
-  :END:
+# * Extending the Gaussian Process
+#   :PROPERTIES:
+#   :CUSTOM_ID: sec:gpr:extending
+#   :END:
 
-Standard implementations of Gaussian processes are capable of mapping a multi-dimensional input to a single-dimensional output, however there are many situations in which the ability to generate a multi-dimensional output would be advantageous.
+# Standard implementations of Gaussian processes are capable of mapping a multi-dimensional input to a single-dimensional output, however there are many situations in which the ability to generate a multi-dimensional output would be advantageous.
 
 * General elliptical processes
   :PROPERTIES:
   :CUSTOM_ID: sec:gpr:elliptical
   :END:
-/This section should be a discussion of more general elliptical processes, such as student-t processes. Given that these haven't featured in the development of the surrogate model it would be appropriate to only spend a few lines on this, although finding and presenting a suitable astrophysical example could be valuable./
+
+The properties of multivariate normal distributions which make them suitable for abbr:gp regression also apply to the family of /general elliptical distributions/ cite:symmetricfong which are generalisations of it.
+
+Shah /et al./ cite:2014arXiv1402.4306S demonstrated that the Student-$t$ process is the most general of these elliptical processes which possess an analytical marginal and predictive posterior distributions, essential for the rapid evaluation of the model.
+They also demonstrate that this model is more robust in the presence of change-points within the data.
+
+# * From Bayesian linear regression to Gaussian Process
+#   :PROPERTIES:
+#   :CUSTOM_ID: sec:gpr:gpr-from-blr
+#   :END:
+
+# This choice of a Gaussian prior also implies that $y_i$ will have a Gaussian distribution, and we can take this to have the form $$\vec{y} \sim \mathcal{G}(\vec{0}, \mat{C})$$ where $\mat{C}$ is the
+# /covariance matrix/, or /gram matrix/, which describes the covariance of the input data, as defined by some /covariance function/, or /kernel/, $K$,
+
+# \begin{equation}
+# \label{eq:gp:covariance-matrix-derivation}
+# \begin{aligned}
+#   C_{ij} &= K(\vec{x_i}, \vec{x_j}) = \ex(y_i y_j) = \ex(\vec{x}_i \vdot \vec{w} \vec{w} \vdot \vec{x}_j) + \ex(\epsilon_i \epsilon_j) \\
+# &= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2,
+# \end{aligned}
+# \end{equation}
+
+# for $\ex(x)$ the expectation of a variable $x$. As a result of this relationship between the weight vector, $\vec{w}$ and the gram matrix it is possible to perform the regression by means of a covariance function, rather than inferring the values $w_i$, and this is the justification by which Gaussian Process Regression (GPR) is often deemed a "non-parameteric" regression model[fn:parametric].
+
+# [fn:parametric] This claim is rather sketchy, as we'll see when the forms of covariance function are presented, as the parametricity is simply moved from the model itself to the form of the covariance functions, and the values of these /hyperparameters/ must be inferred, or learned, from the data.

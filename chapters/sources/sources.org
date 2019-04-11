@@ -137,15 +137,15 @@ In contrast no exact solutions have been found to this problem in abbr:gr; while
 
 When the two component bodies of the system are at large separation (and their local velocities are much smaller than the speed of light) a abbr:pn expansion can be used.
 In this regime the two objects are treated as point-particles with slow internal dynamics. 
-In such a post-Newtonian system, the parameter $\epsilon$, defined as 
-\begin{equation}
-	\epsilon = \max\left\{ \left| \frac{ \tensor{T}{^{0i}}}{\tensor{T}{^{00}}} \right|,
-                              \left| \frac{ \tensor{T}{^{ij}}}{\tensor{T}{^{00}}} \right|^{1/2},
-			      \left| \frac{ U }{c²} \right|^{1/2} 
-		       \right\},
-\end{equation}
-(with $U$ the Newtonian potential in the system) must be much less than one cite:2014LRR....17....2B.
-Through an abuse of notation this term is normally written as $\epsilon \equiv 1/c$ [fn:pn-epsilon].
+# In such a post-Newtonian system, the parameter $\epsilon$, defined as 
+# \begin{equation}
+# 	\epsilon = \max\left\{ \left| \frac{ \tensor{T}{^{0i}}}{\tensor{T}{^{00}}} \right|,
+#                               \left| \frac{ \tensor{T}{^{ij}}}{\tensor{T}{^{00}}} \right|^{1/2},
+# 			      \left| \frac{ U }{c²} \right|^{1/2} 
+# 		       \right\},
+# \end{equation}
+# (with $U$ the Newtonian potential in the system) must be much less than one cite:2014LRR....17....2B.
+# Through an abuse of notation this term is normally written as $\epsilon \equiv 1/c$ [fn:pn-epsilon].
 The abbr:pn correction to the Newtonian limit on the order $\mathcal{O}(1/c^{n})$ is generally called the $(n/2)$-abbr:pn order.
 
 # *More work is needed on this, but this is rather heavy lifting stuff.*
@@ -159,7 +159,7 @@ The abbr:pn correction to the Newtonian limit on the order $\mathcal{O}(1/c^{n})
 
 # *Tidal effects in NS systems*
 
-[fn:pn-epsilon] With $1/c$ /not/being dimensionless.
+# [fn:pn-epsilon] With $1/c$ /not/being dimensionless.
 
 
 ** The compact binary waveform
@@ -285,7 +285,14 @@ A(f) = C
 w \mathcal{L}(f, f_{\text{ring}}, \simga) & \text{if} f_{\text{ring}} < f < f_{\text{cut}} \\
 \end{cases}
 \end{equation}
-where $f_{\text{merge}}$, $f_{\text{ring}}$, and $f_{\text{cut}}$ are respectively the initial merger frequency, initial ringdown frequency, and the cutoff frequency of the template. $\mathcal{L}$ is a Lorenzian distribution of width $\sigma$, and $w$ is a normalisation constant which describe the quasi-normal mode frequencies, and $C$ is a numerical constant (details of these parameters, and the stationary phase approximation expansion which is used for $\Psi$ can be found in cite:2008PhRvD..77j4017A).
+where $f_{\text{merge}}$, $f_{\text{ring}}$, and $f_{\text{cut}}$ are respectively the initial merger frequency, initial ringdown frequency, and the cutoff frequency of the template. $\mathcal{L}$ is a Lorenzian distribution of width $\sigma$, and $w$ is a normalisation constant which describe the quasi-normal mode frequencies, and $C$ is a numerical constant (details of these parameters can be found in cite:2008PhRvD..77j4017A).
+
+The effective phase, $\Psi$, expanded in powers of $f$, is
+\begin{equation}
+\label{eq:source:cbc:imrphenoma:phase}
+\Psi = 2 \pi f t_{0} + \phi_{0} + \sum_{k=0}^{7} \psi_{k} f^{(k-5)/3}
+\end{equation}
+with $\phi_{0}$ the phase offset, each of the $\phi_{k}$ values phase parameters, $t_{0}$ the arrival time of the waveform.
 
 The amplitude and phase parameters of these phenomenological waveforms are then determined by fitting the model to around thirty hybridised waveforms. 
 Finally, the best-matching amplitudes and phases for the phenomenological waveforms are fitted to the physical parameters of the binary in order to produce a physically parameterised model.
@@ -297,10 +304,10 @@ In order to introduce the effects of precession into the waveform, IMRPhenomPv1 
 For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation [fn:stat-phase], which is not strictly valid outwith the inspiral phase.
 IMRPhenomPv3 uses a two-spin model developed by Chatziioannou et al. cite:2017PhRvD..95j4004C in order to allow for the calculation of precession angles in generic abbr:bbh systems.
 
-In summary:
-   + IMRPhenomA :: The simplest of the IMRPhenom models, designed to produce waveforms for non-spinning, non-precessing systems.
-   + IMRPhenomD :: The successor to the IMRPhenomB and IMRPhenomC models, designed to produce waveforms for spinning, non-precessing systems.
-   + IMRPhenomPv3 :: A model capable of producing generically spinning, precessing waveforms.
+# In summary:
+#    + IMRPhenomA :: The simplest of the IMRPhenom models, designed to produce waveforms for non-spinning, non-precessing systems.
+#    + IMRPhenomD :: The successor to the IMRPhenomB and IMRPhenomC models, designed to produce waveforms for spinning, non-precessing systems.
+#    + IMRPhenomPv3 :: A model capable of producing generically spinning, precessing waveforms.
 
 *** Effective one-body   
     :PROPERTIES:
@@ -332,22 +339,19 @@ While the ability to abandon these assumptions and approximations is attractive,
 To date, there have been two approaches to building such models: those using spline regression, and those using /Gaussian process regression/. 
 This section will contain a broad overview of the former, but a thorough discussion of the latter will be given later in this work (in chapter cha:gaussian-process).
 
-*** Spline surrogate models
-
-    The NRSur family of surrogate models, developed by Blackman /et al./ cite:2015PhRvL.115l1102B,2017PhRvD..95j4023B,2017PhRvD..96b4058B employ spline interpolation to waveforms generated by the SpEC abbr:nr code.
+    The NRSur family of surrogate models, developed by Blackman /et al./ cite:2015PhRvL.115l1102B,2017PhRvD..95j4023B,2017PhRvD..96b4058B employ spline interpolation to waveforms generated by the ~SpEC~ abbr:nr code.
 The two analysis-ready versions of this model, NRSur4d2s and NRSur7d2s are capable of producing waveforms for systems with a mass-ratio $<2$ and an effective spin-parameter $< 0.8$. 
 In contrast to phenomenological models, the NRSur models are currently capable of producing only a small number of cycles of the waveform, being limited by the length of the abbr:nr waveforms off which they are conditioned.
 Recent efforts have been made, however, to produce similar surrogate models which are conditioned on hybridised waveforms cite:2018arXiv181207865V.
 The number of waveforms required to produce the surrogate model is also considerably larger than thise requqired for the phenomenological models, with NRSur7d2s being conditioned on 744 abbr:nr waveforms.
 
-+ Prototype :: A non-spinning model capable of producing waveforms between $q=1$ and $q=20$. cite:2015PhRvL.115l1102B
-+ NRSur4d2s :: The first production-ready surrogate model, which was capable of modelling waveforms with $q<2$ and effective spin parameters $< 0.8$. cite:2017PhRvD..95j4023B
-+ NRSur7d2s :: A generically spinning surrogate model cite:2017PhRvD..96b4058B.
+# + Prototype :: A non-spinning model capable of producing waveforms between $q=1$ and $q=20$. cite:2015PhRvL.115l1102B
+# + NRSur4d2s :: The first production-ready surrogate model, which was capable of modelling waveforms with $q<2$ and effective spin parameters $< 0.8$. cite:2017PhRvD..95j4023B
+# + NRSur7d2s :: A generically spinning surrogate model cite:2017PhRvD..96b4058B.
 
-*** Gaussian process surrogate models
 
-    An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable. 
-    These development of these models is discussed in detail in chapter ref:cha:heron.
+An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable. 
+These development of these models is discussed in detail in chapter ref:cha:heron.
 
 # + DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
 # + HERON :: A prototype, fully precessing waveform model trained using waveforms from the Georgia Tech catalogue.
@@ -483,20 +487,44 @@ The number of waveforms required to produce the surrogate model is also consider
    low-velocity cases with arbitrary deflection cite:1977ApJ...216..610T, and head-on collisions cite:1992PhRvD..46..694D. 
    Recent advances have allowed the production of 3.5 abbr:pn accurate waveforms for hyperbolic encounters for non-spinning pairs of black holes cite:2018PhRvD..98b4039C
 
-   Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in section ref:sources:burst:encounters:waveforms I consider the detectability of some of these waveforms in current and future detectors.
+   # 
 
 *** Encounter waveforms
     :PROPERTIES:
     :CUSTOM_ID: sources:burst:encounters:waveforms
     :END:
     
-    #+CAPTION: The abbr:snr of a $q=16$ hyperbolic encounter waveform in advanced abbr:ligo at design sensitivity.
-    [[./figures/hyperbolic-m16-l024.pdf]]
+    Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in this section I consider the detectability of some of these waveforms in current and future detectors.
+    The waveforms for this brief study are taken from the abbr:gw driven capture simulations of cite:2017PhRvD..96h4009B.
+    An example of one of these waveforms is plotted in figure ref:fig:sources:burst:parabolic:waveform.
 
+    \begin{figure}
+    \includegraphics{figures/sources/hyperbolic-timeseries.pdf}
+    \caption[Parabolic enounter waveform]{A parabolic encounter waveform from cite:2017PhRvD..96h4009B for a system with mass-ratio $q=4$, an impact parameter of $\SI{2656}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$. 
+    The spectrum of this waveform is plotted in figure ref:fig:sources:burst:parabolic:spectrum.
+    \label{fig:sources:burst:parabolic:waveform}}
+    \end{figure}
 
-** Supernovae
+    \begin{figure}
+    \includegraphics{figures/sources/hyperbolic-spectrum.pdf}
+    \caption[Parabolic enounter waveform]{The spectrum of a parabolic encounter from cite:2017PhRvD..96h4009B for a system with mass-ratio $q=4$, an impact parameter of $\SI{2656}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$, with the sensitivity curves of gls:ligo, gls:decigo, gls:einstein-telescope, and gls:lisa for reference. 
+    The timeseries representation of this waveform is plotted in figure ref:fig:sources:burst:parabolic:waveform.
+    \label{fig:sources:burst:parabolic:spectrum}}
+    \end{figure}
 
-*** Core-collapse supernovae
+    The detectability of the waveforms can be estimated using equation ref:eq:intro:snr, taking the Fourier transform of the strain data from the abbr:nr simulation to form $\tilde{h}(f)$, and the estimated noise gls:amplitude-spectral-density for each detector. 
+    Figure ref:sources:burst:parabolic:distance shows the abbr:snr of the waveform plotted in figure ref:fig:sources:burst:parabolic:waveform as a function of the luminosity distance of the source, and the total mass of the system. 
+    An abbr:snr of 8 is a standard threshold which a signal must exceed to be considered a detection, and this is plotted with a heavier line.
+    This system, which is highly asymmetrical (with a mass-ratio $q = 16$) may be a promising candidate for detection in advanced gls:ligo, with a distance around $\SI{50}{\mega\parsec}$ producing a detectable abbr:snr to distances which encompass the majority of the Local Group of galaxies.
+
+    \begin{figure}
+    \includegraphics{./figures/sources/hyperbolic-m16-l0d24.pdf}
+    \caption{The abbr:snr of the $q=16$ hyperbolic encounter waveform plotted in figure ref:fig:sources:burst:parabolic:waveform in advanced abbr:ligo at design sensitivity.
+    The heavy line for an abpl:snr of 8 represents a standard detection threshold.
+    \label{fig:sources:burst:parabolic:distance}}
+    \end{figure}
+
+** Core-collapse supernovae
 
 \begin{figure}
 \includegraphics{figures/sources/source-ccsn.pdf}
@@ -505,53 +533,32 @@ The noise (sensitivity) curve of the advanced gls:ligo, gls:decigo, and gls:lisa
 \label{fig:sources:sn-spectrum}
 \end{figure}
 
- Core collapse supernova (CCSNe) are driven by the release of
- gravitational energy as a massive star's core collapses. Progenitor
- stars of CCSNe have zero-age-main-sequence (ZAMS) masses in the range
- $8\,\msolar \leq M \leq 130\,\msolar$. Much of this energy is stored as
- heat in the protoneutron star remnant, around 99% of the released energy
- is carried-off by neutrinos, around 1% provides the kinetic energy of
- the explosion, while less than $0.01\%$ of the energy is extracted as
- electromagnetic and gravitational radiation \cite{2009CQGra..26f3001O}.
 
- When the iron core of a star exceeds the Chandrasekhar mass it becomes
- unstable, and undegoes gravitational collapse, and is compressed until
- the neutron degeneracy pressure is able to halt arrest the collapse. At
- this point the core becomes stiff, and the inner core rebounds---a phase
- of the supernova known as "core bounce". The stiff, ultra-dense remnant
- of the collapse is a proto-neutronstar (PNS).
+abpl:ccsn are driven by the release of gravitational energy as a massive star's core collapses. 
+The progenitor stars of abpl:ccsn have zero-age-main-sequence (ZAMS) masses in the range $8\,\msolar \leq M \leq 130\,\msolar$. 
+Much of this energy is stored as heat in the abbr:pns remnant, around 99% of the released energy s carried-off by neutrinos, around 1% provides the kinetic energy of the explosion, while less than $0.01\%$ of the energy is extracted as electromagnetic and gravitational radiation cite:2009CQGra..26f3001O.
 
- Gravitational waves are expected to be emitted in a number of periods
- during the collapse, for example during a rotating collapse, and the
- core-bounce which follows it; pulsations of the PNS
- \cite{1966ApJ...145..514M}; and anisotropic neutrino emission
- \cite{1979ApJ...231Q.644E,1978ApJ...223.1037E,1978Natur.274..565T}.
+ When the iron core of a star exceeds the Chandrasekhar mass it becomes unstable, and undegoes gravitational collapse, and is compressed until the neutron degeneracy pressure is able to halt arrest the collapse. 
+At this point the core becomes stiff, and the inner core rebounds---a phase of the supernova known as "core bounce". 
+The stiff, ultra-dense remnant of the collapse is a abbr:pns, and the rebounding material forms a shock wave.
+This shock wave is not sufficient, however, to produce the observed explosive phase of abpl:ccsn events, and so must undergo /revival/ by some poorly-understood mechanism to lead to the final explosion.
+Gravitational waves are expected to be emitted in a number of periods during the collapse, for example during a rotating collapse, and the core-bounce which follows it; pulsations of the PNS
+ \cite{1966ApJ...145..514M}; and anisotropic neutrino emission cite:1979ApJ...231Q.644E,1978ApJ...223.1037E,1978Natur.274..565T.
 
- In order to predict the gravitational waveforms which would be produced
- by a CCSN detailed numerical modelling must be completed, with the most
- modern results from Scheidegger, modelling rotating, axisymmetric
- collapses in three dimensions, and Dimmelmeier\cite{2008PhRvD..78f4056D}
- in two dimensions; and Müller and Ott\cite{2013ApJ...768..115O},
- modelling neutrino-driven supernovae in three dimensions.
+ In order to predict the gravitational waveforms which would be produced by a abbr:ccsn detailed numerical modelling must be completed, with the most modern results from Scheidegger cite:2010CQGra..27k4101S, modelling rotating, axisymmetric collapses in three dimensions, and Dimmelmeier cite:2008PhRvD..78f4056D in two dimensions; and Müller cite:2019MNRAS.484.3307M and Ott cite:2013ApJ...768..115O, modelling neutrino-driven supernovae in three dimensions.
 
- It is possible that core-collapse supernovae could have been detected
- with the initial LIGO detector\cite{2009LRR....12....2S}, although none
- were. At design sensitivity the three-detector network of Advanced LIGO
- and Advanced VIRGO should be able to detect CCSNe to a distance of
- around $\SI{5.5}{\kilo pc}$, in the case of neutrino-driven explosions,
- while rapidly-rotating core-collapses will be detectable to
- $\SI{50}{\kilo pc}$, the distance to the Large Magellanic Cloud. Extreme
- emission scenarios may be detectable as far as $\SI{0.77}{\mega pc}$,
- the distance to M31\cite{2016PhRvD..93d2002G}.
-The characteristic strain spectrum of a abbr:ccsn is plotted in figure ref:fig:sources:sn-spectrum, alongside the sensitivity curve of both advanced gls:ligo and two proposed space-based detectors.
+It is possible that nearby core-collapse supernovae could have been detected with the initial LIGO detector cite:2009LRR....12....2S, although none were. 
+At design sensitivity the three-detector network of Advanced gls:ligo and Advanced gls:virgo should be able to detect abpl:ccsn to a distance of around $\SI{5.5}{\kilo\parsec}$, in the case of neutrino-driven explosions, while rapidly-rotating core-collapses will be detectable to $\SI{50}{\kilo\parsec}$, the distance to the Large Magellanic Cloud. 
+Extreme emission scenarios may be detectable as far as $\SI{0.77}{\mega pc}$, the distance to M31 cite:2016PhRvD..93d2002G.
+The characteristic strain spectrum of a abbr:ccsn is plotted in figure ref:fig:sources:sn-spectrum, alongside the sensitivity curve of both advanced gls:ligo and two proposed space-based detectors, gls:decigo and gls:lisa.
 
-*** Type Ia supernovae
+# *** Type Ia supernovae
 
 
- Type Ia supernovae (abpl:sn Ia) are believed to be the result of  white-dwarfs in binary systems accreting enough matter to exceed the  Chandrasekhar-mass, and undergoing catastrophic  core-collapse cite:2013MNRAS.429.1156S, however the evolution of the  binary systems which are the progenitors of Type Ia supernovae is poorly  understood. 
-Recent work cite:2015PhRvD..92l4013S implies that the abbr:gw emission from a abbr:sn Ia would produce emission in the decihertz abbr:gw band.
-This would position abpl:sn Ia as a target for the proposed gls:decigo and BBO space-based observatories.
-The approximate strain spectrum of a abbr:sn Ia is plotted in figure ref:fig:sources:sn-spectrum, alongside the sensitivity curves of a number of detectors.
+#  Type Ia supernovae (abpl:sn Ia) are believed to be the result of  white-dwarfs in binary systems accreting enough matter to exceed the  Chandrasekhar-mass, and undergoing catastrophic  core-collapse cite:2013MNRAS.429.1156S, however the evolution of the  binary systems which are the progenitors of Type Ia supernovae is poorly  understood. 
+# Recent work cite:2015PhRvD..92l4013S implies that the abbr:gw emission from a abbr:sn Ia would produce emission in the decihertz abbr:gw band.
+# This would position abpl:sn Ia as a target for the proposed gls:decigo and BBO space-based observatories.
+# The approximate strain spectrum of a abbr:sn Ia is plotted in figure ref:fig:sources:sn-spectrum, alongside the sensitivity curves of a number of detectors.
 
 ** Cosmic strings
 
@@ -562,13 +569,9 @@ The approximate strain spectrum of a abbr:sn Ia is plotted in figure ref:fig:sou
    For strings produced by the decoupling of the strong force from the electroweak force this quantity has a value on the order of $10^{-6}$, so a quantity $\mu_{6}$ is often defined as a shorthand cite:1995RPPh...58..477H.
 
    Three seperate models of cosmic strings have been searched for in data from the advanced gls:ligo detectors to date, and while no evidence for abbr:gw emission from these objects was found, it was possible to place limits both on the parameters of the various models and on the scale of $G \mu$.
-The gls:ligo results place a limit of $G \mu < 8.5\ee{-10}$, which agrees, but is surpassed by results from pulsar timing arrays, which find $G \mu < 5.7\ee{-12}$ cite:2018PhRvD..97j2002A.
+The gls:ligo results place a limit of \(G \mu < \SI{8.5E-10}{}}\), which agrees, but is surpassed by results from pulsar timing arrays, which find \(G \mu < \SI{5.7E-12}{}\) cite:2018PhRvD..97j2002A.
 *If the O2 paper is published in time, update this with the new results.*
    
-
-# ** Accretion disk instability and long bursts
-
-
 
 * Burst searches
   :PROPERTIES:
@@ -1046,5 +1049,7 @@ Each result in table ref:tab:sources:mdc:o1o2 can then be converted into a repre
 	The data to produce this plot were derived from the values in table ref:tab:sources:mdc:o1o2, for the sine-Gaussian and white-noise burst waveforms.
 \label{fig:sources:mdc:o1o2}}
 \end{figure}
+
+
 
 [fn:stat-phase] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D

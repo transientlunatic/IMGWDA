@@ -131,15 +131,15 @@ We can denote conditional independence as $x\!\perp\!\!\!\perp\!y\,|\,z$.
    The information difference between two probability distributions, or indeed the information gain of one relative to another can be an important metric when producing inferential models.
 
 
-#+ATTR_LATEX: :options [Kullback-Lieblier Divergence]
-#+BEGIN_definition
+\begin{definition} [Kullback-Lieblier Divergence]
+\label{def:probability:kl}
 For two probability distributions, $P$ and $Q$ the Kullback-Liebler Divergence characterises the relative information content of the two, and is defined as 
 
 \begin{equation}
 \label{eq:probability:kl}
 D_{\text{KL}} (P, Q) = \int_{-\infty}^{\infty} \log \left( \frac{p(x)}{q(x)} \right) p(x) \dd{x}
 \end{equation}
-#+END_definition
+\end{definition}
 
 A related metric, the Shannon-Jensen divergence is symmetric and always finite.
 

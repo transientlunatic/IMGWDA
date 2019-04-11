@@ -97,15 +97,23 @@ The propagation can then be desccribed as the superposition of two linearly-pola
  \ten{e}_{+} &= \ten{e}_{x} \otimes \ten{e}_{x} - \ten{e}_{y} \otimes \ten{e}_y\\
  \ten{e}_{\times} &= \ten{e}_{x} \otimes \ten{e}_{y} + \ten{e}_{y} \otimes \ten{e}_{x}
 \end{align}
-As the wave passes orthogonally through the circular ring of test particles they will be distorted into an ellipse. For the $+$-polarisation the circle is stretched into an ellipse with semi-major axis first extending along the $x$-axis, relaxing back to a circle, and then again with a semi-major axis extending along the $y$-axis.\\
+As the wave passes orthogonally through the circular ring of test particles they will be distorted into an ellipse. For the $+$-polarisation the circle is stretched into an ellipse with semi-major axis first extending along the $x$-axis, relaxing back to a circle, and then again with a semi-major axis extending along the $y$-axis.
+
+\begin{figure}[h]
 \begin{tikzpicture}[xscale=0.45, yscale=0.45]
    \def\w{1.5}
     \foreach \i in {0,...,18}{
        \def\a{-90+30*\i}
        \draw [domain=0:360, thick] plot ( {\w*\i +0.5*(cos(\x)*(1+0.4*cos(\a))) }, {0.5*(sin(\x)*(1-0.4*cos(\a)))});
     };
-\end{tikzpicture}\\
-Equivalently, the $\times$-polarisation produces a deformation rotated $45^{\circ}$ relative to the $+$-polarisation.\\
+\end{tikzpicture}
+\caption{The effect of a $+$-polarised abbr:gw on a circle of test particles as it propogates through the page (orthogonal to the ring). 
+\label{fig:intro:gw:prop-plus}}
+\end{figure}
+
+Equivalently, the $\times$-polarisation produces a deformation rotated $45^{\circ}$ relative to the $+$-polarisation.
+
+\begin{figure}[h]
  \begin{tikzpicture}[xscale=0.27, yscale=0.27]
     \def\w{2.5}
      \foreach \i in {0,...,18}{
@@ -113,9 +121,12 @@ Equivalently, the $\times$-polarisation produces a deformation rotated $45^{\cir
         \draw [domain=0:360, thick] plot ({\w*\i + cos(\x) + 0.25*sin(\x)*0.5*cos(\a) }, {sin(\x) +0.25*cos(\x)*0.5*cos(\a) });
      };
  \end{tikzpicture}
-
+\caption{The effect of a $\cross$-polarised abbr:gw on a circle of test particles as it propogates through the page (orthogonal to the ring). 
+\label{fig:intro:gw:prop-plus}}
+\end{figure}
 Further, the behaviour of "strong-field gravity", which is essential to understanding the production of gravitational waves must be probed using this method. 
 As a result both the analysis of gravitational waves, and their astrophysical interpretation, relies on the ability to solve the field equations numerically.
+
 
 \begin{equation}
 \label{eq:intro:gr:mass-quadrupole}
@@ -124,8 +135,9 @@ Q_{jk} = \int \rho x_k x_k \frac{\dd^3}{\dd x^3}
 and the gravitational wave is described by the three-tensor
 \begin{equation}
 \label{eq:intro:gr:quadrupole2strain}
-  h_{jk} = \frac{2}{r} \frac{\dd^2 Q_{jk}}{}
+  h_{jk} = \frac{2}{r} \frac{\dd^2 Q_{jk}}{\dd t^2}
 \end{equation}
+
 
 [fn:ricci-tensor] More precisely, the gls:ricci-tensor, which is the trace of the Riemann tensor, describes how the distance between the points within a volume varies as the entire volume is parallel-transported over a curved manifold, compared to the same movement over a flat manifold.
 
@@ -866,49 +878,87 @@ At the time of writing the world-wide network of gravitational wave detectors wa
 Additional detectors are currently either being planned or are under construction which will see an increase both in the number of detectors and their geographical spread. Such an increased network should provide both an increased duty cycle (leading to a decrease in the total time when no observations are being made), and improved sky-localisation capability (improving the prospects of successful electromagnetic follow-up of gravitational wave events).
 
 
-* GW150914: The first detection
-#+NAME: sec:gw150914-intro
+* Gravitational wave detections
+  
+Having discussed the means by which abpl:gw may be detected, it would be remiss not to discuss the detections which occurred during the first two observing runs of the advanced detector era.
 
-\begin{figure}
-\label{fig:detectors:interferometers:firstgen}
-\includegraphics{figures/intro/gw150914-waveform.pdf}
-\caption{The data from the advanced gls:ligo detectors at the Livingston (L1) and Hanford (H1) observatories, which has been band-passed between $\SI{50}{\hertz}$ and $\SI{250}{\hertz}$, and a comb filter has been applied to remove the 60-Hz line and its higher harmonics.
-The data from the Livingston detector has had a time-delay filter applied to introduce a $\SI{6.9}{\milli\second}$ delay, representing the travel time between the detectors, and has been inverted to account for the relative orientation of the two detectors.
-}
-\end{figure}
+** Observing run 1 and GW150914
+ #+NAME: sec:gw150914-intro
 
-The first detection of gravitational waves was made on 14 September 2015 by the advanced abbr:ligo detectors cite:2016PhRvL.116f1102A when a signal from a abbr:bbh coalescence was detected, first by the cWB burst search pipeline (which is discussed briefly in section ref:sec:sources:burst:pipelines), and subsequently by a number of matched-filtering pipelines designed for abbr:cbc detection.
-This event, gls:gw150914 was remarkable not only for being the first viable trigger to be detected by advanced gls:ligo, but also for having sufficiently high statistical significance (with a false alarm rate less than 1-in-$203\,000$ years) that there was no reasonable doubt that it constituted a genuine abbr:gw detection.
+ \begin{figure}
+ \label{fig:detectors:interferometers:firstgen}
+ \includegraphics{figures/intro/gw150914-waveform.pdf}
+ \caption{The data from the advanced gls:ligo detectors at the Livingston (L1) and Hanford (H1) observatories, which has been band-passed between $\SI{50}{\hertz}$ and $\SI{250}{\hertz}$, and a comb filter has been applied to remove the 60-Hz line and its higher harmonics.
+ The data from the Livingston detector has had a time-delay filter applied to introduce a $\SI{6.9}{\milli\second}$ delay, representing the travel time between the detectors, and has been inverted to account for the relative orientation of the two detectors.
+ }
+ \end{figure}
 
-The detection was made at both the gls:llo and gls:lho observatories, with a joint abbr:snr of $24$.
-The event itself, a gls:bbh coalescence between a $36^{+5}_{-4} \msun$ black hole and a $29^{+4}_{-4}$ black hole was unexpected, as previous models of stellar formation struggled to explain the evolution of black holes with these masses.
+ The first detection of gravitational waves was made on 14 September 2015 by the advanced abbr:ligo detectors cite:2016PhRvL.116f1102A when a signal from a abbr:bbh coalescence was detected, first by the cWB burst search pipeline (which is discussed briefly in section ref:sec:sources:burst:pipelines), and subsequently by a number of matched-filtering pipelines designed for abbr:cbc detection.
+ This event, gls:gw150914 was remarkable not only for being the first viable trigger to be detected by advanced gls:ligo, but also for having sufficiently high statistical significance (with a false alarm rate less than 1-in-$203\,000$ years) that there was no reasonable doubt that it constituted a genuine abbr:gw detection.
 
-The first gls:ligo observing run produced two further observations in the form of gls:gw151012 and gls:gw151226, both abbr:bbh events.
-
-* GW170817: The first multi-messenger detection
-#+NAME: sec:gw170817-intro
-
-The second advanced gls:ligo observing run started on 30 November 2016, and finished on 25 August 2017.
-The advanced gls:virgo detector joined the run on 1 August 2017, allowing three-detector observations from kilometre-scale detectors for the first time in the advanced era.
-The most important observation to be made during this run was of gls:gw170817, the first detection of a binary neutron star coalescence.
-This event, which occurred on 17 August, was the second three-detector event (preceded only by gls:gw170814 three days earlier), which left the community in the serendipitous situation of being able to determine the location in the sky from which the abbr:gw originated to much greater precision than previous two-detector events.
-
-The detection of gls:gw170817 cite:2017PhRvL.119p1101A was coincident with the detection of a short gamma ray burst by the Fermi spacecraft. 
-This parallel detection of the event made gls:gw170817 / GRB170817A the first multi-messenger gravitational wave event. 
-Within hours of the publication of the gls:ligo / gls:virgo sky localisation an optical counterpart to the event was identified in NGC 4993 by the SWOPE Supernova Survey cite:2017Sci...358.1556C, gaining the designation AT2017gfo.
-The optical emission was later followed by observation of emission across the electromagnetic spectrum, including the observation of a kilonova from the event cite:2017ApJ...848L..12A.
+The detection was made at both the gls:llo and gls:lho observatories, with a joint abbr:snr of around $24$.
+The event itself, a gls:bbh coalescence between a $36^{+5}_{-4} \msun$ black hole and a $29^{+4}_{-4}$ black hole was unexpected.
+Observations of black hole binaries in x-ray had not previously suggested that stellar-mass black holes this massive would exist.
+As a result models of stellar formation struggled to explain the evolution of black holes with these masses cite:2016ApJ...818L..22A.
 
 
-* Catalogue of observations
-#+NAME: sec:gw-catalogue
+Two further abbr:bbh events were observed in the first observing run.
+gls:gw151012, (the ``second Monday event''), was initially announced as a candidate event, as it failed to exceed the $5\sigma$ significance threshold which was set for events prior to the publication of the ~GWTC-1~ catalogue cite:2018arXiv181112907T. 
+The more significant gls:gw151226 (the ``Boxing Day event'') was the second confirmed detection from the advanced gls:ligo detectors, corresponding to a merger between much less massive black holes than gls:gw150914 (around 14 and 8 solar masses). 
+Unlike the first detection, gls:gw151226 involved an asymmetrical system, with one black hole around twice as massive as the other.
+The lower masses resulted in a substantially greater amount of the inspiral waveform being in-band for the detectors, and consequently was capable of providing more stringent tests on General Relativity than its predecessor cite:2016PhRvL.116x1103A.
 
-The remaining observations should be discussed here with reference to the catalogue paper, as a suitable overview is desirable, but excessive detail is not.
+
+** Observing run 2 and GW170817
+ #+NAME: sec:gw170817-intro
+
+ The second advanced gls:ligo observing run (O2) started on 30 November 2016, and finished on 25 August 2017.
+ The advanced gls:virgo detector joined the run on 1 August 2017, allowing three-detector observations from kilometre-scale detectors for the first time in the advanced era.
+ Nine detections were made during O2, of which eight were abbr:bbh events, and one was a gls:bns event.
+ The most important observation to be made during this run was of gls:gw170817, the first detection of a binary neutron star coalescence.
+ This event, which occurred on 17 August, was the second three-detector event (preceded only by gls:gw170814 three days earlier), which left the community in the serendipitous situation of being able to determine the location in the sky from which the abbr:gw originated to much greater precision than previous two-detector events.
+
+ The detection of gls:gw170817 cite:2017PhRvL.119p1101A was coincident with the detection of a short gamma ray burst by the Fermi spacecraft cite:gw170817.fermi.gbm.gcn. 
+ This parallel detection of the event made gls:gw170817 / GRB170817A the first multi-messenger gravitational wave event. 
+ Within hours of the publication of the gls:ligo / gls:virgo sky localisation an optical counterpart to the event was identified in NGC 4993 by the SWOPE Supernova Survey cite:2017Sci...358.1556C, gaining the designation AT2017gfo.
+ The optical emission was later followed by observation of emission across the electromagnetic spectrum, including the observation of a kilonova from the event cite:2017ApJ...848L..12A.
+
+ 
 
 \begin{figure}
 \includegraphics{./figures/intro/catalogue.pdf}
 \caption{A summary table of the eleven significant gravitational events observed during the first two observing runs of the LIGO-Virgo network.}
 \label{fig:intro:catalogue}
 \end{figure}
+
+\begin{landscape}
+\begin{table}
+\begin{tabular}{lllllllllll}
+\toprule
+            & $E_{\text{rad}}$    & $L_{\text{peak}}$   & $a_{\text{final}}$     & $\chi_{\text{eff}}$     & $D_{\text{L}}$                          & $M_{1}$                & $M_{2}$               & $\mathcal{M}$        & $M_{\text{rem}}$       & $z$                    \\ 
+            & $/\solMass$    & $/\SI{E56}{erg \per \second}$ &   &    & $/\SI{}{\mega\parsec}$                          & $/\solMass$                & $/\solMass$               & $/\solMass$        & $/\solMass$       &                     \\ 
+\midrule
+   GW150914 & $3.1^{+0.4}_{-0.4}$ & $3.6^{+0.4}_{-0.4}$ & $0.69^{+0.05}_{-0.04}$ & $-0.01^{+0.12}_{-0.13}$ & $430.0^{+150.0}_{-170.0}$    & $35.6^{+4.8}_{-3.0}$   & $30.6^{+3.0}_{-4.4}$  & $28.6^{+1.6}_{-1.5}$ & $63.1^{+3.3}_{-3.0}$   & $0.09^{+0.03}_{-0.03}$ \\
+  GW151012  & $1.5^{+0.5}_{-0.5}$ & $3.2^{+0.8}_{-1.7}$ & $0.67^{+0.13}_{-0.11}$ & $0.04^{+0.28}_{-0.19}$  & $1060.0^{+540.0}_{-480.0}$   & $23.3^{+14.0}_{-5.5}$  & $13.6^{+4.1}_{-4.8}$  & $15.2^{+2.0}_{-1.1}$ & $35.7^{+9.9}_{-3.8}$   & $0.21^{+0.09}_{-0.09}$ \\
+  GW151226  & $1.0^{+0.1}_{-0.2}$ & $3.4^{+0.7}_{-1.7}$ & $0.74^{+0.07}_{-0.05}$ & $0.18^{+0.2}_{-0.12}$   & $440.0^{+180.0}_{-190.0}$    & $13.7^{+8.8}_{-3.2}$   & $7.7^{+2.2}_{-2.6}$   & $8.9^{+0.3}_{-0.3}$  & $20.5^{+6.4}_{-1.5}$   & $0.09^{+0.04}_{-0.04}$ \\
+  \midrule   
+  GW170104  & $2.2^{+0.5}_{-0.5}$ & $3.3^{+0.6}_{-0.9}$ & $0.66^{+0.08}_{-0.1}$  & $-0.04^{+0.17}_{-0.2}$  & $960.0^{+430.0}_{-410.0}$    & $31.0^{+7.2}_{-5.6}$   & $20.1^{+4.9}_{-4.5}$  & $21.5^{+2.1}_{-1.7}$ & $49.1^{+5.2}_{-3.9}$   & $0.19^{+0.07}_{-0.08}$ \\
+  GW170608  & $0.9^{+0.0}_{-0.1}$ & $3.5^{+0.4}_{-1.3}$ & $0.69^{+0.04}_{-0.04}$ & $0.03^{+0.19}_{-0.07}$  & $320.0^{+120.0}_{-110.0}$    & $10.9^{+5.3}_{-1.7}$   & $7.6^{+1.3}_{-2.1}$   & $7.9^{+0.2}_{-0.2}$  & $17.8^{+3.2}_{-0.7}$   & $0.07^{+0.02}_{-0.02}$ \\
+  GW170729  & $4.8^{+1.7}_{-1.7}$ & $4.2^{+0.9}_{-1.5}$ & $0.81^{+0.07}_{-0.13}$ & $0.36^{+0.21}_{-0.25}$  & $2750.0^{+1350.0}_{-1320.0}$ & $50.6^{+16.6}_{-10.2}$ & $34.3^{+9.1}_{-10.1}$ & $35.7^{+6.5}_{-4.7}$ & $80.3^{+14.6}_{-10.2}$ & $0.48^{+0.19}_{-0.2}$  \\
+  GW170809  & $2.7^{+0.6}_{-0.6}$ & $3.5^{+0.6}_{-0.9}$ & $0.7^{+0.08}_{-0.09}$  & $0.07^{+0.16}_{-0.16}$  & $990.0^{+320.0}_{-380.0}$    & $35.2^{+8.3}_{-6.0}$   & $23.8^{+5.2}_{-5.1}$  & $25.0^{+2.1}_{-1.6}$ & $56.4^{+5.2}_{-3.7}$   & $0.2^{+0.05}_{-0.07}$  \\
+  GW170814  & $2.7^{+0.4}_{-0.3}$ & $3.7^{+0.4}_{-0.5}$ & $0.72^{+0.07}_{-0.05}$ & $0.07^{+0.12}_{-0.11}$  & $580.0^{+160.0}_{-210.0}$    & $30.7^{+5.7}_{-3.0}$   & $25.3^{+2.9}_{-4.1}$  & $24.2^{+1.4}_{-1.1}$ & $53.4^{+3.2}_{-2.4}$   & $0.12^{+0.03}_{-0.04}$ \\
+  GW170817 & $> 0.04$            & $> 0.1$            & $< 0.89$             & $0.0^{+0.02}_{-0.01}$   & $40.0^{+10.0}_{-10.0}$       & $1.46^{+0.12}_{-0.1}$  & $1.27^{+0.09}_{-0.09}$ & $1.186^{+0.001}_{-0.001}$ & $< 2.8$                & $0.01^{+0.0}_{-0.0}$ \\
+  GW170818 & $2.7^{+0.5}_{-0.5}$ & $3.4^{+0.5}_{-0.7}$ & $0.67^{+0.07}_{-0.08}$ & $-0.09^{+0.18}_{-0.21}$ & $1020.0^{+430.0}_{-360.0}$   & $35.5^{+7.5}_{-4.7}$   & $26.8^{+4.3}_{-5.2}$   & $26.7^{+2.1}_{-1.7}$      & $59.8^{+4.8}_{-3.8}$   & $0.2^{+0.07}_{-0.07}$ \\
+   GW170823 & $3.3^{+0.9}_{-0.8}$ & $3.6^{+0.6}_{-0.9}$ & $0.71^{+0.08}_{-0.1}$  & $0.08^{+0.2}_{-0.22}$  & $1850.0^{+840.0}_{-840.0}$   & $39.6^{+10.0}_{-6.6}$  & $29.4^{+6.3}_{-7.1}$   & $29.3^{+4.2}_{-3.2}$      & $65.6^{+9.4}_{-6.6}$   & $0.34^{+0.13}_{-0.14}$ \\
+\bottomrule
+\end{tabular}
+\caption[GWTC-1 : Summary of O1 and O2 Events]{The events from the first two advanced-era observing runs. The data in this table is derived from the first gravitational wave transient catalogue, GWTC-1 cite:2018arXiv181112907T.
+	$E_{\text{rad}}$ is the total abbr:gw energy radiated as a result of the event; $L_{\text{peak}}$ is the event's peak abbr:gw luminosity; $a_{\text{final}}$ is the total spin of the remnant black hole;  $\chi_{\text{eff}}$ is the gls:effective-spin of the abbr:cbc system;    & $D_{\text{L}}$ is the luminosity distance to the source;  $M_{1}$ and $M_{2}$ are the masses of the two compact objects;  $\mathcal{M}$ is the gls:chirp-mass of the system;  $M_{\text{rem}}$  is the mass of the remnant, and  $z$ is the redshift of the source.
+
+}
+\label{tab:eventlist}
+\end{table}
+\end{landscape}
 
 # |          | $E_{\text{rad}}$    | $L_{\text{peak}}$   | $a_{\text{final}}$     | $\chi_{\text{eff}}$     | $D$                          |              | FAR       |              | $M_{1}$                | $M_{2}$                | mchirp                    | mfinal                 | redshift               | sky_size | snr_cwb | snr_gstlal | snr_pycbc | tc             | utctime      |
  # |          |                     |                     |                        |                         |                              | CWB          | GSTLAL    | PYCBC        |                        |                        |                           |                        |                        |          |         |            |           |                |              |
@@ -949,10 +999,7 @@ data_gw1 = data_gw1.applymap(error_parse)
 return [x.split(',') for x in data_gw1.to_csv().split('\n')]
 #+END_SRC
 
-#+RESULTS: tab:eventlist
-|   |
- 
-* Observing scenarios
+* Future observing scenarios
 /A discussion of the various observing scenarios should be presented here, with some brief discussion of the first two observing runs, and the prospects for O3 and beyond, including the inclusion of the KAGRA detector. Potential to mention 3G detectors towards the end, but this may be held back for detectors chapter./
 
 The gravitational wave community are in the fortunate position of the field having arrived in both to the so-called /advanced/-era, in which interferometric detectors sensitivity has increased sufficiently to make observations plausible, but also the /observational/-era; the perfect coincidence of these two epochs is surely one of the less believable twists in the plot of scientific history. As a result most of this work will consider the state of gravitational wave detection in the observational era, starting in the early observational period: the first two observing runs of the advanced gls:ligo detectors, and the first observing run of the advanced gls:virgo detector; looking ahead to future observing runs involving a larger network of gravitational wave detectors, including gls:kagra and an additional advanced gls:ligo detector located in India.
@@ -962,7 +1009,8 @@ This phased approach means that the sensitivity of the detectors, and consequent
 In table ref:tab:intro:rangescenarios these are summarised; the /early/ scenario equates approximately to the O1 run for advanced gls:ligo, and the O2 run for advanced gls:virgo. 
 Similarly, the /mid/ and /late/ scenarios correspond approximately to O2 and O3 for advanced gls:ligo.
 
-The first two observing runs have provided some information about the rate of the events which produce detectable gravitational waves, allowing better constraints to be placed on anticipated observed event rates as the detectors continue to develop over the next decade. The current estimates of likely abbr:bns rates are given in table ref:tab:ratescenarios.
+The first two observing runs have provided some information about the rate of the events which produce detectable gravitational waves, allowing better constraints to be placed on anticipated observed event rates as the detectors continue to develop over the next decade. 
+# The current estimates of likely abbr:bns rates are given in table ref:tab:ratescenarios.
 
   #+NAME: tab:intro:rangescenarios
   #+ATTR_LATEX: :booktabs :placement [b]
@@ -975,16 +1023,16 @@ The first two observing runs have provided some information about the rate of th
   | Design | 190         | 125         | 140         |
 
 
-  #+NAME: tab:ratescenarios
-  #+ATTR_LATEX: :booktabs :placement [b]
-  #+CAPTION: The anticipated observed abbr:BNS rate throughout the development stages of the second-generation detector network. The observation rate is limited by the abbr:BNS gls:horizon-distance and the combined network gls:duty-cycle, which will be increased by the addition of a third abbr:LIGO detector in India during the period where the main network is operating at design sensitivity.
-  | Epoch                         | Estimated BNS Rate /yr |
-  |-------------------------------+------------------------|
-  | Early                         | 0.15 - 3               |
-  | Mid                           | 0.15 - 6               |
-  | Late                          | 1 - 50                 |
-  | Design                        | 4 - 80                 |
-  | Design (inc. abbr:LIGO India) | 11 - 180               |
+  # #+NAME: tab:ratescenarios
+  # #+ATTR_LATEX: :booktabs :placement [b]
+  # #+CAPTION: The anticipated observed abbr:BNS rate throughout the development stages of the second-generation detector network. The observation rate is limited by the abbr:BNS gls:horizon-distance and the combined network gls:duty-cycle, which will be increased by the addition of a third abbr:LIGO detector in India during the period where the main network is operating at design sensitivity.
+  # | Epoch                         | Estimated BNS Rate /yr |
+  # |-------------------------------+------------------------|
+  # | Early                         | 0.15 - 3               |
+  # | Mid                           | 0.15 - 6               |
+  # | Late                          | 1 - 50                 |
+  # | Design                        | 4 - 80                 |
+  # | Design (inc. abbr:LIGO India) | 11 - 180               |
   
 
 
