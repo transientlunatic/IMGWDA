@@ -1,0 +1,138 @@
+# ** Computational Complexity
+
+# A major drawback of the use of abpl:gp is the need to invert the covariance matrix in order to produce predictions. 
+# Matrix inversion is a computationally intensive task which scales in memory with $N^2$, for $N$ training points, and with $N^3$ in time. 
+# The standard approach to GPR described in equation ref:eq:predictive-gp thus rapidly becomes impractical, requiring large quantities of memory for even moderately sized training sets. 
+# In order to overcome these scaling problems, approximate simplify the inversion of the covariance matrix by making simplifying assumptions about its form. 
+# One example is the use of the approximate HODLR cite:hodlr inversion method, which allows inversion to be carried out in $\mathcal{O}(N \log^2 N)$ operations. 
+# This approach is possible because kernels such as the exponential squared kernel produce covariance matrices which can be arranged to form Hierarchical off-diagonal low rank (HODLR) matrices. 
+# The off-diagonal blocks are then factorised using partial-pivoted LU decomposition, and the on-diagonal blocks are factorised using a more accurate algorithm, such as Cholesky decomposition. 
+# The block inverses are then recombined to provide the (approximate) overall matrix inverse.
+
+# In producing our surrogate model we employed the HODLR method for calculating the matrix inverse, using the implementation in the =George= cite:hodlr Python package.
+
+
+* Verification of the model
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/heron/withnr.pdf}
+  \caption[Predictions from the ~HERON~ model, compared to an NR waveform]
+{\textbf{abbr:gp regression predictions, compared to abbr:nr}. One hundred draws from the Gaussian process (left panel) for a non-spinning configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $q = 0.625$), shown as light grey lines compared to a single analytical approximant model, \texttt{IMRPhenomPv2} in blue. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. 
+The differences between the phenomenological model and the \ac{GPR} model waveforms are seen to also exist between the phenomenological model waveforms and the \ac{NR}-derived waveform, plotted here in purple. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:prediction-with-nr}
+  }
+\end{figure*}
+
+
+\begin{figure*}
+
+  \includegraphics[width=\textwidth]{figures/heron/nonspin-equalmass.pdf}
+  \caption[A ~HERON~ waveform from a non-spinning system]
+{\textbf{Non-spinning waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv4} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:nonspin-equalmass}
+  }
+\end{figure*}
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/heron/antispin-equalmass.pdf}
+  \caption[A ~HERON~ waveform from an aligned-spin system]
+{\textbf{Anti-aligned spin waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0.6)$, $\vec{s_2} = (0,0,-0.6)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv4} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:spinanti-equalmass}
+  }
+\end{figure*}
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/heron/precessing.pdf}
+  \caption[A ~HERON~ waveform from a precessing system]
+{\textbf{Precessing waveform}. One hundred draws from the Gaussian process (left panel) for a precessing system, with a mass ratio $q=0.25$, and a spin configuration ($\vec{s_1} = (0.35,0.1,0.2)$, $\vec{s_2} = (0, 0, 0.4)$), shown as light grey lines compared to a single analytical approximant model, \texttt{IMRPhenomPv2} in blue. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical line representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:prec-equalmass}
+  }
+\end{figure*}
+
+
+The sparisty of training data poses a considerable challenge to the testing and verification of a model such as the =HERON= model; conventional approaches to testing such a model involve setting aside a
+fraction of the training data to compare to the model output when evaluated at the parameter space location of each test datum. 
+Numerical relativity data is sufficiently scarce that omitting a single waveform
+from the model severely affects the model's prediction at the omitted waveform's location within parameter space.
+
+In place of making such a comparison to test data I have elected to compare our model output with the waveform generated from two existing phenomenological waveform models, =IMRPhenomPv2=, and =SEOBNRv4=. 
+The comparison is made by evaluating the mismatch (that is $1-\mathcal{M}$, see equation ref:eq:heron:testing:match) between the analytical waveforms and samples drawn from the trained predictive posterior distribution.
+
+A phenomenon which is observed with predictions from our model when compared to waveforms produced by phenomenological models is illustrated in figure ref:fig:prediction-with-nr. 
+In this figure the =IMRPhenomPv2= and =SEOBNRv4= waveforms are overlaid on draws from the model, and its mean prediction. 
+An abbr:nr waveform for the appropriate parameters is also plotted. 
+Here the prediction clearly reproduces the waveform with accuracy, but the phenomenological models do not. 
+This waveforms shows a level of phase inconsistency compared to the phenomonological models, which is especially evident in the inspiral section of the waveform. 
+We believe this to be a result of the phenomenological models not being calibrated against the same as those used in this study, although we note that the phenomenological model predictions still lie within the region described by draws from the abbr:gp. 
+The phenomenological models do not quote an uncertainty, where our model does, and as such it is difficult to assess whether the prediction of these are consistent with those from the model.
+
+In the left panel of figures ref:fig:nonspin-equalmass and ref:fig:spinanti-equalmass, we compare the waveform computed for different random samples from the model, the mean of the model and the =IMRPhenomPv2= and =SEOBNRv4= waveforms for a non-spinning configuration (figure ref:fig:nonspin-equalmass) and an equal-mass configuration with anti-aligned spins figure ref:fig:spinanti-equalmass. 
+The distribution of mismatches between the model predictions and the two phenomenological approximants are shown in the right panel of each figure, with matches calculated between the approximant waveforms and one-hundred sample waveforms drawn from the model. 
+An example of a precessing waveform generated by the model is also shown in figure ref:fig:prec-equalmass, however it was not possible to generate a =SEOBNRv4= waveform at this position in the parameter space, as this is a non-precessing approximant, so this waveform is matched only against the =IMRPhenomPv2=-derived waveform. 
+Notably, the individual waveform draws from the model appear to match poorly with the =IMRPhenomPv2= waveform, but the overall mean waveform has a low mismatch.
+
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/heron/heron-qt-plane.pdf}
+  \caption[A surface plot of the mass ratio-time plane from the ~HERON~ model ]
+{A surface plot showing the output of the ~HERON~ model for non-spinning waveforms over the parameter space of mass ratios and time.
+    \label{fig:heron:heron:qtplane}
+  }
+\end{figure*}
+
+* Summary
+
+We have entered the era of routine abbr:gw detection, and the ability to accurately and rapidly characterise signals from events such as coalescences will be critical to understanding the properties of these systems. 
+This characterisation process relies on the availability of waveform templates which are either precomputed prior to the analysis being run, or can be generated on-the-fly. 
+Highly accurate waveforms, generated by simulations, are able, and in principal can facilitate
+accurate inference on detected signals. 
+However, the expense of producing them limits their coverage of the parameter space; as a result
+of this lack of coverage, and the considerable time requirements to produce new waveforms, any inference method which relied solely on techniques could not hope to satisfy the requirement to rapidly
+characterise signals, and would not be practical in a scenario where multiple events are detected every month. 
+Phenomenological models, which can be evaluated rapidly, are available, which attempt to interpolate
+across a large volume of the parameter space, but the accuracy of the waveforms which they produce can be difficult to assess. 
+This leads to the possibility of introducing biases into the inferred properties of the system which generated the signal.
+
+In this chapter I have laid-out an approach to improving the accuracy of gravitational wave parameter estimation in the context of limited template availability by implementing a waveform approximant model using abbr:gp regression, providing not only a point-estimate of the waveform at any point in
+the parameter space, but also a distribution of plausible waveforms, allowing the uncertainty of the interpolation to be taken into account during the analysis. 
+In contrast to previous attemptes to produce a model for waveforms, such as cite:2017zoheyrsurrogate, this model is trained on data from the Georgia Tech waveform catalogue, described in section [sec:heron:training-data].
+
+# We introduced in section [sec:gps] as a non-parametric regression # method. This property allows the regression model to be constructed
+# # while making minimal assumptions about the form of the waveforms, which
+# # are encoded through the form of the covariance function. We discuss
+# # covariance functions in section [sec:covariancefunction], In order to
+# # reduce the computational burdon of evaluating the model a hierarchical
+# # matrix inversion method was used (described in \cite{hodlr} and
+# # discussed in section [sec:complexity]).
+
+I have presented a number of waveforms which have been produced by the ~HERON~ model in section ref:sec:heron:verification, and make comparisons between its output and two phenomenological models. 
+These comparisons show a difference between the behaviour of the two models which is most pronounced during the inspiral section of the waveform. 
+This difference also occurs between the phenomenological model and the waveform produced from abbr:gp regression. 
+A number of phenomena are likely to have contributed to this discrepancy. 
+One such difference in the systematic errors of the simulations used to produce the training data for the model compared to those used to calibrate the phenomenological models. 
+Additionally, the relatively small number of waveforms used to calibrate the phenomenological models compared to the model are likely to introduce systematic errors in the waveforms produced by those models. In order to reduce the effect of systematic errors from a larger model could include waveforms from a number of different waveform catalogues, however the addition of more waveforms will increase the memory requirements to both train and evaluate the model. 
+The waveform model tends towards producing conservative estimates of the waveform, this is clearly visible in the variance of the precessing waveform in figure ref:fig:prec-equalmass. 
+The use of additional waveforms is likely to improve the confidence of the model's prediction.
+
+In order for a abbr:gp-based approach such as this to be practical for parameter estimation studies using data from LIGO or Virgo it would be necessary to have a means of producing waveforms which are capable of modelling a greater amount of the inspiral than the ~HERON~ model can currently provide. 
+One potential approach to solving this problem is hybridising the output waveform from our model with waveforms produced from a post-Newtonian approximant, in a similar manner to that used by
+cite:2018arXiv181207865V.
+
+# In conclusion, we have demonstrated that is capable of being used as an
+# interpolant for waveforms, trained directly off data from simulations.
+# While this method cannot hope to produce waveforms with the same
+# precision as itself, it does account for the uncertainty introduced
+# through interpolation, a feature which is valuable for preventing the
+# introduction of bias in a analysis.
+
+# * Acknowledgements
+
+# The authors wish to thank Christopher Moore, Sebastian Khan, and Vijay
+# Varma for their insightful comments and suggestions on an earleir draft
+# of the manuscript.
+
+# DW is supported by the Science and Technology Facilities Council (STFC)
+# grant ST/N504075/1. ISH is supported by STFC grant ST/L000946/1. JC
+# acknowledges support from NSF awards PHYS-1505824 and PHYS-1505524SH.
+
+# This document has been assigned LIGO document reference LIGO-P1800128.

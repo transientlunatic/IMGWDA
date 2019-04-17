@@ -1,2 +1,154 @@
-/In this chapter I introduce the ~HERON~ surrogate model./
-/The ~HERON~ model is capable of generating abbr:bbh signals with generic spin./
+In this chapter I introduce the use of abbr:gpr as a surrogate modelling method for abbr:gw waveforms from abbr:cbc events.
+The culmination of this effort is the development of the ~HERON~ surrogate model, which is capable of producing waveforms with precession for arbitrarily spinning binary systems./
+
+The production of high-accuracy waveforms is possible thanks to advances in the field of abbr:nr, in which the full set of Einstein equations can be solved numerically (see section ref:sources:cbc:nr for a more detailed discussion of the development of abbr:nr). 
+This can be done reliably for the low-mass compact binary systems of interest to the current generation of ground-based gravitational wave observatories, however these simulations are computationally expensive, and can require thousands of CPU hours to run in situations where the mass ratios and spins of the black holes are small. 
+A simulation of a full 350-cycle gravitational waveform spanning the entire advanced LIGO band has been produced cite:2015arXiv150204953S, however this required several months of high-performance computing to complete cite:2016CQGra..33l5025D, despite employing numerous techniques to reduce wall-clock computation time. 
+As a result fewer than 1000 waveforms are available, many of these much shorter than 350 cycles long. 
+abbr:bbh coalescences are described by a number of physical parameters: the ratio of the two component black holes' masses, $q$; the vector of each component's spin, ${\boldsymbol{s}}_1$ and ${\boldsymbol{s}}_2$; and the time, $t$, relative to a fixed reference time, for example the time of coalescence of the binary.
+
+As noted in section ref:sec:sources:cbc:approximants, a number of /analytical approximant/ waveforms have been produced in recent years in order to provide approximate waveforms much more quickly than abbr:nr is capable of.
+These models, while capable of producing waveforms over a wide range of the abbr:bbh parameter space, are calibrated against only a small number of waveforms, resulting in waveforms produced in much of the parameter space having an unknown accuracy.
+
+* Numerical Relativity Waveform data
+  :PROPERTIES:
+  :CUSTOM_ID: sec:heron:nr-data
+  :END:
+
+abbr:nr simulations for abbr:cbc events simulate the behaviour of the gls:riemann-tensor over a finite period of time prior to, during, and immediately following the merger of the two objects.
+This simulation allows the extraction of a gravitational waveform at a large distance from the merger event, where the flat metric approximation of ref:eq:strain-in-metric is valid.
+Observations of the strain are made, and time-stamped. 
+These data then constitute the waveform data, which are normally stored in a spherical harmonic decomposition in an ~HDF5~ format cite:2017arXiv170301076S.
+Thanks to the non-uniform time sampling which abbr:nr codes employ, the data from the simulation will normally need to be interpolated and resampled to be of use for data analysis, or as training data for a surrogate model.
+In the models presented in this chapter this interpolation was performed by the ~pycbc~ library cite:2016CQGra..33u5004U,alex_nitz_2017_883086,2014PhRvD..90h2004D.
+
+The waveform data used in this chapter is derived from the Georgia Tech Catalogue cite:2016CQGra..33t4001J, with the waveforms evaluated in the time domain, and then aligned such that the time location in the waveform corresponding to the maximum value of abbr:hrss was labelled $0$.
+
+Each waveform is parameterised by seven quantities (the mass ratio and the spin vectors of each component black hole) in a vector which is denoted ${\boldsymbol{x}_i}$. 
+Each strain value, $h_i$, within the waveform is further parameterised by a time relative to the maximum strain value in the waveform, and thus each training point is parameterised by an 8-dimensional parameter vector, denoted ${\boldsymbol{x}_i}'$.
+This provides a training set which has 8 input dimensions, and a single output dimension, with the form 
+\begin{equation}
+{\mathcal{D}} = \left\{ ({\boldsymbol{x}'_i},  h_i) | i = 1, 2, \dots, N \right\}
+\end{equation}
+for $N$ the total number of strain samples used from all of the training waveforms. The distribution of training waveforms throughout the parameter space is shown in figure ref:fig:sources:cbc:nr:gtcoverage.
+
+
+
+
+
+* Gaussian process regression for waveforms
+
+A major failing of existing waveform models is their inability to account reliably for uncertainty in the waveforms which are generated.
+A side-effect of this is important in parameter estimation of these signals, as an inaccurate waveform will result in the introduction of a bias to the abbr:pe process.
+
+
+To illustrate how such a model can be constructed, in this section I will detail the construction of two abbr:gp models which use waveforms generated from the ~IMRPhenomPv2~ waveform model as their training data.
+In the first model I will use only non-spinning waveforms, varying only in their mass-ratio.
+In the second I will introduce characteristic spin to the model, to create a three-dimensional abbr:gp regression model.
+
+Later in this chapter I will detail the results presented in cite:2019arXiv190309204W of a abbr:gp model for precessing waveforms which has been trained using data from abbr:nr simulations.
+
+** A simple non-spinning model
+
+For the first demonstration model I will use 15 waveforms produced using the ~IMRPhenomPv2~ waveform model with mass-ratios spaced uniformly in log-space between $q=0.1$ and $q=1.0$.
+Each waveform was sampled at $\SI{4096}{\hertz}$ for a total system mass of $\SI{60}{\solMass}$. 
+The training data is plotted in figure ref:fig:heron:imr:testdata.
+
+\begin{figure}
+\includegraphics{figures/heron/imr-test-training.pdf}
+\caption[]{The training data used for the non-spinning demonstration abbr:gp surrogate model.}
+\label{fig:heron:imr:testdata}}
+\end{figure}
+
+The covariance structure for this model consists of two squared exponential kernels (one for each dimension, time and the natural logarithm of the mass ratio) and a constant kernel as a scale-factor:
+\begin{equation}
+\label{eq:heron:imr:covariance}
+K = \Con \times \SE^{(t,\log{q})}.
+\end{equation}
+A small amount of noise is added to the covariance function (with a mean of $1\ee{-6}$) to improve the numerical stability of the matrix inversion process.
+The hyperparameter values for each part of the kernel were determined by maximising the log-likelihood of the abbr:gp to complete the training of the model.
+
+A sample of a waveform generated from this model is plotted in figure ref:fig:heron:imr:test1, with the mean and variance of the abbr:gp plotted as a dashed grey line and shaded grey region respectively.
+Individual draws from the predictive posterior distribution are plotted as solid grey lines.
+
+\begin{figure}
+\includegraphics{figures/heron/imr-test-q0d8.pdf}
+\caption[]{One hundred draws from a abbr:gp trained off waveform data produced from the ~IMRPhenomPv2~ analytical waveform model. 
+These draws are produced for a non-spinning, non-equal-mass configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $\vec{q} = 0.8$), and each is shown shown as a light grey line.
+The output of ~IMRPhenomPv2~ is overlaid in red. 
+The mean draw from the abbr:gp is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. 
+\label{fig:heron:imr:test1}}
+\end{figure}
+
+As this is a two-dimensional model, it is possible to inspect the entire surface of the mean function produced by the surrogate model; this, along with the variance of the model prediction is plotted in figure ref:fig:heron:imr:testplane.
+
+\begin{figure}
+\includegraphics{figures/heron/imr-test-plane.pdf}
+\caption[Two dimensional surface plot of the non-spinning ~IMRPhenomPv2~-trained GPR surrogate]{The mean (left panel) and variance (right panel) of the abbr:gp surrogate model trained off ~IMRPhenomPv2~ over the $(t,q)$-plane.
+\label{fig:heron:imr:testplane}}
+\end{figure}
+
+In order to compare the output of the abbr:gp surrogate model to ~IMRPhenomPv2~ I calculate the match of the waveform generated by each model.
+The match is defined between two waveforms as 
+\begin{equation}
+\label{eq:heron:testing:match}
+  \mathcal{M}(h_{\text{model}}, h_{\text{ana}}) = \max_{t_0, \phi_0} \frac{ \langle h_{\text{model}}, h_{\text{ana}} \rangle}
+  {\sqrt{ \langle h_{\text{model}}, h_{\text{model}} \rangle \langle h_{\text{ana}}, h_{\text{ana}} \rangle}}.
+\end{equation}
+where $h_{\text{model}}$ and $h_{\text{ana}}$ are respectively the timeseries predicted by the model and the analytical approximant, $t_0$ and $\phi_0$ are the merger time and merger phase, and $\langle \cdot, \cdot \rangle$ is the noise-weighted inner product between two waveforms.
+This is defined as 
+\begin{equation}
+\label{eq:noiseweightedinner}
+  \langle a, b \rangle = \Re \int_{- \infty}^{\infty} \frac{ \tilde{a}^*(f) \tilde{b}(f) }{ S_n (f) } {\text{d}f}
+\end{equation}
+for $\tilde{a}$ and $\tilde{b}$ respectively the Fourier transforms of the timeseries $a$ and $b$, $S_n$ the amplitude spectral density of the noise, and $f$ the frequency.
+It will also be convenient at this point to define the /mismatch/ as $1-\mathcal{M}$.
+
+I calculate the (noise-free) match between the mean waveform from the abbr:gp surrogate and the waveform from ~IMRPhenomPv2~  for one-hundred mass ratios between $q=0.1$ and $q=1.0$ in figure ref:fig:heron:imr:match.
+
+\begin{figure}
+\includegraphics{figures/heron/imr-test-match.pdf}
+\caption[Matches between the ~IMRPhenomPv2~ derived waveforms and those from the GPR model]{The match between the waveforms produced by the ~IMRPhenomPv2~ and abbr:gp models across one hundred different mass ratios. The mean waveform from the abbr:gp model was used for this plot.
+\label{fig:heron:imr:match}}
+\end{figure}
+
+** A model with effective spin
+
+In order to extend the model from two dimensions (time and mass ratio), in this section I will introduce a model which additionally models systems with spin.
+For simplicity this spin is limited to parallel-spinning systems in which each component black hole has the same spin. 
+Additionally, for this demonstration, all of the waveforms used in training were from systems where the spin of the component black holes was parallel to the total angular momentum of the system.
+
+As with the non-spinning model in the previous section, the covariance structure for this model consists of squared exponential kernels, with two additional dimensions added for the $z$-component of each black hole's spin:
+\begin{equation}
+\label{eq:heron:spin:covariance}
+K = \Con \times \SE^{(t,\log{q},s_{1z},s_{2z})}.
+\end{equation}
+
+\begin{figure}
+\includegraphics{figures/heron/spin-test-training.pdf}
+\caption[Training waveforms with spin from ~IMRPhenomPv2~ used for the GPR model]{
+The training data for the spinning abbr:gp surrogate model, derived from the ~IMRPhenomPv2~ approximant model.
+Four different values of spin were used to produce this data, $s_{1z} = s_{2z} = \{0, 0.33, 0.66, 0.99\}$.
+\label{fig:heron:spin:training}}
+\end{figure}
+
+Again the model is trained with a Newtonian optimiser, and tested against the direct output of the ~IMRPhenomPv2~ model, by calculating the noise-free match over the parameter space. 
+The results of this comparison are displayed as the surface plot in figure ref:fig:heron:spin:matches.
+
+
+\begin{figure}
+\includegraphics{figures/heron/spin-test-ms-plane.pdf}
+\caption[Matches between ~IMRPhenomPv2~-derived waveforms and those from a GPR model which includes spin effects]{Matches across the mass-ratio and $s_{1z} = s_{2z}$ plane between the GPR model and waveforms generated directly from ~IMRPhenomPv2~.
+\label{fig:heron:spin:matches}}
+\end{figure}
+
+Using an analytical approximant model such as ~IMRhenomPv2~ grants the ability to generate training data on demand and at whim; this is a situation which is not possible when using abbr:nr waveforms. 
+In the following sections I will discuss the development of a model trained entirely off these waveforms, and the challenges which this approach posed. 
+
+
+* Training using numerical relativity waveforms
+
+The ~HERON~ model was created by training a abbr:gp regression model on data from the Georgia Tech abbr:bbh waveform catalogue cite:2016CQGra..33t4001J.
+It is designed as a proof-of-concept surrogate model which operates over the eight dimensions of the abbr:bbh parameter space, demonstrating both that abbr:gp regression is a useful technique for dealing with this high-dimensional problem, but also that training can be carried-out directly from abbr:nr data.
+
+The model is constructed using the $(2,2)$-mode of the $+$-polarisation of the strain data from these waveforms, which are produced using ~pycbc~, as described in section ref:sec:heron:nr-data.

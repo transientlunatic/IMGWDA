@@ -397,7 +397,7 @@ where $pa(x)$ represents the parental set of the variable $x$; that is, the set 
     p(\text{hypothesis} | \text{data}, I) \propto p( \text{data} | \text{hypothesis}) \times p(\text{hypothesis}, I)
   \end{equation}
 
-  where $p(\text{data} | \text{hypothesis})$ represents the likelihood of the data, in-effect the degree to which we trust the measurements, for example, and $p(\text{hypothesis}|I)$ represents the /prior/ probability, which represents the understanding of the probability of the hypothesis before the experiment was conducted. $p(\text{hypothesis} | \text{data}, I)$ is the /posterior/
+  where $p(\text{data} | \text{hypothesis})$ represents the likelihood; the probability that a given datum would be observed given the hypothesis, and $p(\text{hypothesis}|I)$ represents the /prior/ probability, which represents the understanding of the probability of the hypothesis before the experiment was conducted. $p(\text{hypothesis} | \text{data}, I)$ is the /posterior/
   probability of the hypothesis cite:skilling2006data.
 
   Bayesian inference can then be used as a powerful method for /model selection/, where the posterior probabilities of two competing
