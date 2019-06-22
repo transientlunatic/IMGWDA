@@ -1,0 +1,9 @@
+stages:
+  - build
+
+pdf:
+  image: containers.ligo.org/daniel-williams/thesis:master
+  script:
+    - pip install -r requirements.txt
+    - make pdf
+    - make pdf
