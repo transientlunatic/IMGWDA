@@ -24,7 +24,6 @@ decorator==4.0.11
 docutils==0.13.1
 dot2tex==2.9.0
 dqsegdb2==1.0.1
--e git+git@git.ligo.org:daniel-williams/elk.git@ab2b066f81d9c12c4fe00726309815ec0d24a860#egg=elk
 emcee==2.2.1
 entrypoints==0.2.2
 enum34==1.1.6
