@@ -30,13 +30,10 @@ build_image:
      #- docker login -u gitlab-ci-token -p $CI_JOB_TOKEN containers.ligo.org
      - docker build -t containers.ligo.org/daniel-williams/thesis:latest .
 
-
-
 build-image-master:
     stage: build
     script:
         - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
         - docker build --rm --no-cache -t $MASTER  ./
         - docker push $MASTER
-    only:
-        - docker
+    when: manual
