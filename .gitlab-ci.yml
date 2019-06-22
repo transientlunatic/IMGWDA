@@ -9,6 +9,7 @@ variables:
 
 pdf:
   image: $CI_REGISTRY_IMAGE:master
+  stage: build
   script:
     - pip install -r requirements.txt
     - make pdf
