@@ -18,18 +18,18 @@ pdf:
 
     
 build_image:
-   image: docker:stable
-   services:
-     - docker:dind
-   variables:
-     DOCKER_HOST: tcp://docker:2375
-     DOCKER_DRIVER: overlay2
-   stage: build
-   script:
-     - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token containers.ligo.org --password-stdin
-     #- docker login -u gitlab-ci-token -p $CI_JOB_TOKEN containers.ligo.org
-     - docker build -t containers.ligo.org/daniel-williams/thesis:latest .
-    when: manual
+  image: docker:stable
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+  stage: build
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token containers.ligo.org --password-stdin
+    #- docker login -u gitlab-ci-token -p $CI_JOB_TOKEN containers.ligo.org
+    - docker build -t containers.ligo.org/daniel-williams/thesis:latest .
+  when: manual
 
 build-image-master:
     stage: build
