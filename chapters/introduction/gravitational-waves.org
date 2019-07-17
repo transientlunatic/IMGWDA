@@ -214,7 +214,7 @@ In analogy to the characteristic strain from definition ref:def:intro:characteri
 \label{eq:intro:characteristic-noise}
 \left[ h_{\text{n}}(f) \right]^{2} = f S_{\text{n}}(f).
 \end{equation}
-As noted by cite:strain.conventions this allows the integration of the strain compared to the noise budget of a given detector to be estimated "by eye", when displayed on a log-log plot.
+As noted by cite:strain.conventions this allows the integration of the strain compared to the noise budget of a given detector to be estimated ``by eye'', when displayed on a log-log plot.
 
    The ability to detect a signal in a noisy data stream requires that the signal has sufficient power to be distinguished from the underlying noise.
 In abbr:gw analysis it is normal to express the strength of such a signal by reference to its abbr:snr.
@@ -223,8 +223,8 @@ This filter gives an expression for the abbr:snr in terms of the signal strain i
 
 \begin{equation}
 \label{eq:intro:snr}
-\rho^{2} = \int_{0}^{\infty} 4 \frac{ | \tilde{h}(f) |^{2} }{S_{\text{n}}(f)} 
-% = \left( \tilde{h}(f) | \tilde{h}(f)  \right) \dd{f}
+\rho^{2} = \int_{0}^{\infty} 4 \frac{ | \tilde{h}(f) |^{2} }{S_{\text{n}}(f)} \dd f
+% = \left( \tilde{h}(f) | \tilde{h}(f)  \right) \dd f
 \end{equation}
 
 
@@ -233,7 +233,7 @@ This filter gives an expression for the abbr:snr in terms of the signal strain i
 
 Despite Pirani's work simplifying the description of abpl:gw in general relativity, it would take until 1957 for his arguments to gain prominence.
 The Chapel Hill Conference of 1957 brought together around 40 physicists at the University of North Carolina, Chapel Hill, with discussions focussed around gravitation and general relativity. 
-It was during a session of this meeting chaired by Hermann Bondi that Richard Feynman is creditted with developing the "sticky bead" argument.
+It was during a session of this meeting chaired by Hermann Bondi that Richard Feynman is creditted with developing the ``sticky bead'' argument.
 Feynman used Pirani's formulation to argue that a device could be constructed which would measure the energy carried by a abbr:gw.
 
 Consider two beads on rigid rod, which are free to slide along the rod, experiencing some friction.
@@ -258,7 +258,7 @@ This ultimately lead to the development of modern cryogenic resonant bars, such 
 Laser interferometers, of which advanced gls:ligo is an implementation, were the result of a quest for both higher sensitivities and greater bandwidth. 
 The possibility of using a Michelson interferometer to measure the distance between test masses in order to detect gravitational radiation originated in Moscow\cite{1963JETP...16..433G} in 1963, and again in 1966 cite:1966SvPhU...8..513B.
 
-Robert Forward, a former student of Weber, who had been involved in the construction of the original Weber Bar, was the first to work on the development of an interferometric detector, at Hughes Research Laboratory in the early 1970s, with the development of a "laser transducer" cite:1971ApOpt..10.2495M in 1971.
+Robert Forward, a former student of Weber, who had been involved in the construction of the original Weber Bar, was the first to work on the development of an interferometric detector, at Hughes Research Laboratory in the early 1970s, with the development of a ``laser transducer'' cite:1971ApOpt..10.2495M in 1971.
 This lead to the development of an 8.5-metre detector cite:1978PhRvD..17..379F, which failed to show any signal correlation with the bar detectors at Argonne, Glasgow, Friscati, or Maryland.
 
 This approach was followed early-on by Scottish and German groups as a means of improving on resonant bar sensitivities, with a 3-meter and later a 30-meter prototype detector constructed at Garching in the late 1970s cite:1979JPhE...12.1043B,1988PhRvD..38..423S which used optical delay lines, and a 1-meter prototype, and later a 10-meter instrument were built at Glasgow in the early 1980s cite:1979RSPSA.368...11D,1995RScI...66.4447R, which used Fabry-Perot cavities. 
@@ -297,7 +297,7 @@ The gls:lisa detector will be sensitive in the milli-hertz region of the gravita
 A Japanese proposal, gls:decigo cite:2011CQGra..28i4011K, would observe in the decihertz regime using a complex arrangement of six spacecraft in a star-of-David configuration. 
 There are also plans for more sensitive detectors on the ground. 
 The Einstein telescope is a European proposal for an underground kilometre-scale detector in a triangular configuration, using a
-"xylophone" configuration to improve broadband sensitivity compared to the second-generation of detectors; its scientific aims include providing more sensitive tests of general relativity than are possible with the advanced detectors cite:2012CQGra..29l4013S. 
+``xylophone'' configuration to improve broadband sensitivity compared to the second-generation of detectors; its scientific aims include providing more sensitive tests of general relativity than are possible with the advanced detectors cite:2012CQGra..29l4013S. 
 There are also proposals for upgrades of the advanced detectors to use squeezed light to reduce quantum noise cite:2015PhRvD..91f2005M, the use of speedmeters cite:2014MUPB...69..519V,2002gr.qc....11088K, or atom interferometry cite:2013PhRvL.110q1102G,2016PhRvD..93b1101C,2008PhRvD..78l2002D.
 
 At the very low-frequency limit of the gravitational wave spectrum the bulk of detection efforts rotate around pulsar timing arrays, which promise the detection of gravitational waves by precision measurements of pulse arrival times from a number of pulsars distributed across the sky. 
@@ -573,7 +573,7 @@ Test-mass mass   & $\SI{40}{\kiogram}$     \\
 \end{table}
 
 [fn:lho2k] With the exception of the 2-kilometre detector at the gls:lho site, which was not upgraded; the unusued infrastructure from this detector is earmarked for a future gls:ligo detector in India.
-[fn:o1] The standard nomenclature for advanced-era observing runs is of the form "O<number>", so the first observing run was "O1". These are independent of the actual detectors involved in the run, so when advanced gls:virgo started observations concurrently with the advanced gls:ligo detectors during its second observing run, the run was known universally as "O2".
+[fn:o1] The standard nomenclature for advanced-era observing runs is of the form ``O<number>'', so the first observing run was ``O1''. These are independent of the actual detectors involved in the run, so when advanced gls:virgo started observations concurrently with the advanced gls:ligo detectors during its second observing run, the run was known universally as ``O2''.
 
 *** Advanced Virgo
     :PROPERTIES:
@@ -648,7 +648,7 @@ The gls:tianqin mission proposal cite:2016CQGra..33c5010L uses such a technique,
     This leaves a region which is unobserved, centred approximately around $\SI{10}{\hertz}$, which overlaps with less sensitive regions of the gls:lisa and ground-based detectors passbands.
 
     A gls:decigo cluster will consist of three spacecraft in a triangular configuration, forming three gls:fabry-perot-cavity cavities with lengths around $\SI{1000}{\kilo\meter}$. 
-Four of these clusters, placed in heliocentric orbits, will form the entire observatory constellation, with two of the clusters arranged in a nearly-overlapping "Star-of-David" geometrical configuration cite:2017JPhCS.840a2010S.
+Four of these clusters, placed in heliocentric orbits, will form the entire observatory constellation, with two of the clusters arranged in a nearly-overlapping ``Star-of-David'' geometrical configuration cite:2017JPhCS.840a2010S.
 
     
 
@@ -884,7 +884,7 @@ These can include the movement of clouds and aircraft in the vicinity of the det
  
 In addition to the sources of instrumental noise which are continuously present in interferometer data, the advanced era detectors suffer from transient non-Gaussian noise events which are known as gls:glitch events.
 These can be caused by environmental phenomena, such as lightning strikes in the vicinity of the detector, or due to instrumental effects, such as fluctuations in laser power, or reflections within the beam tube. 
-Due to their transient nature these noise events are a particular difficulty for data analysis techniques designed to identify signals from both abbr:cbc systems and so-called "burst" events (discussed in section ref:sec:sources:burst).
+Due to their transient nature these noise events are a particular difficulty for data analysis techniques designed to identify signals from both abbr:cbc systems and so-called ``burst'' events (discussed in section ref:sec:sources:burst).
 There are two major ways of addressing this problem: identifying the cause of the gls:glitch, and making changes to the detector to reduce or eliminate their occurrence; or to produce a /veto/, a specific datum which identifies time periods where glitching is likely due to a combination of measurements from other data sources.
 
 In order to identify the cause of any given glitch it is normally necessary to classify it; different glitch-causing phenomena will produce events with specific time-frequency morphologies. 
@@ -1048,6 +1048,9 @@ return [x.split(',') for x in data_gw1.to_csv().split('\n')]
 * Future observing scenarios
   \label{sec:detections:scenarios}
 
+
+
+The gravitational wave community are in the fortunate position of the field having arrived in both to the so-called /advanced/-era, in which interferometric detectors sensitivity has increased sufficiently to make observations plausible, but also the /observational/-era; the perfect coincidence of these two epochs is surely one of the less believable twists in the plot of scientific history. As a result most of this work will consider the state of gravitational wave detection in the observational era, starting in the early observational period: the first two observing runs of the advanced gls:ligo detectors, and the first observing run of the advanced gls:virgo detector; looking ahead to future observing runs involving a larger network of gravitational wave detectors, including gls:kagra and an additional advanced gls:ligo detector located in India.
 \begin{table}
 \centering
 \begin{tabular}{llll}
@@ -1060,16 +1063,11 @@ return [x.split(',') for x in data_gw1.to_csv().split('\n')]
    Design & 190         & 125         & 140         \\
 \bottomrule
 \end{tabular}
-
 \caption[Anticipated sensitivity scenarios for the advanced LIGO, Virgo, and KAGRA detectors.]
-{The anticipated sensitivities of the various second-generation detectors throughout their development, measured in terms of the \gls{bns} \gls{horizon-distance}, which represents the average maximal distance at which the signal from a binary neutron star coalesence could be observed. This table was adapted from the information in \cite2018LRR....21....3A}.
-\label{ref:tab:rangescenarios}
+{The anticipated sensitivities of the various second-generation detectors throughout their development, measured in terms of the \gls{bns} \gls{horizon-distance}, which represents the average maximal distance at which the signal from a binary neutron star coalesence could be observed. This table was adapted from the information in \cite{2018LRR....21....3A}.
+\label{ref:tab:intro:rangescenarios}
 }
-
 \end{table}
-
-The gravitational wave community are in the fortunate position of the field having arrived in both to the so-called /advanced/-era, in which interferometric detectors sensitivity has increased sufficiently to make observations plausible, but also the /observational/-era; the perfect coincidence of these two epochs is surely one of the less believable twists in the plot of scientific history. As a result most of this work will consider the state of gravitational wave detection in the observational era, starting in the early observational period: the first two observing runs of the advanced gls:ligo detectors, and the first observing run of the advanced gls:virgo detector; looking ahead to future observing runs involving a larger network of gravitational wave detectors, including gls:kagra and an additional advanced gls:ligo detector located in India.
-
 The development of the advanced detectors is still on-going; sensitivity improvements are normally made incrementally during periods when the detecors are taken offline for extended periods of time. 
 This phased approach means that the sensitivity of the detectors, and consequently the detector network, will improve in subsequent observing runs.
 In table ref:tab:intro:rangescenarios these are summarised; the /early/ scenario equates approximately to the O1 run for advanced gls:ligo, and the O2 run for advanced gls:virgo. 
