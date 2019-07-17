@@ -24,17 +24,17 @@ figsize = (figwidth, figheight)
 
 ssp_legend = {'family': 'Source Code Pro',
               'weight': 'normal',
-              'size': 8,
+              'size': 9,
 }
 
 lato = {'family': 'Lato',
         'color':  'black',
         'weight': 'light',
-        'size': 10,
+        'size': 11,
 }
 ssp_ticks = {'family': 'Source Code Pro',
              'weight': 'normal',
-             'size': 6,
+             'size': 9,
 }
 
 ticks_font = font_manager.FontProperties(**ssp_ticks)
