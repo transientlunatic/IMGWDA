@@ -115,7 +115,7 @@ numerous in gls:lisa results cite:2013GWN.....6....4A that entirely new statisti
 needed to process the observations, and to allow observations of other
 phenomena to be made in their background.
 
-gls:smbbh are believed to collide and merge as part of the merging processes of galaxies. 
+Gls:smbbh are believed to collide and merge as part of the merging processes of galaxies. 
 Again these binaries should produce signals within the passband of gls:lisa cite:2012CQGra..29l4016A, 
 and should be so spectacuarly strong that they are visible in the gls:lisa
 data without the \emph{matched filtering} techniques which are required to extract other signals from the data cite:2009LRR....12....2S. 

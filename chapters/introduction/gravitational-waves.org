@@ -1,10 +1,5 @@
 #+COLUMNS: %50ITEM %custom_id
 
-# \chapterprecis{\Glspl{gw} were perhaps the last of the
-#   predictions of Einstein's General Theory of Relativity to be
-#   observed; their detection was the catalyst for the beginning of a
-#   new era of astrophysics}
-
 # \epigraph{I guess we need to do the detection checklist...}{\textbf{Sergey Klimencko}, \emph{Internal LSC communication}, 14 September 2015}
 
 14 September 2015 will likely be remembered as one of the most significant in the history of astronomy, and of astrophysics. 
@@ -27,11 +22,11 @@ In addition a primer on the conventions used in the description of gravitational
 
 [fn:lvt] The designation ``LVT'', or ``abbr:ligo / gls:virgo transient'' was used during the first two observing runs for events which were significant, but which did not surpass a threshold of $5\sigma$ for that significance.
 
-* Gravitational Waves and General Relativity
+* Gravitational waves and general relativity
 #+NAME: sec:general-relativity
 \label{sec:gw}
 
-Gravitational waves are one of the predictions of Einstein's 1915 Theory of General Relativity cite:1915SPAW.......844E, with the first theoretical prediction of their existence being proposed by Einstein in 1916 cite:1937FrInJ.223...43E,1918SPAW.......154E, less than a year after the publication of the general theory.
+Gravitational waves are one of the predictions of Einstein's 1915 General Theory of Relativity cite:1915SPAW.......844E, with the first theoretical prediction of their existence being proposed by Einstein in 1916 cite:1937FrInJ.223...43E,1918SPAW.......154E, less than a year after the publication of the general theory.
 Einstein's original wave solution proposes three different forms of gravitational wave, which Hermann Weyl denoted  /longitudinal-longitudinal/, /transverse-longitudinal/, and /transverse-transverse/ waves cite:1970rzmv.book.....W.
 However, the approximation made by Einstein, to find the weak-field limit of the gravitational waves, was considered debatable.
 In 1922 Arthur Eddington showed that two of the wave solutions were artifacts of the choice of coordinate system cite:1922RSPSA.102..268E, and threw the existence of transverse-transverse waves into doubt.
@@ -48,23 +43,25 @@ The confused situation with the existence of abpl:gw dogged the subject for seve
    :END:
    \label{sec:gw:derivation}
 
-The behaviour of gravitational fields in the presence of mass is modelled, in General Relativity, by the gls:einstein-field-equations,
+The behaviour of gravitational fields in the presence of mass is modelled, in general relativity, by the gls:einstein-field-equations,
 
 \begin{equation}
 \label{eq:einsteinfieldequations}
- R_{\mu \nu} - \frac{1}{2} R g_{\mu \nu} = \frac{8 \pi G}{c^{4}} T_{\mu \nu},
+ R_{\mu \nu} - \frac{1}{2} R g_{\mu \nu} = \frac{8 \pi G}{c^{4}} T_{\mu \nu}.
 \end{equation}
 
-for $R_{\mu \nu}$ is the gls:ricci-tensor, which represents the amount by which a sphere is distorted at a point in spacetime [fn:ricci-tensor], $R$ the gls:ricci-scalar [fn:ricci-scalar], the trace of the Ricci tensor, $g_{\mu \nu}$ is the metric tensor, which describes the local geometry of spacetime at any given point, and $T_{\mu \nu}$ the stress-energy tensor, which encapsulates the density and time-variation of energy and momentum at any given point in spacetime.
+Here $R_{\mu \nu}$ is the gls:ricci-tensor, which represents the amount by which a sphere is distorted at a point in spacetime [fn:ricci-tensor], $R$ the gls:ricci-scalar [fn:ricci-scalar], the trace of the Ricci tensor, $g_{\mu \nu}$ is the metric tensor, which describes the local geometry of spacetime at any given point, and $T_{\mu \nu}$ the stress-energy tensor, which encapsulates the density and time-variation of energy and momentum at any given point in spacetime.
 
-Contracting equation ref:eq:einsteinfieldequations with a timelike unit vector allows a reduction to a situation with a defined direction of time, with this contraction leading to the revalation that spacetime curvature, $R$, is produced by the mass-energy density, since the contraction of a timelike vector with the stress-energy tensor returns simply the mass-energy density, $\rho$, in a dust, we find
+Contracting equation ref:eq:einsteinfieldequations with a timelike unit vector allows a reduction to a situation with a defined direction of time.
+This contraction leads to the revelation that spacetime curvature, $R$, is produced by the mass-energy density, since the contraction of a timelike vector with the stress-energy tensor returns simply the mass-energy density, $\rho$, in a dust.
+We then find
 \[ R = - 4 \pi G \rho \]
-leading to the second-half of the famous aphorism,
+which leads to the second-half of the famous aphorism,
 #+BEGIN_quote
 ``Spacetime tells matter how to move; matter tells spacetime how to curve.'' ---John Archibald Wheeler cite:geonsblackholes
 #+END_quote
 
-Despite their apparent simplicity the Einstein Field Equations are highly non-linear in the metric, $\ten{g}$, and only a few exact solutions are known. While some of these solutions, which include the Schwarzchild solution (for the behaviour of spacetime close to a non-spinning singularity), and the Kerr solution (for the spacetime close to a rotating singularity) are exact and tractable, the majority of scenarios lead to non-analytical solutions which must be explored numerically. 
+Despite their apparent simplicity the Einstein Field Equations are highly non-linear in the metric, $g_{\mu \nu}$, and only a few exact solutions are known. While some of these solutions, which include the Schwarzchild solution (for the behaviour of spacetime close to a non-spinning singularity), and the Kerr solution (for the spacetime close to a rotating singularity) are exact and tractable, the majority of scenarios lead to non-analytical solutions which must be explored numerically. 
 While the Einstein equations provide this valuable insight into the behaviour of a static system, it is more often of interest to consider dynamic systems, and the time-evolution of the system.
 One approach to dealing with the non-linearity of the field equations is to ``linearise'' the theory, by assuming first a known solution of the field equations, $\eta_{\mu\nu}$ and then producing a small perturbation on that solution, $h_{\mu\nu}$. This approach is introduced in, for example, cite:mtw, and provided that the size of the perturbation is sufficiently small, provides a means of investigating the model in ``weak-field'' scenarios. Such an approach is suitable for the study of the evolution of the weak-field. 
 The metric in such a scenario takes the form 
@@ -73,6 +70,9 @@ The metric in such a scenario takes the form
 g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}.
 \end{equation}
 Allowing $\bar{h} \gets h$ representing a rescaling [fn:metric-rescale] of the perturbation, $\bar{h} = h_{\mu \nu} - 1/2\, \eta_{\mu \nu} h$. We can then make a choice of gauge, the Lorentz (or Hilbert) gauge, by specifying $\bar{h}\indices{^{\mu\nu}_{,\nu}} = 0$.
+
+For convenience it is normal to work in ``geometrised units'', where the speed of light, $c = 1$. 
+Doing so does, however, require care to include a $c^{-1}$ factor in the value of $x^0$ when converting to natural units.
 
 The derivative of the metric then describes the propagation of the perturbation,
 \begin{equation}
@@ -85,7 +85,8 @@ This has plane-wave solutions of the form
    \label{eq:planewavegw}
    \barh = \real \left[ A_{\mu\nu} \exp\left(i k_{\alpha}x^{\alpha}\right) \right]
 \end{equation}
-for a null wavevector, $\vec{k}$, orthonormal to an amplitude $\ten{A}$. Provided a transverse, traceless [fn:tt-gauge] gauge is chosen, the amplitude tensor takes the form 
+for a null wavevector, $\vec{k}$, orthonormal to an amplitude $\ten{A}$. 
+Provided a transverse, traceless[fn:tt-gauge] gauge is chosen, the amplitude tensor takes the form 
 \begin{equation}
 \label{eq:ttamplitudetensor}
 \ten{A} = 
@@ -98,10 +99,10 @@ for a null wavevector, $\vec{k}$, orthonormal to an amplitude $\ten{A}$. Provide
 \end{equation}
 
 It is clear from the form of the plane-wave solution, in equation ref:eq:planewavegw that a wave propagates in spacetime in a manner quite different from a wave on, for example, the surface of a loch: rather than a vector perturbation, a abbr:gw propagates as a tensoric perturbation. The conventional method used to visualise this effect involves considering the effect of a gravitational wave traveling perpendicular to a ring of test particles. 
-For such a wave, propagating along the $z$-axis, in the transverse-traceless gauge, the only non-vanishing components of the strain are
-\[ h_{xx} = - h_{yy} = \real[ A_{xx} \exp(- \ii \omega (t-z) ], \]
+For such a wave, propagating along the $z$-axis, in the transverse-traceless gauge, the only non-vanishing components of the strain are (returning to natural units by including $c$ as a factor) 
+\[ h_{xx} = - h_{yy} = \real[ A_{xx} \exp(- \ii \omega (ct-z) ], \]
 and 
-\[ h_{xy} = h_{yx} = \real[ A_{xy} \exp(- \ii \omega(t-z) ]. \]
+\[ h_{xy} = h_{yx} = \real[ A_{xy} \exp(- \ii \omega(ct-z) ]. \]
 The propagation can then be desccribed as the superposition of two linearly-polarised components; the unit polarisation tensors can be derived from the coordinate basis as 
 \begin{align}
 \label{eq:gwpolarisationbasis}
@@ -119,7 +120,7 @@ This behaviour is depicted as a cartoon in figure ref:fig:intro:gw:prop-plus.
        \draw [domain=0:360, thick] plot ( {\w*\i +0.5*(cos(\x)*(1+0.4*cos(\a))) }, {0.5*(sin(\x)*(1-0.4*cos(\a)))});
     };
 \end{tikzpicture}
-\caption{The effect of a $+$-polarised abbr:gw on a circle of test particles as it propogates through the page (orthogonal to the ring). Time progresses horizontally along the $x$-axis from left to right.
+\caption[The effect of a propagating $+$-polarised gravitational wave on a ring of test particles.]{The effect of a $+$-polarised abbr:gw on a circle of test particles as it propogates through the page (orthogonal to the ring). Time progresses horizontally along the $x$-axis from left to right.
 \label{fig:intro:gw:prop-plus}}
 \end{figure}
 
@@ -133,22 +134,23 @@ Equivalently, the $\times$-polarisation produces a deformation rotated $45^{\cir
         \draw [domain=0:360, thick] plot ({\w*\i + cos(\x) + 0.25*sin(\x)*0.5*cos(\a) }, {sin(\x) +0.25*cos(\x)*0.5*cos(\a) });
      };
  \end{tikzpicture}
-\caption{The effect of a $\times$-polarised abbr:gw on a circle of test particles as it propogates through the page (orthogonal to the ring).  Time progresses horizontally along the $x$-axis from left to right.
+\caption[The effect of a propagating $\times$-polarised gravitational wave on a ring of test particles.]{The effect of a $\times$-polarised abbr:gw on a circle of test particles as it propogates through the page (orthogonal to the ring).  Time progresses horizontally along the $x$-axis from left to right.
 \label{fig:intro:gw:prop-cross}}
 \end{figure}
-Further, the behaviour of ``strong-field gravity'', which is essential to understanding the production of gravitational waves must be probed using this method. 
-As a result both the analysis of gravitational waves, and their astrophysical interpretation, relies on the ability to solve the field equations numerically.
 
 
-\begin{equation}
-\label{eq:intro:gr:mass-quadrupole}
-Q_{jk} = \int \rho x_k x_k \frac{\dd^3}{\dd x^3}
-\end{equation}
-and the gravitational wave is described by the three-tensor
+The behaviour of ``strong-field gravity'', which is essential to understanding the production of abpl:gw can only be practically probed using observed abpl:gw from strong-field sources, such as abpl:bbh coalescences.
+Systems such as these, which involve an accelerating mass, are capable of producing abpl:gw according to the quadrupole formula, with the gravitational wave described by the three-tensor
 \begin{equation}
 \label{eq:intro:gr:quadrupole2strain}
-  h_{jk} = \frac{2}{r} \frac{\dd^2 Q_{jk}}{\dd t^2}
+  h_{jk} = \frac{2G}{r} \frac{\dd^2 Q_{jk}}{\dd t^2}
 \end{equation}
+where $G$ is the gravitational constant, and $Q_{jk}$, the moment of inertia tensor, is defined as 
+\begin{equation}
+\label{eq:intro:gr:mass-quadrupole}
+Q_{jk} = \int \dd^3 x \rho(\vec{x}) \left( x_i x_j - \frac{1}{3} r^2 \delta_{ij} \right)
+\end{equation}
+for a mass density $\rho$, and coordinates $x_j$ and $x_k$.
 
 
 [fn:ricci-tensor] More precisely, the gls:ricci-tensor, which is the trace of the Riemann tensor, describes how the distance between the points within a volume varies as the entire volume is parallel-transported over a curved manifold, compared to the same movement over a flat manifold.
@@ -157,7 +159,7 @@ and the gravitational wave is described by the three-tensor
 
 [fn:metric-rescale] This rescaling of the metric has no physical consequence, but substanitally simplifies the number of quantities composing the Einstein tensor.
 
-[fn:tt-gauge] Explain the TT gauge here.
+[fn:tt-gauge] The transverse-traceless gauge is convenient, since the metric perturbation is perpendicular to the wavevector in this gauge.
 
 
 * Strain
@@ -166,12 +168,12 @@ and the gravitational wave is described by the three-tensor
   :END:
   \label{sec:gw:strain}
 
-  The propagation of a gravitational wave will cause a relative displacement between free test masses in spacetime. As a result, a gravitational wave will produce a relative strain, perturbing the normal metric. In the far-field approximation the metric, $g_{\mu\nu}$ can thus be described 
+  The propagation of a gravitational wave will cause a relative displacement between test masses in spacetime. As a result, a gravitational wave will produce a relative strain, perturbing the normal metric. In the far-field approximation the metric, $g_{\mu\nu}$, can thus be described by
 \[
 g_{\mu \nu} = \eta_{\mu \nu} + h_{\mu \nu},
-\], as first defined in equation ref:eq:linearised-metric, with the strain, $h_{\mu\nu}$ perturbing the underlying (potentially flat) metric $\eta_{\mu\nu}$.
+\] as first defined in equation ref:eq:linearised-metric, with the strain, $h_{\mu\nu}$ perturbing the underlying (potentially flat) metric $\eta_{\mu\nu}$.
 
-The strain, as measured by a gravitational wave detector, can have two polarisation states, the $+$ state and the $\times$-polarisation state, which combine linearly,
+The strain, as measured by a gravitational wave detector, can have two polarisation states, the $+$ state and the $\times$-polarisation state, which combine linearly, so that
 \begin{equation}
 \label{eq:gw-polarisations-strain}
 h = A_{+} h_{+} + A_{\times} h_{\times}.
@@ -189,9 +191,11 @@ A similar quantity, the characteristic strain, is intended to account for integr
 #+ATTR_LATEX: :options [Characteristic strain]
 #+BEGIN_definition
 \label{def:intro:characteristic-strain}
+The characteristic strain is a quantity which is intended to account for the effect of observing an inspiralling signal over the full period of the inspiral, thus integrating over a number of cycles of the signal. 
+For a source with strain $\tilde{h}(f)$ as a function of frequency $f$ it is defined as
 \begin{equation}
 \label{eq:intro:characteristic-strain}
- [h_{\text{c}}(f)]^{2} = 4 f^{2} \left| \tilde{h}(f) \right|^{2}
+ [h_{\text{c}}(f)]^{2} = 4 f^{2} \left| \tilde{h}(f) \right|^{2}.
 \end{equation}
 #+END_definition
 
@@ -201,10 +205,9 @@ such that
 \label{eq:intro:psd}
 \langle \tilde{n}(f) \tilde{n}^{*}(f) \rangle = \frac{1}{2} \delta(f - f') S_{\text{n}}(f)
 \end{equation}
-where $\tilde{n}(f)$ is the Fourier transform of the time-domain noise measurement $n(t)$, $f$ is the frequency, and $\delta$ is the Kronecker delta function.
-In order to achieve a good estimate of the abbr:psd many different instances of the noise power must be averaged (which is represented in equation ref:eq:intro:psd as the angle bracket notation $\langle \tilde{n}(f) \tilde{n}^{*}(f) \rangle$. 
-This representation of the noise makes two assumptions about its characteristics: first, that it is Gaussian, and second, that it is stationary. 
-In reality, neither of these assumptions are strictly true, but they are reasonable approximations for many applications.
+where $\tilde{n}(f)$ is the Fourier transform of the time-domain noise measurement $n(t)$, $f$ is the frequency, and $\delta$ is the Kronecker delta function. The angle bracket notation $\langle \tilde{n}(f) \tilde{n}^{*}(f) \rangle$ represents an average over many instances of the noise power, which is required in order to achieve a good estimate of the abbr:psd.
+This representation of the noise makes the assumption that it is stationary. 
+In reality, this is not strictly true, but they are reasonable approximations for many applications; non-stationarities in the noise can become a problem for abbr:gw detection algorithms however, and these are discussed in more detail in section ref:sec:detectors:noise:glitches.
 
 In analogy to the characteristic strain from definition ref:def:intro:characteristic-strain, we can define the /characteristic noise/:
 \begin{equation}
@@ -221,7 +224,7 @@ This filter gives an expression for the abbr:snr in terms of the signal strain i
 \begin{equation}
 \label{eq:intro:snr}
 \rho^{2} = \int_{0}^{\infty} 4 \frac{ | \tilde{h}(f) |^{2} }{S_{\text{n}}(f)} 
-% = \left( \tilde{h}(f) | \tilde{h}(f)  \right)
+% = \left( \tilde{h}(f) | \tilde{h}(f)  \right) \dd{f}
 \end{equation}
 
 
@@ -270,7 +273,8 @@ These detectors were operated during the 2000s, and while none of them made a de
 
 \begin{figure}
 \includegraphics{figures/intro/first-gen-asd.pdf}
-\caption{The abpl:asd for the first generation of large-scale interferometers: initial gls:ligo (red), gls:virgo (blue), gls:tama (grey), and GEO600 (purple). \label{fig:detectors:interferometers:firstgen}}
+\caption[The ASDs of the first generation of large-scale interferometers]{The abpl:asd for the first generation of large-scale interferometers: initial gls:ligo (red), and gls:virgo (blue).
+\label{fig:detectors:interferometers:firstgen}}
 \end{figure}
 
 Figure ref:fig:detectors:interferometers:firstgen is a plot of the noise abbr:asd of the first generation of interferometric detectors, in which it is clear that these detectors have considerable advantages not only in senstivity compared to resonant bar detectors, but can also observe over a much greater bandwidth.
@@ -284,7 +288,7 @@ Figure ref:fig:detectors:aligo-asd depicts the anticipated abb:asd of the advanc
 The second-generation detectors, specifically the two advanced gls:ligo detectors were responsible for the first discovery of gravitational waves cite:2016PhRvL.116m1103A, and have successfully demonstrated the ability of interferometry to observe the gravitational universe. 
 This said, future improvements in sensitivity are highly desirable, but are likely to be even more technically challenging than the transition from resonant bars to laser interferometers. 
 
-In order to improve the bandwidth of detectors a location free of /Newtonian noise/ (see ref:sec:detectors:noise:newtonian) must be found, which ultimately mandates the placement of an interferometer in space.
+In order to improve the bandwidth of detectors a location of minimal /Newtonian noise/ (see ref:sec:detectors:noise:newtonian), which results from variation in the local gravitational field, must be found, which ultimately mandates the placement of an interferometer in space.
 The earliest proposals for a space-based detector came in the form of gls:lagos, which originated as a concept at the University of Colorado under Jim Faller and Peter Bender cite:1989AdSpR...9..107F. 
 These proposals would develop into gls:lisa cite:2013GWN.....6....4A, which is likely to launch in the 2030s.
 The technology demonstration mission for gls:lisa, /LISA Pathfinder/ was launched in December 2015, and its main mission was completed successfully in early 2016\cite{2016PhRvL.116w1101A}. 
@@ -303,7 +307,7 @@ There are a number of collaborations actively producing pulsar observations with
 # The cutting-edge of current ground-based interferometers are the twin Advanced LIGO detectors cite:2015CQGra..32g4001L located in Hanford, WA, USA, and Livingston, LA, USA. 
 # These interferometers are Michelson interferometers with a large number of additional components, which allow detection of differential changes in their arm lengths (strains) on the order of $10^{-22}$. 
 
-** Resonant Bar Detectors
+** Resonant bar detectors
    :PROPERTIES:
    :CUSTOM_ID: sec:detectors:resonant-bar
    :END:
@@ -311,7 +315,7 @@ There are a number of collaborations actively producing pulsar observations with
 
    The original abbr:gw detectors developed by Weber in the 1960s were an early example of a category of detector now known as a /resonant bar/.
    These detectors work on the principal that variations in the gls:riemann-tensor will drive oscillations between two masses. 
-   If the Riemann tensor inside a crystal varies, the stress tensor of the crystal will also vary, and if the crystal is piezoelectric, this will in turn produce a changing polarisation in the material.
+   If the Riemann tensor inside a crystal varies, the stress tensor of the crystal will also vary, and if the crystal is piezoelectric, this will in turn produce a change in the polarisation in the material.
    In Weber's earliest design cite:PhysRev.117.306 the change in the electric field in a piezoelectric crystal would be monitored through changes in the voltage across the crystal with a low-noise radio receiver.
    Such an arrangement relied on a single instrument; the rotation of the Earth would produce a variation in the strength of what was expected to be a continuous gravitational wave signal measured by the instrument, allowing its direction to be determined. 
  Alternatively Weber proposed an arrangement of two instruments with cross-correlated outputs which he imagined would remove the need for diurnal variation in this process. 
@@ -330,7 +334,7 @@ There are a number of collaborations actively producing pulsar observations with
 
  # *could also mention TOBAR here, if you feel like adding more stuff*
 
-** Interferometric Detectors 
+** Interferometric detectors 
    :PROPERTIES:
    :CUSTOM_ID: sec:detectors:interferometric
    :END:
@@ -347,7 +351,7 @@ There are a number of collaborations actively producing pulsar observations with
     \begin{equation}
     \label{eq:detectors:interferometric:theory:arrival-times-gw}
     \frac{\dd t_f}{\dd t} = 1 + \frac{1}{2} (1 + \cos \theta) \left\{ 
-	h_+\left( t + [1- \cos \theta ] L \right) - h_+(t) 
+	h_+\left( t + [1- \cos \theta ] L \right) - h_+(t_f) 
       \right\}
     \end{equation}
     where $\theta$ is the angle separating the detector beam and the gravitational wave plane, and $L$ is the proper distance separating the clocks when no gravitational wave is present.
@@ -403,7 +407,7 @@ There are a number of collaborations actively producing pulsar observations with
    \end{tikzpicture}
  \end{minipage}
 
- \caption{\textbf{Left}: A simple Michelson interferometer, composed of a light source (black box), a beam splitter (heavy black line), and two end mirrors (white boxes). 
+ \caption[Diagrams of the various components of a dual-recycled cavity-enhanced Michelson interferometer.]{\textbf{Left}: A simple Michelson interferometer, composed of a light source (black box), a beam splitter (heavy black line), and two end mirrors (white boxes). 
  \textbf{Center}: A Michelson interferometer with an additional power recycling mirror, placed between the beam source and the beam splitter. 
  \textbf{Right}: A Michelson interferometer with a signal recycling mirror, placed between the beam splitter and the output port.  \label{fig:detectors:michelson}}
  \end{figure}
@@ -417,7 +421,7 @@ There are a number of collaborations actively producing pulsar observations with
  This means that we can consider an interferometer with two arms to consist of one arm which acts as the time standard, against which the variations of the other can be measured. 
  However, such an arrangement also means that if the effect of a gravitational wave is the same on both arms it will not be detectable, but will be most detectable if it only one arm is affected. 
 
-*** Power Recycling
+*** Power recycling
     :PROPERTIES:
     :custom_id: sec:detectors:power-recycling
     :END:
@@ -428,7 +432,7 @@ This allows a less powerful laser to be used as the input for the interferometer
 
 
  #+NAME: sec:detectors:signal-recycling
-*** Signal Recycling
+*** Signal recycling
     :PROPERTIES:
     :custom_id: sec:detectors:signal-recycling
     :END:
@@ -441,7 +445,7 @@ This allows a less powerful laser to be used as the input for the interferometer
 
  To perform signal recycling a mirror is added between the abbr:bs and the readout port of the interferometer, with this configuration illustrated in the right panel of figure ref:fig:detectors:michelson.
 
-*** Fabry-Perot Cavities
+*** Fabry-Perot cavities
     :PROPERTIES:
     :CUSTOM_ID: sec:detectors:fabryperot
     :END:
@@ -465,7 +469,7 @@ This allows a less powerful laser to be used as the input for the interferometer
     The arrangement described in section ref:sec:detectors:interferometric:michelson, whereby one arm is used as the timing reference causes the detector to be incapable of detecting signals if both arms are affected equally by a abbr:gw.
     The angle between the propagation of the abbr:gw and the detector (in addition to the polarisation of the abbr:gw) will determine the effect on each arm.
     This results in an interferometric detector having a varying sensitivity to sources across the sky, which is conventionally treated as an antenna pattern, in analogy to the similar concept in radio astronomy.
-    For a abbr:gw approaching the detector from a position $(\alpha, \delta)$ on the sky these patterns for the $+$- and $\times$-polarisations, $F_{+}$ and $F_{\times}$, will be 
+    For a abbr:gw approaching the detector from an azimuth (relative to one of the arms) and altitude (relative to the plane of the detector), $(\alpha, \delta)$ on the sky these patterns for the $+$- and $\times$-polarisations, $F_{+}$ and $F_{\times}$, will be 
     \begin{align}
     \label{eq:detectors:antennapattern:plus}
     F_{+} &= \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\alpha \cos 2\psi - \sin\delta\sin 2 \alpha \sin 2 \psi \\
@@ -476,7 +480,10 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
     
     \begin{figure}
     \includegraphics{figures/intro/aligo-antenna-pattern.pdf}
-    \caption{The antenna pattern, in response to $+$-polarised gravitational waves, of a two-armed interferometric detector with a $90^{\circ}$ arm separation.     \label{fig:detectors:interferometers:antennapattern}}
+    \caption[The antenna pattern for an interferometric gravitational wave detector.]
+    {The antenna pattern, in response to $+$-polarised gravitational waves, of a two-armed interferometric detector with a $90^{\circ}$ arm separation.
+    Here the azimuth positions assume that one of the arms is oriented north-to-south; an appropriate offset should be added to account for alternative orientations.
+    \label{fig:detectors:interferometers:antennapattern}}
     \end{figure}
     
 
@@ -515,6 +522,7 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
    :PROPERTIES:
    :custom_id: sec:detectors:ground-based
    :END:
+   \label{sec:detectors:ground-based}
 
  While there are attractions to being able to place an interferometric gravitational wave observatory in space, practical concerns have so-far constrained these detectors to being placed on the ground (or, in the case of gls:kagra, under it). 
  Fortunately, a considerable amount of science is possible with ground-based detectors, within the acoustic band of frequencies (above around 50 hertz).
@@ -528,6 +536,7 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
     :PROPERTIES:
     :custom_id: sec-detectors-aligo
     :END:
+    \label{sec:detectors:aligo}
  #+NAME: sec:detectors:aligo
  The Advanced gls:ligo detectors are considered second-generation interferometric gravitational wave detectors, located at two observatories in the United States of America. gls:llo is located in woodland outside the town of Livinston in Louisiana, while gls:lho is located on the Hanford Reservation in the State of Washington.
 
@@ -538,7 +547,7 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
 
 \begin{figure}[t]
 \includegraphics{./figures/intro/aligo-asd.pdf}
-\caption{The gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity.
+\caption[The noise curves of the Advanced LIGO detectors]{The gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity, relative to the average sensitivity of the two interferometers in their first observing run (O1).
 \label{fig:detectors:aligo-asd}}
 \end{figure}
 
@@ -570,6 +579,7 @@ Test-mass mass   & $\SI{40}{\kiogram}$     \\
     :PROPERTIES:
     :custom_id: sec:detectors:virgo
     :END:
+    \label{sec:detectors:virgo}
  #+NAME:sec:detectors:virgo
  Similarly to advanced gls:ligo, the advanced gls:virgo detector is a second-generation interferometric detector which replaced a first-generation detector. Located in Cascina, Italy, this detector has a number of design choices which are distinct compared to the gls:ligo detectors, choosing, for example to use ``super attenuators'' rather than the quadruple suspension system of gls:ligo to provide seismic isolation. Additionally, the detector's arm cavities are shorter than those of advanced gls:ligo, extending 3-kilometres compared to gls:ligo's four.
 
@@ -577,6 +587,8 @@ Test-mass mass   & $\SI{40}{\kiogram}$     \\
     :PROPERTIES:
     :CUSTOM_ID: sec:dectors:kagra
     :END:
+    \label{sec:detectors:kagra}
+
     The final ``advanced era'' detector design which is under-development is that of gls:kagra (previously known under the moniker abbr:lcgt) cite:2018arXiv181108079A. 
     abbr:kagra has claim to in fact bridge the technological divide between the second and third generation of gravitational wave detectors, as it is expected to be the first interferometric detector to employ cryogenic technology.
     The use of cryogenically-cooled mirrors is designed to reduce thermal noise originating in the mirror coatings (see ref:sec:detectors:noise:thermal), but presents a number of technological challenges which ambient-temperature detectors avoid.
@@ -588,6 +600,7 @@ Test-mass mass   & $\SI{40}{\kiogram}$     \\
     :PROPERTIES:
     :custom_id: sec:detectors:thirdgen
     :END:
+    \label{sec:detectors:thirdgen}
  #+NAME: sec:detectors:thirdgen
 
  The two plans for third-generation detectors which are currently under consideration are gls:cosmic-explorer, which is likely to be located in the USA, and gls:einstein-telescope, likely to be located in Europe.
@@ -599,7 +612,7 @@ Test-mass mass   & $\SI{40}{\kiogram}$     \\
    :CUSTOM_ID: sec:detectors:space
    :END:
    #+NAME:sec:detectors:space
-  
+   \label{sec:detectors:space}
    While ground-based interferometers have the advantage of accessibility, and consequently fairly affordable construction costs, great advantage is to be had in placing an interferometer in space. Some noise sources which detectors such as abbr:ligo must contend with, such as seismic noise, are completely absent, and greater freedom is afforded in the size of the interferometer, with the absence of a need to purchase and prepare land for the observatory. 
  In exchange for these advantages space-based interferometers present a number of technological hurdles, such as maintaining sufficiently stable orbital orbital configuration to allow interferometry to be carried-out, and reduced sensitivity, as constructing a Fabry-Perot cavity in the comparitively poor vacuum around the L1 point is not feasible.
 
@@ -611,10 +624,11 @@ The gls:tianqin mission proposal cite:2016CQGra..33c5010L uses such a technique,
     :PROPERTIES:
     :CUSTOM_ID: sec:detectors:space:lisa
     :END:
+    \label{sec:detectors:lisa}
     #+NAME:sec:detectors:lisa
 
  \begin{figure}
- \caption{The gls:amplitude-spectral-density of the gls:lisa and gls:decigo detectors within their sensitive band, at design sensitivity.
+ \caption[The noise curves for LISA and DECIGO]{The gls:amplitude-spectral-density of the gls:lisa and gls:decigo detectors within their sensitive band, at design sensitivity.
  \label{fig:detectors:space}
  }
  \includegraphics{figures/intro/space-asd.pdf}
@@ -628,6 +642,7 @@ The gls:tianqin mission proposal cite:2016CQGra..33c5010L uses such a technique,
     :PROPERTIES:
     :CUSTOM_ID: sec:detectors:space:decigo
     :END:
+    \label{sec:detectors:decigo}
     gls:decigo cite:2011CQGra..28i4011K is a proposed space-based abbr:gw observatory which is designed to observe the deci-hertz abbr:gw regime.
     Ground-based detectors are sensitive to frequencies above around $\SI{10}{\hertz}$, and the gls:lisa mission is designed to observe frequencies below $\SI{1}{\hertz}$. 
     This leaves a region which is unobserved, centred approximately around $\SI{10}{\hertz}$, which overlaps with less sensitive regions of the gls:lisa and ground-based detectors passbands.
@@ -641,6 +656,7 @@ Four of these clusters, placed in heliocentric orbits, will form the entire obse
    :PROPERTIES:
    :CUSTOM_ID: sec:detectors:pta
    :END:
+   \label{sec:detectors:pta}
  # #+ATTR_LATEX: :float t 
  # #+ATTR_LATEX: :placement {t}
  # #+CAPTION: The gls:amplitude-spectral-density of the gls:ipta pulsar timing array.
@@ -664,19 +680,19 @@ Four of these clusters, placed in heliocentric orbits, will form the entire obse
  for $\epsilon$ a noise term which results from any effects along the line of sight.
 
  The effect of a gravitational wave on the arrival time of a specific phase can be found from equation ref:eq:detectors:interferometric:theory:arrival-times-gw; the presence of a gravitational wave along the line of sight between the pulsar and the observer (conventionally located at solar system barycentre to remove various timing effects related to the movement of the Earth in the solar system) will be seen in the amplitude of the $\epsilon$ term of equation ref:eq:pulsar-toa. 
- Gravitational waves are not the only potential source of additional ``timing noise'' however, as any variation in the gravitational field along the line of sight will contribute to variation in $\epsilon$. In order to detect gravitational waves it is therefore necessary to observe a number of pulsars, and compare correlations in the $\epsilon$ data (known as ``timing residuals'') for each of them. 
+ Gravitational waves are not the only potential source of additional ``timing noise'' however, as any variation in the gravitational field in the vicinity of either the pulsar or the observer will contribute to variation in $\epsilon$. In order to detect gravitational waves it is therefore necessary to observe a number of pulsars, and compare correlations in the $\epsilon$ data (known as ``timing residuals'') for each of them. 
 
  The correlation between pulsars is dependent upon the angular separation, $\zeta$, of the pulsars in the sky cite:1983ApJ...265L..39H, and given by the ``Hellings-Downs curve'', which provides the sky- and polarisation-averaged response of a pair of pulsar lines-of-sight to a plane gravitational wave, and has analytical form
  \begin{equation}
  \label{eq:hellings-downs}
  \chi(\zeta) = \frac{1}{2} - \frac{1}{4} \left( \frac{1 - \cos\zeta}{2} \right) + \frac{3}{2} \left(\frac{1 - \cos\zeta}{2} \right) \log \left(\frac{1-\cos\zeta}{2}\right),
  \end{equation}
-for $\zeta$ the angular separation of the earth-pulsar baselines for each pulsar. 
+for $\zeta$ the angular separation of the Earth-pulsar baselines for each pulsar. 
 This relationship is plotted in figure ref:fig:intro:detectors:hellingsdowns.
 
 \begin{figure}
 \includegraphics{./figures/intro/hellings-downs.pdf}
-\caption{The Hellings and Downs curve giving the expected correlation between a pair of Earth-pulsar baselines with a given angular separation.}
+\caption[The Hellings and Downs curve]{The Hellings and Downs curve giving the expected correlation between a pair of Earth-pulsar baselines with a given angular separation.}
 \label{fig:intro:detectors:hellingsdowns}
 \end{figure}
 
@@ -693,6 +709,7 @@ This relationship is plotted in figure ref:fig:intro:detectors:hellingsdowns.
    :PROPERTIES:
    :CUSTOM_ID: sec:detectors:other
    :END:
+   \label{sec:detectors:other}
    A number of other techniques have been used to place limits on various forms of abbr:gw emission, including Doppler ranging of spacecraft cite:Armstrong2006, astrometry using GAIA observations cite:2018CQGra..35d5005K, the measurement of the Earth's normal modes cite:2014PhRvD..90d2005C.
    Proposals for alternatives to light-based interferometry also exist in the form of atom interferometers cite:2017ogw..book..285G,2018CoTPh..69...37G.
 
@@ -701,7 +718,7 @@ This relationship is plotted in figure ref:fig:intro:detectors:hellingsdowns.
    :PROPERTIES:
    :custom_id: sec:detectors:noise
    :END:
-
+   \label{sec:detectors:noise}
 Given the small strain amplitudes of abpl:gw, and the correspondingly small displacements they produce in a detector, the detector data is normally dominated by noise.
 This noise limits the range over which a detector is sensitive to abpl:gw, so understanding the sources of noise, and mitigating them is the most effective means of improving their sensitivity to astrophysical sources.
 
@@ -709,10 +726,11 @@ Noise sources are split broadly into two categories: instrumental sources, and f
 The former includes noise sources which are due to the equipment used to construct the detector, the latter are a result of physical properties of the observatory's site and infrastructure.
 
 ** Quantum noise
+   \label{sec:detectors:noise:quantum}
 
    \begin{figure}
    \includegraphics{./figures/intro/quantum-noise.pdf}
-   \caption{The contribution to the advanced gls:ligo abbr:psd from quantum noise.}
+   \caption[Quantum noise in Advanced LIGO]{The contribution to the advanced gls:ligo abbr:psd from quantum noise.}
    \label{fig:detectors:noise:quantum}
    \end{figure}
 
@@ -745,6 +763,7 @@ The combined quantum noise for advanced gls:ligo is shown, alongside the total n
     :PROPERTIES:
     :CUSTOM_ID: sec:detectors:noise:thermal
     :END:
+   \label{sec:detectors:noise:thermal}
 
     Thermal noise primarily affects the low-frequency sensitivity of a ground-based interferometer.
     This noise source is a result of the thermal vibration of both the mirror suspensions and coatings.
@@ -759,14 +778,15 @@ The combined quantum noise for advanced gls:ligo is shown, alongside the total n
 
     \begin{figure}
     \includegraphics{./figures/intro/thermal-noise.pdf}
-    \caption{The contribution to the advanced gls:ligo abbr:psd from thermal noise.}
+    \caption[Thermal noise in Advanced LIGO]{The contribution to the advanced gls:ligo abbr:psd from thermal noise.}
     \label{fig:detectors:noise:thermal}
     \end{figure}
 
-*** Seismic
+*** Seismic noise
     :PROPERTIES:
     :custom_id: sec:detectors:noise:seismic
     :END:
+    \label{sec:detectors:noise:seismic}
  Seismic noise is the result of strain introduced into the interferometer through movement of the ground, which can be the result of geophysical activity, tidal activity, or anthropogenic sources of seismic noise, such as road traffic or railways. 
 In a seismically quiet location the spectrum of seismic noise follows the relation cite:2011LRR....14....5P
 
@@ -793,7 +813,7 @@ $f$ / Hz    & $D$ / km   & Sources                                   \\
 10--100     & 0.1        & Nearby Anthropogenic noise                \\
 \bottomrule
 \end{tabular}
-\caption{The principle seismic noise frequency bands, $f$, which affect ground-based detectors, their sources, and the distance, $D$, over which the band affects advanced-generation detectors. \label{tab:detectors:noise:seismic}}
+\caption[Seismic noise frequency bands for ground-based detectors.]{The principle seismic noise frequency bands, $f$, which affect ground-based detectors, their sources, and the distance, $D$, over which the band affects advanced-generation detectors. \label{tab:detectors:noise:seismic}}
 \end{table}
 
  Seismic noise limits the sensitivity of the second generation detectors at low frequencies ($f < \SI{50}{\hertz}$), but it is present as a noise source across the passband of the detector. 
@@ -825,6 +845,7 @@ Both the abbr:psd of seismic and Newtonian noise are plotted in figure ref:fig:d
     :PROPERTIES:
     :custom_id: sec:detectors:noise:newtonian
     :END:
+    \label{sec:detectors:noise:newtonian}
 
  Newtonian noise, or gravitational gradient noise, is the strain produced by gravitational coupling between local mass density variations and the test masses in the interferometer. 
 The major source of such noise comes from density fluctuations in the material surrounding the test mass, the ground below the detector.
@@ -846,7 +867,7 @@ These can include the movement of clouds and aircraft in the vicinity of the det
 
     \begin{figure}
     \includegraphics{./figures/intro/gravity-noise.pdf}
-    \caption{The contribution to the advanced gls:ligo abbr:psd from seismic and Newtonian noise.}
+    \caption[Seismic and Newtonian noise in advanced LIGO]{The contribution to the advanced gls:ligo abbr:psd from seismic and Newtonian noise.}
     \label{fig:detectors:noise:gravity}
     \end{figure}
 
@@ -859,6 +880,7 @@ These can include the movement of clouds and aircraft in the vicinity of the det
 #     Many of these can be 
 
 ** Glitches
+   \label{sec:detectors:noise:glitch}
  
 In addition to the sources of instrumental noise which are continuously present in interferometer data, the advanced era detectors suffer from transient non-Gaussian noise events which are known as gls:glitch events.
 These can be caused by environmental phenomena, such as lightning strikes in the vicinity of the detector, or due to instrumental effects, such as fluctuations in laser power, or reflections within the beam tube. 
@@ -872,10 +894,11 @@ Once the cause is understood either detector alteration can be planned, or a vet
 
 * A network of detectors                                            
 #+NAME: sec:detector-network
+\label{sec:detectors:network}
 
 \begin{figure}
 \includegraphics{figures/intro/gw-spectrum.pdf}
-\caption{The gravitational wave spectrum, with a number of current and future detectors' sensitivity curves overlaid.
+\caption[The spectrum coverage of a range of current and future gravitational wave detectors.]{The gravitational wave spectrum, with a number of current and future detectors' sensitivity curves overlaid.
 The background colours show the regime in which each region of the spectrum can be observed, with green being the frequencies where pulsar timing is necessary, blue where space-based interferometry may be used, and pink where ground-based interferometry is currently used.
 }
 \label{fig:intro:network:spectrum}
@@ -896,16 +919,18 @@ Additional detectors are currently either being planned or are under constructio
 
 
 * Gravitational wave detections
+\label{sec:detections}
   
 Having discussed the means by which abpl:gw may be detected, it would be remiss not to discuss the detections which occurred during the first two observing runs of the advanced detector era.
 
 ** Observing run 1 and GW150914
  #+NAME: sec:gw150914-intro
+ \label{sec:detections:gw150914}
 
  \begin{figure}
  \label{fig:gw:gw150914}
  \includegraphics{figures/intro/gw150914-waveform.pdf}
- \caption{The data from the advanced gls:ligo detectors at the Livingston (L1) and Hanford (H1) observatories, which has been band-passed between $\SI{50}{\hertz}$ and $\SI{250}{\hertz}$, and a comb filter has been applied to remove the $\SI{60}{\hertz}$ line and its higher harmonics.
+ \caption[The data containing GW150914 from the two Advanced LIGO detectors.]{The data from the advanced gls:ligo detectors at the Livingston (L1) and Hanford (H1) observatories, which has been band-passed between $\SI{50}{\hertz}$ and $\SI{250}{\hertz}$, and a comb filter has been applied to remove the $\SI{60}{\hertz}$ line and its higher harmonics.
  The data from the Livingston detector has had a time-delay filter applied to introduce a $\SI{6.9}{\milli\second}$ delay, representing the travel time between the detectors, and has been inverted to account for the relative orientation of the two detectors.
 This plot was produced using the \texttt{gwpy} library cite:gwpy0d14d2.
  }
@@ -915,7 +940,7 @@ This plot was produced using the \texttt{gwpy} library cite:gwpy0d14d2.
  This event, gls:gw150914 was remarkable not only for being the first viable trigger to be detected by advanced gls:ligo, but also for having sufficiently high statistical significance (with a false alarm rate less than 1-in-$203\,000$ years) that there was no reasonable doubt that it constituted a genuine abbr:gw detection; indeed, as can be seen in figure ref:fig:gw:gw150914, the signal can be seen clearly in the whitened data without the use of matched filtering.
 
 The detection was made at both the gls:llo and gls:lho observatories, with a joint abbr:snr of around $24$.
-The event itself, a gls:bbh coalescence between a $36^{+5}_{-4} \msun$ black hole and a $29^{+4}_{-4}$ black hole was unexpected.
+The event itself, a gls:bbh coalescence between a $36^{+5}_{-4} \msolar$ black hole and a $29^{+4}_{-4} \msolar$ black hole was unexpected.
 Observations of black hole binaries in x-ray had not previously suggested that stellar-mass black holes this massive would exist.
 As a result models of stellar formation struggled to explain the evolution of black holes with these masses cite:2016ApJ...818L..22A.
 
@@ -929,6 +954,7 @@ The lower masses resulted in a substantially greater amount of the inspiral wave
 
 ** Observing run 2 and GW170817
  #+NAME: sec:gw170817-intro
+ \label{sec:detections:gw170817}
 
  The second advanced gls:ligo observing run (O2) started on 30 November 2016, and finished on 25 August 2017.
  The advanced gls:virgo detector joined the run on 1 August 2017, allowing three-detector observations from kilometre-scale detectors for the first time in the advanced era.
@@ -1020,7 +1046,27 @@ return [x.split(',') for x in data_gw1.to_csv().split('\n')]
 #+END_SRC
 
 * Future observing scenarios
-/A discussion of the various observing scenarios should be presented here, with some brief discussion of the first two observing runs, and the prospects for O3 and beyond, including the inclusion of the KAGRA detector. Potential to mention 3G detectors towards the end, but this may be held back for detectors chapter./
+  \label{sec:detections:scenarios}
+
+\begin{table}
+\centering
+\begin{tabular}{llll}
+\toprule
+   Epoch  & LIGO  (Mpc) & Virgo (Mpc) & KAGRA (Mpc) \\
+\midrule
+   Early  & 40 - 80     & 20 - 65     & 8 - 25      \\
+   Mid    & 80 - 120    & 68 - 85     & 25 - 40     \\
+   Late   & 120 - 170   & 85 - 155    & 40 - 140    \\
+   Design & 190         & 125         & 140         \\
+\bottomrule
+\end{tabular}
+
+\caption[Anticipated sensitivity scenarios for the advanced LIGO, Virgo, and KAGRA detectors.]
+{The anticipated sensitivities of the various second-generation detectors throughout their development, measured in terms of the \gls{bns} \gls{horizon-distance}, which represents the average maximal distance at which the signal from a binary neutron star coalesence could be observed. This table was adapted from the information in \cite2018LRR....21....3A}.
+\label{ref:tab:rangescenarios}
+}
+
+\end{table}
 
 The gravitational wave community are in the fortunate position of the field having arrived in both to the so-called /advanced/-era, in which interferometric detectors sensitivity has increased sufficiently to make observations plausible, but also the /observational/-era; the perfect coincidence of these two epochs is surely one of the less believable twists in the plot of scientific history. As a result most of this work will consider the state of gravitational wave detection in the observational era, starting in the early observational period: the first two observing runs of the advanced gls:ligo detectors, and the first observing run of the advanced gls:virgo detector; looking ahead to future observing runs involving a larger network of gravitational wave detectors, including gls:kagra and an additional advanced gls:ligo detector located in India.
 
@@ -1031,16 +1077,6 @@ Similarly, the /mid/ and /late/ scenarios correspond approximately to O2 and O3 
 
 The first two observing runs have provided some information about the rate of the events which produce detectable gravitational waves, allowing better constraints to be placed on anticipated observed event rates as the detectors continue to develop over the next decade. 
 # The current estimates of likely abbr:bns rates are given in table ref:tab:ratescenarios.
-
-  #+NAME: tab:intro:rangescenarios
-  #+ATTR_LATEX: :booktabs :placement [b]
-  #+CAPTION: The anticipated sensitivities of the various second-generation detectors throughout their development, measured in terms of the abbr:BNS gls:horizon-distance, which represents the average maximal distance at which the signal from a binary neutron star coalesence could be observed. This table was adapted from the information in cite:2018LRR....21....3A.
-  | Epoch  | LIGO  (Mpc) | Virgo (Mpc) | KAGRA (Mpc) |
-  |--------+-------------+-------------+-------------|
-  | Early  | 40 - 80     | 20 - 65     | 8 - 25      |
-  | Mid    | 80 - 120    | 68 - 85     | 25 - 40     |
-  | Late   | 120 - 170   | 85 - 155    | 40 - 140    |
-  | Design | 190         | 125         | 140         |
 
 
   # #+NAME: tab:ratescenarios

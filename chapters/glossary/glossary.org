@@ -1,1 +1,662 @@
-/home/daniel/notes/gravitational-waves/glossary.org
+This file is intended to be a simple glossary of all of the
+gravitational waves terms I've needed to look up at some point, or
+which I've thought were worth including in a glossary for my thesis or
+other similar works.
+
+# bibliography:../astrophysics/grb.bib 
+# bibliography:cosmology.bib
+
+#+COLUMNS: %abbreviation %pluralabb %symbol %plural %140ITEM
+** 10-meter prototype
+** 40-metre prototype
+** Advanced LIGO
+:PROPERTIES:
+:NAME: aLIGO
+:abbreviation: aLIGO
+:PLURALABB: aLIGOs
+:END:
+The Advanced Laser Interferometer Gravitational-Wave Observatory
+(aLIGO) is a second-generation interferometric gravitational wave
+observatory which is presently composed of two detectors located in
+the United States of America: LIGO Livingston Observatory, located in
+Livingston parish, Louisiana, and LIGO Hanford Observatory, located on
+the Department of Energy's Hanford Reservation in Washington. Both
+detectors are contained within the structures constructed for the
+initial LIGO instruments, and use the LIGO vacuum system (with some
+additions near the vertex).
+** Albert Einstein Institut
+   :PROPERTIES:
+   :ABBREVIATION: AEI
+   :END:
+** ALLEGRO
+   A cryogenic resonant bar gravitational wave detector which was located at the State University of Louisiana, and operated until 2008. 
+   The detector consisted of a cryogenic bar of aluminium weighing $\SI{2500}{\kilogram}$ with a resonant frequency around $\SI{904}{\hertz}$. ALLEGRO conducted joint abbr:gw searches with the initial abbr:ligo network during the fourth science run cite:2007PhRvD..76b2001A.
+** ALTAIR
+   A cryogenic resonant gravitational wave detector which was located at the \emph{Istituto di Fisica dello Spazio Interplanetario of Consiglio Nazionale delle Ricerche} in Frscati, Italy. The detector consisted of a $\SI{389}{\kilogram}$ aluminium bar with a resonant frequency of $\SI{1763}{\hertz}$.
+** amplitude spectral density
+:PROPERTIES:
+:ABBREVIATION: ASD
+:SEEALSO: power spectral density
+:END:
+The square-root of the gls:power-spectral-density.
+
+** Analogue-to-digital Converter
+   :PROPERTIES:
+   :ABBREVIATION: ADC
+   :PLURALABB: ADCs
+   :END:
+** ANTARES
+   The Astronomy with a *N*eutrino *T*elescope and *A*byss environmental
+   *RES*earch project; a neutrino detector located 2500 metres below the
+   Mediterranean Sea.
+
+** Arm length stabilization system
+   :PROPERTIES:
+   :ABBREVIATION: ALS
+   :END:
+** AURIGA
+   A cryogenic resonant bar gravitational wave detector which was located in Padua, Italy, at the \emph{Laboratori Nazionali di Legnaro}.
+   The detector consisted of a $\SI{2300}{\kilogram}$ aluminium bar held at $\SI{100}{\milli\kelvin}$, with a resonant frequency around $\SI{920}{\hertz}$ when cooled.
+** Australian Consortium for Gravitational Astronomy
+   :PROPERTIES:
+   :ABBREVIATION: ACIGA
+   :END:
+** Australian Interferometric Gravitational Observatory
+   :PROPERTIES:
+   :ABBREVIATION: AIGO
+   :END:
+** Auxilliary optics system
+   :PROPERTIES:
+   :ABBREVIATION: AOS
+   :END:
+** Baumgarte-Shapiro-Shibata-Nakamura
+   :PROPERTIES:
+   :ABBREVIATION: BSSN
+   :END:
+** Bayeswave
+   :PROPERTIES:
+   :ABBREVIATION: BW
+   :END:
+   A burst search pipeline used for data from the advanced LIGO and Virgo detectors cite:2015CQGra..32m5012C. 
+   The search attempts to model transient events (both astrophysical bursts and noise glitches) using a wavelet basis, and uses a non-Gaussian noise model as part of a Bayesian model selection approach to parameter estimation for these signals.
+** Beam Tube
+   :PROPERTIES:
+   :ABBREVIATION: BT
+   :END:
+** beam-splitter
+   :PROPERTIES:
+   :ABBREVIATION: BS
+   :PLURALABB: BSs
+   :END:
+** bi-functional adaptive mesh
+   :PROPERTIES:
+   :ABBREVIATION: BAM
+   :PLURALABB: BAMs
+   :END:
+
+** binary black hole
+   :PROPERTIES:
+   :ABBREVIATION: BBH
+   :PLURALABB: BBHs
+   :END:
+** binary neutron star
+   :PROPERTIES:
+   :ABBREVIATION: BNS
+   :PLURALABB: BNSs
+   :END:
+** burst
+   A gravitational wave burst is a transient gravitational event which
+   typically does not match the specific waveform profile of a compact
+   binary coalesence.
+** Burst and Transient Source Experiment
+   :PROPERTIES:
+   :ABBREVIATION: BATSE
+   :END:
+** chirp mass
+   :PROPERTIES:
+   :SYMBOL:   $\mathcal{M}$
+   :END:
+   A  of a compact binary system which determines the frequency evolution of the gravitational waveform emitted during the inspiral.
+   It is defined as 
+   \begin{equation}
+   \mathcal{M} = \frac{(m_1 m_2)^{3 / 5} }{(m_1 + m_2)^{1 / 5}}.
+   \end{equation}
+** Coherent WaveBurst
+   :PROPERTIES:
+   :ABBREVIATION: cWB
+   :END:
+** compact binary coalescence 
+   :PROPERTIES:
+   :ABBREVIATION: CBC
+   :PLURALABB: CBCs
+   :END:
+
+** Compton Gamma-Ray Observatory
+   :PROPERTIES:
+   :ABBREVIATION: CGRO
+   :END:
+** continuous wave
+   :PROPERTIES:
+   :ABBREVIATION: CW
+   :PLURALABB: CWs
+   :END:
+   Continuous gravitational wave signals are produced by objects such
+   as gravitational wave pulsars, which produce GW radiation
+   continuously, compared to burst sources, which are transient.
+** core-collapse supernova
+   :PROPERTIES:
+   :ABBREVIATION: CCSN
+   :PLURALABB: CCSNe
+   :END:
+
+** Cosmic Explorer
+   A proposed third-generation interferometric gravitational wave detector. cite:detectors.thirdgen.cosmicexplorer.sensitivity
+** cosmic microwave background
+   :PROPERTIES:
+   :ABBREVIATION: CMB
+   :END:
+** DECIGO
+   :PROPERTIES:
+   :abbreviation: DECIGO
+   :END:
+   A proposed space-based gravitational wave detector which is designed to acheive sensitivity to gravitational waves between 0.1-Hz and 10-Hz. 
+   While similar to gls:LISA through its use of drag-free satellites and time-delay interferometry, its higher-frequency sensitivity will be achieved through shorter arms, around 1,000-km.
+** detector characterisation
+   :PROPERTIES:
+   :ABBREVIATION: DetChar
+   :END:
+   The field related to the identification of instrumental noise, its mitigation, and the analysis of the functioning behaviour of gravitational wave detectors. Also known as "DetChar".
+** Differential Arm Length
+   :PROPERTIES:
+   :END:
+  :PROPERTIES:
+  abbreviation: DARM
+ :END:
+  The difference in the length of the two arms of the interferometer.
+** directed acyclic graph
+   :PROPERTIES:
+   :ABBREVIATION: DAG
+   :PLURALABB: DAGs
+   :END:
+** Distance 
+   There are numerous different definitions for cosmological distance,
+   some of which are dependent upon a choice of cosmology in order to
+   be well-defined.
+** Distance (average)
+** Distance (light-travel; lookback)
+   :PROPERTIES:
+   :SYMBOL:   $d_{\mathrm{t}}$
+   :END:
+** Luminosity Distance
+   :PROPERTIES:
+   :SYMBOL:   $d_L$
+   :END:
+  The distance of an object from an observer defined by the
+  relationship of the apparent and absolute luminosities of the
+  object.
+  For a luminosity $L$ and flux $F$ the luminosity distance $D_L$ is
+  simply \[ D_L = \sqrt{\frac{L}{4 \pi F}}. \]
+  It can be related to the comoving transverse distance, $D_M$ by 
+  \[ D_L = (1+z) D_M \]
+  for a redshift $z$.
+** Distance (range)
+** Distance (reach)
+** Distance (response)
+** Distance (SFR average)
+** Distance (SFR reach)
+** Document Control Centre
+   :PROPERTIES:
+   :ABBREVIATION: DCC
+   :END:
+** duty cycle
+   :PROPERTIES:
+   :SYMBOL:   $\gamma$
+   :END:
+   The fraction of time during which a gravitational wave detector is actively observing, and is in a state suitable for producing analysable data. One of the major goals of detector development and characterisation is to increase the duty cycle of both individual detectors, and the overall duty cycle of the detector network.
+
+** effective one body
+   :PROPERTIES:
+   :ABBREVIATION: EOB
+   :END:
+** Einstein field equations
+   :PROPERTIES:
+   :ABBREVIATION: EFE
+   :PLURALABB: EFEs
+   :END:
+\begin{equation}
+ R_{\mu \nu} - \frac{1}{2} R g_{\mu \nu} = \frac{8 \pi G}{c^{4}} T_{\mu \nu},
+\end{equation}
+** Einstein Telescope
+   :PROPERTIES:
+   :ABBREVIATION: ET
+   :END:
+   A proposed third-generation interferometric gravitational wave detector.
+** Electromagnetic
+   :PROPERTIES:
+   :ABBREVIATION: EM
+   :END:
+** EPICS Alarm Handler
+  :PROPERTIES:
+  :ABBREVIATION: ALH
+  :END:
+** Equation of state
+   :PROPERTIES:
+   :ABBREVIATION: EOS
+   :END:
+** European Pulsar Timing Array
+   :PROPERTIES:
+   :ABBREVIATION: EPTA
+   :END:
+   A European collaboration combining five 100-m class radio
+   telescopes to time pulsars with the aim to detect very low
+   frequency gravitational waves.
+** EXPLORER
+   A cryogenic resonant gravitational wave detector.
+** Fabry-Perot cavity
+** false alarm probability
+   :PROPERTIES:
+   :ABBREVIATION: FAP
+   :END:
+** false alarm rate
+   :PROPERTIES:
+   :ABBREVIATION: FAR
+   :END:
+** Fermi
+   A Gamma-ray telescope.
+** Fermi Gamma-ray Burst Monitor
+   :PROPERTIES:
+   :ABBREVIATION: GBM
+   :END:
+** Fermi Large Area Telescope
+   :PROPERTIES:
+   :ABBREVIATION: LAT
+   :END:
+** finesse
+** Fused Silica
+** gamma ray burst
+   :PROPERTIES:
+   :ABBREVIATION: GRB
+   :PLURALABB: GRBs
+   :END:
+   Gamma ray bursts are extremely energetic cosmological events which
+   are observed to occur around once per day, and appear to be derived
+   from at least two separate populations, divided by their duration
+   and spectral hardness, although there is overlap and ambiguity
+   between the two populations cite:Zhang:2009uf.
+** Gaussian process
+   :PROPERTIES:
+   :ABBREVIATION: GP
+   :PLURALABB: GPs
+   :END:
+   A Gaussian process is a stochastic process in which every subset of the stochastic variables has a multivariate normal distribution. 
+   They are a flexible Bayesian regression method which are well suited to timeseries modelling, and as surrogates to poorly sampled functions.
+** general relativity
+   :PROPERTIES:
+   :ABBREVIATION: GR
+   :END:
+** GEO-HF
+   The high-frequency upgrade of the gls:geo600 detector.
+** GEO600
+   A German-UK interferometric gravitational wave detector located near Hannover in Germany. With shorter arms than other modern interferometric dectors (600-m) result in it having a lower sensitivity than its kilometre-scale brethren, but it has served as a testbed for the development of technology for these detectors.
+** Geostationary LISA
+   :PROPERTIES:
+   :ABBREVIATION: gLISA
+   :END:
+** glitch
+** GraceDB
+   GraceDB (the gravitational-wave candidate event database) is a database for gravitational wave event triggers (candidate events) which are identified by search pipelines. It can be found online at    https://gracedb.ligo.org. GraceDB is also capable of automating the production of a number of data products which are required for further analysis of event candidates.
+** gravitational wave
+   :PROPERTIES:
+   :ABBREVIATION: GW
+   :PLURALABB: GWs
+   :END:
+   A propagating space-time metric perturbation.
+
+** Gravitational Waves International Committee
+   :PROPERTIES:
+   :ABBREVIATION: GWIC
+   :URL: https://gwic.ligo.org/
+   :END:
+   A committee formed in 1997 to facilitate interational cooperation
+   in the construction and use of gravitational wave detectors.
+** GW150914
+   The first detected gravitational wave, produced by a Binary Black
+   Hole Coalescence. The detection was made by the two advanced LIGO
+   observatories during an engineering run, but while the detector was
+   producing observation-quality data. 
+   GW150914 was announced to the general public on 11 February 2016.
+   
+** GW151012
+   Formerly known as LVT151012, the second gravitational wave detection from a abbr:bbh system. 
+   At the time this event was detected it did not satisfy the criteria to be announced in the literature as a gravitational wave event, and so was denoted a "LIGO/Virgo Trigger".
+** GW151226
+   The second detected gravitational wave, produced by a binary black
+   hole coalesence, and detected by the advanced LIGO network.
+** GW170104
+   The first gls:gravitational-wave detection during the second observing run of advanced gls:ligo, of a binary black hole coalescence.
+** GW170608
+** GW170814
+   The first gravitational wave event to be observed by a three-detector network, comprised the two advanced gls:ligo and the advanced gls:virgo detectors. As a result it was (briefly) the best-localised gravitational wave event. 
+** GW170817
+   The first abbr:gw event observed from a abbr:bns event.
+Also the first abbr:gw event to be observed alongside electromagnetic emssion, first gamma rays, then across almost the entire EM spectrum.
+** horizon distance
+   :PROPERTIES:
+   :ABBREVIATION:
+   :SYMBOL:   $\mathcal{D}_{\text{hor}}$
+   :END:
+** hydraulic external pre-isolator
+   :PROPERTIES:
+   :ABBREVIATION: HEPI
+   :PLURALABB: HEPIs
+   :END:
+** Hypermassive neutron star
+   A hypermassive neutron star is an NS which is supported by
+   differential rotation and temperature gradients, allowing it to
+   support a mass greater than a static neutron star.
+** IMRPhenom
+   A family of binary black hole phenomenological approximant models which are capable of producing waveforms for precessing systems.
+** independent and identically distributed
+   :PROPERTIES:
+   :ABBREVIATION: iid
+   :END:
+** infinite mixture model
+   :PROPERTIES:
+   :ABBREVIATION: IMM
+   :END:
+** inspiral
+   The period of a binary orbit during which gravitational wave emission is produced as a result of orbital decay.
+** Institute for Gravitational Research
+   :PROPERTIES:
+   :ABBREVIATION: IGR
+   :END:
+   A research group based at the University of Glasgow, United
+   Kingdom. The institute was established in 2000, growing out of the
+   School of Physics and Astronomy's gravitational wave group.
+** Intermediate mass black hole
+   :PROPERTIES:
+   :ABBREVIATION: IMBH
+   :END:
+** International Pulsar Timing Array
+   :PROPERTIES:
+   :ABBREVIATION: IPTA
+   :END:
+   A multi-telescope pulsar timing array which comprises the abbr:epta, gls:nanograv, and abbr:ppta arrays.
+** Kagra
+   :PROPERTIES:
+   :abbreviation: KAGRA
+   :END:
+   Kagra is a 3-km advanced-generation interferometric detector which is under development at the Kamioka Observatory, Gifa Prefecture, Japan. 
+   It will be the first detector to be located underground, in an effort to reduce the effect of Newtonian noise on the detector, and the first detector to contain cryogenic components, to reduce thermal noise from the optical suspensions and coatings. 
+The present development timeline of Kagra will see it join the international detector network around the time that the advanced gls:LIGO and gls:virgo detectors reach their design sensitivity.
+
+** Kleine Welle
+   :PROPERTIES:
+   :ABBREVIATION: KW
+   :END:
+** LAGOS
+** LAL Inference Burst
+   :PROPERTIES:
+   :ABBREVIATION: LIB
+   :END:
+** LALSuite
+** Large scale cryogenic gravitational wave telescope
+   :PROPERTIES:
+   :ABBREVIATION: LCGT
+   :END:
+** Laser interferometer gravitational-wave observatory
+   :PROPERTIES:
+   :ABBREVIATION: LIGO
+   :END:
+** Laser Interferometer Space Antenna
+   :PROPERTIES:
+   :NAME:     LISA
+   :ABBREVIATION: LISA
+   :END:
+** LIGO and Virgo Scientific Collaborations
+   :PROPERTIES:
+   :ABBREVIATION: LVC
+   :END:
+** LIGO Hanford Observatory
+   :PROPERTIES:
+   :ABBREVIATION: LHO
+   :END:
+** LIGO Livingston Observatory
+   :PROPERTIES:
+   :ABBREVIATION: LLO
+   :END:
+** Long Gamma Ray Burst
+   :PROPERTIES:
+   :ABBREVIATION: lGRB
+   :PLURALABB: lGRBs
+   :END:
+   Long duration GRBs are associated with core-collapse supernovae.
+** LSC Algorithm Library
+   :PROPERTIES:
+   :ABBREVIATION: LAL
+   :END:
+** LVT151012
+   See gls:gw151012.
+** Mario Schenberg
+** Markov chain Monte Carlo
+   :PROPERTIES:
+   :ABBREVIATION: MCMC
+   :END:
+An algorithm designed for generating samples from probability distributions.
+** Mass ratio
+   :PROPERTIES:
+   :SYMBOL:   $q$
+   :END:
+  :PROPERTIES:
+  abbreviation: q
+  symbol: $q$
+  :END:
+  The mass ratio of two bodies in an inspiral-merger process is simply
+  the ratio of one mass to the other, i.e. \[ q = \frac{M_1}{M_2} \] in
+  contrast to the more complicated symmetric mass ratio.
+** Mass ratio (symmetric)
+   :PROPERTIES:
+   :SYMBOL:   $eta$
+   :END:
+  :PROPERTIES:
+  abbreviation: 
+  symbol: $η$
+  :END:
+  The symmetric mass ratio is the quantity defined as \[ \eta = \frac{M_1
+  M_2}{(M_1 + M_2)^2} \] for an inspiralling two-body system.
+
+** maximum a posteriori estimate
+   :PROPERTIES:
+   :ABBREVIATION: MAP
+   :PLURALABB: MAPs
+   :END:
+An estimate of the value of a parameter which is equal to the mode of the posterior distribution.
+Frequently used as a point estimate for parameters.
+** MAYA
+** Milky Way Equivalent Galaxy
+   :PROPERTIES:
+   :ABBREVIATION: MWEG
+   :END:
+** MiniGRAIL
+   A spherical cryogenic gravitational wave detector located in Leiden, Netherlands.
+   *A bit more detail here please.*
+** Minke
+** mock data challenge
+   :PROPERTIES:
+   :ABBREVIATION: MDC
+   :PLURALABB: MDCs
+   :END:
+** Monolithic suspension
+** NANOGrav
+** NAUTILUS
+   A cryogenic resonant gravitational wave detector.
+** null stream
+   
+** numerical relativity
+   :PROPERTIES:
+   :ABBREVIATION: NR
+   :END:
+** Omega scan
+** Omicron
+** Omicron LIB
+   :PROPERTIES:
+   :ABBREVIATION: oLIB
+   :END:
+   A burst search pipeline which relies on the omicron trigger generator, and parameter estimation using the LALInferenceBurst suite.
+** Parkes Pulsar Timing Array
+   :PROPERTIES:
+   :ABBREVIATION: PPTA
+   :END:
+** Physical Environment Monitor
+   :PROPERTIES:
+   :ABBREVIATION: PEM
+   :END:
+   Physical enviroment monitors are sensors placed around detectors
+   which are used to monitor and record the enviromental conditions of
+   the experiment. Examples include aneometers, used to measure the
+   windspeed. PEMs can often act as witnesses for some glitch
+   categories, allowing them to be vetoed.
+** post-Newtonian
+   :PROPERTIES:
+   :ABBREVIATION: PN
+   :END:
+** Power recycling
+   :PROPERTIES:
+   :ABBREVIATION: PR
+   :END:
+** Power recycling cavity length
+   :PROPERTIES:
+   :ABBREVIATION: PRCL
+   :END:
+The length of the power recycling cavity.
+** power spectral density
+   :PROPERTIES:
+   :ABBREVIATION: PSD
+   :SEEALSO:  Amplitude Spectral Density
+   :END:
+   The power spectrum is a frequency-domain representation of time-series data in which the signal is decomposed into a finite number of discrete frequencies, with the amplitude of each "bin" representing the total amount of the signal power which present between those frequencies.
+** probability density function
+   :PROPERTIES:
+   :ABBREVIATION: PDF
+   :PLURALABB: PDFs
+   :END:
+** radial basis function
+   :PROPERTIES:
+   :ABBREVIATION: RBF
+   :PLURALABB: RBFs
+   :END:
+** response surface methodology
+   :PROPERTIES:
+   :ABBREVIATION: RSM
+   :END:
+** RF45 noise
+    :PROPERTIES:
+    :ABBREVIATION: RF45
+    :END:
+**** Blip Glitch
+A blip glitch is a noise transient which appears in the GW strain
+channel and has a symmetrical teardrop shape in a spectrogram,
+normally between 30 and 250-Hz.
+** Ricci scalar
+   :PROPERTIES:
+   :SYMBOL:   $R$
+   :END:
+   A quantity representing the deviation in the area of an $(N-1)$-dimensional sphere embedded in a curved $N$-dimensional space, compared to the same sphere embedded in a flat $N$-dimensional space.
+** Ricci tensor
+   A quantity which describes how the distance between two points within a volume varies as the volume is parallel-transported over a curved manifold compared to the same movement over a flat manifold.
+** Riemann tensor
+** search pipeline
+   A data analysis process, which may contain multiple separate components, which is capable of identifying candidate gravitational wave events ("triggers"),
+   and performing inference on the signal, which may include determining the significance of the trigger, and parameter estimation.
+** SEOBNR
+   A family of binary black hole approximant models which employ the effective one body paradigm for producing waveforms, which are then calibrated against abbr:nr waveforms.
+** Short Gamma Ray Burst
+   :PROPERTIES:
+   :ABBREVIATION: sGRB
+   :PLURALABB: sGRBs
+   :END:
+   Short-duration GRBs were long-suspected to be the electromagnetic
+   signature of compact binary coalesence events, and the observation
+   of GW170817 in 2017, a binary neutron star coalesence event, and
+   its associated gamma ray burst, GRB170817A cemented these CBC
+   events as the progenitor of at least some fraction of sGRBs.
+** signal-to-noise ratio
+   :PROPERTIES:
+   :ABBREVIATION: SNR
+   :SYMBOL:   $\rho$
+   :PLURALABB: SNRs
+   :END:
+   The ratio of a desired or detected signal to non-signal (i.e. noise) in a recorded stream of data, for example, the output of a gravitational wave detector.
+** Small Optical Suspension
+   :PROPERTIES:
+   :ABBREVIATION: SOS
+   :END:
+   Small optical suspensions are often used to isolate optical
+   components in gravitational wave detectors, and can be
+   distinguished from the large suspensions which isolate optics such
+   as the beam splitter and test-masses which may weigh tens of
+   kilograms.
+** Spectral Einstein Code
+   :PROPERTIES:
+   :ABBREVIATION: SpEC
+   :PLURALABB: SpECs
+   :END:
+** Spectrogram
+** squared exponential
+   :PROPERTIES:
+   :ABBREVIATION: SE
+   :END:
+** Stochastic Wave
+** Stress-energy tensor
+** super attenuator
+   :PROPERTIES:
+   :ABBREVIATION: SA
+   :END:
+** supermassive binary black hole
+   :PROPERTIES:
+   :ABBREVIATION: SMBBH
+   :PLURALABB: SMBBHs
+   :END:
+   
+** supernova
+   :PROPERTIES:
+   :ABBREVIATION: SN
+   :PLURALABB: SNe
+   :END:
+** support vector machine regression
+   :PROPERTIES:
+   :ABBREVIATION: SVR
+   :END:
+** TAMA
+   :PROPERTIES:
+   :END:
+   A first-generation interferometric gravitational wave detector which was located in Japan.
+** TianQin
+** Time delay interferometry
+   :PROPERTIES:
+   :ABBREVIATION: TDI
+   :END:
+** trigger
+   :PROPERTIES:
+   :PLURAL: triggers
+   :END:
+An event candidate which has been identified by a gls:search-pipeline. 
+** Virgo
+   An advanced-generation interferometric gravitational wave detector located in Cascina, Italy.
+   While Virgo applies a similar Michelson-interferometer design to the advanced gls:ligo detectors, a number of design features of this detector are distinct, including the way in which optics are suspended. Additionally, the detector has a shorter arm-length: 3-km compared to the advanced gls:ligo 4-km arms. As a result the detector has a different noise profile from the gls:ligo detectors, and provided a valuable corroboration of the results from gls:ligo when it observed gls:gw170814 independently. 
+** Volume (redshifted)    
+** root square sum strain
+   :PROPERTIES:
+   :ABBREVIATION: hrss
+   :SYMBOL: \ensuremath{h_{\text{rss}}}
+   :END:
+** proto-neutron star
+** effective spin
+** stochastic variational inference
+   :PROPERTIES:
+   :ABBREVIATION: SVI
+   :END:
+** root mean squared error
+   :PROPERTIES:
+   :ABBREVIATION: RMSE
+   :END:
