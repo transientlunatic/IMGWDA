@@ -413,9 +413,9 @@ There are a number of collaborations actively producing pulsar observations with
  \end{figure}
 
  A Michelson interferometer is an optical device which is capable of measuring the difference in length between two optical paths to sub-wavelength precision. 
- A Michelson interferometer can be constructed using a abbr:bs and two mirrors, in the configuration presented in the left panel of figure ref:fig:detectors:michelson. 
- The input beam is split along the $x$ and $y$ directions, and reflected back to the abbr:bs. 
- At the abbr:bs the two beams will interfere: in the standard Michelson setup this will result in constructive interference if the arms have identical lengths, and a beam will be produced at the output (the dashed red line). 
+ A Michelson interferometer can be constructed using a beam splitter and two mirrors, in the configuration presented in the left panel of figure ref:fig:detectors:michelson. 
+ The input beam is split along the $x$ and $y$ directions, and reflected back to the beam splitter.
+ At the beam splitter the two beams will interfere: in the standard Michelson setup this will result in constructive interference if the arms have identical lengths, and a beam will be produced at the output (the dashed red line). 
  If the arms' relative lengths change a pattern of interference fringes will be visible at the output of the interferometer.
 
  This means that we can consider an interferometer with two arms to consist of one arm which acts as the time standard, against which the variations of the other can be measured. 
@@ -443,7 +443,7 @@ This allows a less powerful laser to be used as the input for the interferometer
  thanks to the sidebands on the beam which are produced by the
  gravitational wave not interfering destructively.
 
- To perform signal recycling a mirror is added between the abbr:bs and the readout port of the interferometer, with this configuration illustrated in the right panel of figure ref:fig:detectors:michelson.
+ To perform signal recycling a mirror is added between the beam splitter and the readout port of the interferometer, with this configuration illustrated in the right panel of figure ref:fig:detectors:michelson.
 
 *** Fabry-Perot cavities
     :PROPERTIES:
