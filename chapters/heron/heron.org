@@ -1,6 +1,3 @@
-In this chapter I introduce the use of abbr:gpr as a surrogate modelling method for abbr:gw waveforms from abbr:cbc events.
-The culmination of this effort is the development of the ~HERON~ surrogate model, which is capable of producing waveforms with precession for arbitrarily spinning binary systems./
-
 The production of high-accuracy waveforms is possible thanks to advances in the field of abbr:nr, in which the full set of Einstein equations can be solved numerically (see section ref:sources:cbc:nr for a more detailed discussion of the development of abbr:nr). 
 This can be done reliably for the low-mass compact binary systems of interest to the current generation of ground-based gravitational wave observatories, however these simulations are computationally expensive, and can require thousands of CPU hours to run in situations where the mass ratios and spins of the black holes are small. 
 A simulation of a full 350-cycle gravitational waveform spanning the entire advanced LIGO band has been produced cite:2015arXiv150204953S, however this required several months of high-performance computing to complete cite:2016CQGra..33l5025D, despite employing numerous techniques to reduce wall-clock computation time. 
@@ -14,6 +11,7 @@ These models, while capable of producing waveforms over a wide range of the abbr
   :PROPERTIES:
   :CUSTOM_ID: sec:heron:nr-data
   :END:
+  \label{sec:heron:nrdata}
 
 abbr:nr simulations for abbr:cbc events simulate the behaviour of the gls:riemann-tensor over a finite period of time prior to, during, and immediately following the merger of the two objects.
 This simulation allows the extraction of a gravitational waveform at a large distance from the merger event, where the flat metric approximation of ref:eq:strain-in-metric is valid.
@@ -37,6 +35,7 @@ for $N$ the total number of strain samples used from all of the training wavefor
 
 
 * Gaussian process regression for waveforms
+  \label{sec:heron:waveformgpr}
 
 A major failing of existing waveform models is their inability to account reliably for uncertainty in the waveforms which are generated.
 A side-effect of this is important in parameter estimation of these signals, as an inaccurate waveform will result in the introduction of a bias to the abbr:pe process.
@@ -147,8 +146,251 @@ In the following sections I will discuss the development of a model trained enti
 
 
 * Training using numerical relativity waveforms
+  \label{sec:heron:trainingdata}
 
 The ~HERON~ model was created by training a abbr:gp regression model on data from the Georgia Tech abbr:bbh waveform catalogue cite:2016CQGra..33t4001J.
 It is designed as a proof-of-concept surrogate model which operates over the eight dimensions of the abbr:bbh parameter space, demonstrating both that abbr:gp regression is a useful technique for dealing with this high-dimensional problem, but also that training can be carried-out directly from abbr:nr data.
 
-The model is constructed using the $(2,2)$-mode of the $+$-polarisation of the strain data from these waveforms, which are produced using ~pycbc~, as described in section ref:sec:heron:nr-data.
+The model is constructed using the $(2,\pm 2)$-modes of the $+$-polarisation of the strain data from these waveforms, which are produced using ~pycbc~, as described in section ref:sec:heron:nr-data.
+
+
+# ** Computational Complexity
+
+# A major drawback of the use of abpl:gp is the need to invert the covariance matrix in order to produce predictions. 
+# Matrix inversion is a computationally intensive task which scales in memory with $N^2$, for $N$ training points, and with $N^3$ in time. 
+# The standard approach to GPR described in equation ref:eq:predictive-gp thus rapidly becomes impractical, requiring large quantities of memory for even moderately sized training sets. 
+# In order to overcome these scaling problems, approximate simplify the inversion of the covariance matrix by making simplifying assumptions about its form. 
+# One example is the use of the approximate HODLR cite:hodlr inversion method, which allows inversion to be carried out in $\mathcal{O}(N \log^2 N)$ operations. 
+# This approach is possible because kernels such as the exponential squared kernel produce covariance matrices which can be arranged to form Hierarchical off-diagonal low rank (HODLR) matrices. 
+# The off-diagonal blocks are then factorised using partial-pivoted LU decomposition, and the on-diagonal blocks are factorised using a more accurate algorithm, such as Cholesky decomposition. 
+# The block inverses are then recombined to provide the (approximate) overall matrix inverse.
+
+# In producing our surrogate model we employed the HODLR method for calculating the matrix inverse, using the implementation in the =George= cite:hodlr Python package.
+
+
+* Verification of the model
+  \label{sec:heron:verification}
+
+The sparisty of training data poses a considerable challenge to the testing and verification of a model such as the =HERON= model; conventional approaches to testing such a model involve setting aside a fraction of the training data to compare to the model output when evaluated at the parameter space location of each test datum. 
+
+The quantity of numerical relativity waveforms available at present in the Georgia Tech catalogue makes this approach difficult, as some regions of the parameter space are very sparsely sampled, and omitting a training waveform in this location may significantly complicate the process of training the model.
+To overcome this I have carried out four separate categories of test on the Heron model.
+
++ In-sample tests :: where the entire catalogue of available training waveforms are used to condition the abbr:gp used by the model. Waveforms are then produced from the model at the parameter locations which correspond to each of the training waveforms, and the match between the Heron waveform and the abbr:nr waveform is calculated.
+
++ Out-of-sample tests :: where a single waveform from the catalogue is omitted from the set of training waveforms used to condition the abbr:gp, but the hyperparameters which were determined during training of the full model are used. A abbr:gp model is conditioned on a reduced catalogue for each waveform, and the waveform is produced from the reduced Heron model which corresponds to the omitted abbr:nr waveform. The match is then computed between these two waveforms.
+
++ Tests against phenomenological models :: where the match is computed between waveforms produced by Heron and by other waveform models, such as \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2}.
+
++ Tests against other abbr:nr catalogues :: where the match is computed between waveforms from another abbr:nr catalogue and a waveform corresponding to the same parameters produced by the Heron model.
+
+Each approach to testing has different advantages and disadvantages, and test for different aspects of the model's performance.
+
+** In-sample tests of the Heron model
+   \label{sec:heron:testing:in}
+
+   The simplest set of tests which I perform on the Heron model are /in-sample/ tests, which effectively test the model's ability to reproduce its own training data. 
+For the Heron model this involved computing the mean waveform from the abbr:gp corresponding to each waveform which was used in the training set.
+The match was then calculated between each mean waveform and the corresponding abbr:nr training waveform using the expression for waveform match, $\mathcal{M}$, given in equation ref:eq:heron:testing:match.
+
+In-sample testing ought to reveal problems with the choice of hyperparameters in the model, or inconsistencies in the training data itself. 
+Figure  ref:fig:heron:testing:in:hist plots the histogram of the mismatch (equal to $1-\mathcal{M}$) values which resulted from these tests against the Georgia Tech waveforms used as the training data (plotted as the black-outlined histogram).
+Reassuringly the mismatch between the vast majority of the model outputs and the training data are small; a small number of outliers appear to have a mismatch greater than $0.01$.
+Figure ref:fig:heron:testing:in:distance plots the Euclidean distance between each sampled point and the next-nearest training datum (calculated as the norm of the vector between the two points) and the mismatch.
+This reveals that a small number of points which are very close to other points in the training data are generally responsible for these high mismatches.
+This may indicate that the model is struggling to fit a smooth function to a small number of closely-spaced waveforms.
+
+\begin{figure}
+\includegraphics{figures/heron/in-sample-hist.pdf}
+\caption{The distributions of mismatches between waveforms from the Heron model and each of the \gls{nr} waveforms from the Georgia Tech waveform catalogue (black outline histogram) used in the training set using the procedure described in section \ref{sec:heron:testing:in}.
+Additionally, the mismatch distributions between waveforms produced at the same parameters as the \gls{nr} waveforms by the \texttt{SEOBNRv3} (red outline histogram), and the \texttt{IMRPhenomPv2} (blue outline histogram) phenomenological waveform models are plotted. 
+For comparison the distributions of mismatch between the same Georgia Tech waveforms and the corresponding waveforms from the \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} models are plotted as solid red and blue histograms respectively.
+ \label{fig:heron:testing:in:hist}}
+\end{figure}
+
+
+\begin{figure}
+\includegraphics{figures/heron/distance-v-mismatch-insample.pdf}
+\caption{The mismatch between waveforms produced by the Heron model and \gls{nr} waveforms compared to the distance to the next-nearest training waveform in the training data.
+Here the distance is calculated simply as the Euclidean distance between the two points in parameter space.
+ \label{fig:heron:testing:in:distance}}
+\end{figure}
+
+
+** Out-of-sample tests of the Heron model
+   \label{sec:heron:testing:out}
+
+A more rigorous test of a predictive model involves comparing the model's output in a region of the parameter space which does not contain a training datum. This process, known as out-of-sample testing, is difficult for the Heron model, thanks to the large (seven dimensional) parameter space, and the small number of available training waveforms (132).
+As a result, removing a substantial fraction of the waveforms in order to produce a set of test data would be likely to substantially affect the predictive power of the model.
+
+To overcome this I have performed a /leave-one-out/ testing procedure.
+In order to do this multiple training datasets are produced; from each a single waveform is omitted.
+This reduced dataset is then substituted for the data on which the full Heron model's abbr:gp is conditioned, retaining the same hyperparameter values as the full model.
+The reduced Heron model is then evaluated at the parameter location corresponding to the omitted waveform, in order to compute a predicted mean waveform. 
+The mismatch between the predicted waveform and the omitted abbr:nr waveform was then computed, and the distribution of these mismatches is plotted in figure ref:fig:heron:testing:out:hist as a black-outlined histogram.
+
+\begin{figure}
+\includegraphics{figures/heron/out-sample-hist.pdf}
+\caption{The distributions of mismatches between waveforms from the Heron model and each of the \gls{nr} waveforms from the Georgia Tech waveform catalogue (black outline histogram) used in the training set using the leave-one-out testing procedure detailed in section \ref{sec:heron:testing:out}.
+Additionally, the mismatch distributions between waveforms produced at the same parameters as the \gls{nr} waveforms by the \texttt{SEOBNRv3} (red outline histogram), and the \texttt{IMRPhenomPv2} (blue outline histogram) phenomenological waveform models are plotted. 
+ \label{fig:heron:testing:out:hist}}
+\end{figure}
+
+The variation of mismatch over the parameter space of the Georgia Tech catalogue is explored in figure ref:fig:heron:testing:out:tri, with waveforms with higher mismatch generally being in areas which are separated from the main body of training data.
+
+\begin{figure}
+\includegraphics{figures/heron/gt_match_triangle.pdf}
+\caption{A corner plot across the parameter space of the Georgia Tech waveform catalogue showing the leave-one-out mismatch, as described in section \ref{sec:heron:testing:out}.
+ \label{fig:heron:testing:out:tri}}
+\end{figure}
+
+** Tests against other models
+
+It may also be helpful to understand how the outputs of the Heron model compare to conventional phenomenological approximants which are in widespread use.
+To do this I calculated the mismatch between the output of the Heron model at the same parameter locations as the in-sample and leave-one-out tests.
+
+The results of these tests are plotted in figures ref:fig:heron:testing:in:hist and ref:fig:heron:testing:out:hist for the in-sample and leave-one-out scenarios respectively. 
+In addition, figure ref:fig:heron:testing:in:hist shows the distribution of mismatches between the training abbr:nr data and each of these models (as solid histograms).
+In the in-sample case the Heron model reproduces the abbr:nr waveforms with substantially lower mismatch than either phenomenological model. 
+This behaviour is to be expected, since the Heron model has direct access to the abbr:nr data, where the phenomenological models do not. 
+It is worth noting that the mismatch for ~SEOBNRv3~ is consistently smaller than that of ~IMRPhenomPv2~ against both abbr:nr and the Heron model. 
+~IMRPhenomPv2~ is known to be accurate over a smaller range of black hole spins than the ~SEOBNRv3~ model.
+The leave-one-out distributions are more interesting, as the Heron model here produces a distribution of mismatches which is comparable to ~SEOBNRv3~, with tail of smaller mismatches, indicating that the model retains comparable predictive power to the phenomenological model.
+
+
+** Tests against other catalogues
+   \label{sec:heron:testing:sxs}
+
+While removing waveforms from the Georgia Tech catalogue to hold back for testing data may be detrimental to the Heron model, a number of other waveform catalogues are available, including the extensive SXS catalogue cite:2013PhRvL.111x1104M,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B (and described in section ref:sec:sources:cbc:catalogues:sxs).
+
+Ideally an abbr:gp model would include waveforms from both catalogues, in order to account for systematic uncertainties between the two catalogues.
+However, given that the Heron model is trained only on the Georgia Tech catalogue it is possible, with care, to compare the output of the Heron model to abbr:nr waveforms in the SXS catalogue.
+This comparison must be interpreted with care, however, due to the presence of said systematic uncertainties, and the mismatch between the Heron model and the abbr:nr waveforms will not take this into account.
+
+The matches between (UPDATE NUMBER HERE) waveforms from the SXS catalogue and the corresponding mean waveform from Heron are plotted in figure ref:heron:testing:sxs:tri showing the mismatch across the parameter space.
+The distribution of these mismatches is plotted in figure ref:fig:heron:testing:sxs:hist (as a black-outline histogram) with the mismatch distributions of the two phenomenological models at the same parameters plotted for comparison.
+Again the Heron model produces a distribution comparable to ~SEOBNRv3~.
+
+\begin{figure}
+\includegraphics{figures/heron/sxs_match_triangle.pdf}
+\caption{A corner plot across the parameter space of the SXS waveform catalogue showing the leave-one-out mismatch, as described in section \ref{sec:heron:testing:out}.
+ \label{fig:heron:testing:sxs:tri}}
+\end{figure}
+
+\begin{figure}
+\includegraphics{figures/heron/sxs-sample-hist.pdf}
+\caption{The distributions of mismatches between waveforms from the Heron model and each of the \gls{nr} waveforms from the SXS waveform catalogue (black outline histogram) using the testing procedure detailed in section \ref{sec:heron:testing:sxs}.
+Additionally, the mismatch distributions between waveforms produced at the same parameters as the \gls{nr} waveforms by the \texttt{SEOBNRv3} (red outline histogram), and the \texttt{IMRPhenomPv2} (blue outline histogram) phenomenological waveform models are plotted. 
+ \label{fig:heron:testing:sxs:hist}}
+\end{figure}
+
+
+* Example waveforms
+   \label{sec:heron:examples}
+
+While I have discussed at length the various tests which I carried out on the Heron model, it is valuable to be able to visually compare the output of this model with the phenomenological models used in testing.
+
+Figures ref:fig:heron:example:nr, ref:fig:heron:example:nonspin, ref:fig:heron:example:spin, and ref:fig:heron:example:precessing illustrate the output of the model in a variety of scenarios, respectively for a non-spinning , non-equal mass system; for a non-spinning, equal mass system; a system with aligned spins; and a system with non-aligned spins.
+
+In each figure the =IMRPhenomPv2= and =SEOBNRv4= waveforms are overlaid on draws from the model, alongside its mean prediction, and the variance of the prediction.
+
+I have plotted the distribution of mismatches between the model predictions and the two phenomenological approximants are shown in the right panel of each figure, with matches calculated between the approximant waveforms (plotted as solid lines) and one-hundred sample waveforms drawn from the model (plotted as histograms). 
+
+Figure ref:fig:heron:example:nr shows a waveform produced from the various models at the same parameter location as one of the Georgia Tech abbr:nr waveforms, which is plotted alongside for comparison.
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/heron/withnr.pdf}
+  \caption[Predictions from the ~HERON~ model, compared to an NR waveform]
+{\textbf{abbr:gp regression predictions, compared to abbr:nr}. 
+One hundred draws from the Gaussian process (left panel) for a non-spinning configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $q = 0.625$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. 
+The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. 
+The differences between the phenomenological model and the \ac{GPR} model waveforms are seen to also exist between the phenomenological model waveforms and the \ac{NR}-derived waveform (\texttt{GT0374}), plotted here in green. 
+In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:heron:example:nr}
+  }
+\end{figure*}
+
+
+\begin{figure*}
+
+  \includegraphics[width=\textwidth]{figures/heron/nonspin-equalmass.pdf}
+  \caption[A ~HERON~ waveform from a non-spinning system]
+{\textbf{Non-spinning waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:nonspin-equalmass}
+  }
+\end{figure*}
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/heron/antispin-equalmass.pdf}
+  \caption[A ~HERON~ waveform from an aligned-spin system]
+{\textbf{Anti-aligned spin waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0.6)$, $\vec{s_2} = (0,0,-0.6)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:spinanti-equalmass}
+  }
+\end{figure*}
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/heron/precessing.pdf}
+  \caption[A ~HERON~ waveform from a precessing system]
+{\textbf{Precessing waveform}. One hundred draws from the Gaussian process (left panel) for a precessing system, with a mass ratio $q=0.25$, and a spin configuration ($\vec{s_1} = (0.35,0.1,0.2)$, $\vec{s_2} = (0, 0, 0.4)$), shown as light grey lines compared to a single analytical approximant model, \texttt{IMRPhenomPv2} in blue. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical line representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+    \label{fig:prec-equalmass}
+  }
+\end{figure*}
+
+
+* Summary
+\label{sec:heron:summary}
+
+We have entered the era of routine abbr:gw detection, and the ability to accurately and rapidly characterise signals from events such as coalescences will be critical to understanding the properties of these systems. 
+This characterisation process relies on the availability of waveform templates which are either precomputed prior to the analysis being run, or can be generated on-the-fly. 
+Highly accurate waveforms, generated by simulations, are able, and in principal can facilitate
+accurate inference on detected signals. 
+However, the expense of producing them limits their coverage of the parameter space; as a result
+of this lack of coverage, and the considerable time requirements to produce new waveforms, any inference method which relied solely on techniques could not hope to satisfy the requirement to rapidly
+characterise signals, and would not be practical in a scenario where multiple events are detected every month. 
+Phenomenological models, which can be evaluated rapidly, are available, which attempt to interpolate
+across a large volume of the parameter space, but the accuracy of the waveforms which they produce can be difficult to assess. 
+This leads to the possibility of introducing biases into the inferred properties of the system which generated the signal.
+
+In this chapter I have laid-out an approach to improving the accuracy of gravitational wave parameter estimation in the context of limited template availability by implementing a waveform approximant model using abbr:gp regression, providing not only a point-estimate of the waveform at any point in
+the parameter space, but also a distribution of plausible waveforms, allowing the uncertainty of the interpolation to be taken into account during the analysis. 
+In contrast to previous attemptes to produce a model for waveforms, such as cite:2017zoheyrsurrogate, this model is trained on data from the Georgia Tech waveform catalogue, described in section [sec:heron:training-data].
+
+# We introduced in section [sec:gps] as a non-parametric regression # method. This property allows the regression model to be constructed
+# # while making minimal assumptions about the form of the waveforms, which
+# # are encoded through the form of the covariance function. We discuss
+# # covariance functions in section [sec:covariancefunction], In order to
+# # reduce the computational burdon of evaluating the model a hierarchical
+# # matrix inversion method was used (described in \cite{hodlr} and
+# # discussed in section [sec:complexity]).
+
+I have presented a number of waveforms which have been produced by the Heron model in section ref:sec:heron:verification, and make comparisons between its output and two phenomenological models. 
+These comparisons show a difference between the behaviour of the two models which is most pronounced during the inspiral section of the waveform. 
+This difference also occurs between the phenomenological model and the waveform produced from abbr:gp regression. 
+A number of phenomena are likely to have contributed to this discrepancy. 
+One such difference in the systematic errors of the simulations used to produce the training data for the model compared to those used to calibrate the phenomenological models. 
+Additionally, the relatively small number of waveforms used to calibrate the phenomenological models compared to the model are likely to introduce systematic errors in the waveforms produced by those models. In order to reduce the effect of systematic errors from a larger model could include waveforms from a number of different waveform catalogues, however the addition of more waveforms will increase the memory requirements to both train and evaluate the model. 
+The waveform model tends towards producing conservative estimates of the waveform, this is clearly visible in the variance of the precessing waveform in figure ref:fig:prec-equalmass. 
+The use of additional waveforms is likely to improve the confidence of the model's prediction.
+
+In order for a abbr:gp-based approach such as this to be practical for parameter estimation studies using data from LIGO or Virgo it would be necessary to have a means of producing waveforms which are capable of modelling a greater amount of the inspiral than the ~HERON~ model can currently provide. 
+One potential approach to solving this problem is hybridising the output waveform from our model with waveforms produced from a post-Newtonian approximant, in a similar manner to that used by
+cite:2018arXiv181207865V.
+
+# In conclusion, we have demonstrated that is capable of being used as an
+# interpolant for waveforms, trained directly off data from simulations.
+# While this method cannot hope to produce waveforms with the same
+# precision as itself, it does account for the uncertainty introduced
+# through interpolation, a feature which is valuable for preventing the
+# introduction of bias in a analysis.
+
+# * Acknowledgements
+
+# The authors wish to thank Christopher Moore, Sebastian Khan, and Vijay
+# Varma for their insightful comments and suggestions on an earleir draft
+# of the manuscript.
+
+# DW is supported by the Science and Technology Facilities Council (STFC)
+# grant ST/N504075/1. ISH is supported by STFC grant ST/L000946/1. JC
+# acknowledges support from NSF awards PHYS-1505824 and PHYS-1505524SH.
+
+# This document has been assigned LIGO document reference LIGO-P1800128.

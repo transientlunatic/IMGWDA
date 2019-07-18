@@ -167,8 +167,25 @@ Throughout this work I take the convention that the metric tensor, $\ten{g}$ sho
 
 \chapter{Heron: A Gaussian process regression approach to modelling gravitational waveforms}
 \label{cha:heron}
+
+\chapterprecis{
+  In this chapter I introduce the use of Gaussian process regression as a surrogate modelling method for abbr:gw waveforms from compact binary coalesensce events.
+  The culmination of this effort is the development of the Heron surrogate model, which is capable of producing waveforms with precession for arbitrarily spinning binary systems.
+
+  In section \ref{sec:heron:nrdata} I discuss the training data used for the model, which is derived from the Georgia Tech waveform catalogue, and how the waveform data from the catalogue are prepared.
+
+  In section \ref{sec:heron:waveformgpr} I extend the discussion of Gaussian process regression from chapter \ref{cha:gaussian-process} to the case of gravitational waveform data, and produce two simplified example waveform models using this technique.
+
+  In section \ref{sec:heron:trainingdata} I describe the development of the Heron model itself, using numerical relativity data, and discuss some of the practical computational considerations for a model using this data.
+
+  In section \ref{sec:heron:verification} I discuss a number of tests which can be performed on the Heron model in order to demonstrate its efficacy across its parameter space, and I present results from these tests.
+
+  In section \ref{sec:heron:examples} I plot a number of example waveforms produced by the Heron model.
+
+  Finally, section \ref{sec:heron:summary} provides an overview of the material in the chapter, and some discussion of future work which would be of value to the continued development of this model.
+}
+
 \input{chapters/heron/heron}
-\input{chapters/heron/paper}
 
 
 \appendices
