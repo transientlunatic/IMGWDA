@@ -76,7 +76,12 @@ description={{{e[description]}}}
     
     for entry in entries:
         if "ABBREVIATION" in entry:
-            print("\\newacronym{{{}}}{{{}}}{{{}}}".format(entry['ABBREVIATION'].lower(), entry['ABBREVIATION'], entry['name']))
+           if "PLURALABB" in entry:
+               pluralabb = "plural = {}".format(entry['PLURALABB'])
+           else:
+               pluralabb = ""
+               
+           print("\\newacronym[{}]{{{}}}{{{}}}{{{}}}".format(pluralabb, entry['ABBREVIATION'].lower(), entry['ABBREVIATION'], entry['name']))
 
     for entry in entries:
         if ("name" in entry) and ("description" in entry):

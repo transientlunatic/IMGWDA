@@ -147,6 +147,7 @@ The square-root of the gls:power-spectral-density.
    :PROPERTIES:
    :ABBREVIATION: CCSN
    :PLURALABB: CCSNe
+   :PLURAL:   core-collapse supernovae
    :END:
 
 ** Cosmic Explorer
@@ -157,7 +158,7 @@ The square-root of the gls:power-spectral-density.
    :END:
 ** DECIGO
    :PROPERTIES:
-   :abbreviation: DECIGO
+   :ABBREVIATION: DECIGO
    :END:
    A proposed space-based gravitational wave detector which is designed to acheive sensitivity to gravitational waves between 0.1-Hz and 10-Hz. 
    While similar to gls:LISA through its use of drag-free satellites and time-delay interferometry, its higher-frequency sensitivity will be achieved through shorter arms, around 1,000-km.
@@ -303,6 +304,9 @@ The square-root of the gls:power-spectral-density.
    :ABBREVIATION: gLISA
    :END:
 ** glitch
+   A glitch is a transient noise event which is observed within a gravitational wave detector.
+   These noise events are especially difficult to deal with, as they often resemble the burst-like signals which are searched for by some of the search algorithms operating on detector data.
+For a more detailed discussion see section~\ref{sec:detectors:noise:glitch}.
 ** GraceDB
    GraceDB (the gravitational-wave candidate event database) is a database for gravitational wave event triggers (candidate events) which are identified by search pipelines. It can be found online at    https://gracedb.ligo.org. GraceDB is also capable of automating the production of a number of data products which are required for further analysis of event candidates.
 ** gravitational wave
@@ -350,7 +354,7 @@ Also the first abbr:gw event to be observed alongside electromagnetic emssion, f
    :ABBREVIATION: HEPI
    :PLURALABB: HEPIs
    :END:
-** Hypermassive neutron star
+** hypermassive neutron star
    A hypermassive neutron star is an NS which is supported by
    differential rotation and temperature gradients, allowing it to
    support a mass greater than a static neutron star.
@@ -373,7 +377,7 @@ Also the first abbr:gw event to be observed alongside electromagnetic emssion, f
    A research group based at the University of Glasgow, United
    Kingdom. The institute was established in 2000, growing out of the
    School of Physics and Astronomy's gravitational wave group.
-** Intermediate mass black hole
+** intermediate mass black hole
    :PROPERTIES:
    :ABBREVIATION: IMBH
    :END:
@@ -384,7 +388,7 @@ Also the first abbr:gw event to be observed alongside electromagnetic emssion, f
    A multi-telescope pulsar timing array which comprises the abbr:epta, gls:nanograv, and abbr:ppta arrays.
 ** Kagra
    :PROPERTIES:
-   :abbreviation: KAGRA
+   :ABBREVIATION: KAGRA
    :END:
    Kagra is a 3-km advanced-generation interferometric detector which is under development at the Kamioka Observatory, Gifa Prefecture, Japan. 
    It will be the first detector to be located underground, in an effort to reduce the effect of Newtonian noise on the detector, and the first detector to contain cryogenic components, to reduce thermal noise from the optical suspensions and coatings. 
@@ -425,7 +429,7 @@ The present development timeline of Kagra will see it join the international det
    :PROPERTIES:
    :ABBREVIATION: LLO
    :END:
-** Long Gamma Ray Burst
+** long gamma ray burst
    :PROPERTIES:
    :ABBREVIATION: lGRB
    :PLURALABB: lGRBs
@@ -443,7 +447,7 @@ The present development timeline of Kagra will see it join the international det
    :ABBREVIATION: MCMC
    :END:
 An algorithm designed for generating samples from probability distributions.
-** Mass ratio
+** mass ratio
    :PROPERTIES:
    :SYMBOL:   $q$
    :END:
@@ -454,7 +458,7 @@ An algorithm designed for generating samples from probability distributions.
   The mass ratio of two bodies in an inspiral-merger process is simply
   the ratio of one mass to the other, i.e. \[ q = \frac{M_1}{M_2} \] in
   contrast to the more complicated symmetric mass ratio.
-** Mass ratio (symmetric)
+** mass ratio (symmetric)
    :PROPERTIES:
    :SYMBOL:   $eta$
    :END:
@@ -473,7 +477,7 @@ An algorithm designed for generating samples from probability distributions.
 An estimate of the value of a parameter which is equal to the mode of the posterior distribution.
 Frequently used as a point estimate for parameters.
 ** MAYA
-** Milky Way Equivalent Galaxy
+** Milky Way equivalent galaxy
    :PROPERTIES:
    :ABBREVIATION: MWEG
    :END:
@@ -491,7 +495,7 @@ Frequently used as a point estimate for parameters.
 ** NAUTILUS
    A cryogenic resonant gravitational wave detector.
 ** null stream
-   
+   The null stream energy is the minimum amount of energy in whitened detector data which is inconsistent with a gravitational wave signal from a given sky location, across a network of detectors.
 ** numerical relativity
    :PROPERTIES:
    :ABBREVIATION: NR
@@ -520,11 +524,15 @@ Frequently used as a point estimate for parameters.
    :PROPERTIES:
    :ABBREVIATION: PN
    :END:
-** Power recycling
+** proto-neutron star
+   :PROPERTIES:
+   :ABBREVIATION: PNS
+   :END:
+** power recycling
    :PROPERTIES:
    :ABBREVIATION: PR
    :END:
-** Power recycling cavity length
+** power recycling cavity length
    :PROPERTIES:
    :ABBREVIATION: PRCL
    :END:
@@ -570,7 +578,7 @@ normally between 30 and 250-Hz.
    and performing inference on the signal, which may include determining the significance of the trigger, and parameter estimation.
 ** SEOBNR
    A family of binary black hole approximant models which employ the effective one body paradigm for producing waveforms, which are then calibrated against abbr:nr waveforms.
-** Short Gamma Ray Burst
+** short gamma ray burst
    :PROPERTIES:
    :ABBREVIATION: sGRB
    :PLURALABB: sGRBs
@@ -606,7 +614,7 @@ normally between 30 and 250-Hz.
    :PROPERTIES:
    :ABBREVIATION: SE
    :END:
-** Stochastic Wave
+** stochastic wave
 ** Stress-energy tensor
 ** super attenuator
    :PROPERTIES:
@@ -651,7 +659,21 @@ An event candidate which has been identified by a gls:search-pipeline.
    :SYMBOL: \ensuremath{h_{\text{rss}}}
    :END:
 ** proto-neutron star
+** neutron star
+   :PROPERTIES:
+   :ABBREVIATION: NS
+   :END:
 ** effective spin
+   :PROPERTIES:
+   :SYMBOL:   $\chi_{\mathrm{eff}}$
+   :END:
+   The effective spin is a dimensionless quantity which characterises the amount of spin in a compact binary system relative to the orbital angular momentum of the whole system.
+   For two objects with masses $m_1$ and $m_2$, with spins $\vec{s}_1$ and $\vec{s}_2$ It is defined
+   \begin{equation}
+   \label{eq:glossary:effectivespin}
+   \chi_{\mathrm{eff}} = \frac{(m_1 \vec{s}_1 + m_2 \vec{s}_2) \cdot \hat{L}}{(m_1 + m_2)}
+   \end{equation}
+   for $\hat{L}$ the unit vector of the orbital angular momentum of the system.
 ** stochastic variational inference
    :PROPERTIES:
    :ABBREVIATION: SVI
@@ -659,4 +681,8 @@ An event candidate which has been identified by a gls:search-pipeline.
 ** root mean squared error
    :PROPERTIES:
    :ABBREVIATION: RMSE
+   :END:
+** neutron star / black hole
+   :PROPERTIES:
+   :ABBREVIATION: NSBH
    :END:
