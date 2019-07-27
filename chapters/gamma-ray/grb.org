@@ -322,7 +322,7 @@ cite:Nakar:2007yr,Dietz:2010eh) is used to derive the corresponding beaming angl
 
 \begin{figure}
 \centering
-{\includegraphics[width=\linewidth]{figures/rate_posteriors_violin.pdf}}
+{\includegraphics[width=\linewidth]{figures/grb/rate_posteriors_violin.pdf}}
 \caption[Posterior probability distributions on BNS rate]{Posterior probability distribution for the rate of abbr:bns coalescence assuming the scenarios in table~\ref{tab:grb:scenarios}.
     The 95\% credible interval is represented with a horizontal line through the centre of the plot, with vertical lines delineating the lower and upper limits; the median is represented by a square marker, and the abbr:map value is denoted by a diamond. A summary of these values is given in table~\ref{tab:grb:rateposteriors}.
     \label{fig:grb:aligo:cbcrate} }
@@ -365,7 +365,7 @@ This /artificial/ value for $\grbrate$ is used in equation ref:eq:grb:jet:poster
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{figures/O1_injections_violin.pdf}
+\includegraphics[width=\linewidth]{figures/grb/O1_injections_violin.pdf}
 \caption[Posterior distributions of the validation procedure described in section \ref{sec:grb:validation}]{ In order to validate the algorithm an artificial scenario was constructed with a known beaming angle by artificially setting a GRB rate of $36.7\, \yr^{-1}$ to induce a beaming angle of $\theta \approx 10^{\circ}$. 
   The algorithm was then tested with the various priors used in the analysis,  using the same gls:horizon-distance, observing time, and gls:duty-cycle as the 2015--2016 observing scenario, to ensure that the correct beaming angle was inferred. 
   These posteriors are based on the simulated 2015--2016 observing scenario (see table~\ref{tab:grb:scenarios}).
@@ -391,7 +391,7 @@ This /artificial/ value for $\grbrate$ is used in equation ref:eq:grb:jet:poster
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{figures/O2_injections_violin.pdf}
+\includegraphics[width=\linewidth]{figures/grb/O2_injections_violin.pdf}
 \caption[Beaming angle posteriors for the 2016--2017 observing scenario]{The procedure used to produce figure~\ref{fig:grb:validation:results:2015} was repeated for the observing time and the horizon distance of the 2016--2017 observing scenario, with a GRB rate of $28.0 \,\yr^{-1}$ used to induce a beaming angle of $\theta \approx 10^{\circ}$.
   \label{fig:grb:validation:results:2016}}
 \end{figure}
@@ -432,7 +432,7 @@ The similarity of the posteriors which result from the uniform and Jeffreys prio
 
 \begin{figure}
 \centering
-{\includegraphics[width=\linewidth]{figures/O1_beaming_posteriors_violin.pdf}}
+{\includegraphics[width=\linewidth]{figures/grb/O1_beaming_posteriors_violin.pdf}}
 \caption[Beaming angle posteriors for the 2015--2016 observing scenario]{Beaming angle posteriors using different priors on abbr:sgrb efficiency $\epsilon$ in the 2015--2016 observing scenario.
     \label{fig:grb:results:2016}
 }
@@ -440,7 +440,7 @@ The similarity of the posteriors which result from the uniform and Jeffreys prio
 
 \begin{figure}
 \centering
-{\includegraphics[width=\linewidth]{figures/O2_beaming_posteriors_violin.pdf}}
+{\includegraphics[width=\linewidth]{figures/grb/O2_beaming_posteriors_violin.pdf}}
 \caption[Beaming angle posteriors for the 2016--2017 observing scenario]{Beaming angle posteriors using different priors on abbr:sgrb efficiency $\epsilon$ in the 2016--2017 observing scenario.
     \label{fig:grb:results:2017}}
 \end{figure}

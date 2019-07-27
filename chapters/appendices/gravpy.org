@@ -1,0 +1,88 @@
+It is often useful to be able to produce estimate of the detectability of a given abbr:gw morphology in a abbr:gw detector.
+The robust and rigorous method for calculating whether a signal can be identified by a given detector and an associated search algorithm involves producing an abbr:mdc, where copies of the signal are added into noise from the detector, or noise simulated from that detector's abbr:asd.
+The search algorithm is then run on these ``injected'' signals, and the efficiency with which it is capable of recovering the signals is used to determine the maximum distance at which a source may be detected.
+
+This process is complicated, and normally time (and resource) consuming, and it can be helpful to be able to produce a rougher estimate of the detectable distance of a source, even if this is only to determine if a more detailed abbr:mdc study is worth-while.
+
+In this appendix I will briefly introduce /gravpy/, a Python package which is capable of performing this task for arbitrary abbr:gw signals, and arbitrary abbr:gw detectors. 
+Full documentation for the package is available online[fn:gravpydocumentation] which includes full installation instructions.
+
+*  Defining a detector
+Normally we will wish to work with a pre-existing abbr:gw detector when performing an analysis.
+A number of detectors are implemented already in the package, and can be accessed easily. 
+For example
+
+#+BEGIN_SRC python
+from gravpy import interferometers as ifo
+aligo = ifo.AdvancedLIGO()
+#+END_SRC
+will load the abbr:asd of the advanced abbr:ligo detectors at their design sensitivity.
+
+Gravpy allows the abbr:asd of a detector to be plotted easily. 
+Running 
+#+BEGIN_SRC python
+import matplotlib.pyplot as plt
+f, ax = plt.subplots(1,1)
+aligo.plot(ax)
+#+END_SRC
+will produce a ~matplotlib~ plot of the abbr:asd for advanced abbr:ligo. 
+(This function was used to produce a number of the abbr:asd plots in chapter ref:cha:intro).
+
+Additional detectors are available in the package (and are listed in the online documentation), however new detectors can easily be implemented by extending the package's ~Detector~ class, thanks to Python's object oriented design.
+
+
+* Defining a source
+In order to determine the detectability of a source we need to load its waveform.
+All of gravpy's supported waveforms are located in the ~gravpy.sources~ module, which can be imported using
+#+BEGIN_SRC python
+import gravpy.sources as sources
+#+END_SRC
+it is then straight-forward to use any of the pre-implemented sources. 
+For example, to simulate a abbr:bbh event such as gls:gw150914:
+#+BEGIN_SRC python
+from astropy import units as u
+cbc = sources.CBC(frequencies=np.logspace(-4, 5, 1000) * u.hertz,
+                  m1=32*u.solMass, m2=30*u.solMass, r=0.8*1e9*u.parsec)
+#+END_SRC
+
+In much the same way as for detectors, this source can be plotted with
+#+BEGIN_SRC python
+import matplotlib.pyplot as plt
+f, ax = plt.subplots(1,1)
+cbc.plot(ax)
+#+END_SRC
+
+While a number of (simple) sources are implemented in gravpy (such as BBH events with circular orbits and no spin) it is easy to add a new waveform by extending the ~Source~ class.
+
+
+* Estimating an SNR
+\label{sec:gravpy:snr}
+The abbr:snr of a given source in a given detector can be easily worked out using the signal's ~snr()~ method.
+For example
+#+BEGIN_SRC python
+print(cbc.snr(aligo))
+#+END_SRC
+reveals a rough estimate that gls:gw150914 would have had an SNR around 112 in the advanced abbr:ligo detector at its design sensitivity.
+This result should clearly be taken with caution, since the actual abbr:asd of the design sensitivity is unknown, the abbr:bbh model used here was very simple, and assumed that the source was optimally oriented, and located in an optimal sky location, none of which were, in fact, the case for gls:gw150914.
+
+Performing the same operation on a variety of past, present, and future detector designs gives the abpl:snr in table ref:tab:gravpy:gw150914snr.
+
+\begin{table}
+\centering
+\begin{tabular}{@{}l S[table-format=3.3]}
+\toprule
+IFO     &   \multicolumn{1}{c}{SNR} \\
+\midrule
+aLIGO        &    112.363 \\
+aLIGO [O1]   &    24.813 \\
+eLISA        &    109.124 \\
+Initial LIGO &    6.379 \\
+GEO600       &    4.800 \\
+TAMA         &    0.258 \\
+\bottomrule
+\end{tabular}
+\caption[The SNR of GW150914 estimated by gravpy had it been detected by a number of past, present, and future detectors]{The SNR of GW150914 estimated by gravpy had it been detected by a number of past, present, and future detectors. As noted in section ref:sec:gravpy:snr these SNR calculations assuming optimal source orientation and sky location for each detector, and often use idealised or estimated values for the detectors' abbr:asd. For comparison, GW150914 was detected in advanced \gls{ligo} with an \gls{snr} of 13 and 20 (for each detector) \cite{2016PhRvL.116m1103A}. This event would not have been detectable in Initial LIGO, where an SNR of $8$ would be required for a detection, agreeing with the findings of \cite{2016PhRvL.116m1103A}.
+\label{tab:gravpy:gw150914snr}}
+\end{table}
+
+[fn:gravpydocumentation] At https://code.daniel-williams.co.uk/gravpy.

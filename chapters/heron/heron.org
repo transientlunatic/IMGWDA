@@ -345,8 +345,8 @@ Figure ref:fig:heron:example:nr shows a waveform produced from the various model
 {\textbf{abbr:gp regression predictions, compared to abbr:nr}. 
 One hundred draws from the Gaussian process (left panel) for a non-spinning configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $q = 0.625$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. 
 The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. 
-The differences between the phenomenological model and the \ac{GPR} model waveforms are seen to also exist between the phenomenological model waveforms and the \ac{NR}-derived waveform (\texttt{GT0374}), plotted here in green. 
-In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+The differences between the phenomenological model and the \gls{gp} regression model waveforms are seen to also exist between the phenomenological model waveforms and the \gls{nr}-derived waveform (\texttt{GT0374}), plotted here in green. 
+In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \gls{gp} regression and the phenomenological waveform.
     \label{fig:heron:example:nr}
   }
 \end{figure*}
@@ -356,7 +356,7 @@ In the right panel the distribution of mismatches between the samples and both p
 
   \includegraphics[width=\textwidth]{figures/heron/nonspin-equalmass.pdf}
   \caption[A Heron waveform from a non-spinning system]
-{\textbf{Non-spinning waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+{\textbf{Non-spinning waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0)$, $\vec{s_2} = (0,0,0)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \gls{gp} regression and the phenomenological waveform.
     \label{fig:heron:example:nonspin}
   }
 \end{figure*}
@@ -364,7 +364,7 @@ In the right panel the distribution of mismatches between the samples and both p
 \begin{figure*}
   \includegraphics[width=\textwidth]{figures/heron/antispin-equalmass.pdf}
   \caption[A Heron waveform from an aligned-spin system]
-{\textbf{Anti-aligned spin waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0.6)$, $\vec{s_2} = (0,0,-0.6)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+{\textbf{Anti-aligned spin waveform}. One hundred draws from the Gaussian process (left panel) for a non-spinning, equal-mass configuration ($\vec{s_1} = (0,0,0.6)$, $\vec{s_2} = (0,0,-0.6)$, $q = 1.0$), shown as light grey lines compared to two analytical approximant models, \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} in red and blue respectively. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical lines representing the mismatch between the \gls{gp} regression and the phenomenological waveform.
     \label{fig:heron:example:spin}
   }
 \end{figure*}
@@ -372,7 +372,7 @@ In the right panel the distribution of mismatches between the samples and both p
 \begin{figure*}
   \includegraphics[width=\textwidth]{figures/heron/precessing.pdf}
   \caption[A Heron waveform from a precessing system]
-{\textbf{Precessing waveform}. One hundred draws from the Gaussian process (left panel) for a precessing system, with a mass ratio $q=0.25$, and a spin configuration ($\vec{s_1} = (0.35,0.1,0.2)$, $\vec{s_2} = (0, 0, 0.4)$), shown as light grey lines compared to a single analytical approximant model, \texttt{IMRPhenomPv2} in blue. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical line representing the mismatch between the \ac{GPR} and the phenomenological waveform.
+{\textbf{Precessing waveform}. One hundred draws from the Gaussian process (left panel) for a precessing system, with a mass ratio $q=0.25$, and a spin configuration ($\vec{s_1} = (0.35,0.1,0.2)$, $\vec{s_2} = (0, 0, 0.4)$), shown as light grey lines compared to a single analytical approximant model, \texttt{IMRPhenomPv2} in blue. The mean draw from the Gaussian process is shown as a grey dashed line, while the associated variance is plotted as a grey-filled region surrounding the mean. In the right panel the distribution of mismatches between the samples and both phenomenological waveforms are shown, with the vertical line representing the mismatch between the \gls{gp} regression and the phenomenological waveform.
     \label{fig:heron:example:precessing}
   }
 \end{figure*}

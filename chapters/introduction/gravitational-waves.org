@@ -460,10 +460,10 @@ This allows a less powerful laser to be used as the input for the interferometer
  For a ground-based interferometer, which has an arm-length of $4$-kilometres, the light travel time within the arm is of the order $\SI{E-5}{\second}$.
  The period of a abbr:gw which the detector is sensitive to, around $\SI{E-2}{\second}$, is much greater than this travel time.
  As a result it is advantageous to allow the beam to remain within the arm for longer than one round-trip. 
- By setting the arm up as a cavity the effective length of the arm can be increased; a gls:finesse of 100 will then increase the effective length of the arm 100-fold.
+ By setting the arm up as a cavity the effective length of the arm can be increased; a finesse of 100 will then increase the effective length of the arm 100-fold.
  This in turn increases the apparent change in the arm length by a factor of 100, and substantially aids the sensitivity of the detector.
 
- In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a gls:finesse, $\mathcal{F}=450$.
+ In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a finesse, $\mathcal{F}=450$.
  This is formed by placing a mirror between the beam-splitter and the end mirror in each arm.
 
 
@@ -548,7 +548,7 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
  #+NAME: sec:detectors:aligo
  The Advanced gls:ligo detectors are considered second-generation interferometric abbr:gw detectors, located at two observatories in the United States of America. gls:llo is located in woodland outside the town of Livinston in Louisiana, while gls:lho is located on the Hanford Reservation in the State of Washington.
 
- The advanced gls:ligo detectors replaced the first-generation Initial gls:ligo detectors, and share the same facilities as their predecessors[fn:lho2k], and like them are 4-kilometre long interferometers with a gls:fabry-perot-cavity in each arm, with a gls:finesse of 450. 
+ The advanced gls:ligo detectors replaced the first-generation Initial gls:ligo detectors, and share the same facilities as their predecessors[fn:lho2k], and like them are 4-kilometre long interferometers with a gls:fabry-perot-cavity in each arm, with a finesse of 450. 
  The detectors improve their sensitivity compared to the initial generation detectors through the use of signal recycling, a technology pioneered in the gls:geo600 detector, and have quadruple mirror suspensions which use fused silica fibres to
  provide seismic islolation cite:2002CQGra..19.4043R,2012CQGra..29w5004A.
  Combined, the improvements to the design of the detectors allowed a ten-fold improvement in sensitivity in the most sensitive frequency region (around $\SI{100}{\hertz}$) compared to the initial gls:ligo detectors.

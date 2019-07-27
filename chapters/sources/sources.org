@@ -231,7 +231,7 @@ A number of codes are used to produce abbr:nr waveforms for the advanced-era abb
 + SPEC :: The abbr:spec is a abbr:nr method which leverages spectral methods during the evolution of the black hole spacetime in abbr:bbh simulations, in an attempt to circumvent instabilities which are present when using finite difference methods cite:2000PhRvD..62h4032K. 
 The code is capable of generating the merger and ringdown component of the abbr:gw waveform for a generic abbr:bbh configuration cite:2009PhRvD..80l4010S.
 + BAM ::  The abbr:bam code uses a modified abbr:bssn regime cite:2004PhRvL..92u1101B,2008PhRvD..77b4027B,2004PhRvL..92u1101B,1999IJMPD...8...85B.
-+ MAYA :: The gls:maya code is based on the abbr:bssn formalism with a moving puncture gauge condition.
++ MAYA :: The MAYA code is based on the abbr:bssn formalism with a moving puncture gauge condition.
 
 ** Catalogues
    \label{sec:sources:cbc:catalogues}
@@ -239,7 +239,7 @@ The code is capable of generating the merger and ringdown component of the abbr:
    
 *** Georgia Tech Waveform catalogue
     \label{sec:sources:cbc:catalogues:gt}
-    The Georgia Tech waveform catalogue cite:2016CQGra..33t4001J is composed of 452 waveforms which were generated using the gls:maya abbr:nr code at the Centre for Relativistic Astrophysics at Georgia Institute of Technology.
+    The Georgia Tech waveform catalogue cite:2016CQGra..33t4001J is composed of 452 waveforms which were generated using the MAYA abbr:nr code at the Centre for Relativistic Astrophysics at Georgia Institute of Technology.
 The catalogue includes both non-spinning simulations for quasi-circular systems with mass-ratios $q \leq 15$, and precessing quasi-circular systems with $q \leq 8$. 
 Within the set of waveforms derived from spinning systems are two subsets: aligned-spin, where the spin axis of each black hole is parallel to the orbital angular momentum, $\vec{L}$; and precessing, where the spin axes are not parallel to $\vec{L}$. 
 The distribution of abbr:bbh parameters for the waveforms in the cataloue are plotted in the corner plot of figure ref:fig:sources:cbc:nr:gtcoverage.
@@ -390,10 +390,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
 
    \begin{figure}
    \includegraphics[width=\textwidth]{figures/sources/minke-adhoc.pdf}	
-   \caption[A catalogue of unmodelled burst waveforms]{The three unmodelled burst ``waveforms'' which are typically considered by burst analyses; Gaussian-like bursts, Sine-Gaussian bursts, and White noise bursts. 
-   The first row depicts each of these waveforms in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
-   The second row contains the time-frequency spectrogram of each waveform in the plus polarisaiton.
-   The third row contains the time-frequency constant-$q$ transform of each waveform.
+   \caption[A catalogue of unmodelled burst waveforms]{The three unmodelled burst ``waveforms'' which are typically considered by burst analyses; Gaussian-like bursts, Sine-Gaussian bursts, and White noise bursts each depicted in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
    \label{fig:sources:burst:adhoc}
    }
    
@@ -985,17 +982,17 @@ At the beginning of the advanced detector era it became clear that the productio
 
 \end{tikzpicture}
 
-\caption[The pricess of frame production for a mock data challenge using Minke]{The process of frame production for a abbr:mdc using Minke. For software injections the injection-ready signals are normally stored in GWF frame files, ready to be injected into the signal recorded from the detector. For waveforms to be used for hardware injections the signals are simply written out as ASCII-format text files. \label{fig:sources:minke:frame}}
+\caption[The pricess of frame production for a mock data challenge using Minke]{The process of frame production for a abbr:mdc using \gls{minke}. For software injections the injection-ready signals are normally stored in GWF frame files, ready to be injected into the signal recorded from the detector. For waveforms to be used for hardware injections the signals are simply written out as ASCII-format text files. \label{fig:sources:minke:frame}}
 \end{figure}
 
 /gls:Minke/ cite:daniel_williams_2019_3352036 is a software library[fn:minkeavailability] implemented in the ~python~ programming language which is designed to produce large-scale abpl:mdc for burst waveforms. 
 In order to ensure consistency with other abbr:gw analyses, and to make use of as much pre-existing, reviewed code as possible, gls:minke makes use of as much functionality as possible from gls:lalsuite cite:lalsuite.
-While Minke was designed for the primary purpose of abbr:mdc production, it also provides a convenient python wrapper to a number of functions from the \texttt{LALSimulation} cite:lalsuite C library, making it a convenient means to generate abbr:gw signals, for example for machine learning training data.
+While \gls{minke} was designed for the primary purpose of abbr:mdc production, it also provides a convenient python wrapper to a number of functions from the \texttt{LALSimulation} cite:lalsuite C library, making it a convenient means to generate abbr:gw signals, for example for machine learning training data.
 
 Burst searches are used to search for both totally unmodelled sources, and poorly modelled sources (see section ref:sec:sources:burst for a discussion of the various morphologies of these signals). 
 gls:minke supports a large subset of these waveforms; analytical waveforms, such as Gaussians and sine-Gaussians are generated using \texttt{LALSimulation}, while more complicated models can be used (such as abbr:nr derived supernova waveforms) can be used to generate signals if the waveform is available either as precomputed strain values in the $+$- and $\times$-polarisations, or decomposed into a spherical harmonic basis.
 
-The process for producing an abbr:mdc using Minke is broken into a number of stages (which are also depicted in figure ref:fig:sources:minke:frame):
+The process for producing an abbr:mdc using \gls{minke} is broken into a number of stages (which are also depicted in figure ref:fig:sources:minke:frame):
 
 1. The distributions of source parameters are specified; these include the probability distributions from which parameters of individual signals are drawn, and the hyperparameters defining those distributions. For example, the injections may be made uniformly across the sky, or a more specific distribution may be chosen.
 
@@ -1011,7 +1008,7 @@ The process for producing an abbr:mdc using Minke is broken into a number of sta
 
 When injecting signals which posess abbr:gw memory effects (that is, when the strain at the end of the signal does not equal the strain at the beginning) it is desirable to remove this effect.
 When adding a signal with memory to pre-recorded noise there will be a sharp discontinuity at the end of the signal which will produce artifacts in any frequency-domain representation of the signal.
-To account for this Minke adds a low-frequency half cosine decay to the end of the signal to present a smooth transition.
+To account for this \gls{minke} adds a low-frequency half cosine decay to the end of the signal to present a smooth transition.
 This can be seen in the Mueller waveform signal in the left column of figure ref:fig:sources:burst:minke:supernova.
 
 
@@ -1019,10 +1016,7 @@ This can be seen in the Mueller waveform signal in the left column of figure ref
 
    \begin{figure}
    \caption[A catalogue of supernova burst waveforms]{Three of the supernova burst ``waveforms'' which can be smiluated and injected by Minke.
-   From left to right, Mueller, Dimmelmeier, Scheidegger waveforms.
-   The first row depicts each of these waveforms in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
-   The second row contains the time-frequency spectrogram of each waveform in the plus polarisaiton.
-   The third row contains the time-frequency constant-$q$ transform of each waveform.
+   From left to right, Mueller, Dimmelmeier, Scheidegger waveforms are depicted in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
    \label{fig:sources:burst:minke:supernova}
    }
    \includegraphics[width=\textwidth]{figures/sources/minke-supernova.pdf}

@@ -9,6 +9,7 @@
 
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{tensor}
+\usepackage{etoolbox}
 \makeglossaries
 \usepackage{tabularx}
 \usepackage{type1cm}
@@ -86,11 +87,7 @@
 \newpage \newpage
 
 \begin{abstract}
-  Einstein's publication of the \textit{general theory of relativity} in 1915, and the discovery of a wave-like solution to the field-equations of that theory sparked a century-long quest to detect \textit{gravitational waves},
-  the illusive metric disturbances which were predicted to ripple-away from some of the most energetic events in the universe, such as supernovae and colliding black holes.
-  While this quest was completed in September 2015, with the Laser Interfermeter Gravitational-wave Observatory (LIGO) observation of a gravitational wave produced by a pair of coalescing black holes,
-  the age of gravitational wave detection has by no means come to an end,
-  with the prospect of myriad detections in the near future to analyse.
+\input{abstract}
 \end{abstract}
 \newpage
 
@@ -273,7 +270,7 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
 \appendices
 \chapter{Gravpy}
 \label{app:gravpy}
-
+\input{chapters/appendices/gravpy}
 
 % % The glossary
 % % \glsaddall

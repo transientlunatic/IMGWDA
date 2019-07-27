@@ -151,7 +151,7 @@ The square-root of the gls:power-spectral-density.
    :END:
 
 ** Cosmic Explorer
-   A proposed third-generation interferometric gravitational wave detector. cite:detectors.thirdgen.cosmicexplorer.sensitivity
+   A proposed third-generation interferometric gravitational wave detector cite:detectors.thirdgen.cosmicexplorer.sensitivity.
 ** cosmic microwave background
    :PROPERTIES:
    :ABBREVIATION: CMB
@@ -254,6 +254,7 @@ The square-root of the gls:power-spectral-density.
 ** EXPLORER
    A cryogenic resonant gravitational wave detector.
 ** Fabry-Perot cavity
+   An optical cavity, in which mirrors reflect electromagnetic radiation to form standing wave resonance. A Fabry-Perot cavity specifically has plane-parallel mirrors at either end of the cavity.
 ** false alarm probability
    :PROPERTIES:
    :ABBREVIATION: FAP
@@ -263,7 +264,8 @@ The square-root of the gls:power-spectral-density.
    :ABBREVIATION: FAR
    :END:
 ** Fermi
-   A Gamma-ray telescope.
+   A Gamma-ray space telescope operated by NASA and the US Department of Energy.
+   Fermi is designed to carry-out all-sky surveys of gamma ray radiation using its wide-field Fermi abbr:lat in addition to studying abbr:grb signals with the Fermi abbr:gbm.
 ** Fermi Gamma-ray Burst Monitor
    :PROPERTIES:
    :ABBREVIATION: GBM
@@ -324,31 +326,37 @@ For a more detailed discussion see section~\ref{sec:detectors:noise:glitch}.
    A committee formed in 1997 to facilitate interational cooperation
    in the construction and use of gravitational wave detectors.
 ** GW150914
-   The first detected gravitational wave, produced by a Binary Black
-   Hole Coalescence. The detection was made by the two advanced LIGO
-   observatories during an engineering run, but while the detector was
-   producing observation-quality data. 
+   The first detected gravitational wave, produced by a abbr:bbh coalescence cite:2016PhRvL.116f1102A. 
+   The detection was made on 14 September 2015 by the two advanced abbr:ligo observatories during an engineering run, but while the detector was producing observation-quality data. 
    GW150914 was announced to the general public on 11 February 2016.
-   
 ** GW151012
    Formerly known as LVT151012, the second gravitational wave detection from a abbr:bbh system. 
-   At the time this event was detected it did not satisfy the criteria to be announced in the literature as a gravitational wave event, and so was denoted a "LIGO/Virgo Trigger".
+   At the time this event was detected (12 October 2015) it did not satisfy the criteria to be announced in the literature as a gravitational wave event, and so was denoted a "LIGO/Virgo Trigger".
+   The event was widely known as the ``Second Monday'' event during the first observing run (gls:gw150914 being the first Monday event).
 ** GW151226
-   The second detected gravitational wave, produced by a binary black
-   hole coalesence, and detected by the advanced LIGO network.
+   The second detected gravitational wave, produced by a abbr:bbh coalescence, and detected by the advanced abbr:ligo network on 26 December 2015 cite:2016PhRvL.116x1103A. 
+   Also known as the ``Boxing Day Event'' thanks to its detection late on Boxing Day.
 ** GW170104
-   The first gls:gravitational-wave detection during the second observing run of advanced gls:ligo, of a binary black hole coalescence.
+   The first gls:gravitational-wave detection, made on 4 January 2017, during the second observing run of advanced gls:ligo, of a binary black hole coalescence cite:2017PhRvL.118v1101A. 
 ** GW170608
+   A abbr:bbh event observed on 8 June 2017, during the second observing run of advanced gls:ligo cite:2017ApJ...851L..35A. 
+   # The component masses were inferred to be ${12}_{-2}^{+7}\,\solMass$  and ${7}_{-2}^{+2}\,\solMass$
 ** GW170814
-   The first gravitational wave event to be observed by a three-detector network, comprised the two advanced gls:ligo and the advanced gls:virgo detectors. As a result it was (briefly) the best-localised gravitational wave event. 
+   The first gravitational wave event to be observed (on 14 August 2017) by a three-detector network, comprised the two advanced gls:ligo and the advanced gls:virgo detectors cite:2017PhRvL.119n1101A. As a result it was (briefly) the best-localised gravitational wave event. 
 ** GW170817
-   The first abbr:gw event observed from a abbr:bns event.
+   The first abbr:gw event observed (on 17 August 2017) from a abbr:bns event cite:2017PhRvL.119p1101A.
 Also the first abbr:gw event to be observed alongside electromagnetic emssion, first gamma rays, then across almost the entire EM spectrum.
 ** horizon distance
    :PROPERTIES:
    :ABBREVIATION:
    :SYMBOL:   $\mathcal{D}_{\text{hor}}$
    :END:
+   The greatest distance at which a abbr:gw source can be located in order to be confidently detected by a gravitational wave detector.
+   The horizon distance is normally assumed to be the maximum detectable distance for an optimally oriented source in the region of sky which the detector is most sensitive to.
+   It is then the distance which would cause a signal to be detected with an abbr:snr of $12$ in a detector, which is the required abbr:snr for an unambiguous detection.
+   The average sensitivity over the whole sky (since abbr:gw detectors' sensitivity varies over the sky thanks to their antenna pattern) and over all orientations of the source would yield a distance around $2.26$-times smaller. 
+   The most frequently quoted horizon distance is the abbr:bns horizon distance, which is a fairly unambiguous measure of a detector's sensitivity thanks to small anticipated variance in the masses (and hence signal morphologies) of these systems.
+
 ** hydraulic external pre-isolator
    :PROPERTIES:
    :ABBREVIATION: HEPI
@@ -399,11 +407,14 @@ The present development timeline of Kagra will see it join the international det
    :ABBREVIATION: KW
    :END:
 ** LAGOS
+   The Laser Antenna for Gravitational radiation Observation in Space was an early design study for a space-based abbr:gw detector, conceived in the 1980s.
 ** LAL Inference Burst
    :PROPERTIES:
    :ABBREVIATION: LIB
    :END:
 ** LALSuite
+   The abbr:lsc Algorithms Library Suite is a large collection of C libraries and algorithms designed for a wide variety of abbr:gw analysis tasks. 
+   It is available to download from the abbr:lsc at \url{https://wiki.ligo.org/Computing/LALSuite}.
 ** Large scale cryogenic gravitational wave telescope
    :PROPERTIES:
    :ABBREVIATION: LCGT
@@ -442,6 +453,8 @@ The present development timeline of Kagra will see it join the international det
 ** LVT151012
    See gls:gw151012.
 ** Mario Schenberg
+   A cryogenic ($\SI{20}{\milli\kelvin}$ resonant abbr:gw detector in Sao Paulo, Brazil. 
+   In contrast to most other resonant abbr:gw detector designs (but similarly to gls:minigrail), it has a spherical shape in order to increase its sensitivity over the sky.
 ** Markov chain Monte Carlo
    :PROPERTIES:
    :ABBREVIATION: MCMC
@@ -482,9 +495,13 @@ Frequently used as a point estimate for parameters.
    :ABBREVIATION: MWEG
    :END:
 ** MiniGRAIL
-   A spherical cryogenic gravitational wave detector located in Leiden, Netherlands.
-   *A bit more detail here please.*
+   A cryogenic ($\SI{5}{\kelvin}$) resonant mass abbr:gw detector located in Leiden, Netherlands. 
+   Smiliarly to gls:mario-schenberg this detector is spherical rather than the more conventional cylindrical shape of other resonant detectors.
+   
 ** Minke
+   A Python software package for designing and producing mock data challenges and datasets of simulated abbr:gw signals. 
+   Mock data challenges are essential for calculating the range (see gls:horizon-distance) of search algorithms which are run on detector data.
+
 ** mock data challenge
    :PROPERTIES:
    :ABBREVIATION: MDC
@@ -492,6 +509,8 @@ Frequently used as a point estimate for parameters.
    :END:
 ** Monolithic suspension
 ** NANOGrav
+   The North American Nanohertz Observatory for Gravitational waves is a scientific collaboration which aims to use pulsar timing arrays to detect very low frequency abpl:gw. 
+   NANOGrav is based mainly in North America.
 ** NAUTILUS
    A cryogenic resonant gravitational wave detector.
 ** null stream
@@ -573,6 +592,9 @@ normally between 30 and 250-Hz.
 ** Ricci tensor
    A quantity which describes how the distance between two points within a volume varies as the volume is parallel-transported over a curved manifold compared to the same movement over a flat manifold.
 ** Riemann tensor
+   The tensor which describes the total curvature of a (Riemannian) manifold.
+   At each point in the manifold it assigns a tensor which describes how much the metric locally at that point differs from the Euclidean metric.
+   The Riemann tensor is essential to abbr:gr, as it is used to describe geodesic deviation, the curvature of a ``straight trajectory'' in the presence of a gravitational field.
 ** search pipeline
    A data analysis process, which may contain multiple separate components, which is capable of identifying candidate gravitational wave events ("triggers"),
    and performing inference on the signal, which may include determining the significance of the trigger, and parameter estimation.
@@ -640,6 +662,7 @@ normally between 30 and 250-Hz.
    :END:
    A first-generation interferometric gravitational wave detector which was located in Japan.
 ** TianQin
+   A space-based abbr:gw observatory proposed by Sun Yat-sen University, which would consist of three spacecraft in geostationary orbit around the earth (in contrast to abbr:lisa which would be located at an Earth-Sun Lagrange point). 
 ** Time delay interferometry
    :PROPERTIES:
    :ABBREVIATION: TDI
