@@ -1010,7 +1010,7 @@
     :PROPERTIES:
     :TITLE:    Orbit analysis of a geostationary gravitational wave interferometer detector array
     :BTYPE:    article
-    :CUSTOM_ID: 0264-9381-32-18-185017
+    :CUSTOM_ID: glisaorbit
     :AUTHOR:   Massimo Tinto and Jose C N de Araujo and Helio K Kuga and Márcio E S Alves and Odylio D Aguiar
     :JOURNAL:  Classical and Quantum Gravity
     :VOLUME:   32
@@ -1337,26 +1337,49 @@ Such a detector is expected to detect CBC sources to z>10 at SNR>20.
 
 * Noise sources
 
-# ** Gravity Spy: integrating advanced LIGO detector characterization, machine learning, and citizen science
-#    :PROPERTIES:
-#    :TITLE:    Gravity Spy: integrating advanced LIGO detector characterization, machine learning, and citizen science
-#    :BTYPE:    article
-#    :CUSTOM_ID: 2017CQGra..34f4003Z
-#    :AUTHOR:   {Zevin}, M. and {Coughlin}, S. and {Bahaadini}, S. and {Besler}, E. and {Rohani}, N. and {Allen}, S. and {Cabero}, M. and {Crowston}, K. and {Katsaggelos}, A.~K. and {Larson}, S.~L. and {Lee}, T.~K. and {Lintott}, C. and {Littenberg}, T.~B. and {Lundgren}, A. and {{\O}sterlund}, C. and {Smith}, J.~R. and {Trouille}, L. and {Kalogera}, V.
-#    :JOURNAL:  Classical and Quantum Gravity
-#    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
-#    :YEAR:     2017
-#    :MONTH:    Mar
-#    :VOLUME:   34
-#    :EID:      064003
-#    :PAGES:    064003
-#    :DOI:      10.1088/1361-6382/aa5cea
-#    :ARCHIVEPREFIX: arXiv
-#    :EPRINT:   1611.04596
-#    :PRIMARYCLASS: gr-qc
-#    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2017CQGra..34f4003Z
-#    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-#    :END:
+** Seismic gravity-gradient noise in interferometric gravitational-wave detectors
+   :PROPERTIES:
+   :TITLE:    Seismic gravity-gradient noise in interferometric gravitational-wave detectors
+   :BTYPE:    article
+   :CUSTOM_ID: 1998PhRvD..58l2002H
+   :AUTHOR:   {Hughes}, Scott A. and {Thorne}, Kip S.
+   :JOURNAL:  \prd
+   :KEYWORDS: 04.80.Nn, Gravitational wave detectors and experiments, General Relativity and Quantum Cosmology
+   :YEAR:     1998
+   :MONTH:    Dec
+   :VOLUME:   58
+   :NUMBER:   12
+   :EID:      122002
+   :PAGES:    122002
+   :DOI:      10.1103/PhysRevD.58.122002
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   gr-qc/9806018
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/1998PhRvD..58l2002H
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+** Gravity Spy: integrating advanced LIGO detector characterization, machine learning, and citizen science
+   :PROPERTIES:
+   :TITLE:    Gravity Spy integrating advanced LIGO detector characterization machine learning and citizen science
+   :BTYPE:    article
+   :CUSTOM_ID: 2017CQGra..34f4003Z
+   :AUTHOR:   {Zevin}, M. and {Coughlin}, S. and {Bahaadini}, S. and {Besler}, E. and {Rohani}, N. and {Allen}, S. and {Cabero}, M. and {Crowston}, K. and {Katsaggelos}, A.~K. and {Larson}, S.~L. and {Lee}, T.~K. and {Lintott}, C. and {Littenberg}, T.~B. and {Lundgren}, A. and {Osterlund}, C. and {Smith}, J.~R. and {Trouille}, L. and {Kalogera}, V.
+   :JOURNAL:  Classical and Quantum Gravity
+   :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
+   :YEAR:     2017
+   :MONTH:    Mar
+   :VOLUME:   34
+   :NUMBER:   6
+   :EID:      064003
+   :PAGES:    064003
+   :DOI:      10.1088/1361-6382/aa5cea
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1611.04596
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017CQGra..34f4003Z
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
 ** Gravitational Wave Detection by Interferometry (Ground and Space)
    :PROPERTIES:
    :TITLE:    Gravitational Wave Detection by Interferometry (Ground and Space)

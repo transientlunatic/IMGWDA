@@ -42,6 +42,22 @@
 * Specialised models
 ** Sparse Gaussian Processes
 ** Hierarhical Gaussian Processes
+*** HODLRlib: A Library for Hierarchical Matrices
+    :PROPERTIES:
+    :TITLE:    HODLRlib: A Library for Hierarchical Matrices
+    :BTYPE:    article
+    :CUSTOM_ID: 2019JOSS....4.1167A
+    :AUTHOR:   {Ambikasaran}, Sivaram and {Singh}, Karan and {Sankaran}, Shyam
+    :JOURNAL:  The Journal of Open Source Software
+    :YEAR:     2019
+    :MONTH:    Feb
+    :VOLUME:   4
+    :NUMBER:   34
+    :PAGES:    1167
+    :DOI:      10.21105/joss.01167
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019JOSS....4.1167A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 *** Fast Direct Methods for Gaussian Processes
     :PROPERTIES:
     :TITLE:    Fast Direct Methods for Gaussian Processes
@@ -52,7 +68,24 @@
     :MONTH:    mar
     :URL:      http://arxiv.org/abs/1403.6015
     :END:
-
+*** Fast symmetric factorization of hierarchical matrices with applications
+    :PROPERTIES:
+    :TITLE:    Fast symmetric factorization of hierarchical matrices with applications
+    :BTYPE:    article
+    :CUSTOM_ID: 2014arXiv1405.0223A
+    :AUTHOR:   {Ambikasaran}, Sivaram and {O'Neil}, Michael and {Singh}, Karan Raj
+    :JOURNAL:  arXiv e-prints
+    :KEYWORDS: Mathematics - Numerical Analysis, Computer Science - Numerical Analysis, Physics - Fluid Dynamics, Statistics - Computation
+    :YEAR:     2014
+    :MONTH:    May
+    :EID:      arXiv:1405.0223
+    :PAGES:    arXiv:1405.0223
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1405.0223
+    :PRIMARYCLASS: math.NA
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2014arXiv1405.0223A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 ** Experts-based Gaussian Processes
 *** Generalized Product of Experts for Automatic and Principled Fusion of Gaussian Process Predictions
     :PROPERTIES:
@@ -203,7 +236,70 @@
     :SCHOOL:   {Computational and Biological Learning Laboratory, University of Cambridge}
     :END:
 
+** Multidimensional kernels
+
+*** Multi-task Gaussian Process Prediction
+    :PROPERTIES:
+    :TITLE:    Multi-task Gaussian Process Prediction
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: Bonilla2007
+    :AUTHOR:   Bonilla, Edwin V. and Chai, Kian Ming A. and Williams, Christopher K. I.
+    :BOOKTITLE: Proceedings of the 20th International Conference on Neural Information Processing Systems
+    :SERIES:   NIPS'07
+    :YEAR:     2007
+    :ISBN:     978-1-60560-352-0
+    :LOCATION: Vancouver, British Columbia, Canada
+    :PAGES:    153--160
+    :NUMPAGES: 8
+    :URL:      http://dl.acm.org/citation.cfm?id=2981562.2981582
+    :ACMID:    2981582
+    :PUBLISHER: Curran Associates Inc.
+    :ADDRESS:  USA
+    :END:
+*** Kernels for Vector-Valued Functions: a Review
+    :PROPERTIES:
+    :TITLE:    Kernels for Vector-Valued Functions: a Review
+    :BTYPE:    article
+    :CUSTOM_ID: 2011arXiv1106.6251A
+    :AUTHOR:   {Alvarez}, Mauricio A. and {Rosasco}, Lorenzo and {Lawrence}, Neil D.
+    :JOURNAL:  arXiv e-prints
+    :KEYWORDS: Statistics - Machine Learning, Computer Science - Artificial Intelligence, Mathematics - Statistics Theory
+    :YEAR:     2011
+    :MONTH:    Jun
+    :EID:      arXiv:1106.6251
+    :PAGES:    arXiv:1106.6251
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1106.6251
+    :PRIMARYCLASS: stat.ML
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2011arXiv1106.6251A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Computationally Efficient Convolved Multiple Output Gaussian Processes
+    :PROPERTIES:
+    :TITLE:    Computationally Efficient Convolved Multiple Output Gaussian Processes
+    :BTYPE:    article
+    :CUSTOM_ID: Alvarez2011a
+    :AUTHOR:   \'{A}lvarez, Mauricio A. and Lawrence, Neil D.
+    :JOURNAL:  J. Mach. Learn. Res.
+    :ISSUE_DATE: 2/1/2011
+    :VOLUME:   12
+    :MONTH:    jul
+    :YEAR:     2011
+    :ISSN:     1532-4435
+    :PAGES:    1459--1500
+    :NUMPAGES: 42
+    :URL:      http://dl.acm.org/citation.cfm?id=1953048.2021048
+    :ACMID:    2021048
+    :PUBLISHER: JMLR.org
+    :END:
 * Examples and data
+** The Database of British and Irish Hills v16.2
+   :PROPERTIES:
+   :TITLE:    The Database of British and Irish Hills v16.2
+   :BTYPE:    misc
+   :URL:      http://www.hills-database.co.uk
+   :CUSTOM_ID: hilldb
+   :END:
 ** Modeling of strength of high-performance concrete using artificial neural networks 
    :PROPERTIES:
    :TITLE:    Modeling of strength of high-performance concrete using artificial neural networks
@@ -224,8 +320,89 @@
 
 
 * Books & Textbooks
-
-
+* Generalisations
+** Symmetric multivariate and related distributions
+   :PROPERTIES:
+   :TITLE:    Symmetric multivariate and related distributions
+   :BTYPE:    book
+   :CUSTOM_ID: symmetricfang
+   :ADDED-AT: 2009-08-21T09:55:59.000+0200
+   :ADDRESS:  London [u.a.]
+   :AUTHOR:   Fang, {Kai-Tai} and Kotz, {Samuel} and Ng, {Kai Wang}
+   :BIBURL:   https://www.bibsonomy.org/bibtex/256cecdf13679ff16a09eab14358c9802/fbw_hannover
+   :INTERHASH: fe0a01a83e84ef96e613065573e13d6f
+   :INTRAHASH: 56cecdf13679ff16a09eab14358c9802
+   :ISBN:     0412314304
+   :KEYWORDS: Mathematische_Statistik
+   :NUMBER:   36
+   :PAGETOTAL: X, 220
+   :PPN_GVK:  027504395
+   :PUBLISHER: Chapman & Hall
+   :SERIES:   Monographs on statistics and applied probability
+   :TIMESTAMP: 2009-08-21T09:57:42.000+0200
+   :URL:      http://gso.gbv.de/DB=2.1/CMD?ACT=SRCHA&SRT=YOP&IKT=1016&TRM=ppn+027504395&sourceid=fbw_bibsonomy
+   :YEAR:     1990
+   :END:
+** Student-t Processes as Alternatives to Gaussian Processes
+   :PROPERTIES:
+   :TITLE:    Student-t Processes as Alternatives to Gaussian Processes
+   :BTYPE:    article
+   :CUSTOM_ID: 2014arXiv1402.4306S
+   :AUTHOR:   {Shah}, Amar and {Wilson}, Andrew Gordon and {Ghahramani}, Zoubin
+   :JOURNAL:  arXiv e-prints
+   :KEYWORDS: Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Machine Learning, Statistics - Methodology
+   :YEAR:     2014
+   :MONTH:    Feb
+   :EID:      arXiv:1402.4306
+   :PAGES:    arXiv:1402.4306
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1402.4306
+   :PRIMARYCLASS: stat.ML
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2014arXiv1402.4306S
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+* Alternatives
+** SVR
+*** Support Vector Regression Machines
+    :PROPERTIES:
+    :TITLE:    Support Vector Regression Machines
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: drucker1996
+    :AUTHOR:   Drucker, Harris and Burges, Chris J. C. and Kaufman, Linda and Smola, Alex and Vapnik, Vladimir
+    :BOOKTITLE: Proceedings of the 9th International Conference on Neural Information Processing Systems
+    :SERIES:   NIPS'96
+    :YEAR:     1996
+    :LOCATION: Denver, Colorado
+    :PAGES:    155--161
+    :NUMPAGES: 7
+    :URL:      http://dl.acm.org/citation.cfm?id=2998981.2999003
+    :ACMID:    2999003
+    :PUBLISHER: MIT Press
+    :ADDRESS:  Cambridge, MA, USA
+    :END:
+** Polynomial response surfaces
+*** On the Experimental Attainment of Optimum Conditions
+    :PROPERTIES:
+    :TITLE:    On the Experimental Attainment of Optimum Conditions
+    :BTYPE:    article
+    :CUSTOM_ID: box1951
+    :AUTHOR:   G. E. P. Box and K. B. Wilson
+    :JOURNAL:  Journal of the {R}oyal {S}tatistical {S}ociety. Series B (Methodological)
+    :VOLUME:   13
+    :NUMBER:   1
+    :PAGES:    1--45
+    :YEAR:     1951
+    :CODEN:    JSTBAJ
+    :DOI:      https://doi.org/10.2307/2983966
+    :ISSN:     0035-9246
+    :ISSN-L:   0035-9246
+    :BIBDATE:  Fri Jan 23 11:53:22 MST 2015
+    :BIBSOURCE: http://www.jstor.org/stable/i349693; http://www.math.utah.edu/pub/tex/bib/jrss-b.bib
+    :URL:      http://www.jstor.org/stable/2983966
+    :ACKNOWLEDGEMENT: ack-nhfb
+    :FJOURNAL: Journal of the Royal Statistical Society. Series B (Methodological)
+    :JOURNAL-URL: http://www.jstor.org/journals/00359246.html
+    :END:
 
 * Heron model
 ** A Precessing Numerical Relativity Waveform Surrogate Model for Binary Black Holes: A Gaussian Process Regression Approach
@@ -266,8 +443,78 @@
    :VOLUME:   86
    :YEAR:     1964
    :END:
-
-
-
-
-
+** Gaussian Processes for Big Data
+   :PROPERTIES:
+   :TITLE:    Gaussian Processes for Big Data
+   :BTYPE:    article
+   :CUSTOM_ID: 2013arXiv1309.6835H
+   :AUTHOR:   {Hensman}, James and {Fusi}, Nicolo and {Lawrence}, Neil D.
+   :JOURNAL:  arXiv e-prints
+   :KEYWORDS: Computer Science - Machine Learning, Statistics - Machine Learning
+   :YEAR:     2013
+   :MONTH:    Sep
+   :EID:      arXiv:1309.6835
+   :PAGES:    arXiv:1309.6835
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1309.6835
+   :PRIMARYCLASS: cs.LG
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2013arXiv1309.6835H
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Stochastic Variational Inference
+   :PROPERTIES:
+   :TITLE:    Stochastic Variational Inference
+   :BTYPE:    article
+   :CUSTOM_ID: 2012arXiv1206.7051H
+   :AUTHOR:   {Hoffman}, Matt and {Blei}, David M. and {Wang}, Chong and {Paisley}, John
+   :JOURNAL:  arXiv e-prints
+   :KEYWORDS: Statistics - Machine Learning, Computer Science - Artificial Intelligence, Statistics - Computation, Statistics - Methodology
+   :YEAR:     2012
+   :MONTH:    Jun
+   :EID:      arXiv:1206.7051
+   :PAGES:    arXiv:1206.7051
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1206.7051
+   :PRIMARYCLASS: stat.ML
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2012arXiv1206.7051H
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** First cross-correlation analysis of interferometric and resonant-bar gravitational-wave data for stochastic backgrounds
+   :PROPERTIES:
+   :TITLE:    First cross-correlation analysis of interferometric and resonant-bar gravitational-wave data for stochastic backgrounds
+   :BTYPE:    article
+   :CUSTOM_ID: 2007PhRvD..76b2001A
+   :AUTHOR:   {Abbott}, B. and {Abbott}, R. and {Adhikari}, R. and {Agresti}, J. and {Ajith}, P. and {Allen}, B. and {Amin}, R. and {Anderson}, S.~B. and {Anderson}, W.~G. and {Arain}, M. and et al.
+   :JOURNAL:  \prd
+   :KEYWORDS: 04.80.Nn, 04.30.Db, 07.05.Kf, 95.55.Ym, Gravitational wave detectors and experiments, Wave generation and sources, Data analysis: algorithms and implementation, data management, Gravitational radiation detectors, mass spectrometers, and other instrumentation and techniques, General Relativity and Quantum Cosmology
+   :YEAR:     2007
+   :MONTH:    Jul
+   :VOLUME:   76
+   :NUMBER:   2
+   :EID:      022001
+   :PAGES:    022001
+   :DOI:      10.1103/PhysRevD.76.022001
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   gr-qc/0703068
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2007PhRvD..76b2001A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** A Unifying View of Sparse Approximate Gaussian Process Regression
+   :PROPERTIES:
+   :TITLE:    A Unifying View of Sparse Approximate Gaussian Process Regression
+   :BTYPE:    article
+   :CUSTOM_ID: sparsegp.unifying
+   :AUTHOR:   Qui\~{n}onero-Candela, Joaquin and Rasmussen, Carl Edward
+   :JOURNAL:  J. Mach. Learn. Res.
+   :ISSUE_DATE: 12/1/2005
+   :VOLUME:   6
+   :MONTH:    dec
+   :YEAR:     2005
+   :ISSN:     1532-4435
+   :PAGES:    1939--1959
+   :NUMPAGES: 21
+   :URL:      http://dl.acm.org/citation.cfm?id=1046920.1194909
+   :ACMID:    1194909
+   :PUBLISHER: JMLR.org
+   :END:

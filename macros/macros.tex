@@ -10,6 +10,10 @@
 \footnotemark\marginpar{\footnotemark}\footnotetext{#1}}
 
 
+%%% Make vectors boldface
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+
+
 \NewEnviron{sidefigure}[2]{
   \sidebar{
     \BODY
@@ -36,6 +40,8 @@
 \providecommand{\transpose}{\intercal}
 \providecommand{\tt}{\transpose}
 \providecommand{\ten}[1]{\mathsf{#1}}
+
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 
 % Probability operators
 \providecommand{\expect}{\mathbb{E}} %expectation operator
@@ -113,3 +119,6 @@
 \newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\mpc}{\mathrm{Mpc}}
 \newcommand{\yr}{\mathrm{yr}}
+
+\providecommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} 
+\providecommand\complicated{ 0.5*( 1/(.2*sqrt(2*pi))*exp(-((x-1)^2)/(.2*2^2))) +  0.5*(1/(.5*sqrt(2*pi))*exp(-((x-5)^2)/(.5*2^2)) ) } 

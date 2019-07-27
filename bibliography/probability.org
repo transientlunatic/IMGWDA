@@ -1,14 +1,67 @@
 * Probability
-* An essay towards solving a problem in the doctrine of chances
+* {Data Analysis - A Bayesian Tutorial}
   :PROPERTIES:
-  :TITLE:    An essay towards solving a problem in the doctrine of chances
-  :BTYPE:    article
-  :AUTHOR:   Thomas Bayes and Richard Price
-  :JOURNAL:  Philosophical Transactions of the Royal Society of London
-  :YEAR:     1763
-  :CUSTOM_ID: bayesessay
+  :TITLE:    {Data Analysis - A Bayesian Tutorial}
+  :BTYPE:    book
+  :CUSTOM_ID: Sivia2006
+  :ADDED-AT: 2019-03-11T21:00:05.000+0100
+  :AUTHOR:   Sivia, D. S. and Skilling, J.
+  :BIBURL:   https://www.bibsonomy.org/bibtex/272f2fe4eff9fbfb391f8d72f8dd93872/fairybasslet
+  :CITEULIKE-ARTICLE-ID: 1731310
+  :EDITION:  2nd
+  :INTERHASH: 967121cedc716b9bfd7a098f9b59590e
+  :INTRAHASH: 72f2fe4eff9fbfb391f8d72f8dd93872
+  :KEYWORDS: *file-import-13-09-19 bayesian
+  :POSTED-AT: 2012-10-30 12:06:16
   :END:
-
+** Three approaches to the quantitative definition of information
+   :PROPERTIES:
+   :TITLE:    Three approaches to the quantitative definition of information
+   :BTYPE:    article
+   :CUSTOM_ID: kolmogorov
+   :AUTHOR:   A. N. Kolmogorov
+   :JOURNAL:  International Journal of Computer Mathematics
+   :VOLUME:   2
+   :NUMBER:   1-4
+   :PAGES:    157-168
+   :YEAR:     1968
+   :PUBLISHER: Taylor & Francis
+   :DOI:      10.1080/00207166808803030
+   :URL:      https://doi.org/10.1080/00207166808803030
+   :EPRINT:   https://doi.org/10.1080/00207166808803030
+   :END:
+** Probability Theory
+   :PROPERTIES:
+   :TITLE:    Probability Theory
+   :BTYPE:    book
+   :CUSTOM_ID: 2003prth.book.....J
+   :AUTHOR:   {Jaynes}, E.~T. and {Bretthorst}, G. Larry
+   :YEAR:     2003
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2003prth.book.....J
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** An essay towards solving a problem in the doctrine of chances
+   :PROPERTIES:
+   :TITLE:    An essay towards solving a problem in the doctrine of chances
+   :BTYPE:    article
+   :AUTHOR:   Thomas Bayes and Richard Price
+   :JOURNAL:  Philosophical Transactions of the Royal Society of London
+   :YEAR:     1763
+   :CUSTOM_ID: bayesessay
+   :END:
+** Interpretations of Probability
+   :PROPERTIES:
+   :TITLE:    Interpretations of Probability
+   :BTYPE:    incollection
+   :CUSTOM_ID: sepprobabilityinterpret
+   :AUTHOR:   Hájek, Alan
+   :BOOKTITLE: The Stanford Encyclopedia of Philosophy
+   :EDITOR:   Edward N. Zalta
+   :HOWPUBLISHED: \url{https://plato.stanford.edu/archives/win2012/entries/probability-interpret/}
+   :YEAR:     2012
+   :EDITION:  Winter 2012
+   :PUBLISHER: Metaphysics Research Lab, Stanford University
+   :END:
 * Sampling
 ** The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo
    :PROPERTIES:
@@ -160,3 +213,4 @@
 
 
 
+ 

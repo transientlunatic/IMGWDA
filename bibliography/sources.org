@@ -868,6 +868,28 @@
       :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018arXiv181207865V
       :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
       :END:
+**** Gaussian process
+***** Statistical gravitational waveform models: What to simulate next?
+      :PROPERTIES:
+      :TITLE:    Statistical gravitational waveform models: What to simulate next?
+      :BTYPE:    article
+      :CUSTOM_ID: 2017PhRvD..96l3011D
+      :AUTHOR:   {Doctor}, Zoheyr and {Farr}, Ben and {Holz}, Daniel E. and {P{\"u}rrer}, Michael
+      :JOURNAL:  \prd
+      :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+      :YEAR:     2017
+      :MONTH:    Dec
+      :VOLUME:   96
+      :NUMBER:   12
+      :EID:      123011
+      :PAGES:    123011
+      :DOI:      10.1103/PhysRevD.96.123011
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1706.05408
+      :PRIMARYCLASS: astro-ph.HE
+      :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017PhRvD..96l3011D
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
 *** NR Catalogues
 **** Catalog of 174 Binary Black Hole Simulations for Gravitational Wave Astronomy
      :PROPERTIES:
@@ -889,6 +911,7 @@
      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2013PhRvL.111x1104M
      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
      :END:
+
 **** Georgia tech catalog of gravitational waveforms
      :PROPERTIES:
      :TITLE:    Georgia tech catalog of gravitational waveforms
@@ -910,6 +933,111 @@
      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
      :END:
 
+**** Surrogate model of hybridized numerical relativity binary black hole waveforms
+     :PROPERTIES:
+     :TITLE:    Surrogate model of hybridized numerical relativity binary black hole waveforms
+     :BTYPE:    article
+     :CUSTOM_ID: 2019PhRvD..99f4045V
+     :AUTHOR:   {Varma}, Vijay and {Field}, Scott E. and {Scheel}, Mark A. and {Blackman}, Jonathan and {Kidder}, Lawrence E. and {Pfeiffer}, Harald P.
+     :JOURNAL:  \prd
+     :KEYWORDS: General Relativity and Quantum Cosmology
+     :YEAR:     2019
+     :MONTH:    Mar
+     :VOLUME:   99
+     :NUMBER:   6
+     :EID:      064045
+     :PAGES:    064045
+     :DOI:      10.1103/PhysRevD.99.064045
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1812.07865
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019PhRvD..99f4045V
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** High-Accuracy Mass, Spin, and Recoil Predictions of Generic Black-Hole Merger Remnants
+     :PROPERTIES:
+     :TITLE:    High-Accuracy Mass, Spin, and Recoil Predictions of Generic Black-Hole Merger Remnants
+     :BTYPE:    article
+     :CUSTOM_ID: 2019PhRvL.122a1101V
+     :AUTHOR:   {Varma}, Vijay and {Gerosa}, Davide and {Stein}, Leo C. and {H{\'e}bert}, Fran{\c{c}}ois and {Zhang}, Hao
+     :JOURNAL:  \prl
+     :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+     :YEAR:     2019
+     :MONTH:    Jan
+     :VOLUME:   122
+     :NUMBER:   1
+     :EID:      011101
+     :PAGES:    011101
+     :DOI:      10.1103/PhysRevLett.122.011101
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1809.09125
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019PhRvL.122a1101V
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** On the accuracy and precision of numerical waveforms: effect of waveform extraction methodology
+     :PROPERTIES:
+     :TITLE:    On the accuracy and precision of numerical waveforms: effect of waveform extraction methodology
+     :BTYPE:    article
+     :CUSTOM_ID: 2016CQGra..33p5001C
+     :AUTHOR:   {Chu}, Tony and {Fong}, Heather and {Kumar}, Prayush and {Pfeiffer}, Harald P. and {Boyle}, Michael and {Hemberger}, Daniel A. and {Kidder}, Lawrence E. and {Scheel}, Mark A. and {Szilagyi}, Bela
+     :JOURNAL:  Classical and Quantum Gravity
+     :KEYWORDS: General Relativity and Quantum Cosmology
+     :YEAR:     2016
+     :MONTH:    Aug
+     :VOLUME:   33
+     :NUMBER:   16
+     :EID:      165001
+     :PAGES:    165001
+     :DOI:      10.1088/0264-9381/33/16/165001
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1512.06800
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016CQGra..33p5001C
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Directly comparing GW150914 with numerical solutions of Einstein's equations for binary black hole coalescence
+     :PROPERTIES:
+     :TITLE:    Directly comparing GW150914 with numerical solutions of Einstein's equations for binary black hole coalescence
+     :BTYPE:    article
+     :CUSTOM_ID: 2016PhRvD..94f4035A
+     :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M.~R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and et al.
+     :JOURNAL:  \prd
+     :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - Cosmology and Nongalactic Astrophysics, Astrophysics - High Energy Astrophysical Phenomena
+     :YEAR:     2016
+     :MONTH:    Sep
+     :VOLUME:   94
+     :NUMBER:   6
+     :EID:      064035
+     :PAGES:    064035
+     :DOI:      10.1103/PhysRevD.94.064035
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1606.01262
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016PhRvD..94f4035A
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
+**** Transformations of asymptotic gravitational-wave data
+     :PROPERTIES:
+     :TITLE:    Transformations of asymptotic gravitational-wave data
+     :BTYPE:    article
+     :CUSTOM_ID: 2016PhRvD..93h4031B
+     :AUTHOR:   {Boyle}, Michael
+     :JOURNAL:  \prd
+     :KEYWORDS: General Relativity and Quantum Cosmology
+     :YEAR:     2016
+     :MONTH:    Apr
+     :VOLUME:   93
+     :NUMBER:   8
+     :EID:      084031
+     :PAGES:    084031
+     :DOI:      10.1103/PhysRevD.93.084031
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1509.00862
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016PhRvD..93h4031B
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
 * Burst sources
 ** Search (methods)
 *** {LIGO} {A}lgorithm {L}ibrary - {LALS}uite
@@ -1373,6 +1501,29 @@
     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2014PhRvD..89l2004A
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
+** Parabolic encounters
+*** Waveforms
+**** Gravitational radiation driven capture in unequal mass black hole encounters
+     :PROPERTIES:
+     :TITLE:    Gravitational radiation driven capture in unequal mass black hole encounters
+     :BTYPE:    article
+     :CUSTOM_ID: 2017PhRvD..96h4009B
+     :AUTHOR:   {Bae}, Yeong-Bok and {Lee}, Hyung Mok and {Kang}, Gungwon and {Hansen}, Jakob
+     :JOURNAL:  \prd
+     :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+     :YEAR:     2017
+     :MONTH:    Oct
+     :VOLUME:   96
+     :NUMBER:   8
+     :EID:      084009
+     :PAGES:    084009
+     :DOI:      10.1103/PhysRevD.96.084009
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1701.01548
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017PhRvD..96h4009B
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
 ** Cosmic strings
 *** Physics
 **** Topology of cosmic domains and strings
@@ -1452,6 +1603,47 @@
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 ** Supernovae
+*** Gravitational waves from supernova matter
+    :PROPERTIES:
+    :TITLE:    Gravitational waves from supernova matter
+    :BTYPE:    article
+    :CUSTOM_ID: 2010CQGra..27k4101S
+    :AUTHOR:   {Scheidegger}, S. and {Whitehouse}, S.~C. and {K{\"a}ppeli}, R. and {Liebend{\"o}rfer}, M.
+    :JOURNAL:  Classical and Quantum Gravity
+    :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+    :YEAR:     2010
+    :MONTH:    Jun
+    :VOLUME:   27
+    :NUMBER:   11
+    :EID:      114101
+    :PAGES:    114101
+    :DOI:      10.1088/0264-9381/27/11/114101
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   0912.1455
+    :PRIMARYCLASS: astro-ph.HE
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2010CQGra..27k4101S
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Three-dimensional simulations of neutrino-driven core-collapse supernovae from low-mass single and binary star progenitors
+    :PROPERTIES:
+    :TITLE:    Three-dimensional simulations of neutrino-driven core-collapse supernovae from low-mass single and binary star progenitors
+    :BTYPE:    article
+    :CUSTOM_ID: 2019MNRAS.484.3307M
+    :AUTHOR:   {M{\"u}ller}, Bernhard and {Tauris}, Thomas M. and {Heger}, Alexander and {Banerjee}, Projjwal and {Qian}, Yong-Zhong and {Powell}, Jade and {Chan}, Conrad and {Gay}, Daniel W. and {Langer}, Norbert
+    :JOURNAL:  \mnras
+    :KEYWORDS: stars: massive, stars: neutron, supernovae: general, Astrophysics - Solar and Stellar Astrophysics, Astrophysics - High Energy Astrophysical Phenomena
+    :YEAR:     2019
+    :MONTH:    Apr
+    :VOLUME:   484
+    :NUMBER:   3
+    :PAGES:    3307-3324
+    :DOI:      10.1093/mnras/stz216
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1811.05483
+    :PRIMARYCLASS: astro-ph.SR
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.3307M
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 *** Neutrino and gravitational wave signal of a delayed-detonation model of type Ia supernovae
     :PROPERTIES:
     :TITLE:    Neutrino and gravitational wave signal of a delayed-detonation model of type Ia supernovae

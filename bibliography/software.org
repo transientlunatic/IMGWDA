@@ -1,0 +1,108 @@
+* Analysis software
+** pycbc
+*** The PyCBC search for gravitational waves from compact binary coalescence
+    :PROPERTIES:
+    :TITLE:    The PyCBC search for gravitational waves from compact binary coalescence
+    :BTYPE:    article
+    :CUSTOM_ID: 2016CQGra..33u5004U
+    :AUTHOR:   {Usman}, Samantha A. and {Nitz}, Alexander H. and {Harry}, Ian W. and {Biwer}, Christopher M. and {Brown}, Duncan A. and {Cabero}, Miriam and {Capano}, Collin D. and {Dal Canton}, Tito and {Dent}, Thomas and {Fairhurst}, Stephen and {Kehl}, Marcel S. and {Keppel}, Drew and {Krishnan}, Badri and {Lenon}, Amber and {Lundgren}, Andrew and {Nielsen}, Alex B. and {Pekowsky}, Larne P. and {Pfeiffer}, Harald P. and {Saulson}, Peter R. and {West}, Matthew and {Willis}, Joshua L.
+    :JOURNAL:  Classical and Quantum Gravity
+    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - Instrumentation and Methods for Astrophysics
+    :YEAR:     2016
+    :MONTH:    Nov
+    :VOLUME:   33
+    :NUMBER:   21
+    :EID:      215004
+    :PAGES:    215004
+    :DOI:      10.1088/0264-9381/33/21/215004
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1508.02357
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016CQGra..33u5004U
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** Implementing a search for aligned-spin neutron star-black hole systems with advanced ground based gravitational wave detectors
+    :PROPERTIES:
+    :TITLE:    Implementing a search for aligned-spin neutron star-black hole systems with advanced ground based gravitational wave detectors
+    :BTYPE:    article
+    :CUSTOM_ID: 2014PhRvD..90h2004D
+    :AUTHOR:   {Dal Canton}, Tito and {Nitz}, Alexander H. and {Lundgren}, Andrew P. and {Nielsen}, Alex B. and {Brown}, Duncan A. and {Dent}, Thomas and {Harry}, Ian W. and {Krishnan}, Badri and {Miller}, Andrew J. and {Wette}, Karl and {Wiesner}, Karsten and {Willis}, Joshua L.
+    :JOURNAL:  \prd
+    :KEYWORDS: 04.80.Nn, Gravitational wave detectors and experiments, General Relativity and Quantum Cosmology
+    :YEAR:     2014
+    :MONTH:    Oct
+    :VOLUME:   90
+    :NUMBER:   8
+    :EID:      082004
+    :PAGES:    082004
+    :DOI:      10.1103/PhysRevD.90.082004
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1405.6731
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2014PhRvD..90h2004D
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** gwastro/pycbc: PyCBC Release v1.14.1
+    :PROPERTIES:
+    :TITLE:    gwastro/pycbc: PyCBC Release v1.14.1
+    :BTYPE:    misc
+    :CUSTOM_ID: alex_nitz_2019_3265452
+    :AUTHOR:   Alex Nitz and Ian Harry and Duncan Brown and Christopher M. Biwer and Josh Willis and Tito Dal Canton and Collin Capano and Larne Pekowsky and Thomas Dent and Andrew R. Williamson and Miriam Cabero and Soumi De and Bernd Machenschalk and Duncan Macleod and Prayush Kumar and Steven Reyes and Gareth Davies and Thomas Massinger and Márton Tápai and dfinstad and Stephen Fairhurst and Sebastian Khan and Alex Nielsen and shasvath and Francesco Pannarale and Leo Singer and idorrington92 and Hunter Gabbard and Sumit Kumar and Bhooshan Uday Varsha Gadre
+    :MONTH:    jul
+    :YEAR:     2019
+    :DOI:      10.5281/zenodo.3265452
+    :URL:      https://doi.org/10.5281/zenodo.3265452
+    :END:
+** gwpy/gwpy: 0.14.2
+   :PROPERTIES:
+   :TITLE:    gwpy/gwpy: 0.14.2
+   :BTYPE:    misc
+   :CUSTOM_ID: gwpy0d14d2
+   :AUTHOR:   Duncan Macleod and Alex L. Urban and Scott Coughlin and Thomas Massinger and paulaltin and Joseph Areeda and Eric Quintero and The Gitter Badger and Katrin Leinweber
+   :MONTH:    mar
+   :YEAR:     2019
+   :DOI:      10.5281/zenodo.2603187
+   :URL:      https://doi.org/10.5281/zenodo.2603187
+   :END:
+
+* Interferometer simulation
+
+** pygwinc
+   :PROPERTIES:
+   :TITLE:    pygwinc
+   :BTYPE:    misc
+   :URL:      https://git.ligo.org/gwinc/pygwinc
+   :CUSTOM_ID: pygwinc
+   :END:
+
+* Search infrastructure
+
+** transientlunatic/minke: Loch Awe
+   :PROPERTIES:
+   :TITLE:    transientlunatic/minke: Loch Awe
+   :BTYPE:    misc
+   :CUSTOM_ID: daniel_williams_2019_3352036
+   :AUTHOR:   Daniel Williams and anonymouscommitter
+   :MONTH:    jul
+   :YEAR:     2019
+   :DOI:      10.5281/zenodo.3352036
+   :URL:      https://doi.org/10.5281/zenodo.3352036
+   :END:
+
+* General python libraries
+** PyMC3: Probabilistic programming in Python using {PyMC}3
+   :PROPERTIES:
+   :TITLE:    Probabilistic programming in Python using {PyMC}3
+   :BTYPE:    article
+   :CUSTOM_ID: Salvatier2016
+   :DOI:      10.7717/peerj-cs.55
+   :URL:      https://doi.org/10.7717/peerj-cs.55
+   :YEAR:     2016
+   :MONTH:    apr
+   :PUBLISHER: {PeerJ}
+   :VOLUME:   2
+   :PAGES:    e55
+   :AUTHOR:   John Salvatier and Thomas V. Wiecki and Christopher Fonnesbeck
+   :JOURNAL:  {PeerJ} Computer Science
+   :END:
+

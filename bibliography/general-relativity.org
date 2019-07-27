@@ -1,4 +1,4 @@
-* Textbooks
+* Textbooks and memoirs
 ** Gravitation
    :PROPERTIES:
    :TITLE:    Gravitation
@@ -21,8 +21,16 @@
    :ADSURL:   https://ui.adsabs.harvard.edu/#abs/1998gbhq.book.....W
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
- 
-
+** The classical theory of fields
+   :PROPERTIES:
+   :TITLE:    The classical theory of fields
+   :BTYPE:    book
+   :CUSTOM_ID: 1975ctf..book.....L
+   :AUTHOR:   {Landau}, Lev Davidovich and {Lifshitz}, E.~M.
+   :YEAR:     1975
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/1975ctf..book.....L
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
 * GR solutions
 ** On the Gravitational Field of a Mass Point According to Einstein's Theory
    :PROPERTIES:
