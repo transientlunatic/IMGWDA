@@ -151,7 +151,7 @@ Gaussian processes can be extended from the case of a single-dimensional input p
 
 \begin{figure}
 \includegraphics{figures/gp/gp-training-data.pdf}
-\caption[Training data for a Gaussian process]{[Step 1] An example of raw training data which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.
+\caption[Training data for a Gaussian process]{[Step 1] An example of raw training data (containing additive Gaussian noise) which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.
 Here the generating function is plotted as a grey line.
 \label{fig:gp:training-data}}
 \end{figure}
