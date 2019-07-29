@@ -534,7 +534,7 @@ As a result the relative \emph{importance} of each sample needs to be taken into
 \label{fig:probability:importance-sampling}
 \end{figure}
 
-With /importance sampling/, rather than sampling from the complicated distribution, $P$, (the /target distribution/), we instead sample from a distribution, $Q$, which we do know how to sample from (such as a normal or a uniform distribution).
+With /importance sampling/, rather than sampling from the complicated distribution, $P$, (the /target distribution/), we instead sample from a distribution, $Q$, which we do know how to sample from (such as a normal or a uniform distribution) (see figure ref:fig:probability:importance-sampling for a cartoon illustrating this arrangement).
 (Since we do not necessarily know the normalisation of $P$ or $Q$ we can instead sample and evaluate within a scalar multiple, $Z$, such that $ZP^*(x) = P(x)$.
 We then draw the samples $\setbuilder{\vec{x}_r | r \in 1, \dots, R}$ from $Q$, and evaluate $Q(x)$ and $P(x)$ for each sample. 
 In regions where $Q(x)$ is greater than $P(x)$ the samples will over-represent $P(x)$ (and vice versa when $Q(x)$ is smaller than $P(x)$). 
@@ -545,7 +545,7 @@ so then equation ref:eq:probability:mcmc:expectation becomes
 
 While importance sampling is an improvement over uniform sampling, it will fail to converge in situations where the target distribution contains many separated peaks, and will struggle to explore a high-dimensional space efficiently.
 
-/Rejection sampling/ uses a similar principle to importance sampling, using a /proposal distribution/, $Q(x)$, which can be sampled directly, to generate the samples.
+/Rejection sampling/ uses a similar principle to importance sampling, using a /proposal distribution/, $Q(x)$, which can be sampled directly, to generate the samples (see figure ref:fig:probability:importance-sampling for an illustration of how $P$ and $Q$ relate).
 The method assumes we know the value of a constant, $c$ such that $cQ^*(x) > P^*(x) \forall x$.
 
 \begin{figure}
