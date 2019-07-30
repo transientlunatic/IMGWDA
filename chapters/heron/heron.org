@@ -2,7 +2,7 @@ The production of high-accuracy waveforms is possible thanks to advances in the 
 This can be done reliably for the low-mass compact binary systems of interest to the current generation of ground-based gravitational wave observatories, however these simulations are computationally expensive, and can require thousands of CPU hours to run in situations where the mass ratios and spins of the black holes are small. 
 A simulation of a full 350-cycle gravitational waveform spanning the entire advanced LIGO band has been produced cite:2015arXiv150204953S, however this required several months of high-performance computing to complete cite:2016CQGra..33l5025D, despite employing numerous techniques to reduce wall-clock computation time. 
 As a result fewer than 1000 waveforms are available, many of these much shorter than 350 cycles long. 
-Abbr:bbh coalescences are described by a number of physical parameters: the ratio of the two component black holes' masses, $q$; the vector of each component's spin, ${\vec{s}}_1$ and ${\vec{s}}_2$ (with $\hat{s}_{1} = \hat{s}_{2} = \hat{L}$ for \vec{L} the total angular momentum vector for the system: see figure ref:fig:heron:bbhcartoon for the arrangement of these vectors); and the time, $t$, relative to a fixed reference time, for example the time of coalescence of the binary.
+Abbr:bbh coalescences are described by a number of physical parameters: the ratio of the two component black holes' masses, $q$; the vector of each component's spin, ${\vec{s}}_1 = (s_{1x}, s_{1y}, s_{1z})$ and ${\vec{s}}_2 = (s_{2x}, s_{2y}, s_{2z})$, defined such that the $z$-component of each vector is parallel to the total angular momentum vector, $\vec{L}$, for the system (i.e. $\hat{s}_{1z} = \hat{s}_{2z} = \hat{L}$, see figure ref:fig:heron:bbhcartoon for the arrangement of these vectors); and the time, $t$, relative to a fixed reference time, for example the time of coalescence of the binary.
 
 \begin{figure}
 \begin{center}
@@ -55,7 +55,8 @@ This provides a training set which has 8 input dimensions, and a single output d
 \begin{equation}
 {\mathcal{D}} = \left\{ ({\boldsymbol{x}'_i},  h_i) | i = 1, 2, \dots, N \right\}
 \end{equation}
-for $N$ the total number of strain samples used from all of the training waveforms. The distribution of training waveforms throughout the parameter space is shown in figure ref:fig:sources:cbc:nr:gtcoverage.
+for $N$ the total number of strain samples used from all of the training waveforms, and $h_i = h(t_i, \vec{x}_i) = h(\vec{x}'_i$ is the strain value of a waveform at time $t_i$ relative to the maximum strain value of the waveform, and at a location $\vec{x} in parameter space. 
+The distribution of training waveforms throughout the parameter space is shown in figure ref:fig:sources:cbc:nr:gtcoverage.
 
 
 
@@ -64,8 +65,8 @@ for $N$ the total number of strain samples used from all of the training wavefor
 * Gaussian process regression for waveforms
   \label{sec:heron:waveformgpr}
 
-A major failing of existing waveform models is their inability to account reliably for uncertainty in the waveforms which are generated.
-A side-effect of this is important in parameter estimation of these signals, as an inaccurate waveform will result in the introduction of a bias to the abbr:pe process.
+Current waveform models lack a natural means to account reliably for uncertainty in the waveforms which they generate.
+A side-effect of this is important in parameter estimation of these signals, as systematic uncertainties in the waveform model will result in the introduction of a bias to the abbr:pe process.
 
 
 To illustrate how such a model can be constructed, in this section I will detail the construction of two abbr:gp models which use waveforms generated from the \texttt{IMRPhenomPv2} waveform model as their training data.
@@ -130,7 +131,9 @@ This is defined as
 for $\tilde{a}$ and $\tilde{b}$ respectively the Fourier transforms of the timeseries $a$ and $b$, $S_n$ the amplitude spectral density of the noise, and $f$ the frequency.
 It will also be convenient at this point to define the /mismatch/ as $1-\mathcal{M}$.
 
-I calculate the (noise-free) match between the mean waveform from the abbr:gp surrogate and the waveform from ~IMRPhenomPv2~  for one-hundred mass ratios between $q=0.1$ and $q=1.0$ in figure ref:fig:heron:imr:match.
+The match is a useful quantity to consider, as it is widely used in abbr:gw signal analysis, thanks to its use in matched filtering, which is the optimal filter for maximising abbr:snr when additive noise is present in data cite:strain.conventions.
+
+I calculate the (noise-free, with $S_n(f) = 1$) match between the mean waveform from the abbr:gp surrogate and the waveform from ~IMRPhenomPv2~  for one-hundred mass ratios between $q=0.1$ and $q=1.0$ in figure ref:fig:heron:imr:match.
 
 \begin{figure}
 \includegraphics{figures/heron/imr-test-match.pdf}
@@ -165,10 +168,12 @@ The results of this comparison are displayed as the surface plot in figure ref:f
 \begin{figure}
 \includegraphics{figures/heron/spin-test-ms-plane.pdf}
 \caption[Matches between \texttt{IMRPhenomPv2}-derived waveforms and those from a GPR model which includes spin effects]{Matches across the mass-ratio and $s_{1z} = s_{2z}$ plane between the GPR model and waveforms generated directly from \texttt{IMRPhenomPv2}.
+
+
 \label{fig:heron:spin:matches}}
 \end{figure}
 
-Using an analytical approximant model such as ~IMRhenomPv2~ grants the ability to generate training data on demand and at whim; this is a situation which is not possible when using abbr:nr waveforms. 
+Using an analytical approximant model such as ~IMRhenomPv2~, which was used here, or ~SEOBNRv3~, grants the ability to generate training data on demand and at whim; this is a situation which is not possible when using abbr:nr waveforms. 
 In the following sections I will discuss the development of a model trained entirely off these waveforms, and the challenges which this approach posed. 
 
 
@@ -241,7 +246,7 @@ This may indicate that the model is struggling to fit a smooth function to a sma
 
 \begin{figure}
 \includegraphics{figures/heron/in-sample-hist.pdf}
-\caption[Mismatches between Heron, Georgia Tech waveforms, and analytical approximants from in-sample testing]{The distributions of mismatches between waveforms from the Heron model and each of the \gls{nr} waveforms from the Georgia Tech waveform catalogue (black outline histogram) used in the training set using the procedure described in section \ref{sec:heron:testing:in}.
+\caption[Mismatches between Heron, Georgia Tech waveforms, and analytical approximants from in-sample testing]{The distributions of mismatches between mean waveforms from the Heron model and each of the \gls{nr} waveforms from the Georgia Tech waveform catalogue (black outline histogram) used in the training set using the procedure described in section \ref{sec:heron:testing:in}.
 Additionally, the mismatch distributions between waveforms produced at the same parameters as the \gls{nr} waveforms by the \texttt{SEOBNRv3} (red outline histogram), and the \texttt{IMRPhenomPv2} (blue outline histogram) phenomenological waveform models are plotted. 
 For comparison the distributions of mismatch between the same Georgia Tech waveforms and the corresponding waveforms from the \texttt{SEOBNRv3} and \texttt{IMRPhenomPv2} models are plotted as solid red and blue histograms respectively.
  \label{fig:heron:testing:in:hist}}
@@ -250,7 +255,7 @@ For comparison the distributions of mismatch between the same Georgia Tech wavef
 
 \begin{figure}
 \includegraphics{figures/heron/distance-v-mismatch-insample.pdf}
-\caption[Mismatches of the Heron model compared to the distance to near-by training points]{The mismatch between waveforms produced by the Heron model and \gls{nr} waveforms compared to the distance to the next-nearest training waveform in the training data.
+\caption[Mismatches of the Heron model compared to the distance to near-by training points]{The mismatch between mean waveforms produced by the Heron model and \gls{nr} waveforms compared to the distance to the next-nearest training waveform in the training data.
 Here the distance is calculated simply as the Euclidean distance between the two points in parameter space.
  \label{fig:heron:testing:in:distance}}
 \end{figure}
@@ -270,7 +275,7 @@ The mismatch between the predicted waveform and the omitted abbr:nr waveform was
 
 \begin{figure}
 \includegraphics{figures/heron/out-sample-hist.pdf}
-\caption[Mismatches between Heron, Georgia Tech waveforms, and analytical approximants from leave-one-out sampling]{The distributions of mismatches between waveforms from the Heron model and each of the \gls{nr} waveforms from the Georgia Tech waveform catalogue (black outline histogram) used in the training set using the leave-one-out testing procedure detailed in section \ref{sec:heron:testing:out}.
+\caption[Mismatches between Heron, Georgia Tech waveforms, and analytical approximants from leave-one-out sampling]{The distributions of mismatches between mean waveforms from the Heron model and each of the \gls{nr} waveforms from the Georgia Tech waveform catalogue (black outline histogram) used in the training set using the leave-one-out (LOO) testing procedure detailed in section \ref{sec:heron:testing:out}.
 Additionally, the mismatch distributions between waveforms produced at the same parameters as the \gls{nr} waveforms by the \texttt{SEOBNRv3} (red outline histogram), and the \texttt{IMRPhenomPv2} (blue outline histogram) phenomenological waveform models are plotted. 
  \label{fig:heron:testing:out:hist}}
 \end{figure}
@@ -279,7 +284,7 @@ The variation of mismatch over the parameter space of the Georgia Tech catalogue
 
 \begin{figure}
 \makebox[\textwidth][c]{\includegraphics[trim={1cm 0 4.5cm 4cm},clip]{figures/heron/gt_match_triangle.pdf}}
-\caption[Corner plot of leave-one-out mismatches between Heron and the Georgia Tech catalogue]{A corner plot across the parameter space of the Georgia Tech waveform catalogue showing the leave-one-out mismatch, as described in section \ref{sec:heron:testing:out}.
+\caption[Corner plot of leave-one-out mismatches between Heron and the Georgia Tech catalogue]{A corner plot across the \gls{bbh} parameter space showing the leave-one-out mismatch, as described in section \ref{sec:heron:testing:out}, between the mean waveform produced by each (reduced) Heron model, and the corresponding omitted Georgia Tech \gls{nr} waveform.
  \label{fig:heron:testing:out:tri}}
 \end{figure}
 
@@ -314,13 +319,13 @@ Again the Heron model produces a distribution comparable to ~SEOBNRv3~.
 \makebox[\textwidth][c]{
 \includegraphics[trim={1cm 0 4.5cm 4cm},clip]{figures/heron/sxs_match_triangle.pdf}
 }
-\caption[Corner plot of mismatches between Heron and the SXS catalogue]{A corner plot across the parameter space of the SXS waveform catalogue showing the leave-one-out mismatch, as described in section \ref{sec:heron:testing:out}.
+\caption[Corner plot of mismatches between Heron and the SXS catalogue]{A corner plot across the parameter space of the SXS waveform catalogue showing the  mismatch between the mean waveform produced by the Heron model and each SXS \gls{nr} waveform, resulting from the testing procedure detailed in section \ref{sec:heron:testing:sxs}.
  \label{fig:heron:testing:sxs:tri}}
 \end{figure}
 
 \begin{figure}
 \includegraphics{figures/heron/sxs-sample-hist.pdf}
-\caption[Corner plot of leave-one-out mismatches between Heron and the SXS catalogue]{The distributions of mismatches between waveforms from the Heron model and each of the \gls{nr} waveforms from the SXS waveform catalogue (black outline histogram) using the testing procedure detailed in section \ref{sec:heron:testing:sxs}.
+\caption[Corner plot of leave-one-out mismatches between Heron and the SXS catalogue]{The distributions of mismatches between mean waveforms from the Heron model and each of the \gls{nr} waveforms from the SXS waveform catalogue (black outline histogram) using the testing procedure detailed in section \ref{sec:heron:testing:sxs}.
 Additionally, the mismatch distributions between waveforms produced at the same parameters as the \gls{nr} waveforms by the \texttt{SEOBNRv3} (red outline histogram), and the \texttt{IMRPhenomPv2} (blue outline histogram) phenomenological waveform models are plotted. 
  \label{fig:heron:testing:sxs:hist}}
 \end{figure}
