@@ -606,7 +606,7 @@ The gls:ligo results place a limit of \(G \mu < \SI{4.2E-10}{}}\) cite:2019PhRvD
   \label{sec:sources:burstsearch}
 
 Burst searches cannot rely on well-known template waveforms in the way that compact binary searches can, and so matched filtering techniques cannot be used.
-Performing analysis of the signals from the data collected from a gravitational wave detector is complicated by the presence of both stationary and non-stationary noise (see section ref:sec:detectors:noise for a discussion of the sources and extent of this noise), and by the signal's convolution with the detector's antenna pattern (see section ref:sec:detectors:antennaresponse}.
+Performing analysis of the signals from the data collected from a gravitational wave detector is complicated by the presence of both stationary and non-stationary noise (see section ref:sec:detectors:noise for a discussion of the sources and extent of this noise), and by the signal's convolution with the detector's antenna pattern (see section ref:sec:detectors:antennaresponse).
 The final construction of the signal detected by a network of detectors is outlined in figure ref:fig:sources:burst:signalflow.
 
 Instead burst searches, similarly to searches for the stochastic background, make use of information gained from correlations between detectors in a network.
@@ -704,7 +704,7 @@ The excess energy of a single detector measurement is the amount of energy which
    \label{sec:sources:burst:pipelines}
 
 While the fundamental methods described in section ref:sec:sources:burst:searchmethods are plausible methods for identifying burst signals in data, they are unable to operate in isolation. 
-This has lead to the need to construct /pipelines/ which are capable of pre-processing the detector data, performing searches to produce lists of gls:triggers, estimate the significance of these gls:triggers, and perform parameter estimation on the signals. 
+This has lead to the need to construct /pipelines/ which are capable of pre-processing the detector data, performing searches to produce lists of glspl:trigger, estimate the significance of these glspl:trigger, and perform parameter estimation on the signals. 
 There are at least four major burst search pipelines in use during the advanced detector runs.
 
 \begin{figure}
@@ -1015,7 +1015,7 @@ This can be seen in the Mueller waveform signal in the left column of figure ref
 
 
    \begin{figure}
-   \caption[A catalogue of supernova burst waveforms]{Three of the supernova burst ``waveforms'' which can be smiluated and injected by Minke.
+   \caption[A catalogue of supernova burst waveforms]{Three of the supernova burst ``waveforms'' which can be simulated and injected by Minke.
    From left to right, Mueller, Dimmelmeier, Scheidegger waveforms are depicted in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
    \label{fig:sources:burst:minke:supernova}
    }

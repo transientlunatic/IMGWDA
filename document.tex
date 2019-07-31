@@ -1,4 +1,4 @@
-\documentclass{kentigern}
+\documentclass[oneside]{kentigern}
 \usepackage[utf8]{inputenc}
 \makeatletter
 \input{journal-macros}
@@ -93,7 +93,12 @@
 
 Copyright 2019 Daniel Williams, all rights reserved.\\
 
-This document was built with version \input{git-info} of the git repository, and has been assigned the identifier LIGO-P1900001 by the LIGO Document Control Centre.
+This document has been assigned the identifier LIGO-P1900001 by the LIGO Document Control Center.
+\newpage
+
+%\input{chapters/0-frontmatter/declaration}
+
+\input{chapters/0-frontmatter/dedication}
 
 \newpage
 \tableofcontents
@@ -106,7 +111,7 @@ This document was built with version \input{git-info} of the git repository, and
 \printglossary[type=\acronymtype]
 
 
-%\input{chapters/0-frontmatter/dedication}
+
 % \part{Outline \& Review of Gravitational Wave Literature}
 % \label{part:introduction}
 \newpage
@@ -117,7 +122,7 @@ Throughout this work I take the convention that the metric tensor, $\ten{g}$ sho
 In chapter \ref{cha:intro}, and in places where general relativity is discussed it should be assumed that indexed tensor quantities follow the Einstein summation convention over repeated indices.
 
 \mainmatter
-
+\glsresetall
 \chapter[Gravitational Waves: Generation, propagation, and detection]{Gravitational Waves: generation, propagation, and detection}
 \label{cha:intro}
 
@@ -126,15 +131,10 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
   The chapter then continues to discuss methods by which they might be detected, and a brief history of attempts to do so.
 
   Section \ref{sec:gw} contains an introduction and overview of the radiation predicted by general relativity: gravitational waves, and gives a very concise introduction to how these waves propagate.
-
   Section \ref{sec:gw:strain} briefly summarises a number of conventions which are used within gravitational wave astronomy, and this work, for describing the strain effect of gravitational waves, and related quantities.
-
   Section \ref{sec:detectors} gives an overview of the history of gravitational wave detection, including the early attempts to identify measurable quantities from the theory, to the operational constraints of modern detectors.
-
   Section \ref{sec:detectors:noise} discusses some of the major sources of noise which are introduced into detector data by environmental and instrumental phenomena.
-
   Section \ref{sec:detectors:network} provides an overview of the present network of gravitational wave detectors around the world.
-
   Section \ref{sec:detections} is a short discussion of the detections which have been made to date in the first two observing runs of the advanced-era detectors.
   
   The vast majority of material in this chapter is review material, however a number of sensitivity curve plots were produced by a novel Python package, \texttt{gravpy}, which is described in appendix \ref{app:gravpy}.
@@ -152,25 +152,18 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
   This chapter contains a mixture of introductory and novel material, with the majority of the discussion of signals and sources being introductory, with some novel material on the detectability of signals which originate from close-encounters between compact objects, which is discussed in section \ref{sources:burst:encounters:waveforms}.
   Later this chapter contains discussion of how the sensitivity of searches for gravitational wave signals are characterised, which leads into the introduction of the Minke software library in section \ref{sec:sources:minke}.
   The work on Minke is novel, and was essential to the LIGO / Virgo collaboration work briefly discussed in section \ref{sec:sources:burstresults}.
-
   Section \ref{sec:sources:continuous} introduces continuous sources of gravitational waves, such as gravitational wave pulsars.
-
   Section \ref{sec:sources:stochastic} provides a brief overview of the stochastic gravitational wave background.
-
   Section \ref{sec:sources:cbc} discusses compact binary coalescence events, which include binary black hole and binary neutron star merger events.
   This section contains discussion of the waveform of these events in section \ref{sec:sources:cbc:waveform}, and the  numerical relativity techniques used to produce the most accurate waveforms available in section \ref{sec:sources:cbc:waveform}; a discussion of the available catalogues of these data is contained within section \ref{sec:sources:cbc:catalogues}.
   Because of the computational expense of producing these waveforms a number of analytical approximant waveforms exist, and I discuss some of these in sections \ref{sec:sources:cbc:approximants} and \ref{sec:sources:cbc:surrogates}.
-
+  
   There are many conceivable astrophysical situations where computing the waveform beforehand is likely to be impractical, or impossible.
   As a result a number of modern searches attempt to search for \emph{unmodelled} or poorly-modelled signals.
   Transient signals of this type are normally called \emph{burst} signals.
-
   Section \ref{sec:sources:burst} provides an overview of burst-like waveforms, and some of the potential sources of these signals.
-
   Section \ref{sec:sources:burstsearch} then gives an overview of techniques used to search for these signals in detector data.
-
   Section \ref{sec:sources:mdc} discusses mock data challenges, and how these are used to characterise the algorithms discussed in section \ref{sec:sources:burstsearch}.
-
   Section \ref{sec:sources:minke} introduces Minke, a novel software library for producing these mock data challenges.
 
   Section \ref{sec:sources:burstresults} then provides a discussion of the measured sensitivity of a variety of burst search algorithms which were employed on detector data from the first two advanced-era observing runs. This is largely a discussion of the results from \cite{2019PhRvD.100b4017A}, which used mock data challenges produced by the Minke library.
@@ -222,21 +215,13 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
   This chapter introduces Gaussian processes, and Gaussian process regression, a probabilistic regression technique which is well suited to producing so-called surrogate models: statistical models which are informed primarily by observed data rather than prior physical knowledge.
 
   This chapter contains mainly introductory and review material, with section \ref{sec:gp:examples} containing a novel example of a Gaussian process regression model fitting a two-dimensional function.
-
   In section \ref{sec:gp:surrogate} I introduce the basic ideas of surrogate modelling, and briefly discuss various techniques which exist for producing such models.
-  
   Then in section \ref{sec:gp:gp} I introduce the Gaussian process, a probabilistic model, and its use in Gaussian process regression.
-
   Section \ref{sec:gp:covariance} discusses the importance of covariance functions for Gaussian process models, and discusses a number of potential choices of covariance function for different situations. A number of examples are provided in section \ref{sec:gp:covariance:examples}.
-
   Section \ref{sec:gp:training} discusses the fitting (or training) of Gaussian process regression models.
-
   Section \ref{sec:gp:complexity} discusses some of the computational constraints which Gaussian process regression can encounter, and methods which can be used to overcome these.
-
   Section \ref{sec:gp:testing} contains a brief overview of conventional methods used for testing the accuracy of Gaussian process regression models.
-
   Section \ref{sec:gp:examples} contains a novel example of a Gaussian process regression model being used to determine contour lines on a geographical map, and shows examples of outputs from a range of different covariance functions.
-
   Section \ref{sec:gp:elliptical} briefly discusses more general elliptical processes, which can be seen as the generalisation of Gaussian processes.
   }
 
@@ -252,16 +237,13 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
   The culmination of this effort is the development of the Heron surrogate model, which is capable of producing waveforms with precession for arbitrarily spinning binary systems.
 
   In section \ref{sec:heron:nrdata} I discuss the training data used for the model, which is derived from the Georgia Tech waveform catalogue, and how the waveform data from the catalogue are prepared.
-
   In section \ref{sec:heron:waveformgpr} I extend the discussion of Gaussian process regression from chapter \ref{cha:gaussian-process} to the case of gravitational waveform data, and produce two simplified example waveform models using this technique.
-
   In section \ref{sec:heron:trainingdata} I describe the development of the Heron model itself, using numerical relativity data, and discuss some of the practical computational considerations for a model using this data.
-
   In section \ref{sec:heron:verification} I discuss a number of tests which can be performed on the Heron model in order to demonstrate its efficacy across its parameter space, and I present results from these tests.
-
   In section \ref{sec:heron:examples} I plot a number of example waveforms produced by the Heron model.
-
   Finally, section \ref{sec:heron:summary} provides an overview of the material in the chapter, and some discussion of future work which would be of value to the continued development of this model.
+
+  This work was made possible thanks to data provided by Georgia Institute for Technology (Georgia Tech) and the Simulating Extreme Spacetimes (SXS) collaboration. 
 }
 
 \input{chapters/heron/heron}

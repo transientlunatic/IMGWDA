@@ -83,7 +83,7 @@ The training data is plotted in figure ref:fig:heron:imr:testdata.
 
 \begin{figure}
 \includegraphics{figures/heron/imr-test-training.pdf}
-\caption[The \texttt{IMRPhenomPv2}] training data for a demonstration model]{The training data used for the non-spinning demonstration abbr:gp surrogate model.}
+\caption[The \texttt{IMRPhenomPv2} training data for a demonstration model]{The training data used for the non-spinning demonstration abbr:gp surrogate model.}
 \label{fig:heron:imr:testdata}}
 \end{figure}
 
