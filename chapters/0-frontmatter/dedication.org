@@ -1,19 +1,29 @@
-If I've learned nothing else in my time working in the Institute for Gravitational Research at the University of Glasgow, 
-and living in a city just a short drive south of the Scottish Highlands, 
-it is that completing a PhD and climbing a mountain have their similarities.
+* Acknowledgements
+#+BEGIN_QUOTE
+``Any road followed precisely to its end leads precisely nowhere. Climb the mountain just a little bit to test that it's a mountain. From the top of the mountain, you cannot see the mountain.'' --- Frank Herbert, /Dune/.
+#+END_QUOTE
 
-While at times the weather is fine, and you have a clear view of the task before you,
-more often than not you find yourself walking through low cloud, and trying to pick out a 
-well-concealed path, or searching for that same path after you've strayed away from it.
+The last three-and-a-bit (well, let's be honest, almost four) years have been pretty busy around the Institute for Gravitational Research (IGR).
+There have been a few events of some note over that time, and it's been very exciting to be around for them, starting out with what felt like a court-side seat for the adrenaline-fuelled months following the first detection in September 2015, through to being part of the team now that we've entered the era of ``routine detection''.
 
-The journey is tiring, and there are times that it seems like it would just be easier to turn around, and go back to the flat,
-but the promise of the fine view at the top, and the achievement of reaching it are a strong motivation.
+So my first thanks go to all of the members of the IGR, who kindly allowed me to spend that time working with them, and learning from them.
+More generally, I extend my thanks to the members of the LIGO Scientific Collaboration who mentored me as I started to find my way into the field.
 
-While there are times that one finds oneself climbing alone, it is a rare expedition where you are completely alone.
-There are those who show us the way, and in the last few years many people have helped me gain my bearings; 
-...
+I had plenty of opportunity to see parts of the world I'd never have expected to see before starting on this endeavour, and my thanks go to all of the kind hosts who looked after me, whether it was at a world-class lab in the middle of a swamp in Louisiana; in humid Midtown, Atlanta; or the entirely exciting Daejong.
 
-There are others who set off on a journey with you, but take different paths, making their own way to the top; 
-without the perspective of my fellow postgraduate students my experience here would have been undoubtedly poorer,
-and my chances of success certainly slimmer.
+Without the people around me to keep me sane, or distract me from my work, I doubt this tome would ever have come about. 
+Euan, Magnus, Rhys, Shona, laura, Alex, and David; you all bear some responsibility for this happening (and must accept some thanks and credit for the fact that it did). 
+There were times when I doubted I'd finish at all, and without Andrew I'm sure I wouldn't: thanks for being around to listen to me complaining, and for letting yourself get embroiled in some of my harebrained schemes.
+
+Then to my supervisors, without whom I'd have never discovered the joys of the Bayesian (correct) interpretation of probability: Siong and Graham, thank you for taking on the risk of taking me on as a student.
+
+Finally, without my family this could not have happened.
+Thank you Zoe, not least for all of the funny animal videos and pictures.
+And thank you to my parents, who first showed me the stars.
+
+-------
+
+My time as a PhD student, and my research, was kindly supported by the Science and Technology Facilities Council (STFC).
+
+
 
