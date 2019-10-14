@@ -223,14 +223,13 @@ As noted by cite:strain.conventions this allows the integration of the strain co
    The ability to detect a signal in a noisy data stream requires that the signal has sufficient power to be distinguished from the underlying noise.
 In abbr:gw analysis it is normal to express the strength of such a signal by reference to its abbr:snr.
 This is defined with reference to the optimum filter for the signal, which is the Weiner filter (see cite:strain.conventions for a discussion of this).
-This filter gives an expression for the abbr:snr in terms of the signal strain in the frequency-domain, $\tilde{h}(f)$, and the noise abbr:psd, $S_{\text{n}}(f)$:
-
+This filter gives an expression for the abbr:snr, $\rho$ [fn:use-of-rho], in terms of the signal strain in the frequency-domain, $\tilde{h}(f)$, and the noise abbr:psd, $S_{\text{n}}(f)$:
 \begin{equation}
 \label{eq:intro:snr}
-\rho^{2} = \int_{0}^{\infty} 4 \frac{ | \tilde{h}(f) |^{2} }{S_{\text{n}}(f)} \dd f
-% = \left( \tilde{h}(f) | \tilde{h}(f)  \right) \dd f
+\rho^{2} = \int_{0}^{\infty} 4 \frac{ | \tilde{h}(f) |^{2} }{S_{\text{n}}(f)} \dd f = \int_{-\infty}^{\infty} \left[ \frac{h_{\text{c}}(f)}{h_{\text{n}}(f)} \right]^2 \dd(\log f).
 \end{equation}
 
+[fn:use-of-rho] Note here that $\rho$ is routinely used to represent an abbr:snr in signal processing, but this does introduce a confusing multiplicity, given the frequent use of $\rho$ for the mass density in physics.
 
 * Detecting gravitational waves
 \label{sec:detectors}
