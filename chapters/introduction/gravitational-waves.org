@@ -282,6 +282,12 @@ Figure ref:fig:detectors:interferometers:firstgen is a plot of the noise abbr:as
 \label{fig:detectors:interferometers:firstgen}}
 \end{figure}
 
+\begin{figure}[t]
+\includegraphics{./figures/intro/aligo-asd.pdf}
+\caption[The noise curves of the Advanced LIGO detectors]{The gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity, relative to the average sensitivity of the two interferometers in their first observing run (O1).
+\label{fig:detectors:aligo-asd}}
+\end{figure}
+
 The initial-generation of detectors were upgraded during the first half of the 2010s, leading to Advanced gls:ligo cite:2015CQGra..32g4001L which resumed observations in September 2015, with the Advanced gls:virgo detector cite:2015CQGra..32b4001A joining in summer 2017 to conduct joint observations with its counterparts in the USA.
 The gls:geo600 detector was the first of the initial detectors to be fully upgraded as part of the  gls:geo-hf project cite:2006CQGra..23S.207W, with improved sensitivity at high frequencies. 
 Japanese efforts have focussed on the development of gls:kagra (formerly abbr:lcgt), a cryogenic interferometer located deep underground in the Kamioka mine cite:1999IJMPD...8..557K, which is expected to join the third observing run of advanced gls:ligo.
@@ -551,15 +557,8 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
  provide seismic islolation cite:2002CQGra..19.4043R,2012CQGra..29w5004A.
  Combined, the improvements to the design of the detectors allowed a ten-fold improvement in sensitivity in the most sensitive frequency region (around $\SI{100}{\hertz}$) compared to the initial gls:ligo detectors.
 
-\begin{figure}[t]
-\includegraphics{./figures/intro/aligo-asd.pdf}
-\caption[The noise curves of the Advanced LIGO detectors]{The gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity, relative to the average sensitivity of the two interferometers in their first observing run (O1).
-\label{fig:detectors:aligo-asd}}
-\end{figure}
-
-
- The first continuous observations with the advanced detectors started in September 2015.
- During the first observing run[fn:o1] the detectors made three detections of coalescing abbr:bbh.
+The first continuous observations with the advanced detectors started in September 2015.
+During the first observing run[fn:o1] the detectors made three detections of coalescing abbr:bbh.
 
 \begin{table}
 \centering
