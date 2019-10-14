@@ -294,22 +294,21 @@ Japanese efforts have focussed on the development of gls:kagra (formerly abbr:lc
 The construction of a third gls:ligo interferometer in India using the mothballed second detector from the Washington site has now moved into its initial stages, with the prospect of this detector joining the network by the mid-2020s. 
 Figure ref:fig:detectors:aligo-asd depicts the anticipated abb:asd of the advanced gls:ligo detectors once they have reached their design sensitivity, which is expected within the next five years.
 
-The second-generation detectors, specifically the two advanced gls:ligo detectors were responsible for the first discovery of abpl:gw cite:2016PhRvL.116m1103A, and have successfully demonstrated the ability of interferometry to observe the gravitational universe. 
+The second-generation detectors, specifically the two advanced gls:ligo detectors responsible for the first discovery of abpl:gw cite:2016PhRvL.116m1103A, have successfully demonstrated the ability of interferometry to observe the gravitational universe. 
 This said, future improvements in sensitivity are highly desirable, but are likely to be even more technically challenging than the transition from resonant bars to laser interferometers. 
 
 In order to improve the bandwidth of detectors a location of minimal /Newtonian noise/ (see ref:sec:detectors:noise:newtonian), which results from variation in the local gravitational field, must be found, which ultimately mandates the placement of an interferometer in space.
 The earliest proposals for a space-based detector came in the form of gls:lagos, which originated as a concept at the University of Colorado under Jim Faller and Peter Bender cite:1989AdSpR...9..107F. 
 These proposals would develop into gls:lisa cite:2013GWN.....6....4A, which is likely to launch in the 2030s.
 The technology demonstration mission for gls:lisa, /LISA Pathfinder/ was launched in December 2015, and its main mission was completed successfully in early 2016 cite:2016PhRvL.116w1101A. 
-The gls:lisa detector will be sensitive in the milli-hertz region of the abbr:gw spectrum, and will be capable of observing binary inspirals at a much earlier stage in their evolution than the advanced ground-based detectors, as well as the galactic population of low-mass binaries, such as binary white dwarfs. 
+The gls:lisa detector will be sensitive in the milli-hertz region of the abbr:gw spectrum, and will be capable of observing binary inspirals at a much earlier stage in their evolution than the advanced ground-based detectors, as well as the galactic population of low-mass binaries, such as binary white dwarfs. A Japanese proposal, gls:decigo cite:2011CQGra..28i4011K, would observe in the decihertz regime using a complex arrangement of six spacecraft in a star-of-David configuration. 
 
-A Japanese proposal, gls:decigo cite:2011CQGra..28i4011K, would observe in the decihertz regime using a complex arrangement of six spacecraft in a star-of-David configuration. 
 There are also plans for more sensitive detectors on the ground. 
-The Einstein telescope is a European proposal for an underground kilometre-scale detector in a triangular configuration, using a
-``xylophone'' configuration to improve broadband sensitivity compared to the second-generation of detectors; its scientific aims include providing more sensitive tests of abbr:gr than are possible with the advanced detectors cite:2012CQGra..29l4013S. 
+The Einstein telescope is a European proposal for an underground kilometre-scale detector in a triangular configuration, using a ``xylophone'' configuration to improve broadband sensitivity compared to the second-generation of detectors; its scientific aims include providing more sensitive tests of abbr:gr than are possible with the advanced detectors cite:2012CQGra..29l4013S. 
+The prospect also exists for larger surface-based detectors, such as gls:cosmic-explorer, which would have an arm-length of 40-km cite:2015PhRvD..91h2001D, initially using technology currently under development for the upgrade of advanced gls:ligo, but later incorporating cryogenic technology, such as those under development for gls:kagra cite:2019arXiv190704833R.
 There are also proposals for upgrades of the advanced detectors to use squeezed light to reduce quantum noise cite:2015PhRvD..91f2005M, the use of speedmeters cite:2014MUPB...69..519V,2002gr.qc....11088K, or atom interferometry cite:2013PhRvL.110q1102G,2016PhRvD..93b1101C,2008PhRvD..78l2002D.
 
-At the very low-frequency limit of the abbr:gw spectrum the bulk of detection efforts rotate around pulsar timing arrays, which promise the detection of abpl:gw by precision measurements of pulse arrival times from a number of pulsars distributed across the sky. 
+At the very low-frequency limit of the abbr:gw spectrum the bulk of detection efforts are based around pulsar timing arrays, which promise the detection of abpl:gw by precision measurements of pulse arrival times from a number of pulsars distributed across the sky. 
 By observing correlated delays cite:1983ApJ...265L..39H in arrival times the presence of a very long wavelength abbr:gw can be inferred. 
 There are a number of collaborations actively producing pulsar observations with the aim of detecting abpl:gw: the abbr:epta cite:2013CQGra..30v4009K, gls:nanograv cite:2009arXiv0909.1058J, the abbr:ppta cite:2013PASA...30...17M, and the abbr:ipta collaboration cite:2013CQGra..30v4010M.
 
@@ -359,11 +358,11 @@ There are a number of collaborations actively producing pulsar observations with
     If a abbr:gw is introduced, which has a polarisation component $h_+(t)$ in the plane of the beam, the change in the arrival time of the beam will be 
     \begin{equation}
     \label{eq:detectors:interferometric:theory:arrival-times-gw}
-    \frac{\dd t_f}{\dd t} = 1 + \frac{1}{2} (1 + \cos \theta) \left\{ 
-	h_+\left( t + [1- \cos \theta ] L \right) - h_+(t_f) 
+    \frac{\dd \tau}{\dd t} = 1 + \frac{1}{2} (1 + \cos \theta) \left\{ 
+	h_+\left( t + [1- \cos \theta ] L \right) - h_+(\tau) 
       \right\}
     \end{equation}
-    where $\theta$ is the angle separating the detector beam and the abbr:gw plane, and $L$ is the proper distance separating the clocks when no abbr:gw is present.
+    where $\theta$ is the angle separating the detector beam and the abbr:gw plane, and $L$ is the proper distance separating the clocks when no abbr:gw is present, and $\tau$ is the proper time of the receiving clock.
 
     By arranging the detector to reflect the beam back to the originating clock, it is possible to measure the round-trip time using only one clock. 
     In this arrangement we must account for the abbr:gw having a different strength one the return trip, and so equation ref:eq:detectors:interferometric:theory:arrival-times-gw becomes 
@@ -430,7 +429,7 @@ There are a number of collaborations actively producing pulsar observations with
  If the arms' relative lengths change a pattern of interference fringes will be visible at the output of the interferometer.
 
  This means that we can consider an interferometer with two arms to consist of one arm which acts as the time standard, against which the variations of the other can be measured. 
- However, such an arrangement also means that if the effect of a abbr:gw is the same on both arms it will not be detectable, but will be most detectable if it only one arm is affected. 
+ However, such an arrangement also means that if the effect of a abbr:gw is the same on both arms it will not be detectable, and will be most detectable if one arm is extended while the other is contracted by the same amount. 
 
 *** Power recycling
     :PROPERTIES:
