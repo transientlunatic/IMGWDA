@@ -264,7 +264,7 @@ The possibility of using a Michelson interferometer to measure the distance betw
 Robert Forward, a former student of Weber, who had been involved in the construction of the original Weber Bar, was the first to work on the development of an interferometric detector, at Hughes Research Laboratory in the early 1970s, with the development of a ``laser transducer'' cite:1971ApOpt..10.2495M in 1971.
 This lead to the development of an 8.5-metre detector cite:1978PhRvD..17..379F, which failed to show any signal correlation with the bar detectors at Argonne, Glasgow, Friscati, or Maryland.
 
-This approach was followed early-on by Scottish and German groups as a means of improving on resonant bar sensitivities, with a 3-meter and later a 30-meter prototype detector constructed at Garching in the late 1970s cite:1979JPhE...12.1043B,1988PhRvD..38..423S which used optical delay lines, and a 1-meter prototype, and later a 10-meter instrument were built at Glasgow in the early 1980s cite:1979RSPSA.368...11D,1995RScI...66.4447R, which used Fabry-Perot cavities. 
+This approach was followed early-on by Scottish and German groups as a means of improving on resonant bar sensitivities, with a 3-meter and later a 30-meter prototype detector constructed at Garching in the late 1970s cite:1979JPhE...12.1043B,1988PhRvD..38..423S which used optical delay lines, and a 1-meter prototype, and later a 10-meter instrument was built at Glasgow in the early 1980s cite:1979RSPSA.368...11D,1995RScI...66.4447R, which used Fabry-Perot cavities. 
 The Glasgow detector was the spiritual predecessor to the CalTech 40-meter prototype cite:1996PhLA..218..157A.
 
 The increasing maturity of technology developed by these prototypes lead to the construction of the first generation of long-baseline detectors.
@@ -274,17 +274,17 @@ The gls:tama detector was built in Tokyo cite:1996JKASS..29..279K.
 These would be joined by the three kilometre-scale joint Caltech-MIT initial gls:ligo detectors cite:1992Sci...256..325A, located at two sites in the USA, and the joint Italian-French detector gls:virgo cite:1990NIMPA.289..518B, near Cascina. 
 These detectors were operated during the 2000s, and while none of them made a detection of abpl:gw, they provided valuable astrophysical results by placing astrophysical limits on the strength of the stochastic abbr:gw background cite:2014PhRvL.113w1101A, production of abpl:gw by pulsars cite:2014ApJ...785..119A and gamma ray bursts cite:2012ApJ...760...12A, and the rate of compact binary coalescence in the local universe cite:2012PhRvD..85h2002A,2013PhRvD..87b2002A.
 
+Figure ref:fig:detectors:interferometers:firstgen is a plot of the noise abbr:asd of the first generation of interferometric detectors, which demonstrates the wide range of frequencies which detectors of this type are capable of measuring abbr:gw strain over.
+
 \begin{figure}
 \includegraphics{figures/intro/first-gen-asd.pdf}
 \caption[The ASDs of the first generation of large-scale interferometers]{The abpl:asd for the first generation of large-scale interferometers: initial gls:ligo (red), and gls:virgo (blue).
 \label{fig:detectors:interferometers:firstgen}}
 \end{figure}
 
-Figure ref:fig:detectors:interferometers:firstgen is a plot of the noise abbr:asd of the first generation of interferometric detectors, which demonstrates the wide range of frequencies which detectors of this type are capable of measuring abbr:gw strain over.
-
 The initial-generation of detectors were upgraded during the first half of the 2010s, leading to Advanced gls:ligo cite:2015CQGra..32g4001L which resumed observations in September 2015, with the Advanced gls:virgo detector cite:2015CQGra..32b4001A joining in summer 2017 to conduct joint observations with its counterparts in the USA.
 The gls:geo600 detector was the first of the initial detectors to be fully upgraded as part of the  gls:geo-hf project cite:2006CQGra..23S.207W, with improved sensitivity at high frequencies. 
-Japanese efforts have focussed on the development of gls:kagra (formerly gls:lcgt), a cryogenic interferometer located deep underground in the Kamioka mine cite:1999IJMPD...8..557K, although the project has suffered from a number of set-backs. 
+Japanese efforts have focussed on the development of gls:kagra (formerly abbr:lcgt), a cryogenic interferometer located deep underground in the Kamioka mine cite:1999IJMPD...8..557K, which is expected to join the third observing run of advanced gls:ligo.
 The construction of a third gls:ligo interferometer in India using the mothballed second detector from the Washington site has now moved into its initial stages, with the prospect of this detector joining the network around the end of the decade. 
 Figure ref:fig:detectors:aligo-asd depicts the anticipated abb:asd of the advanced gls:ligo detectors once they have reached their design sensitivity, which is expected within the next five years.
 
