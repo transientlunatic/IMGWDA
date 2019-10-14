@@ -142,7 +142,7 @@ Equivalently, the $\times$-polarisation produces a deformation rotated $45^{\cir
 \end{figure}
 
 
-The behaviour of ``strong-field gravity'', which is essential to understanding the production of abpl:gw can only be practically probed using observed abpl:gw from strong-field sources, such as abpl:bbh coalescences.
+The behaviour of ``strong-field gravity'', which is essential to understanding the production of abpl:gw can only be practically probed using observed abpl:gw from strong-field sources, such as abbr:bbh coalescences.
 Systems such as these, which involve an accelerating mass, are capable of producing abpl:gw according to the quadrupole formula, with the abbr:gw at a given time described by the three-dimensional tensor
 \begin{equation}
 \label{eq:intro:gr:quadrupole2strain}
@@ -181,7 +181,6 @@ The strain, as measured by a abbr:gw detector, can have two polarisation states,
 \label{eq:gw-polarisations-strain}
 h = || \mat{A}_{+} {h}_{+} + \mat{A}_{\times} {h}_{\times} ||.
 \end{equation}
-
 with $h_{+}$ being the amplitude of the strain in the $\mat{A}_{+}$ polarisation basis, and $h_{\times}$ the amplitude in the $\mat{A}_{\times}$ polarisation.
 
 Finally, the overall measured strain in a detector will be the superposition of both the strain signal and noise (which, is usually produced by movement of the detector's test masses due to effects other than spacetime perturbations). As such, the measured signal timeseries, $h(t)$, added to the noise timeseries $n(t)$ provides us with the total measured strain, $s(t)$,
