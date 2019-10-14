@@ -23,7 +23,7 @@ gls:gw150914 is not the first evidence for abpl:gw, with the Hulse-Taylor pulsar
 This chapter serves as a brief overview of the mathematical and physical motivation for the search for abpl:gw, the current network of abbr:gw detectors, and a synopsis of the first abbr:gw detections. 
 In addition a primer on the conventions used in the description of abbr:gw signals is included later in this chapter (in section ref:sec:gw:strain).
 
-[fn:lvt] The designation ``LVT'', or ``abbr:ligo / gls:virgo transient'' was used during the first two observing runs for events which were significant, but which did not surpass a threshold of $5\sigma$ for that significance.
+[fn:lvt] The designation ``LVT'', or ``abbr:ligo / gls:virgo transient'' was used during the first two observing runs for events which were significant, but which did not surpass a threshold of $5\sigma$ for that significance. This event was eventually upgraded to the status of a confident event with the publication of the second observing run results cite:2018arXiv181112907T, and is now known as gls:gw151012.
 
 * Gravitational waves and general relativity
 #+NAME: sec:general-relativity
