@@ -106,7 +106,7 @@ For such a wave, propagating along the $z$-axis, in the transverse-traceless gau
 \[ h_{xx} = - h_{yy} = \real[ A_{xx} \exp(- \ii \omega (ct-z) ], \]
 and 
 \[ h_{xy} = h_{yx} = \real[ A_{xy} \exp(- \ii \omega(ct-z) ]. \]
-The propagation can then be desccribed as the superposition of two linearly-polarised components; the unit polarisation tensors can be derived from the coordinate basis as 
+The propagation can then be described as the superposition of two linearly-polarised components; the unit polarisation tensors can be derived from the coordinate basis as 
 \begin{align}
 \label{eq:gwpolarisationbasis}
  \ten{e}_{+} &= \ten{e}_{x} \otimes \ten{e}_{x} - \ten{e}_{y} \otimes \ten{e}_y\\
