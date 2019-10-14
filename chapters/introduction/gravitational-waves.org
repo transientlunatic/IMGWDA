@@ -3,14 +3,14 @@
 # \epigraph{I guess we need to do the detection checklist...}{\textbf{Sergey Klimencko}, \emph{Internal LSC communication}, 14 September 2015}
 
 14 September 2015 will likely be remembered as one of the most significant in the history of astronomy, and of astrophysics. 
-Early in the morning of this autumn day, shortly after 09:50 UTC, a abbr:gw passed through the Earth, 
+Early in the morning of this autumn day, at 09:50 UTC, a abbr:gw passed through the Earth, 
 and on its way produced a sufficiently large movement in the mirrors and test masses of the detectors of gls:ligo, as to be detected.
 
 Over five months of data analysis, detector characterisation, and detection verification were conducted by a global team of scientists, in the abbr:lvc.
 This process resulted in a slew of journal papers being written, vast quantities of data produced, and the launch of an enormous public outreach effort.
 Eventually, the collaboration found itself in a position to make the announcement of the first direct detection of abpl:gw, gls:gw150914, on 11 February 2016.
 
-Further discoveries were made during the first observing run of the advanced abbr:ligo facilities, gls:lvt151012 [fn:lvt], observed in October, and gls:gw151226, observed in December, added to the menagerie of directly detected black hole binaries (although the significance of the former was insufficient to garner its own press release and announcement publication). 
+Further discoveries were made during the first observing run of the advanced abbr:ligo facilities, gls:lvt151012 [fn:lvt], observed in October, and gls:gw151226, observed in December, added to the collection of directly detected black hole binaries (although the significance of the former was insufficient to garner its own press release and announcement publication). 
 The majority of 2016 was dedicated to introducing upgrades to the two gls:ligo interferometers, and to comissioning a third second-generation interferometric observatory, gls:virgo, located in Italy.
 The second observation run of gls:advanced-ligo, which was scheduled to be longer and more sensitive than its first lead to the observation of three further binary black hole coalescences during the run: gls:gw170104, gls:gw170608, and gls:gw170814, the latter observed by a network of three detectors, gls:virgo having joined the observing run a short time before.
 These events are summarised in table ref:tab:eventlist, alongside detections which were made ``offline'' in the archival data.
