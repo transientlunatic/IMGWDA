@@ -466,7 +466,7 @@ This allows a less powerful laser to be used as the input for the interferometer
  By setting the arm up as a cavity the effective length of the arm can be increased; a finesse of 100 will then increase the effective length of the arm 100-fold.
  This in turn increases the apparent change in the arm length by a factor of 100, and substantially aids the sensitivity of the detector.
 
- In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a finesse, $\mathcal{F}=450$.
+ In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a finesse of $450$.
  This is formed by placing a mirror between the beam-splitter and the end mirror in each arm.
 
 
