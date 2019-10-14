@@ -235,13 +235,13 @@ This filter gives an expression for the abbr:snr, $\rho$ [fn:use-of-rho], in ter
 \label{sec:detectors}
 
 Despite Pirani's work simplifying the description of abpl:gw in abbr:gr, it would take until 1957 for his arguments to gain prominence.
-The Chapel Hill Conference of 1957 brought together around 40 physicists at the University of North Carolina, Chapel Hill, with discussions focussed around gravitation and abbr:gr. 
+The Chapel Hill Conference of 1957 brought together around 40 physicists at the University of North Carolina, Chapel Hill, with discussions focussed around gravitation and abbr:gr cite:2016Univ....2...22C. 
 It was during a session of this meeting chaired by Hermann Bondi that Richard Feynman is credited with developing the ``sticky bead'' argument.
 Feynman used Pirani's formulation to argue that a device could be constructed which would measure the energy carried by a abbr:gw.
 
 Consider two beads on rigid rod, which are free to slide along the rod, experiencing some friction.
 As a abbr:gw moves along the rod the length of the rod will remain fixed thanks to inter-atomic forces, but the proper distance between the two beads will change. 
-This will result in the beads rubbing on the rod, generating friction, and thus heat, which can be measured.
+This will result in the beads rubbing on the rod, generating friction, and thus heat, which can be measured cite:1957Natur.179.1072B.
 
 One of the attendees of the meeting was Joseph Weber. 
 Weber was the first person to propose a practical abbr:gw detector cite:PhysRev.117.306 while at the University of Maryland.
