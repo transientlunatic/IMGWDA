@@ -179,11 +179,11 @@ g_{\mu \nu} = \eta_{\mu \nu} + h_{\mu \nu},
 The strain, as measured by a abbr:gw detector, can have two polarisation states, the $+$ state and the $\times$-polarisation state, which combine linearly, so that
 \begin{equation}
 \label{eq:gw-polarisations-strain}
-h = || \mat{A}_{+} {h}_{+} + \mat{A}_{\times} {h}_{\times} ||.
+h = || \mat{A}_{+} {h}_{+} + \mat{A}_{\times} {h}_{\times} ||,
 \end{equation}
 with $h_{+}$ being the amplitude of the strain in the $\mat{A}_{+}$ polarisation basis, and $h_{\times}$ the amplitude in the $\mat{A}_{\times}$ polarisation.
 
-Finally, the overall measured strain in a detector will be the superposition of both the strain signal and noise (which, is usually produced by movement of the detector's test masses due to effects other than spacetime perturbations). As such, the measured signal timeseries, $h(t)$, added to the noise timeseries $n(t)$ provides us with the total measured strain, $s(t)$,
+Finally, the overall measured strain in a detector will be the superposition of both the strain signal and noise (which is usually produced by movement of the detector's test masses due to effects other than spacetime perturbations). As such, the measured signal timeseries, $h(t)$, added to the noise timeseries $n(t)$ provides us with the total measured strain, $s(t)$,
 
 \begin{equation}
 \label{eq:intro:signalcomp}
