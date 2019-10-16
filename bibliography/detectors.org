@@ -604,6 +604,58 @@
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
 
+** Recycling
+*** Recycling in laser-interferometric gravitational-wave detectors
+    :PROPERTIES:
+    :TITLE:    Recycling in laser-interferometric gravitational-wave detectors
+    :BTYPE:    article
+    :CUSTOM_ID: 1988PhRvD..38.2317M
+    :AUTHOR:   {Meers}, Brian J.
+    :JOURNAL:  \prd
+    :KEYWORDS: 04.80.+z, 07.60.Ly, 42.50.Wm, Interferometers
+    :YEAR:     1988
+    :MONTH:    Oct
+    :VOLUME:   38
+    :NUMBER:   8
+    :PAGES:    2317-2326
+    :DOI:      10.1103/PhysRevD.38.2317
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/1988PhRvD..38.2317M
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+
+*** Design of the Advanced LIGO recycling cavities
+    :PROPERTIES:
+    :TITLE:    Design of the Advanced LIGO recycling cavities
+    :BTYPE:    article
+    :CUSTOM_ID: 2008OExpr..1610018A
+    :AUTHOR:   {Arain}, Muzammil A. and {Mueller}, Guido
+    :JOURNAL:  Optics Express
+    :YEAR:     2008
+    :MONTH:    Jun
+    :VOLUME:   16
+    :NUMBER:   14
+    :PAGES:    10018
+    :DOI:      10.1364/OE.16.010018
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2008OExpr..1610018A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+** Cavities
+*** FIFTH SEMINAR IN MEMORY OF D.N. KLYSHKO: Dynamics of a Fabry-Perot cavity in the field of a plane gravitational wave
+    :PROPERTIES:
+    :TITLE:    Dynamics of a Fabry-Perot cavity in the field of a plane gravitational wave
+    :BTYPE:    article
+    :CUSTOM_ID: 2007QuEle..37.1137T
+    :AUTHOR:   {Tarabrin}, S.~P.
+    :JOURNAL:  Quantum Electronics
+    :YEAR:     2007
+    :MONTH:    Dec
+    :VOLUME:   37
+    :NUMBER:   12
+    :PAGES:    1137-1140
+    :DOI:      10.1070/QE2007v037n12ABEH013674
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2007QuEle..37.1137T
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 * Interferometric detectors [Prototype and proposals]
 ** Noise behavior of the Garching 30-meter prototype gravitational-wave detector
    :PROPERTIES:
@@ -1202,6 +1254,24 @@
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 ** Cosmic Explorer
+*** Cosmic Explorer: The U.S. Contribution to Gravitational-Wave Astronomy beyond LIGO
+    :PROPERTIES:
+    :TITLE:    Cosmic Explorer: The U.S. Contribution to Gravitational-Wave Astronomy beyond LIGO
+    :BTYPE:    article
+    :CUSTOM_ID: 2019arXiv190704833R
+    :AUTHOR:   {Reitze}, David and {Adhikari}, Rana X and {Ballmer}, Stefan and {Barish}, Barry and {Barsotti}, Lisa and {Billingsley}, GariLynn and {Brown}, Duncan A. and {Chen}, Yanbei and {Coyne}, Dennis and {Eisenstein}, Robert and {Evans}, Matthew and {Fritschel}, Peter and {Hall}, Evan D. and {Lazzarini}, Albert and {Lovelace}, Geoffrey and {Read}, Jocelyn and {Sathyaprakash}, B.~S. and {Shoemaker}, David and {Smith}, Joshua and {Torrie}, Calum and {Vitale}, Salvatore and {Weiss}, Rainer and {Wipf}, Christopher and {Zucker}, Michael
+    :JOURNAL:  arXiv e-prints
+    :KEYWORDS: Astrophysics - Instrumentation and Methods for Astrophysics, General Relativity and Quantum Cosmology
+    :YEAR:     2019
+    :MONTH:    Jul
+    :EID:      arXiv:1907.04833
+    :PAGES:    arXiv:1907.04833
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1907.04833
+    :PRIMARYCLASS: astro-ph.IM
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019arXiv190704833R
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 *** Exploring the sensitivity of next generation gravitational wave detectors
     :PROPERTIES:
     :TITLE:    Exploring the sensitivity of next generation gravitational wave detectors
@@ -1224,8 +1294,27 @@
     This paper covers the basic design concepts for a third-generation LIGO-like detector, called *Cosmic Explorer* which would be 10-kilometres long compared to advanced LIGO's 4km, and consist of two interferometers forming a right angle (compared to Einstein Telescope's equilateral triangle configuration.
 
 Such a detector is expected to detect CBC sources to z>10 at SNR>20.
-
-
+*** Gravitational wave detector with cosmological reach
+    :PROPERTIES:
+    :TITLE:    Gravitational wave detector with cosmological reach
+    :BTYPE:    article
+    :CUSTOM_ID: 2015PhRvD..91h2001D
+    :AUTHOR:   {Dwyer}, Sheila and {Sigg}, Daniel and {Ballmer}, Stefan W. and {Barsotti}, Lisa and {Mavalvala}, Nergis and {Evans}, Matthew
+    :JOURNAL:  \prd
+    :KEYWORDS: 04.80.Nn, 95.55.Ym, 95.85.Sz, 07.60.Ly, Gravitational wave detectors and experiments, Gravitational radiation detectors, mass spectrometers, and other instrumentation and techniques, Gravitational radiation magnetic fields and other observations, Interferometers, Astrophysics - Instrumentation and Methods for Astrophysics
+    :YEAR:     2015
+    :MONTH:    Apr
+    :VOLUME:   91
+    :NUMBER:   8
+    :EID:      082001
+    :PAGES:    082001
+    :DOI:      10.1103/PhysRevD.91.082001
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1410.0612
+    :PRIMARYCLASS: astro-ph.IM
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2015PhRvD..91h2001D
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 * Pulsar Timing
 *** Constructing a pulsar timing array
     :PROPERTIES:

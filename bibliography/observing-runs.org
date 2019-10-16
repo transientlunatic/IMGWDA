@@ -129,8 +129,6 @@
     |----------+------+------------+------+--------------------------|
     | GW150914 | BBH  | 2015-09-14 |      | cite:2016PhRvL.116f1102A |
     | GW151226 | BBH  | 2015-12-26 |      | cite:2016PhRvL.116x1103A |
-    |          |      |            |      |                          |
-   
 *** GW150914
 **** Publications
 ***** Observation of Gravitational Waves from a Binary Black Hole Merger :observations:gw:bbh:cbc:
@@ -171,6 +169,27 @@
       :PAGES:    L22
       :DOI:      10.3847/2041-8205/818/2/L22
       :ADSURL:   http://adsabs.harvard.edu/abs/2016ApJ...818L..22A
+      :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+      :END:
+***** GW150914: The Advanced LIGO Detectors in the Era of First Discoveries
+      :PROPERTIES:
+      :TITLE:    GW150914: The Advanced LIGO Detectors in the Era of First Discoveries
+      :BTYPE:    article
+      :CUSTOM_ID: 2016PhRvL.116m1103A
+      :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M.~R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and et al.
+      :JOURNAL:  \prl
+      :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics
+      :YEAR:     2016
+      :MONTH:    Apr
+      :VOLUME:   116
+      :NUMBER:   13
+      :EID:      131103
+      :PAGES:    131103
+      :DOI:      10.1103/PhysRevLett.116.131103
+      :ARCHIVEPREFIX: arXiv
+      :EPRINT:   1602.03838
+      :PRIMARYCLASS: gr-qc
+      :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016PhRvL.116m1103A
       :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
       :END:
 *** GW151226
@@ -392,9 +411,72 @@
    | G299232  | NSBH      | 2017-08-25 | 1313 UTC |                                    |
 
 *** GW170104
+**** Announcement paper
+     :PROPERTIES:
+     :TITLE:    GW170104: Observation of a 50-Solar-Mass Binary Black Hole Coalescence at Redshift 0.2
+     :BTYPE:    article
+     :CUSTOM_ID: 2017PhRvL.118v1101A
+     :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and {Adya}, V.~B. and et al.
+     :JOURNAL:  \prl
+     :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+     :YEAR:     2017
+     :MONTH:    Jun
+     :VOLUME:   118
+     :NUMBER:   22
+     :EID:      221101
+     :PAGES:    221101
+     :DOI:      10.1103/PhysRevLett.118.221101
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1706.01812
+     :PRIMARYCLASS: gr-qc
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017PhRvL.118v1101A
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
 *** GW170608
+**** Announcement paper
+     :PROPERTIES:
+     :TITLE:    GW170608: Observation of a 19 Solar-mass Binary Black Hole Coalescence
+     :BTYPE:    article
+     :CUSTOM_ID: 2017ApJ...851L..35A
+     :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and {Adya}, V.~B. and et al.
+     :JOURNAL:  \apjl
+     :KEYWORDS: binaries: general, gravitational waves, stars: black holes, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+     :YEAR:     2017
+     :MONTH:    Dec
+     :VOLUME:   851
+     :NUMBER:   2
+     :EID:      L35
+     :PAGES:    L35
+     :DOI:      10.3847/2041-8213/aa9f0c
+     :ARCHIVEPREFIX: arXiv
+     :EPRINT:   1711.05578
+     :PRIMARYCLASS: astro-ph.HE
+     :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017ApJ...851L..35A
+     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+     :END:
 *** GW170809
 *** GW170814
+**** Announcement paper
+    :PROPERTIES:
+    :TITLE:    GW170814: A Three-Detector Observation of Gravitational Waves from a Binary Black Hole Coalescence
+    :BTYPE:    article
+    :CUSTOM_ID: 2017PhRvL.119n1101A
+    :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and {Adya}, V.~B. and et al.
+    :JOURNAL:  \prl
+    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - High Energy Astrophysical Phenomena
+    :YEAR:     2017
+    :MONTH:    Oct
+    :VOLUME:   119
+    :NUMBER:   14
+    :EID:      141101
+    :PAGES:    141101
+    :DOI:      10.1103/PhysRevLett.119.141101
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1709.09660
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017PhRvL.119n1101A
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 *** GW170817
     GW170817 is the first observed binary neutron star (BNS) merger,
     which was observed on 17 August 2017.

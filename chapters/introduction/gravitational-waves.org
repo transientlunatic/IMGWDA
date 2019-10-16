@@ -453,7 +453,7 @@ This allows a less powerful laser to be used as the input for the interferometer
  thanks to the sidebands on the beam which are produced by the
  abbr:gw not interfering destructively.
 
- To perform signal recycling a mirror is added between the beam splitter and the readout port of the interferometer, with this configuration illustrated in the right panel of figure ref:fig:detectors:michelson.
+ To perform signal recycling a mirror is added between the beam splitter and the readout port of the interferometer cite:1988PhRvD..38.2317M,2008OExpr..1610018A, with this configuration illustrated in the right panel of figure ref:fig:detectors:michelson.
 
 *** Fabry-Perot cavities
     :PROPERTIES:
@@ -461,12 +461,12 @@ This allows a less powerful laser to be used as the input for the interferometer
     :END:
 
  For a ground-based interferometer, which has an arm-length of $4$-kilometres, the light travel time within the arm is of the order $\SI{E-5}{\second}$.
- The period of a abbr:gw which the detector is sensitive to, around $\SI{E-2}{\second}$, is much greater than this travel time.
+ The period of a abbr:gw which the detector is sensitive to, around $\SI{E-2}{\second}$, is much greater than this travel time cite:2007QuEle..37.1137T.
  As a result it is advantageous to allow the beam to remain within the arm for longer than one round-trip. 
  By setting the arm up as a cavity the effective length of the arm can be increased; a finesse of 100 will then increase the effective length of the arm 100-fold.
  This in turn increases the apparent change in the arm length by a factor of 100, and substantially aids the sensitivity of the detector.
 
- In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a finesse of $450$.
+ In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a finesse of $450$ cite:2015CQGra..32g4001L.
  This is formed by placing a mirror between the beam-splitter and the end mirror in each arm.
 
 
@@ -486,7 +486,7 @@ This allows a less powerful laser to be used as the input for the interferometer
     F_{+} &= \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\alpha \cos 2\psi - \sin\delta\sin 2 \alpha \sin 2 \psi \\
     F_{\times} &=  \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\phi \sin 2\psi - \sin\delta\sin 2 \phi \cos 2 \psi 
     \end{align}
-for $\psi$ the polarisation angle of the abbr:gw, which corresponds to the rotation of the basis vectors defining the polarisations of the abbr:gw compared to the detector.
+for $\psi$ the polarisation angle of the abbr:gw, which corresponds to the rotation of the basis vectors defining the polarisations of the abbr:gw compared to the detector cite:cite:2009LRR....12....2S.
 The $+$-polarised response is plotted in figure ref:fig:detectors:interferometers:antennapattern, which clearly depicts the four regions of low sensitivity. 
     
     \begin{figure}
@@ -506,7 +506,7 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
     
     While this antenna pattern has the effect of reducing the sensitivity of the detector to some areas of the sky, it provides additional information relating to the direction of the abbr:gw.
     This information can be utilised if a network of detectors is available, as if a signal is detected in similar detectors located elsewhere, but not (or barely) detected by another, it may be possible to infer that the signal originated in the direction of the one of the non-detecting detector's ``blind spots''.
- Such an inference was valuable in the localisation of the source of gls:gw170817, which had a noticeably weak signal in the gls:virgo detector.
+ Such an inference was valuable in the localisation of the source of gls:gw170817 cite:2017PhRvL.119p1101A, which had a noticeably weak signal in the gls:virgo detector.
 
     
  
@@ -536,12 +536,11 @@ The $+$-polarised response is plotted in figure ref:fig:detectors:interferometer
    \label{sec:detectors:ground-based}
 
  While there are attractions to being able to place an interferometric abbr:gw observatory in space, practical concerns have so-far constrained these detectors to being placed on the ground (or, in the case of gls:kagra, under it). 
- Fortunately, a considerable amount of science is possible with ground-based detectors, within the acoustic band of frequencies (above around 50 hertz).
+ Fortunately, a considerable amount of science is possible with ground-based detectors, within the acoustic band of frequencies (above around 10-hertz).
  As a result considerable effort has been put into the development of detectors which can overcome the noisy environment which these detectors experience, which has so-far culminated in the construction of the advanced gls:ligo observatories, and the advanced gls:virgo observatory. In the near future these are likely to be joined by gls:kagra and an additional gls:ligo detector in India.
 
- Future developments in ground-based interferometry are likely to force the detectors underground; gls:kagra has already been located in a mine, while a plan for a future subterranean detector is the gls:einstein-telescope.
-
- For greater discussion of the sources of noise see section ref:sec:detectors:noise.
+Future developments in ground-based interferometry are likely to force the detectors underground in order to mitigate seismic and Newtonian noise (see section ref:sec:detectors:noise); gls:kagra has already been located in a mine, while a plan for a future subterranean detector is the gls:einstein-telescope.
+# For greater discussion of the sources of noise see section ref:sec:detectors:noise.
 
 *** Advanced LIGO
     :PROPERTIES:
@@ -594,7 +593,7 @@ Test-mass mass   & $\SI{40}{\kilogram}$     \\
     \label{sec:detectors:kagra}
 
     The final ``advanced era'' detector design which is under development is that of gls:kagra (previously known under the moniker abbr:lcgt) cite:2018arXiv181108079A. 
-    abbr:kagra has claim to in fact bridge the technological divide between the second and third generation of abbr:gw detectors, as it is expected to be the first interferometric detector to employ cryogenic technology.
+    abbr:kagra has claim to bridge the technological divide between the second and third generation of abbr:gw detectors, as it is expected to be the first interferometric detector to employ cryogenic technology.
     The use of cryogenically-cooled mirrors is designed to reduce thermal noise originating in the mirror coatings (see ref:sec:detectors:noise:thermal), but presents a number of technological challenges which ambient-temperature detectors avoid.
     Additionally, in contrast to gls:ligo and gls:virgo, gls:kagra will be located underground (in a disused part of the Kamioka mine complex).
     This principle is expected to be used for the gls:einstein-telescope, and reduces the impact of some forms of Newtonian noise (see section ref:sec:detectors:noise:newtonian) on the detector, and thus improves its low-frequency sensitivity.
@@ -619,7 +618,7 @@ In addition to having longer arm cavities than current detectors, gls:einstein-t
    #+NAME:sec:detectors:space
    \label{sec:detectors:space}
    While ground-based interferometers have the advantage of accessibility, and consequently fairly affordable construction costs, great advantage is to be had in placing an interferometer in space. Some noise sources which detectors such as abbr:ligo must contend with, such as seismic noise, are completely absent, and greater freedom is afforded in the size of the interferometer, with the absence of a need to purchase and prepare land for the observatory. 
- In exchange for these advantages space-based interferometers present a number of technological hurdles, such as maintaining sufficiently stable orbital orbital configuration to allow interferometry to be carried-out, and reduced sensitivity, as constructing a Fabry-Perot cavity in the comparitively poor vacuum around the L1 point is not feasible.
+ In exchange for these advantages space-based interferometers present a number of technological hurdles, such as maintaining sufficiently stable orbital configuration to allow interferometry to be carried-out, and reduced sensitivity, as constructing a Fabry-Perot cavity in the comparitively poor vacuum around the L1 point is not feasible.
 
  Despite these difficulties, space-based detectors represent the majority of feasible concepts for detectors sensitive to low frequency emission. 
 The following sections contain further details of the gls:lisa and gls:decigo mission proposals, but numerous other proposals for space-based detectors exist, including gls:glisa cite:doi:10.1063/1.4904862,glisaorbit, which proposes using off-the-shelf satellites to form a detector constellation in geostationary (rather than heliocentric) orbit. 
@@ -945,7 +944,7 @@ This plot was produced using the \texttt{gwpy} library cite:gwpy0d14d2.
  \end{figure}
 
  The first detection of abpl:gw was made on 14 September 2015 by the Advanced abbr:ligo detectors cite:2016PhRvL.116f1102A when a signal from a abbr:bbh coalescence was detected, first by the abbr:cwb burst search pipeline (which is discussed briefly in section ref:sec:sources:burst:pipelines), and subsequently by a number of matched-filtering pipelines designed for abbr:cbc detection.
- This event, gls:gw150914 was remarkable not only for being the first viable trigger to be detected by advanced gls:ligo, but also for having sufficiently high statistical significance (with a false alarm rate less than 1-in-$203\,000$ years) that there was no reasonable doubt that it constituted a genuine abbr:gw detection; indeed, as can be seen in figure ref:fig:gw:gw150914, the signal can be seen clearly in the whitened data without the use of matched filtering.
+gls:gw150914 was remarkable not only for being the first viable trigger to be detected by advanced gls:ligo, but also for having sufficiently high statistical significance (with a false alarm rate less than 1-in-$203\,000$ years) that there was no reasonable doubt that it constituted a genuine abbr:gw detection; indeed, as can be seen in figure ref:fig:gw:gw150914, the signal can be seen clearly in the whitened data without the use of matched filtering.
 
 The detection was made at both the gls:llo and gls:lho observatories, with a joint abbr:snr of around $24$.
 The event itself, a gls:bbh coalescence between a $36^{+5}_{-4} \msolar$ black hole and a $29^{+4}_{-4} \msolar$ black hole was unexpected.
@@ -956,7 +955,7 @@ As a result models of stellar formation struggled to explain the evolution of bl
 Two further abbr:bbh events were observed in the first observing run.
 gls:gw151012, (the ``second Monday event''), was initially announced as a candidate event, as it failed to exceed the $5\sigma$ significance threshold which was set for events prior to the publication of the ~GWTC-1~ catalogue cite:2018arXiv181112907T. 
 The more significant gls:gw151226 (the ``Boxing Day event'') was the second confirmed detection from the advanced gls:ligo detectors, corresponding to a merger between much less massive black holes than gls:gw150914 (around 14 and 8 solar masses). 
-Unlike the first detection, gls:gw151226 involved an asymmetrical system, with one black hole around twice as massive as the other.
+Unlike the first detection, gls:gw151226 may have involved an asymmetrical system, with one black hole about twice as massive as the other.
 The lower masses resulted in a substantially greater amount of the inspiral waveform being in-band for the detectors, and consequently was capable of providing more stringent tests on abbr:gr than its predecessor cite:2016PhRvL.116x1103A.
 
 

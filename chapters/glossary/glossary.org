@@ -156,7 +156,7 @@ The square-root of the gls:power-spectral-density.
    :PROPERTIES:
    :ABBREVIATION: CMB
    :END:
-** DECIGO
+** Deci-hertz Interferometer Gravitational wave Observatory
    :PROPERTIES:
    :ABBREVIATION: DECIGO
    :END:
@@ -396,7 +396,6 @@ Also the first abbr:gw event to be observed alongside electromagnetic emssion, f
    A multi-telescope pulsar timing array which comprises the abbr:epta, gls:nanograv, and abbr:ppta arrays.
 ** Kagra
    :PROPERTIES:
-   :ABBREVIATION: KAGRA
    :END:
    Kagra is a 3-km advanced-generation interferometric detector which is under development at the Kamioka Observatory, Gifa Prefecture, Japan. 
    It will be the first detector to be located underground, in an effort to reduce the effect of Newtonian noise on the detector, and the first detector to contain cryogenic components, to reduce thermal noise from the optical suspensions and coatings. 
