@@ -494,63 +494,6 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
    for a strain $h$ at time $t$, given a decay time $\tau$ and frequency $f$.
     
 
-** Parabolic and hyperbolic encounters
-   :PROPERTIES:
-   :CUSTOM_ID: sources:burst:encounters
-   :END:
-
-   Encounters between pairs of black holes, where the two bodies trajectories are affected by the total gravitational field, but where a closed orbit is not formed are expected to be possible in regions of space with a high density of compact objects, for example globular clusters and the centres of galaxies.
-   In the case where the deflection angle of the trajectories is small this process can be considered analogous to bremsstrahlung processes in electromagnetic radiation production cite:PhysRevD.1.1559,1978ApJ...224...62K, but the emission production becomes more complicated as larger deflection angles are considered, and spin is included.
-   Approximate models are available for the waveforms of these encounters in the bremmstrahlung case, 
-   low-velocity cases with arbitrary deflection cite:1977ApJ...216..610T, and head-on collisions cite:1992PhRvD..46..694D. 
-   Recent advances have allowed the production of 3.5 abbr:pn accurate waveforms for hyperbolic encounters for non-spinning pairs of black holes cite:2018PhRvD..98b4039C
-
-   # 
-
-*** Encounter waveforms
-    :PROPERTIES:
-    :CUSTOM_ID: sources:burst:encounters:waveforms
-    :END:
-    \label{sources:burst:encounters:waveforms}
-
-    Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in this section I consider the detectability of some of these waveforms in current and future detectors.
-    The waveforms for this brief study are taken from the abbr:gw driven capture simulations of cite:2017PhRvD..96h4009B.
-    An example of one of these waveforms is plotted in figure ref:fig:sources:burst:parabolic:waveform.
-
-    \begin{figure}
-    \includegraphics{figures/sources/hyperbolic-timeseries.pdf}
-    \caption[Parabolic enounter waveform]{A parabolic encounter waveform from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$. 
-    The spectrum of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:spectrum}.
-    \label{fig:sources:burst:parabolic:waveform}}
-    \end{figure}
-
-    \begin{figure}
-    \includegraphics{figures/sources/hyperbolic-spectrum.pdf}
-    \caption[Parabolic enounter waveform]{The spectrum of a parabolic encounter from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$ (the same waveform depicted in figure~\ref{fig:sources:burst:parabolic:waveform}), with the sensitivity curves of gls:ligo, gls:decigo, gls:einstein-telescope, and gls:lisa for reference. 
-    The timeseries representation of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:waveform}.
-    \label{fig:sources:burst:parabolic:spectrum}}
-    \end{figure}
-
-    The detectability of the waveforms can be estimated using equation ref:eq:intro:snr, taking the Fourier transform of the strain data from the abbr:nr simulation to form $\tilde{h}(f)$, and the estimated noise gls:amplitude-spectral-density for each detector. 
-    Figure ref:fig:sources:burst:parabolic:distance shows the abbr:snr of the waveform plotted in figure ref:fig:sources:burst:parabolic:waveform as a function of the luminosity distance of the source, and the total mass of the system. 
-    An abbr:snr of 8 is a standard threshold which a signal must exceed to be considered a detection, and this is plotted with a heavier line.
-
-    Other systems, which are highly asymmetrical (with a mass-ratio $q = 16$) may be a promising candidates for detection in advanced gls:ligo. For example the waveform used to produce figure ref:fig:sources:burst:parabolic:distance2, with a distance around $\SI{50}{\mega\parsec}$ producing a detectable abbr:snr to distances which encompass the majority of the Local Group of galaxies.
-
-    \begin{figure}
-    \includegraphics{./figures/sources/hyperbolic-m4-l0d8.pdf}
-    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of the $q=4$ hyperbolic encounter waveform plotted in figure \ref{fig:sources:burst:parabolic:waveform} in advanced abbr:ligo at design sensitivity.
-    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
-    \label{fig:sources:burst:parabolic:distance}}
-    \end{figure}
-
-    \begin{figure}
-    \includegraphics{./figures/sources/hyperbolic-m16-l0d24.pdf}
-    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of a $q=16$ hyperbolic encounter waveform in advanced abbr:ligo at design sensitivity.
-    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
-    \label{fig:sources:burst:parabolic:distance2}}
-    \end{figure}
-
 ** Core-collapse supernovae
 
 \begin{figure}
@@ -598,3 +541,69 @@ The characteristic strain spectrum of a abbr:ccsn is plotted in figure ref:fig:s
    Three seperate models of cosmic strings have been searched for in data from the advanced gls:ligo detectors to date, and while no evidence for abbr:gw emission from these objects was found, it was possible to place limits both on the parameters of the various models and on the scale of $G \mu$.
 The gls:ligo results place a limit of \(G \mu < \SI{4.2E-10}{}}\) cite:2019PhRvD.100b4017A, which agrees with, but is surpassed by results from pulsar timing arrays, which find \(G \mu < \SI{5.7E-12}{}\) cite:2018PhRvD..97j2002A.
    
+
+** Parabolic and hyperbolic encounters
+   :PROPERTIES:
+   :CUSTOM_ID: sources:burst:encounters
+   :END:
+   \label{sources:burst:encounters}
+
+   Encounters between pairs of black holes, where the two bodies trajectories are affected by the total gravitational field, but where a closed orbit is not formed are expected to be possible in regions of space with a high density of compact objects, for example globular clusters and the centres of galaxies.
+   In the case where the deflection angle of the trajectories is small this process can be considered analogous to bremsstrahlung processes in electromagnetic radiation production cite:PhysRevD.1.1559,1978ApJ...224...62K, but the emission production becomes more complicated as larger deflection angles are considered, and spin is included.
+   Approximate models are available for the waveforms of these encounters in the bremmstrahlung case, 
+   low-velocity cases with arbitrary deflection cite:1977ApJ...216..610T, and head-on collisions cite:1992PhRvD..46..694D. 
+   Recent advances have allowed the production of 3.5 abbr:pn accurate waveforms for hyperbolic encounters for non-spinning pairs of black holes cite:2018PhRvD..98b4039C
+
+   # 
+
+*** Encounter waveforms
+    :PROPERTIES:
+    :CUSTOM_ID: sources:burst:encounters:waveforms
+    :END:
+    \label{sources:burst:encounters:waveforms}
+
+    Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in this section I present the results of a study I have conducted to consider the detectability of some of these waveforms in current and future detectors.
+    The waveforms for this brief study are taken from the abbr:gw driven capture simulations of cite:2017PhRvD..96h4009B.
+    An example of one of these waveforms is plotted in figure ref:fig:sources:burst:parabolic:waveform.
+
+    \begin{figure}
+    \includegraphics{figures/sources/hyperbolic-timeseries.pdf}
+    \caption[Parabolic enounter waveform]{A parabolic encounter waveform from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$. 
+    The spectrum of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:spectrum}.
+    \label{fig:sources:burst:parabolic:waveform}}
+    \end{figure}
+
+    \begin{figure}
+    \includegraphics{figures/sources/hyperbolic-spectrum.pdf}
+    \caption[Parabolic enounter waveform]{The spectrum of a parabolic encounter from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$ (the same waveform depicted in figure~\ref{fig:sources:burst:parabolic:waveform}), with the sensitivity curves of gls:ligo, gls:decigo, gls:einstein-telescope, and gls:lisa for reference. 
+    The timeseries representation of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:waveform}.
+    \label{fig:sources:burst:parabolic:spectrum}}
+    \end{figure}
+
+    The detectability of the waveforms can be estimated using equation ref:eq:intro:snr, taking the Fourier transform of the strain data from the abbr:nr simulation to form $\tilde{h}(f)$, and the estimated noise gls:amplitude-spectral-density for each detector. 
+    Figure ref:fig:sources:burst:parabolic:distance shows the abbr:snr of the waveform plotted in figure ref:fig:sources:burst:parabolic:waveform as a function of the luminosity distance of the source, and the total mass of the system. 
+    An abbr:snr of 8 is a standard threshold which a signal must exceed to be considered a detection, and this is plotted with a heavier line.
+    The spectrum of this waveform is plotted in figure ref:fig:sources:burst:parabolic:spectrum, alongside the abbr:asd for advanced gls:ligo (at design senstivity), abbr:et, and gls:decigo. 
+This plot clearly shows that a signal from a system such as this at a distance of $\SI{50}{\mega\parsec}$, a distance which encompasses not only the Local group, but nearby galaxy clusters such as the Virgo group, is above the noise-floor of even advanced gls:ligo at its design sensitivity.
+Other systems, which are highly asymmetrical (with a mass-ratio $q = 16$) may be even more promising candidates for detection in advanced gls:ligo. 
+For example the waveform used to produce figure ref:fig:sources:burst:parabolic:distance2, with a distance around $\SI{175}{\mega\parsec}$; again producing a detectable abbr:snr to distances which encompass nearby clusters of galaxies.
+This makes these events a promising burst source candidate, however further work is required to establish plausible astrophysical rates for such events in order to determine if these are a likely source of signals for current generation detectors.
+
+Encounters which result in capture may appear similar to high-mass abbr:bbh events in the current generation of detectors, since the inspiral portion of a high-mass system will be predominately at frequencies below which the detectors are sensitive.
+Encounter waveforms will also lack a lengthy inspiral portion; as a result there is a chance that future abbr:gw events may be misclassified, and this eventuality should be considered in waveforms which seem to lack a clear inspiral.
+These results are principally low-frequency sources, and as such are ideal candidates for both abbr:et, which aims to achieve much greater low-frequency sensitivity than current detectors, but also for decihertz detectors, such as gls:decigo. 
+
+
+    \begin{figure}
+    \includegraphics{./figures/sources/hyperbolic-m4-l0d8.pdf}
+    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of the $q=4$ hyperbolic encounter waveform plotted in figure \ref{fig:sources:burst:parabolic:waveform} in advanced abbr:ligo at design sensitivity.
+    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
+    \label{fig:sources:burst:parabolic:distance}}
+    \end{figure}
+
+    \begin{figure}
+    \includegraphics{./figures/sources/hyperbolic-m16-l0d24.pdf}
+    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of a $q=16$ hyperbolic encounter waveform in advanced abbr:ligo at design sensitivity.
+    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
+    \label{fig:sources:burst:parabolic:distance2}}
+    \end{figure}
