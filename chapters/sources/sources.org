@@ -498,7 +498,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
 
 \begin{figure}
 \includegraphics{figures/sources/source-ccsn.pdf}
-\caption[Spectra of supernovae compared to the advanced LIGO and DECIGO sensitivity curves]{The strain spectra of a core collapse supernova and a Type 1A supernova, both at a distance of $\SI{10}{\kilo pc}$ from the earth. 
+\caption[Frequency ranges for supernovae compared to the advanced LIGO and DECIGO sensitivity curves]{The frequency ranges and approximate abbr:gw likely to be produced by core collapse supernovae cite:2008PhRvD..78f4056D and Type 1A supernovae cite:2015PhRvD..92l4013S, at a distance of $\SI{10}{\kilo pc}$ from the earth. 
 The noise (sensitivity) curve of the advanced gls:ligo, gls:decigo, and gls:lisa detectors at their design sensitivity is plotted for reference.}
 \label{fig:sources:sn-spectrum}
 \end{figure}
