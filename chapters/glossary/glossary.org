@@ -293,6 +293,11 @@ The square-root of the gls:power-spectral-density.
    :END:
    A Gaussian process is a stochastic process in which every subset of the stochastic variables has a multivariate normal distribution. 
    They are a flexible Bayesian regression method which are well suited to timeseries modelling, and as surrogates to poorly sampled functions.
+** Gaussian process regression
+   :PROPERTIES:
+   :ABBREVIATION: GPR
+   :PLURALABB: GPRs
+   :END:
 ** general relativity
    :PROPERTIES:
    :ABBREVIATION: GR
