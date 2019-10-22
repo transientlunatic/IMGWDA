@@ -16,7 +16,7 @@ abbr:sgrb were found to be harder, and abbr:lgrb softer.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/grb/fermi-duration-hist.pdf}
-\caption[The $t_{90}$ distribution of gamma ray bursts]{A histogram of the $T_{90}$ duration of each abbr:grb in the gls:fermi GRB catalogue cite:2014ApJS..211...12G,2014ApJS..211...13V,2016ApJS..223...28N. The $T_{90}$ measure represents the interval between when 5\% of the fluence has been detected, and when 95\% of the fluence has been detected.
+\caption[The $t_{90}$ distribution of gamma ray bursts]{A histogram of the $T_{90}$ duration of each abbr:grb in the gls:fermi abbr:grb catalogue cite:2014ApJS..211...12G,2014ApJS..211...13V,2016ApJS..223...28N. The $T_{90}$ measure represents the interval between when 5\% of the fluence has been detected, and when 95\% of the fluence has been detected.
 By-eye the distribution appears to have a single peak, with a lengthy tail of short-duration events, but there is generally confidence that the distribution in fact best described by a mixture of two Gaussian distributions cite:2015A&A...581A..29T, which correspond to the short and long-duration categories.
 \label{fig:grb:distribution}
 }
@@ -82,11 +82,11 @@ Understanding how this model might work is easiest by considering a simple game.
 1. Make a counter for the number of observed abbr:sgrb events, $N_{\text{grb}}$, which is initially set to $0$.
 2. Now draw $N_{\text{bns}}$ values of the viewing angle from a distribution uniform over $\cos(\theta_{\text{v}})$, between $\ang{0}$ and $\ang{90}$.
 3. For each observation we then draw a value for each of the variables of the luminosity distribution and source distance, $D$, from appropriate distributions. In the case of the top-hat model this would involve drawing the angle from some distribution limited to the range $\ang{0}$ to $\ang{90}$ for example.
-4. Determine if the observed luminosity, $L(\theta_{\text{v}})/D^2$ is greater than some threshold luminosity, below which the event cannot be observed. If it is, increment the GRB counter, $N_{\text{grb}}$.
+4. Determine if the observed luminosity, $L(\theta_{\text{v}})/D^2$ is greater than some threshold luminosity, below which the event cannot be observed. If it is, increment the abbr:grb counter, $N_{\text{grb}}$.
 
 \begin{figure}
 \includegraphics{figures/grb/game-tophat.pdf}
-\caption[Expected observed ratios of sGRB and BNS events with the top aht model]{The expected ratios of observed abbr:sgrb to abbr:bns events from a variety of on the beaming angle of a top-hat model. Each distribution is a normal distributions truncated between $\ang{0}$ and $\ang{90}$; the $x$ axis represents the standard deviation of the distribution, while each line represents a different mean.
+\caption[Expected observed ratios of abbr:sgrb and abbr:bns events with the top aht model]{The expected ratios of observed abbr:sgrb to abbr:bns events from a variety of on the beaming angle of a top-hat model. Each distribution is a normal distributions truncated between $\ang{0}$ and $\ang{90}$; the $x$ axis represents the standard deviation of the distribution, while each line represents a different mean.
 \label{fig:grb:game:tophat}}
 \end{figure}
 
@@ -124,9 +124,9 @@ An overview of this approach is as follows:
 
 1. Estimate the posterior probability distribution on the abbr:bns merger rate in the local universe from a number of observed gravitational wave signals and our knowledge of the sensitivity of the detectors. We construct a joint posterior distribution on the abbr:bns rate and the (unknown) probability $\epsilon$ that a given merger results in an abbr:sgrb. 
 
-2. Use equation ref:eq:grb:rate2angle, which relates the abbr:bns merger and abbr:sgrb rates via the geometry of the beaming angle, to transform the rate posterior probability to a posterior probability on the mean abbr:sgrb beaming angle.
+2. Use equation ref:eq:grb:rate2angle, which relates the abbr:bns merger and abbr:sgrb rates via the geometry of the beaming angle, to transform the rate posterior probability to a posterior probability on the mean abbr:sgrb beaming angle. In this work I consider the observed rate of abpl:sgrb to be constant.
 
-3. Marginalize over $\epsilon$. We choose to consider $\epsilon$ a nuisance parameter because, to date, there is no accurate estimate of this parameter and it is not the main focus of our analysis. 
+3. Marginalize over $\epsilon$. I choose to consider $\epsilon$ a nuisance parameter because, to date, there is no accurate estimate of this parameter and it is not the main focus of our analysis. 
 
 
 ** Constructing the abbr:bns rate posterior
@@ -159,8 +159,13 @@ b = \text{background rate}.
 Searches for abbr:bns events are generally conducted as part of an /all-sky/ analysis over all of the two-detector coincident data in a given observing run. 
 For these searches, such as those used in cite:2016PhRvX...6d1015A,2018arXiv181112907T, the significance of a gls:trigger is determined empirically, by comparing the signal to noise sampled close to its time.
 A detection requires this significance to be above some predetermined threshold (for example $5\sigma$ for gls:gw150914 and gls:gw151226 cite:2016PhRvL.116f1102A,2016PhRvL.116x1103A).  
-We follow the method in cite:Aasi:2013wya, which defines a detection as a candidate with an abbr:snr $\rho_c \geq 12$, corresponding approximately to $b=\SI{e-2}{\year^{-1}}$.  
+I follow the method in cite:Aasi:2013wya, which defines a detection as a candidate with an abbr:snr $\rho_c \geq 12$, corresponding approximately to $b=\SI{e-2}{\year^{-1}}$.  
 Since the background rate $b$ is defined, only the signal rate, $s$, needs to be inferred.
+In this study I do not consider sub-threshold events (i.e. those with $\rho_{\text{c}} < 12$), and assume that the probability of abbr:gw detection from abbr:bns events is not dependent upon the orientation of the source. 
+By not considering sub-threshold events the total volume of space which is observed is effectively reduced, in exchange for maintaining a low background rate of false events, $b$. 
+In reality there is a greater probability of detecting a face-on abbr:bns event compared to an edge-on abbr:bns event.
+A face-on abbr:bns event is more likely to have an observable abbr:sgrb beam, which may introduce a bias in this method towards broader beam geometries.
+
 
 By assuming a uniform prior on $s$ and a Poisson process underlying the events, it may be shown (for example in cite:2010blda.book.....G) that the posterior for the signal rate, given a known background rate $b$ and $n$ events observed over a time period $T$ is
 \begin{equation}
@@ -195,6 +200,12 @@ Finally, the posterior on the binary coalescence rate $\cbcrate$ is obtained fro
 We see that in this approach, the rate posterior depends only on the number of signal detections $n$, the observation time $T$, the background rate $b$, and the horizon distance of the search $\dhor$.
 It is precisely these quantities that comprise the detection scenarios outlined in cite:Aasi:2013wya.  
 Before constructing expected rate posteriors, we outline the transformation from rate to beaming angle.
+
+** The abbr:sgrb rate
+   \label{sec:grb:sgrb:rate}
+   In this work I do not place a prior distribution on the abbr:sgrb rate, but assume a fiducial rate, $\grbrate = \SI{10}{\giga\parsec^{-3}\year^{-1}}$.
+   A more extensive investigation could attempt to account for the uncertainty in the abbr:sgrb rate by placing an astrophysically motivated prior distribution over this quantity.
+   
 
 ** Constructing the beaming angle posterior
    :PROPERTIES:
@@ -312,7 +323,7 @@ Table ref:tab:grb:scenarios lists the details of each observing scenario.
 
 Having developed a framework in which to infer first the expected abbr:bns rate, and from that the distribution of the jet opening angle, it makes sense to consider how the method is likely to perform as the sensitivity and observing time of the advanced abbr:ligo detectors improves.
 
-Figure ref:fig:grb:aligo:cbcrate shows the abbr:bns rate posteriors resulting from the observations in the scenarios in table ref:tab:grb:scenarios generated using the procedure described in section sec:grb:rate2beam. 
+Figure ref:fig:grb:aligo:cbcrate shows the abbr:bns rate posteriors resulting from the observations in the scenarios in table ref:tab:grb:scenarios generated using the procedure described in section ref:sec:grb:rate2beam.
 A number of scenarios have a range of potential inspiral distances, and in each case the median value is used in the analysis, so for the 2015--2016 scenario $\dinsp$ is taken to be $\SI{60}{\mega\parsec}$, for example. 
 Likewise an illustrative value of $n$, the number of expected abbr:gw detections, is selected from each range; these are listed in table ref:tab:grb:rateposteriors.
 
@@ -338,7 +349,7 @@ cite:Nakar:2007yr,Dietz:2010eh) is used to derive the corresponding beaming angl
     \midrule
     2015--2016 & 0   & 0.00	 & 0.45	 & 2.80	 & 11.98	\\
     2016--2017 & 1   & 0.17	 & 4.07	 & 6.74	 & 19.13	\\
-    2017 -- 2018 & 3 & 1.37	 & 5.88	 & 6.99	 & 15.26 \\	
+    2017--2018 & 3 & 1.37	 & 5.88	 & 6.99	 & 15.26 \\	
     2020+ & 10 &7.30	 & 14.47	 & 15.25	 & 25.25	\\
     2024+ & 20 & 12.42	 & 20.35	 & 20.65	 & 30.09	\\
     \bottomrule
@@ -359,14 +370,14 @@ cite:Nakar:2007yr,Dietz:2010eh) is used to derive the corresponding beaming angl
 
 This method is validated  by first selecting values of the beaming angle, the abbr:sgrb efficiency,
 and the rate of abbr:bns coalescence.  
-Choosing $\theta=10^{\circ}$, and the `realistic' abbr:bns rate 
+Choosing $\theta=10^{\circ}$, $\epsilon = 1$, and the `realistic' abbr:bns rate 
 $\cbcrate = \SI{e-6}{\mega \parsec^{-3} \year^{-1}}$, the value of the abbr:sgrb rate that would correspond to these parameter choices is computed.  
 This /artificial/ value for $\grbrate$ is used in equation ref:eq:grb:jet:posterior when computing the posterior on the beaming angle, with the understanding that the resulting posterior should yield an inference consistent with the `true' value $\theta=10^{\circ}$.
 
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/grb/O1_injections_violin.pdf}
-\caption[Posterior distributions of the validation procedure described in section \ref{sec:grb:validation}]{ In order to validate the algorithm an artificial scenario was constructed with a known beaming angle by artificially setting a GRB rate of $36.7\, \yr^{-1}$ to induce a beaming angle of $\theta \approx 10^{\circ}$. 
+\caption[Posterior distributions of the validation procedure described in section \ref{sec:grb:validation}]{ In order to validate the algorithm an artificial scenario was constructed with a known beaming angle by artificially setting an observed abbr:sgrb event rate of $36.7\, \yr^{-1}$ to induce a beaming angle of $\theta \approx 10^{\circ}$. 
   The algorithm was then tested with the various priors used in the analysis,  using the same gls:horizon-distance, observing time, and gls:duty-cycle as the 2015--2016 observing scenario, to ensure that the correct beaming angle was inferred. 
   These posteriors are based on the simulated 2015--2016 observing scenario (see table~\ref{tab:grb:scenarios}).
   \label{fig:grb:validation:results:2015}}
@@ -385,14 +396,15 @@ This /artificial/ value for $\grbrate$ is used in equation ref:eq:grb:jet:poster
     U(0,1)        & 4.62	 & 8.14	 & 13.23	 & 63.81	 \\
     \bottomrule
 \end{tabular}
-\caption[Beaming angle posteriors for the 2015--2016 observing scenario]{Summary of the beaming angle posteriors from figure~\ref{fig:grb:validation:results:2015}, for the 2015--2016 observing scenario, with an artificial GRB rate imposed to produce a target beaming   angle of $\theta = 10^{\circ}$.
+\caption[Beaming angle posteriors for the 2015--2016 observing scenario]{Summary of the beaming angle posteriors from figure~\ref{fig:grb:validation:results:2015}, for the 2015--2016 observing scenario, with an artificial abbr:sgrb rate imposed to produce a target beaming angle of $\theta = 10^{\circ}$.
   \label{tab:grb:validation:results:2015}}
 \end{table}
 
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/grb/O2_injections_violin.pdf}
-\caption[Beaming angle posteriors for the 2016--2017 observing scenario]{The procedure used to produce figure~\ref{fig:grb:validation:results:2015} was repeated for the observing time and the horizon distance of the 2016--2017 observing scenario, with a GRB rate of $28.0 \,\yr^{-1}$ used to induce a beaming angle of $\theta \approx 10^{\circ}$.
+\caption[Beaming angle posteriors for the 2016--2017 observing scenario]{The procedure used to produce figure~\ref{fig:grb:validation:results:2015} was repeated for the observing time and the horizon distance of the 2016--2017 observing scenario, with an observed abbr:sgrb event rate of $28.0 \,\yr^{-1}$ used to induce a beaming angle of $\theta \approx 10^{\circ}$.
+The observed abbr:sgrb event rate in this scenario is lower than that used for the 2015--2016 scenario in order to induce the same opening angle despite the greater sensitivity and abbr:bns event rate of this scenario.
   \label{fig:grb:validation:results:2016}}
 \end{figure}
 \begin{table}
@@ -410,7 +422,7 @@ This /artificial/ value for $\grbrate$ is used in equation ref:eq:grb:jet:poster
 \end{tabular}
 \caption[Beaming angle posteriors for the 2016--2017 observing scenario]{Summary of the beaming angle posteriors from figure
   \ref{fig:grb:validation:results:2016}, for the 2016--2017 observing scenario,
-  with an artificial GRB rate imposed to produce a target beaming
+  with an artificial abbr:sgrb rate imposed to produce a target beaming
   angle of $\theta \approx 10^{\circ}$.}
   \label{tab:grb:validation:results:2016}
 \end{table}
@@ -485,7 +497,12 @@ The similarity of the posteriors which result from the uniform and Jeffreys prio
     \label{tab:grb:results}}
 \end{table}
 
+
+
+
 The posterior distributions on the beaming angle for the first two observing scenarios from table ref:tab:grb:scenarios are plotted as violin plots in figures ref:fig:grb:results:2016 and ref:fig:grb:results:2017.
+These observing scenarios are described in table ref:tab:grb:scenarios, with the inferred abbr:bns rates for each scenario detailed in table ref:tab:grb:rateposterior. 
+A fiducial abbr:sgrb rate of $\grbrate = \SI{10}{\giga\parsec^{-3}\year^{-1}}$ was used for each scenario.
 These show the beaming angle posteriors obtained with the various prior distributions listed in section ref:sec:grb:beamingposterior [fn:implementation][fn:allscenarios].
 
 Since it is a common assumption in related literature, a prior on the abbr:sgrb efficiency which dictates that all abbr:bns produce an abbr:sgrb, $p(\epsilon|I)=\delta(\epsilon=1)$, is also considered in addition to the previous strong $\delta$-function prior.  
@@ -493,6 +510,12 @@ For the 2016-2017 scenario where inferences are somewhat weak (i.e., broad poste
 In the 2024+ scenario, where the posterior is more peaked, it is clear that the strong $\delta$-function priors lead to inconsistent inferences on the abbr:sgrb beaming angle.  
 The much weaker uniform and $\beta$ distributions, by contrast, are again largely consistent with each other yielding more conservative and robust results, as well as being a more representative expression of our state of knowledge.  
 The inferences drawn from each scenario and each prior are summarised in terms of the abbr:map measurement and the 95\% credible interval around the maximum in table ref:tab:grb:results.
+
+One noteworthy feature of these results is the apparent discontinuity in the inferred beaming angle between the 2016--2017 scenario, and the 2018--2019 scenario. 
+Consulting table ref:tab:grb:rateposteriors we can see that the median abbr:sgrb rate which is inferred for both scenarios is similar, despite the considerable increase in $VT$ between the two scenarios.
+While this could be taken to imply that the estimate of $n=3$ abbr:bns events is an underestimate (this corresponds to around half the rate of events that $n=1$ implies for the 2016--2017 observing scenario), it might equivalently be taken to imply that the observation of one event during the 2016--2017 was simply fortunate. 
+As a result the 2016-2017 observing scenario implies a smaller opening angle to correspond to the larger ratio of abbr:bns rate to abbr:sgrb rate.
+Similarly, the 2015-2016 scenario, in which no abbr:bns events are detected, implies a comparable rate of observed abbr:bns per unit $VT$ to the 2016-2017 scenario, leading to a broadly comparable estimate of the median opening angle in both scenarios.
 
 \begin{figure}
 \centering
@@ -547,15 +570,15 @@ The lower-bound of the 95\%
   \label{sec:grb:beyond}
 While the advanced detectors, such as advanced gls:ligo are likely to observe a number of abbr:bns events, and a considerable 4-volume of spacetime, the scenarios in ref:tab:grb:scenarios are limited to anticipated sensitivities and event rates within the next decade.
 
-Figures ref:fig:grb:results:volume:EJ:lower and ref:fig:grb:results:volume:EJ:upper show the lower and upper limits of the 95% confidence region, assuming a Jeffreys prior on the efficiency, as a function of the observed $VT$ and number of abbr:bns events.
-Similarly, figures ref:fig:grb:results:volume:E1:lower and ref:fig:grb:results:volume:E1:upper show the lower and upper limits of the 95% confidence region assuming all abbr:bns events launch an abbr:sgrb.
+Figures ref:fig:grb:results:volume:EJ:upper and ref:fig:grb:results:volume:EJ:lower show the upper and lower limits of the 95% confidence region, assuming a Jeffreys prior on the efficiency, as a function of the observed $VT$ and number of abbr:bns events.
+Similarly, figures ref:fig:grb:results:volume:E1:upper and ref:fig:grb:results:volume:E1:lower show the upper and lower limits of the 95% confidence region assuming all abbr:bns events launch an abbr:sgrb.
 These plots have heavy black lines overlaid to represent the anticipated $VT$ which will be observed by the advanced gls:ligo network in the 2022+ and 2024+ scenarios.
 
 * Conclusions
   \label{sec:grb:conclusions}
 
 The development of this hierarchical Bayesian method for jet angle inference has allowed limits to be placed on the credible region of the abbr:sgrb jet  beaming  angle posterior as  a  function  of  the  observed  number  of  events  and  the  observed  search  4-volume, under a variety of different efficiency conditions.
-Thanks to the observations of the advanced gls:ligo detector network during its 2016-2017 observing run, with a single abbr:bns detection, it is possible to place a lower limit of $\ang{2.85}$, and an upper limit of $\ang{46.93}$ on the jet beaming angle, given an uninformative prior on the efficiency at which  abbr:bns  events  produce  observable  SGRBs.   
+Thanks to the observations of the advanced gls:ligo detector network during its 2016-2017 observing run, with a single abbr:bns detection, it is possible to place a lower limit of $\ang{2.85}$, and an upper limit of $\ang{46.93}$ on the jet beaming angle, given an uninformative prior on the efficiency at which  abbr:bns  events  produce  observable  abpl:sgrb.   
 Assuming that all abbr:bns events produce an observable abpl:sgrb  limits narrow to between $\ang{2.88}$ and $\ang{14.15}$. 
 When advanced gls:ligo   design   sensitivity   is achieved  around  2020  the  observation  of  10  abbr:bns  events in  abbr:gw  is  sufficient  to  place  an  upper-limit of $\ang{56.99}$ on the jet beaming angle, and can establish the limit  on  the  beaming  angle  to  be  between $\ang{7.82}$ and  $\ang{56.99}$,  assuming  an  uninformative  prior  on the abpl:sgrb production efficiency.  
 These limits narrow to between $\ang{8.10}$ and $\ang{14.95}$ if perfect efficiency is assumed.
