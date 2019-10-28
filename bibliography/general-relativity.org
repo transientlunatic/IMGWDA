@@ -260,3 +260,45 @@
    :ADSURL:   http://adsabs.harvard.edu/abs/1915SPAW.......844E
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
+* Accuracy of binary black hole waveform models for aligned-spin binaries
+  :PROPERTIES:
+  :TITLE:    Accuracy of binary black hole waveform models for aligned-spin binaries
+  :BTYPE:    article
+  :CUSTOM_ID: 2016PhRvD..93j4050K
+  :AUTHOR:   {Kumar}, Prayush and {Chu}, Tony and {Fong}, Heather and {Pfeiffer}, Harald P. and {Boyle}, Michael and {Hemberger}, Daniel A. and {Kidder}, Lawrence E. and {Scheel}, Mark A. and {Szilagyi}, Bela
+  :JOURNAL:  \prd
+  :KEYWORDS: General Relativity and Quantum Cosmology, 83C35, J.2
+  :YEAR:     2016
+  :MONTH:    May
+  :VOLUME:   93
+  :NUMBER:   10
+  :EID:      104050
+  :PAGES:    104050
+  :DOI:      10.1103/PhysRevD.93.104050
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1601.05396
+  :PRIMARYCLASS: gr-qc
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016PhRvD..93j4050K
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Model waveform accuracy standards for gravitational wave data analysis
+  :PROPERTIES:
+  :TITLE:    Model waveform accuracy standards for gravitational wave data analysis
+  :BTYPE:    article
+  :CUSTOM_ID: 2008PhRvD..78l4020L
+  :AUTHOR:   {Lindblom}, Lee and {Owen}, Benjamin J. and {Brown}, Duncan A.
+  :JOURNAL:  \prd
+  :KEYWORDS: 07.05.Kf, 04.25.D-, 04.25.dg, 04.30.-w, Data analysis: algorithms and implementation, data management, Numerical relativity, Numerical studies of black holes and black-hole binaries, Gravitational waves: theory, General Relativity and Quantum Cosmology
+  :YEAR:     2008
+  :MONTH:    Dec
+  :VOLUME:   78
+  :NUMBER:   12
+  :EID:      124020
+  :PAGES:    124020
+  :DOI:      10.1103/PhysRevD.78.124020
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   0809.3844
+  :PRIMARYCLASS: gr-qc
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/2008PhRvD..78l4020L
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:

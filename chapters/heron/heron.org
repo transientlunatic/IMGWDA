@@ -4,7 +4,13 @@ A simulation of a full 350-cycle gravitational waveform spanning the entire adva
 As a result fewer than 1000 waveforms are available, many of these much shorter than 350 cycles long. 
 Abbr:bbh coalescences are described by a number of physical parameters: the ratio of the two component black holes' masses, $q$; the vector of each component's spin, ${\vec{s}}_1 = (s_{1x}, s_{1y}, s_{1z})$ and ${\vec{s}}_2 = (s_{2x}, s_{2y}, s_{2z})$, defined such that the $z$-component of each vector is parallel to the total angular momentum vector, $\vec{L}$, for the system (i.e. $\hat{s}_{1z} = \hat{s}_{2z} = \hat{L}$, see figure ref:fig:heron:bbhcartoon for the arrangement of these vectors); and the time, $t$, relative to a fixed reference time, for example the time of coalescence of the binary.
 
-\begin{figure}
+
+
+
+As noted in section ref:sec:sources:cbc:approximants, a number of /analytical approximant/ waveforms have been produced in recent years in order to provide approximate waveforms much more quickly than abbr:nr is capable of.
+These models, while capable of producing waveforms over a wide range of the abbr:bbh parameter space, are calibrated against only a small number of waveforms, resulting in waveforms produced in much of the parameter space having an unknown accuracy.
+
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture} 
 
@@ -29,11 +35,6 @@ Abbr:bbh coalescences are described by a number of physical parameters: the rati
 
 \end{figure}
 
-
-As noted in section ref:sec:sources:cbc:approximants, a number of /analytical approximant/ waveforms have been produced in recent years in order to provide approximate waveforms much more quickly than abbr:nr is capable of.
-These models, while capable of producing waveforms over a wide range of the abbr:bbh parameter space, are calibrated against only a small number of waveforms, resulting in waveforms produced in much of the parameter space having an unknown accuracy.
-
-
 * Numerical Relativity Waveform data
   :PROPERTIES:
   :CUSTOM_ID: sec:heron:nr-data
@@ -47,7 +48,8 @@ These data then constitute the waveform data, which are normally stored in a sph
 Thanks to the non-uniform time sampling which abbr:nr codes employ, the data from the simulation will normally need to be interpolated (in time) and resampled to be of use for data analysis, or as training data for a surrogate model.
 In the models presented in this chapter this interpolation was performed by the ~pycbc~ library cite:2016CQGra..33u5004U,alex_nitz_2019_3265452,2014PhRvD..90h2004D.
 
-The waveform data used in this chapter is derived from the Georgia Tech Catalogue cite:2016CQGra..33t4001J, with the waveforms evaluated in the time domain, and then aligned such that the time location in the waveform corresponding to the maximum value of abbr:hrss was labelled $0$.
+The waveform data used in this chapter is derived from the Georgia Tech Catalogue cite:2016CQGra..33t4001J, with the waveforms evaluated in the time domain, and then aligned such that the time location in the timeseries corresponding to the maximum value of abbr:hrss was labelled $0$.
+A timeseries is generated for each abbr:gw polarisation, giving two timeseries, for $h_{+}(t)$ and $h_{\times}(t)$ for each abbr:nr waveform.
 
 Each waveform is parameterised by seven quantities (the mass ratio and the spin vectors of each component black hole) in a vector which is denoted ${\boldsymbol{x}_i}$. 
 Each strain value, $h_i$, within the waveform is further parameterised by a time relative to the maximum strain value in the waveform, and thus each training point is parameterised by an 8-dimensional parameter vector, denoted ${\boldsymbol{x}_i}'$.
@@ -55,8 +57,8 @@ This provides a training set which has 8 input dimensions, and a single output d
 \begin{equation}
 {\mathcal{D}} = \left\{ ({\boldsymbol{x}'_i},  h_i) | i = 1, 2, \dots, N \right\}
 \end{equation}
-for $N$ the total number of strain samples used from all of the training waveforms, and $h_i = h(t_i, \vec{x}_i) = h(\vec{x}'_i$ is the strain value of a waveform at time $t_i$ relative to the maximum strain value of the waveform, and at a location $\vec{x} in parameter space. 
-The distribution of training waveforms throughout the parameter space is shown in figure ref:fig:sources:cbc:nr:gtcoverage.
+for $N$ the total number of strain samples used from all of the training waveforms, and $h_i = h(t_i, \vec{x}_i) = h(\vec{x}'_i)$ is the strain value of a waveform at time $t_i$ relative to the maximum strain value of the waveform, and at a location $\vec{x}$ in parameter space. 
+The distribution of training waveforms throughout the parameter space is shown in figure ref:fig:sources:cbc:nr:gtcoverage, on page \pageref{fig:sources:cbc:nr:gtcoverage}.
 
 
 
@@ -66,7 +68,7 @@ The distribution of training waveforms throughout the parameter space is shown i
   \label{sec:heron:waveformgpr}
 
 Current waveform models lack a natural means to account reliably for uncertainty in the waveforms which they generate.
-A side-effect of this is important in parameter estimation of these signals, as systematic uncertainties in the waveform model will result in the introduction of a bias to the abbr:pe process.
+A side-effect of this is important in parameter estimation of these signals, as systematic uncertainties in the waveform model will result in the introduction of a bias to the parameter estimation process.
 
 
 To illustrate how such a model can be constructed, in this section I will detail the construction of two abbr:gp models which use waveforms generated from the \texttt{IMRPhenomPv2} waveform model as their training data.
@@ -78,25 +80,31 @@ Later in this chapter I will detail the results presented in cite:2019arXiv19030
 ** A simple non-spinning model
 
 For the first demonstration model I will use 15 waveforms produced using the ~IMRPhenomPv2~ waveform model with mass-ratios spaced uniformly in log-space between $q=0.1$ and $q=1.0$.
+Each waveform is composed only from the $(2,2)$ spherical harmonic mode, and the strain is labelled as $h_{2,2}$.
 Each waveform was sampled at $\SI{4096}{\hertz}$ for a total system mass of $\SI{60}{\solMass}$. 
+The strain data is generated assuming that the source is placed at a distance of $\SI{1}{\solMass}$ (or approximately $\SI{1.477}{\meter}$ from the observer, allowing the strain to be easily rescaled to any distance, $r$, by dividing the amplitude by the distance to the source (in units of $\solMass$).
+The strain data used for training is then denoted $rh_{2,2}$.
+The timestamps are then divided by the total mass of the system to produce a waveform which can be rescaled for an arbitrary total mass by multiplying the timestamps by the desired total mass (in units of $\solMass$).
 The training data is plotted in figure ref:fig:heron:imr:testdata.
 
 \begin{figure}
 \includegraphics{figures/heron/imr-test-training.pdf}
-\caption[The \texttt{IMRPhenomPv2} training data for a demonstration model]{The training data used for the non-spinning demonstration abbr:gp surrogate model.}
+\caption[The \texttt{IMRPhenomPv2} training data for a demonstration model]{The training data used for the non-spinning demonstration abbr:gp surrogate model. Here the amplitude of the data, $rh_{2,2}$ represents the $(2,2)$-mode strain, multiplied by the distance from the source to the observer. The physical strain can be recovered by dividing this quantity by the desired distance from the observer to the source.}
 \label{fig:heron:imr:testdata}}
 \end{figure}
 
-The covariance structure for this model consists of two squared exponential kernels (one for each dimension, time and the natural logarithm of the mass ratio) and a constant kernel as a scale-factor:
+The covariance structure for this model consists of two abbr:se kernels (one for each dimension, time and the natural logarithm of the mass ratio) and a constant kernel as a scale-factor:
 \begin{equation}
 \label{eq:heron:imr:covariance}
 K = \Con \times \SE^{(t,\log{q})}.
 \end{equation}
+abbr:se covariance functions were chosen as it allows smooth data generating functions to be modelled well, and there was no reason to assume that the function contained discontinuities, or non-smooth regions.
+The constant kernel is included to allow the abbr:gp extra flexibility to determine the variance of the estimate.
 A small amount of noise is added to the covariance function (with a mean of $1\ee{-6}$) to improve the numerical stability of the matrix inversion process.
 The hyperparameter values for each part of the kernel were determined by maximising the log-likelihood of the abbr:gp to complete the training of the model.
 
 A sample of a waveform generated from this model is plotted in figure ref:fig:heron:imr:test1, with the mean and variance of the abbr:gp plotted as a dashed grey line and shaded grey region respectively.
-Individual draws from the predictive posterior distribution are plotted as solid grey lines.
+Individual draws from the predictive posterior distribution are plotted as solid grey lines, depicting how individual fitting functions drawn from the posterior behave, clustering closely about the mean, with the behaviour in the ringdown portion of the waveform showing the greatest variance, which is reflected in the greater width of the variance region in this part of the waveform.
 
 \begin{figure}
 \includegraphics{figures/heron/imr-test-q0d8.pdf}
@@ -133,7 +141,10 @@ It will also be convenient at this point to define the /mismatch/ as $1-\mathcal
 
 The match is a useful quantity to consider, as it is widely used in abbr:gw signal analysis, thanks to its use in matched filtering, which is the optimal filter for maximising abbr:snr when additive noise is present in data cite:strain.conventions.
 
-I calculate the (noise-free, with $S_n(f) = 1$) match between the mean waveform from the abbr:gp surrogate and the waveform from ~IMRPhenomPv2~  for one-hundred mass ratios between $q=0.1$ and $q=1.0$ in figure ref:fig:heron:imr:match.
+I calculate the (noise-free, with $S_n(f) = 1$) match between the mean waveform from the abbr:gp surrogate and the waveform from ~IMRPhenomPv2~  for 100 mass ratios between $q=0.1$ and $q=1.0$ in figure ref:fig:heron:imr:match.
+The match of the model is consistently above $0.995$ at each mass-ratio tested (although there is a notable drop in match around $0.35$ corresponding to one of the locations furthest from training data).
+While the use of match demonstrates that the abbr:gp is capable of reproducing the structure of a waveform accurately it will fail to characterise problems with a model which incorrectly predicts the amplitude of the waveform. 
+The match (and mismatch) are the standard metric which is used for evaluating waveform models, however there may be need for additional checks (beyond simply verification by-eye as in plot ref:fig:imr:test1).
 
 \begin{figure}
 \includegraphics{figures/heron/imr-test-match.pdf}
@@ -152,6 +163,8 @@ As with the non-spinning model in the previous section, the covariance structure
 \label{eq:heron:spin:covariance}
 K = \Con \times \SE^{(t,\log{q},s_{1z},s_{2z})}.
 \end{equation}
+As with the non-spinning model in the previous section the abbr:se kernel is used to model each data-space dimension as these are expected to vary smoothly.
+
 
 \begin{figure}
 \includegraphics{figures/heron/spin-test-training.pdf}
@@ -163,7 +176,8 @@ Four different values of spin were used to produce this data, $s_{1z} = s_{2z} =
 
 Again the model is trained with a Newtonian optimiser, and tested against the direct output of the \texttt{IMRPhenomPv2} model, by calculating the noise-free match over the parameter space. 
 The results of this comparison are displayed as the surface plot in figure ref:fig:heron:spin:matches.
-
+In the majority of the parameter space the mismatch is very small (less than $0.05$), however the abbr:gp model struggles to replicate the behaviour of \texttt{IMRPhenomPv2} at high-spins (where the waveform evolves rapidly due to the extreme physics involved), and at low mass-ratios (corresponding to asymmetric systems) where again the behaviour of the waveform is more complicated thanks to the underlying physics of the orbit.
+Three bands of high mismatch can be seen at locations approximately half-way between the locations of waveform samples in the spin dimension, implying that more than four samples are required for a better model.
 
 \begin{figure}
 \includegraphics{figures/heron/spin-test-ms-plane.pdf}
@@ -186,10 +200,12 @@ It is designed as a proof-of-concept surrogate model which operates over the eig
 The model is constructed using the $(2,\pm 2)$-modes of the $+$-polarisation of the strain data from these waveforms, which are produced using ~pycbc~, as described in section ref:sec:heron:nrdata.
 The training data is produced in a similar fashion to the training data for the previous examples, substituting the ~IMRPhenomP2~ model for abbr:nr data.
 The abbr:nr waveforms are sampled at $\SI{1024}{\hertz}$ and nominally evaluated at a total system mass of $\SI{60}{\solMass}$. 
-The strain values are then multiplied by a factor of $\SI{e19}{}$, and the time values by $\SI{100}{}$, which were found to substantially simplify the training and evaluation of the model. The values of the various spin components already lie within a range $[-1,1]$, and so these were left unchanged.
-As in the previous examples the model was trained on the natural log of the mass ratio, which was again found to simplify the training process.
+The strain values are then multiplied by a factor of $\SI{e19}{}$, and the time values by $\SI{100}{}$, which were found to substantially reduce the time required to run the optimisation and matrix inversion steps during the training and evaluation of the model respectively. The values of the various spin components already lie within a range $[-1,1]$, and so these were left unchanged.
+As in the previous examples the model was trained on the natural log of the mass ratio, which was again found to produce a better surrogate model.
 
 The outputs of the model must be suitably rescaled to provide waveforms corresponding to the correct total system mass, and in physical units.
+
+The outputs of the model which are presented in this chapter assume that the source is observed "face-on", and therefore there is no variation in the angle at which the source is observed.
 
 The covariance structure of the Heron model follows the structure of the previous examples, but adds an extra four dimensions to account for the additional spin parameters in the abbr:nr data, giving a covariance function
 
@@ -243,6 +259,10 @@ Reassuringly the mismatch between the vast majority of the model outputs and the
 Figure ref:fig:heron:testing:in:distance plots the Euclidean distance between each sampled point and the next-nearest training datum (calculated as the norm of the vector between the two points) and the mismatch.
 This reveals that a small number of points which are very close to other points in the training data are generally responsible for these high mismatches.
 This may indicate that the model is struggling to fit a smooth function to a small number of closely-spaced waveforms.
+Further work is likely to be needed to identify whether these outliers are the result of flawed training data, or a some other problem with the model.
+
+The distribution of mismatches between the Heron model and the abbr:nr data shows that for the majority of waveforms in the test the mismatch is smaller than between the abbr:nr data and either of the approximant models.
+This is reassuring, however, since the approximant models are conditioned on abbr:nr data, and are not necessarily conditioned on waveforms at the same locations as the test waveforms (whereas the Heron model /is/ for this in-sample test), this does not provide a comprehensive measure of the Heron model's effectiveness as a surrogate.
 
 \begin{figure}
 \includegraphics{figures/heron/in-sample-hist.pdf}
@@ -272,6 +292,16 @@ In order to do this multiple training datasets are produced; from each a single 
 This reduced dataset is then substituted for the data on which the full Heron model's abbr:gp is conditioned, retaining the same hyperparameter values as the full model.
 The reduced Heron model is then evaluated at the parameter location corresponding to the omitted waveform, in order to compute a predicted mean waveform. 
 The mismatch between the predicted waveform and the omitted abbr:nr waveform was then computed, and the distribution of these mismatches is plotted in figure ref:fig:heron:testing:out:hist as a black-outlined histogram.
+
+In contrast to the in-sample tests from section ref:sec:heron:testing:in the out-of-sample tests do give some indication of the model's capability as a surrogate model. 
+The mismatches between the leave-one-out model and abbr:nr data in ref:fig:heron:testing:out:hist show that the Heron model is capable of producing waveforms which have a small mismatch with the abbr:nr waveforms, with the vast majority having a mismatch smaller than $0.1$.
+The maximum abbr:snr, \rho_{\text{eff}}, at which the true waveform and the model waveform cannot be distinguished by a parameter estimation process is a function of the mismatch ($1 - \mathcal{M}$) (that is, below an abbr:snr of $\rho_{\text{eff}}$ the parameter estimation process is not worsened by the use of the surrogate compared to an abbr:nr waveform), with $\rho_{\text{eff}}$ defined cite:2016PhRvD..93j4050K,2008PhRvD..78l4020L 
+\begin{equation}
+\label{eq:mismatch-snr}
+\rho_{\text{eff}} = \frac{1}{\sqrt{2(1-\mathcal{M})}}.
+\end{equation}
+Since a mismatch of $0.1$ will be indistinguishable below an abbr:snr of $7$ the model is acceptable for weaker signals which might be expected in advanced gls:ligo.
+
 
 \begin{figure}
 \includegraphics{figures/heron/out-sample-hist.pdf}

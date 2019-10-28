@@ -147,7 +147,7 @@ The square-root of the gls:power-spectral-density.
    :PROPERTIES:
    :ABBREVIATION: CCSN
    :PLURALABB: CCSNe
-   :PLURAL:   core-collapse supernovae
+   :PLURAL: core-collapse supernovae
    :END:
 
 ** Cosmic Explorer
