@@ -278,13 +278,13 @@ Figure ref:fig:detectors:interferometers:firstgen is a plot of the noise abbr:as
 
 \begin{figure}
 \includegraphics{figures/intro/first-gen-asd.pdf}
-\caption[The ASDs of the first generation of large-scale interferometers]{The abpl:asd for the first generation of large-scale interferometers: initial gls:ligo (red), and gls:virgo (blue).
+\caption[The ASDs of the first generation of large-scale interferometers]{The approximate abpl:asd for the first generation of large-scale interferometers: initial gls:ligo (red), and gls:virgo (blue), derived from the fits in table 1 of \cite{2009LRR....12....2S}.
 \label{fig:detectors:interferometers:firstgen}}
 \end{figure}
 
 \begin{figure}[t]
 \includegraphics{./figures/intro/aligo-asd.pdf}
-\caption[The noise curves of the Advanced LIGO detectors]{The gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity, relative to the average sensitivity of the two interferometers in their first observing run (O1).
+\caption[The noise curves of the Advanced LIGO detectors]{The predicted gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity (from the fit in table 1 of cite:2009LRR....12....2S), relative to the estimated sensitivity of the two interferometers in their first observing run (O1)~\cite{ligo-t1200307}.
 \label{fig:detectors:aligo-asd}}
 \end{figure}
 
@@ -632,13 +632,12 @@ The gls:tianqin mission proposal cite:2016CQGra..33c5010L also uses such a techn
     #+NAME:sec:detectors:lisa
 
  \begin{figure}
- \caption[The noise curves for LISA and DECIGO]{The gls:amplitude-spectral-density of the gls:lisa and gls:decigo detectors within their sensitive band, at design sensitivity.
+ \includegraphics{figures/intro/space-asd.pdf}
+ \caption[The noise curves for LISA and DECIGO]{The gls:amplitude-spectral-density of the gls:lisa and gls:decigo detectors within their sensitive band, at design sensitivity. The curve for gls:lisa is based on the prediction outlined in~\cite{2019CQGra..36j5011R}, while the gls:decigo curve is based on the approach in~\cite{2011PhRvD..83d4011Y}.
  \label{fig:detectors:space}
  }
- \includegraphics{figures/intro/space-asd.pdf}
  \end{figure}
-
-    abbr:lisa is a planned space-based abbr:gw observatory, under development by the European Space Agency, which would be placed in a heliocentric orbit at the L1 Lagrange point. In comparison to the kilometre-scale arms of second-generation ground-based detectors such as abbr:ligo, abbr:lisa is proposed to have arms which are 2.5 million kilometres long, giving the detector much greater sensitivity at low frequencies than is possible with ground-based detectors.
+    Abbr:lisa is a planned space-based abbr:gw observatory, under development by the European Space Agency, which would be placed in a heliocentric orbit at the L1 Lagrange point. In comparison to the kilometre-scale arms of second-generation ground-based detectors such as abbr:ligo, abbr:lisa is proposed to have arms which are 2.5 million kilometres long, giving the detector much greater sensitivity at low frequencies than is possible with ground-based detectors.
 
  The abbr:lisa mission was preceeded by abbr:lisa Pathfinder, a technology demonstration mission, launched in December 2015.
 

@@ -47,6 +47,11 @@
 \addbibresource{bibliography/sources.bib}
 \addbibresource{bibliography/gaussianprocess.bib}
 \addbibresource{bibliography/gammarayburst.bib}
+\DeclareFieldFormat{doi}{%
+   \mkbibacro{DOI}\addcolon\space
+   \ifhyperref
+     {\href{http://doi.org/#1}{\nolinkurl{#1}}}
+     {\nolinkurl{#1}}}
 %
 
 \linespread{1.5}
