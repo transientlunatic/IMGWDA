@@ -298,6 +298,7 @@
    :TITLE:    The Database of British and Irish Hills v16.2
    :BTYPE:    misc
    :URL:      http://www.hills-database.co.uk
+   :HOWPUBLISHED: {\url{http://www.hills-database.co.uk}}
    :CUSTOM_ID: hilldb
    :END:
 ** Modeling of strength of high-performance concrete using artificial neural networks 

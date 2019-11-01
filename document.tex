@@ -25,14 +25,14 @@
 \usepackage{pdflscape}
 
 \usetikzlibrary{bayesnet}
-
 \usepackage{doi}
 
 \usepackage[
   backend=biber,
   sorting=none,
   style=numeric,
-]{biblatex}
+  ]{biblatex}
+  
 \addbibresource{bibliography/observing-runs.bib}
 \addbibresource{bibliography/general-relativity.bib}
 %\addbibresource{bibliography/books.bib}
@@ -52,7 +52,40 @@
    \ifhyperref
      {\href{http://doi.org/#1}{\nolinkurl{#1}}}
      {\nolinkurl{#1}}}
-%
+   %
+   \DeclareBibliographyDriver{thesis}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author}%
+  \setunit{\labelnamepunct}\newblock
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock%Added by Marco
+  \usebibmacro{title}%Added by Marco
+  \newunit\newblock
+  \printfield{note}%
+  \newunit\newblock
+  \printfield{type}%
+  \newunit
+  \usebibmacro{institution+location+date}%
+  \newunit\newblock
+  \usebibmacro{chapter+pages}%
+  \newunit
+  \printfield{pagetotal}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{isbn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \usebibmacro{
+finentry}%
+}
 
 \linespread{1.5}
 
@@ -131,7 +164,9 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
 \chapter[Gravitational Waves: Generation, propagation, and detection]{Gravitational Waves: generation, propagation, and detection}
 \label{cha:intro}
 
-\chapterprecis{This chapter introduces gravitational waves, and briefly discusses their description in general relativity, and their propagation through spacetime.
+\chapterprecis{
+
+\noindent This chapter introduces gravitational waves, and briefly discusses their description in general relativity, and their propagation through spacetime.
   The chapter then continues to discuss methods by which they might be detected, and a brief history of attempts to do so.
 
   Section \ref{sec:gw} contains an introduction and overview of the radiation predicted by general relativity: gravitational waves, and gives a very concise introduction to how these waves propagate.
@@ -150,7 +185,9 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
 \chapter{Astrophysical sources of gravitational waves and their waveforms}
 \label{cha:sources}
 
-\chapterprecis{This chapter discusses the astrophysical sources of gravitational waves, and the form that the gravitational waves take, which we expect to detect as signals.
+\chapterprecis{
+
+\noindent This chapter discusses the astrophysical sources of gravitational waves, and the form that the gravitational waves take, which we expect to detect as signals.
   Section \ref{sec:sources:continuous} introduces continuous sources of gravitational waves, such as gravitational wave pulsars.
   Section \ref{sec:sources:stochastic} provides a brief overview of the stochastic gravitational wave background.
   Section \ref{sec:sources:cbc} discusses compact binary coalescence events, which include binary black hole and binary neutron star merger events.
@@ -170,9 +207,9 @@ In chapter \ref{cha:intro}, and in places where general relativity is discussed 
 
 \chapter{Burst searches and mock data challenges}
 \label{cha:searches}
-\input{chapters/searches/searches}
+\chapterprecis{
 
-\chapterprecis{This chapter introduces searches for unmodelled gravitational wave transients (``bursts''), and then discusses the development of the Minke software library which I developed during the course of my PhD, which is used to produce mock data challenges, which are used to measure the sensitivity of burst search algorithms.
+\noindent This chapter introduces searches for unmodelled gravitational wave transients (``bursts''), and then discusses the development of the Minke software library which I developed during the course of my PhD, which is used to produce mock data challenges, which are used to measure the sensitivity of burst search algorithms.
 
 Section \ref{sec:sources:burstsearch} then gives an overview of techniques used to search for these signals in detector data.
 
@@ -182,7 +219,7 @@ Section \ref{sec:sources:minke} introduces Minke.
 
 Section \ref{sec:sources:burstresults} then provides a discussion of the measured sensitivity of a variety of burst search algorithms which were employed on detector data from the first two advanced-era observing runs. This is largely a discussion of the results from \cite{2019PhRvD.100b4017A}, which used mock data challenges produced by the Minke library.
   }
-
+\input{chapters/searches/searches}
 % \part{Data Analysis for Gravitational Wave Detectors}
 % \label{part:data-analysis}
 \glsresetall % reset all of the acronyms so they show in full
@@ -190,7 +227,9 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
 \chapter{Bayesian inference}
 \label{cha:bayesian-inference}
 
-\chapterprecis{This chapter presents an overview and review of statistical probability from a Bayesian perspective, and serves mostly to introduce concepts which will be relied upon in later chapters. While a few examples have been created by adapting classic examples (for example the example of structured distributions in section \ref{sec:probability:structured} is very nearly the classical ``sprinkler'' example, with small modifications to be more astrophysically relevant) the material is not novel.
+\chapterprecis{
+
+\noindent This chapter presents an overview and review of statistical probability from a Bayesian perspective, and serves mostly to introduce concepts which will be relied upon in later chapters. While a few examples have been created by adapting classic examples (for example the example of structured distributions in section \ref{sec:probability:structured} is very nearly the classical ``sprinkler'' example, with small modifications to be more astrophysically relevant) the material is not novel.
 
   Section \ref{sec:probability:basic} introduces probability from an axiomatic basis, and section \ref{sec:probability:information} introduces concepts from information theory. Section \ref{sec:probability:priors} discusses how prior information can be treated within a Bayesian framework.
   Methods for dealing with complicated data using feature spaces are introduced in section \ref{sec:probability:features}, and structured probability distributions are discussed in section \ref{sec:probability:structured}.
@@ -205,7 +244,9 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
 \chapter{Hierarchical Modelling of Gamma Ray Bursts}
 \label{cha:gamma-ray-burst}
 
-\chapterprecis{This chapter is composed principally from the method presented in \cite{dwsgrbbayesianconstraint}, however the introductory material (in section \ref{sec:grb:sgrbs}) is new compared to that work. Section \ref{sec:grb:rate2beam} discusses how the beaming angle of short gamma ray bursts may be inferred from the observed astrophysical rate of these events.
+\chapterprecis{
+
+\noindent This chapter is composed principally from the method presented in \cite{dwsgrbbayesianconstraint}, however the introductory material (in section \ref{sec:grb:sgrbs}) is new compared to that work. Section \ref{sec:grb:rate2beam} discusses how the beaming angle of short gamma ray bursts may be inferred from the observed astrophysical rate of these events.
   Section \ref{sec:grb:prospectsaligo} discusses what the plausible number of detections during the advanced LIGO observing runs will be, while section \ref{sec:grb:validation} provides a validation of the technique used to infer the beaming angle from these rates.
   Section \ref{sec:grb:jetposterior} provides the bulk of the results from this investigation; figure \ref{fig:grb:results:2017} illustrates the posterior which can be placed on the beaming angle after an observing run such as advanced LIGO's O2 run. Table \ref{tab:grb:results} contains a summary of the limits placed over a number of observing scenarios, under a number of different prior assumptions about the fraction of coalescences which produce a jet.  This discussion is extended in section \ref{sec:grb:beyond} with an investigation into the beaming angle inference at much higher sensitivities than are currently possible. Section \ref{sec:grb:conclusions} provides a summary of the contents of the chapter.}
   
@@ -218,7 +259,9 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
 \chapter{Gaussian processes for surrogate modelling}
 \label{cha:gaussian-process}
 
-\chapterprecis{This chapter introduces Gaussian processes, and Gaussian process regression, a probabilistic regression technique which is well suited to producing so-called surrogate models: statistical models which are informed primarily by observed data rather than prior physical knowledge.\\
+\chapterprecis{
+  
+\noindentThis chapter introduces Gaussian processes, and Gaussian process regression, a probabilistic regression technique which is well suited to producing so-called surrogate models: statistical models which are informed primarily by observed data rather than prior physical knowledge.\\
   This chapter contains mainly introductory and review material, with section \ref{sec:gp:examples} containing a novel example of a Gaussian process regression model fitting a two-dimensional function.
   In section \ref{sec:gp:surrogate} I introduce the basic ideas of surrogate modelling, and briefly discuss various techniques which exist for producing such models.
   Then in section \ref{sec:gp:gp} I introduce the Gaussian process, a probabilistic model, and its use in Gaussian process regression.
@@ -236,7 +279,9 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
 \chapter{Heron: A Gaussian process regression approach to modelling gravitational waveforms}
 \label{cha:heron}
 
-\chapterprecis{In this chapter I introduce the use of Gaussian process regression as a surrogate modelling method for \gls{gw} waveforms from compact binary coalesensce events.
+\chapterprecis{
+
+\noindent In this chapter I introduce the use of Gaussian process regression as a surrogate modelling method for \gls{gw} waveforms from compact binary coalesensce events.
   Some of the work presented in this chapter has previously been made available on the ArXiv \cite{2019arXiv190309204W}, and at the time of writing are under review for publication. 
   The culmination of this effort is the development of the \textit{Heron} surrogate model, which is capable of producing waveforms with precession for arbitrarily spinning binary systems.
   Additional results are presented, specifically related to the comparison between the Heron model and pre-exisiting approximate models.

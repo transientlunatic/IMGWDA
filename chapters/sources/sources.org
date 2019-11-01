@@ -3,13 +3,13 @@ The morphologies of abbr:gw signals can be divided roughly into three categories
 + Continuous :: signals are expected to be produced by sources over long periods of time. 
   The primary source of continuous sources for gls:aLIGO are expected to be abbr:gw pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:LISA mission, the radiation from inspiralling binary systems should also be detectable.
 + Stochastic :: signals are expected to constitute a background of abpl:gw,  produced by the black holes at the centres of galaxies cite:1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S, and from the Universe's inflationary period cite:1988PhRvD..37.2078A.
-+ Transient :: signals are strong /bursts/ of abpl:gw over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of this powerful analysis technique. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:LISA regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
++ Transient :: signals are strong /bursts/ of abpl:gw over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of matched filter searches. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:LISA regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
 
 * Continuous wave sources
   \label{sec:sources:continuous}
 
 # It's very weird; right now as I'm writing parts of this chapter I'm in the same lecture theatre as Bell. 2019-02-27 (JimFest).
-The discovery of pulsars by Bell and Hewish in 1967 was an unexpected discovery for radio astronomy---objects which produce beams of radiation, and rotate rapidly, like a lighthouse. 
+The discovery of pulsars by Bell and Hewish in 1967 was an unexpected discovery for radio astronomy---objects which produce beams of radiation, and rotate rapidly.
 Not long after their discovery it became apparent that they were a specific form of abpl:ns---the tightly-packed remnant of a massive star which has ended its life as a supernova.
 
 Any rotating mass quadrupole (see equation ref:eq:intro:gr:mass-quadrupole) will produce abpl:gw as it rotates (see equation ref:eq:intro:gr:quadrupole2strain), and so it follows that a dense, massive object, such as a neutron star, will produce abpl:gw as they rotate, if they possess any mass asymmetry.
@@ -21,14 +21,14 @@ Indeed, targetted searches for abpl:gw from pulsars at twice their rotation freq
 
 Pulsar spins are known to decelerate over time, through a process known as spin-down. 
 This process is often attributed to energy loss through gravitational radiation. 
-The spin-down limit of a pulsar is the abbr:gw strain which corresponds to this scenario, where the entirity of the energy being lost is radiated as abbr:gw, and is defined as
+The spin-down limit of a pulsar is the abbr:gw strain which corresponds to this scenario, where the entirety of the energy being lost is radiated as abbr:gw, and is defined as
 \begin{equation}
 \label{eq:sources:cw:spindown}
 h = \left( \frac{5}{2} \frac{G I_{zz} | \dot{f} | }{c^{3} d^{2} f } \right)^{\frac{1}{2}},
 \end{equation}
 for a pulsar with a spin frequency $f$, moment-of-inertia $I_{zz}$, at a distance $d$ from the observer.
 
-To date no continuous abbr:gw source has been detected, but the failure to measure abpl:gw from known pulsars has allowed tight limits to be placed on the ellipticity of 222 known radio pulsars cite:2019arXiv190208507T, with the tightest limit that placed on PSR J$0711\!-\!6830$: $1.2\ee{-8}$. 
+To date no continuous abbr:gw source has been detected, but the failure to measure abpl:gw from known pulsars has allowed tight limits to be placed on the ellipticity of 222 known radio pulsars cite:2019arXiv190208507T, with the tightest limit placed on PSR J$0711\!-\!6830$: $h=1.2\ee{-8}$. 
 # The latest results, from the analysis of the first two observing runs' data from advanced gls:ligo, show that the slow-down of the Crab pulsar cannot be explain
 
 Searches made for pulsars at around twice their rotation frequency were augmented with targetted searches for emission at the rotation frequency following the second observing run cite:2019arXiv190208507T. 
@@ -44,11 +44,11 @@ In comparison to transient signals, the waveforms for continuous wave sources ar
 \label{eq:sources:cw:signalmodel}
 \begin{align}
 h_{22}(t) = - C_{22} \big[ & F_{+}^{D}(\alpha, \delta, \psi, t) (1 + \cos^{2} \imath) \cos(2 \Phi(t) + \Phi_{22}^C) \\
-+ 2 & F_{\times}^{D} (\alpha, \delta, \psi, t) \cos \imath \sin( 2 \Psi(t) + \Psi_{22}^{C} )
++ 2 & F_{\times}^{D} (\alpha, \delta, \psi, t) \cos \imath \sin( 2 \Phi(t) + \Phi_{22}^{C} )
 \big] ,
 \end{align}
 \end{equation}
-for $C_{22}$ the amplitude of the wave, and $\Psi_{22}^{C}$ its initial phase at some specific time.
+for $C_{22}$ the amplitude of the wave, and $\Phi_{22}^{C}$ its initial phase at some specific time.
 $\Phi(t)$ is the rotational phase of the source, and $\imath$ is the inclination of the source to the observer.
 In contrast to the signal from transient sources, continuous waves can be observed over long periods of time, and the observed signal will be convolved with the antenna pattern of the detector, $F_{+,\times}^{D}$, which varies with the sky position of the source, $(\alpha, \delta)$, the polarisation angle of the source, and thanks to the relative movement of the source and the detector, time, $t$.
 
@@ -60,9 +60,9 @@ In contrast to the signal from transient sources, continuous waves can be observ
 In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{e14}{\hertz}$.
 
 The abbr:gw background is approximately analogous to the abbr:cmb.
-This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
+This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky cite:1965ApJ...142..419P, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
 
-Since we expect that this background would be continuous and isotropic, it is likely to fall into the part of the measured abbr:gw data which is treated as noise by the majority of analyses.
+This abbr:gw would be the result of numerous unresolved and weak signals, and as a result this background would be continuous and approximately isotropic cite:2017LRR....20....2R, it is likely to fall into the part of the measured abbr:gw data which is treated as noise by the majority of analyses.
 The noise produced by the detector will be greater than this signal, and so detection of a background is also reliant on correlations between a network of detectors.
 This reliance on correlations between a network of detectors significantly affects the sensitivity of the detector network to background sources cite:PhysRevD.88.124032. 
 
@@ -76,13 +76,13 @@ abbr:gw production is not predicted in the early universe by non-inflationary mo
    First-order phase transitions, which occur when the thermodynamic properties of a system are discontinuous (such as the sudden, discontinuous change in the entropy and volume of a liquid as it boils) could also be responsible for the production of abpl:gw in the early universe.
 A number of phase transitions are believed to have occured as, for example, the strong and electroweak forces decoupled cite:2016JCAP...04..001C.
 
-Cosmic strings may also be a viable source of background radiation. 
+Cosmic strings may also be a viable source of background radiation cite:1997stgr.proc....3A. 
 These are topolgical defects which are caused by symmetry phase transitions in a number of grand unified theories. 
 As these defects move they interact with each other to form kinks and cusps, which can be the source of bursts of gravitational radiation.
 Over a sufficiently long period the signals from these events can superimpose to form apart of the abbr:gw background.
 
 The inspiral of the very large number of compact binary systems in the universe will also superimpose to contribute to this background radiation. 
-These systems include galactic white dwarf binaries, which are expected to produce such a strong signal that they will limit the sensitivity of the gls:lisa detector, as well as abbr:bbh and abbr:bns systems.
+These systems include galactic white dwarf binaries, which are expected to produce such a strong signal that they will limit the sensitivity of the gls:lisa detector, as well as abbr:bbh and abbr:bns systems cite:2019MNRAS.tmp.2426L,2017CQGra..34x4002R.
 
 Searches for a stochastic background have been made using the data from the advanced gls:ligo detectors during their first observing run cite:PhysRevLett.118.121101.
 To date no evidence of a background have been identified, which has allowed an upper limit to be placed on its strength. 
@@ -98,18 +98,19 @@ Additional limits have been placed thanks to astrometric measurements of active 
 \end{figure}
 
 The moment of inertia tensor of a two-body system will lead to non-spherical motion within the system, which will in turn produce gravitational radiation, and gradual orbital decay cite:1995PhRvL..74.3515B. 
-This effect was first observed in the Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W, a system containing two neutron stars---one of which is a pulsar---which, through precise pulsar timing measurements, were been inferred to be  inspiralling, and producing abpl:gw. This observation was the first strong, indirect evidence for the reality of abbr:gw production.
+This effect was first observed in the Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W, a system containing two neutron stars---one of which is a pulsar---which, through precise pulsar timing measurements, were inferred to be  inspiralling, and producing abpl:gw. This observation was the first strong, indirect evidence for the reality of abbr:gw production.
 
 The binary system will continue to lose energy via gravitational radiation until it reaches its /innermost stable circular orbit/, after which the objects will merge, and eventually coalesce. 
 These coalescence events are powerful sources of abpl:gw, and the chirp produced by the coalescence may be sufficiently luminous to be detected by current, advanced detectors. 
 The frequency spectra of both a binary neutron star and a binary black hole coalescence are plotted in figure ref:fig:sources:cbc:spectrum, compared to the sensitivity curve of the advanced gls:ligo detectors.
-Attempts to detect signals from such coalescing systems were also made during the initial run of the detectors cite:2012PhRvD..85h2002A.
+Attempts to detect signals from such coalescing systems were also made during the initial run of the detectors, prior to their being upgraded to advanced gls:ligo and advanced gls:virgo cite:2012PhRvD..85h2002A.
 These would be characterised by the distinct pattern of the pseudo-sinusoidal inspiral waveform, followed by a bright burst of radiation, and then a sinusoidal /ringdown/ as the post-coalescence remnant vibrates cite:2009LRR....12....2S.
 Binary coalescences are thus classified as transient, or burst sources.
 
-The potential objects which may be involved in an observable binary
-coalescence are black holes and neutron stars: both compact
-objects. White dwarf binaries may also be observable, and these
+The potential objects which may be involved in an binary
+coalescence observable by the current generation of ground-based detectors are black holes and neutron stars: both compact
+objects. 
+In the future white dwarf binaries may also be observable at lower abbr:gw frequencies, and these
 systems are expected to be much more abundant than either neutron star
 or black hole binaries, but their emission lies within the passband of
 gls:lisa ---a planned space-based abbr:gw observatory. These
@@ -127,7 +128,7 @@ data without the \emph{matched filtering} techniques which are required to extra
 The observation of these objects would provide much-needed information about the evolution of galaxies and of super-massive black holes.
 
 Inspiralling compact binaries can act as a cosmological distance measure: they have two parameters, their period, and the rate at which that period changes (which is calculated by measuring the gls:chirp-mass of the system) which characterise the system, and the amplitude of the abpl:gw produced is dependent only on the chirp mass of the source, and the distance from the observer to the object. 
-As a result it is possible to determine the distance to an inspiralling system simply by determining the chirp mass and measuring the brightness of the event. 
+As a result it is possible to determine the distance to an inspiralling system simply by determining the chirp mass and measuring the brightness of the event cite:2017AnP...52900209A. 
 This would provide an additional means of measuring cosmic acceleration, and, in the gls:LISA era, this would allow the measurement of acceleration at high redshift using high-mass binary black holes.
 
 
@@ -138,7 +139,7 @@ This would provide an additional means of measuring cosmic acceleration, and, in
 
 
    The dynamics of binary systems are well-understood in Newtonian mechanics, where the two-body problem can be reduced to a pair of independent one-body problems. 
-In contrast no exact solutions have been found to this problem in abbr:gr; while the Schwarzschild solution cite:1916AbhKP1916..189S is sufficient for some situations where the mass of one of the two bodies is much smaller than the other (where the problem is effectively a single one body problem) it is insufficient for systems such as abbp:bbh.
+In contrast no exact solutions have been found to this problem in abbr:gr; while the Schwarzschild solution cite:1916AbhKP1916..189S is sufficient for some situations where the mass of one of the two bodies is much smaller than the other (where the problem is effectively a one body problem) it is insufficient for systems such as abbp:bbh.
 
 When the two component bodies of the system are at large separation (and their local velocities are much smaller than the speed of light) a abbr:pn expansion can be used.
 In this regime the two objects are treated as point-particles with slow internal dynamics. 
@@ -190,7 +191,7 @@ As the binary reaches its innermost stable circular orbit the system evolves fro
 At this point the two black holes /plunge/ towards each other, and then coalesce. 
 This period contains the peak emission of abbp:gw. 
 
-Finally, the single black hole which remains will radiate energy through the /gls:ringdown/ period, during which the black hole oscillates, radiating energy until it becomes a stable Kerr black hole.
+Finally, the single black hole which remains will radiate energy through the /ringdown/ period, during which the black hole oscillates, radiating energy until it becomes a stable Kerr black hole.
 
 [fn:generalbinary] This in fact occurs in /all/ orbits, however most objects will not get close enough that the current generation of detectors will be able to observe the low-amplitude radiation produced by such systems. In the future, however, inspirals of objects such as white dwarf binaries are expected to be noise sources for space-based detectors, such as gls:lisa.
 
@@ -231,7 +232,7 @@ A number of codes are used to produce abbr:nr waveforms for the advanced-era abb
 + SPEC :: The abbr:spec is a abbr:nr method which leverages spectral methods during the evolution of the black hole spacetime in abbr:bbh simulations, in an attempt to circumvent instabilities which are present when using finite difference methods cite:2000PhRvD..62h4032K. 
 The code is capable of generating the merger and ringdown component of the abbr:gw waveform for a generic abbr:bbh configuration cite:2009PhRvD..80l4010S.
 + BAM ::  The abbr:bam code uses a modified abbr:bssn regime cite:2004PhRvL..92u1101B,2008PhRvD..77b4027B,2004PhRvL..92u1101B,1999IJMPD...8...85B.
-+ MAYA :: The MAYA code is based on the abbr:bssn formalism with a moving puncture gauge condition.
++ MAYA :: The MAYA code is based on the abbr:bssn formalism with a moving puncture gauge condition cite:2016CQGra..33t4001J.
 
 ** Catalogues
    \label{sec:sources:cbc:catalogues}
@@ -251,7 +252,7 @@ The distribution of abbr:bbh parameters for the waveforms in the cataloue are pl
 
 *** SXS waveform catalogue
     \label{sec:sources:cbc:catalogues:sxs}
-    The SXS waveform catalogue cite:2013PhRvL.111x1104M,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B includes over $400$ waveforms, both spinning and non-spinning. 
+    The SXS waveform catalogue cite:2013PhRvL.111x1104M,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B includes over $400$ waveforms, both spinning and non-spinning, generated using abbr:spec. 
 The coverage of this catalogue is shown in the corner plot of figure ref:fig:sources:cbc:nr:sxscoverage.
 
 \begin{figure}
@@ -275,13 +276,15 @@ The coverage of this catalogue is shown in the corner plot of figure ref:fig:sou
     :END:
     \label{sec:sources:cbc:approximants:imrphenom}
 
-   The gls:imrphenom models take advantage of the three-component structure of abbr:bbh signals (see ref:sec:sources:cbc:waveform); calibration waveforms for the models are produced by a abbr:nr simulation, which is then hybridised with a abbr:pn inspiral waveform (since the abbr:pn is known to be a good approximation for this part of the waveform).
+   The gls:imrphenom models cite:2007CQGra..24S.689A take advantage of the three-component structure of abbr:bbh signals (see ref:sec:sources:cbc:waveform); calibration waveforms for the models are produced by a abbr:nr simulation.
+The calibration waveforms which are produced by abbr:nr are short, and the inspiral is normally calculated for only the last few cycles of the binary.
+In order to make a longer waveform these abbr:nr waveforms are joined to a abbr:pn inspiral waveform (since the abbr:pn is known to be a good approximation for this part of the waveform) in a process called ``hybridisation''.
 For hybridisation to be effective the abbr:pn and abbr:nr waveforms must be well-matched. 
 This match is determined by their integrated squared absolute difference, 
 \begin{equation}
 \delta = \int_{t_{1}}^{t_{2}} \left| \ten{h}^{\text{PN}}(t, \vec{\mu}) - a \ten{h}^{\text{NR}}(t, \vec{\mu}) \right|^{2} \dd{t},
 \end{equation}
-with $\ten{h}^{\text{NR}}$ an abbr:nr-derived waveform, $\ten{h}^{\text{PN}}$ a abbr:pn waveform evaluated at the same parameters, $a$ is an amplitude scaling factor, and $\vec{\mu}$ a vector of extrinsic parameters, $\vec{\mu} = {\phi_{0}, t_{0}}$, the initial phase and start time of the waveform, respectively cite:2008PhRvD..77j4017A.
+with $\ten{h}^{\text{NR}}$ an abbr:nr waveform, $\ten{h}^{\text{PN}}$ a abbr:pn waveform evaluated at the same parameters, $a$ is an amplitude scaling factor, and $\vec{\mu}$ a vector of extrinsic parameters, $\vec{\mu} = {\phi_{0}, t_{0}}$, the initial phase and start time of the waveform, respectively cite:2008PhRvD..77j4017A.
 
 The resulting hybridised waveforms are then parameterised in the Fourier domain. 
 These /phenomenological/ waveforms, $u(f)$ take the form
@@ -314,9 +317,11 @@ Finally, the best-matching amplitudes and phases for the phenomenological wavefo
 The first model to take this approach, IMRPhenomA, was calibrated only against non-spinning hybrid waveforms. Further development produced the IMRPhenomD model cite:2016PhRvD..93d4007K, which is calibrated against 19 hybrid abbr:pn - abbr:nr waveforms (a mixture of public SXS and BAM-derived waveforms) to produce aligned-spin spinning waveforms. The IMRPhenomD model is then verified against 29 additional hybrid waveforms. 
 
 The IMRPhenomP series of waveform models (the most recent of which is version 3 cite:2018arXiv180910113K) add the ability to model precession effects within the waveform; for versions 1 and 2 this was limited to single-spin effects, but version 3 has been designed to allow for generic abbr:bbh systems.
-In order to introduce the effects of precession into the waveform, ~IMRPhenomPv1~ and ~IMRPhenomPv2~ built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the ``twisting-up'' produced by orbital precession.
+In order to introduce the effects of precession into the waveform, ~IMRPhenomPv1~ and ~IMRPhenomPv2~ built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the modulations produced in the waveform by orbital precession.
 For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation\nbsp{}[fn:stat-phase], which is not strictly valid outwith the inspiral phase.
 ~IMRPhenomPv3~ uses a two-spin model developed by Chatziioannou /et al./ cite:2017PhRvD..95j4004C in order to allow for the calculation of precession angles in generic abbr:bbh systems.
+
+[fn:stat-phase] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D
 
 # In summary:
 #    + IMRPhenomA :: The simplest of the IMRPhenom models, designed to produce waveforms for non-spinning, non-precessing systems.
@@ -367,7 +372,7 @@ The number of waveforms required to produce the surrogate model is also consider
 # + NRSur7d2s :: A generically spinning surrogate model cite:2017PhRvD..96b4058B.
 
 
-An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable. 
+An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable ref:2019arXiv190309204W). 
 The development of these models is discussed in detail in chapter ref:cha:heron.
 
 # + DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
@@ -409,7 +414,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
     \begin{equation}
     || h^{2} || = \int_{\infty}^{\infty} | h(t)|^{2} \dd{t} =  \int_{\infty}^{\infty} | \tilde{h}(f) |^{2} \dd{f},
     \end{equation}
-    for $h(t)$ and $\tilde{h}(f)$ respectively the strain in the time, $t$, and frequency $f$ representations.
+    for $h(t)$ and $\tilde{h}(f)$ respectively the strain in the time, $t$, and frequency $f$ representations cite:2008CQGra..25d5002B.
     #+END_definition
 
     For bursts which are well-localised in time we can also define a central time and a duration.
@@ -443,7 +448,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
     The quality factor, $Q$, of a burst signal is defined as 
     \begin{equation}
     \label{eq:sources:burst:quality}
-    Q = f_{0} / b^{2}.
+    Q = f^2_{0} / b^{2}.
     \end{equation}
 #    #+END_definiton
 
@@ -461,7 +466,6 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
 
    An example of a Gaussian burst ($\sigma = \SI{0.01}{\second}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$) is plotted in the left column of figure ref:fig:sources:burst:adhoc, with the time-domain waveform in the first row. 
    In this figure the two polarisations of the signal are plotted, with only the plus polarisation containing abbr:gw power for this morphology. 
-   The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
 
 ** Sine-Gaussian bursts 
    In addition to searching for broadband, time-constrained bursts of abbr:gw energy, some sources are expected to produce abpl:gw which are in a confined range of frequencies, in addition to being released over a short time-span. 
@@ -474,7 +478,6 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
    for a strain $h$ at time $t$, with $A$ the amplitude of the signal, $t_{0}$ its central time, $Q$ the quality factor of the burst, and $f$ is frequency.
 
    An example of a sine-Gaussian burst ($q = 8$, $f = \SI{100}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the middle column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
-   The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
 
 ** White noise bursts
    :PROPERTIES:
@@ -482,7 +485,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
    :END:
    Astrophysical processes are unlikely to produce emission at a single frequency, or with a smooth evolution of amplitude, and so searches are normally expected to be sensitive to band-limited white noise bursts, which consist of band-limited uncorrelated noise within a Gaussian amplitude envelope.
    An example of a whitenoise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
-   The second and third rows contain time-frequency representations of the plus-polarisation waveform as a spectrogram and a constant $q$-transform, respectively.
+
 
 
 ** Ringdown-like bursts
@@ -498,7 +501,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
 
 \begin{figure}
 \includegraphics{figures/sources/source-ccsn.pdf}
-\caption[Frequency ranges for supernovae compared to the advanced LIGO and DECIGO sensitivity curves]{The frequency ranges and approximate abbr:gw likely to be produced by core collapse supernovae~\cite{2008PhRvD..78f4056D} and Type 1A supernovae~\cite{2015PhRvD..92l4013S}, at a distance of $\SI{10}{\kilo pc}$ from the earth. 
+\caption[Frequency ranges for supernovae compared to the advanced LIGO and DECIGO sensitivity curves]{The frequency ranges and approximate abbr:gw amplitudes likely to be produced by core collapse supernovae~\cite{2008PhRvD..78f4056D} and Type 1A supernovae~\cite{2015PhRvD..92l4013S}, at a distance of $\SI{10}{\kilo pc}$ from the earth. 
 The noise (sensitivity) curve of the advanced gls:ligo, gls:decigo, and gls:lisa detectors at their design sensitivity is plotted for reference.}
 \label{fig:sources:sn-spectrum}
 \end{figure}
@@ -569,6 +572,7 @@ The gls:ligo results place a limit of \(G \mu < \SI{4.2E-10}{}}\) cite:2019PhRvD
     \begin{figure}
     \includegraphics{figures/sources/hyperbolic-timeseries.pdf}
     \caption[Parabolic enounter waveform]{A parabolic encounter waveform from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$. 
+The behaviour of this waveform at times after the main burst of strain indicates that additional high-pass filtering is required when making calculations using the timeseries thanks to the existence of low-frequency artifacts which prevent the waveform returning to zero at large times.
     The spectrum of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:spectrum}.
     \label{fig:sources:burst:parabolic:waveform}}
     \end{figure}
