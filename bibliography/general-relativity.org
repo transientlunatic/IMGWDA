@@ -302,3 +302,23 @@
   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2008PhRvD..78l4020L
   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
   :END:
+* A Brief History of Gravitational Waves
+  :PROPERTIES:
+  :TITLE:    A Brief History of Gravitational Waves
+  :BTYPE:    article
+  :CUSTOM_ID: 2016Univ....2...22C
+  :AUTHOR:   {Cervantes-Cota}, Jorge and {Galindo-Uribarri}, Salvador and {Smoot}, George
+  :JOURNAL:  Universe
+  :KEYWORDS: Physics - History and Philosophy of Physics, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+  :YEAR:     2016
+  :MONTH:    Sep
+  :VOLUME:   2
+  :NUMBER:   3
+  :PAGES:    22
+  :DOI:      10.3390/universe2030022
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1609.09400
+  :PRIMARYCLASS: physics.hist-ph
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016Univ....2...22C
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:

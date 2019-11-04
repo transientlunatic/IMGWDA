@@ -1563,3 +1563,60 @@ Such a detector is expected to detect CBC sources to z>10 at SNR>20.
    :ADSURL:   http://adsabs.harvard.edu/abs/2000RPPh...63.1317J
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
+
+
+* Noise curves
+
+** "Early aLIGO Configurations: example scenarios toward design sensitivity"
+   :PROPERTIES:
+   :TITLE:    "Early aLIGO Configurations: example scenarios toward design sensitivity"
+   :BTYPE:    techreport
+   :AUTHOR:   Barsotti, Lisa and Fritschel, Peter
+   :INSTITUTION: "{LIGO} Scientific Collaboration"
+   :YEAR:     2012
+   :CUSTOM_ID: ligo-t1200307
+   :END:
+
+** The construction and use of LISA sensitivity curves
+   :PROPERTIES:
+   :TITLE:    The construction and use of LISA sensitivity curves
+   :BTYPE:    article
+   :CUSTOM_ID: 2019CQGra..36j5011R
+   :AUTHOR:   {Robson}, Travis and {Cornish}, Neil J. and {Liu}, Chang
+   :JOURNAL:  Classical and Quantum Gravity
+   :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+   :YEAR:     2019
+   :MONTH:    May
+   :VOLUME:   36
+   :NUMBER:   10
+   :EID:      105011
+   :PAGES:    105011
+   :DOI:      10.1088/1361-6382/ab1101
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1803.01944
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019CQGra..36j5011R
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+** Detector configuration of DECIGO/BBO and identification of cosmological neutron-star binaries
+   :PROPERTIES:
+   :TITLE:    Detector configuration of DECIGO/BBO and identification of cosmological neutron-star binaries
+   :BTYPE:    article
+   :CUSTOM_ID: 2011PhRvD..83d4011Y
+   :AUTHOR:   {Yagi}, Kent and {Seto}, Naoki
+   :JOURNAL:  \prd
+   :KEYWORDS: 04.30.Db, Wave generation and sources, Astrophysics - Cosmology and Nongalactic Astrophysics, General Relativity and Quantum Cosmology
+   :YEAR:     2011
+   :MONTH:    Feb
+   :VOLUME:   83
+   :NUMBER:   4
+   :EID:      044011
+   :PAGES:    044011
+   :DOI:      10.1103/PhysRevD.83.044011
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1101.3940
+   :PRIMARYCLASS: astro-ph.CO
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2011PhRvD..83d4011Y
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:

@@ -62,6 +62,7 @@
    :MONTH:    mar
    :YEAR:     2019
    :DOI:      10.5281/zenodo.2603187
+   :HOWPUBLISHED: {\url{https://doi.org/10.5281/zenodo.2603187}}
    :URL:      https://doi.org/10.5281/zenodo.2603187
    :END:
 
@@ -71,8 +72,12 @@
    :PROPERTIES:
    :TITLE:    pygwinc
    :BTYPE:    misc
+   :HOWPUBLISHED: {\url{https://git.ligo.org/gwinc/pygwinc}}
    :URL:      https://git.ligo.org/gwinc/pygwinc
    :CUSTOM_ID: pygwinc
+   :MONTH:     jul
+   :YEAR:      2019
+   :AUTHOR:  Rollins, Jameson and Wipf, Christopher and Adhikari, Rana
    :END:
 
 * Search infrastructure
