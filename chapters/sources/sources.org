@@ -282,7 +282,7 @@ This match is determined by their integrated squared absolute difference,
 \begin{equation}
 \delta = \int_{t_{1}}^{t_{2}} \left| \ten{h}^{\text{PN}}(t, \vec{\mu}) - a \ten{h}^{\text{NR}}(t, \vec{\mu}) \right|^{2} \dd{t},
 \end{equation}
-with $\ten{h}^{\text{NR}}$ an abbr:nr waveform, $\ten{h}^{\text{PN}}$ a abbr:pn waveform evaluated at the same parameters, $a$ is an amplitude scaling factor, and $\vec{\mu}$ a vector of extrinsic parameters, $\vec{\mu} = {\phi_{0}, t_{0}}$, the initial phase and start time of the waveform, respectively cite:2008PhRvD..77j4017A.
+with $\ten{h}^{\text{NR}}$ an abbr:nr waveform, $\ten{h}^{\text{PN}}$ a abbr:pn waveform evaluated at the same parameters, $a$ is an amplitude scaling factor, and $\vec{\mu}$ a vector of extrinsic parameters, $\vec{\mu} = \{\phi_{0}, t_{0}\}$, the initial phase and start time of the waveform, respectively cite:2008PhRvD..77j4017A.
 
 The resulting hybridised waveforms are then parameterised in the Fourier domain. 
 These /phenomenological/ waveforms, $u(f)$ take the form
@@ -305,7 +305,7 @@ where $f_{\text{merge}}$, $f_{\text{ring}}$, and $f_{\text{cut}}$ are respective
 The effective phase, $\Psi$, expanded in powers of $f$, is
 \begin{equation}
 \label{eq:source:cbc:imrphenoma:phase}
-\Psi = 2 \pi f t_{0} + \phi_{0} + \sum_{k=0}^{7} \psi_{k} f^{(k-5)/3},
+\Psi = 2 \pi f t_{0} + \phi_{0} + \sum_{k=0}^{7} \phi_{k} f^{(k-5)/3},
 \end{equation}
 with $\phi_{0}$ the phase offset, each of the $\phi_{k}$ values phase parameters, $t_{0}$ the arrival time of the waveform.
 
