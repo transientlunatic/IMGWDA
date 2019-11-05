@@ -96,7 +96,7 @@ This leaves the form of the marginalised posterior being analytical:
 
 \begin{equation}
 \label{eq:gp:posterior}
-p(\vec{f}_* | \vec{y}) = \mathcal{N} (\vec{mu}, \mat{\Sigma})
+p(\vec{f}_* | \vec{y}) = \mathcal{N} (\vec{\mu}, \mat{\Sigma})
 \end{equation}
 for
 \begin{equation}
@@ -108,7 +108,7 @@ and
 \mat{\Sigma} = \mat{K}_{\vec{f}_*, \vec{f}_*} - \mat{K}_{\vec{f},\vec{f}_*}( \mat{K}_{\vec{f},\vec{f}}+\sigma^2 \mat{I})^{-1} \mat{K}_{\vec{f},\vec{f}_*}).
 \end{equation}
 
-Figures ref:fig:gp:steps shows visually how a one-dimensional regressor can be created using an abbr:gp method, starting from a abbr:gp prior and (noisy) data.
+Figure ref:fig:gp:steps shows visually how a one-dimensional regressor can be created using an abbr:gp method, starting from a abbr:gp prior and (noisy) data.
 The first step, depicted on the first row, is an example of raw training data (containing additive Gaussian noise) which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although abpl:gp are also capable of handling multi-dimensional data.
 Here the generating function is plotted as a grey line.
 Then we choose a covariance function for the  abbr:gp, in this case an exponential-quadratic covariance function (covariance functions are discussed in detail in section ref:sec:gp:covariance). The Gaussian process containing no data forms our prior probability distribution. 
@@ -139,7 +139,7 @@ This property allows outputs to be generated at arbitrary locations throughout t
 \includegraphics{figures/gp/gp-posterior-meancovar.pdf}
 \caption[A Gaussian process, step-by-step]{The conditioning of a Gaussian process, starting with data with additive Guassian noise generated from a sine function (grey line) [top row], and a Gaussian process prior [second row].
 Individual draws from the posterior distribution of the Gaussian process are shown in the third row, and the mean draw from the posterior is shown as the heavy red line in the bottom row, with the function which generated the data overlayed in grey, and the $1$, $2$, and $3$-sigma confidence regions plotted as shaded areas around the mean draw.
-\label{fig:gp:training-data}}
+\label{fig:gp:steps}}
 \end{figure}
 
 
@@ -235,7 +235,6 @@ These include the /exponential quadratic/, /quadratic exponential/, /squared exp
 
 The reason for this is its form, which closely resembles that of the Gaussian function:
 
-#+NAME: eq:gp:kernels:se
 \begin{equation}
    \label{eq:gp:kernels:se}
   k_{\mathrm{SE}}(r) = \exp \left( - \frac{r^2}{2 l^2} \right),
@@ -257,7 +256,7 @@ Indeed, for a abbr:gp with a covariance function $k$ which has well-defined firs
 
 \begin{equation}
 \label{eq:gp:kernels:crossings}
-\mathbb{E}(Nᵤ) = \frac{1}{2 \pi} \sqrt{ - \frac{ k''(0) }{k(0)} } \exp \left( - \frac{u²}{2k(0)} \right)
+\mathbb{E}(N_{u}) = \frac{1}{2 \pi} \sqrt{ - \frac{ k''(0) }{k(0)} } \exp \left( - \frac{u²}{2k(0)} \right)
 \end{equation} 
 
 A zero-mean abbr:gp which has an abbr:se covariance structure will then cross zero $1/(2 \pi l)$ times on average.
@@ -503,7 +502,7 @@ many sub-spaces, and each sub-space is modelled using an independent abbr:gp.
 Sparse abbr:gpr approaches work by modifying the form of the joint prior distribution from equation ref:eq:gp:prior-and-likelihood to include an additional $m$ latent variables,
 \[ \vec{u} = [u_1, \dots, u_m]^{\transpose}, \]
 which are termed ``inducing variables''.
-These correspond to values of the Gaussian process at inputs $X_\vec{u}$, which are the inducing inputs.
+These correspond to values of the Gaussian process at inputs $X_{\vec{u}}$, which are the inducing inputs.
 These inducing variables can be chosen in various different ways, but their effect on the abbr:gp is the same.
 
 The original abbr:gp can be recovered by marginalising over $\vec{u}$:
@@ -831,7 +830,7 @@ The testing can then be repeated multiple times, leaving different points from t
 # [ref:fig:simplewaveform1]
 
 
-While in figures ref:fig:gp:training-data to ref:fig:gp:posterior-best showed the process of constructing a abbr:gp regressor for data generated from a single-dimensional function, in this section I demonstrate how a higher-dimensional problem can be treated with abbr:gp regression.
+While figure ref:fig:gp:steps showed the process of constructing a abbr:gp regressor for data generated from a single-dimensional function, in this section I demonstrate how a higher-dimensional problem can be treated with abbr:gp regression.
 For the sake of clarity I have chosen a two-dimensional function; anything with more dimensions is likely to be hard to represent on paper, and the same concepts can be extended to higher-dimensional models.
 
 In figure ref:fig:gp:examples:mountainspoints a number of spot-heights are plotted for hills in the /Arrochar Alps/, a region of the Scottish Highlands around 50-kilometres north of the City of Glasgow. 
@@ -892,7 +891,7 @@ This effect is moderately more pronounced for the abbr:gp using the exponential 
 
 Similarly to the rational quadratic kernel, the abbr:gp using the exponential kernel produces a landscape with smoothly-varying large-scale structure, but allows for steeper gradients close to training points, and produces lower-confidence estimates than the abbr:gp using the rational quadratic covariance function outside of the parameter space spanned by the training data.
 
-While this is clearly not a practical method for use in cartography, the behaviour of the four abpl:gp shown in figures ref:gp:examples:mountains2 and ref:gp:examples:mountainsvar is helpful to understand the behaviour of abbr:gp in higher-dimensional spaces.
+While this is clearly not a practical method for use in cartography, the behaviour of the four abpl:gp shown in figures ref:fig:gp:examples:mountains2 and ref:fig:gp:examples:mountainsvar is helpful to understand the behaviour of abbr:gp in higher-dimensional spaces.
 
 # ** A concrete example
 

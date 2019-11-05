@@ -81,7 +81,7 @@ GEO600       &    4.800 \\
 TAMA         &    0.258 \\
 \bottomrule
 \end{tabular}
-\caption[The SNR of GW150914 estimated by gravpy had it been detected by a number of past, present, and future detectors]{The SNR of GW150914 estimated by gravpy had it been detected by a number of past, present, and future detectors. As noted in section ref:sec:gravpy:snr these SNR calculations assuming optimal source orientation and sky location for each detector, and often use idealised or estimated values for the detectors' abbr:asd. For comparison, GW150914 was detected in advanced \gls{ligo} with an \gls{snr} of 13 and 20 (for each detector) \cite{2016PhRvL.116m1103A}. This event would not have been detectable in Initial LIGO, where an SNR of $8$ would be required for a detection, agreeing with the findings of \cite{2016PhRvL.116m1103A}.
+\caption[The SNR of GW150914 estimated by gravpy had it been detected by a number of past, present, and future detectors]{The SNR of GW150914 estimated by gravpy had it been detected by a number of past, present, and future detectors. As noted in section~\ref{sec:gravpy:snr} these SNR calculations assuming optimal source orientation and sky location for each detector, and often use idealised or estimated values for the detectors' abbr:asd. For comparison, GW150914 was detected in advanced \gls{ligo} with an \gls{snr} of 13 and 20 (for each detector)~\cite{2016PhRvL.116m1103A}. This event would not have been detectable in Initial LIGO, where an SNR of $8$ would be required for a detection, agreeing with the findings of~\cite{2016PhRvL.116m1103A}.
 \label{tab:gravpy:gw150914snr}}
 \end{table}
 

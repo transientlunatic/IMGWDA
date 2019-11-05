@@ -975,24 +975,25 @@
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 ** KAGRA
-*** KAGRA: 2.5 Generation Interferometric Gravitational Wave Detector
-   :PROPERTIES:
-   :TITLE:    KAGRA: 2.5 Generation Interferometric Gravitational Wave Detector
-   :BTYPE:    article
-   :CUSTOM_ID: 2018arXiv181108079A
-   :AUTHOR:   {Akutsu}, T. and {Ando}, M. and {Arai}, K. and {Arai}, Y. and {Araki}, S. and {Araya}, A. and {Aritomi}, N. and {Asada}, H. and {Aso}, Y. and {Atsuta}, S. and {Awai}, K. and {Bae}, S. and {Baiotti}, L. and {Barton}, M.~A. and {Cannon}, K. and {Capocasa}, E. and {Chen}, C-S. and {Chiu}, T-W. and {Cho}, K. and {Chu}, Y-K. and {Craig}, K. and {Creus}, W. and {Doi}, K. and {Eda}, K. and {Enomoto}, Y. and {Flaminio}, R. and {Fujii}, Y. and {Fujimoto}, M. -K. and {Fukunaga}, M. and {Fukushima}, M. and {Furuhata}, T. and {Haino}, S. and {Hasegawa}, K. and {Hashino}, K. and {Hayama}, K. and {Hirobayashi}, S. and {Hirose}, E. and {Hsieh}, B.~H. and {Huang}, C-Z. and {Ikenoue}, B. and {Inoue}, Y. and {Ioka}, K. and {Itoh}, Y. and {Izumi}, K. and {Kaji}, T. and {Kajita}, T. and {Kakizaki}, M. and {Kamiizumi}, M. and {Kanbara}, S. and {Kanda}, N. and {Kanemura}, S. and {Kaneyama}, M. and {Kang}, G. and {Kasuya}, J. and {Kataoka}, Y. and {Kawai}, N. and {Kawamura}, S. and {Kawasaki}, T. and {Kim}, C. and {Kim}, J. and {Kim}, J.~C. and {Kim}, W.~S. and {Kim}, Y. -M. and {Kimura}, N. and {Kinugawa}, T. and {Kirii}, S. and {Kitaoka}, Y. and {Kitazawa}, H. and {Kojima}, Y. and {Kokeyama}, K. and {Komori}, K. and {Kong}, A.~K.~H. and {Kotake}, K. and {Kozu}, R. and {Kumar}, R. and {Kuo}, H-S. and {Kuroyanagi}, S. and {Lee}, H.~K. and {Lee}, H.~M. and {Lee}, H.~W. and {Leonardi}, M. and {Lin}, C-Y. and {Lin}, F-L. and {Liu}, G.~C. and {Liu}, Y. and {Majorana}, E. and {Mano}, S. and {Marchio}, M. and {Matsui}, T. and {Matsushima}, F. and {Michimura}, Y. and {Mio}, N. and {Miyakawa}, O. and {Miyamoto}, A. and {Miyamoto}, T. and {Miyo}, K. and {Miyoki}, S. and {Morii}, W. and {Morisaki}, S. and {Moriwaki}, Y. and {Morozumi}, T. and {Musha}, M. and {Nagano}, K. and {Nagano}, S. and {Nakamura}, K. and {Nakamura}, T. and {Nakano}, H. and {Nakano}, M. and {Nakao}, K. and {Narikawa}, T. and {Naticchioni}, L. and {Nguyen Quynh}, L. and {Ni}, W. -T. and {Nishizawa}, A. and {Ochi}, T. and {Oh}, J.~J. and {Oh}, S.~H. and {Ohashi}, M. and {Ohishi}, N. and {Ohkawa}, M. and {Okutomi}, K. and {Ono}, K. and {Oohara}, K. and {Ooi}, C.~P. and {Pan}, S-S. and {Park}, J. and {Pe{\~n}a Arellano}, F.~E. and {Pinto}, I. and {Sago}, N. and {Saijo}, M. and {Saito}, Y. and {Sakai}, K. and {Sakai}, Y. and {Sakai}, Y. and {Sasai}, M. and {Sasaki}, M. and {Sasaki}, Y. and {Sato}, S. and {Sato}, T. and {Sekiguchi}, Y. and {Seto}, N. and {Shibata}, M. and {Shimoda}, T. and {Shinkai}, H. and {Shishido}, T. and {Shoda}, A. and {Somiya}, K. and {Son}, E.~J. and {Suemasa}, A. and {Suzuki}, T. and {Suzuki}, T. and {Tagoshi}, H. and {Tahara}, H. and {Takahashi}, H. and {Takahashi}, R. and {Takamori}, A. and {Takeda}, H. and {Tanaka}, H. and {Tanaka}, K. and {Tanaka}, T. and {Tanioka}, S. and {Tapia San Martin}, E.~N. and {Tatsumi}, D. and {Tomaru}, T. and {Tomura}, T. and {Travasso}, F. and {Tsubono}, K. and {Tsuchida}, S. and {Uchikata}, N. and {Uchiyama}, T. and {Uehara}, T. and {Ueki}, S. and {Ueno}, K. and {Ushiba}, T. and {van Putten}, M.~H.~P.~M. and {Vocca}, H. and {Wada}, S. and {Wakamatsu}, T. and {Watanabe}, Y. and {Xu}, W-R. and {Yamada}, T. and {Yamamoto}, A. and {Yamamoto}, K. and {Yamamoto}, K. and {Yamamoto}, S. and {Yamamoto}, T. and {Yokogawa}, K. and {Yokoyama}, J. and {Yokozawa}, T. and {Yoon}, T.~H. and {Yoshioka}, T. and {Yuzurihara}, H. and {Zeidler}, S. and {Zhu}, Z. -H.
-   :JOURNAL:  arXiv e-prints
-   :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
-   :YEAR:     2018
-   :MONTH:    Nov
-   :EID:      arXiv:1811.08079
-   :PAGES:    arXiv:1811.08079
-   :ARCHIVEPREFIX: arXiv
-   :EPRINT:   1811.08079
-   :PRIMARYCLASS: gr-qc
-   :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018arXiv181108079A
-   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
-   :END:
+*** KAGRA: 2.5 generation interferometric gravitational wave detector
+    :PROPERTIES:
+    :TITLE:    KAGRA: 2.5 generation interferometric gravitational wave detector
+    :BTYPE:    article
+    :CUSTOM_ID: 2018arXiv181108079A
+    :AUTHOR:   {Kagra Collaboration} and {Akutsu}, T. and {Ando}, M. and {Arai}, K. and {Arai}, Y. and {Araki}, S. and {Araya}, A. and {Aritomi}, N. and {Asada}, H. and {Aso}, Y. and {Atsuta}, S. and {Awai}, K. and {Bae}, S. and {Baiotti}, L. and {Barton}, M.~A. and {Cannon}, K. and {Capocasa}, E. and {Chen}, C. -S. and {Chiu}, T. -W. and {Cho}, K. and {Chu}, Y. -K. and {Craig}, K. and {Creus}, W. and {Doi}, K. and {Eda}, K. and {Enomoto}, Y. and {Flaminio}, R. and {Fujii}, Y. and {Fujimoto}, M. -K. and {Fukunaga}, M. and {Fukushima}, M. and {Furuhata}, T. and {Haino}, S. and {Hasegawa}, K. and {Hashino}, K. and {Hayama}, K. and {Hirobayashi}, S. and {Hirose}, E. and {Hsieh}, B.~H. and {Huang}, C. -Z. and {Ikenoue}, B. and {Inoue}, Y. and {Ioka}, K. and {Itoh}, Y. and {Izumi}, K. and {Kaji}, T. and {Kajita}, T. and {Kakizaki}, M. and {Kamiizumi}, M. and {Kanbara}, S. and {Kanda}, N. and {Kanemura}, S. and {Kaneyama}, M. and {Kang}, G. and {Kasuya}, J. and {Kataoka}, Y. and {Kawai}, N. and {Kawamura}, S. and {Kawasaki}, T. and {Kim}, C. and {Kim}, J. and {Kim}, J.~C. and {Kim}, W.~S. and {Kim}, Y. -M. and {Kimura}, N. and {Kinugawa}, T. and {Kirii}, S. and {Kitaoka}, Y. and {Kitazawa}, H. and {Kojima}, Y. and {Kokeyama}, K. and {Komori}, K. and {Kong}, A.~K.~H. and {Kotake}, K. and {Kozu}, R. and {Kumar}, R. and {Kuo}, H. -S. and {Kuroyanagi}, S. and {Lee}, H.~K. and {Lee}, H.~M. and {Lee}, H.~W. and {Leonardi}, M. and {Lin}, C. -Y. and {Lin}, F. -L. and {Liu}, G.~C. and {Liu}, Y. and {Majorana}, E. and {Mano}, S. and {Marchio}, M. and {Matsui}, T. and {Matsushima}, F. and {Michimura}, Y. and {Mio}, N. and {Miyakawa}, O. and {Miyamoto}, A. and {Miyamoto}, T. and {Miyo}, K. and {Miyoki}, S. and {Morii}, W. and {Morisaki}, S. and {Moriwaki}, Y. and {Morozumi}, T. and {Musha}, M. and {Nagano}, K. and {Nagano}, S. and {Nakamura}, K. and {Nakamura}, T. and {Nakano}, H. and {Nakano}, M. and {Nakao}, K. and {Narikawa}, T. and {Naticchioni}, L. and {Nguyen Quynh}, L. and {Ni}, W. -T. and {Nishizawa}, A. and {Obuchi}, Y. and {Ochi}, T. and {Oh}, J.~J. and {Oh}, S.~H. and {Ohashi}, M. and {Ohishi}, N. and {Ohkawa}, M. and {Okutomi}, K. and {Ono}, K. and {Oohara}, K. and {Ooi}, C.~P. and {Pan}, S. -S. and {Park}, J. and {Pe{\~n}a Arellano}, F.~E. and {Pinto}, I. and {Sago}, N. and {Saijo}, M. and {Saitou}, S. and {Saito}, Y. and {Sakai}, K. and {Sakai}, Y. and {Sakai}, Y. and {Sasai}, M. and {Sasaki}, M. and {Sasaki}, Y. and {Sato}, S. and {Sato}, N. and {Sato}, T. and {Sekiguchi}, Y. and {Seto}, N. and {Shibata}, M. and {Shimoda}, T. and {Shinkai}, H. and {Shishido}, T. and {Shoda}, A. and {Somiya}, K. and {Son}, E.~J. and {Suemasa}, A. and {Suzuki}, T. and {Suzuki}, T. and {Tagoshi}, H. and {Tahara}, H. and {Takahashi}, H. and {Takahashi}, R. and {Takamori}, A. and {Takeda}, H. and {Tanaka}, H. and {Tanaka}, K. and {Tanaka}, T. and {Tanioka}, S. and {Tapia San Martin}, E.~N. and {Tatsumi}, D. and {Tomaru}, T. and {Tomura}, T. and {Travasso}, F. and {Tsubono}, K. and {Tsuchida}, S. and {Uchikata}, N. and {Uchiyama}, T. and {Uehara}, T. and {Ueki}, S. and {Ueno}, K. and {Uraguchi}, F. and {Ushiba}, T. and {van Putten}, M.~H.~P.~M. and {Vocca}, H. and {Wada}, S. and {Wakamatsu}, T. and {Watanabe}, Y. and {Xu}, W. -R. and {Yamada}, T. and {Yamamoto}, A. and {Yamamoto}, K. and {Yamamoto}, K. and {Yamamoto}, S. and {Yamamoto}, T. and {Yokogawa}, K. and {Yokoyama}, J. and {Yokozawa}, T. and {Yoon}, T.~H. and {Yoshioka}, T. and {Yuzurihara}, H. and {Zeidler}, S. and {Zhu}, Z. -H.
+    :JOURNAL:  Nature Astronomy
+    :KEYWORDS: General Relativity and Quantum Cosmology, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Instrumentation and Detectors
+    :YEAR:     2019
+    :MONTH:    Jan
+    :VOLUME:   3
+    :PAGES:    35-40
+    :DOI:      10.1038/s41550-018-0658-y
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1811.08079
+    :PRIMARYCLASS: gr-qc
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019NatAs...3...35K
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
 *** KAGRA Large-scale Cryogenic Gravitational wave Telescope
     :PROPERTIES:
     :TITLE:    KAGRA-Large-scale Cryogenic Gravitational wave Telescope

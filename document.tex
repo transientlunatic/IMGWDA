@@ -1,4 +1,4 @@
-\documentclass[oneside]{kentigern}
+\documentclass[oneside, oldfontcommands]{kentigern}
 \usepackage[utf8]{inputenc}
 \makeatletter
 \input{journal-macros}
@@ -24,14 +24,22 @@
 
 \usepackage{pdflscape}
 
+
+
+\hfuzz=15.002pt 
+
 \usetikzlibrary{bayesnet}
 \usepackage{doi}
 
 \usepackage[
-  backend=biber,
-  sorting=none,
-  style=numeric,
-  ]{biblatex}
+backend=biber,
+url=true, 
+doi=true,
+eprint=true,
+backref=true,
+sorting=none,
+style=numeric,
+]{biblatex}
   
 \addbibresource{bibliography/observing-runs.bib}
 \addbibresource{bibliography/general-relativity.bib}
@@ -47,46 +55,16 @@
 \addbibresource{bibliography/sources.bib}
 \addbibresource{bibliography/gaussianprocess.bib}
 \addbibresource{bibliography/gammarayburst.bib}
+
 \DeclareFieldFormat{doi}{%
    \mkbibacro{DOI}\addcolon\space
    \ifhyperref
      {\href{http://doi.org/#1}{\nolinkurl{#1}}}
      {\nolinkurl{#1}}}
-   %
-   \DeclareBibliographyDriver{thesis}{%
-  \usebibmacro{bibindex}%
-  \usebibmacro{begentry}%
-  \usebibmacro{author}%
-  \setunit{\labelnamepunct}\newblock
-  \printlist{language}%
-  \newunit\newblock
-  \usebibmacro{byauthor}%
-  \newunit\newblock%Added by Marco
-  \usebibmacro{title}%Added by Marco
-  \newunit\newblock
-  \printfield{note}%
-  \newunit\newblock
-  \printfield{type}%
-  \newunit
-  \usebibmacro{institution+location+date}%
-  \newunit\newblock
-  \usebibmacro{chapter+pages}%
-  \newunit
-  \printfield{pagetotal}%
-  \newunit\newblock
-  \iftoggle{bbx:isbn}
-    {\printfield{isbn}}
-    {}%
-  \newunit\newblock
-  \usebibmacro{doi+eprint+url}%
-  \newunit\newblock
-  \usebibmacro{addendum+pubstate}%
-  \setunit{\bibpagerefpunct}\newblock
-  \usebibmacro{pageref}%
-  \usebibmacro{
-finentry}%
-}
-
+\ExecuteBibliographyOptions
+  {
+    doi          = true , 
+  }
 \linespread{1.5}
 
 \setsecnumdepth{subsubsection}
@@ -235,7 +213,6 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
   Methods for dealing with complicated data using feature spaces are introduced in section \ref{sec:probability:features}, and structured probability distributions are discussed in section \ref{sec:probability:structured}.
   The process of statistical inference is introduced in section \ref{sec:probability:inference}, and stochastic processes are introduced in \ref{sec:probability:stochastic}.
   Approximate inference techniques are introduced in section \ref{sec:probability:approximate}, and hierarchical modelling, to which they are highly applicable, is discussed in section \ref{sec:probability:hierarchical}.
-  Finally, Bayesian linear regression is briefly introduced in section \ref{sec:probability:regression}.
   }
 
 \input{chapters/analysis/probability}
@@ -248,12 +225,9 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
 
 \noindent This chapter is composed principally from the method presented in \cite{dwsgrbbayesianconstraint}, however the introductory material (in section \ref{sec:grb:sgrbs}) is new compared to that work. Section \ref{sec:grb:rate2beam} discusses how the beaming angle of short gamma ray bursts may be inferred from the observed astrophysical rate of these events.
   Section \ref{sec:grb:prospectsaligo} discusses what the plausible number of detections during the advanced LIGO observing runs will be, while section \ref{sec:grb:validation} provides a validation of the technique used to infer the beaming angle from these rates.
-  Section \ref{sec:grb:jetposterior} provides the bulk of the results from this investigation; figure \ref{fig:grb:results:2017} illustrates the posterior which can be placed on the beaming angle after an observing run such as advanced LIGO's O2 run. Table \ref{tab:grb:results} contains a summary of the limits placed over a number of observing scenarios, under a number of different prior assumptions about the fraction of coalescences which produce a jet.  This discussion is extended in section \ref{sec:grb:beyond} with an investigation into the beaming angle inference at much higher sensitivities than are currently possible. Section \ref{sec:grb:conclusions} provides a summary of the contents of the chapter.}
-  
-
+  Section \ref{sec:grb:jetposterior} provides the bulk of the results from this investigation; figure \ref{fig:grb:results:2017} illustrates the posterior which can be placed on the beaming angle after an observing run such as advanced LIGO's O2 run. Table \ref{tab:grb:results} contains a summary of the limits placed over a number of observing scenarios, under a number of different prior assumptions about the fraction of coalescences which produce a jet.  This discussion is extended in section \ref{sec:grb:beyond} with an investigation into the beaming angle inference at much higher sensitivities than are currently possible. Section \ref{sec:grb:conclusions} provides a summary of the contents of the chapter.
+}
 \input{chapters/gamma-ray/grb}
-
-
 \glsresetall % reset all of the acronyms so they show in full
 
 \chapter{Gaussian processes for surrogate modelling}
@@ -261,7 +235,7 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
 
 \chapterprecis{
   
-\noindentThis chapter introduces Gaussian processes, and Gaussian process regression, a probabilistic regression technique which is well suited to producing so-called surrogate models: statistical models which are informed primarily by observed data rather than prior physical knowledge.\\
+\noindent This chapter introduces Gaussian processes, and Gaussian process regression, a probabilistic regression technique which is well suited to producing so-called surrogate models: statistical models which are informed primarily by observed data rather than prior physical knowledge.\\
   This chapter contains mainly introductory and review material, with section \ref{sec:gp:examples} containing a novel example of a Gaussian process regression model fitting a two-dimensional function.
   In section \ref{sec:gp:surrogate} I introduce the basic ideas of surrogate modelling, and briefly discuss various techniques which exist for producing such models.
   Then in section \ref{sec:gp:gp} I introduce the Gaussian process, a probabilistic model, and its use in Gaussian process regression.
@@ -270,7 +244,6 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
   Section \ref{sec:gp:complexity} discusses some of the computational constraints which Gaussian process regression can encounter, and methods which can be used to overcome these.
   Section \ref{sec:gp:testing} contains a brief overview of conventional methods used for testing the accuracy of Gaussian process regression models.
   Section \ref{sec:gp:examples} contains a novel example of a Gaussian process regression model being used to determine contour lines on a geographical map, and shows examples of outputs from a range of different covariance functions.
-  Section \ref{sec:gp:elliptical} briefly discusses more general elliptical processes, which can be seen as the generalisation of Gaussian processes.
   }
 
 \input{chapters/analysis/gaussian-processes}
@@ -298,6 +271,10 @@ Section \ref{sec:sources:burstresults} then provides a discussion of the measure
 
 \input{chapters/heron/heron}
 
+\chapter{Summary and conclusions}
+\label{cha:conclusions}
+\glsresetall
+\input{chapters/conclusion/conclusion}
 
 \appendices
 \chapter{Gravpy}

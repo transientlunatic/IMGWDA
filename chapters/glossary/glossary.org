@@ -30,7 +30,7 @@ additions near the vertex).
    :END:
 ** ALLEGRO
    A cryogenic resonant bar gravitational wave detector which was located at the State University of Louisiana, and operated until 2008. 
-   The detector consisted of a cryogenic bar of aluminium weighing $\SI{2500}{\kilogram}$ with a resonant frequency around $\SI{904}{\hertz}$. ALLEGRO conducted joint abbr:gw searches with the initial abbr:ligo network during the fourth science run cite:2007PhRvD..76b2001A.
+   The detector consisted of a cryogenic bar of aluminium weighing $\SI{2500}{\kilogram}$ with a resonant frequency around $\SI{904}{\hertz}$. ALLEGRO conducted joint abbr:gw searches with the initial abbr:ligo network during the fourth science run \cite{2007PhRvD..76b2001A}.
 ** ALTAIR
    A cryogenic resonant gravitational wave detector which was located at the \emph{Istituto di Fisica dello Spazio Interplanetario of Consiglio Nazionale delle Ricerche} in Frscati, Italy. The detector consisted of a $\SI{389}{\kilogram}$ aluminium bar with a resonant frequency of $\SI{1763}{\hertz}$.
 ** amplitude spectral density
@@ -77,7 +77,7 @@ The square-root of the gls:power-spectral-density.
    :PROPERTIES:
    :ABBREVIATION: BW
    :END:
-   A burst search pipeline used for data from the advanced LIGO and Virgo detectors cite:2015CQGra..32m5012C. 
+   A burst search pipeline used for data from the advanced LIGO and Virgo detectors \cite{2015CQGra..32m5012C}. 
    The search attempts to model transient events (both astrophysical bursts and noise glitches) using a wavelet basis, and uses a non-Gaussian noise model as part of a Bayesian model selection approach to parameter estimation for these signals.
 ** Beam Tube
    :PROPERTIES:
@@ -151,7 +151,7 @@ The square-root of the gls:power-spectral-density.
    :END:
 
 ** Cosmic Explorer
-   A proposed third-generation interferometric gravitational wave detector cite:detectors.thirdgen.cosmicexplorer.sensitivity.
+   A proposed third-generation interferometric gravitational wave detector \cite{detectors.thirdgen.cosmicexplorer.sensitivity}.
 ** cosmic microwave background
    :PROPERTIES:
    :ABBREVIATION: CMB
@@ -161,7 +161,7 @@ The square-root of the gls:power-spectral-density.
    :ABBREVIATION: DECIGO
    :END:
    A proposed space-based gravitational wave detector which is designed to acheive sensitivity to gravitational waves between 0.1-Hz and 10-Hz. 
-   While similar to gls:LISA through its use of drag-free satellites and time-delay interferometry, its higher-frequency sensitivity will be achieved through shorter arms, around 1,000-km.
+   While similar to gls:lisa through its use of drag-free satellites and time-delay interferometry, its higher-frequency sensitivity will be achieved through shorter arms, around 1,000-km.
 ** detector characterisation
    :PROPERTIES:
    :ABBREVIATION: DetChar
@@ -232,7 +232,7 @@ The square-root of the gls:power-spectral-density.
    :ABBREVIATION: ET
    :END:
    A proposed third-generation interferometric gravitational wave detector.
-** Electromagnetic
+** electromagnetic
    :PROPERTIES:
    :ABBREVIATION: EM
    :END:
@@ -285,7 +285,7 @@ The square-root of the gls:power-spectral-density.
    are observed to occur around once per day, and appear to be derived
    from at least two separate populations, divided by their duration
    and spectral hardness, although there is overlap and ambiguity
-   between the two populations cite:Zhang:2009uf.
+   between the two populations \cite{Zhang:2009uf}.
 ** Gaussian process
    :PROPERTIES:
    :ABBREVIATION: GP
@@ -331,7 +331,7 @@ For a more detailed discussion see section~\ref{sec:detectors:noise:glitch}.
    A committee formed in 1997 to facilitate interational cooperation
    in the construction and use of gravitational wave detectors.
 ** GW150914
-   The first detected gravitational wave, produced by a abbr:bbh coalescence cite:2016PhRvL.116f1102A. 
+   The first detected gravitational wave, produced by a abbr:bbh coalescence \cite{2016PhRvL.116f1102A}. 
    The detection was made on 14 September 2015 by the two advanced abbr:ligo observatories during an engineering run, but while the detector was producing observation-quality data. 
    GW150914 was announced to the general public on 11 February 2016.
 ** GW151012
@@ -339,17 +339,16 @@ For a more detailed discussion see section~\ref{sec:detectors:noise:glitch}.
    At the time this event was detected (12 October 2015) it did not satisfy the criteria to be announced in the literature as a gravitational wave event, and so was denoted a "LIGO/Virgo Trigger".
    The event was widely known as the ``Second Monday'' event during the first observing run (gls:gw150914 being the first Monday event).
 ** GW151226
-   The second detected gravitational wave, produced by a abbr:bbh coalescence, and detected by the advanced abbr:ligo network on 26 December 2015 cite:2016PhRvL.116x1103A. 
+   The second detected gravitational wave, produced by a abbr:bbh coalescence, and detected by the advanced abbr:ligo network on 26 December 2015 \cite{2016PhRvL.116x1103A}. 
    Also known as the ``Boxing Day Event'' thanks to its detection late on Boxing Day.
 ** GW170104
-   The first gls:gravitational-wave detection, made on 4 January 2017, during the second observing run of advanced gls:ligo, of a binary black hole coalescence cite:2017PhRvL.118v1101A. 
+   The first gls:gravitational-wave detection, made on 4 January 2017, during the second observing run of advanced gls:ligo, of a binary black hole coalescence \cite{2017PhRvL.118v1101A}. 
 ** GW170608
-   A abbr:bbh event observed on 8 June 2017, during the second observing run of advanced gls:ligo cite:2017ApJ...851L..35A. 
-   # The component masses were inferred to be ${12}_{-2}^{+7}\,\solMass$  and ${7}_{-2}^{+2}\,\solMass$
+   A abbr:bbh event observed on 8 June 2017, during the second observing run of advanced gls:ligo \cite{2017ApJ...851L..35A}. 
 ** GW170814
-   The first gravitational wave event to be observed (on 14 August 2017) by a three-detector network, comprised the two advanced gls:ligo and the advanced gls:virgo detectors cite:2017PhRvL.119n1101A. As a result it was (briefly) the best-localised gravitational wave event. 
+   The first gravitational wave event to be observed (on 14 August 2017) by a three-detector network, comprised the two advanced gls:ligo and the advanced gls:virgo detectors \cite{2017PhRvL.119n1101A}. As a result it was (briefly) the best-localised gravitational wave event. 
 ** GW170817
-   The first abbr:gw event observed (on 17 August 2017) from a abbr:bns event cite:2017PhRvL.119p1101A.
+   The first abbr:gw event observed (on 17 August 2017) from a abbr:bns event \cite{2017PhRvL.119p1101A}.
 Also the first abbr:gw event to be observed alongside electromagnetic emssion, first gamma rays, then across almost the entire EM spectrum.
 ** horizon distance
    :PROPERTIES:
@@ -435,6 +434,10 @@ The present development timeline of Kagra will see it join the international det
 ** LIGO and Virgo Scientific Collaborations
    :PROPERTIES:
    :ABBREVIATION: LVC
+   :END:
+** LIGO Scientific Collaborations
+   :PROPERTIES:
+   :ABBREVIATION: LSC
    :END:
 ** LIGO Hanford Observatory
    :PROPERTIES:

@@ -1,3 +1,8 @@
+In the world of abpl:gw there are /known knowns/, astrophysical sources, including abpl:bbh where the source is well understood, and the abbr:gw signal it produces is also well understood.
+We also know that there are /known unknowns/: astrophysical sources which have been observed electromagnetically, and which are expected to produce abpl:gw, however for these sources the signal they should produce is poorly understood, and poorly modelled.
+But we know there will be /unknown unknowns/: each development in observational astronomy has been accompanied by unanticipated discoveries. 
+It is unlikely that abpl:gw will be any different, but detecting signals with no prior knowledge of the physics which generates them is a formidable challenge.
+``Burst'' searches are designed to identify signals in detector data which fall into the latter two categories: the known unknowns, such as supernovae, and the unknown unknowns.
 
 * Burst searches
   :PROPERTIES:
@@ -22,9 +27,9 @@ Initial abbr:ligo searches were performed both between the detectors constitutin
 
 At this stage it will be useful to define a few quantities which are used in search algorithms.
 
-\begin{definition}[Signal energy]
-The signal energy is the summed squared absolute value of a segment of data.
-\end{definition}
+# \begin{definition}[Signal energy]
+# The signal energy is the summed squared absolute value of a segment of data.
+# \end{definition}
 
 \begin{definition}[Null stream energy]
    The gls:null-stream energy is the minimum amount of energy in whitened detector data which is inconsistent with a abbr:gw signal from a given sky location, across a network of detectors.
@@ -502,14 +507,14 @@ Each result in table ref:tab:sources:mdc:o1o2 can then be converted into a repre
 \end{figure}
 
 The results presented in figure ref:fig:sources:mdc:o1o2 indicate that the sensitivity of the three burst glspl:search-pipeline has improved across the range of observed frequencies between the first two observing runs, but the data in table ref:tab:sources:mdc:o1o2 indicate that the improvements are not uniform across all searches, with some searches altering their configuration in such a way that they gain sensitivity in some frequencies while reducing it in others.
-The greatest sensitivity of the network of abbr:gw detectors to burst signals is therefore achieved by considering the results from all the available glspl:search-pipelines.
+The greatest sensitivity of the network of abbr:gw detectors to burst signals is therefore achieved by considering the results from all the available glspl:search-pipeline.
 
 * Summary
 
-The development of Minke as a means of testing the sensitivity of all of the burst glspl:search-pipelines running on data from the advanced gls:ligo and advanced gls:virgo detectors has allowed the sensitivity of each pipeline to be compared on fair and equal terms using mock data challenges.
+The development of Minke as a means of testing the sensitivity of all of the burst glspl:search-pipeline running on data from the advanced gls:ligo and advanced gls:virgo detectors has allowed the sensitivity of each pipeline to be compared on fair and equal terms using mock data challenges.
 
 While this is a useful exercise for the purposes of algorithm development, it is also important to properly understand the sensitivity of the detectors to unmodelled signals, as this allows limits to be placed on the rate at which astrophysical events producing abbr:gw bursts occur in the local universe, even in the case of non-detection.
-The ability of the various algorithms to detect signals in mock data challenges, detailed in table ref:tab:sources:mdc:o1o2 demonstrates why it is necessary that each gls:search-pipline is tested, as each pipeline's sensitivity is frequency-dependent. 
+The ability of the various algorithms to detect signals in mock data challenges, detailed in table ref:tab:sources:mdc:o1o2 demonstrates why it is necessary that each gls:search-pipeline is tested, as each pipeline's sensitivity is frequency-dependent. 
 Understanding the behaviour of each pipeline allows the results from the appropriate pipeline to be used when calculating event rates based across each region of the observed spectrum.
 
 Previously to my development of Minke these tests were often conducted in an ad-hoc manner, and the process of producing an abbr:mdc was not standardised or automated.

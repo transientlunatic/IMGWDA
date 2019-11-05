@@ -284,7 +284,7 @@ Figure ref:fig:detectors:interferometers:firstgen is a plot of the noise abbr:as
 
 \begin{figure}[t]
 \includegraphics{./figures/intro/aligo-asd.pdf}
-\caption[The noise curves of the Advanced LIGO detectors]{The predicted gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity (from the fit in table 1 of cite:2009LRR....12....2S), relative to the estimated sensitivity of the two interferometers in their first observing run (O1)~\cite{ligo-t1200307}.
+\caption[The noise curves of the Advanced LIGO detectors]{The predicted gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity (from the fit in table 1 of \cite{2009LRR....12....2S}), relative to the estimated sensitivity of the two interferometers in their first observing run (O1)~\cite{ligo-t1200307}.
 \label{fig:detectors:aligo-asd}}
 \end{figure}
 
@@ -749,7 +749,7 @@ The former includes noise sources which are due to the equipment used to constru
      \label{eq:intro:noise:radpressure}
      S(f) = \frac{1}{m f^{2} L} \sqrt{ \frac{ \hbar P }{ 2 \pi^{3} c \lambda} },
      \end{equation}
-at a given frequency $f$ (with $\hbar$ the reduced Planck constant), for a detector with arm-length $L$ ref:2011LRR....14....5P.
+at a given frequency $f$ (with $\hbar$ the reduced Planck constant), for a detector with arm-length $L$ cite:2011LRR....14....5P.
 # *Need to check this is correct for a cavity rather than a single laser beam*.
 Radiation pressure can be mitigated by increasing the power circulating in the arms, however this must be balanced against the increased shot noise introduced by the increased power.
 
@@ -1003,8 +1003,8 @@ These are summarised in table ref:tab:eventlist.
    GW170823 & $3.3^{+0.9}_{-0.8}$ & $3.6^{+0.6}_{-0.9}$ & $0.71^{+0.08}_{-0.1}$  & $0.08^{+0.2}_{-0.22}$  & $1850.0^{+840.0}_{-840.0}$   & $39.6^{+10.0}_{-6.6}$  & $29.4^{+6.3}_{-7.1}$   & $29.3^{+4.2}_{-3.2}$      & $65.6^{+9.4}_{-6.6}$   & $0.34^{+0.13}_{-0.14}$ \\
 \bottomrule
 \end{tabular}
-\caption[GWTC-1 : Summary of O1 and O2 Events]{The events from the first two advanced-era observing runs. The data in this table is derived from the first gravitational wave transient catalogue, GWTC-1 cite:2018arXiv181112907T.
-	$E_{\text{rad}}$ is the total abbr:gw energy radiated as a result of the event; $L_{\text{peak}}$ is the event's peak abbr:gw luminosity; $a_{\text{final}}$ is the total spin of the remnant black hole;  $\chi_{\text{eff}}$ is the gls:effective-spin of the abbr:cbc system;    & $D_{\text{L}}$ is the luminosity distance to the source;  $M_{1}$ and $M_{2}$ are the masses of the two compact objects;  $\mathcal{M}$ is the gls:chirp-mass of the system;  $M_{\text{rem}}$  is the mass of the remnant, and  $z$ is the redshift of the source.
+\caption[GWTC-1 : Summary of O1 and O2 Events]{The events from the first two advanced-era observing runs. The data in this table is derived from the first gravitational wave transient catalogue, GWTC-1 \cite{2018arXiv181112907T}.
+	$E_{\text{rad}}$ is the total abbr:gw energy radiated as a result of the event; $L_{\text{peak}}$ is the event's peak abbr:gw luminosity; $a_{\text{final}}$ is the total spin of the remnant black hole;  $\chi_{\text{eff}}$ is the gls:effective-spin of the abbr:cbc system; $D_{\text{L}}$ is the luminosity distance to the source;  $M_{1}$ and $M_{2}$ are the masses of the two compact objects;  $\mathcal{M}$ is the gls:chirp-mass of the system;  $M_{\text{rem}}$  is the mass of the remnant, and  $z$ is the redshift of the source.
 \label{tab:eventlist}
 }
 \end{table}

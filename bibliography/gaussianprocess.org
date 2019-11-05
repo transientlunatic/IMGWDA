@@ -92,15 +92,18 @@
     :TITLE:    Generalized Product of Experts for Automatic and Principled Fusion of Gaussian Process Predictions
     :BTYPE:    article
     :CUSTOM_ID: 2014arXiv1410.7827C
-    :AUTHOR:   {Cao}, Y. and {Fleet}, D.~J.
-    :JOURNAL:  ArXiv e-prints
+    :AUTHOR:   {Cao}, Yanshuai and {Fleet}, David J.
+    :JOURNAL:  arXiv e-prints
+    :KEYWORDS: Computer Science - Machine Learning, Computer Science - Artificial Intelligence, Statistics - Machine Learning
+    :YEAR:     2014
+    :MONTH:    Oct
+    :EID:      arXiv:1410.7827
+    :PAGES:    arXiv:1410.7827
+    :ABSTRACT: In this work, we propose a generalized product of experts (gPoE) framework for combining the predictions of multiple probabilistic models. We identify four desirable properties that are important for scalability, expressiveness and robustness, when learning and inferring with a combination of multiple models. Through analysis and experiments, we show that gPoE of Gaussian processes (GP) have these qualities, while no other existing combination schemes satisfy all of them at the same time. The resulting GP-gPoE is highly scalable as individual GP experts can be independently learned in parallel; very expressive as the way experts are combined depends on the input rather than fixed; the combined prediction is still a valid probabilistic model with natural interpretation; and finally robust to unreliable predictions from individual experts.
     :ARCHIVEPREFIX: arXiv
     :EPRINT:   1410.7827
     :PRIMARYCLASS: cs.LG
-    :KEYWORDS: Computer Science - Learning, Computer Science - Artificial Intelligence, Statistics - Machine Learning
-    :YEAR:     2014
-    :MONTH:    oct
-    :ADSURL:   http://adsabs.harvard.edu/abs/2014arXiv1410.7827C
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2014arXiv1410.7827C
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 *** Distributed Gaussian Processes.
@@ -194,18 +197,19 @@
     :TITLE:    Hierarchical Mixture-of-Experts Model for Large-Scale Gaussian Process Regression
     :BTYPE:    article
     :CUSTOM_ID: 2014arXiv1412.3078N
-    :AUTHOR:   {Ng}, J.~W. and {Deisenroth}, M.~P.
-    :JOURNAL:  ArXiv e-prints
+    :AUTHOR:   {Ng}, Jun Wei and {Deisenroth}, Marc Peter
+    :JOURNAL:  arXiv e-prints
+    :KEYWORDS: Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Machine Learning, Statistics - Computation
+    :YEAR:     2014
+    :MONTH:    Dec
+    :EID:      arXiv:1412.3078
+    :PAGES:    arXiv:1412.3078
     :ARCHIVEPREFIX: arXiv
     :EPRINT:   1412.3078
     :PRIMARYCLASS: stat.ML
-    :KEYWORDS: Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Learning, Statistics - Computation
-    :YEAR:     2014
-    :MONTH:    dec
-    :ADSURL:   http://adsabs.harvard.edu/abs/2014arXiv1412.3078N
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2014arXiv1412.3078N
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
-
 * Kernels
 ** Basic theory
 ** Level Crossings for Random Fields

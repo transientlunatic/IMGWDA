@@ -1,16 +1,16 @@
 The morphologies of abbr:gw signals can be divided roughly into three categories cite:2009LRR....12....2S, which correspond approximately to the classifications of the astrophysical sources which produce them.
 
 + Continuous :: signals are expected to be produced by sources over long periods of time. 
-  The primary source of continuous sources for gls:aLIGO are expected to be abbr:gw pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:LISA mission, the radiation from inspiralling binary systems should also be detectable.
+  The primary source of continuous sources for gls:ligo are expected to be abbr:gw pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:lisa mission, the radiation from inspiralling binary systems should also be detectable.
 + Stochastic :: signals are expected to constitute a background of abpl:gw,  produced by the black holes at the centres of galaxies cite:1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S, and from the Universe's inflationary period cite:1988PhRvD..37.2078A.
-+ Transient :: signals are strong /bursts/ of abpl:gw over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of matched filter searches. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:LISA regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
++ Transient :: signals are strong /bursts/ of abpl:gw over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of matched filter searches. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:lisa regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
 
 * Continuous wave sources
   \label{sec:sources:continuous}
 
 # It's very weird; right now as I'm writing parts of this chapter I'm in the same lecture theatre as Bell. 2019-02-27 (JimFest).
 The discovery of pulsars by Bell and Hewish in 1967 was an unexpected discovery for radio astronomy---objects which produce beams of radiation, and rotate rapidly.
-Not long after their discovery it became apparent that they were a specific form of abpl:ns---the tightly-packed remnant of a massive star which has ended its life as a supernova.
+Not long after their discovery it became apparent that they were a specific form of abpl:ns --- the tightly-packed remnant of a massive star which has ended its life as a supernova.
 
 Any rotating mass quadrupole (see equation ref:eq:intro:gr:mass-quadrupole) will produce abpl:gw as it rotates (see equation ref:eq:intro:gr:quadrupole2strain), and so it follows that a dense, massive object, such as a neutron star, will produce abpl:gw as they rotate, if they possess any mass asymmetry.
 Further, thanks to their highly stable rotation speed, the abbr:gw emission from abpl:ns ought to be produced continuously at a very stable frequency.
@@ -40,14 +40,12 @@ Searches for non-tensorial polarisations of abbr:gw were conducted on data from 
 
 In comparison to transient signals, the waveforms for continuous wave sources are generally (semi-)analytical; the waveform model used for the search for the (2,2)-mode emission in cite:2019arXiv190208507T for example has the form 
 
-\begin{equation}
-\label{eq:sources:cw:signalmodel}
 \begin{align}
-h_{22}(t) = - C_{22} \big[ & F_{+}^{D}(\alpha, \delta, \psi, t) (1 + \cos^{2} \imath) \cos(2 \Phi(t) + \Phi_{22}^C) \\
+\label{eq:sources:cw:signalmodel}
+h_{22}(t) = - C_{22} \big[ & F_{+}^{D}(\alpha, \delta, \psi, t) (1 + \cos^{2} \imath) \cos(2 \Phi(t) + \Phi_{22}^C) \nonumber \\
 + 2 & F_{\times}^{D} (\alpha, \delta, \psi, t) \cos \imath \sin( 2 \Phi(t) + \Phi_{22}^{C} )
 \big] ,
 \end{align}
-\end{equation}
 for $C_{22}$ the amplitude of the wave, and $\Phi_{22}^{C}$ its initial phase at some specific time.
 $\Phi(t)$ is the rotational phase of the source, and $\imath$ is the inclination of the source to the observer.
 In contrast to the signal from transient sources, continuous waves can be observed over long periods of time, and the observed signal will be convolved with the antenna pattern of the detector, $F_{+,\times}^{D}$, which varies with the sky position of the source, $(\alpha, \delta)$, the polarisation angle of the source, and thanks to the relative movement of the source and the detector, time, $t$.
@@ -129,7 +127,7 @@ The observation of these objects would provide much-needed information about the
 
 Inspiralling compact binaries can act as a cosmological distance measure: they have two parameters, their period, and the rate at which that period changes (which is calculated by measuring the gls:chirp-mass of the system) which characterise the system, and the amplitude of the abpl:gw produced is dependent only on the chirp mass of the source, and the distance from the observer to the object. 
 As a result it is possible to determine the distance to an inspiralling system simply by determining the chirp mass and measuring the brightness of the event cite:2017AnP...52900209A. 
-This would provide an additional means of measuring cosmic acceleration, and, in the gls:LISA era, this would allow the measurement of acceleration at high redshift using high-mass binary black holes.
+This would provide an additional means of measuring cosmic acceleration, and, in the gls:lisa era, this would allow the measurement of acceleration at high redshift using high-mass binary black holes.
 
 
 ** Dynamics of compact binaries
@@ -212,7 +210,7 @@ Coordinate singularities represented the second major challenge to the field; in
 Additionally, finding a formalism for the representation of the field equations throughout the evolution of the simulation which would remain stable had proved challenging.
 
 By the mid-2000s a number of breakthroughs occured. 
-In 2004 Pretorius cite:2005CQGra..22..425P introduced the ``generalised harmonic coordinate'' formalism which remained stable into the evolution of the abbr:BBH merger.
+In 2004 Pretorius cite:2005CQGra..22..425P introduced the ``generalised harmonic coordinate'' formalism which remained stable into the evolution of the abbr:bbh merger.
 This was followed cite:2005PhRvL..95l1101P by the demonstration of an abbr:nr simulation which evolved the abbr:bbh through the inspiral and merger to the ringdown produced in this formalism.
 Late in 2005 Campanelli /et al./ cite:2006PhRvL..96k1101C demonstrated the use of an algorithm which overcame the difficulties of coordinate singularities inherent in black hole simulations.
 These had previously been overcome through the ``excission'' of the black hole, where a boundary was placed inside the black hole event horizon, excising its interior, containing the singularity, from the computational domain.
@@ -372,7 +370,7 @@ The number of waveforms required to produce the surrogate model is also consider
 # + NRSur7d2s :: A generically spinning surrogate model cite:2017PhRvD..96b4058B.
 
 
-An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable ref:2019arXiv190309204W). 
+An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable cite:2019arXiv190309204W). 
 The development of these models is discussed in detail in chapter ref:cha:heron.
 
 # + DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
@@ -542,7 +540,7 @@ The characteristic strain spectrum of a abbr:ccsn is plotted in figure ref:fig:s
    For strings produced by the decoupling of the strong force from the electroweak force this quantity has a value on the order of $10^{-6}$, so a quantity $\mu_{6}$ is often defined as a shorthand cite:1995RPPh...58..477H.
 
    Three seperate models of cosmic strings have been searched for in data from the advanced gls:ligo detectors to date, and while no evidence for abbr:gw emission from these objects was found, it was possible to place limits both on the parameters of the various models and on the scale of $G \mu$.
-The gls:ligo results place a limit of \(G \mu < \SI{4.2E-10}{}}\) cite:2019PhRvD.100b4017A, which agrees with, but is surpassed by results from pulsar timing arrays, which find \(G \mu < \SI{5.7E-12}{}\) cite:2018PhRvD..97j2002A.
+The gls:ligo results place a limit of $G \mu < \SI{4.2E-10}{}}$ cite:2019PhRvD.100b4017A, which agrees with, but is surpassed by results from pulsar timing arrays, which find $G \mu < \SI{5.7E-12}{}$ cite:2018PhRvD..97j2002A.
    
 
 ** Parabolic and hyperbolic encounters
@@ -563,7 +561,7 @@ The gls:ligo results place a limit of \(G \mu < \SI{4.2E-10}{}}\) cite:2019PhRvD
     :PROPERTIES:
     :CUSTOM_ID: sources:burst:encounters:waveforms
     :END:
-    \label{sources:burst:encounters:waveforms}
+    \label{sec:sources:burst:encounters:waveforms}
 
     Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in this section I present the results of a study I have conducted to consider the detectability of some of these waveforms in current and future detectors.
     The waveforms for this brief study are taken from the abbr:gw driven capture simulations of cite:2017PhRvD..96h4009B.
