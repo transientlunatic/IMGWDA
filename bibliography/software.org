@@ -52,6 +52,7 @@
     :YEAR:     2019
     :DOI:      10.5281/zenodo.3265452
     :URL:      https://doi.org/10.5281/zenodo.3265452
+    :HOWPUBLISHED:      {\url{https://doi.org/10.5281/zenodo.3265452}}
     :END:
 ** gwpy/gwpy: 0.14.2
    :PROPERTIES:
@@ -87,11 +88,12 @@
    :TITLE:    transientlunatic/minke: Loch Awe
    :BTYPE:    misc
    :CUSTOM_ID: daniel_williams_2019_3352036
-   :AUTHOR:   Daniel Williams and anonymouscommitter
+   :AUTHOR:   Daniel Williams
    :MONTH:    jul
    :YEAR:     2019
    :DOI:      10.5281/zenodo.3352036
    :URL:      https://doi.org/10.5281/zenodo.3352036
+   :HOWPUBLISHED: {\url{https://doi.org/10.5281/zenodo.3352036}}
    :END:
 
 * General python libraries

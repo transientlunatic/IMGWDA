@@ -81,13 +81,13 @@
    :ADSURL:   http://adsabs.harvard.edu/abs/1916AbhKP1916..189S
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
-** Raum, Zeit, Materie. Vorlesungen {\“”a}tstheorie.
+** Raum, Zeit, Materie. Vorlesungen {\”a}tstheorie.
    :PROPERTIES:
-   :TITLE:    Raum, Zeit, Materie. Vorlesungen {\“”a}tstheorie.
+   :TITLE:    Raum, Zeit, Materie
    :BTYPE:    book
    :CUSTOM_ID: 1970rzmv.book.....W
    :AUTHOR:   {Weyl}, H.
-   :BOOKTITLE: Raum, Zeit, Materie. Vorlesungen {\“”a}tstheorie., by Weyl, H.. 6th edition. Berlin (F.R. Germany): Springer, 8 + 338 p.
+   :BOOKTITLE: Raum, Zeit, Materie
    :YEAR:     1970
    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1970rzmv.book.....W
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System

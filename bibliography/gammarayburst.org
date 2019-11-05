@@ -129,17 +129,7 @@
     :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/1993ApJ...413L.101K
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
-** Discerning the physical origins of cosmological Gamma-ray bursts based on multiple observational criteria: the cases of z=6.7 GRB 080913, z=8.3 GRB 090423, and some short/hard GRBs
-    :PROPERTIES:
-    :TITLE:    Discerning the physical origins of cosmological Gamma-ray bursts based on multiple observational criteria: the cases of z=6.7 GRB 080913, z=8.3 GRB 090423, and some short/hard GRBs
-    :BTYPE:    article
-    :CUSTOM_ID: Zhang:2009uf
-    :AUTHOR:   Zhang, Bing and others
-    :JOURNAL:  Astrophys. J.
-    :YEAR:                                      2009
-    :VOLUME:                                     703
-    :PAGES:    1696-1724
-    :END:
+
 
 * Long gamma ray bursts
 ** Mechanism
@@ -1144,91 +1134,6 @@
     :END:
 
 ** Pipelines
-*** The PyCBC search for gravitational waves from compact binary coalescence :bns:bbh:cbc:ligo:pipelines:
-    :PROPERTIES:
-    :TITLE:    The PyCBC search for gravitational waves from compact binary coalescence
-    :BTYPE:    article
-    :CUSTOM_ID: Usman:2015kfa
-    :AUTHOR:   Usman, Samantha A. and others
-    :JOURNAL:  Class. Quant. Grav.
-    :VOLUME:   33
-    :YEAR:     2016
-    :NUMBER:   21
-    :PAGES:    215004
-    :DOI:      10.1088/0264-9381/33/21/215004
-    :EPRINT:   1508.02357
-    :ARCHIVEPREFIX: arXiv
-    :PRIMARYCLASS: gr-qc
-    :REPORTNUMBER: LIGO-P1500086
-    :SLACCITATION: %%CITATION = ARXIV:1508.02357;%%
-    :END:
-** Packages and libraries
-*** ligo-cbc/pycbc: O2 Production Release 17   :software:cbc:ligo:statistics:
-    :PROPERTIES:
-    :TITLE:    ligo-cbc/pycbc: O2 Production Release 17
-    :BTYPE:    misc
-    :CUSTOM_ID: software.pycbc.r17
-    :AUTHOR:   Alex Nitz and Ian Harry and Duncan Brown and Christopher M. Biwer and Josh Willis and Tito Dal Canton and Larne Pekowsky and Thomas Dent and Andrew R. Williamson and Collin Capano and Soumi De and Miriam Cabero and Bernd Machenschalk and Prayush Kumar and Thomas Massinger and Amber Lenon and Stephen Fairhurst and Steven Reyes and Alex Nielsen and shasvath and Francesco Pannarale and Leo Singer and Duncan Macleod and Stanislav Babak and Hunter Gabbard and John Veitch and CBC Sugar and Lorena Magaña Zertuche and Peter Couvares and Brian Bockelman
-    :MONTH:    aug
-    :YEAR:     2017
-    :DOI:      10.5281/zenodo.844934
-    :URL:      https://doi.org/10.5281/zenodo.844934
-    :END:
-*** The NumPy Array: A Structure for Efficient Numerical Computation :software:
-    :PROPERTIES:
-    :TITLE:    The NumPy Array: A Structure for Efficient Numerical Computation
-    :BTYPE:    article
-    :CUSTOM_ID: numpy
-    :AUTHOR:   Stéfan van der Walt and S. Chris Colbert and Gaël Varoquaux
-    :JOURNAL:  Computing in Science \& Engineering
-    :VOLUME:   13
-    :NUMBER:   2
-    :PAGES:    22-30
-    :YEAR:     2011
-    :DOI:      10.1109/MCSE.2011.37
-    :URL:      http://aip.scitation.org/doi/abs/10.1109/MCSE.2011.37
-    :EPRINT:   http://aip.scitation.org/doi/pdf/10.1109/MCSE.2011.37
-    :END:
-*** Matplotlib: A 2D graphics environment                          :software:
-    :PROPERTIES:
-    :TITLE:    Matplotlib: A 2D graphics environment
-    :BTYPE:    article
-    :CUSTOM_ID: Hunter:2007
-    :AUTHOR:   Hunter, J. D.
-    :JOURNAL:  Computing In Science \& Engineering
-    :VOLUME:   9
-    :NUMBER:   3
-    :PAGES:    90--95
-    :ABSTRACT: Matplotlib is a 2D graphics package used for Python for application development, interactive scripting, and publication-quality image generation across user interfaces and operating systems.
-    :PUBLISHER: IEEE COMPUTER SOC
-    :DOI:      10.1109/MCSE.2007.55
-    :YEAR:     2007
-    :END:
-*** Probabilistic programming in Python using PyMC3. :software:statistics:bayesian:
-    :PROPERTIES:
-    :TITLE:    Probabilistic programming in Python using PyMC3.
-    :BTYPE:    article
-    :CUSTOM_ID: software.pymc3
-    :ADDED-AT: 2016-06-22T00:00:00.000+0200
-    :AUTHOR:   Salvatier, John and Wiecki, Thomas V. and Fonnesbeck, Christopher
-    :BIBURL:   https://www.bibsonomy.org/bibtex/26ab34e5d272f050aa380db3f6465723f/dblp
-    :EE:       http://dx.doi.org/10.7717/peerj-cs.55
-    :INTERHASH: eef07a238aeeac284294fd85d15fb5d2
-    :INTRAHASH: 6ab34e5d272f050aa380db3f6465723f
-    :JOURNAL:  PeerJ Computer Science
-    :KEYWORDS: dblp
-    :PAGES:    e55
-    :TIMESTAMP: 2016-06-23T11:38:20.000+0200
-    :URL:      http://dblp.uni-trier.de/db/journals/peerj-cs/peerj-cs2.html#SalvatierWF16
-    :VOLUME:   2
-    :YEAR:     2016
-    :END:
-
-
-
-
-
-
 
 * GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral
   :PROPERTIES:
@@ -1430,5 +1335,47 @@
   :PAGES:    063006
   :DOI:      10.1103/PhysRevD.74.063006
   :ADSURL:   http://adsabs.harvard.edu/abs/2006PhRvD..74f3006D
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Jet Geometry and Rate Estimate of Coincident Gamma-Ray Burst and Gravitational-wave Observations
+  :PROPERTIES:
+  :TITLE:    Jet Geometry and Rate Estimate of Coincident Gamma-Ray Burst and Gravitational-wave Observations
+  :BTYPE:    article
+  :CUSTOM_ID: 2019ApJ...880...55M
+  :AUTHOR:   {Mogushi}, Kentaro and {Cavagli{\`a}}, Marco and {Siellez}, Karelle
+  :JOURNAL:  \apj
+  :KEYWORDS: gamma-ray burst: general, stars: black holes, stars: jets, stars: neutron, Astrophysics - High Energy Astrophysical Phenomena
+  :YEAR:     2019
+  :MONTH:    Jul
+  :VOLUME:   880
+  :NUMBER:   1
+  :EID:      55
+  :PAGES:    55
+  :DOI:      10.3847/1538-4357/ab1f76
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1811.08542
+  :PRIMARYCLASS: astro-ph.HE
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019ApJ...880...55M
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:
+* Short GRBs: Opening Angles, Local Neutron Star Merger Rate, and Off-axis Events for GRB/GW Association
+  :PROPERTIES:
+  :TITLE:    Short GRBs: Opening Angles, Local Neutron Star Merger Rate, and Off-axis Events for GRB/GW Association
+  :BTYPE:    article
+  :CUSTOM_ID: 2018ApJ...857..128J
+  :AUTHOR:   {Jin}, Zhi-Ping and {Li}, Xiang and {Wang}, Hao and {Wang}, Yuan-Zhu and {He}, Hao-Ning and {Yuan}, Qiang and {Zhang}, Fu-Wen and {Zou}, Yuan-Chuan and {Fan}, Yi-Zhong and {Wei}, Da-Ming
+  :JOURNAL:  \apj
+  :KEYWORDS: binaries: close, gamma-ray burst: individual: GRB 150424A, GRB 160821B, gravitational waves, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+  :YEAR:     2018
+  :MONTH:    Apr
+  :VOLUME:   857
+  :NUMBER:   2
+  :EID:      128
+  :PAGES:    128
+  :DOI:      10.3847/1538-4357/aab76d
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   1708.07008
+  :PRIMARYCLASS: astro-ph.HE
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/2018ApJ...857..128J
   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
   :END:
