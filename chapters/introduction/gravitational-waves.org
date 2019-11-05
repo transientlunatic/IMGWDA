@@ -11,7 +11,7 @@ This process resulted in a slew of journal papers being written, vast quantities
 Eventually, the collaboration found itself in a position to make the announcement of the first direct detection of abpl:gw, gls:gw150914, on 11 February 2016.
 
 Further discoveries were made during the first observing run of the advanced abbr:ligo facilities, gls:lvt151012 [fn:lvt], observed in October, and gls:gw151226, observed in December, added to the collection of directly detected black hole binaries (although the significance of the former was insufficient to garner its own press release and announcement publication). 
-The majority of 2016 was dedicated to introducing upgrades to the two gls:ligo interferometers, and to comissioning a third second-generation interferometric observatory, gls:virgo, located in Italy.
+The majority of 2016 was dedicated to introducing upgrades to the two gls:ligo interferometers, and to commissioning a third second-generation interferometric observatory, gls:virgo, located in Italy.
 The second observation run of gls:advanced-ligo, which was scheduled to be longer and more sensitive than its first lead to the observation of three further binary black hole coalescences during the run: gls:gw170104, gls:gw170608, and gls:gw170814, the latter observed by a network of three detectors, gls:virgo having joined the observing run a short time before.
 These events are summarised in table ref:tab:eventlist, alongside detections which were made ``offline'' in the archival data.
 
@@ -32,7 +32,7 @@ In addition a primer on the conventions used in the description of abbr:gw signa
 abpl:gw are one of the predictions of Einstein's 1915 General Theory of Relativity cite:1915SPAW.......844E, with the first theoretical prediction of their existence being proposed by Einstein in 1916 cite:1937FrInJ.223...43E,1918SPAW.......154E, less than a year after the publication of the general theory.
 Einstein's original wave solution proposes three different forms of abbr:gw, which Hermann Weyl denoted  /longitudinal-longitudinal/, /transverse-longitudinal/, and /transverse-transverse/ waves cite:1970rzmv.book.....W.
 However, the approximation made by Einstein, to find the weak-field limit of the abpl:gw, was considered debatable.
-In 1922 Arthur Eddington showed that two of the wave solutions were artifacts of the choice of coordinate system cite:1922RSPSA.102..268E, and threw the existence of the remaining transverse-transverse waves into doubt.
+In 1922 Arthur Eddington showed that two of the wave solutions were artefacts of the choice of coordinate system cite:1922RSPSA.102..268E, and threw the existence of the remaining transverse-transverse waves into doubt.
 The confusion over the existence of abpl:gw continued, with one bizarre incident in 1936 serving to further muddy the waters.
 Einstein and Rosen submitted a paper entitled ``Are there any gravitational waves?'' to /Physical Review/, allegedly concluding that they do not.
 The anonymous referee of that paper (who would later transpire to have been the cosmologist Howard P Robertson) disagreed with the paper's conclusion (that abpl:gw did /not/ exist).
@@ -46,7 +46,7 @@ The confused situation with the existence of abpl:gw dogged the subject for seve
    :END:
    \label{sec:gw:derivation}
 
-The behaviour of gravitational fields in the presence of mass is modelled, in abbr:gr, by the gls:einstein-field-equations,
+The behaviour of gravitational fields in the presence of mass is modelled, in abbr:gr, by the Einstein field equations,
 
 \begin{equation}
 \label{eq:einsteinfieldequations}
@@ -101,7 +101,7 @@ Provided a transverse, traceless[fn:tt-gauge] gauge is chosen, the amplitude ten
    \end{bmatrix}.
 \end{equation}
 
-It is clear from the form of the plane-wave solution in equation ref:eq:planewavegw that a wave propagates in spacetime in a manner quite different from a wave on, for example, the surface of a loch: rather than a vector perturbation, a abbr:gw propagates as a tensor perturbation. The conventional method used to visualise this effect involves considering the effect of a abbr:gw traveling perpendicular to a ring of test particles. 
+It is clear from the form of the plane-wave solution in equation ref:eq:planewavegw that a wave propagates in spacetime in a manner quite different from a wave on, for example, the surface of a loch: rather than a vector perturbation, a abbr:gw propagates as a tensor perturbation. The conventional method used to visualise this effect involves considering the effect of a abbr:gw travelling perpendicular to a ring of test particles. 
 For such a wave, propagating along the $z$-axis, in the transverse-traceless gauge, the only non-vanishing components of the strain are (returning to natural units by including $c$ as a factor) 
 \[ h_{xx} = - h_{yy} = \real[ A_{xx} \exp(- \ii \omega (ct-z) ], \]
 and 
@@ -284,13 +284,13 @@ Figure ref:fig:detectors:interferometers:firstgen is a plot of the noise abbr:as
 
 \begin{figure}[t]
 \includegraphics{./figures/intro/aligo-asd.pdf}
-\caption[The noise curves of the Advanced LIGO detectors]{The predicted gls:amplitude-spectral-density of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity (from the fit in table 1 of \cite{2009LRR....12....2S}), relative to the estimated sensitivity of the two interferometers in their first observing run (O1)~\cite{ligo-t1200307}.
+\caption[The noise curves of the Advanced LIGO detectors]{The predicted abbr:asd of the gls:advanced-ligo detectors within their sensitive band, at design sensitivity (from the fit in table 1 of \cite{2009LRR....12....2S}), relative to the estimated sensitivity of the two interferometers in their first observing run (O1)~\cite{ligo-t1200307}.
 \label{fig:detectors:aligo-asd}}
 \end{figure}
 
 The initial-generation of detectors were upgraded during the first half of the 2010s, leading to Advanced gls:ligo cite:2015CQGra..32g4001L which resumed observations in September 2015, with the Advanced gls:virgo detector cite:2015CQGra..32b4001A joining in summer 2017 to conduct joint observations with its counterparts in the USA.
 The gls:geo600 detector was the first of the initial detectors to be fully upgraded as part of the  gls:geo-hf project cite:2006CQGra..23S.207W, with improved sensitivity at high frequencies. 
-Japanese efforts have focussed on the development of gls:kagra (formerly abbr:lcgt), a cryogenic interferometer located deep underground in the Kamioka mine cite:1999IJMPD...8..557K, which is expected to join the third observing run of advanced gls:ligo.
+Japanese efforts have focused on the development of gls:kagra (formerly abbr:lcgt), a cryogenic interferometer located deep underground in the Kamioka mine cite:1999IJMPD...8..557K, which is expected to join the third observing run of advanced gls:ligo.
 The construction of a third gls:ligo interferometer in India using the mothballed second detector from the Washington site has now moved into its initial stages, with the prospect of this detector joining the network by the mid-2020s. 
 Figure ref:fig:detectors:aligo-asd depicts the anticipated abb:asd of the advanced gls:ligo detectors once they have reached their design sensitivity, which is expected within the next five years.
 
@@ -354,15 +354,21 @@ There are a number of collaborations actively producing pulsar observations with
 #     :END:
    
     Gravitational-wave detectors which use beams of light, such as interferometers and pulsar timing arrays rely on measuring the the travel time of a beam of electromagnetic radiation between two points, and the effect that a abbr:gw has on this time. 
-    A full treatment of this is given in cite:2009LRR....12....2S, but in summary, if a abbr:gw is not present within a  detector, the travel time of a beam will be constant. 
-    If a abbr:gw is introduced, which has a polarisation component $h_+(t)$ in the plane of the beam, the change in the arrival time of the beam will be 
+    A full treatment of this is given in cite:2009LRR....12....2S, but in summary, if a abbr:gw is not present within a detector, the travel time of a beam in the detector will be constant. 
+    A beam of light is generated at a proper time $t$, and is received by a sensor at a proper time $\tau$.
+With no abbr:gw the proper distance between the two clocks is $L$. 
+If the beam of light is generated with some sort of time-stamp, then the receiving sensor can measure the time of arrival of these time-stamps.
+If no abbr:gw is present the rate will be constant, and we can choose a unit of time in which this rate is unity.
+
+If a abbr:gw is introduced, which produces a strain, $h_+(t)$, in the plane of the beam, the change in the arrival time of the beam will be changed.
+If a beam leaves the transmitter at time $t$, when the abbr:gw strain will be $h(t)$, it is received at a time $\tau$, when the abbr:gw strain will be $h(t + (1-\cos(\theta)) L)$, with $\theta$ the angle between the direction of the beam and the direction of abbr:gw propagation. 
+This means that the arrival rate is changed compared to the emission rate by
     \begin{equation}
     \label{eq:detectors:interferometric:theory:arrival-times-gw}
     \frac{\dd \tau}{\dd t} = 1 + \frac{1}{2} (1 + \cos \theta) \left\{ 
 	h_+\left( t + [1- \cos \theta ] L \right) - h_+(\tau) 
-      \right\}
+      \right\}.
     \end{equation}
-    where $\theta$ is the angle separating the detector beam and the abbr:gw plane, and $L$ is the proper distance separating the clocks when no abbr:gw is present, and $\tau$ is the proper time of the receiving clock (that is, the time had the abbr:gw not been present).
 
     By arranging the detector to reflect the beam back to the originating clock, it is possible to measure the round-trip time using only one clock. 
     In this arrangement we must account for the abbr:gw having a different strength one the return trip, and so equation ref:eq:detectors:interferometric:theory:arrival-times-gw becomes 
@@ -618,7 +624,7 @@ In addition to having longer arm cavities than current detectors, gls:einstein-t
    #+NAME:sec:detectors:space
    \label{sec:detectors:space}
    While ground-based interferometers have the advantage of accessibility, and consequently fairly affordable construction costs, great advantage is to be had in placing an interferometer in space. Some noise sources which detectors such as abbr:ligo must contend with, such as seismic noise, are completely absent, and greater freedom is afforded in the size of the interferometer, with the absence of a need to purchase and prepare land for the observatory. 
- In exchange for these advantages space-based interferometers present a number of technological hurdles, such as maintaining sufficiently stable orbital configuration to allow interferometry to be carried-out, and reduced sensitivity, as constructing a Fabry-Perot cavity in the comparitively poor vacuum around the L1 point is not feasible.
+ In exchange for these advantages space-based interferometers present a number of technological hurdles, such as maintaining sufficiently stable orbital configuration to allow interferometry to be carried-out, and reduced sensitivity, as constructing a Fabry-Perot cavity in the comparatively poor vacuum around the L1 point is not feasible.
 
 Despite these difficulties, space-based detectors represent the majority of feasible concepts for detectors sensitive to low frequency emission. 
 The following sections contain further details of the gls:lisa and gls:decigo mission proposals, but numerous other proposals for space-based detectors exist, including gls:glisa cite:doi:10.1063/1.4904862,glisaorbit, which proposes using off-the-shelf satellites to form a detector constellation in geostationary (rather than heliocentric) orbit. 
@@ -1032,7 +1038,7 @@ The  work in this thesis will consider the state of abbr:gw detection in the obs
 \caption[Anticipated sensitivities of advanced era detectors during their development]{The anticipated sensitivities of the various second-generation detectors throughout their development, measured in terms of the \gls{bns} \gls{horizon-distance}, which represents the average maximal distance at which the signal from a binary neutron star coalesence could be observed. This table was adapted from the information in~\cite{2018LRR....21....3A}.}
 \end{table}
 
-The development of the advanced detectors is still on-going; sensitivity improvements are normally made incrementally during periods when the detecors are taken offline for extended periods of time. 
+The development of the advanced detectors is still on-going; sensitivity improvements are normally made incrementally during periods when the detectors are taken offline for extended periods of time. 
 This phased approach means that the sensitivity of the detectors, and consequently the detector network, will improve in subsequent observing runs.
 In table ref:tab:intro:rangescenarios these are summarised; the /early/ scenario equates approximately to the O1 run for advanced gls:ligo, and the O2 run for advanced gls:virgo. 
 Similarly, the /mid/ and /late/ scenarios correspond approximately to O2 and O3 for advanced gls:ligo.

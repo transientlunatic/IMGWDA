@@ -13,7 +13,7 @@ while those with a duration shorter than two seconds are designated abpl:sgrb, w
 This distribution, for the abpl:grb included in the gls:fermi catalogue cite:2014ApJS..211...12G,2014ApJS..211...13V,2016ApJS..223...28N is plotted in figure ref:fig:grb:distribution.
 The $T_{90}$ measure represents the interval between when 5\% of the fluence has been detected, and when 95\% of the fluence has been detected.
 By-eye the distribution appears to have a single peak, with a lengthy tail of short-duration events, but there is generally confidence that the distribution in fact best described by a mixture of two Gaussian distributions cite:2015A&A...581A..29T, which correspond to the short and long-duration categories.
-This classification also demonstrats a bimodality in the distribution of spectral hardness of the events.
+This classification also demonstrates a bimodality in the distribution of spectral hardness of the events.
 abbr:sgrb were found to be harder, and abbr:lgrb softer.
 
 \begin{figure}
@@ -23,15 +23,15 @@ abbr:sgrb were found to be harder, and abbr:lgrb softer.
 }
 \end{figure}
 
-abb:lgrb have come to be associated with abbr:ccsn. 
+abbr:lgrb have come to be associated with abbr:ccsn. 
 The observation of SN 1998bw cite:1998Natur.395..670G, which was observed as an optical transient within the localisation region of GRB 980425. 
 This transient was shown to be the result of a type Ic supernova. 
 Subsequent numerical modelling cite:1999ApJ...524..262M of core-collapse supernovae corroborated the connection of the observed supernova and abbr:lgrb, although SN 1998bw was unusual, likely through being closer than other abbr:grb, and possibly with a weaker-than-average energy production, allowing the optical transient to be observed.
 The observation of SN 2003dh, alongside a more normal abbr:grb, and subsequent potential abbr:sn abbr:lgrb associations have added considerably to the evidence of a connection between abbr:lgrb and abbr:ccsn.
 
 While a connection between abbr:sn and abbr:lgrb seems plausible, producing the quantity of energy required for an abbr:sgrb through this mechanism is impractical in abbr:ccsn models.
-Predictions that an entirely different mecahnism may be responsible for these events were made as early as 1984 cite:1984SvAL...10..177B: namely a abbr:bns or abbr:nsbh system.
-While either of these systems are potentially capable of producing the quantity of energy required to expalin observed abbr:sgrb, there is no strong evidence to suggest that all of them will; indeed modelling suggests that a substantial fraction of abbr:nsbh systems will be incapable of producing the required energy cite:2014ApJ...791L...7P.
+Predictions that an entirely different mechanism may be responsible for these events were made as early as 1984 cite:1984SvAL...10..177B: namely a abbr:bns or abbr:nsbh system.
+While either of these systems are potentially capable of producing the quantity of energy required to explain observed abbr:sgrb, there is no strong evidence to suggest that all of them will; indeed modelling suggests that a substantial fraction of abbr:nsbh systems will be incapable of producing the required energy cite:2014ApJ...791L...7P.
 
 The association between abbr:sgrb and abbr:bns mergers (or at least, a subset thereof) was cemented by the first observation of a abbr:grb event, GRB 170817A cite:2017ApJ...848L..14G, which coincided with a gravitational wave observation: gls:gw170817 cite:2017PhRvL.119p1101A. 
 
@@ -87,7 +87,7 @@ Understanding how this model might work is easiest by considering a simple game.
 
 \begin{figure}
 \includegraphics{figures/grb/game-tophat.pdf}
-\caption[Expected observed ratios of abbr:sgrb and abbr:bns events with the top aht model]{The expected ratios of observed abbr:sgrb to abbr:bns events from a variety of on the beaming angle of a top-hat model. Each distribution is a normal distributions truncated between $\ang{0}$ and $\ang{90}$; the $x$ axis represents the standard deviation of the distribution, while each line represents a different mean.
+\caption[Expected observed ratios of abbr:sgrb and abbr:bns events with the top hat model]{The expected ratios of observed abbr:sgrb to abbr:bns events from a variety of on the beaming angle of a top-hat model. Each distribution is a normal distributions truncated between $\ang{0}$ and $\ang{90}$; the $x$ axis represents the standard deviation of the distribution, while each line represents a different mean.
 \label{fig:grb:game:tophat}}
 \end{figure}
 
@@ -125,7 +125,7 @@ An overview of this approach is as follows:
 
 2. Use equation ref:eq:grb:rate2angle, which relates the abbr:bns merger and abbr:sgrb rates via the geometry of the beaming angle, to transform the rate posterior probability to a posterior probability on the mean abbr:sgrb beaming angle. In this work I consider the observed rate of abpl:sgrb to be constant.
 
-3. Marginalize over $\epsilon$. I choose to consider $\epsilon$ a nuisance parameter because, to date, there is no accurate estimate of this parameter and it is not the main focus of our analysis. 
+3. Marginalise over $\epsilon$. I choose to consider $\epsilon$ a nuisance parameter because, to date, there is no accurate estimate of this parameter and it is not the main focus of our analysis. 
 
 In the case that $\epsilon$ is very small, and very few abpl:bns produce a abbr:sgrb, then a much larger number of observations will be needed to achieve the same confidence in the measurement of $\theta$ than would be required if $\epsilon$ was large.
 
@@ -378,9 +378,7 @@ This /artificial/ value for $\grbrate$ is used in equation ref:eq:grb:jet:poster
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/grb/O1_injections_violin.pdf}
-\caption[Posterior distributions of the validation procedure described in section \ref{sec:grb:validation}]{ In order to validate the algorithm an artificial scenario was constructed with a known beaming angle by artificially setting an observed abbr:sgrb event rate of $\SI{36.7}{\giga \parsec^{-3} \year^{-1}}$ to induce a beaming angle of $\theta \approx 10^{\circ}$. 
-  The algorithm was then tested with the various priors used in the analysis,  using the same gls:horizon-distance, observing time, and gls:duty-cycle as the 2015--2016 observing scenario, to ensure that the correct beaming angle was inferred. 
-  These posteriors are based on the simulated 2015--2016 observing scenario (see table~\ref{tab:grb:scenarios}).
+\caption[Posterior distributions of the validation procedure described in section \ref{sec:grb:validation}]{The posterior probability distributions resulting from the validation analysis described in section~\ref{sec:grb:validation}, using the observing time and horizon distance for the 2015--2016 observing scenario (see table~\ref{tab:grb:scenarios}). In order to validate the algorithm an artificial scenario was constructed with a known beaming angle by artificially setting an observed \gls{sgrb} event rate of $\SI{36.7}{\giga \parsec^{-3} \year^{-1}}$ to induce a beaming angle of $\theta \approx 10^{\circ}$. 
   \label{fig:grb:validation:results:2015}}
 \end{figure}
 
@@ -404,10 +402,12 @@ This /artificial/ value for $\grbrate$ is used in equation ref:eq:grb:jet:poster
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/grb/O2_injections_violin.pdf}
-\caption[Beaming angle posteriors for the 2016--2017 observing scenario]{The procedure used to produce figure~\ref{fig:grb:validation:results:2015} was repeated for the observing time and the horizon distance of the 2016--2017 observing scenario, with an observed abbr:sgrb event rate of $\SI{28.0}{\giga \parsec^{-3} \year^{-1}}$ used to induce a beaming angle of $\theta \approx 10^{\circ}$.
+\caption[Beaming angle posteriors for the 2016--2017 observing scenario]{The posterior probability distributions resulting from the validation analysis described in section~\ref{sec:grb:validation}, using the observing time and horizon distance for the 2016--2017 observing scenario (see table~\ref{tab:grb:scenarios}). The procedure used to produce figure~\ref{fig:grb:validation:results:2015} was repeated for the observing time and the horizon distance of the 2016--2017 observing scenario, with an observed abbr:sgrb event rate of $\SI{28.0}{\giga \parsec^{-3} \year^{-1}}$ used to induce a beaming angle of $\theta \approx 10^{\circ}$.
 The observed abbr:sgrb event rate in this scenario is lower than that used for the 2015--2016 scenario in order to induce the same opening angle despite the greater sensitivity and abbr:bns event rate of this scenario.
   \label{fig:grb:validation:results:2016}}
 \end{figure}
+
+
 \begin{table}
   \centering
   \begin{tabular}{lrrrr}

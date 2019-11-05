@@ -151,7 +151,7 @@ It is normal to use the short-hand notation $p(x)$ for the probability of a valu
   \end{equation}
   #+END_definition
 
-  Knowledge of the Fisher information for a given distribution is particuarly valuable in selecting an /uninformative prior/ (see section ref:sec:probability:priors:uninformative) when designing a Bayesian  analysis, where it can be valuable for the prior probability distribution to contribute no information to the inference.
+  Knowledge of the Fisher information for a given distribution is particularly valuable in selecting an /uninformative prior/ (see section ref:sec:probability:priors:uninformative) when designing a Bayesian  analysis, where it can be valuable for the prior probability distribution to contribute no information to the inference.
 
   #+ATTR_LATEX: :options [Shannon information]
   #+BEGIN_definition
@@ -286,7 +286,7 @@ When expressed in this form we can call the probability distribution a belief ne
 
 As a concrete (if rather naive) example, consider a situation in which observations are made continuously over the whole sky with two detectors. 
 One is sensitive to abbr:gw emission, and the other to gamma ray emission.
-An observing program is estabilised to analyse transient signals detected with one or both of these telescopes, with the belief that abbr:gw bursts can be produced by either a abbr:bns coalesence, or a abbr:bbh coalesence.
+An observing program is established to analyse transient signals detected with one or both of these telescopes, with the belief that abbr:gw bursts can be produced by either a abbr:bns coalescence, or a abbr:bbh coalescence.
 
 A simple model is constructed which contains four variables
 1) $\Gamma \in \{ 0, 1 \}$ which takes the value $1$ iff a abbr:sgrb is detected,
@@ -404,7 +404,7 @@ where $\mathrm{pa}(x)$ represents the parental set of the variable $x$; that is,
    Two graphs are Markov equivalent if they both represent the same set of conditional independence statements.
    #+END_definition
 
-   Clearly some method to determine this graphically is warranted. To do so it is helpful to define a (rather judgementally-named) property:
+   Clearly some method to determine this graphically is warranted. To do so it is helpful to define a (rather judgmentally-named) property:
 
    #+ATTR_LATEX: :options [Immorality]
    #+BEGIN_definition

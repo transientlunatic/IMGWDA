@@ -108,6 +108,18 @@ and
 \mat{\Sigma} = \mat{K}_{\vec{f}_*, \vec{f}_*} - \mat{K}_{\vec{f},\vec{f}_*}( \mat{K}_{\vec{f},\vec{f}}+\sigma^2 \mat{I})^{-1} \mat{K}_{\vec{f},\vec{f}_*}).
 \end{equation}
 
+
+\begin{figure}
+\includegraphics{figures/gp/gp-training-data.pdf}
+\includegraphics{figures/gp/gp-example-prior-draws.pdf}
+\includegraphics{figures/gp/gp-example-posterior-draws.pdf}
+\includegraphics{figures/gp/gp-posterior-meancovar.pdf}
+\caption[A Gaussian process, step-by-step]{The conditioning of a Gaussian process, starting with data with additive Guassian noise generated from a sine function (grey line) [top row], and a Gaussian process prior [second row].
+Individual draws from the posterior distribution of the Gaussian process are shown in the third row, and the mean draw from the posterior is shown as the heavy red line in the bottom row, with the function which generated the data overlayed in grey, and the $1$, $2$, and $3$-sigma confidence regions plotted as shaded areas around the mean draw.
+\label{fig:gp:steps}}
+\end{figure}
+
+
 Figure ref:fig:gp:steps shows visually how a one-dimensional regressor can be created using an abbr:gp method, starting from a abbr:gp prior and (noisy) data.
 The first step, depicted on the first row, is an example of raw training data (containing additive Gaussian noise) which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although abpl:gp are also capable of handling multi-dimensional data.
 Here the generating function is plotted as a grey line.
@@ -132,15 +144,6 @@ This property allows outputs to be generated at arbitrary locations throughout t
 
 # Gaussian processes can be extended from the case of a single-dimensional input predicting a single-dimensional output to the ability to predict a multi-dimensional output from a multi-dimensional input cite:2011arXiv1106.6251A,Alvarez2011a,Bonilla2007.
 
-\begin{figure}
-\includegraphics{figures/gp/gp-training-data.pdf}
-\includegraphics{figures/gp/gp-example-prior-draws.pdf}
-\includegraphics{figures/gp/gp-example-posterior-draws.pdf}
-\includegraphics{figures/gp/gp-posterior-meancovar.pdf}
-\caption[A Gaussian process, step-by-step]{The conditioning of a Gaussian process, starting with data with additive Guassian noise generated from a sine function (grey line) [top row], and a Gaussian process prior [second row].
-Individual draws from the posterior distribution of the Gaussian process are shown in the third row, and the mean draw from the posterior is shown as the heavy red line in the bottom row, with the function which generated the data overlayed in grey, and the $1$, $2$, and $3$-sigma confidence regions plotted as shaded areas around the mean draw.
-\label{fig:gp:steps}}
-\end{figure}
 
 
 # \begin{figure}

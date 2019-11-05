@@ -99,7 +99,7 @@ The excess energy of a single detector measurement is the amount of energy which
    While a large number of algorithms for searching for burst signals exist, most rely on a small number of fundamental techniques to identify burst events in detector data.
 
    + Power filter :: Calculates a weighted spectrogram of the data by splitting the whitened detector data into overlapping chunks.  cite:2004CQGra..21S.815G
-   + Wavelet transform ::  These methods uses either a wavelet or a Q-transform approach to produce a time-frequency representation of the measured signal. This is then thresholded, and clusters of outlier pixels (discrete regions of the time-frequency plane) are identified. By performing a number of Q-transforms with varying $q$ parameters it is possible to estimate the parameters of the detected waveform cite:2004CQGra..21S1809C.
+   + Wavelet transform ::  These methods uses either a wavelet or a Q-transform cite:1991ASAJ...89..425B approach to produce a time-frequency representation of the measured signal. This is then thresholded, and clusters of outlier pixels (discrete regions of the time-frequency plane) are identified. By performing a number of Q-transforms with varying $q$ parameters it is possible to estimate the parameters of the detected waveform cite:2004CQGra..21S1809C.
    + Mean filter :: The mean filter is a time-series approach to burst detection, which searches for excesses in the moving average of the measured signal. The method is most sensitive to bursts which have a similar length to the moving window, so the search must be repeated for a number of different window lengths cite:2008CQGra..25d5002B.
 
 ** Search pipelines
@@ -330,7 +330,7 @@ However, as these are added to the recorded data it is necessary to ensure that 
 At the beginning of the advanced detector era it became clear that the production of these /mock data challenges/ required new infrastructure, and the /Minke/ project was initiated to handle this.
 
 
-[fn:bigdog] Indeed, a major undertaking towards the end of the initial detector era had involved the analysis of a signal, identified as a abbr:bbh coalescence in Canis Majoris, which was dubbed the /Big Dog/ event. After a thorough end-to-end analysis of the signal was conducted it was revealed to have been such a blind injection. While this exercise demonstrated that the various search algorithms in operation at the time were capable of identifying a signal, it also demonstrated a number of failings in the various components of the software chain which was used to produce and inject this signal into the detector. In fact, the intended signal had been an abbr:nsbh signal, and had not been injected at a location in CMa. A fuller discussion of the event can be found at \url{https://www.ligo.org/news/blind-injection.php}.
+[fn:bigdog] Indeed, a major undertaking towards the end of the initial detector era had involved the analysis of a signal, identified as a abbr:bbh coalescence in Canis Major, which was dubbed the /Big Dog/ event. After a thorough end-to-end analysis of the signal was conducted it was revealed to have been such a blind injection. While this exercise demonstrated that the various search algorithms in operation at the time were capable of identifying a signal, it also demonstrated a number of failings in the various components of the software chain which was used to produce and inject this signal into the detector. In fact, the intended signal had been an abbr:nsbh signal, and had not been injected at a location in CMa. A fuller discussion of the event can be found at \url{https://www.ligo.org/news/blind-injection.php}.
 
 * Minke
   \label{sec:sources:minke}
@@ -396,7 +396,7 @@ In order to ensure consistency with other abbr:gw analyses, and to make use of a
 While \gls{minke} was designed for the primary purpose of abbr:mdc production, it also provides a convenient python wrapper to a number of functions from the \texttt{LALSimulation} cite:lalsuite C library, making it a convenient means to generate abbr:gw signals, for example for machine learning training data.
 
 Burst searches are used to search for both totally unmodelled sources, and poorly modelled sources (see section ref:sec:sources:burst for a discussion of the various morphologies of these signals). 
-gls:minke supports a large subset of these waveforms; analytical waveforms, such as Gaussians and sine-Gaussians are generated using \texttt{LALSimulation}, while more complicated models can be used (such as abbr:nr derived supernova waveforms) can be used to generate signals if the waveform is available either as precomputed strain values in the $+$- and $\times$-polarisations, or decomposed into a spherical harmonic basis.
+gls:minke supports a large subset of these waveforms; analytical waveforms, such as Gaussians and sine-Gaussians are generated using \texttt{LALSimulation}, while more complicated models can be used (such as abbr:nr derived supernova waveforms) can be used to generate signals if the waveform is available either as pre-computed strain values in the $+$- and $\times$-polarisations, or decomposed into a spherical harmonic basis.
 
 The process for producing an abbr:mdc using \gls{minke} is broken into a number of stages (which are also depicted in figure ref:fig:sources:minke:frame):
 
@@ -404,7 +404,7 @@ The process for producing an abbr:mdc using \gls{minke} is broken into a number 
 
 2. A specification for the signal set is generated as a table of source parameters, with each row specifying a single signal. This table can be stored in XML format for later use.
 
-3. Each signal can then be generated using \texttt{LALSimulation}. In the case of analytical waveforms the appropriate generating function is evaluated, and in the case of a precomputed signal the waveform data is interpolated appropriately for the desired sample rate, and where appropriate, is reconstructed from a spherical harmonic basis.
+3. Each signal can then be generated using \texttt{LALSimulation}. In the case of analytical waveforms the appropriate generating function is evaluated, and in the case of a pre-computed signal the waveform data is interpolated appropriately for the desired sample rate, and where appropriate, is reconstructed from a spherical harmonic basis.
 
 4. The generated signal must then be convolved with the antenna pattern for each detector involved in the analysis, for the appropriate sky position and time, and must have the appropriate time delay applied relative to the geocentre. A random ``jitter'' may also be applied at this stage to the centre time and amplitude of the signal, to emulate timing and calibration uncertainties in the detector.
 
@@ -412,8 +412,8 @@ The process for producing an abbr:mdc using \gls{minke} is broken into a number 
 
 6. The analysis-ready abbr:mdc is constructed by adding the injection signal to the detector data, allowing the sensitivity of the detector to a specific signal morphology to be tested over time, in the presence of real noise and glitches.
 
-When injecting signals which posess abbr:gw memory effects (that is, when the strain at the end of the signal does not equal the strain at the beginning) it is desirable to remove this effect.
-When adding a signal with memory to pre-recorded noise there will be a sharp discontinuity at the end of the signal which will produce artifacts in any frequency-domain representation of the signal.
+When injecting signals which possess abbr:gw memory effects (that is, when the strain at the end of the signal does not equal the strain at the beginning) it is desirable to remove this effect.
+When adding a signal with memory to pre-recorded noise there will be a sharp discontinuity at the end of the signal which will produce artefacts in any frequency-domain representation of the signal.
 To account for this \gls{minke} adds a low-frequency half cosine decay to the end of the signal to present a smooth transition.
 This can be seen in the Mueller waveform signal in the left column of figure ref:fig:sources:burst:minke:supernova.
 
