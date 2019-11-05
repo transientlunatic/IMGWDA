@@ -1,6 +1,6 @@
 The production of high-accuracy waveforms is possible thanks to advances in the field of abbr:nr, in which the full set of Einstein equations can be solved numerically (see section ref:sec:sources:cbc:nr for a more detailed discussion of the development of abbr:nr). 
 This can be done reliably for the low-mass compact binary systems of interest to the current generation of ground-based gravitational wave observatories, however these simulations are computationally expensive, and can require thousands of CPU hours to run in situations where the mass ratios and spins of the black holes are small. 
-A simulation of a full 350-cycle gravitational waveform spanning the entire advanced LIGO band has been produced cite:2015arXiv150204953S, however this required several months of high-performance computing to complete cite:2016CQGra..33l5025D, despite employing numerous techniques to reduce wall-clock computation time. 
+A simulation of a full 350-cycle gravitational waveform spanning the entire advanced abbr:ligo band has been produced cite:2015arXiv150204953S, however this required several months of high-performance computing to complete cite:2016CQGra..33l5025D, despite employing numerous techniques to reduce wall-clock computation time. 
 As a result fewer than 1000 waveforms are available, many of these much shorter than 350 cycles long. 
 Abbr:bbh coalescences are described by a number of physical parameters: the ratio of the two component black holes' masses, $q$; the vector of each component's spin, ${\vec{s}}_1 = (s_{1x}, s_{1y}, s_{1z})$ and ${\vec{s}}_2 = (s_{2x}, s_{2y}, s_{2z})$, defined such that the $z$-component of each vector is parallel to the total angular momentum vector, $\vec{L}$, for the system (i.e. $\hat{s}_{1z} = \hat{s}_{2z} = \hat{L}$, see figure ref:fig:heron:bbhcartoon for the arrangement of these vectors); and the time, $t$, relative to a fixed reference time, for example the time of coalescence of the binary.
 
@@ -12,7 +12,7 @@ These models, while capable of producing waveforms over a wide range of the abbr
 
 \begin{figure}[b]
 \begin{center}
-\begin{tikzpicture} 
+\begin{tikzpicture} [xscale=1.6, yscale=1.6]
 
 \begin{scope}[xshift=-3cm]
 \draw [shorten >=0.15cm, thick, ->] (0,0,0) -- (0,0,1) node {$\hat{y}$};
@@ -144,7 +144,7 @@ The match is a useful quantity to consider, as it is widely used in abbr:gw sign
 I calculate the (noise-free, with $S_n(f) = 1$) match between the mean waveform from the abbr:gp surrogate and the waveform from ~IMRPhenomPv2~  for 100 mass ratios between $q=0.1$ and $q=1.0$ in figure ref:fig:heron:imr:match.
 The match of the model is consistently above $0.995$ at each mass-ratio tested (although there is a notable drop in match around $0.35$ corresponding to one of the locations furthest from training data).
 While the use of match demonstrates that the abbr:gp is capable of reproducing the structure of a waveform accurately it will fail to characterise problems with a model which incorrectly predicts the amplitude of the waveform. 
-The match (and mismatch) are the standard metric which is used for evaluating waveform models, however there may be need for additional checks (beyond simply verification by-eye as in plot ref:fig:imr:test1).
+The match (and mismatch) are the standard metric which is used for evaluating waveform models, however there may be need for additional checks (beyond simply verification by-eye as in plot ref:fig:heron:imr:test1).
 
 \begin{figure}
 \includegraphics{figures/heron/imr-test-match.pdf}
@@ -213,6 +213,8 @@ The covariance structure of the Heron model follows the structure of the previou
 \label{eq:heron:heron:covariance}
 K = \Con \times \SE^{(t, \log q, s_{1x}, s_{1y}, s_{1z}, s_{2x}, s_{2y}, s_{2z})}
 \end{equation}
+
+This choice of covariance function follows the considerations made in the previous models: with none of the dimensions expected to be discontinuous the squared-exponential kernel is a reasonable choice for each.
 
 # ** Computational Complexity
 
@@ -291,7 +293,7 @@ To overcome this I have performed a /leave-one-out/ testing procedure.
 In order to do this multiple training datasets are produced; from each a single waveform is omitted.
 This reduced dataset is then substituted for the data on which the full Heron model's abbr:gp is conditioned, retaining the same hyperparameter values as the full model.
 The reduced Heron model is then evaluated at the parameter location corresponding to the omitted waveform, in order to compute a predicted mean waveform. 
-The mismatch between the predicted waveform and the omitted abbr:nr waveform was then computed, and the distribution of these mismatches is plotted in figure ref:fig:heron:testing:out:hist as a black-outlined histogram.
+The mismatch between the predicted waveform and the omitted abbr:nr waveform was then computed, and the distribution of these mismatches is plotted in figure ref:fig:heron:testing:out:hist as a black-outlined histogram, with the mean mismatch from these tests being $0.035$, with $95\%$ of the tests producing a mismatch between $0.114$ and $0.0001$.
 
 In contrast to the in-sample tests from section ref:sec:heron:testing:in the out-of-sample tests do give some indication of the model's capability as a surrogate model. 
 The mismatches between the leave-one-out model and abbr:nr data in ref:fig:heron:testing:out:hist show that the Heron model is capable of producing waveforms which have a small mismatch with the abbr:nr waveforms, with the vast majority having a mismatch smaller than $0.1$.
@@ -300,7 +302,7 @@ The maximum abbr:snr, \rho_{\text{eff}}, at which the true waveform and the mode
 \label{eq:mismatch-snr}
 \rho_{\text{eff}} = \frac{1}{\sqrt{2(1-\mathcal{M})}}.
 \end{equation}
-Since a mismatch of $0.1$ will be indistinguishable below an abbr:snr of $7$ the model is acceptable for weaker signals which might be expected in advanced gls:ligo.
+Therefore the mean mismatch ($0.035$) from these tests corresponds to a $\rho_{\text{eff}} \approx 3.8$, with $95\%$ of the tests corresponding to a range $\rho_{\text{eff}} = (2.09, 22.36)$, which is adequate for advanced abbr:ligo parameter estimation, where abpl:snr will be low, but would be insufficient for detectors such as abbr:lisa, which are expected to observe high abbr:snr signals.
 
 
 \begin{figure}
@@ -311,6 +313,7 @@ Additionally, the mismatch distributions between waveforms produced at the same 
 \end{figure}
 
 The variation of mismatch over the parameter space of the Georgia Tech catalogue is explored in figure ref:fig:heron:testing:out:tri, with waveforms with higher mismatch generally being in areas which are separated from the main body of training data.
+There is no clear pattern to locations with high waveform mismatch in the parameter space, although low-spin equal-mass systems can be seen to produce a low mismatch, while systems with non-aligned spins generally show higher mismatch than systems with either no spin or aligned-spin.
 
 \begin{figure}
 \makebox[\textwidth][c]{\includegraphics[trim={1cm 0 4.5cm 4cm},clip]{figures/heron/gt_match_triangle.pdf}}
@@ -344,6 +347,10 @@ This comparison must be interpreted with care, however, due to the presence of s
 The matches between 243 waveforms from the SXS catalogue and the corresponding mean waveform from Heron are plotted in figure ref:fig:heron:testing:sxs:tri showing the mismatch across the parameter space.
 The distribution of these mismatches is plotted in figure ref:fig:heron:testing:sxs:hist (as a black-outline histogram) with the mismatch distributions of the two phenomenological models at the same parameters plotted for comparison.
 Again the Heron model produces a distribution comparable to ~SEOBNRv3~.
+As with the distribution plotted in figure ref:fig:heron:testing:out:tri there are no clear patterns in the instances of high-mismatches across the parameter space, although non-spinning waveforms generally produce the lowest mismatches.
+
+The mean mismatch in these tests, between the waveforms produced by Heron and those from the SXS catalogue is $0.034$, with $95\%$ of the tests having a mismatch between $0.112$ and $\num{1.2E-4}$.
+This corresponds to an effective abbr:snr limit (as defined in equation ref:eq:mismatch-snr, representing the highest abbr:snr at which the abbr:nr and Heron-derived waveforms are indistinguishable) between $2.11$ and $63.7$ across the parameter space tested.
 
 \begin{figure}
 \makebox[\textwidth][c]{
@@ -367,12 +374,16 @@ Additionally, the mismatch distributions between waveforms produced at the same 
 While I have discussed at length the various tests which I carried out on the Heron model, it is valuable to be able to visually compare the output of this model with the phenomenological models used in testing.
 
 Figures ref:fig:heron:example:nr, ref:fig:heron:example:nonspin, ref:fig:heron:example:spin, and ref:fig:heron:example:precessing illustrate the output of the model in a variety of scenarios, respectively for a non-spinning , non-equal mass system; for a non-spinning, equal mass system; a system with aligned spins; and a system with non-aligned spins.
-
-In each figure the ~IMRPhenomPv2~ and ~SEOBNRv3~ waveforms are overlaid on draws from the model, alongside its mean prediction, and the variance of the prediction.
+In each of these figures the mean waveform for a given parameter space location is plotted, alongside $50$ individual draws from the abbr:gp.
+~IMRPhenomPv2~ and ~SEOBNRv3~ waveforms are overlaid on draws from the model, alongside its mean prediction, and the variance of the prediction.
 
 I have plotted the distribution of mismatches between the model predictions and the two phenomenological approximants are shown in the right panel of each figure, with matches calculated between the approximant waveforms (plotted as solid lines) and one-hundred sample waveforms drawn from the model (plotted as histograms). 
 
-Figure ref:fig:heron:example:nr shows a waveform produced from the various models at the same parameter location as one of the Georgia Tech abbr:nr waveforms, which is plotted alongside for comparison.
+Figure ref:fig:heron:example:nr shows a waveform produced from the various models at the same parameter location as one of the Georgia Tech abbr:nr waveforms, which is plotted alongside for comparison, and shows that the abbr:gp reproduces the abbr:nr waveform well with the mean waveform, however individual draws deviate from the abbr:nr waveform.
+This behaviour can be seen more clearly in the histogram of mismatches between the individual draws and the two approximant waveforms, where the individual mismatches are invariably worse than the mismatch for the mean waveform (which are marked as solid lines of the appropriate colour for each approximant).
+
+It is noteworthy that this mismatch is smaller than the mean of the mismatches between the sample draws and the phenomenological models.
+This is a result of the mismatch being a somewhat asymmetric indicator: the mismatch will always be higher for a waveform which over-estimates or under-estimates some feature of the waveform, where the over- and under-estimates will be averaged through the use of the mean waveform, producing a lower mismatch.
 
 \begin{figure*}
   \includegraphics[width=\textwidth]{figures/heron/withnr.pdf}
@@ -413,12 +424,17 @@ In the right panel the distribution of mismatches between the samples and both p
 \end{figure*}
 
 
+While figures ref:fig:heron:example:nr, and ref:fig:heron:example:nonspin, which are both waveforms for non-spinning systems, produce low mismatches, and waveforms which are visually comparable to the two approximant models' waveforms, the waveform presented in ref:fig:heron:example:spin, for an anti-aligned waveform, is both visually worse (with the mean Heron output overlapping with neither approximant) and the mismatches are larger than the previous cases.
+Here the uncertainty of the prediction is also larger, indicating the model's lower confidence in the predicted waveform, which is vindicated by the lack of agreement between both the mean waveform and either of the approximants.
+
+Figure ref:fig:heron:example:precessing, which represents a waveform for a precessing (face-on) system shows even greater uncertainty than ref:fig:heron:example:spin, and an associated increase in both the mismatch between the approximants and the mean output, and between the approximants and the individual draws.
+
 * Summary
 \label{sec:heron:summary}
 
 We have entered the era of routine abbr:gw detection, and the ability to accurately and rapidly characterise signals from events such as coalescences will be critical to understanding the properties of these systems. 
 This characterisation process relies on the availability of waveform templates which are either precomputed prior to the analysis being run, or can be generated on-the-fly. 
-Highly accurate waveforms, generated by simulations, are able, and in principal can facilitate accurate inference on detected signals. 
+Highly accurate waveforms, generated by simulations, are able in principal to facilitate accurate inference on detected signals. 
 However, the expense of producing them limits their coverage of the parameter space; as a result of this lack of coverage, and the considerable time requirements to produce new waveforms, any inference method which relied solely on techniques could not hope to satisfy the requirement to rapidly
 characterise signals, and would not be practical in a scenario where multiple events are detected every month. 
 Phenomenological models, which can be evaluated rapidly, are available, which attempt to interpolate
@@ -429,7 +445,7 @@ In this chapter I have laid-out an approach to producing a waveform model which 
 The ability to include these uncertainties should allow the accuracy of gravitational wave parameter estimation to be improved, as it allows biases introduced by uncertain waveform production to be taken into account.
 
 In contrast to previous attempts to produce a abbr:gp based model for waveforms, such as cite:2017PhRvD..96l3011D, this model is trained on data from the Georgia Tech waveform catalogue, described in section ref:sec:heron:nrdata.
-Other approaches have also been taken to producing surrogate models (eg the NRSur family of models cite:2015PhRvL.115l1102B,2017PhRvD..95j4023B,2017PhRvD..96b4058B (discussed in section ref:sec:sources:cbc:surrogates), however these approaches do not have the attractive feature of producing an estimate of the waveform uncertainty.
+Other approaches have also been taken to producing surrogate models---eg the NRSur family of models cite:2015PhRvL.115l1102B,2017PhRvD..95j4023B,2017PhRvD..96b4058B (discussed in section ref:sec:sources:cbc:surrogates)---however these approaches do not have the attractive feature of producing an estimate of the waveform uncertainty.
 
 In section ref:sec:heron:verification I presented a number of tests which were used on the model to ensure that its outputs are reliable.
 The results of these tests indicate that the Heron model is capable of producing similar matches against numerical relativity waveforms 
@@ -443,25 +459,25 @@ Additionally, the relatively small number of waveforms used to calibrate the phe
 The waveform model tends towards producing conservative estimates of the waveform, this is clearly visible in the variance of the precessing waveform in figure ref:fig:heron:example:precessing. 
 The use of additional waveforms is likely to improve the confidence of the model's prediction.
 
-In order for a abbr:gp-based approach such as this to be practical for parameter estimation studies using data from LIGO or Virgo it would be necessary to have a means of producing waveforms which are capable of modelling a greater amount of the inspiral than the Heron model can currently provide. 
+In order for a abbr:gp based approach such as this to be practical for parameter estimation studies using data from LIGO or Virgo it would be necessary to have a means of producing waveforms which are capable of modelling a greater amount of the inspiral than the Heron model can currently provide. 
 One potential approach to solving this problem is hybridising the output waveform from the model with waveforms produced from a post-Newtonian approximant, in a similar manner to that used by
 cite:2018arXiv181207865V.
 
-# In conclusion, we have demonstrated that is capable of being used as an
-# interpolant for waveforms, trained directly off data from simulations.
-# While this method cannot hope to produce waveforms with the same
-# precision as itself, it does account for the uncertainty introduced
-# through interpolation, a feature which is valuable for preventing the
-# introduction of bias in a analysis.
+The test which are used on the Heron model, and presented in this chapter, use the time and phase optimised match.
+While this is a metric which is frequently used to understand the behaviour of waveform models, it is not completely thorough, and in the future it would be desirable to develop additional tests which are more sensitive to differences in amplitude between the reference and model waveform, for example.
+Additional attention is also required for the outliers in the in-sample tests, in order to better understand whether these are the result of problems originating in the model, for example, through an incorrect choice of hyperparameter values, or are the result of problems with the training data itself.
 
-# * Acknowledgements
+The approach which was taken to produce the Heron model, in which time-domain waveforms were used directly as training data, has the major advantage that the posterior abbr:gp distribution is Gaussian, which allows uncertainties from waveforms to be handled in a fairly straight-forward manner. 
+This would be especially helpful if the Heron model were used as part of the likelihood calculation during a parameter estimation process.
+The major disadvantage which comes with this approach is the complexity of the waveform in the time domain, compared to producing models over the amplitude and phase of the waveform separately.
+In this case the uncertainty will not be Gaussian, and in order to incorporate waveform uncertainty individual waveform draws would be required in the parameter estimation process.
+This will be significantly slower, requiring many more evaluations of the dot product between waveform draws and the data than would be required between the mean waveform and the data.
+It can also be seen from the examples in section ref:sec:heron:examples that the individual draws will produce a different mean mismatch than the mean waveform will.
+For a model which used this approach to be useful for parameter estimation studies more work would be required to properly understand and characterise the behaviour of the individual waveform draws.
 
-# The authors wish to thank Christopher Moore, Sebastian Khan, and Vijay
-# Varma for their insightful comments and suggestions on an earleir draft
-# of the manuscript.
+All of the waveforms which are presented in section ref:sec:heron:examples are "face-on" waveforms.
+In order to allow variation of the source orientation both $h_{+}$ and $h_{\times}$ waveforms are required.
+The most straight-forward approach to producing both of these waveforms is likely to be to produce two abbr:gp surrogate models, one for each polarisation, and then combine these to produce an appropriate waveform. 
 
-# DW is supported by the Science and Technology Facilities Council (STFC)
-# grant ST/N504075/1. ISH is supported by STFC grant ST/L000946/1. JC
-# acknowledges support from NSF awards PHYS-1505824 and PHYS-1505524SH.
 
-# This document has been assigned LIGO document reference LIGO-P1800128.
+While the prototype version of the Heron model which is presented in this chapter is clearly capable of producing waveforms, additional development is still required for this to be a model which is useful for parameter estimation studies.

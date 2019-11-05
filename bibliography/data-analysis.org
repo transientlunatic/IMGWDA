@@ -173,18 +173,20 @@
    :TITLE:    Numerical relativity reaching into post-Newtonian territory: a compact-object binary simulation spanning 350 gravitational-wave cycles
    :BTYPE:    article
    :CUSTOM_ID: 2015arXiv150204953S
-   :AUTHOR:   {Szilagyi}, B. and {Blackman}, J. and {Buonanno}, A. and {Taracchini}, A. and {Pfeiffer}, H.~P. and {Scheel}, M.~A. and {Chu}, T. and {Kidder}, L.~E. and {Pan}, Y.
-   :JOURNAL:  ArXiv e-prints
+   :AUTHOR:   {Szilagyi}, Bela and {Blackman}, Jonathan and {Buonanno}, Alessandra and {Taracchini}, Andrea and {Pfeiffer}, Harald P. and {Scheel}, Mark A. and {Chu}, Tony and {Kidder}, Lawrence E. and {Pan}, Yi
+   :JOURNAL:  arXiv e-prints
+   :KEYWORDS: General Relativity and Quantum Cosmology
+   :YEAR:     2015
+   :MONTH:    Feb
+   :EID:      arXiv:1502.04953
+   :PAGES:    arXiv:1502.04953
+   :ABSTRACT: We present the first numerical-relativity simulation of a compact-object binary whose gravitational waveform is long enough to cover the entire frequency band of advanced gravitational-wave detectors, such as LIGO, Virgo and KAGRA, for mass ratio 7 and total mass as low as $45.5\,M_\odot$. We find that effective-one-body models, either uncalibrated or calibrated against substantially shorter numerical-relativity waveforms at smaller mass ratios, reproduce our new waveform remarkably well, with a negligible loss in detection rate due to modeling error. In contrast, post- Newtonian inspiral waveforms and existing calibrated phenomenological inspiral-merger-ringdown waveforms display greater disagreement with our new simulation. The disagreement varies substantially depending on the specific post-Newtonian approximant used.
    :ARCHIVEPREFIX: arXiv
    :EPRINT:   1502.04953
    :PRIMARYCLASS: gr-qc
-   :KEYWORDS: General Relativity and Quantum Cosmology
-   :YEAR:     2015
-   :MONTH:    feb
-   :ADSURL:   http://adsabs.harvard.edu/abs/2015arXiv150204953S
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2015arXiv150204953S
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
-
 
 * Surrogate Models
 ** A Surrogate Model of Gravitational Waveforms from Numerical Relativity Simulations of Precessing Binary Black Hole Mergers
