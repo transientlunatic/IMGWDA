@@ -8,9 +8,9 @@ Assuming that I have no knowledge of a reason why the coin would fall one way ra
 With this philosophy, it is possible to construct an axiomatic mathematical model of probability.
 Here I will follow the approach taken by Kolmogorov cite:kolmogorov, approaching from set theory principles. 
 By making some additional demands on this model, one of which is that an event which is considered ``certain'' should have a probability of $1$, it is possible to maintain consistency with boolean logic. 
-Likewise, if an event is certain not not to occur, it is assigned a probability $0$.
+Likewise, if an event is certain not to occur, it is assigned a probability $0$.
 
-In order to make future discussions more concise I define two concepts related to the configuration of a probabilistic system: /state/ and /sample space/.
+In order to make future discussions more concise I define two concepts related to the configuration of a probabilistic system: /sample space/ and /state/.
 
 #+ATTR_LATEX: :options [Sample Space]
 #+BEGIN_definition
@@ -39,8 +39,10 @@ Probability $P$ is a mapping $P: E \to [0,1]$ which assigns a real value between
 We place three constraints on the form of this mapping:
   1. For every $E \in \Omega$, $P(E) \geq 0$.
   2. $P(\Omega) = \sum_{E \in \Omega} P(E) = 1$.
-  3. If $E_{i} \cap E_{j} = \emptyset$ for $E_{i}, E_{j} \in \Omega$, then $P(\cup E_{i}) = \sum P(E_{i})$.
+  3. For two states, $A, B \in \Omega$ which are disjoint, such that $A \cap B = \emptyset$, then $P(A \cup B) = P(A) + P(B)$
+
 #+END_definition
+# 3. For two states, $E_i, E_j \in \Omega$If $E_{i} \cap E_{j} = \emptyset$ for $E_{i}, E_{j} \in \Omega$, then $P(\cup E_{i}) = \sum P(E_{i})$.
 
 The first axiom ensures that all probabilities are positive, and that if a state exists within the sample space it has a probability greater than zero. 
 It follows that states which do not exist (i.e. events which cannot occur) have zero probability.
@@ -74,11 +76,11 @@ In the case that of two events which occur with some dependence between them, we
 #+LABEL: def:probability:conditional
 #+BEGIN_definition
 Given two events, $A,B \in \Omega$, then the probability of $A$ /given/ $B$ is 
-\[ P(A | B) = \frac{ P(A,B) }{ p(B) }. \] 
+\[ P(A | B) = \frac{ P(A,B) }{ P(B) }. \] 
 If $P(B) = 0$ then $P(A)$ is undefined.
 #+END_definition
 
-Given that $P(A,B) = P(A)P(B) = P(B)P(A) = P(B,A)$, we have $P(A,B) = P(B,A) = P(B|A)P(A)$, which leads us to a powerful result in probability: *Bayes Theorem* cite:bayesessay.
+Given that $P(A,B) = P(B,A)$, we have $P(A,B) = P(B,A) = P(B|A)P(A)$, which leads us to a powerful result in probability: *Bayes Theorem* cite:bayesessay.
 
 #+ATTR_LATEX: :options [Bayes Theorem]
 #+LABEL: the:probability:bayes-theorem
@@ -86,7 +88,7 @@ Given that $P(A,B) = P(A)P(B) = P(B)P(A) = P(B,A)$, we have $P(A,B) = P(B,A) = P
 Given two events, $A$ and $B$, we may represent the probability of $A$ given $B$ in terms of the probability of $B$ given $A$:
   \begin{equation}
     \label{eq:probability:bayes}
-    P(A|B) = \frac{ P(A) P(B|A) }{ P(B) }, 
+    P(A|B) = \frac{ P(A) P(B|A) }{ P(B) }. 
   \end{equation}	  
 #+END_theorem
 # Intuitively, there are likely to be situations where our degree-of-belief in the state of one variable does not affect our
@@ -100,7 +102,7 @@ Given two events, $A$ and $B$, we may represent the probability of $A$ given $B$
 # #+END_definition
 
 A useful corollary in the case of two independent states $A,B$ (i.e. states which are disjoint in the sample space), 
-\[P(A|B) = P(A,B) / P(B) = (P(A)P(B))/P(B) = P(A).\]
+\[P(A|B) = \frac{P(A,B)}{P(B)} = \frac{(P(A)P(B))}{P(B)} = P(A).\]
 
 There may also be situations where two variables become independent if the state of a third variable is known, providing conditional independence.
 
@@ -137,7 +139,7 @@ It is normal to use the short-hand notation $p(x)$ for the probability of a valu
   
   #+ATTR_LATEX: :options [Fisher information]
   #+BEGIN_definition
-  Given a abbr:pdf, $p$, for a random variable, $X$, which is parameterised by a variable $\theta$, $f(X, \theta)$, the /score/, $V$ of the abbr:pdf is defined
+  Given a abbr:pdf, $p$, for a random variable, $X$, which is parameterised by a variable $\theta$, the /score/, $V$ of the abbr:pdf is defined
   \begin{equation}
   \label{eq:probability:score}
   V(\theta, X) = \frac{\partial}{\partial X} \log p(X, \theta).
@@ -149,7 +151,7 @@ It is normal to use the short-hand notation $p(x)$ for the probability of a valu
   \end{equation}
   #+END_definition
 
-  Knowledge of the Fisher information for a given distribution is particuarly valuable in selecting an /uninformative prior/ (see section ref:sec:probability:priors:uninformative) when designing a Bayesian  analysis, where it can be valuable for the prior probability distribution to contribute no information to the inference.
+  Knowledge of the Fisher information for a given distribution is particularly valuable in selecting an /uninformative prior/ (see section ref:sec:probability:priors:uninformative) when designing a Bayesian  analysis, where it can be valuable for the prior probability distribution to contribute no information to the inference.
 
   #+ATTR_LATEX: :options [Shannon information]
   #+BEGIN_definition
@@ -201,7 +203,7 @@ D_{\text{SJ}} (P, Q) = \frac{1}{2} D_{\text{KL}}(P,Q) + \frac{1}{2} D_{\text{KL}
   \label{sec:probability:priors}
 
   The /prior/ probability distribution is perhaps the characterising feature of the Bayesian approach to statistics, whereby the state of belief prior to any observation being made is encoded in a probability distribution.
-Bayes's Theorem allows the /updating/ of our state of belief, with the prior distribution being updated by data collected from observation or experiment.
+Bayes Theorem allows the /updating/ of our state of belief, with the prior distribution being updated by data collected from observation or experiment.
 
 ** The least informative priors
    :PROPERTIES:
@@ -232,7 +234,7 @@ A /Jeffreys Prior/ which will be invariant under reparameterisation of parameter
 p(\vec{\theta}) = \sqrt{\det{I(\vec{\theta})}}
 \end{equation}
 
-[fn:invariance] It's worth noting that in probability and statistics this property is known as \emph{invariance}, but in other areas of mathematics and physics is more likely to be called \emph{covariance}, for example in general relativity.
+[fn:invariance] It is worth noting that in probability and statistics this property is known as \emph{invariance}, but in other areas of mathematics and physics is more likely to be called \emph{covariance}, for example in general relativity.
 
 * Feature spaces and Kernels
   \label{sec:probability:features}
@@ -284,7 +286,7 @@ When expressed in this form we can call the probability distribution a belief ne
 
 As a concrete (if rather naive) example, consider a situation in which observations are made continuously over the whole sky with two detectors. 
 One is sensitive to abbr:gw emission, and the other to gamma ray emission.
-An observing program is estabilised to analyse transient signals detected with one or both of these telescopes, with the belief that abbr:gw bursts can be produced by either a abbr:bns coalesence, or a abbr:bbh coalesence.
+An observing program is established to analyse transient signals detected with one or both of these telescopes, with the belief that abbr:gw bursts can be produced by either a abbr:bns coalescence, or a abbr:bbh coalescence.
 
 A simple model is constructed which contains four variables
 1) $\Gamma \in \{ 0, 1 \}$ which takes the value $1$ iff a abbr:sgrb is detected,
@@ -402,7 +404,7 @@ where $\mathrm{pa}(x)$ represents the parental set of the variable $x$; that is,
    Two graphs are Markov equivalent if they both represent the same set of conditional independence statements.
    #+END_definition
 
-   Clearly some method to determine this graphically is warranted. To do so it is helpful to define a (rather judgementally-named) property:
+   Clearly some method to determine this graphically is warranted. To do so it is helpful to define a (rather judgmentally-named) property:
 
    #+ATTR_LATEX: :options [Immorality]
    #+BEGIN_definition
@@ -420,14 +422,12 @@ where $\mathrm{pa}(x)$ represents the parental set of the variable $x$; that is,
   :END:
   \label{sec:probability:inference}
   In section ref:sec:probability:structured I introduced a probabilistic model which consisted of the joint probability of all of the model parameters.
-  Such a model if some of the quantities in the model are unknown, and therefore the probability of some of the modelled outcomes can be calculated from the model.
-
   Taking the example of joint abbr:gw and gamma ray observations, if we know the probability that at any given time there will be a abbr:bns event, we can infer the probability that a abbr:sgrb and a abbr:gw burst will occur.
   A model of this form is often considered a "forward model", in that it predicts the probability of an observable, and calculation through the graph follows the arrows.
   While such forward models are of considerable utility when attempting to make predictions about unknown variables, often with pre-existing data, they are unable to answer a question such as "given that I have seen a abbr:gw, but no abbr:sgrb, what is the probability that I have observed a abbr:bbh event?".
   In order to answer such a question we must traverse the graphical model /backwards/, against the direction of the arrows. This process is known as /inference/.
 
-  In order to produce the /reverse model/ we can turn to Bayes theorem (theorem ref:the:probability:bayes-theorem). This allows us to derive an expression for $p(B = 1 | G = 1, \Gamma = 0)$, that is, the probability that we observe a abbr:bbh given that we've observed a abbr:gw but no abbr:sgrb.
+  In order to produce the /reverse model/ we can turn to Bayes Theorem (theorem ref:the:probability:bayes-theorem). This allows us to derive an expression for $p(B = 1 | G = 1, \Gamma = 0)$, that is, the probability that we observe a abbr:bbh given that we've observed a abbr:gw but no abbr:sgrb.
   \begin{align}
   \label{eq:probability:inference:bayes-example}
   p(B &= 1 | G = 1, \Gamma = 0) = \frac	{p(B=1,G=1,\Gamma=0)}{p(G=1, \Gamma=0)} \\
@@ -439,7 +439,7 @@ where $\mathrm{pa}(x)$ represents the parental set of the variable $x$; that is,
   \end{align}
   the probability $p(B = 1 | G = 1, \Gamma = 0)$ is called the /posterior probability of $B$/.
 
-  Inference which is based on Bayes theorem, is a method of statistical inference which is well-suited to situations where a body of evidence grows over time, with new results updating previous understanding of some phenomenon, and as such is well suited to the analysis of experimental data.
+  Inference which is based on Bayes Theorem, is a method of statistical inference which is well-suited to situations where a body of evidence grows over time, with new results updating previous understanding of some phenomenon, and as such is well suited to the analysis of experimental data.
   It is well suited to the analysis of abbr:gw data, where measurements are frequently made at different sensitivities during different observing runs.
 
   If we have some hypothesis, some parameters of the hypothesis, $I$ (also called hyperparameters), and some experimental data, we can
@@ -449,7 +449,6 @@ where $\mathrm{pa}(x)$ represents the parental set of the variable $x$; that is,
     \label{eq:probability:inference:bayes-theorem-hypothesis}
     p(\text{hypothesis} | \text{data}, I) \propto p( \text{data} | \text{hypothesis}) \times p(\text{hypothesis}, I)
   \end{equation}
-
   where $p(\text{data} | \text{hypothesis})$ represents the likelihood; the probability that a given datum would be observed given the hypothesis, and $p(\text{hypothesis}|I)$ represents the /prior/ probability, which represents the understanding of the probability of the hypothesis before the experiment was conducted. $p(\text{hypothesis} | \text{data}, I)$ is the /posterior/
   probability of the hypothesis cite:Sivia2006.
 
@@ -534,8 +533,8 @@ As a result the relative \emph{importance} of each sample needs to be taken into
 \label{fig:probability:importance-sampling}
 \end{figure}
 
-With /importance sampling/, rather than sampling from the complicated distribution, $P$, (the /target distribution/), we instead sample from a distribution, $Q$, which we do know how to sample from (such as a normal or a uniform distribution) (see figure ref:fig:probability:importance-sampling for a cartoon illustrating this arrangement).
-(Since we do not necessarily know the normalisation of $P$ or $Q$ we can instead sample and evaluate within a scalar multiple, $Z$, such that $ZP^*(x) = P(x)$.
+With /importance sampling/, rather than sampling from the complicated distribution, $P$, (the /target distribution/), we instead sample from a distribution, $Q$, which we do know how to sample from, such as a normal or a uniform distribution (see figure ref:fig:probability:importance-sampling for a cartoon illustrating this arrangement).
+Since we do not necessarily know the normalisation of $P$ or $Q$ we can instead sample and evaluate within a scalar multiple, $Z$, such that $ZP^*(x) = P(x)$.
 We then draw the samples $\setbuilder{\vec{x}_r | r \in 1, \dots, R}$ from $Q$, and evaluate $Q(x)$ and $P(x)$ for each sample. 
 In regions where $Q(x)$ is greater than $P(x)$ the samples will over-represent $P(x)$ (and vice versa when $Q(x)$ is smaller than $P(x)$). 
 To account for this each sample is re-weighted to adjust its importance by the ratio
@@ -545,7 +544,7 @@ so then equation ref:eq:probability:mcmc:expectation becomes
 
 While importance sampling is an improvement over uniform sampling, it will fail to converge in situations where the target distribution contains many separated peaks, and will struggle to explore a high-dimensional space efficiently.
 
-/Rejection sampling/ uses a similar principle to importance sampling, using a /proposal distribution/, $Q(x)$, which can be sampled directly, to generate the samples (see figure ref:fig:probability:importance-sampling for an illustration of how $P$ and $Q$ relate).
+/Rejection sampling/ uses a similar principle to importance sampling, using a /proposal distribution/, $Q(x)$, which can be sampled directly, to generate the samples (see figure ref:fig:probability:rejection-sampling for an illustration of how $P$ and $Q$ relate).
 The method assumes we know the value of a constant, $c$ such that $cQ^*(x) > P^*(x) \forall x$.
 
 \begin{figure}
@@ -574,12 +573,12 @@ The method assumes we know the value of a constant, $c$ such that $cQ^*(x) > P^*
 \end{tikzpicture}
 \caption[Cartoon of rejection sampling]{Similarly to importance sampling, in rejection sampling the arbitrarily complicated distribution, $P^*(x)$ [depicted as a solid line], is not directly sampled, but instead a simpler distribution, the proposal distribution, $Q^*(x)$ [depicted as a dashed line], such as a normal distribution, is sampled. In contrast to importance sampling a constraint is placed on $Q^*(x)$ such that for a constant $c$ $cQ^*(x) > P(x) \forall x$. 
 }
-\label{fig:probability:importance-sampling}
+\label{fig:probability:rejection-sampling}
 \end{figure}
 
 This method requires two random numbers to be generated: a sample $x$ is drawn from $Q(x)$, and $cQ(x)$ is calculated.
 Then a variable $u$ is drawn from the uniform distribution $U(0, cQ^*(x))$.
-If $u > P^*(x)$ (that is, it lies in the region between $P*(x)$ and $Q^*(x)$, it is rejected, and discarded.
+If $u > P^*(x)$ --- that is, it lies in the region between $P^*(x)$ and $Q^*(x)$---it is rejected, and discarded.
 Otherwise, it is accepted, and kept.
 This method ensures that only points which lie within $P^*(x)$ are retained, preventing over-representation, and also that the density of samples is proportional to $P^*(x)$ thanks to the uniform distribution of samples under $P^*(x)$.
 
@@ -588,7 +587,7 @@ Rejection sampling is fundamentally similar to /Buffon's Needle Problem/, in whi
 Rejection sampling will struggle to converge if the target and proposal distributions are not similar, as the region $[P^*(x), Q^*(x)]$ between the two functions will be large, so the probability of generating samples with $u<P^*(x)$ will be small. 
 The method is also impractical in more than one-dimension, as similarly, the probability of generating a point within the volume described by $P^*(x)$ will diminish with growing dimensionality.
 
-The deficiencies of these two methods lead to the development of a more sophisticated approach: /Markov Chain Monte Carlo/.
+The deficiencies of these two methods lead to the development of a more sophisticated approach: abbr:mcmc.
 # #+ATTR_LATEX: :option [Stochastic process]
 # #+BEGIN_definition
 # # For a probability space $(\Omega, P, \mathcal{F})$
@@ -607,7 +606,7 @@ As noted previously, rejection sampling struggles to efficiently sample a distri
 In order to address this failing, the /Metropolis-Hastings/ algorithm constructs a proposal distribution which depends on the sampling location (or more precisely, the current /state/ of the sampler).
 This proposal distribution will often be something simple, like a Normal distribution centred on the current $x_t$ being considered.
 
-As with rejection sampling, a tentative state, $x'$ is drawn from $Q^*(x', x_t)$, given the current state, $x_t$.
+As with rejection sampling, a tentative state, $x'$ is drawn from a proposal distribution, $Q^*(x', x_t)$, given the current state, $x_t$.
 The ratio
 \begin{equation}
 \label{eq:probability:metropolis:acceptance}
@@ -620,8 +619,8 @@ If the new state is accepted it becomes the current state (i.e. $x_{t+1} = x'$);
 In the case that a symmetrical proposal distribution is chosen, such as a normal distribution, the second ratio in equation ref:eq:probability:metropolis:acceptance will always be equal to $1$, providing a simpler expression for $a$, which will be consequently faster to evaluate.
 The behaviour of the Metropolis-Hastings algorithm produces a stochastic process with the Markov property.
 
-In order to improve the computational efficiency of an MCMC algorithm the gradient information of the problem can be taken into account, which will guide the process to the regions of high probability.
-These methods, known as /Hamiltonian/ MCMC methods can allow faster convergence, and therefore reduced computation perform Bayesian inference.
+In order to improve the computational efficiency of an abbr:mcmc algorithm the gradient information of the problem can be taken into account, which will guide the process to the regions of high probability.
+These methods, known as /Hamiltonian/ MCMC methods can allow faster convergence, and therefore reduce the number of computations required to perform Bayesian inference.
 The No-U-Turns sampler cite:2011arXiv1111.4246H is an example of such a method which includes various algorithmic refinements to allow the sampler to work efficiently in hierarchical models (see section
 ref:sec:probability:hierarchical) without requiring manual tuning.
 
@@ -640,46 +639,46 @@ A model such as this, which has two layers of inference, is comparatively easy t
 
 Hierarchical models are gaining popularity in other areas of abbr:gw research, principally black hole population inference cite:2017MNRAS.471.2801S,2012PhRvD..86l4032A.
 
-* Bayesian Linear regression
-  :PROPERTIES:
-  :CUSTOM_ID: sec:probability:blr
-  :END:
-  \label{sec:probability:regression}
+# * Bayesian Linear regression
+#   :PROPERTIES:
+#   :CUSTOM_ID: sec:probability:blr
+#   :END:
+#   \label{sec:probability:regression}
 
-To motivate the development of Gaussian processes we first present the problem of linear regression, and how this task may be performed in a Bayesian framework.
+# To motivate the development of Gaussian processes we first present the problem of linear regression, and how this task may be performed in a Bayesian framework.
 
-A very simple linear model has the form
+# A very simple linear model has the form
 
-#+NAME:eq-simple-linear-model
-\begin{equation}
-  y_i = m x_i + c
-\end{equation}
+# #+NAME:eq-simple-linear-model
+# \begin{equation}
+#   y_i = m x_i + c
+# \end{equation}
 
-for each observation, $y_i$, which are made at a location in parameter space $x_i$, where $m, c \in \mathbb{R}$ are the parameters of our model. 
-This model attempts to describe the observations by fitting a polynomial of order one to the data, however, we may reasonably want to generalise our model to allow higher orders of polynomial, and doing so achieve a model of the form
+# for each observation, $y_i$, which are made at a location in parameter space $x_i$, where $m, c \in \mathbb{R}$ are the parameters of our model. 
+# This model attempts to describe the observations by fitting a polynomial of order one to the data, however, we may reasonably want to generalise our model to allow higher orders of polynomial, and doing so achieve a model of the form
 
-\begin{equation}
-\label{eq:less-simple-linear-model}
-  y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \cdot \vec{w}
-\end{equation}
+# \begin{equation}
+# \label{eq:less-simple-linear-model}
+#   y_i = \sum_{d=1}^p w_d x_{d,i} = \vec{x}_i \cdot \vec{w}
+# \end{equation}
 
-where the various parameters are now folded into a vector, $\vec{w}$, which is called the weight vector. 
-A further generalisation may be made, to allow for more complicated forms of model, by substituting the vector $\vec{x}$ for a matrix $\mat{X}$, the /design matrix/, which can take an arbitrary form,
-so our model becomes
+# where the various parameters are now folded into a vector, $\vec{w}$, which is called the weight vector. 
+# A further generalisation may be made, to allow for more complicated forms of model, by substituting the vector $\vec{x}$ for a matrix $\mat{X}$, the /design matrix/, which can take an arbitrary form,
+# so our model becomes
 
-$$\label{eq:general-noiseless-linear}
-  \vec{y} = \mat{X} \vec{w}$$
+# $$\label{eq:general-noiseless-linear}
+#   \vec{y} = \mat{X} \vec{w}$$
 
-Finally, we can introduce a term to account for any uncertainty in the measurement of the observations, $\vec{\epsilon}$, giving a complete linear model
+# Finally, we can introduce a term to account for any uncertainty in the measurement of the observations, $\vec{\epsilon}$, giving a complete linear model
 
-$$\label{eq:linear-model}
-  \vec{y} = \mat{X} \vec{w} + \vec{\epsilon}$$
+# $$\label{eq:linear-model}
+#   \vec{y} = \mat{X} \vec{w} + \vec{\epsilon}$$
 
-The quantities $\vec{y}$, $\mat{X}$, and $\vec{\epsilon}$ are well
-understood, but to have a complete and useful model we must find the
-values of the model parameters which best explain the data; this problem
-is regression. In a Bayesian framework we must assign a prior to each
-parameter, which represents our pre-existing knowledge of the situation.
-A sensible choice might be a normal, or /Gaussian/, distribution, with a
-mean of zero, and a variance $\sigma_i^2$:
-$$w_i \sim \mathcal{G}(0, \sigma_i^2).$$
+# The quantities $\vec{y}$, $\mat{X}$, and $\vec{\epsilon}$ are well
+# understood, but to have a complete and useful model we must find the
+# values of the model parameters which best explain the data; this problem
+# is regression. In a Bayesian framework we must assign a prior to each
+# parameter, which represents our pre-existing knowledge of the situation.
+# A sensible choice might be a normal, or /Gaussian/, distribution, with a
+# mean of zero, and a variance $\sigma_i^2$:
+# $$w_i \sim \mathcal{G}(0, \sigma_i^2).$$

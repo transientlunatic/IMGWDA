@@ -1,37 +1,37 @@
 The morphologies of abbr:gw signals can be divided roughly into three categories cite:2009LRR....12....2S, which correspond approximately to the classifications of the astrophysical sources which produce them.
 
 + Continuous :: signals are expected to be produced by sources over long periods of time. 
-  The primary source of continuous sources for gls:aLIGO are expected to be abbr:gw pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:LISA mission, the radiation from inspiralling binary systems should also be detectable.
+  The primary source of continuous sources for gls:ligo are expected to be abbr:gw pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:lisa mission, the radiation from inspiralling binary systems should also be detectable.
 + Stochastic :: signals are expected to constitute a background of abpl:gw,  produced by the black holes at the centres of galaxies cite:1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S, and from the Universe's inflationary period cite:1988PhRvD..37.2078A.
-+ Transient :: signals are strong /bursts/ of abpl:gw over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of this powerful analysis technique. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalesences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:LISA regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
++ Transient :: signals are strong /bursts/ of abpl:gw over a period of seconds or less. The sources of transient signals are normally further sub-divided. /Unmodelled/ sources, where there are insufficient theoretical models to use matched filtering techniques to search for signals in detector data. /Modelled/ sources, which currently encompass abbr:cbc sources are sufficiently well understood, in contrast, to allow the use of matched filter searches. These are sources which are primarily expected in the advanced LIGO passband, with compact binary coalescences and supernovae being major targets for burst searches in the advanced observing runs, however there are prospects for burst sources in the gls:lisa regime, for example from hyperbolic encounters between compact objects and stars or other compact objects  cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G. 
 
 * Continuous wave sources
   \label{sec:sources:continuous}
 
 # It's very weird; right now as I'm writing parts of this chapter I'm in the same lecture theatre as Bell. 2019-02-27 (JimFest).
-The discovery of pulsars by Bell and Hewish in 1967 was an unexpected discovery for radio astronomy---objects which produce beams of radiation, and rotate rapidly, like a lighthouse. 
-Not long after their discovery it became apparent that they were a specific form of abpl:ns---the tightly-packed remnant of a massive star which has ended its life as a supernova.
+The discovery of pulsars by Bell and Hewish in 1967 was an unexpected discovery for radio astronomy---objects which produce beams of radiation, and rotate rapidly.
+Not long after their discovery it became apparent that they were a specific form of abpl:ns --- the tightly-packed remnant of a massive star which has ended its life as a supernova.
 
 Any rotating mass quadrupole (see equation ref:eq:intro:gr:mass-quadrupole) will produce abpl:gw as it rotates (see equation ref:eq:intro:gr:quadrupole2strain), and so it follows that a dense, massive object, such as a neutron star, will produce abpl:gw as they rotate, if they possess any mass asymmetry.
 Further, thanks to their highly stable rotation speed, the abbr:gw emission from abpl:ns ought to be produced continuously at a very stable frequency.
 As abbr:gw emission occurs in the quadrupole [(2,2)] mode [fn:gr-quadrupole], this emission should be at twice the rotational frequency of the abbr:ns.
 
 The rotation frequency of most pulsars is well-measured by radio observations, making these attractive prospective sources for ground-based abbr:gw detectors, such as gls:ligo and gls:virgo. 
-Indeed, targetted searches for abpl:gw from pulsars at twice their rotation frequency have been conducted since the ``initial'' detector period, using data from gls:ligo, gls:geo600, and later gls:virgo (which are summarised in cite:2014ApJ...785..119A), and continued into the advanced era cite:2017ApJ...839...12A,2019PhRvD..99l2002A.
+Indeed, targeted searches for abpl:gw from pulsars at twice their rotation frequency have been conducted since the ``initial'' detector period, using data from gls:ligo, gls:geo600, and later gls:virgo (which are summarised in cite:2014ApJ...785..119A), and continued into the advanced era cite:2017ApJ...839...12A,2019PhRvD..99l2002A.
 
 Pulsar spins are known to decelerate over time, through a process known as spin-down. 
 This process is often attributed to energy loss through gravitational radiation. 
-The spin-down limit of a pulsar is the abbr:gw strain which corresponds to this scenario, where the entirity of the energy being lost is radiated as abbr:gw, and is defined as
+The spin-down limit of a pulsar is the abbr:gw strain which corresponds to this scenario, where the entirety of the energy being lost is radiated as abbr:gw, and is defined as
 \begin{equation}
 \label{eq:sources:cw:spindown}
 h = \left( \frac{5}{2} \frac{G I_{zz} | \dot{f} | }{c^{3} d^{2} f } \right)^{\frac{1}{2}},
 \end{equation}
 for a pulsar with a spin frequency $f$, moment-of-inertia $I_{zz}$, at a distance $d$ from the observer.
 
-To date no continuous abbr:gw source has been detected, but the failure to measure abpl:gw from known pulsars has allowed tight limits to be placed on the ellipticity of 222 known radio pulsars cite:2019arXiv190208507T, with the tightest limit that placed on PSR J$0711\!-\!6830$: $1.2\ee{-8}$. 
+To date no continuous abbr:gw source has been detected, but the failure to measure abpl:gw from known pulsars has allowed tight limits to be placed on the ellipticity of 222 known radio pulsars cite:2019arXiv190208507T, with the tightest limit placed on PSR J$0711\!-\!6830$: $h=1.2\ee{-8}$. 
 # The latest results, from the analysis of the first two observing runs' data from advanced gls:ligo, show that the slow-down of the Crab pulsar cannot be explain
 
-Searches made for pulsars at around twice their rotation frequency were augmented with targetted searches for emission at the rotation frequency following the second observing run cite:2019arXiv190208507T. 
+Searches made for pulsars at around twice their rotation frequency were augmented with targeted searches for emission at the rotation frequency following the second observing run cite:2019arXiv190208507T. 
 This is possible if the rotating neutron star is either biaxial or triaxial, and exhibits free precession. 
 Emission at the rotation frequency may also be possible in abpl:ns with pinned superfluid interiors cite:2010MNRAS.402.2503J.
 
@@ -40,15 +40,13 @@ Searches for non-tensorial polarisations of abbr:gw were conducted on data from 
 
 In comparison to transient signals, the waveforms for continuous wave sources are generally (semi-)analytical; the waveform model used for the search for the (2,2)-mode emission in cite:2019arXiv190208507T for example has the form 
 
-\begin{equation}
-\label{eq:sources:cw:signalmodel}
 \begin{align}
-h_{22}(t) = - C_{22} \big[ & F_{+}^{D}(\alpha, \delta, \psi, t) (1 + \cos^{2} \imath) \cos(2 \Phi(t) + \Phi_{22}^C) \\
-+ 2 & F_{\times}^{D} (\alpha, \delta, \psi, t) \cos \imath \sin( 2 \Psi(t) + \Psi_{22}^{C} )
+\label{eq:sources:cw:signalmodel}
+h_{22}(t) = - C_{22} \big[ & F_{+}^{D}(\alpha, \delta, \psi, t) (1 + \cos^{2} \imath) \cos(2 \Phi(t) + \Phi_{22}^C) \nonumber \\
++ 2 & F_{\times}^{D} (\alpha, \delta, \psi, t) \cos \imath \sin( 2 \Phi(t) + \Phi_{22}^{C} )
 \big] ,
 \end{align}
-\end{equation}
-for $C_{22}$ the amplitude of the wave, and $\Psi_{22}^{C}$ its initial phase at some specific time.
+for $C_{22}$ the amplitude of the wave, and $\Phi_{22}^{C}$ its initial phase at some specific time.
 $\Phi(t)$ is the rotational phase of the source, and $\imath$ is the inclination of the source to the observer.
 In contrast to the signal from transient sources, continuous waves can be observed over long periods of time, and the observed signal will be convolved with the antenna pattern of the detector, $F_{+,\times}^{D}$, which varies with the sky position of the source, $(\alpha, \delta)$, the polarisation angle of the source, and thanks to the relative movement of the source and the detector, time, $t$.
 
@@ -60,9 +58,9 @@ In contrast to the signal from transient sources, continuous waves can be observ
 In addition to transient and continuous sources of abpl:gw, which originate from specific locations in the sky, we expect that a /background/ of abpl:gw should be observable throughout the sky (with an approximately isotropic distribution). The abbr:gw background is expected to cover the entire frequency range at some level, from extremely low frequencies (around an inverse Hubble-time) to frequencies exceeding $\SI{e14}{\hertz}$.
 
 The abbr:gw background is approximately analogous to the abbr:cmb.
-This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
+This is the near-isotropic electromagnetic emission discovered in 1964 as constant background radio emission across the sky cite:1965ApJ...142..419P, which originates from the epoch of recombination, when atoms started to form, and the universe became optically thin. 
 
-Since we expect that this background would be continuous and isotropic, it is likely to fall into the part of the measured abbr:gw data which is treated as noise by the majority of analyses.
+This abbr:gw would be the result of numerous unresolved and weak signals, and as a result this background would be continuous and approximately isotropic cite:2017LRR....20....2R, it is likely to fall into the part of the measured abbr:gw data which is treated as noise by the majority of analyses.
 The noise produced by the detector will be greater than this signal, and so detection of a background is also reliant on correlations between a network of detectors.
 This reliance on correlations between a network of detectors significantly affects the sensitivity of the detector network to background sources cite:PhysRevD.88.124032. 
 
@@ -76,13 +74,13 @@ abbr:gw production is not predicted in the early universe by non-inflationary mo
    First-order phase transitions, which occur when the thermodynamic properties of a system are discontinuous (such as the sudden, discontinuous change in the entropy and volume of a liquid as it boils) could also be responsible for the production of abpl:gw in the early universe.
 A number of phase transitions are believed to have occured as, for example, the strong and electroweak forces decoupled cite:2016JCAP...04..001C.
 
-Cosmic strings may also be a viable source of background radiation. 
+Cosmic strings may also be a viable source of background radiation cite:1997stgr.proc....3A. 
 These are topolgical defects which are caused by symmetry phase transitions in a number of grand unified theories. 
 As these defects move they interact with each other to form kinks and cusps, which can be the source of bursts of gravitational radiation.
 Over a sufficiently long period the signals from these events can superimpose to form apart of the abbr:gw background.
 
 The inspiral of the very large number of compact binary systems in the universe will also superimpose to contribute to this background radiation. 
-These systems include galactic white dwarf binaries, which are expected to produce such a strong signal that they will limit the sensitivity of the gls:lisa detector, as well as abbr:bbh and abbr:bns systems.
+These systems include galactic white dwarf binaries, which are expected to produce such a strong signal that they will limit the sensitivity of the gls:lisa detector, as well as abbr:bbh and abbr:bns systems cite:2019MNRAS.tmp.2426L,2017CQGra..34x4002R.
 
 Searches for a stochastic background have been made using the data from the advanced gls:ligo detectors during their first observing run cite:PhysRevLett.118.121101.
 To date no evidence of a background have been identified, which has allowed an upper limit to be placed on its strength. 
@@ -98,18 +96,19 @@ Additional limits have been placed thanks to astrometric measurements of active 
 \end{figure}
 
 The moment of inertia tensor of a two-body system will lead to non-spherical motion within the system, which will in turn produce gravitational radiation, and gradual orbital decay cite:1995PhRvL..74.3515B. 
-This effect was first observed in the Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W, a system containing two neutron stars---one of which is a pulsar---which, through precise pulsar timing measurements, were been inferred to be  inspiralling, and producing abpl:gw. This observation was the first strong, indirect evidence for the reality of abbr:gw production.
+This effect was first observed in the Hulse-Taylor pulsar cite:1975ApJ...195L..51H,2005ASPC..328...25W, a system containing two neutron stars---one of which is a pulsar---which, through precise pulsar timing measurements, were inferred to be  inspiralling, and producing abpl:gw. This observation was the first strong, indirect evidence for the reality of abbr:gw production.
 
 The binary system will continue to lose energy via gravitational radiation until it reaches its /innermost stable circular orbit/, after which the objects will merge, and eventually coalesce. 
 These coalescence events are powerful sources of abpl:gw, and the chirp produced by the coalescence may be sufficiently luminous to be detected by current, advanced detectors. 
 The frequency spectra of both a binary neutron star and a binary black hole coalescence are plotted in figure ref:fig:sources:cbc:spectrum, compared to the sensitivity curve of the advanced gls:ligo detectors.
-Attempts to detect signals from such coalescing systems were also made during the initial run of the detectors cite:2012PhRvD..85h2002A.
+Attempts to detect signals from such coalescing systems were also made during the initial run of the detectors, prior to their being upgraded to advanced gls:ligo and advanced gls:virgo cite:2012PhRvD..85h2002A.
 These would be characterised by the distinct pattern of the pseudo-sinusoidal inspiral waveform, followed by a bright burst of radiation, and then a sinusoidal /ringdown/ as the post-coalescence remnant vibrates cite:2009LRR....12....2S.
 Binary coalescences are thus classified as transient, or burst sources.
 
-The potential objects which may be involved in an observable binary
-coalescence are black holes and neutron stars: both compact
-objects. White dwarf binaries may also be observable, and these
+The potential objects which may be involved in an binary
+coalescence observable by the current generation of ground-based detectors are black holes and neutron stars: both compact
+objects. 
+In the future white dwarf binaries may also be observable at lower abbr:gw frequencies, and these
 systems are expected to be much more abundant than either neutron star
 or black hole binaries, but their emission lies within the passband of
 gls:lisa ---a planned space-based abbr:gw observatory. These
@@ -122,13 +121,13 @@ phenomena to be made in their background.
 
 Glspl:smbbh are believed to collide and merge as part of the merging processes of galaxies. 
 Again these binaries should produce signals within the passband of gls:lisa cite:2012CQGra..29l4016A, 
-and should be so spectacuarly strong that they are visible in the gls:lisa
+and should be so spectacularly strong that they are visible in the gls:lisa
 data without the \emph{matched filtering} techniques which are required to extract other signals from the data cite:2009LRR....12....2S. 
 The observation of these objects would provide much-needed information about the evolution of galaxies and of super-massive black holes.
 
 Inspiralling compact binaries can act as a cosmological distance measure: they have two parameters, their period, and the rate at which that period changes (which is calculated by measuring the gls:chirp-mass of the system) which characterise the system, and the amplitude of the abpl:gw produced is dependent only on the chirp mass of the source, and the distance from the observer to the object. 
-As a result it is possible to determine the distance to an inspiralling system simply by determining the chirp mass and measuring the brightness of the event. 
-This would provide an additional means of measuring cosmic acceleration, and, in the gls:LISA era, this would allow the measurement of acceleration at high redshift using high-mass binary black holes.
+As a result it is possible to determine the distance to an inspiralling system simply by determining the chirp mass and measuring the brightness of the event cite:2017AnP...52900209A. 
+This would provide an additional means of measuring cosmic acceleration, and, in the gls:lisa era, this would allow the measurement of acceleration at high redshift using high-mass binary black holes.
 
 
 ** Dynamics of compact binaries
@@ -138,7 +137,7 @@ This would provide an additional means of measuring cosmic acceleration, and, in
 
 
    The dynamics of binary systems are well-understood in Newtonian mechanics, where the two-body problem can be reduced to a pair of independent one-body problems. 
-In contrast no exact solutions have been found to this problem in abbr:gr; while the Schwarzschild solution cite:1916AbhKP1916..189S is sufficient for some situations where the mass of one of the two bodies is much smaller than the other (where the problem is effectively a single one body problem) it is insufficient for systems such as abbp:bbh.
+In contrast no exact solutions have been found to this problem in abbr:gr; while the Schwarzschild solution cite:1916AbhKP1916..189S is sufficient for some situations where the mass of one of the two bodies is much smaller than the other (where the problem is effectively a one body problem) it is insufficient for systems such as abbp:bbh.
 
 When the two component bodies of the system are at large separation (and their local velocities are much smaller than the speed of light) a abbr:pn expansion can be used.
 In this regime the two objects are treated as point-particles with slow internal dynamics. 
@@ -181,7 +180,7 @@ The abbr:pn correction to the Newtonian limit on the order $\mathcal{O}(1/c^{n})
 
 
    The gravitational waveform for a compact binary system can be split into three broad periods, which are each associated with the dominant energy loss mechanisms within the system. 
-These are illutrated on a plot of the time-domain waveform of a abbr:bbh signal in figure ref:fig:sources:cbc:bbh-cartoon.
+These are illustrated on a plot of the time-domain waveform of a abbr:bbh signal in figure ref:fig:sources:cbc:bbh-cartoon.
 The first, and longest stage of the binary's evolution is the /gls:inspiral/. Gravitational radiation carries energy out of the binary system, causing the orbit to slowly decay.[fn:generalbinary] 
 For the majority of the inspiral the abpl:gw produced have a very low amplitude, and are to weak to be detected by the current generation of detectors, however this amplitude increases as the radius of the orbits decrease.
 Eventually this amplitude becomes observable, for a period ranging from minutes (in the case of abbr:bns events cite:2017PhRvL.119p1101A), to fractions of a second (for most abbr:bbh events cite:2016PhRvL.116f1102A).
@@ -190,7 +189,7 @@ As the binary reaches its innermost stable circular orbit the system evolves fro
 At this point the two black holes /plunge/ towards each other, and then coalesce. 
 This period contains the peak emission of abbp:gw. 
 
-Finally, the single black hole which remains will radiate energy through the /gls:ringdown/ period, during which the black hole oscillates, radiating energy until it becomes a stable Kerr black hole.
+Finally, the single black hole which remains will radiate energy through the /ringdown/ period, during which the black hole oscillates, radiating energy until it becomes a stable Kerr black hole.
 
 [fn:generalbinary] This in fact occurs in /all/ orbits, however most objects will not get close enough that the current generation of detectors will be able to observe the low-amplitude radiation produced by such systems. In the future, however, inspirals of objects such as white dwarf binaries are expected to be noise sources for space-based detectors, such as gls:lisa.
 
@@ -211,7 +210,7 @@ Coordinate singularities represented the second major challenge to the field; in
 Additionally, finding a formalism for the representation of the field equations throughout the evolution of the simulation which would remain stable had proved challenging.
 
 By the mid-2000s a number of breakthroughs occured. 
-In 2004 Pretorius cite:2005CQGra..22..425P introduced the ``generalised harmonic coordinate'' formalism which remained stable into the evolution of the abbr:BBH merger.
+In 2004 Pretorius cite:2005CQGra..22..425P introduced the ``generalised harmonic coordinate'' formalism which remained stable into the evolution of the abbr:bbh merger.
 This was followed cite:2005PhRvL..95l1101P by the demonstration of an abbr:nr simulation which evolved the abbr:bbh through the inspiral and merger to the ringdown produced in this formalism.
 Late in 2005 Campanelli /et al./ cite:2006PhRvL..96k1101C demonstrated the use of an algorithm which overcame the difficulties of coordinate singularities inherent in black hole simulations.
 These had previously been overcome through the ``excission'' of the black hole, where a boundary was placed inside the black hole event horizon, excising its interior, containing the singularity, from the computational domain.
@@ -231,7 +230,7 @@ A number of codes are used to produce abbr:nr waveforms for the advanced-era abb
 + SPEC :: The abbr:spec is a abbr:nr method which leverages spectral methods during the evolution of the black hole spacetime in abbr:bbh simulations, in an attempt to circumvent instabilities which are present when using finite difference methods cite:2000PhRvD..62h4032K. 
 The code is capable of generating the merger and ringdown component of the abbr:gw waveform for a generic abbr:bbh configuration cite:2009PhRvD..80l4010S.
 + BAM ::  The abbr:bam code uses a modified abbr:bssn regime cite:2004PhRvL..92u1101B,2008PhRvD..77b4027B,2004PhRvL..92u1101B,1999IJMPD...8...85B.
-+ MAYA :: The MAYA code is based on the abbr:bssn formalism with a moving puncture gauge condition.
++ MAYA :: The MAYA code is based on the abbr:bssn formalism with a moving puncture gauge condition cite:2016CQGra..33t4001J.
 
 ** Catalogues
    \label{sec:sources:cbc:catalogues}
@@ -242,7 +241,7 @@ The code is capable of generating the merger and ringdown component of the abbr:
     The Georgia Tech waveform catalogue cite:2016CQGra..33t4001J is composed of 452 waveforms which were generated using the MAYA abbr:nr code at the Centre for Relativistic Astrophysics at Georgia Institute of Technology.
 The catalogue includes both non-spinning simulations for quasi-circular systems with mass-ratios $q \leq 15$, and precessing quasi-circular systems with $q \leq 8$. 
 Within the set of waveforms derived from spinning systems are two subsets: aligned-spin, where the spin axis of each black hole is parallel to the orbital angular momentum, $\vec{L}$; and precessing, where the spin axes are not parallel to $\vec{L}$. 
-The distribution of abbr:bbh parameters for the waveforms in the cataloue are plotted in the corner plot of figure ref:fig:sources:cbc:nr:gtcoverage.
+The distribution of abbr:bbh parameters for the waveforms in the catalogue are plotted in the corner plot of figure ref:fig:sources:cbc:nr:gtcoverage.
 
 \begin{figure}
 \caption[The coverage of the Georgia Tech numerical relativity waveform catalogue]{The coverage of the Georgia Tech catalogue over the intrinsic physical parameter space of abbr:bbh systems. \label{fig:sources:cbc:nr:gtcoverage}}
@@ -251,7 +250,7 @@ The distribution of abbr:bbh parameters for the waveforms in the cataloue are pl
 
 *** SXS waveform catalogue
     \label{sec:sources:cbc:catalogues:sxs}
-    The SXS waveform catalogue cite:2013PhRvL.111x1104M,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B includes over $400$ waveforms, both spinning and non-spinning. 
+    The SXS waveform catalogue cite:2013PhRvL.111x1104M,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B includes over $400$ waveforms, both spinning and non-spinning, generated using abbr:spec. 
 The coverage of this catalogue is shown in the corner plot of figure ref:fig:sources:cbc:nr:sxscoverage.
 
 \begin{figure}
@@ -275,13 +274,15 @@ The coverage of this catalogue is shown in the corner plot of figure ref:fig:sou
     :END:
     \label{sec:sources:cbc:approximants:imrphenom}
 
-   The gls:imrphenom models take advantage of the three-component structure of abbr:bbh signals (see ref:sec:sources:cbc:waveform); calibration waveforms for the models are produced by a abbr:nr simulation, which is then hybridised with a abbr:pn inspiral waveform (since the abbr:pn is known to be a good approximation for this part of the waveform).
+   The gls:imrphenom models cite:2007CQGra..24S.689A take advantage of the three-component structure of abbr:bbh signals (see ref:sec:sources:cbc:waveform); calibration waveforms for the models are produced by a abbr:nr simulation.
+The calibration waveforms which are produced by abbr:nr are short, and the inspiral is normally calculated for only the last few cycles of the binary.
+In order to make a longer waveform these abbr:nr waveforms are joined to a abbr:pn inspiral waveform (since the abbr:pn is known to be a good approximation for this part of the waveform) in a process called ``hybridisation''.
 For hybridisation to be effective the abbr:pn and abbr:nr waveforms must be well-matched. 
 This match is determined by their integrated squared absolute difference, 
 \begin{equation}
 \delta = \int_{t_{1}}^{t_{2}} \left| \ten{h}^{\text{PN}}(t, \vec{\mu}) - a \ten{h}^{\text{NR}}(t, \vec{\mu}) \right|^{2} \dd{t},
 \end{equation}
-with $\ten{h}^{\text{NR}}$ an abbr:nr-derived waveform, $\ten{h}^{\text{PN}}$ a abbr:pn waveform evaluated at the same parameters, $a$ is an amplitude scaling factor, and $\vec{\mu}$ a vector of extrinsic parameters, $\vec{\mu} = {\phi_{0}, t_{0}}$, the initial phase and start time of the waveform, respectively cite:2008PhRvD..77j4017A.
+with $\ten{h}^{\text{NR}}$ an abbr:nr waveform, $\ten{h}^{\text{PN}}$ a abbr:pn waveform evaluated at the same parameters, $a$ is an amplitude scaling factor, and $\vec{\mu}$ a vector of extrinsic parameters, $\vec{\mu} = \{\phi_{0}, t_{0}\}$, the initial phase and start time of the waveform, respectively cite:2008PhRvD..77j4017A.
 
 The resulting hybridised waveforms are then parameterised in the Fourier domain. 
 These /phenomenological/ waveforms, $u(f)$ take the form
@@ -304,7 +305,7 @@ where $f_{\text{merge}}$, $f_{\text{ring}}$, and $f_{\text{cut}}$ are respective
 The effective phase, $\Psi$, expanded in powers of $f$, is
 \begin{equation}
 \label{eq:source:cbc:imrphenoma:phase}
-\Psi = 2 \pi f t_{0} + \phi_{0} + \sum_{k=0}^{7} \psi_{k} f^{(k-5)/3},
+\Psi = 2 \pi f t_{0} + \phi_{0} + \sum_{k=0}^{7} \phi_{k} f^{(k-5)/3},
 \end{equation}
 with $\phi_{0}$ the phase offset, each of the $\phi_{k}$ values phase parameters, $t_{0}$ the arrival time of the waveform.
 
@@ -314,9 +315,11 @@ Finally, the best-matching amplitudes and phases for the phenomenological wavefo
 The first model to take this approach, IMRPhenomA, was calibrated only against non-spinning hybrid waveforms. Further development produced the IMRPhenomD model cite:2016PhRvD..93d4007K, which is calibrated against 19 hybrid abbr:pn - abbr:nr waveforms (a mixture of public SXS and BAM-derived waveforms) to produce aligned-spin spinning waveforms. The IMRPhenomD model is then verified against 29 additional hybrid waveforms. 
 
 The IMRPhenomP series of waveform models (the most recent of which is version 3 cite:2018arXiv180910113K) add the ability to model precession effects within the waveform; for versions 1 and 2 this was limited to single-spin effects, but version 3 has been designed to allow for generic abbr:bbh systems.
-In order to introduce the effects of precession into the waveform, ~IMRPhenomPv1~ and ~IMRPhenomPv2~ built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the ``twisting-up'' produced by orbital precession.
+In order to introduce the effects of precession into the waveform, ~IMRPhenomPv1~ and ~IMRPhenomPv2~ built on the non-precessing waveforms from the IMRPhenomC and IMRPhenomD families, respectively, and then added the modulations produced in the waveform by orbital precession.
 For these first two versions the precession angles were calculated by a frequency-domain expression which assumed a single-spin system, under the stationary phase approximation\nbsp{}[fn:stat-phase], which is not strictly valid outwith the inspiral phase.
 ~IMRPhenomPv3~ uses a two-spin model developed by Chatziioannou /et al./ cite:2017PhRvD..95j4004C in order to allow for the calculation of precession angles in generic abbr:bbh systems.
+
+[fn:stat-phase] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D
 
 # In summary:
 #    + IMRPhenomA :: The simplest of the IMRPhenom models, designed to produce waveforms for non-spinning, non-precessing systems.
@@ -360,14 +363,14 @@ This section will contain a broad overview of the former, but a thorough discuss
 The two analysis-ready versions of this model, NRSur4d2s and NRSur7d2s are capable of producing waveforms for systems with a mass-ratio $<2$ and an effective spin-parameter $< 0.8$. 
 In contrast to phenomenological models, the NRSur models are currently capable of producing only a small number of cycles of the waveform, being limited by the length of the abbr:nr waveforms off which they are conditioned.
 Recent efforts have been made, however, to produce similar surrogate models which are conditioned on hybridised waveforms cite:2018arXiv181207865V.
-The number of waveforms required to produce the surrogate model is also considerably larger than thise requqired for the phenomenological models, with NRSur7d2s being conditioned on 744 abbr:nr waveforms.
+The number of waveforms required to produce the surrogate model is also considerably larger than those required for the phenomenological models, with NRSur7d2s being conditioned on 744 abbr:nr waveforms.
 
 # + Prototype :: A non-spinning model capable of producing waveforms between $q=1$ and $q=20$. cite:2015PhRvL.115l1102B
 # + NRSur4d2s :: The first production-ready surrogate model, which was capable of modelling waveforms with $q<2$ and effective spin parameters $< 0.8$. cite:2017PhRvD..95j4023B
 # + NRSur7d2s :: A generically spinning surrogate model cite:2017PhRvD..96b4058B.
 
 
-An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable. 
+An alternative approach to spline surrogate models, which rely on Gaussian process regression (see chapter ref:cha:gaussian-process) has recently been shown to be viable cite:2019arXiv190309204W). 
 The development of these models is discussed in detail in chapter ref:cha:heron.
 
 # + DOCTOR :: A prototype non-spinning model trained on IMRPhenomPv2-derived waveforms.
@@ -380,7 +383,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
   :END:
   \label{sec:sources:burst}
 
-  While abbr:cbc searches which are designed to identify well-known signal morphologies in detector data, /burst/ searches are intended to indentify signals either where there is no prior knowledge of the signal morphology, or where that morphology is poorly modelled.
+  While abbr:cbc searches which are designed to identify well-known signal morphologies in detector data, /burst/ searches are intended to identify signals either where there is no prior knowledge of the signal morphology, or where that morphology is poorly modelled.
 
 # ** Burst waveform models
 #    :PROPERTIES:
@@ -409,10 +412,10 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
     \begin{equation}
     || h^{2} || = \int_{\infty}^{\infty} | h(t)|^{2} \dd{t} =  \int_{\infty}^{\infty} | \tilde{h}(f) |^{2} \dd{f},
     \end{equation}
-    for $h(t)$ and $\tilde{h}(f)$ respectively the strain in the time, $t$, and frequency $f$ representations.
+    for $h(t)$ and $\tilde{h}(f)$ respectively the strain in the time, $t$, and frequency $f$ representations cite:2008CQGra..25d5002B.
     #+END_definition
 
-    For bursts which are well-localised in time we can also define a central time and a duration.
+For bursts which are well-localised in time we can also define a central time and a duration.
     #+BEGIN_definition
     The central time, $t_{0}$, is defined as
     \begin{equation}
@@ -424,7 +427,7 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
     \end{equation}
     #+END_definition
 
-    Equivalently, for bursts well-localised in frequency we can define a central frequency and a bandwidth.
+Equivalently, for bursts well-localised in frequency we can define a central frequency and a bandwidth.
     #+BEGIN_definition
     The central frequency, $f_{0}$, is defined as
     \begin{equation}
@@ -437,15 +440,15 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
     #+END_definition
 
 
-    We can also define a /quality factor/, $Q$ for a burst
+We can also define a /quality factor/, $Q$ for a burst.
     
-#    #+BEGIN_definition
-    The quality factor, $Q$, of a burst signal is defined as 
-    \begin{equation}
-    \label{eq:sources:burst:quality}
-    Q = f_{0} / b^{2}.
+#+BEGIN_definition
+The quality factor, $Q$, of a burst signal is defined as 
+        \begin{equation}
+    	\label{eq:sources:burst:quality}
+    Q =	f^2_{0} / b^{2}.
     \end{equation}
-#    #+END_definiton
+#+END_definition
 
 ** Gaussian bursts   
 
@@ -459,9 +462,8 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
    \end{equation}
    for a strain $h$ at time $t$, with an amplitude $A$, central time $t_{0}$ and duration $\sigma$.
 
-   An example of a Gaussian burst ($\sigma = \SI{0.01}{\second}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$) is plotted in the left column of figure ref:fig:sources:burst:adhoc, with the time-domain waveform in the first row. 
+   An example of a Gaussian burst waveform ($\sigma = \SI{0.01}{\second}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$) is plotted in the left column of figure ref:fig:sources:burst:adhoc.
    In this figure the two polarisations of the signal are plotted, with only the plus polarisation containing abbr:gw power for this morphology. 
-   The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
 
 ** Sine-Gaussian bursts 
    In addition to searching for broadband, time-constrained bursts of abbr:gw energy, some sources are expected to produce abpl:gw which are in a confined range of frequencies, in addition to being released over a short time-span. 
@@ -473,16 +475,15 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
    \end{equation} 
    for a strain $h$ at time $t$, with $A$ the amplitude of the signal, $t_{0}$ its central time, $Q$ the quality factor of the burst, and $f$ is frequency.
 
-   An example of a sine-Gaussian burst ($q = 8$, $f = \SI{100}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the middle column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
-   The second and third rows contain time-frequency representations of the waveform as a spectrogram and a constant $q$-transform, respectively.
+   An example of a time-domain sine-Gaussian burst signal($q = 8$, $f = \SI{100}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the middle column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised waveforms both shown. 
 
 ** White noise bursts
    :PROPERTIES:
    :CUSTOM_ID: sources:burst:models
    :END:
    Astrophysical processes are unlikely to produce emission at a single frequency, or with a smooth evolution of amplitude, and so searches are normally expected to be sensitive to band-limited white noise bursts, which consist of band-limited uncorrelated noise within a Gaussian amplitude envelope.
-   An example of a whitenoise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
-   The second and third rows contain time-frequency representations of the plus-polarisation waveform as a spectrogram and a constant $q$-transform, respectively.
+   An example of a time-domain white noise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms both shown. 
+
 
 
 ** Ringdown-like bursts
@@ -494,78 +495,21 @@ The development of these models is discussed in detail in chapter ref:cha:heron.
    for a strain $h$ at time $t$, given a decay time $\tau$ and frequency $f$.
     
 
-** Parabolic and hyperbolic encounters
-   :PROPERTIES:
-   :CUSTOM_ID: sources:burst:encounters
-   :END:
-
-   Encounters between pairs of black holes, where the two bodies trajectories are affected by the total gravitational field, but where a closed orbit is not formed are expected to be possible in regions of space with a high density of compact objects, for example globular clusters and the centres of galaxies.
-   In the case where the deflection angle of the trajectories is small this process can be considered analogous to bremsstrahlung processes in electromagnetic radiation production cite:PhysRevD.1.1559,1978ApJ...224...62K, but the emission production becomes more complicated as larger deflection angles are considered, and spin is included.
-   Approximate models are available for the waveforms of these encounters in the bremmstrahlung case, 
-   low-velocity cases with arbitrary deflection cite:1977ApJ...216..610T, and head-on collisions cite:1992PhRvD..46..694D. 
-   Recent advances have allowed the production of 3.5 abbr:pn accurate waveforms for hyperbolic encounters for non-spinning pairs of black holes cite:2018PhRvD..98b4039C
-
-   # 
-
-*** Encounter waveforms
-    :PROPERTIES:
-    :CUSTOM_ID: sources:burst:encounters:waveforms
-    :END:
-    \label{sources:burst:encounters:waveforms}
-
-    Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in this section I consider the detectability of some of these waveforms in current and future detectors.
-    The waveforms for this brief study are taken from the abbr:gw driven capture simulations of cite:2017PhRvD..96h4009B.
-    An example of one of these waveforms is plotted in figure ref:fig:sources:burst:parabolic:waveform.
-
-    \begin{figure}
-    \includegraphics{figures/sources/hyperbolic-timeseries.pdf}
-    \caption[Parabolic enounter waveform]{A parabolic encounter waveform from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$. 
-    The spectrum of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:spectrum}.
-    \label{fig:sources:burst:parabolic:waveform}}
-    \end{figure}
-
-    \begin{figure}
-    \includegraphics{figures/sources/hyperbolic-spectrum.pdf}
-    \caption[Parabolic enounter waveform]{The spectrum of a parabolic encounter from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$ (the same waveform depicted in figure~\ref{fig:sources:burst:parabolic:waveform}), with the sensitivity curves of gls:ligo, gls:decigo, gls:einstein-telescope, and gls:lisa for reference. 
-    The timeseries representation of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:waveform}.
-    \label{fig:sources:burst:parabolic:spectrum}}
-    \end{figure}
-
-    The detectability of the waveforms can be estimated using equation ref:eq:intro:snr, taking the Fourier transform of the strain data from the abbr:nr simulation to form $\tilde{h}(f)$, and the estimated noise gls:amplitude-spectral-density for each detector. 
-    Figure ref:fig:sources:burst:parabolic:distance shows the abbr:snr of the waveform plotted in figure ref:fig:sources:burst:parabolic:waveform as a function of the luminosity distance of the source, and the total mass of the system. 
-    An abbr:snr of 8 is a standard threshold which a signal must exceed to be considered a detection, and this is plotted with a heavier line.
-
-    Other systems, which are highly asymmetrical (with a mass-ratio $q = 16$) may be a promising candidates for detection in advanced gls:ligo. For example the waveform used to produce figure ref:fig:sources:burst:parabolic:distance2, with a distance around $\SI{50}{\mega\parsec}$ producing a detectable abbr:snr to distances which encompass the majority of the Local Group of galaxies.
-
-    \begin{figure}
-    \includegraphics{./figures/sources/hyperbolic-m4-l0d8.pdf}
-    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of the $q=4$ hyperbolic encounter waveform plotted in figure \ref{fig:sources:burst:parabolic:waveform} in advanced abbr:ligo at design sensitivity.
-    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
-    \label{fig:sources:burst:parabolic:distance}}
-    \end{figure}
-
-    \begin{figure}
-    \includegraphics{./figures/sources/hyperbolic-m16-l0d24.pdf}
-    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of a $q=16$ hyperbolic encounter waveform in advanced abbr:ligo at design sensitivity.
-    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
-    \label{fig:sources:burst:parabolic:distance2}}
-    \end{figure}
-
 ** Core-collapse supernovae
 
 \begin{figure}
 \includegraphics{figures/sources/source-ccsn.pdf}
-\caption[Spectra of supernovae compared to the advanced LIGO and DECIGO sensitivity curves]{The strain spectra of a core collapse supernova and a Type 1A supernova, both at a distance of $\SI{10}{\kilo pc}$ from the earth. 
+\caption[Frequency ranges for supernovae compared to the advanced LIGO and DECIGO sensitivity curves]{The frequency ranges and approximate abbr:gw amplitudes likely to be produced by core collapse supernovae~\cite{2008PhRvD..78f4056D} and Type 1A supernovae~\cite{2015PhRvD..92l4013S}, at a distance of $\SI{10}{\kilo pc}$ from the earth. 
 The noise (sensitivity) curve of the advanced gls:ligo, gls:decigo, and gls:lisa detectors at their design sensitivity is plotted for reference.}
 \label{fig:sources:sn-spectrum}
 \end{figure}
 
 
-\Glspl{ccsn} are driven by the release of gravitational energy as a massive star's core collapses. 
+The collapse of a massive star's core is driven by the release of gravitational energy, creating a abbr:ccsn.
 The progenitor stars of abpl:ccsn have zero-age-main-sequence (ZAMS) masses in the range $8\,\msolar \leq M \leq 130\,\msolar$. 
 Much of this energy is stored as heat in the abbr:pns remnant, around 99% of the released energy is carried-off by neutrinos, around 1% provides the kinetic energy of the explosion, while less than $0.01\%$ of the energy is extracted as electromagnetic and gravitational radiation cite:2009CQGra..26f3001O.
 
- When the iron core of a star exceeds the Chandrasekhar mass it becomes unstable, and undegoes gravitational collapse, and is compressed until the neutron degeneracy pressure is able to halt the collapse. 
+ When the iron core of a star exceeds the Chandrasekhar mass it becomes unstable, and undergoes gravitational collapse, and is compressed until the neutron degeneracy pressure is able to halt the collapse. 
 At this point the core becomes stiff, and the inner core rebounds---a phase of the supernova known as ``core bounce''. 
 The stiff, ultra-dense remnant of the collapse is a abbr:pns, and the rebounding material forms a shock wave.
 This shock wave is not sufficient, however, to produce the observed explosive phase of abpl:ccsn events, and so must undergo /revival/ by some poorly-understood mechanism to lead to the final explosion.
@@ -575,7 +519,7 @@ abpl:gw are expected to be emitted in a number of periods during the collapse, f
  In order to predict the gravitational waveforms which would be produced by a abbr:ccsn detailed numerical modelling must be completed, with the most modern results from Scheidegger cite:2010CQGra..27k4101S, modelling rotating, axisymmetric collapses in three dimensions, and Dimmelmeier cite:2008PhRvD..78f4056D in two dimensions. Those from Müller cite:2019MNRAS.484.3307M and Ott cite:2013ApJ...768..115O model neutrino-driven supernovae in three dimensions.
 
 It is possible that nearby core-collapse supernovae could have been detected with the initial LIGO detector cite:2009LRR....12....2S, although none were. 
-At design sensitivity the three-detector network of Advanced gls:ligo and Advanced gls:virgo should be able to detect abpl:ccsn to a distance of around $\SI{5.5}{\kilo\parsec}$, in the case of neutrino-driven explosions, while rapidly-rotating core-collapses will be detectable to $\SI{50}{\kilo\parsec}$, the distance to the Large Magellanic Cloud. 
+At design sensitivity the three-detector network of Advanced gls:ligo and Advanced gls:virgo should be able to detect abpl:ccsn to a distance of $\SI{5.5}{\kilo\parsec}$, but with large uncertainties, in the case of neutrino-driven explosions, while rapidly-rotating core-collapses will be detectable to $\SI{50}{\kilo\parsec}$, the distance to the Large Magellanic Cloud. 
 Extreme emission scenarios may be detectable as far as $\SI{0.77}{\mega pc}$, the distance to M31 cite:2016PhRvD..93d2002G.
 The characteristic strain spectrum of a abbr:ccsn is plotted in figure ref:fig:sources:sn-spectrum, alongside the sensitivity curve of both advanced gls:ligo and two proposed space-based detectors, gls:decigo and gls:lisa.
 
@@ -595,507 +539,73 @@ The characteristic strain spectrum of a abbr:ccsn is plotted in figure ref:fig:s
    The dimensionless quantity $G\mu \sim (T_{\text{c}} / M_{\text{Pl}})^{2}$, with $G$ Newton's gravitational constant, $T_{\text{c}}$ the temperature at the transition, and $M_{\text{Pl}}$ the Planck mass, characterises the strength of interactions between strings.
    For strings produced by the decoupling of the strong force from the electroweak force this quantity has a value on the order of $10^{-6}$, so a quantity $\mu_{6}$ is often defined as a shorthand cite:1995RPPh...58..477H.
 
-   Three seperate models of cosmic strings have been searched for in data from the advanced gls:ligo detectors to date, and while no evidence for abbr:gw emission from these objects was found, it was possible to place limits both on the parameters of the various models and on the scale of $G \mu$.
-The gls:ligo results place a limit of \(G \mu < \SI{4.2E-10}{}}\) cite:2019PhRvD.100b4017A, which agrees with, but is surpassed by results from pulsar timing arrays, which find \(G \mu < \SI{5.7E-12}{}\) cite:2018PhRvD..97j2002A.
+   Three separate models of cosmic strings have been searched for in data from the advanced gls:ligo detectors to date, and while no evidence for abbr:gw emission from these objects was found, it was possible to place limits both on the parameters of the various models and on the scale of $G \mu$.
+The gls:ligo results place a limit of $G \mu$ be less than $\num{4.2E-10}$  \cite{2019PhRvD.100b4017A}, which agrees with, but is surpassed by results from pulsar timing arrays, which find $G \mu$ is less than $\num{5.7e-12}$  \cite{2018PhRvD..97j2002A}.
    
 
-* Burst searches
-  :PROPERTIES:
-  :CUSTOM_ID: sec:sources:burstsearch
-  :END:
-  \label{sec:sources:burstsearch}
-
-Burst searches cannot rely on well-known template waveforms in the way that compact binary searches can, and so matched filtering techniques cannot be used.
-Performing analysis of the signals from the data collected from a gravitational wave detector is complicated by the presence of both stationary and non-stationary noise (see section ref:sec:detectors:noise for a discussion of the sources and extent of this noise), and by the signal's convolution with the detector's antenna pattern (see section ref:sec:detectors:antennaresponse).
-The final construction of the signal detected by a network of detectors is outlined in figure ref:fig:sources:burst:signalflow.
-
-Instead burst searches, similarly to searches for the stochastic background, make use of information gained from correlations between detectors in a network.
-
-There are two approaches to analysing data across a network of detectors. 
-   + Coherent analysis :: which combines the data steams of detectors together into a single stream, with all of the data analysed in the same process. An outline diagram of the operation of a coherent burst search is provided in figure ref:fig:sources:burst:coherentsearch.
-   + Coincident analysis :: performs a search for signals on each detector's data separately, providing a list of times at which a candidate signal (or gls:trigger) is identified. These are then compared, allowing for suitable time delays corresponding to the wave travel time between detectors in the network, to identify coincident events. An outline diagram of the operation of a coincident burst search is provided in figure ref:fig:sources:burst:coincidentsearch.
-
-The coherent method is substantially more difficult to perform, and can require access to greater computational resources than the simpler, faster coincident method. 
-However, the coincident method is generally less sensitive, as a signal which is weakly detected in one detector, but strongly in another may not produce triggers in both analyses, where a coherent analysis would help to identify the more weakly-detected signal.
-
-Initial abbr:ligo searches were performed both between the detectors constituting the abbr:ligo network (the two 4-km detectors at abbr:llo and abbr:lho, in addition to the 2-km detector at abbr:lho), and between this network and gls:tama, gls:geo600, and gls:auriga. 
-
-At this stage it will be useful to define a few quantities which are used in search algorithms.
-
-\begin{definition}[Signal energy]
-The signal energy is the summed squared absolute value of a segment of data.
-\end{definition}
-
-\begin{definition}[Null stream energy]
-   The gls:null-stream energy is the minimum amount of energy in whitened detector data which is inconsistent with a abbr:gw signal from a given sky location, across a network of detectors.
-\end{definition}
-
-\begin{definition}[Excess energy]
-The excess energy of a single detector measurement is the amount of energy which is not consistent with a noise hypothesis in whitened detector data.
-\end{definition}
-
-\begin{figure}
-
-\centering
-\begin{tikzpicture}[]
-
-%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
-
-\begin{scope}
-
-\fill [red!40] (-2,0.8) rectangle (10,-0.6);
-\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
-\fill [blue!40] (-2,-3.2) rectangle (10,-5.2);
-
-\node (signal) {$h$};
- 
-\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
- \foreach \x in {1,..., 3} {
- 	\node (convolution\x) at (\x, 0) { $\otimes$};
-	\draw (signal.south) -- (convolution\x.north);
-	\node  at (\x-0.3, 0) {$F_{\x}$};
-
-	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
-	\draw(convolution\x.south) -- (xi\x.north);
-
-	\node (addition\x) at (\x,-2.3) { $\oplus$};
-	\draw (xi\x.south) -- (addition\x.north);
-	\node at (\x-0.3, -2.3) {$N_{\x}$};
-
-	\node (s\x) at (\x, -3.6) {$s_{\x}$};
-	\draw (addition\x.south) -- (s\x.north);
-	
-}
-\end{scope}
-\end{scope}
-
-\begin{scope}[xshift=5cm, every node/.style={text width=7cm}]
-
-\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
-\node (convolution-text) at (0, -2cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$.};
-
-\node (addition-text) at (0, -4) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
-
-\end{scope}
-
-\end{tikzpicture}
-
-\caption[The construction of a GW signal observed by a network of detectors]{The construction of the abbr:gw signal observed by a network of detectors, from the abbr:gw source through to its measurement by a detector. \label{fig:sources:burst:signalflow}}
-
-\end{figure}
-
-
-** Fundamental search methods
+** Parabolic and hyperbolic encounters
    :PROPERTIES:
-   :CUSTOM_ID: sec:sources:burst:searchmethods
+   :CUSTOM_ID: sources:burst:encounters
    :END:
-   \label{sec:sources:burst:searchmethods}
-
-   While a large number of algorithms for searching for burst signals exist, most rely on a small number of fundamental techniques to identify burst events in detector data.
-
-   + Power filter :: Calculates a weighted spectrogram of the data by splitting the whitened detector data into overlapping chunks.  cite:2004CQGra..21S.815G
-   + Wavelet transform ::  These methods uses either a wavelet or a Q-transform approach to produce a time-frequency representation of the measured signal. This is then thresholded, and clusters of outlier pixels (discrete regions of the time-frequency plane) are identified. By performing a number of Q-transforms with varying $q$ parameters it is possible to estimate the parameters of the detected waveform cite:2004CQGra..21S1809C.
-   + Mean filter :: The mean filter is a time-series approach to burst detection, which searches for excesses in the moving average of the measured signal. The method is most sensitive to bursts which have a similar length to the moving window, so the search must be repeated for a number of different window lengths.  
-
-** Seach pipelines
-   :PROPERTIES:
-   :CUSTOM_ID: sec:sources:burst:pipelines
-   :END:
-   \label{sec:sources:burst:pipelines}
-
-While the fundamental methods described in section ref:sec:sources:burst:searchmethods are plausible methods for identifying burst signals in data, they are unable to operate in isolation. 
-This has lead to the need to construct /pipelines/ which are capable of pre-processing the detector data, performing searches to produce lists of glspl:trigger, estimate the significance of these glspl:trigger, and perform parameter estimation on the signals. 
-There are at least four major burst search pipelines in use during the advanced detector runs.
-
-\begin{figure}
-
-\begin{tikzpicture}[]
-
-%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
-
-\begin{scope}
-
-\fill [red!40] (-2,0.8) rectangle (10,-0.6);
-\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
-\fill [blue!40] (-2,-3.2) rectangle (10,-5.2);
-
-\fill [yellow!40] (-2,-5.2) rectangle (10,-8.2);
-
-\fill [orange!40] (-2,-8.2) rectangle (10, -13);
-
-\node (signal) {$h$};
- 
-\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
- \foreach \x in {1,..., 3} {
- 	\node (convolution\x) at (\x, 0) { $\otimes$};
-	\draw (signal.south) -- (convolution\x.north);
-	\node  at (\x-0.3, 0) {$F_{\x}$};
-
-	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
-	\draw(convolution\x.south) -- (xi\x.north);
-
-	\node (addition\x) at (\x,-2.3) { $\oplus$};
-	\draw (xi\x.south) -- (addition\x.north);
-	\node at (\x-0.3, -2.3) {$N_{\x}$};
-
-	\node (s\x) at (\x, -3.6) {$s_{\x}$};
-	\draw (addition\x.south) -- (s\x.north);
-
-	\node [circle, fill] (segment\x) at (\x, -4.5) {};
-	\draw (s\x.south) -- (segment\x.north);
-
-	\node [circle, fill] (whiten\x) at (\x, -5.5) {};
-	\draw (segment\x.south) -- (whiten\x.north);
-
-	\node [circle, fill] (delay\x) at (\x, -6.5) {};
-	\draw (whiten\x.south) -- (delay\x.north);
-
-	\node [circle, fill] (tf\x) at (\x, -8) {};
-	\draw (delay\x.south) -- (tf\x.north);
-
-	\node [circle, fill] (excess\x) at (\x, -9.5) {};
-	\draw (tf\x.south) -- (excess\x.north);
-	
-}
-
-	\node [rectangle, fill, minimum width=1cm] (significance) at (2, -11) {};
-
-	\draw [bend left] (excess1.south) -- (significance.north);
-	\draw [bend left] (excess2.south) -- (significance.north);
-	\draw [bend left] (excess3.south) -- (significance.north);
-
-
-	\node [circle, fill] (triggers) at (2, -12.5)  {};
-	\draw (significance.south) -- (triggers.north);
-
-	
-
-\end{scope}
-\end{scope}
-
-\begin{scope}[xshift=6cm, every node/.style={text width=7cm}]
-
-\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
-\node (convolution-text) at (0, -2cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$.};
-
-\node (addition-text) at (0, -4) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
-
-\node (segment-text) at (0,-5.7) {The recorded signals are split into segments.};
-\node (segment-text) at (0,-6.7) {A filter is applied to whiten the data.};
-\node (segment-text) at (0,-7.7) {Each detector signal is time-delayed with respect to a given sky location.};
-
-\node (tf-text) at (0,-9.3) {The data from each detector is converted to a time-frequency representation.};
-\node (excess-text) at (0,-10.8) {Pixels with excess power are identified, and clusters of these pixels are identified.};
-
-\node (significance-text) at (0, -12.2) {The significance of the clusters are calculated jointly using the data from all detectors.};
-
-\node (trigger-text) at (0, -13.7) {A list of triggers is produced, which can be sorted by significance, and thresholded.};
-
-\end{scope}
-
-
-
-\end{tikzpicture}
-
-\caption{The principles of a coherent all-sky burst search pipeline.
-	     \label{fig:sources:burst:coherentsearch}
-}
-
-\end{figure}
-
-
-   + X-Pipeline :: X-Pipeline is designed to run coherent triggered searches for abbr:gw bursts, motivated by the detection of events such as abpl:sgrb cite:2010NJPh...12e3034S. The analysis constructs time-frequency spectrograms of the plus and cross strain polarisations, and the gls:null-stream, after they have been whitened and time-shifted. Pixels in the spectrograms are then clustered in order to identify significant outliers from the noise. This process is repeated for each location on the sky being searched, with appropriate time-shifts, for each detector's data. Events are vetoed if they have a strong correlation between the coherent energies and incoherent energies, a feature which indicates a noise glitch rather than a burst signal. The X-Pipeline can be combined with the SphRad pipeline to run all-sky, untargetted searches cite:maxfayesthesis in the XSphRad configuration.
-
-#   + spherical radiometer 
-   + Coherent WaveBurst :: The abbr:cwb pipeline cite:waveburst is a coherent, untriggered burst search method which performs a wavelet transform on blocks of detector data to first produce a time-frequency representation. The wavelet layers are then whitened with a linear prediction error filter, and time-delayed. Correlations and excess-power regions in the  time-frequency plane are then clustered to identify coherent triggers, which are then selected by thresholding based on the abbr:fap.
-
-\begin{figure}
-\begin{tikzpicture}[]
-
-%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
-
-\begin{scope}
-
-\fill [red!40] (-2,0.8) rectangle (10,-0.6);
-\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
-\fill [blue!40] (-2,-3.2) rectangle (10,-5.2);
-
-\fill [yellow!40] (-2,-5.2) rectangle (10,-8.2);
-
-\fill [orange!40] (-2,-8.2) rectangle (10, -13);
-
-\node (signal) {$h$};
- 
-\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
- \foreach \x in {1,..., 3} {
- 	\node (convolution\x) at (\x, 0) { $\otimes$};
-	\draw (signal.south) -- (convolution\x.north);
-	\node  at (\x-0.3, 0) {$F_{\x}$};
-
-	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
-	\draw(convolution\x.south) -- (xi\x.north);
-
-	\node (addition\x) at (\x,-2.3) { $\oplus$};
-	\draw (xi\x.south) -- (addition\x.north);
-	\node at (\x-0.3, -2.3) {$N_{\x}$};
-
-	\node (s\x) at (\x, -3.6) {$s_{\x}$};
-	\draw (addition\x.south) -- (s\x.north);
-
-	\node [circle, fill] (segment\x) at (\x, -4.5) {};
-	\draw (s\x.south) -- (segment\x.north);
-
-	\node [circle, fill] (whiten\x) at (\x, -5.5) {};
-	\draw (segment\x.south) -- (whiten\x.north);
-
-	\node [circle, fill] (delay\x) at (\x, -6.5) {};
-	\draw (whiten\x.south) -- (delay\x.north);
-
-	\node [circle, fill] (tf\x) at (\x, -8) {};
-	\draw (delay\x.south) -- (tf\x.north);
-
-	\node [circle, fill] (excess\x) at (\x, -9.5) {};
-	\draw (tf\x.south) -- (excess\x.north);
-	
-	\node [rectangle, fill] (significance\x) at (\x, -11) {};
-
-	\draw [bend left] (excess\x.south) -- (significance\x.north);
-
-	\node [circle, fill] (triggers\x) at (\x, -12.5)  {};
-	\draw (significance\x.south) -- (triggers\x.north);
-
-}
-
-\node (collection) [rectangle, fill, minimum width=2cm] at (2, -14) {};
-	
-\draw (triggers1.south) -- (collection.north);
-\draw (triggers2.south) -- (collection.north);
-\draw (triggers3.south) -- (collection.north);
-	
-
-\end{scope}
-\end{scope}
-
-\begin{scope}[xshift=6cm, every node/.style={text width=7cm}]
-
-\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
-\node (convolution-text) at (0, -2cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$.};
-
-\node (addition-text) at (0, -4) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
-
-\node (segment-text) at (0,-5.7) {The recorded signals are split into segments.};
-\node (segment-text) at (0,-6.7) {A filter is applied to whiten the data.};
-\node (segment-text) at (0,-7.7) {Each detector signal is time-delayed with respect to a given sky location.};
-
-\node (tf-text) at (0,-9.3) {The data from each detector is converted to a time-frequency representation.};
-\node (excess-text) at (0,-10.8) {Pixels with excess power are identified, and clusters of these pixels are identified.};
-
-\node (significance-text) at (0, -12.2) {The significance of the clusters are estimated for events in individual detectors.};
-
-\node (trigger-text) at (0, -13.7) {Lists of triggers are produced, which can be sorted by significance, and thresholded.};
-
-\node (collection-text) at (0, -15.2) {The trigger times from each detector are compared, and coincident events are identified.};
-
-\end{scope}
-
-
-
-\end{tikzpicture}
-
-\caption{A typical all-sky coincident burst search pipeline.
-\label{fig:sources:burst:coincidentsearch}}
-\end{figure}
-
-   + omicron / LALInference burst :: The abbr:olib pipeline cite:2015arXiv151105955L is a coincident all-sky burst search pipeline which relies on the use of Q-transforms to generate time-frequency representations of detector data, in order to identify regions of excess energy. The significance of single-detector triggers are then determined using Bayesian inference to produce a joint detection significance from the network of detectors.
-   + Bayeswave :: In contrast to other burst search pipelines, abbr:bw cite:2015CQGra..32m5012C is designed to determine the significance of pre-determined triggers, and does not generate triggers on its own. It takes a direct approach to distinguishing signal transients (bursts) from noise transients (glitches) by directly modelling glitches with Morlet waveforms, and then performing Bayesian model selection to identify a favoured hypothesis: either a noise, glitch, or signal model.
-
-* Mock data challenges and all-sky searches
-  \label{sec:sources:mdc}
-
-  Given the complexity of modern burst search algorithms, and their need to operate in a regime of non-Gaussian, non-stationary noise it is important to be able to demonstrate the efficacy of an individual pipeline.
-In addition to this, the nature of the noise in abbr:gw detectors makes estimating the sensitivity of each search method difficult, as the time-evolution of the noise abbr:psd will affect the sensitivity over time.
-To address these problems pipelines are tested against known signals which are ``injected'' into the recorded data from the detector.
-
-This process can be performed in two ways, either as a /hardware injection/, where the test mass of the detector is physically actuated (using either an electrostatic drive, or through photon pressure from a laser placed behind the test mass), or as a /software injection/, where the signal waveform is added to the pre-recorded data.
-The former process has the advantage of testing the performance of the pipeline ``end-to-end'', as the signal will be present in the analysed data at all times. 
-Indeed, prior to the detection of gls:gw150914 the use of ``blind'' injections to test the readiness of search algorithms was a standard practice[fn:bigdog]. 
-In contrast software injections can be performed offline, and thus do not run the risk of obfuscating an astrophysical signal.
-However, as these are added to the recorded data it is necessary to ensure that a consistent set of signals is analysed by all pipelines to provide consistent sensitivity estimates.
-
-At the beginning of the advanced detector era it became clear that the production of these /mock data challenges/ required new infrastructure, and the /Minke/ project was initiated to handle this.
-
-
-[fn:bigdog] Indeed, a major undertaking towards the end of the initial detector era had involved the analysis of a signal, identified as a abbr:bbh coalescence in Canis Majoris, which was dubbed the /Big Dog/ event. After a thorough end-to-end analysis of the signal was conducted it was revealed to have been such a blind injection. While this exercise demonstrated that the various search algorithms in operation at the time were capable of identifying a signal, it also demonstrated a number of failings in the various components of the software chain which was used to produce and inject this signal into the detector. In fact, the intended signal had been an abbr:nsbh signal, and had not been injected at a location in CMa. A fuller discussion of the event can be found at \url{https://www.ligo.org/news/blind-injection.php}.
-
-* Minke
-  \label{sec:sources:minke}
-
-\begin{figure}
-\begin{tikzpicture}[]
-
-%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
-
-\begin{scope}
-
-\fill [pink!40] (-2,2.8) rectangle (10,-3.5);
-%\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
-\fill [blue!40] (-2,-3.5) rectangle (10,-5);
-
-
-\node (parameters) at (0,1.5) {$\vec{p}$};
-
-\node (signal) at (0,0) {$h$};
-
-\draw (parameters) -- (signal);
- 
-\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
- \foreach \x in {1,..., 3} {
- 	\node (convolution\x) at (\x, 0) { $\otimes$};
-	\draw (signal.south) -- (convolution\x.north);
-	\node  at (\x-0.3, 0) {$F_{\x}$};
-
-	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
-	\draw(convolution\x.south) -- (xi\x.north);
-
-	\node [rectangle, fill]  (frame\x) at (\x,-3) {};
-	\draw (xi\x.south) -- (frame\x.north);
-
-
-
-}
-
-
-\end{scope}
-\end{scope}
-
-\begin{scope}[xshift=5.5cm, every node/.style={text width=7cm}]
-
-\node (signal-text) at (0,1.5) {A set of waveform parameters is selected from the MDC specification.};
-\node (signal-text) at (0,.1) {A mock signal, $h$ is generated from defined source parameters.};
-\node (convolution-text) at (0, -2cm) {The signal is time-delayed and convolved with each detector's antenna pattern, $F$. A random jitter is added to the central time and amplitude of the signal to simulate calibration uncertainties. \\ This gives the injection-ready signal.};
-
-\node (addition-text) at (0, -4.2) {The injection ready signals are then stored in a form ready to be added to detector noise.};
-
-\end{scope}
-
-
-
-\end{tikzpicture}
-
-\caption[The pricess of frame production for a mock data challenge using Minke]{The process of frame production for a abbr:mdc using \gls{minke}. For software injections the injection-ready signals are normally stored in GWF frame files, ready to be injected into the signal recorded from the detector. For waveforms to be used for hardware injections the signals are simply written out as ASCII-format text files. \label{fig:sources:minke:frame}}
-\end{figure}
-
-/gls:Minke/ cite:daniel_williams_2019_3352036 is a software library[fn:minkeavailability] implemented in the ~python~ programming language which is designed to produce large-scale abpl:mdc for burst waveforms. 
-In order to ensure consistency with other abbr:gw analyses, and to make use of as much pre-existing, reviewed code as possible, gls:minke makes use of as much functionality as possible from gls:lalsuite cite:lalsuite.
-While \gls{minke} was designed for the primary purpose of abbr:mdc production, it also provides a convenient python wrapper to a number of functions from the \texttt{LALSimulation} cite:lalsuite C library, making it a convenient means to generate abbr:gw signals, for example for machine learning training data.
-
-Burst searches are used to search for both totally unmodelled sources, and poorly modelled sources (see section ref:sec:sources:burst for a discussion of the various morphologies of these signals). 
-gls:minke supports a large subset of these waveforms; analytical waveforms, such as Gaussians and sine-Gaussians are generated using \texttt{LALSimulation}, while more complicated models can be used (such as abbr:nr derived supernova waveforms) can be used to generate signals if the waveform is available either as precomputed strain values in the $+$- and $\times$-polarisations, or decomposed into a spherical harmonic basis.
-
-The process for producing an abbr:mdc using \gls{minke} is broken into a number of stages (which are also depicted in figure ref:fig:sources:minke:frame):
-
-1. The distributions of source parameters are specified; these include the probability distributions from which parameters of individual signals are drawn, and the hyperparameters defining those distributions. For example, the injections may be made uniformly across the sky, or a more specific distribution may be chosen.
-
-2. A specification for the signal set is generated as a table of source parameters, with each row specifying a single signal. This table can be stored in XML format for later use.
-
-3. Each signal can then be generated using \texttt{LALSimulation}. In the case of analytical waveforms the appropriate generating function is evaluated, and in the case of a precomputed signal the waveform data is interpolated appropriately for the desired sample rate, and where appropriate, is reconstructed from a spherical harmonic basis.
-
-4. The generated signal must then be convolved with the antenna pattern for each detector involved in the analysis, for the appropriate sky position and time, and must have the appropriate time delay applied relative to the geocentre. A random ``jitter'' may also be applied at this stage to the centre time and amplitude of the signal, to emulate timing and calibration uncertainties in the detector.
-
-5. The signals, which are now ready to be injected, can be stored either in a GWF frame file, or as ASCII data. The former is used for software injections, and the latter for hardware injections.
-
-6. The analysis-ready abbr:mdc is constructed by adding the injection signal to the detector data, allowing the sensitivity of the detector to a specific signal morphology to be tested over time, in the presence of real noise and glitches.
-
-When injecting signals which posess abbr:gw memory effects (that is, when the strain at the end of the signal does not equal the strain at the beginning) it is desirable to remove this effect.
-When adding a signal with memory to pre-recorded noise there will be a sharp discontinuity at the end of the signal which will produce artifacts in any frequency-domain representation of the signal.
-To account for this \gls{minke} adds a low-frequency half cosine decay to the end of the signal to present a smooth transition.
-This can be seen in the Mueller waveform signal in the left column of figure ref:fig:sources:burst:minke:supernova.
-
-
-
-
-   \begin{figure}
-   \caption[A catalogue of supernova burst waveforms]{Three of the supernova burst ``waveforms'' which can be simulated and injected by Minke.
-   From left to right, Mueller, Dimmelmeier, Scheidegger waveforms are depicted in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
-   \label{fig:sources:burst:minke:supernova}
-   }
-   \includegraphics[width=\textwidth]{figures/sources/minke-supernova.pdf}
-   \end{figure}	
-
-[fn:minkeavailability] The Minke source code can be obtained from \url{https://git.ligo.org/daniel-williams/minke}, and is documented at \url{https://daniel-williams.docs.ligo.org/minke/}. It can also be installed using the ~pip~ package manager by running ~pip install minke~.
-
-* O1 and O2 all-sky search sensitivity
-  \label{sec:sources:burstresults}
-
-The data from the first two observing runs of the advanced gls:ligo detector were analysed by three all-sky burst glspl:search-pipeline: abbr:cwb, abbr:olib, and abbr:bw.
-These pipelines, which employ techniques described in section ref:sec:sources:burstsearch, did not make detections of non abbr:cbc events during these two observing runs, but were able to place limits on the rate of such events within the sensitive volume of the detector.
-In order to determine this sensitive volume abpl:mdc were constructed using Minke (described in the previous section).
-Signals from each abbr:mdc were injected into the strain data collected from each detector every $\SI{50}{\second}$; these signals had a distribution of abbr:hrss values, such that the distance distribution of the events, $p(r) = r + 50/r$, for distance $r$.
-The resulting abbr:hrss distribution will contain both ``loud'' events, with a high abbr:hrss, and ``quiet'' events with low abbr:hrss.
-
-\begin{table}
-\centering
-\begin{tabular}{lllllllll}
-\toprule
-\multicolumn{3}{c}{Waveform parameters} & \multicolumn{3}{c}{Observing run 1} & \multicolumn{3}{c}{Observing run 2} \\
-&&                                      & abbr:cwb & abbr:olib & abbr:bw      & abbr:cwb & abbr:olib & abbr:bw \\
-\midrule
-\multicolumn{3}{c}{Gaussian}            &&&                                   &&& \\
-& $\tau/\si{\milli\second}$ &          &&&                                   &&& \\
-\midrule
-& 0.1                        &          & 34 & NA & NA                        & 8.4 & 6.2 & NA \\
-& 2.5                        &          & 33 & 7.4 & NA                       & 11  & 5.3 & NA \\
-\midrule
-\multicolumn{3}{c}{Sine-Gaussian}       &&&                                   &&& \\
-$f_0 / \si{\hertz}$ & $q$    &          &&&                                   &&& \\
-\midrule
-70                  & 3      &          &&&                                   & 4.9 & - & NA \\
-70                  & 100    &          & 24  & NA  & NA                      & 6.4 & - & NA \\
-153                 & 8.9    &          & 1.6 & 1.7 & 5.4                     & 1.4 & 1.3 & 16 \\
-253                 & 100    &          & 14  & 19  & NA                      & 3.3 & 1.1 & 1.4 \\
-554                 & 8.9    &          & 2.6 & 2.7 & 3.6                     & 1.8 & 1.5 & NA  \\
-849                 & 3      &          & 27  & 3.3 & 5.4                     & 5.5 & 2.0 & 17  \\
-1304                & 9      &          &&&                                   & 3.3 & 2.8 & -   \\
-1615                & 100    &          & 5.5 &  -  & -                       & 3.6 & 3.3 & -   \\
-2000                & 3      &          & 8.7 &  -  & -                       & 5.4 & 5.3 & -   \\
-2477                & 8.9    &          & 11  &  -  & -                       & 7.5 & -   & -   \\
-3067                & 3      &          & 15  &  -  & -                       & 9.7 & -   & -   \\
-\midrule
-\multicolumn{3}{c}{White-noise burst}   &&&                                   &&& \\
-$f_{\text{low}} / \si{\hertz}$ & $\Delta f / \si{\hertz}$ &  $\tau/\si{\milli\second}$   &&&  &&& \\
-\midrule
-100                 & 100    & 0.1      & 2.0 &     & 3.0                     & 1.4 & 3.0 & 3.0 \\
-250                 & 100    & 0.1      & 2.2 & NA  & 9.2                     & 1.4 & 3.8 & 3.8 \\
-750                 & 100    & 0.1      &&&                                   & 1.8 & 3.7 & 4.2 \\
-\bottomrule
-\end{tabular}
-\caption[Detection sensitivities of the burst search pipelines in LIGO's second observing run]{The abbr:hrss values, in units of $\SI{E-22}{\hertz^{-1/2}}$ at which each pipeline achieves a $50\%$ detection efficiency at a abbr:far of $1$ in $\SI{100}{\year}$ in both the first and second advanced gls:ligo observing runs (Thus a lower value implies a more sensitive search). A value of NA indicated that $50\%$ efficiency could not be achieved, while - indicates that the search was not run on a given morphology, as the characteristic frequency did not meet the criteria of the search.
-The data in this table is derived from tables presented in~\cite{2017PhRvD..95d2003A} (O1) and~\cite{2019PhRvD.100b4017A} (O2).
-\label{tab:sources:mdc:o1o2}
-}
-\end{table}
-
-The injection process was repeated for a number of waveform morphologies, listed in table ref:tab:sources:mdc:o1o2, allowing the pipelines to be assessed across a range of frequencies.
-The same table indicates the abbr:hrss of the weakest signal which was detected with $50\%$ efficiency given a abbr:far of one per hundred years.
-
-The abbr:gw energy, $E_{\text{GW}}$ can be found from the abbr:hrss through the relationship
-\begin{equation}
-\label{eq:sources:hrss2energy}
-E_{{\text{GW}}} = \frac{\pi^{2}c^{3}}{G} r_{0}^{2} f_{0}^{2} h_{0}^{2},
-\end{equation}
-for a distance $r_{0}$, (fixed) frequency $f_{0}$, and abbr:hrss $h_{0}$.
-
-Each result in table ref:tab:sources:mdc:o1o2 can then be converted into a representative energy, taking a fiducial distance $r_{0} = \SI{10}{\kilo\parsec}$, and these values are plotted in figure ref:fig:sources:mdc:o1o2.
-
-\begin{figure}[htbp]
-\centerline{\includegraphics[]{figures/sources/o1o2-sensitivity.pdf}}
-\caption[The sensitivity of the all-sky burst search algorithms in the first two observing runs of advanced LIGO]{
-	The emitted abbr:gw energy, in units of solar masses, which correspond to a 50\% detection efficiency at a given frequency, for a abbr:far of 1 event per hundred years, and at a fiducial distance of $\SI{10}{\kilo\parsec}$. 
-	At each frequency the marker corresponds to the best performance from the three glspl:search-pipeline.
-	The data to produce this plot were derived from the values in table~\ref{tab:sources:mdc:o1o2}, for the sine-Gaussian and white-noise burst waveforms.
-\label{fig:sources:mdc:o1o2}}
-\end{figure}
-
-
-
-[fn:stat-phase] The stationary phase approximation is found to provide sufficient accuracy for the matched-filtering processes which are common in abbr:gw data analysis. cite:1999PhRvD..59l4016D
+   \label{sources:burst:encounters}
+
+   Encounters between pairs of black holes, where the two bodies trajectories are affected by the total gravitational field, but where a closed orbit is not formed are expected to be possible in regions of space with a high density of compact objects, for example globular clusters and the centres of galaxies.
+   In the case where the deflection angle of the trajectories is small this process can be considered analogous to Bremsstrahlung processes in electromagnetic radiation production cite:PhysRevD.1.1559,1978ApJ...224...62K, but the emission production becomes more complicated as larger deflection angles are considered, and spin is included.
+   Approximate models are available for the waveforms of these encounters in the Bremsstrahlung case, 
+   low-velocity cases with arbitrary deflection cite:1977ApJ...216..610T, and head-on collisions cite:1992PhRvD..46..694D. 
+   Recent advances have allowed the production of 3.5 abbr:pn accurate waveforms for hyperbolic encounters for non-spinning pairs of black holes cite:2018PhRvD..98b4039C
+
+   # 
+
+*** Encounter waveforms
+    :PROPERTIES:
+    :CUSTOM_ID: sources:burst:encounters:waveforms
+    :END:
+    \label{sec:sources:burst:encounters:waveforms}
+
+    Recent advances in abbr:nr modelling have allowed the production of accurate waveforms for parabolic encounters between spinning black holes, and in this section I present the results of a study I have conducted to consider the detectability of some of these waveforms in current and future detectors.
+    The waveforms for this brief study are taken from the abbr:gw driven capture simulations of cite:2017PhRvD..96h4009B.
+    An example of one of these waveforms is plotted in figure ref:fig:sources:burst:parabolic:waveform.
+
+    \begin{figure}
+    \includegraphics{figures/sources/hyperbolic-timeseries.pdf}
+    \caption[Parabolic enounter waveform]{A parabolic encounter waveform from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$. 
+The behaviour of this waveform at times after the main burst of strain indicates that additional high-pass filtering is required when making calculations using the timeseries thanks to the existence of low-frequency artifacts which prevent the waveform returning to zero at large times.
+    The spectrum of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:spectrum}.
+    \label{fig:sources:burst:parabolic:waveform}}
+    \end{figure}
+
+    \begin{figure}
+    \includegraphics{figures/sources/hyperbolic-spectrum.pdf}
+    \caption[Parabolic enounter waveform]{The spectrum of a parabolic encounter from~\cite{2017PhRvD..96h4009B} for a system with mass-ratio $q=4$, an impact parameter of $\SI{5060}{\solMass}$, and a total mass of $\SI{50}{\solMass}$ at a distance of $\SI{50}{\mega\parsec}$ (the same waveform depicted in figure~\ref{fig:sources:burst:parabolic:waveform}), with the sensitivity curves of gls:ligo, gls:decigo, gls:einstein-telescope, and gls:lisa for reference. 
+    The timeseries representation of this waveform is plotted in figure~\ref{fig:sources:burst:parabolic:waveform}.
+    \label{fig:sources:burst:parabolic:spectrum}}
+    \end{figure}
+
+    The detectability of the waveforms can be estimated using equation ref:eq:intro:snr, taking the Fourier transform of the strain data from the abbr:nr simulation to form $\tilde{h}(f)$, and the estimated noise abbr:asd for each detector. 
+    Figure ref:fig:sources:burst:parabolic:distance shows the abbr:snr of the waveform plotted in figure ref:fig:sources:burst:parabolic:waveform as a function of the luminosity distance of the source, and the total mass of the system. 
+    An abbr:snr of 8 is a standard threshold which a signal must exceed to be considered a detection, and this is plotted with a heavier line.
+    The spectrum of this waveform is plotted in figure ref:fig:sources:burst:parabolic:spectrum, alongside the abbr:asd for advanced gls:ligo (at design sensitivity), abbr:et, and gls:decigo. 
+This plot clearly shows that a signal from a system such as this at a distance of $\SI{50}{\mega\parsec}$, a distance which encompasses not only the Local group, but nearby galaxy clusters such as the Virgo group, is above the noise-floor of even advanced gls:ligo at its design sensitivity.
+Other systems, which are highly asymmetrical (with a mass-ratio $q = 16$) may be even more promising candidates for detection in advanced gls:ligo. 
+For example the waveform used to produce figure ref:fig:sources:burst:parabolic:distance2, with a distance around $\SI{175}{\mega\parsec}$; again producing a detectable abbr:snr to distances which encompass nearby clusters of galaxies.
+This makes these events a promising burst source candidate, however further work is required to establish plausible astrophysical rates for such events in order to determine if these are a likely source of signals for current generation detectors.
+
+Encounters which result in capture may appear similar to high-mass abbr:bbh events in the current generation of detectors, since the inspiral portion of a high-mass system will be predominately at frequencies below which the detectors are sensitive.
+Encounter waveforms will also lack a lengthy inspiral portion; as a result there is a chance that future abbr:gw events may be misclassified, and this eventuality should be considered in waveforms which seem to lack a clear inspiral.
+These results are principally low-frequency sources, and as such are ideal candidates for both abbr:et, which aims to achieve much greater low-frequency sensitivity than current detectors, but also for decihertz detectors, such as gls:decigo. 
+
+
+    \begin{figure}
+    \includegraphics{./figures/sources/hyperbolic-m4-l0d8.pdf}
+    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of the $q=4$ hyperbolic encounter waveform plotted in figure \ref{fig:sources:burst:parabolic:waveform} in advanced abbr:ligo at design sensitivity.
+    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
+    \label{fig:sources:burst:parabolic:distance}}
+    \end{figure}
+
+    \begin{figure}
+    \includegraphics{./figures/sources/hyperbolic-m16-l0d24.pdf}
+    \caption[The signal-to-noise ratio of a hyperbolic encounter waveform in advanced LIGO]{The abbr:snr of a $q=16$ hyperbolic encounter waveform in advanced abbr:ligo at design sensitivity.
+    The heavy line for an abpl:snr of 8 represents a standard detection threshold used in single detector transient searches.
+    \label{fig:sources:burst:parabolic:distance2}}
+    \end{figure}

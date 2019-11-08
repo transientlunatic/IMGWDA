@@ -1,7 +1,5 @@
 #+COLUMNS: %50ITEM %custom_id
 
-
-
 * Surrogate modelling
   :PROPERTIES:
   :CUSTOM_ID: sec:gp:surrogate
@@ -18,6 +16,7 @@ If a well-defined physical theory is known to explain the observations an approp
 
 Surrogate models are often desirable in situations where little physical intuition is available (or where the underlying physics is extremely complicated).
 These attempt to model the observed data with limited assumptions about the form of the generating function.
+This approach, of making limited assumptions regarding the structure of the underlying model often results in these techniques being considered a sub-division of the nebulous field of \textit{machine learning}.
 
 + Polynomial response surfaces :: Perhaps the most straight-forward means of producing a surrogate model is to assume that the generating process for measured data can be approximated by a polynomial function. In the case of many complex physical processes there may be a number of coefficients, leading to a polynomial (hyper-)surface. This method, formally introduced in 1951 cite:box1951, is often referred to in the literature as the abbr:rsm, and is suitable for approximating generating models which have smooth variation, and non-oscillatory behaviour.  
 
@@ -35,43 +34,6 @@ These attempt to model the observed data with limited assumptions about the form
   :END:
   \label{sec:gp:gp}
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}
-
-	 \node[obs] (x1) {$\vec{x}_{1}$};	 	
-	 \node[latent, above = of x1] (f1) {$f_{1}$};
-	 \node[obs, above = of f1] (y1) {$y_{1}$};
-	 \edge{x1}{f1};
-	 \edge{f1}{y1};
-
-	 \node[obs, right = of x1] (x2) {$\vec{x}_{2}$};	 	
-	 \node[latent, above = of x2] (f2) {$f_{2}$};
-	 \node[obs, above = of f2] (y2) {$y_{2}$};
-	 \edge{x2}{f2};
-	 \edge{f2}{y2};
-
-	 \node[obs, right = of x2] (xstar) {$\vec{x}_{\star}$};	 	
-	 \node[latent, above = of xstar] (fstar) {$f_{\star}$};
-	 \node[latent, above = of fstar] (ystar) {$y_{\star}$};
-	 \edge{xstar}{fstar};
-	 \edge{fstar}{ystar};
-
-	 \node[obs, right = 2 of xstar] (xN) {$\vec{x}_{N}$};	 	
-	 \node[latent, above = of xN] (fN) {$f_{N}$};
-	 \node[obs, above = of fN] (yN) {$y_{N}$};
-	 \edge{xN}{fN};
-	 \edge{fN}{yN};
-
-	 \draw [black, line width=0.1cm] (f1) -- (f2) -- (fstar);
-	 \draw [black, dashed, line width=0.1cm] (fstar) -- (fN);
-\end{tikzpicture}
-\end{center}
-\caption[A graphical model of a Gaussian process]{A graphical model of a Gaussian process, represented as a chain graph. The inputs (on the bottom row) are all observed quantities, while outputs are observed only at the location of training points. The latent variables, $f$ from the Gaussian field (the heavy black line connecting these nodes indicates that they are fully connected) connect the two, and so any given observation is independent of all other nodes given it connected latent $f$ variable. Thus the marginalisation (removal) or addition of input nodes to the abbr:gp does not change the distribution of the other variables.
-\label{fig:gp:chain-diagram}}
-\end{figure}
-
-
 Consider a regression problem with a set of data 
 \[ \set{D} = \setbuilder{(\vec{x}_i, y_i), i \in 1, \dots, n} \]
 which is composed of $n$ pairs of inputs, $\vec{x}_i$, which are vectors which describe the location of the datum in parameter space, which are the inputs for the problem, and $y_i$, the outputs.
@@ -80,15 +42,15 @@ The outputs may be noisy; in this work I will only consider situations where the
 \label{eq:gp:additive-noise}
  y_i(\vec{x}_i) = f(\vec{x}_i) + \epsilon_i, \quad \text{for} \quad \epsilon_i \sim \mathcal{N}(0, \sigma^2)
 \end{equation}
-where $\sigma$ is the standard deviation of the noise, and $f$ is the (latent) generating function of the data.
+where $\sigma$ is the standard deviation of the data noise, and $f$ is the (latent) generating function of the data.
 
 This regression problem can be addressed using /Gaussian processes/:
 #+LATEX_ATTR: :options [Gaussian process]
 #+BEGIN_definition
-A gls:gaussian-process is a collection of random variables, any finite number of which have a joint Gaussian distribution cite:gpr.book.rw.
+A gls:gaussian-process (GP) is a collection of random variables, any finite number of which have a joint Gaussian distribution cite:gpr.book.rw.
 #+END_definition
 
-Where it is more conventional to consider a prior over a set of, for example, real values, such as a normal distribution, the Gaussian process forms a prior over the functions, $f$ from equation ref:eq:gp:additive-noise, which might form the regression fit to any observed data. 
+Where it is more conventional to consider a prior over a set of, for example, real values, such as a normal distribution, the Gaussian process forms a prior over the functions, $f$, from equation ref:eq:gp:additive-noise, which might form the regression fit to any observed data. 
 This assumes that the values of the function $f$ behave as
 \begin{equation}
 \label{eq:gp:function-values}
@@ -128,52 +90,109 @@ with
     \mat{K}_{\vec{f},\vec{f}} & \mat{K}_{\vec{f},\vec{f}_*} \\ \mat{K}_{\vec{f}_*,\vec{f}} & \mat{K}_{\vec{f}_*, \vec{f}_*}
   \end{bmatrix},
 \end{equation}
-and $\mat{I}$ the identity matrix.
+and $\mat{I}$ the identity matrix, and $\sigma$ is the standard deviation of additive noise in the data.
 
 This leaves the form of the marginalised posterior being analytical:
 
 \begin{equation}
 \label{eq:gp:posterior}
-p(\vec{f}_* | \vec{y}) = \mathcal{N} \left( 
-\mat{K}_{\vec{f}_*,\vec{f}} (\mat{K}_{\vec{f},\vec{f}} + \sigma^2 \mat{I})^{-1} \vec{y},
-\mat{K}_{\vec{f}_*, \vec{f}_*} - \mat{K}_{\vec{f},\vec{f}_*}( \mat{K}_{\vec{f},\vec{f}}+\sigma^2 \mat{I})^{-1} \mat{K}_{\vec{f},\vec{f}_*}).
+p(\vec{f}_* | \vec{y}) = \mathcal{N} (\vec{\mu}, \mat{\Sigma})
+\end{equation}
+for
+\begin{equation}
+\label{eq:gp:posterior-mean}
+\vec{\mu} = \mat{K}_{\vec{f}_*,\vec{f}} (\mat{K}_{\vec{f},\vec{f}} + \sigma^2 \mat{I})^{-1} \vec{y},
+\end{equation}
+and
+\begin{equation}
+\mat{\Sigma} = \mat{K}_{\vec{f}_*, \vec{f}_*} - \mat{K}_{\vec{f},\vec{f}_*}( \mat{K}_{\vec{f},\vec{f}}+\sigma^2 \mat{I})^{-1} \mat{K}_{\vec{f},\vec{f}_*}).
 \end{equation}
 
-Figures ref:fig:gp:training-data to ref:fig:gp:posterior-best show visually how a one-dimensional regressor can be created using an abbr:gp method, starting from a abbr:gp prior and (noisy) data.
+
+\begin{figure}
+\includegraphics{figures/gp/gp-training-data.pdf}
+\includegraphics{figures/gp/gp-example-prior-draws.pdf}
+\includegraphics{figures/gp/gp-example-posterior-draws.pdf}
+\includegraphics{figures/gp/gp-posterior-meancovar.pdf}
+\caption[A Gaussian process, step-by-step]{The conditioning of a Gaussian process, starting with data with additive Guassian noise generated from a sine function (grey line) [top row], and a Gaussian process prior [second row].
+Individual draws from the posterior distribution of the Gaussian process are shown in the third row, and the mean draw from the posterior is shown as the heavy red line in the bottom row, with the function which generated the data overlayed in grey, and the $1$, $2$, and $3$-sigma confidence regions plotted as shaded areas around the mean draw.
+\label{fig:gp:steps}}
+\end{figure}
+
+
+Figure ref:fig:gp:steps shows visually how a one-dimensional regressor can be created using an abbr:gp method, starting from a abbr:gp prior and (noisy) data.
+The first step, depicted on the first row, is an example of raw training data (containing additive Gaussian noise) which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although abpl:gp are also capable of handling multi-dimensional data.
+Here the generating function is plotted as a grey line.
+Then we choose a covariance function for the  abbr:gp, in this case an exponential-quadratic covariance function (covariance functions are discussed in detail in section ref:sec:gp:covariance). The Gaussian process containing no data forms our prior probability distribution. 
+In the second row of figure ref:fig:gp:steps 10 draws from the prior distribution are plotted.
+The process of ``training'' the abbr:gp is discussed in detail in section ref:sec:gp:training.
+A prior distribution is placed over the $\sigma$ parameter (see equation ref:eq:gp:prior-and-likelihood), and the abbr:gp is trained to find the most probable value for the $\sigma$ parameter and the hyperparameters of the covariance function.
+For this example the prior placed on $\sigma$ is $\mathcal{N}(0.5, 0.2)$, and the priors on the hyperparameters are flat.
+The trained Gaussian process can then be sampled multiple times to produce multiple different potential  fitting functions. 
+In the third row of figure ref:fig:gp:steps 10 draws from the abbr:gp posterior are displayed. 
+We can also take the mean and the covariance of the abbr:gp, and produce a single ``best-fit'' with confidence intervals, which is depicted in the fourth row of figure ref:fig:gp:steps. 
+Where, again, the original generating function for the data is shown as a grey line.
+The mean function produced by the abbr:gp manages to reproduce a function which oscillates in a way similar to the generating sine function, however the presence of a considerable amount of noise in the data, which is accounted for through the $\sigma$ term in the abbr:gp, prevents the function from being recovered completely faithfully.
 
 The mean and variance of this posterior distribution can be used to form a regressor for the data, $\set{D}$, with the mean taking the role of a ``line-of-best-fit'' in conventional regression techniques, while the variance describes the goodness of that fit.
 
 A graphical model of a abbr:gp is shown in figure ref:fig:gp:chain-diagram which illustrates an important property of the abpl:gp model: the addition (or removal) of any input point to the abbr:gp does not change the distribution of the other variables. 
 This property allows outputs to be generated at arbitrary locations throughout the parameter space.
 
-Gaussian processes trained with $N$ training data require the ability to both store and invert an $N\times N$ matrix of covariances between observations; this can be a considerable computational challenge.
+# Gaussian processes trained with $N$ training data require the ability to both store and invert an $N\times N$ matrix of covariances between observations; this can be a considerable computational challenge.
 # There are a number of approaches to get around this problem, including /sparse Gaussian processes/, where a limit on the parameter-space distance between training points is set, and the covariance of points outside this radius are ignored cite:EPFL-CONF-161319, and hierarchical matrix inversion methods\cite{hodlr}.
 
-Gaussian processes can be extended from the case of a single-dimensional input predicting a single-dimensional output to the ability to predict a multi-dimensional output from a multi-dimensional input cite:2011arXiv1106.6251A,Alvarez2011a,Bonilla2007.
+# Gaussian processes can be extended from the case of a single-dimensional input predicting a single-dimensional output to the ability to predict a multi-dimensional output from a multi-dimensional input cite:2011arXiv1106.6251A,Alvarez2011a,Bonilla2007.
+
+
+
+# \begin{figure}
+# \includegraphics{figures/gp/gp-example-posterior-draws.pdf}
+# \caption[Draws from a Gaussian process posterior]{[Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed. \label{fig:gp:covariance-matrix}}
+# \end{figure}
+
+# \begin{figure}
+# \includegraphics{figures/gp/gp-posterior-meancovar.pdf}
+# \caption[The mean and variance of a Gaussian process regression prediction]{[Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.
+# Again, the original generating function for the data is shown as a grey line. \label{fig:gp:posterior-best}}
+# \end{figure}
+
 
 \begin{figure}
-\includegraphics{figures/gp/gp-training-data.pdf}
-\caption[Training data for a Gaussian process]{[Step 1] An example of raw training data (containing additive Gaussian noise) which is suitable for training a Gaussian process. In this example the input data ($x$-axis) are 1-dimensional, although GPs are also capable of handling multi-dimensional data.
-Here the generating function is plotted as a grey line.
-\label{fig:gp:training-data}}
-\end{figure}
+\begin{center}
+\begin{tikzpicture}
 
-\begin{figure}
-\includegraphics{figures/gp/gp-example-prior-draws.pdf}
-\caption[Draws from a Gaussian process prior]{[Step 2] We choose a covariance function for the  Gaussian process, in this case an exponential-quadratic covariance    function. The Gaussian process containing no data and this    covariance matrix forms our prior probability distribution. Here    50 draws from the prior distribution are plotted. \label{fig:gp:prior}}
-\end{figure}
+	 \node[obs] (x1) {$\vec{x}_{1}$};	 	
+	 \node[latent, above = of x1] (f1) {$f_{1}$};
+	 \node[obs, above = of f1] (y1) {$y_{1}$};
+	 \edge{x1}{f1};
+	 \edge{f1}{y1};
 
-\begin{figure}
-\includegraphics{figures/gp/gp-example-posterior-draws.pdf}
-\caption[Draws from a Gaussian process posterior]{[Step 3] The trained Gaussian process can be     sampled multiple times to produce multiple different potential     fitting functions. Here 50 draws from the Gaussian process posterior are    displayed. \label{fig:gp:covariance-matrix}}
-\end{figure}
+	 \node[obs, right = of x1] (x2) {$\vec{x}_{2}$};	 	
+	 \node[latent, above = of x2] (f2) {$f_{2}$};
+	 \node[obs, above = of f2] (y2) {$y_{2}$};
+	 \edge{x2}{f2};
+	 \edge{f2}{y2};
 
-\begin{figure}
-\includegraphics{figures/gp/gp-posterior-meancovar.pdf}
-\caption[The mean and variance of a Gaussian process regression prediction]{[Step 4] We can then take the mean and the covariance of the Gaussian process, and produce a single ``best-fit'' with confidence intervals.
-Again, the original generating function for the data is shown as a grey line. \label{fig:gp:posterior-best}}
-\end{figure}
+	 \node[obs, right = of x2] (xstar) {$\vec{x}_{\star}$};	 	
+	 \node[latent, above = of xstar] (fstar) {$f_{\star}$};
+	 \node[latent, above = of fstar] (ystar) {$y_{\star}$};
+	 \edge{xstar}{fstar};
+	 \edge{fstar}{ystar};
 
+	 \node[obs, right = 2 of xstar] (xN) {$\vec{x}_{N}$};	 	
+	 \node[latent, above = of xN] (fN) {$f_{N}$};
+	 \node[obs, above = of fN] (yN) {$y_{N}$};
+	 \edge{xN}{fN};
+	 \edge{fN}{yN};
+
+	 \draw [black, line width=0.1cm] (f1) -- (f2) -- (fstar);
+	 \draw [black, dashed, line width=0.1cm] (fstar) -- (fN);
+\end{tikzpicture}
+\end{center}
+\caption[A graphical model of a Gaussian process]{A graphical model of a Gaussian process, represented as a chain graph. The inputs (on the bottom row) are all observed quantities, while outputs are observed only at the location of training points. The latent variables, $f$ from the Gaussian field (the heavy black line connecting these nodes indicates that they are fully connected) connect the two, and so any given observation is independent of all other nodes given its connected latent $f$ variable. Thus the marginalisation (removal) or addition of input nodes to the abbr:gp does not change the distribution of the other variables.
+\label{fig:gp:chain-diagram}}
+\end{figure}
 
 * Covariance Functions
   :PROPERTIES:
@@ -188,13 +207,15 @@ As such, the form of the covariance function represents prior knowledge about th
 
 #+ATTR_LATEX: :options [Stationary covariance function]
 #+BEGIN_definition
-A stationary covariance function is a function $f(\vec{x} - \vec{x}')$, and which is thus invariant to translations in the input space.
+Given two points, $\vec{x}$ and $\vec{x}'$ in a parameter space, a stationary covariance function is a function $f(\vec{x} - \vec{x}')$, and which is thus invariant to translations in the input space.
 #+END_definition
+That is, the function depends on the separation of the points, and not their position.
 
 #+ATTR_LATEX: :options [Isotropic Covariance Function]
 #+BEGIN_definition
-If a covariance function is a function of the form $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant under all rigid motions.
+Given two points, $\vec{x}$ and $\vec{x}'$ in a parameter space, if a covariance function is a function of the form $f(|\vec{x} - \vec{x}'|)$ then it is isotropic, and invariant under all rigid motions.
 #+END_definition
+Thus such a covariance function depends only on the separation between the points, and not the direction between them.
 
 A covariance function which is both stationary and isotropic has the property that it can be expressed as a function of a single variable, $r = | \vec{x} - \vec{x}' |$ is known as a abbr:rbf.
 Functions of the form $k : (\vec{x}, \vec{x}') \to \mathbb{C}$, for two vectors $\vec{x}, \vec{x}' \in \mathcal{X}$ are often known as /kernels/, and I will frequently refer interchangably to covariance functions and kernels where the covariance function has this form.
@@ -217,38 +238,37 @@ These include the /exponential quadratic/, /quadratic exponential/, /squared exp
 
 The reason for this is its form, which closely resembles that of the Gaussian function:
 
-#+NAME: eq:gp:kernels:se
 \begin{equation}
    \label{eq:gp:kernels:se}
-  k_{\mathrm{SE}}(r) = \exp \left( - \frac{r^2}{2 l^2} \right)
+  k_{\mathrm{SE}}(r) = \exp \left( - \frac{r^2}{2 l^2} \right),
 \end{equation}
-
 for $r$ the Euclidean distance of a datum from the centre of the parameter space, and $l$ is a scale factor associated with the axis along which the data are defined.
 
 \begin{figure}
 \includegraphics{figures/gp/covariance-se-overview.pdf}
-\caption[The squared exponential covariance function]{The \textbf{squared exponential} covariance function (defined in equation ref:eq:gp:kernels:se). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes with \gls{se} covariance with the same length scales as the left panel.
+\caption[The squared exponential covariance function]{The \textbf{squared exponential} covariance function (defined in equation~\ref{eq:gp:kernels:se}). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes using gls:se covariance with the same length scales as the left panel.
 \label{fig:gp:covariance:overviews:se}}
 \end{figure}
 
-The squared exponential function imposes strong smoothness constraints on the model, as it is infinitely differentiable.
+The abbr:se function imposes strong smoothness constraints on the model, as it is infinitely differentiable.
+This covariance function is therefore well-suited to modelling data which is generated by smooth processes without discontinuities.
 
-The scale factor, $l$ in ref:eq:gp:kernels:se, also known as its /scale-length/ defines the size of the effect within the process. 
+The scale factor, $l$ in equation ref:eq:gp:kernels:se, also known as its /scale-length/ defines the size of the effect within the process. 
 This characteristic length-scale can be understood cite:adler1976,gpr.book.rw in terms of the number of times the abbr:gp should cross some given level (for example, zero).
-Indeed, for a abbr:gp with a covariance function $k$ which has well-defined first and second derivatives the expected number of times, $N_{u}$ the process will cross a value $u$ is 
+Indeed, for a abbr:gp with a covariance function $k$ which has well-defined first and second derivatives the expected number of times, $N_{u}$ the process will cross a value $u$ is cite:gpr.book.rw
 
 \begin{equation}
 \label{eq:gp:kernels:crossings}
-\mathbb{E}(Nᵤ) = \frac{1}{2 \pi} \sqrt{ - \frac{ k''(0) }{k(0)} } \exp \left( - \frac{u²}{2k(0)} \right)
+\mathbb{E}(N_{u}) = \frac{1}{2 \pi} \sqrt{ - \frac{ k''(0) }{k(0)} } \exp \left( - \frac{u²}{2k(0)} \right)
 \end{equation} 
 
 A zero-mean abbr:gp which has an abbr:se covariance structure will then cross zero $1/(2 \pi l)$ times on average.
 
-Examples of the squared exponential covariance function, and of draws from a Gaussian process prior which uses this covariance function are plotted in figure ref:fig:gp:covariance:overviews:se for a variety of different scale lengths.
+Examples of the abbr:se covariance function, and of draws from a Gaussian process prior which uses this covariance function are plotted in figure ref:fig:gp:covariance:overviews:se for a variety of different scale lengths.
 
 \begin{figure}
 \includegraphics{figures/gp/covariance-ex-overview.pdf}
-\caption[The exponential covariance function]{The \textbf{exponential} covariance function (defined in equation ref:eq:gp:kernels:exp). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panels on the right contain draws from Gaussian processes with exponential covariance with the same length scales as the left panel.
+\caption[The exponential covariance function]{The \textbf{exponential} covariance function (defined in equation~\ref{eq:gp:kernels:exp}). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panels on the right contain draws from Gaussian processes using an exponential covariance with the same length scales as the left panel.
 \label{fig:gp:covariance:overviews:ex}}
 \end{figure}
 
@@ -258,12 +278,14 @@ For data which is not generated by a smooth function a suitable covariance funct
 \label{eq:gp:kernels:exp}
 k_{\mathrm{EX}} = \exp\left( - \frac{r}{l} \right),
 \end{equation}
-
 where $r$ is the pairwise distance between data and $l$ is a length scale, as in equation ref:eq:gp:kernels:se.
 
-Examples of the exponential covariance function, and of draws from a Gaussian process prior which uses this covariance function are plotted in figure ref:fig:gp:covariance:overviews:ex for a variety of different scale lengths.
+In contrast to the abbr:se covariance function, the exponential covariance function's value drops-off rapidly near zero (as can be seen in the left panel of figure ref:fig:gp:covariance:overviews:ex), allowing it to model rapid variation over short scales, making it suited to modelling data generated by non-smooth functions.
 
-For data generated by functions which are smooth, but not necessarily infinitely differentiable we may turn to the Matérn family of covariance functions, which take the form 
+Examples of the exponential covariance function, and of draws from a Gaussian process prior which uses this covariance function are plotted in figure ref:fig:gp:covariance:overviews:ex for a variety of different scale lengths. 
+The behaviour of this kernel is strongly affected by the covariance function's rapid drop-off close to zero; compared to the other examples of covariance function in this section.
+
+For data generated by functions which are smooth, but not necessarily infinitely differentiable, as in the case of the abbr:se covariance function, we may turn to the Matérn family of covariance functions, which take the form 
 
 \begin{equation}
 \label{eq:gp:kernels:mat}
@@ -271,15 +293,14 @@ k_{\mathrm{Mat}}(r) = \frac{1}{2^{\nu - 1} \Gamma{\nu}}
 \left( \frac{\sqrt{2 \nu}}{l} \right)^{\nu} K_{\nu} 
 \left( \frac{\sqrt{2 \nu}}{l} r \right),
 \end{equation}
-
 for $K_{\nu}$ the modified Bessel function of the second kind, and $\Gamma$ the gamma function.
 As with the previous two covariance functions $l$ is a scale length parameter, and $r$ the distance between two data.
-A abbr:gp which has a Mat\'{e}rn covariance function will be $(\lceil x \rceil - 1)$-times differentiable.
+A abbr:gp which has a Matérn covariance function will be $(\lceil x \rceil - 1)$-times differentiable.
 
 While determining an appropriate value of $\nu$ during the training of the abbr:gp is possible, it is common to select a value /a priori/ for this quantity.
 $\nu=3/2$ and $\nu=5/2$ are common choices as $K_{\nu}$ can be determined simply, and the covariance functions are analytic.
 
-The case with $\nu=3/2$, commonly referred to as a Matérn-$3/2$ kernel then becomes
+The case with $\nu=3/2$, commonly referred to as a Matérn-$3/2$ kernel, then becomes
 \begin{equation}
 k_{\mathrm{M32}}(r) = \left(1+\frac{\sqrt{3}d}{l}\right) \exp\left( - \frac{\sqrt{3}d}{l} \right).
 \end{equation}
@@ -297,13 +318,13 @@ Again, examples of this covariance function, and example draws from a abbr:gp us
 
 \begin{figure}
 \includegraphics{figures/gp/covariance-mat32-overview.pdf}
-\caption[The Matérn-$3/2$ covariance function]{The \textbf{Matérn-$3/2$} covariance function (defined in equation ref:eq:gp:kernels:mat, with $\nu = 3/2$). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panels on the right contain draws from Gaussian processes using a Matérn-$3/2$ covariance with the same length scales as the left panel.
+\caption[The Matérn-$3/2$ covariance function]{The \textbf{Matérn-$3/2$} covariance function (defined in equation~\ref{eq:gp:kernels:mat}, with $\nu = 3/2$). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panels on the right contain draws from Gaussian processes using a Matérn-$3/2$ covariance with the same length scales as the left panel.
 \label{fig:gp:kernels:m32}}
 \end{figure}
 
 \begin{figure}
 \includegraphics{figures/gp/covariance-mat52-overview.pdf}
-\caption[The Matérn-$5/2$ covariance function]{The \textbf{Mat\'{e}rn-$5/2$} covariance function (defined in equation ref:eq:gp:kernels:mat, with $\nu=5/2$). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panels on the right contain draws from Gaussian processes using Mat\'{e}rn-$5/2$ covariance functions with the same length scales as the left panel.
+\caption[The Matérn-$5/2$ covariance function]{The \textbf{Mat\'{e}rn-$5/2$} covariance function (defined in equation~\ref{eq:gp:kernels:mat}, with $\nu=5/2$). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panels on the right contain draws from Gaussian processes using Mat\'{e}rn-$5/2$ covariance functions with the same length scales as the left panel.
 \label{fig:gp:kernels:m52}}
 \end{figure}
 
@@ -314,15 +335,14 @@ The rational quadratic covariance function is defined as
 
 \begin{equation}
 \label{eq:gp:kernels:rq}
-k_{\mathrm{RQ}}(r)  =\left( 1 + \frac{r^2}{2 \alpha l^2}^{-\alpha} \right),
+k_{\mathrm{RQ}}(r)  =\left( 1 + \frac{r^2}{2 \alpha l^2} \right)^{-\alpha},
 \end{equation}
-
 where $\alpha$ is a parameter which controls the weighting of small-scale compared to large-scale variations, and $l$ and $r$ are the overall length scale of the covariance and the distance between two data respectively.
 Examples of this function, at a variety of different length scales and $\alpha$ values, and draws from  abpl:gp which use these functions are plotted in figure ref:fig:gp:kernels:rq.
 
 \begin{figure}
 \includegraphics{figures/gp/covariance-rq-overview.pdf}
-\caption[The rational quadratic covariance function]{The \textbf{rational quadratic} covariance function (defined in equation \ref{eq:gp:kernels:rq}). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes with rational quadratic covariance with the same length scales as the left panel.
+\caption[The rational quadratic covariance function]{The \textbf{rational quadratic} covariance function (defined in equation~\ref{eq:gp:kernels:rq}). The panel on the left depicts the value of the kernel as a function of $r = (|\vec{x} - \vec{x}'|)$, at a number of different length scales ($l = 0.25, 0.5, 1.0$) while the panel on the right contains draws from Gaussian processes using rational quadratic covariance with the same length scales as the left panel.
 \label{fig:gp:kernels:rq}}
 \end{figure}
 
@@ -339,14 +359,14 @@ Consider two covariance functions, $f_1$ and $f_2$, then
 
 #+ATTR_LATEX: :options [Kernel Addition]
 #+BEGIN_definition
-If $f₁$ and $f₂$ are both kernels, then 
-$f = f_1 + f_2$ is also a kernel.
+If $f_{1}$ and $f_{2}$ are both kernels, then 
+$f = f_{1} + f_{2}$ is also a kernel.
 #+END_definition
 
 #+ATTR_LATEX: :options [Kernel Multiplication]
 #+BEGIN_definition
-If $f₁$ and $f₂$ are both kernels, then 
-$f = f_1 × f_2$ is also a kernel.
+If $f_{1}$ and $f_{2}$ are both kernels, then 
+$f = f_{1} \times f_{2}$ is also a kernel.
 #+END_definition
 
 We can think of the sum of two kernels as representing the possibility that the data be described by one component kernel or another.
@@ -359,7 +379,7 @@ For example, the training data may be known to be periodic in one dimension, or 
 Here I adopt the convention from cite:duvenaud.thesis.2014 and omit the hyperparameters from the description of the kernel.
 I also extend the notation to allow kernels with multiple input dimensions to be described, with superscript indices indicating the dimensions of the training data which the kernel applies to.
 
-As a concrete example, for a kernel function in which the zeroth dimension is described by a squared-exponential kernel, but the first, second, and third dimensions are described by a rational quadratic kernel the kernel could be described as
+As a concrete example, for a kernel function in which the zeroth dimension is described by a abbr:se kernel, but the first, second, and third dimensions are described by a rational quadratic kernel the kernel could be described as
 
 \begin{equation}
 \label{eq:example-kernel-notation}
@@ -420,19 +440,19 @@ periodic kernel, $\Lin \times \SE$.
   :END:
   \label{sec:gp:training}
 
-When defining the covariance function for the it may be desirable to specify a number of free hyperparameters, $\theta$, which allow the properties of the GP to be altered.
+When defining the covariance function for a abbr:gp it may be desirable to specify a number of free hyperparameters, $\theta$, which allow the properties of the GP to be altered.
 Since the functional form of the covariance function defines the abbr:gp model, this allows the techniques of Bayesian model selection to be employed, in order to select the specific abbr:gp model which optimally describes the data. 
-The log-probability that a given set of strain values were drawn from a Gaussian process with zero mean and a covariance matrix $\mat{K} = K_{ij} = k(x, x')$ is
+The log-probability that a given set of strain values were drawn from a Gaussian process with zero mean and a covariance matrix $\mat{K} = K_{ij} = k(x, x'; \theta)$ is
 
 \begin{equation}
 \label{eq:logevidencegp}
-  \log(p(\vec{f}| X)) = - \frac{1}{2} \mat{K}^{-1} \vec{f} - \frac{1}{2} \log |\mat{K}| - \frac{n}{2} \log 2\pi.
+  \log p(\vec{f} | x) = - \frac{1}{2} \mat{K}^{-1} \vec{f} - \frac{1}{2} \log |\mat{K}| - \frac{n}{2} \log 2\pi.
 \end{equation}
 
 This quantity is normally denoted the /log-evidence/ or the /log-hyperlikelihood/. 
-The model which best describes the training data may then be found by maximising the log-hyperlikelihood with respect to the hyperparameters, $\theta$ of the covariance function.
+The model which best describes the training data may then be found by maximising the log-hyperlikelihood with respect to the hyperparameters, $\theta$ of the covariance function, $k(x, x'; \theta)$.
 
-This optimisation may be conducted using either a hill-climbing based optimisation algorithm, or in a hierarchical Bayesian framework, with priors probability distributions assigned to each hyperparameter, and the optimal hyperparameters then found using an abbr:mcmc algorithm.
+This optimisation may be conducted using either a hill-climbing based optimisation algorithm, or in a hierarchical Bayesian framework, with prior probability distributions assigned to each hyperparameter, and the optimal hyperparameters then found using an abbr:mcmc algorithm.
 
 # * The predictive posterior distribution
 #   :PROPERTIES:
@@ -482,16 +502,16 @@ many sub-spaces, and each sub-space is modelled using an independent abbr:gp.
 
 ** Sparse Gaussian processes
    
-   Sparse abbr:gpr approaches work by modifying the form of the joint prior distribution (from equation ref:eq:gp:prior-and-likelihood to include an additional $m$ latent variables,
+Sparse abbr:gpr approaches work by modifying the form of the joint prior distribution from equation ref:eq:gp:prior-and-likelihood to include an additional $m$ latent variables,
 \[ \vec{u} = [u_1, \dots, u_m]^{\transpose}, \]
 which are termed ``inducing variables''.
-These correspond to values of the Gaussian process at inputs $X_\vec{u}$, which are the inducing inputs.
+These correspond to values of the Gaussian process at inputs $X_{\vec{u}}$, which are the inducing inputs.
 These inducing variables can be chosen in various different ways, but their effect on the abbr:gp is the same.
 
 The original abbr:gp can be recovered by marginalising over $\vec{u}$:
 \begin{equation}
 \label{eq:gp:marginal-inducing}
-p(\vec{f}_*, \vec{f}) = \int p(\vec{f}_*, \vec{f}, \vec{u}) = \int p(\vec{f}_*, \vec{f} | \vec{u}) p(\vec{u}) \dd{\vec{u}}
+p(\vec{f}_*, \vec{f}) = \int p(\vec{f}_*, \vec{f}, \vec{u}) \dd{\vec{u}} = \int p(\vec{f}_*, \vec{f} | \vec{u}) p(\vec{u}) \dd{\vec{u}}
 \end{equation}
 with $p(\vec{u}) = \mathcal{N}(\vec{0}, \mat{K}_{\vec{u},\vec{u}})$.
 
@@ -633,7 +653,7 @@ or computational experiments, where the acquisition of training data is sufficie
 In the case where test data is available two straight-forward metrics are available: the root-mean-squared error, and the correlation. 
 
 Let $\vec{x}_*$ and $\vec{y}_*$ be respectively the test inputs and test outputs from the test set, 
-then let $\hat{y}$ be the set of model predictions drawn from the Gaussian Process with inputs $\vec{x}_*$.
+then let $\hat{\vec{y}}$ be the set of model predictions drawn from the Gaussian Process with inputs $\vec{x}_*$.
 
 The abbr:rmse gives an estimate of the total deviation between the mean prediction of the model and the true value from the test data:
 
@@ -646,7 +666,6 @@ The abbr:rmse gives an estimate of the total deviation between the mean predicti
     { n_t },
   }
 \end{equation}
-
 for $n_t$ the size of the test set. While the abbr:rmse can represent a good metric for conventional regression methods, it does not consider the estimate of the variance which is provided by Gaussian process models; 
 as such it is an insufficient measure on its own of these models.
 
@@ -814,15 +833,16 @@ The testing can then be repeated multiple times, leaving different points from t
 # [ref:fig:simplewaveform1]
 
 
-   While in figures ref:fig:gp:training-data to ref:fig:gp:posterior-best showed the process of constructing a abbr:gp regressor for data generated from a single-dimensional function, in this section I demonstrate how a higher-dimensional problem can be treated with abbr:gp regression.
+While figure ref:fig:gp:steps showed the process of constructing a abbr:gp regressor for data generated from a single-dimensional function, in this section I demonstrate how a higher-dimensional problem can be treated with abbr:gp regression.
 For the sake of clarity I have chosen a two-dimensional function; anything with more dimensions is likely to be hard to represent on paper, and the same concepts can be extended to higher-dimensional models.
 
 In figure ref:fig:gp:examples:mountainspoints a number of spot-heights are plotted for hills in the /Arrochar Alps/, a region of the Scottish Highlands around 50-kilometres north of the City of Glasgow. 
 Each point corresponds to the summit of a hill (derived from the /Database of British and Irish Hills/ cite:hilldb).
-In order to interpolate a ``landscape'' based on these measurements I trained a abbr:gp with an $\RQ$ kernel on the latitude and the longitude. 
+In order to interpolate a ``landscape'' based on these measurements I trained a abbr:gp with a rational quadratic kernel on the latitude and the longitude. 
 The $\alpha$ parameter of the kernel was set to be the same in both dimensions, and a $\Gamma$-function prior was placed on it with shape parameters $(\alpha_\Gamma = 5, \beta_\Gamma = 0.5)$.
 A normal distribution prior was placed on the lengthscale of each dimension, each with $(\mu=0.012, \sigma=1)$.
-Finally, the covariance function was multiplied constant kernel scaling factor ($\Con$), the amplitude of which was drawn from a normal distribution prior with parameters $(\mu = 1, \sigma=1)$.
+It is worth noting that applying a constraint on a abbr:gp is difficult, and as such, despite providing the peak heights in the landscape, the abbr:gp is free to interpolate larger height values throughout the landscape.
+Finally, the covariance function was multiplied by a constant kernel scaling factor ($\Con$), the amplitude of which was drawn from a normal distribution prior with parameters $(\mu = 1, \sigma=1)$.
 
 The abbr:gp was implemented using the ~PyMC3~ python library cite:Salvatier2016.
 
@@ -835,19 +855,21 @@ The abbr:gp was implemented using the ~PyMC3~ python library cite:Salvatier2016.
 In order to determine the appropriate hyperparameter values the log-evidence was maximised using a Newtonian optimiser, in order to determine the abbr:map estimate of the hyperparameters.
 The resulting abbr:map estimate of the mean landscape is shown in figure ref:fig:gp:examples:mountains1.
 A number of /irregularities/ can be spotted with a map produced using this technique, rather than a more standard method.
-The first is the absence of a flat region of land occupied by a large reservoir between /Ben Vane/ and /Ben Vorlich/; as the map is informed only by summits this surrogate model for the landscape is bound to struggle to find low points like this in the landscape.
-The second is the very smooth nature of the landscape, for example the near-conical shape of /Beinn Ìme/; this is a result of the choice of a smooth kernel (the $\RQ$ kernel).
+The first is the absence of a flat region of land occupied by a large reservoir between /Ben Vane/ $(56.249786^{\circ},-4.781639^{\circ})$ and /Ben Vorlich/ $(56.274021^\circ,-4.755046^\circ)$; as the map is informed only by summits this surrogate model for the landscape is bound to struggle to find low points like this in the landscape.
+The second is the very smooth nature of the landscape, for example the near-conical shape of /Beinn Ìme/ $(56.236812^\circ,-4.817142^\circ)$; this is a result of the choice of a smooth kernel (the $\RQ$ kernel).
+The behaviour of the abbr:gp far from any of the training data is mostly obscured in this figure thanks to the clipping of the boundary box; the abbr:gp will eventually revert to the mean of the abbr:gp prior (which was chosen to be zero in this example); this behaviour can be seen to some extent in the upper-left corner of the plot.
+
 In figure ref:fig:gp:examples:mountains2 I show the same landscape created using abpl:gp with a variety of covariance functions which show how drastically this choice affects the model.
 
 \begin{figure}
 \makebox[\textwidth][c]{\includegraphics{figures/gp/arrochar-alps.pdf}}
-\caption[A ``landscape'' created by GPR for the Arrochar Alps]{Trained on a small number of spot-heights (of summits), a abbr:gp is capable of estimating the landscape surrounding those points. This plot depicts the mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
+\caption[A ``landscape'' created by GPR for the Arrochar Alps]{The mean abbr:gp output for a abbr:gp trained with summit heights in the Arrochar Alps, an upland area north of Glasgow, Scotland. Here the smoothness conditions placed on the abbr:gp by the form of the covariance function become clear with a number of the peaks being lost as a result. In this example a rational-quadratic covariance function was used.
 \label{fig:gp:examples:mountains1}
 }
 \end{figure}
 
 Four different covariance functions are shown; constructed from the rational quadratic ($\RQ$), Matérn-5/2 ($\kernel{M52}$), exponential quadratic ($\SE$), and the exponential kernels respectively. 
-The differences in the variance of the predictions from each abbr:gp are shown in figure ref:fig:gp:examples:mountainsvar.
+The variance of the predictions from each abbr:gp are shown in figure ref:fig:gp:examples:mountainsvar.
 
 \begin{figure}
 \includegraphics{figures/gp/arrochar-kernels.pdf}
@@ -859,9 +881,20 @@ Each panel also contains the training points marked as black dots.
 
 \begin{figure}
 \includegraphics{figures/gp/arrochar-kernels-var.pdf}
-\caption[The variance of GPR-derived landscapes for the Arrochar Alps.]{The variance of the landscapes from figure~\ref{fig:gp:examples:mountains2}, with the uncertainty underlaid as a colourmap, which runs from dark in regions of low variance to light in regions of high variance (and hence high uncertainty).
+\caption[The variance of GPR-derived landscapes for the Arrochar Alps.]{The variance of the landscapes from figure~\ref{fig:gp:examples:mountains2}, with the uncertainty underlaid as a colourmap, which runs from dark in regions of low variance, generally close to the peaks, where the training data was provided to the \gls{gp}, to light in regions of high variance (and hence high uncertainty).
 \label{fig:gp:examples:mountainsvar}}
 \end{figure}
+
+Each of these predictions show behaviour created by the choice of covariance function.
+The rational quadratic covariance function infers a smooth, rolling landscape between the peaks, but still produces pronounced peaks. 
+The prediction with this covariance kernel is confident throughout the area of the plot, as seen from the low variance in the upper-left panel of figure ref:fig:gp:examples:mountainsvar.
+
+The behaviour of the abpl:gp which use Matérn-5/2 and exponential quadratic covariance function are broadly comparable, favouring much steeper slopes than the rational quadratic abbr:gp, and providing low-confidence predictions in regions outside the training data. 
+This effect is moderately more pronounced for the abbr:gp using the exponential quadratic than the Matérn-5/2.
+
+Similarly to the rational quadratic kernel, the abbr:gp using the exponential kernel produces a landscape with smoothly-varying large-scale structure, but allows for steeper gradients close to training points, and produces lower-confidence estimates than the abbr:gp using the rational quadratic covariance function outside of the parameter space spanned by the training data.
+
+While this is clearly not a practical method for use in cartography, the behaviour of the four abpl:gp shown in figures ref:fig:gp:examples:mountains2 and ref:fig:gp:examples:mountainsvar is helpful to understand the behaviour of abbr:gp in higher-dimensional spaces.
 
 # ** A concrete example
 
@@ -959,33 +992,33 @@ Each panel also contains the training points marked as black dots.
 # # Standard implementations of Gaussian processes are capable of mapping a multi-dimensional input to a single-dimensional output, however there are many situations in which the ability to generate a multi-dimensional output would be advantageous.
 
 
-* General elliptical processes
-  :PROPERTIES:
-  :CUSTOM_ID: sec:gpr:elliptical
-  :END:
-  \label{sec:gp:elliptical}
-
-The properties of multivariate normal distributions which make them suitable for abbr:gp regression also apply to the family of /general elliptical distributions/ cite:symmetricfang which are generalisations of it.
-
-Shah /et al./ cite:2014arXiv1402.4306S demonstrated that the Student-$t$ process is the most general of these elliptical processes which possess an analytical marginal and predictive posterior distributions, essential for the rapid evaluation of the model.
-They also demonstrate that this model is more robust in the presence of change-points within the data.
-
-# * From Bayesian linear regression to Gaussian Process
+# * General elliptical processes
 #   :PROPERTIES:
-#   :CUSTOM_ID: sec:gpr:gpr-from-blr
+#   :CUSTOM_ID: sec:gpr:elliptical
 #   :END:
+#   \label{sec:gp:elliptical}
 
-# This choice of a Gaussian prior also implies that $y_i$ will have a Gaussian distribution, and we can take this to have the form $$\vec{y} \sim \mathcal{G}(\vec{0}, \mat{C})$$ where $\mat{C}$ is the
-# /covariance matrix/, or /gram matrix/, which describes the covariance of the input data, as defined by some /covariance function/, or /kernel/, $K$,
+# The properties of multivariate normal distributions which make them suitable for abbr:gp regression also apply to the family of /general elliptical distributions/ cite:symmetricfang which are generalisations of it.
 
-# \begin{equation}
-# \label{eq:gp:covariance-matrix-derivation}
-# \begin{aligned}
-#   C_{ij} &= K(\vec{x_i}, \vec{x_j}) = \ex(y_i y_j) = \ex(\vec{x}_i \vdot \vec{w} \vec{w} \vdot \vec{x}_j) + \ex(\epsilon_i \epsilon_j) \\
-# &= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2,
-# \end{aligned}
-# \end{equation}
+# Shah /et al./ cite:2014arXiv1402.4306S demonstrated that the Student-$t$ process is the most general of these elliptical processes which possess an analytical marginal and predictive posterior distributions, essential for the rapid evaluation of the model.
+# They also demonstrate that this model is more robust in the presence of change-points within the data.
 
-# for $\ex(x)$ the expectation of a variable $x$. As a result of this relationship between the weight vector, $\vec{w}$ and the gram matrix it is possible to perform the regression by means of a covariance function, rather than inferring the values $w_i$, and this is the justification by which Gaussian Process Regression (GPR) is often deemed a "non-parameteric" regression model[fn:parametric].
+# # * From Bayesian linear regression to Gaussian Process
+# #   :PROPERTIES:
+# #   :CUSTOM_ID: sec:gpr:gpr-from-blr
+# #   :END:
 
-# [fn:parametric] This claim is rather sketchy, as we'll see when the forms of covariance function are presented, as the parametricity is simply moved from the model itself to the form of the covariance functions, and the values of these /hyperparameters/ must be inferred, or learned, from the data.
+# # This choice of a Gaussian prior also implies that $y_i$ will have a Gaussian distribution, and we can take this to have the form $$\vec{y} \sim \mathcal{G}(\vec{0}, \mat{C})$$ where $\mat{C}$ is the
+# # /covariance matrix/, or /gram matrix/, which describes the covariance of the input data, as defined by some /covariance function/, or /kernel/, $K$,
+
+# # \begin{equation}
+# # \label{eq:gp:covariance-matrix-derivation}
+# # \begin{aligned}
+# #   C_{ij} &= K(\vec{x_i}, \vec{x_j}) = \ex(y_i y_j) = \ex(\vec{x}_i \vdot \vec{w} \vec{w} \vdot \vec{x}_j) + \ex(\epsilon_i \epsilon_j) \\
+# # &= \vec{x}_i^T \ex(\vec{w} \vec{w}^T) \vec{x}_j  + \ex(\epsilon_i \epsilon_j) \\&= \sigma_w^2 \vec{x}_i^T \vec{x}_j + \delta_{ij} \sigma_\epsilon^2,
+# # \end{aligned}
+# # \end{equation}
+
+# # for $\ex(x)$ the expectation of a variable $x$. As a result of this relationship between the weight vector, $\vec{w}$ and the gram matrix it is possible to perform the regression by means of a covariance function, rather than inferring the values $w_i$, and this is the justification by which Gaussian Process Regression (GPR) is often deemed a "non-parameteric" regression model[fn:parametric].
+
+# # [fn:parametric] This claim is rather sketchy, as we'll see when the forms of covariance function are presented, as the parametricity is simply moved from the model itself to the form of the covariance functions, and the values of these /hyperparameters/ must be inferred, or learned, from the data.

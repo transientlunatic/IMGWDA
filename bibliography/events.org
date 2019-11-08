@@ -456,15 +456,16 @@
   :TITLE:    Numerical Relativity Injection Infrastructure
   :BTYPE:    article
   :CUSTOM_ID: 2017arXiv170301076S
-  :AUTHOR:   {Schmidt}, P. and {Harry}, I. W. and {Pfeiffer}, H. P.
-  :JOURNAL:  ArXiv e-prints
+  :AUTHOR:   {Schmidt}, Patricia and {Harry}, Ian W. and {Pfeiffer}, Harald P.
+  :JOURNAL:  arXiv e-prints
+  :KEYWORDS: General Relativity and Quantum Cosmology
+  :YEAR:     2017
+  :MONTH:    Mar
+  :EID:      arXiv:1703.01076
+  :PAGES:    arXiv:1703.01076
   :ARCHIVEPREFIX: arXiv
   :EPRINT:   1703.01076
   :PRIMARYCLASS: gr-qc
-  :KEYWORDS: General Relativity and Quantum Cosmology
-  :YEAR:     2017
-  :MONTH:    mar
-  :ADSURL:   http://adsabs.harvard.edu/abs/2017arXiv170301076S
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017arXiv170301076S
   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
   :END:
-

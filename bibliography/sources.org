@@ -465,16 +465,20 @@
       :BTYPE:    article
       :CUSTOM_ID: 2018arXiv180910113K
       :AUTHOR:   {Khan}, Sebastian and {Chatziioannou}, Katerina and {Hannam}, Mark and {Ohme}, Frank
-      :JOURNAL:  arXiv e-prints
+      :JOURNAL:  \prd
       :KEYWORDS: General Relativity and Quantum Cosmology
-      :YEAR:     2018
-      :MONTH:    Sep
-      :EID:      arXiv:1809.10113
-      :PAGES:    arXiv:1809.10113
+      :YEAR:     2019
+      :MONTH:    Jul
+      :VOLUME:   100
+      :NUMBER:   2
+      :EID:      024059
+      :PAGES:    024059
+      :ABSTRACT: The properties of compact binaries, such as masses and spins, are imprinted in the gravitational waves (GWs) they emit and can be measured using parametrized waveform models. Accurately and efficiently describing the complicated precessional dynamics of the various angular momenta of the system in these waveform models is the object of active investigation. One of the key models extensively used in the analysis of LIGO and Virgo data is the single-precessing-spin waveform model IMRPhenomPv2. In this article we present a new model IMRPhenomPv3, which includes the effects of two independent spins in the precession dynamics. Whereas IMRPhenomPv2 utilizes a single-spin frequency-dependent post-Newtonian rotation to describe precession effects, the improved model, IMRPhenomPv3, employs a double-spin rotation that is based on recent developments in the description of precessional dynamics. Besides double-spin precession, the improved model benefits from a more accurate description of precessional effects. We validate our new model against a large set of precessing numerical-relativity simulations. We find that IMRPhenomPv3 has better agreement with the inspiral portion of precessing binary-black-hole simulations and is more robust across a larger region of the parameter space than IMRPhenomPv2. As a first application we analyze the gravitational-wave event GW151226 with an efficient frequency-domain waveform model that describes two-spin precession. Within statistical uncertainty our results are consistent with published results. IMRPhenomPv3 will allow studies of the measurability of individual spins of binary black holes using GWs and can be used as a foundation upon which to build further improvements, such as modeling precession through merger, extending to higher multipoles, and including tidal effects.
+      :DOI:      10.1103/PhysRevD.100.024059
       :ARCHIVEPREFIX: arXiv
       :EPRINT:   1809.10113
       :PRIMARYCLASS: gr-qc
-      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018arXiv180910113K
+      :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019PhRvD.100b4059K
       :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
       :END:
 *** NR Codes
@@ -856,16 +860,19 @@
       :BTYPE:    article
       :CUSTOM_ID: 2018arXiv181207865V
       :AUTHOR:   {Varma}, Vijay and {Field}, Scott E. and {Scheel}, Mark A. and {Blackman}, Jonathan and {Kidder}, Lawrence E. and {Pfeiffer}, Harald P.
-      :JOURNAL:  arXiv e-prints
+      :JOURNAL:  \prd
       :KEYWORDS: General Relativity and Quantum Cosmology
-      :YEAR:     2018
-      :MONTH:    Dec
-      :EID:      arXiv:1812.07865
-      :PAGES:    arXiv:1812.07865
+      :YEAR:     2019
+      :MONTH:    Mar
+      :VOLUME:   99
+      :NUMBER:   6
+      :EID:      064045
+      :PAGES:    064045
+      :DOI:      10.1103/PhysRevD.99.064045
       :ARCHIVEPREFIX: arXiv
       :EPRINT:   1812.07865
       :PRIMARYCLASS: gr-qc
-      :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2018arXiv181207865V
+      :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019PhRvD..99f4045V
       :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
       :END:
 **** Gaussian process
@@ -1090,8 +1097,8 @@
     :END:
 *** Exploring Long Duration Gravitational-Wave Transients
     :PROPERTIES:
-    :TITLE:    Exploring Long DurationGravitational-Wave Transients with Second Generation Detectors
-    :BTYPE:    thesis
+    :TITLE:    Exploring Long Duration Gravitational-Wave Transients with Second Generation Detectors
+    :BTYPE:    phdthesis
     :CUSTOM_ID: maxfayesthesis
     :URL:      http://orca.cf.ac.uk/110245/
     :YEAR:     2017
@@ -1603,25 +1610,89 @@
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 ** Supernovae
-*** Gravitational waves from supernova matter
+** Gravitational waves from supernova matter
+   :PROPERTIES:
+   :TITLE:    Gravitational waves from supernova matter
+   :BTYPE:    article
+   :CUSTOM_ID: 2010CQGra..27k4101S
+   :AUTHOR:   {Scheidegger}, S. and {Whitehouse}, S.~C. and {K{\"a}ppeli}, R. and {Liebend{\"o}rfer}, M.
+   :JOURNAL:  Classical and Quantum Gravity
+   :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+   :YEAR:     2010
+   :MONTH:    Jun
+   :VOLUME:   27
+   :NUMBER:   11
+   :EID:      114101
+   :PAGES:    114101
+   :ABSTRACT: We have performed a set of 11 three-dimensional magnetohydrodynamical (MHD) core-collapse supernova simulations in order to investigate the dependences of the gravitational wave signal on the progenitor's initial conditions. We study the effects of the initial central angular velocity and different variants of neutrino transport. Our models are started up from a 15M$_{odot}$ progenitor and incorporate an effective general relativistic gravitational potential and a finite temperature nuclear equation of state. Furthermore, the electron flavour neutrino transport is tracked by efficient algorithms for the radiative transfer of massless fermions. We find that non- and slowly rotating models show gravitational wave emission due to prompt- and lepton driven convection that reveals details about the hydrodynamical state of the fluid inside the protoneutron stars. Furthermore we show that protoneutron stars can become dynamically unstable to rotational instabilities at T/|W| values as low as \raisebox{-0.5ex}\textasciitilde2\% at core bounce. We point out that the inclusion of deleptonization during the postbounce phase is very important for the quantitative gravitational wave (GW) prediction, as it enhances the absolute values of the gravitational wave trains up to a factor of ten with respect to a lepton-conserving treatment.
+   :DOI:      10.1088/0264-9381/27/11/114101
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   0912.1455
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2010CQGra..27k4101S
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+*** Gravitational wave burst signal from core collapse of rotating stars
     :PROPERTIES:
-    :TITLE:    Gravitational waves from supernova matter
+    :TITLE:    Gravitational wave burst signal from core collapse of rotating stars
     :BTYPE:    article
-    :CUSTOM_ID: 2010CQGra..27k4101S
-    :AUTHOR:   {Scheidegger}, S. and {Whitehouse}, S.~C. and {K{\"a}ppeli}, R. and {Liebend{\"o}rfer}, M.
-    :JOURNAL:  Classical and Quantum Gravity
-    :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
-    :YEAR:     2010
-    :MONTH:    Jun
-    :VOLUME:   27
-    :NUMBER:   11
-    :EID:      114101
-    :PAGES:    114101
-    :DOI:      10.1088/0264-9381/27/11/114101
+    :CUSTOM_ID: 2008PhRvD..78f4056D
+    :AUTHOR:   {Dimmelmeier}, Harald and {Ott}, Christian D. and {Marek}, Andreas and {Janka}, H. -Thomas
+    :JOURNAL:  \prd
+    :KEYWORDS: 04.25.D-, 02.70.Bf, 04.30.Db, 97.60.Bw, Numerical relativity, Finite-difference methods, Wave generation and sources, Supernovae, Astrophysics
+    :YEAR:     2008
+    :MONTH:    Sep
+    :VOLUME:   78
+    :NUMBER:   6
+    :EID:      064056
+    :PAGES:    064056
+    :DOI:      10.1103/PhysRevD.78.064056
     :ARCHIVEPREFIX: arXiv
-    :EPRINT:   0912.1455
-    :PRIMARYCLASS: astro-ph.HE
-    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2010CQGra..27k4101S
+    :EPRINT:   0806.4953
+    :PRIMARYCLASS: astro-ph
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2008PhRvD..78f4056D
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** General Relativistic Explosion Models of Core-Collapse Supernovae
+    :PROPERTIES:
+    :TITLE:    General Relativistic Explosion Models of Core-Collapse Supernovae
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: 2012ASPC..459..137M
+    :AUTHOR:   {M{\"u}ller}, B. and {Marek}, A. and {Janka}, H. -T. and {Dimmelmeier}, H.
+    :KEYWORDS: Astrophysics - Solar and Stellar Astrophysics, General Relativity and Quantum Cosmology
+    :BOOKTITLE: Numerical Modeling of Space Plasma Slows (ASTRONUM 2011)
+    :YEAR:     2012
+    :EDITOR:   {Pogorelov}, N.~V. and {Font}, J.~A. and {Audit}, E. and {Zank}, G.~P.
+    :SERIES:   Astronomical Society of the Pacific Conference Series
+    :VOLUME:   459
+    :MONTH:    Jul
+    :PAGES:    137
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1112.1920
+    :PRIMARYCLASS: astro-ph.SR
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2012ASPC..459..137M
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** A New Multi-dimensional General Relativistic Neutrino Hydrodynamics Code of Core-collapse Supernovae. III. Gravitational Wave Signals from Supernova Explosion Models
+    :PROPERTIES:
+    :TITLE:    A New Multi-dimensional General Relativistic Neutrino Hydrodynamics Code of Core-collapse Supernovae. III. Gravitational Wave Signals from Supernova Explosion Models
+    :BTYPE:    article
+    :CUSTOM_ID: 2013ApJ...766...43M
+    :AUTHOR:   {M{\"u}ller}, Bernhard and {Janka}, Hans-Thomas and {Marek}, Andreas
+    :JOURNAL:  \apj
+    :KEYWORDS: gravitation, gravitational waves, hydrodynamics, neutrinos, radiative transfer, supernovae: general, Astrophysics - Solar and Stellar Astrophysics, General Relativity and Quantum Cosmology
+    :YEAR:     2013
+    :MONTH:    Mar
+    :VOLUME:   766
+    :NUMBER:   1
+    :EID:      43
+    :PAGES:    43
+    :DOI:      10.1088/0004-637X/766/1/43
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1210.6984
+    :PRIMARYCLASS: astro-ph.SR
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2013ApJ...766...43M
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 *** Three-dimensional simulations of neutrino-driven core-collapse supernovae from low-mass single and binary star progenitors
@@ -2204,25 +2275,27 @@
     :ADSURL:   http://adsabs.harvard.edu/abs/2017ApJ...839...12A
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
-*** Searches for Gravitational Waves from Known Pulsars at Two Harmonics in 2015-2017 LIGO Data
+*** Searches for Gravitational Waves from Known Pulsars at Two Harmonics in 2015─2017 LIGO Data
     :PROPERTIES:
-    :TITLE:    Searches for Gravitational Waves from Known Pulsars at Two Harmonics in 2015-2017 LIGO Data
+    :TITLE:    Searches for Gravitational Waves from Known Pulsars at Two Harmonics in 2015─2017 LIGO Data
     :BTYPE:    article
     :CUSTOM_ID: 2019arXiv190208507T
-    :AUTHOR:   {The LIGO Scientific Collaboration} and {the Virgo Collaboration} and {authors}, additional
-    :JOURNAL:  arXiv e-prints
-    :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+    :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abraham}, S. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adhikari}, R.~X. and {Adya}, V.~B. and {Affeldt}, C. and {Agathos}, M. and {Agatsuma}, K. and {Aggarwal}, N. and {Aguiar}, O.~D. and {Aiello}, L. and {Ain}, A. and {Ajith}, P. and {Allen}, G. and {Allocca}, A. and {Aloy}, M.~A. and {Altin}, P.~A. and {Amato}, A. and {Ananyeva}, A. and {Anderson}, S.~B. and {Anderson}, W.~G. and {Angelova}, S.~V. and {Antier}, S. and {Appert}, S. and {Arai}, K. and {Araya}, M.~C. and {Areeda}, J.~S. and {Ar{\`e}ne}, M. and {Arnaud}, N. and {Ascenzi}, S. and {Ashton}, G. and {Aston}, S.~M. and {Astone}, P. and {Aubin}, F. and {Aufmuth}, P. and {AultONeal}, K. and {Austin}, C. and {Avendano}, V. and {Avila-Alvarez}, A. and {Babak}, S. and {Bacon}, P. and {Badaracco}, F. and {Bader}, M.~K.~M. and {Bae}, S. and {Bailes}, M. and {Baker}, P.~T. and {Baldaccini}, F. and {Ballardin}, G. and {Ballmer}, S.~W. and {Banagiri}, S. and {Barayoga}, J.~C. and {Barclay}, S.~E. and {Barish}, B.~C. and {Barker}, D. and {Barkett}, K. and {Barnum}, S. and {Barone}, F. and {Barr}, B. and {Barsotti}, L. and {Barsuglia}, M. and {Barta}, D. and {Bartlett}, J. and {Bartos}, I. and {Bassiri}, R. and {Basti}, A. and {Bawaj}, M. and {Bayley}, J.~C. and {Bazzan}, M. and {B{\'e}csy}, B. and {Bejger}, M. and {Belahcene}, I. and {Bell}, A.~S. and {Beniwal}, D. and {Berger}, B.~K. and {Bergmann}, G. and {Bernuzzi}, S. and {Bero}, J.~J. and {Berry}, C.~P.~L. and {Bersanetti}, D. and {Bertolini}, A. and {Betzwieser}, J. and {Bhandare}, R. and {Bidler}, J. and {Bilenko}, I.~A. and {Bilgili}, S.~A. and {Billingsley}, G. and {Birch}, J. and {Birney}, R. and {Birnholtz}, O. and {Biscans}, S. and {Biscoveanu}, S. and {Bisht}, A. and {Bitossi}, M. and {Bizouard}, M.~A. and {Blackburn}, J.~K. and {Blair}, C.~D. and {Blair}, D.~G. and {Blair}, R.~M. and {Bloemen}, S. and {Bode}, N. and {Boer}, M. and {Boetzel}, Y. and {Bogaert}, G. and {Bondu}, F. and {Bonilla}, E. and {Bonnand}, R. and {Booker}, P. and {Boom}, B.~A. and {Booth}, C.~D. and {Bork}, R. and {Boschi}, V. and {Bose}, S. and {Bossie}, K. and {Bossilkov}, V. and {Bosveld}, J. and {Bouffanais}, Y. and {Bozzi}, A. and {Bradaschia}, C. and {Brady}, P.~R. and {Bramley}, A. and {Branchesi}, M. and {Brau}, J.~E. and {Briant}, T. and {Briggs}, J.~H. and {Brighenti}, F. and {Brillet}, A. and {Brinkmann}, M. and {Brisson}, V. and {Brockill}, P. and {Brooks}, A.~F. and {Brown}, D.~D. and {Brunett}, S. and {Buikema}, A. and {Bulik}, T. and {Bulten}, H.~J. and {Buonanno}, A. and {Buskulic}, D. and {Buy}, C. and {Byer}, R.~L. and {Cabero}, M. and {Cadonati}, L. and {Cagnoli}, G. and {Cahillane}, C. and {Calder{\'o}n Bustillo}, J. and {Callister}, T.~A. and {Calloni}, E. and {Camp}, J.~B. and {Campbell}, W.~A. and {Canepa}, M. and {Cannon}, K.~C. and {Cao}, H. and {Cao}, J. and {Capocasa}, E. and {Carbognani}, F. and {Caride}, S. and {Carney}, M.~F. and {Carullo}, G. and {Casanueva Diaz}, J. and {Casentini}, C. and {Caudill}, S. and {Cavagli{\`a}}, M. and {Cavalier}, F. and {Cavalieri}, R. and {Cella}, G. and {Cerd{\'a}-Dur{\'a}n}, P. and {Cerretani}, G. and {Cesarini}, E. and {Chaibi}, O. and {Chakravarti}, K. and {Chamberlin}, S.~J. and {Chan}, M. and {Chao}, S. and {Charlton}, P. and {Chase}, E.~A. and {Chassande-Mottin}, E. and {Chatterjee}, D. and {Chaturvedi}, M. and {Cheeseboro}, B.~D. and {Chen}, H.~Y. and {Chen}, X. and {Chen}, Y. and {Cheng}, H. -P. and {Cheong}, C.~K. and {Chia}, H.~Y. and {Chincarini}, A. and {Chiummo}, A. and {Cho}, G. and {Cho}, H.~S. and {Cho}, M. and {Christensen}, N. and {Chu}, Q. and {Chua}, S. and {Chung}, K.~W. and {Chung}, S. and {Ciani}, G. and {Ciobanu}, A.~A. and {Ciolfi}, R. and {Cipriano}, F. and {Cirone}, A. and {Clara}, F. and {Clark}, J.~A. and {Clearwater}, P. and {Cleva}, F. and {Cocchieri}, C. and {Coccia}, E. and {Cohadon}, P. -F. and {Cohen}, D. and {Colgan}, R. and {Colleoni}, M. and {Collette}, C.~G. and {Collins}, C. and {Cominsky}, L.~R. and {Constancio}, M., Jr. and {Conti}, L. and {Cooper}, S.~J. and {Corban}, P. and {Corbitt}, T.~R. and {Cordero-Carri{\'o}n}, I. and {Corley}, K.~R. and {Cornish}, N. and {Corsi}, A. and {Cortese}, S. and {Costa}, C.~A. and {Cotesta}, R. and {Coughlin}, M.~W. and {Coughlin}, S.~B. and {Coulon}, J. -P. and {Countryman}, S.~T. and {Couvares}, P. and {Covas}, P.~B. and {Cowan}, E.~E. and {Coward}, D.~M. and {Cowart}, M.~J. and {Coyne}, D.~C. and {Coyne}, R. and {Creighton}, J.~D.~E. and {Creighton}, T.~D. and {Cripe}, J. and {Croquette}, M. and {Crowder}, S.~G. and {Cullen}, T.~J. and {Cumming}, A. and {Cunningham}, L. and {Cuoco}, E. and {Dal Canton}, T. and {D{\'a}lya}, G. and {Danilishin}, S.~L. and {D'Antonio}, S. and {Danzmann}, K. and {Dasgupta}, A. and {Da Silva Costa}, C.~F. and {Datrier}, L.~E.~H. and {Dattilo}, V. and {Dave}, I. and {Davier}, M. and {Davis}, D. and {Daw}, E.~J. and {DeBra}, D. and {Deenadayalan}, M. and {Degallaix}, J. and {De Laurentis}, M. and {Del{\'e}glise}, S. and {Del Pozzo}, W. and {DeMarchi}, L.~M. and {Demos}, N. and {Dent}, T. and {De Pietri}, R. and {Derby}, J. and {De Rosa}, R. and {De Rossi}, C. and {DeSalvo}, R. and {de Varona}, O. and {Dhurandhar}, S. and {D{\'\i}az}, M.~C. and {Dietrich}, T. and {Di Fiore}, L. and {Di Giovanni}, M. and {Di Girolamo}, T. and {Di Lieto}, A. and {Ding}, B. and {Di Pace}, S. and {Di Palma}, I. and {Di Renzo}, F. and {Dmitriev}, A. and {Doctor}, Z. and {Donovan}, F. and {Dooley}, K.~L. and {Doravari}, S. and {Dorrington}, I. and {Downes}, T.~P. and {Drago}, M. and {Driggers}, J.~C. and {Du}, Z. and {Ducoin}, J. -G. and {Dupej}, P. and {Dwyer}, S.~E. and {Easter}, P.~J. and {Edo}, T.~B. and {Edwards}, M.~C. and {Effler}, A. and {Ehrens}, P. and {Eichholz}, J. and {Eikenberry}, S.~S. and {Eisenmann}, M. and {Eisenstein}, R.~A. and {Essick}, R.~C. and {Estelles}, H. and {Estevez}, D. and {Etienne}, Z.~B. and {Etzel}, T. and {Evans}, M. and {Evans}, T.~M. and {Fafone}, V. and {Fair}, H. and {Fairhurst}, S. and {Fan}, X. and {Farinon}, S. and {Farr}, B. and {Farr}, W.~M. and {Fauchon-Jones}, E.~J. and {Favata}, M. and {Fays}, M. and {Fazio}, M. and {Fee}, C. and {Feicht}, J. and {Fejer}, M.~M. and {Feng}, F. and {Fernand ez-Galiana}, A. and {Ferrante}, I. and {Ferreira}, E.~C. and {Ferreira}, T.~A. and {Ferrini}, F. and {Fidecaro}, F. and {Fiori}, I. and {Fiorucci}, D. and {Fishbach}, M. and {Fisher}, R.~P. and {Fishner}, J.~M. and {Fitz-Axen}, M. and {Flaminio}, R. and {Fletcher}, M. and {Flynn}, E. and {Fong}, H. and {Font}, J.~A. and {Forsyth}, P.~W.~F. and {Fournier}, J. -D. and {Frasca}, S. and {Frasconi}, F. and {Frei}, Z. and {Freise}, A. and {Frey}, R. and {Frey}, V. and {Fritschel}, P. and {Frolov}, V.~V. and {Fulda}, P. and {Fyffe}, M. and {Gabbard}, H.~A. and {Gadre}, B.~U. and {Gaebel}, S.~M. and {Gair}, J.~R. and {Gammaitoni}, L. and {Ganija}, M.~R. and {Gaonkar}, S.~G. and {Garcia}, A. and {Garc{\'\i}a-Quir{\'o}s}, C. and {Garufi}, F. and {Gateley}, B. and {Gaudio}, S. and {Gaur}, G. and {Gayathri}, V. and {Gemme}, G. and {Genin}, E. and {Gennai}, A. and {George}, D. and {George}, J. and {Gergely}, L. and {Germain}, V. and {Ghonge}, S. and {Ghosh}, Abhirup and {Ghosh}, Archisman and {Ghosh}, S. and {Giacomazzo}, B. and {Giaime}, J.~A. and {Giardina}, K.~D. and {Giazotto}, A. and {Gill}, K. and {Giordano}, G. and {Glover}, L. and {Godwin}, P. and {Goetz}, E. and {Goetz}, R. and {Goncharov}, B. and {Gonz{\'a}lez}, G. and {Gonzalez Castro}, J.~M. and {Gopakumar}, A. and {Gorodetsky}, M.~L. and {Gossan}, S.~E. and {Gosselin}, M. and {Gouaty}, R. and {Grado}, A. and {Graef}, C. and {Granata}, M. and {Grant}, A. and {Gras}, S. and {Grassia}, P. and {Gray}, C. and {Gray}, R. and {Greco}, G. and {Green}, A.~C. and {Green}, R. and {Gretarsson}, E.~M. and {Groot}, P. and {Grote}, H. and {Grunewald}, S. and {Gruning}, P. and {Guidi}, G.~M. and {Gulati}, H.~K. and {Guo}, Y. and {Gupta}, A. and {Gupta}, M.~K. and {Gustafson}, E.~K. and {Gustafson}, R. and {Haegel}, L. and {Halim}, O. and {Hall}, B.~R. and {Hall}, E.~D. and {Hamilton}, E.~Z. and {Hammond}, G. and {Haney}, M. and {Hanke}, M.~M. and {Hanks}, J. and {Hanna}, C. and {Hannam}, M.~D. and {Hannuksela}, O.~A. and {Hanson}, J. and {Hardwick}, T. and {Haris}, K. and {Harms}, J. and {Harry}, G.~M. and {Harry}, I.~W. and {Haster}, C. -J. and {Haughian}, K. and {Hayes}, F.~J. and {Healy}, J. and {Heidmann}, A. and {Heintze}, M.~C. and {Heitmann}, H. and {Hello}, P. and {Hemming}, G. and {Hendry}, M. and {Heng}, I.~S. and {Hennig}, J. and {Heptonstall}, A.~W. and {Hernandez Vivanco}, Francisco and {Heurs}, M. and {Hild}, S. and {Hinderer}, T. and {Ho}, W.~C.~G. and {Hoak}, D. and {Hochheim}, S. and {Hofman}, D. and {Holgado}, A.~M. and {Holland}, N.~A. and {Holt}, K. and {Holz}, D.~E. and {Hopkins}, P. and {Horst}, C. and {Hough}, J. and {Howell}, E.~J. and {Hoy}, C.~G. and {Hreibi}, A. and {Huerta}, E.~A. and {Huet}, D. and {Hughey}, B. and {Hulko}, M. and {Husa}, S. and {Huttner}, S.~H. and {Huynh-Dinh}, T. and {Idzkowski}, B. and {Iess}, A. and {Ingram}, C. and {Inta}, R. and {Intini}, G. and {Irwin}, B. and {Isa}, H.~N. and {Isac}, J. -M. and {Isi}, M. and {Iyer}, B.~R. and {Izumi}, K. and {Jacqmin}, T. and {Jadhav}, S.~J. and {Jani}, K. and {Janthalur}, N.~N. and {Jaranowski}, P. and {Jenkins}, A.~C. and {Jiang}, J. and {Johnson}, D.~S. and {Jones}, A.~W. and {Jones}, D.~I. and {Jones}, R. and {Jonker}, R.~J.~G. and {Ju}, L. and {Junker}, J. and {Kalaghatgi}, C.~V. and {Kalogera}, V. and {Kamai}, B. and {Kand hasamy}, S. and {Kang}, G. and {Kanner}, J.~B. and {Kapadia}, S.~J. and {Karki}, S. and {Karvinen}, K.~S. and {Kashyap}, R. and {Kasprzack}, M. and {Katsanevas}, S. and {Katsavounidis}, E. and {Katzman}, W. and {Kaufer}, S. and {Kawabe}, K. and {Keerthana}, N.~V. and {K{\'e}f{\'e}lian}, F. and {Keitel}, D. and {Kennedy}, R. and {Key}, J.~S. and {Khalili}, F.~Y. and {Khan}, H. and {Khan}, I. and {Khan}, S. and {Khan}, Z. and {Khazanov}, E.~A. and {Khursheed}, M. and {Kijbunchoo}, N. and {Kim}, Chunglee and {Kim}, J.~C. and {Kim}, K. and {Kim}, W. and {Kim}, W.~S. and {Kim}, Y. -M. and {Kimball}, C. and {King}, E.~J. and {King}, P.~J. and {Kinley-Hanlon}, M. and {Kirchhoff}, R. and {Kissel}, J.~S. and {Kleybolte}, L. and {Klika}, J.~H. and {Klimenko}, S. and {Knowles}, T.~D. and {Koch}, P. and {Koehlenbeck}, S.~M. and {Koekoek}, G. and {Koley}, S. and {Kondrashov}, V. and {Kontos}, A. and {Koper}, N. and {Korobko}, M. and {Korth}, W.~Z. and {Kowalska}, I. and {Kozak}, D.~B. and {Kringel}, V. and {Krishnendu}, N. and {Kr{\'o}lak}, A. and {Kuehn}, G. and {Kumar}, A. and {Kumar}, P. and {Kumar}, R. and {Kumar}, S. and {Kuo}, L. and {Kutynia}, A. and {Kwang}, S. and {Lackey}, B.~D. and {Lai}, K.~H. and {Lam}, T.~L. and {Landry}, M. and {Lane}, B.~B. and {Lang}, R.~N. and {Lange}, J. and {Lantz}, B. and {Lanza}, R.~K. and {Lartaux-Vollard}, A. and {Lasky}, P.~D. and {Laxen}, M. and {Lazzarini}, A. and {Lazzaro}, C. and {Leaci}, P. and {Leavey}, S. and {Lecoeuche}, Y.~K. and {Lee}, C.~H. and {Lee}, H.~K. and {Lee}, H.~M. and {Lee}, H.~W. and {Lee}, J. and {Lee}, K. and {Lehmann}, J. and {Lenon}, A. and {Leroy}, N. and {Letendre}, N. and {Levin}, Y. and {Li}, J. and {Li}, K.~J.~L. and {Li}, T.~G.~F. and {Li}, X. and {Lin}, F. and {Linde}, F. and {Linker}, S.~D. and {Littenberg}, T.~B. and {Liu}, J. and {Liu}, X. and {Lo}, R.~K.~L. and {Lockerbie}, N.~A. and {London}, L.~T. and {Longo}, A. and {Lorenzini}, M. and {Loriette}, V. and {Lormand}, M. and {Losurdo}, G. and {Lough}, J.~D. and {Lousto}, C.~O. and {Lovelace}, G. and {Lower}, M.~E. and {L{\"u}ck}, H. and {Lumaca}, D. and {Lundgren}, A.~P. and {Lynch}, R. and {Ma}, Y. and {Macas}, R. and {Macfoy}, S. and {MacInnis}, M. and {Macleod}, D.~M. and {Macquet}, A. and {Maga{\~n}a-Sandoval}, F. and {Maga{\~n}a Zertuche}, L. and {Magee}, R.~M. and {Majorana}, E. and {Maksimovic}, I. and {Malik}, A. and {Man}, N. and {Mandic}, V. and {Mangano}, V. and {Mansell}, G.~L. and {Manske}, M. and {Mantovani}, M. and {Marchesoni}, F. and {Marion}, F. and {M{\'a}rka}, S. and {M{\'a}rka}, Z. and {Markakis}, C. and {Markosyan}, A.~S. and {Markowitz}, A. and {Maros}, E. and {Marquina}, A. and {Marsat}, S. and {Martelli}, F. and {Martin}, I.~W. and {Martin}, R.~M. and {Martynov}, D.~V. and {Mason}, K. and {Massera}, E. and {Masserot}, A. and {Massinger}, T.~J. and {Masso-Reid}, M. and {Mastrogiovanni}, S. and {Matas}, A. and {Matichard}, F. and {Matone}, L. and {Mavalvala}, N. and {Mazumder}, N. and {McCann}, J.~J. and {McCarthy}, R. and {McClelland }, D.~E. and {McCormick}, S. and {McCuller}, L. and {McGuire}, S.~C. and {McIver}, J. and {McManus}, D.~J. and {McRae}, T. and {McWilliams}, S.~T. and {Meacher}, D. and {Meadors}, G.~D. and {Mehmet}, M. and {Mehta}, A.~K. and {Meidam}, J. and {Melatos}, A. and {Mendell}, G. and {Mercer}, R.~A. and {Mereni}, L. and {Merilh}, E.~L. and {Merzougui}, M. and {Meshkov}, S. and {Messenger}, C. and {Messick}, C. and {Metzdorff}, R. and {Meyers}, P.~M. and {Miao}, H. and {Michel}, C. and {Middleton}, H. and {Mikhailov}, E.~E. and {Milano}, L. and {Miller}, A.~L. and {Miller}, A. and {Millhouse}, M. and {Mills}, J.~C. and {Milovich-Goff}, M.~C. and {Minazzoli}, O. and {Minenkov}, Y. and {Mishkin}, A. and {Mishra}, C. and {Mistry}, T. and {Mitra}, S. and {Mitrofanov}, V.~P. and {Mitselmakher}, G. and {Mittleman}, R. and {Mo}, G. and {Moffa}, D. and {Mogushi}, K. and {Mohapatra}, S.~R.~P. and {Montani}, M. and {Moore}, C.~J. and {Moraru}, D. and {Moreno}, G. and {Morisaki}, S. and {Mours}, B. and {Mow-Lowry}, C.~M. and {Mukherjee}, Arunava and {Mukherjee}, D. and {Mukherjee}, S. and {Mukund}, N. and {Mullavey}, A. and {Munch}, J. and {Mu{\~n}iz}, E.~A. and {Muratore}, M. and {Murray}, P.~G. and {Nagar}, A. and {Nardecchia}, I. and {Naticchioni}, L. and {Nayak}, R.~K. and {Neilson}, J. and {Nelemans}, G. and {Nelson}, T.~J.~N. and {Nery}, M. and {Neunzert}, A. and {Ng}, K.~Y. and {Ng}, S. and {Nguyen}, P. and {Nichols}, D. and {Nissanke}, S. and {Nocera}, F. and {North}, C. and {Nuttall}, L.~K. and {Obergaulinger}, M. and {Oberling}, J. and {O'Brien}, B.~D. and {O'Dea}, G.~D. and {Ogin}, G.~H. and {Oh}, J.~J. and {Oh}, S.~H. and {Ohme}, F. and {Ohta}, H. and {Okada}, M.~A. and {Oliver}, M. and {Oppermann}, P. and {Oram}, Richard J. and {O'Reilly}, B. and {Ormiston}, R.~G. and {Ortega}, L.~F. and {O'Shaughnessy}, R. and {Ossokine}, S. and {Ottaway}, D.~J. and {Overmier}, H. and {Owen}, B.~J. and {Pace}, A.~E. and {Pagano}, G. and {Page}, M.~A. and {Pai}, A. and {Pai}, S.~A. and {Palamos}, J.~R. and {Palashov}, O. and {Palomba}, C. and {Pal-Singh}, A. and {Pan}, Huang-Wei and {Pang}, B. and {Pang}, P.~T.~H. and {Pankow}, C. and {Pannarale}, F. and {Pant}, B.~C. and {Paoletti}, F. and {Paoli}, A. and {Parida}, A. and {Parker}, W. and {Pascucci}, D. and {Pasqualetti}, A. and {Passaquieti}, R. and {Passuello}, D. and {Patil}, M. and {Patricelli}, B. and {Pearlstone}, B.~L. and {Pedersen}, C. and {Pedraza}, M. and {Pedurand}, R. and {Pele}, A. and {Penn}, S. and {Perez}, C.~J. and {Perreca}, A. and {Pfeiffer}, H.~P. and {Phelps}, M. and {Phukon}, K.~S. and {Piccinni}, O.~J. and {Pichot}, M. and {Piergiovanni}, F. and {Pillant}, G. and {Pinard}, L. and {Pirello}, M. and {Pitkin}, M. and {Poggiani}, R. and {Pong}, D.~Y.~T. and {Ponrathnam}, S. and {Popolizio}, P. and {Porter}, E.~K. and {Powell}, J. and {Prajapati}, A.~K. and {Prasad}, J. and {Prasai}, K. and {Prasanna}, R. and {Pratten}, G. and {Prestegard}, T. and {Privitera}, S. and {Prodi}, G.~A. and {Prokhorov}, L.~G. and {Puncken}, O. and {Punturo}, M. and {Puppo}, P. and {P{\"u}rrer}, M. and {Qi}, H. and {Quetschke}, V. and {Quinonez}, P.~J. and {Quintero}, E.~A. and {Quitzow-James}, R. and {Raab}, F.~J. and {Radkins}, H. and {Radulescu}, N. and {Raffai}, P. and {Raja}, S. and {Rajan}, C. and {Rajbhandari}, B. and {Rakhmanov}, M. and {Ramirez}, K.~E. and {Ramos-Buades}, A. and {Rana}, Javed and {Rao}, K. and {Rapagnani}, P. and {Raymond}, V. and {Razzano}, M. and {Read}, J. and {Regimbau}, T. and {Rei}, L. and {Reid}, S. and {Reitze}, D.~H. and {Ren}, W. and {Ricci}, F. and {Richardson}, C.~J. and {Richardson}, J.~W. and {Ricker}, P.~M. and {Riles}, K. and {Rizzo}, M. and {Robertson}, N.~A. and {Robie}, R. and {Robinet}, F. and {Rocchi}, A. and {Rolland}, L. and {Rollins}, J.~G. and {Roma}, V.~J. and {Romanelli}, M. and {Romano}, R. and {Romel}, C.~L. and {Romie}, J.~H. and {Rose}, K. and {Rosi{\'n}ska}, D. and {Rosofsky}, S.~G. and {Ross}, M.~P. and {Rowan}, S. and {R{\"u}diger}, A. and {Ruggi}, P. and {Rutins}, G. and {Ryan}, K. and {Sachdev}, S. and {Sadecki}, T. and {Sakellariadou}, M. and {Salconi}, L. and {Saleem}, M. and {Samajdar}, A. and {Sammut}, L. and {Sanchez}, E.~J. and {Sanchez}, L.~E. and {Sanchis-Gual}, N. and {Sandberg}, V. and {Sand ers}, J.~R. and {Santiago}, K.~A. and {Sarin}, N. and {Sassolas}, B. and {Saulson}, P.~R. and {Sauter}, O. and {Savage}, R.~L. and {Schale}, P. and {Scheel}, M. and {Scheuer}, J. and {Schmidt}, P. and {Schnabel}, R. and {Schofield}, R.~M.~S. and {Sch{\"o}nbeck}, A. and {Schreiber}, E. and {Schulte}, B.~W. and {Schutz}, B.~F. and {Schwalbe}, S.~G. and {Scott}, J. and {Scott}, S.~M. and {Seidel}, E. and {Sellers}, D. and {Sengupta}, A.~S. and {Sennett}, N. and {Sentenac}, D. and {Sequino}, V. and {Sergeev}, A. and {Setyawati}, Y. and {Shaddock}, D.~A. and {Shaffer}, T. and {Shahriar}, M.~S. and {Shaner}, M.~B. and {Shao}, L. and {Sharma}, P. and {Shawhan}, P. and {Shen}, H. and {Shink}, R. and {Shoemaker}, D.~H. and {Shoemaker}, D.~M. and {ShyamSundar}, S. and {Siellez}, K. and {Sieniawska}, M. and {Sigg}, D. and {Silva}, A.~D. and {Singer}, L.~P. and {Singh}, N. and {Singhal}, A. and {Sintes}, A.~M. and {Sitmukhambetov}, S. and {Skliris}, V. and {Slagmolen}, B.~J.~J. and {Slaven-Blair}, T.~J. and {Smith}, J.~R. and {Smith}, R.~J.~E. and {Somala}, S. and {Son}, E.~J. and {Sorazu}, B. and {Sorrentino}, F. and {Souradeep}, T. and {Sowell}, E. and {Spencer}, A.~P. and {Srivastava}, A.~K. and {Srivastava}, V. and {Staats}, K. and {Stachie}, C. and {Standke}, M. and {Steer}, D.~A. and {Steinke}, M. and {Steinlechner}, J. and {Steinlechner}, S. and {Steinmeyer}, D. and {Stevenson}, S.~P. and {Stocks}, D. and {Stone}, R. and {Stops}, D.~J. and {Strain}, K.~A. and {Stratta}, G. and {Strigin}, S.~E. and {Strunk}, A. and {Sturani}, R. and {Stuver}, A.~L. and {Sudhir}, V. and {Summerscales}, T.~Z. and {Sun}, L. and {Sunil}, S. and {Suresh}, J. and {Sutton}, P.~J. and {Swinkels}, B.~L. and {Szczepa{\'n}czyk}, M.~J. and {Tacca}, M. and {Tait}, S.~C. and {Talbot}, C. and {Talukder}, D. and {Tanner}, D.~B. and {T{\'a}pai}, M. and {Taracchini}, A. and {Tasson}, J.~D. and {Taylor}, R. and {Thies}, F. and {Thomas}, M. and {Thomas}, P. and {Thondapu}, S.~R. and {Thorne}, K.~A. and {Thrane}, E. and {Tiwari}, Shubhanshu and {Tiwari}, Srishti and {Tiwari}, V. and {Toland}, K. and {Tonelli}, M. and {Tornasi}, Z. and {Torres-Forn{\'e}}, A. and {Torrie}, C.~I. and {T{\"o}yr{\"a}}, D. and {Travasso}, F. and {Traylor}, G. and {Tringali}, M.~C. and {Trovato}, A. and {Trozzo}, L. and {Trudeau}, R. and {Tsang}, K.~W. and {Tse}, M. and {Tso}, R. and {Tsukada}, L. and {Tsuna}, D. and {Tuyenbayev}, D. and {Ueno}, K. and {Ugolini}, D. and {Unnikrishnan}, C.~S. and {Urban}, A.~L. and {Usman}, S.~A. and {Vahlbruch}, H. and {Vajente}, G. and {Valdes}, G. and {van Bakel}, N. and {van Beuzekom}, M. and {van den Brand}, J.~F.~J. and {Van Den Broeck}, C. and {Vander-Hyde}, D.~C. and {van Heijningen}, J.~V. and {van der Schaaf}, L. and {van Veggel}, A.~A. and {Vardaro}, M. and {Varma}, V. and {Vass}, S. and {Vas{\'u}th}, M. and {Vecchio}, A. and {Vedovato}, G. and {Veitch}, J. and {Veitch}, P.~J. and {Venkateswara}, K. and {Venugopalan}, G. and {Verkindt}, D. and {Vetrano}, F. and {Vicer{\'e}}, A. and {Viets}, A.~D. and {Vine}, D.~J. and {Vinet}, J. -Y. and {Vitale}, S. and {Vo}, T. and {Vocca}, H. and {Vorvick}, C. and {Vyatchanin}, S.~P. and {Wade}, A.~R. and {Wade}, L.~E. and {Wade}, M. and {Walet}, R. and {Walker}, M. and {Wallace}, L. and {Walsh}, S. and {Wang}, G. and {Wang}, H. and {Wang}, J.~Z. and {Wang}, W.~H. and {Wang}, Y.~F. and {Ward}, R.~L. and {Warden}, Z.~A. and {Warner}, J. and {Was}, M. and {Watchi}, J. and {Weaver}, B. and {Wei}, L. -W. and {Weinert}, M. and {Weinstein}, A.~J. and {Weiss}, R. and {Wellmann}, F. and {Wen}, L. and {Wessel}, E.~K. and {We{\ss}els}, P. and {Westhouse}, J.~W. and {Wette}, K. and {Whelan}, J.~T. and {Whiting}, B.~F. and {Whittle}, C. and {Wilken}, D.~M. and {Williams}, D. and {Williamson}, A.~R. and {Willis}, J.~L. and {Willke}, B. and {Wimmer}, M.~H. and {Winkler}, W. and {Wipf}, C.~C. and {Wittel}, H. and {Woan}, G. and {Woehler}, J. and {Wofford}, J.~K. and {Worden}, J. and {Wright}, J.~L. and {Wu}, D.~S. and {Wysocki}, D.~M. and {Xiao}, L. and {Yamamoto}, H. and {Yancey}, C.~C. and {Yang}, L. and {Yap}, M.~J. and {Yazback}, M. and {Yeeles}, D.~W. and {Yu}, Hang and {Yu}, Haocun and {Yuen}, S.~H.~R. and {Yvert}, M. and {Zadro{\.z}ny}, A.~K. and {Zanolin}, M. and {Zelenova}, T. and {Zendri}, J. -P. and {Zevin}, M. and {Zhang}, J. and {Zhang}, L. and {Zhang}, T. and {Zhao}, C. and {Zhou}, M. and {Zhou}, Z. and {Zhu}, X.~J. and {Zucker}, M.~E. and {Zweizig}, J. and {The LIGO Scientific Collaboration} and {the Virgo Collaboration} and {Arzoumanian}, Z. and {Bogdanov}, S. and {Cognard}, I. and {Corongiu}, A. and {Enoto}, T. and {Freire}, P. and {Gendreau}, K.~C. and {Guillemot}, L. and {Harding}, A.~K. and {Jankowski}, F. and {Keith}, M.~J. and {Kerr}, M. and {Lyne}, A. and {Palfreyman}, J. and {Possenti}, A. and {Ridolfi}, A. and {Stappers}, B. and {Theureau}, G. and {Weltervrede}, P.
+    :JOURNAL:  \apj
+    :KEYWORDS: gravitational waves, pulsars: general, stars: neutron, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
     :YEAR:     2019
-    :MONTH:    Feb
-    :EID:      arXiv:1902.08507
-    :PAGES:    arXiv:1902.08507
+    :MONTH:    Jul
+    :VOLUME:   879
+    :NUMBER:   1
+    :EID:      10
+    :PAGES:    10
+    :DOI:      10.3847/1538-4357/ab20cb
     :ARCHIVEPREFIX: arXiv
     :EPRINT:   1902.08507
     :PRIMARYCLASS: astro-ph.HE
-    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2019arXiv190208507T
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019ApJ...879...10A
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
-
 * Gamma ray bursts
 ** Search for Gravitational Waves Associated with Gamma-Ray Bursts during LIGO Science Run 6 and Virgo Science Runs 2 and 3
    :PROPERTIES:
@@ -2409,10 +2482,11 @@
     :MONTH:    May
     :EID:      arXiv:1605.01615
     :PAGES:    arXiv:1605.01615
+    :ABSTRACT: The production of a stochastic background of gravitational waves is a fundamental prediction of any cosmological inflationary model. The features of such a signal encode unique information about the physics of the Early Universe and beyond, thus representing an exciting, powerful window on the origin and evolution of the Universe. We review the main mechanisms of gravitational-wave production, ranging from quantum fluctuations of the gravitational field to other mechanisms that can take place during or after inflation. These include e.g. gravitational waves generated as a consequence of extra particle production during inflation, or during the (p)reheating phase. Gravitational waves produced in inflation scenarios based on modified gravity theories and second-order gravitational waves are also considered. For each analyzed case, the expected power- spectrum is given. We discuss the discriminating power among different models, associated with the validity/violation of the standard consistency relation between tensor-to-scalar ratio $r$ and tensor spectral index $n_{\rm T}$. In light of the prospects for (directly/indirectly) detecting primordial gravitational waves, we give the expected present-day gravitational radiation spectral energy-density, highlighting the main characteristics imprinted by the cosmic thermal history, and we outline the signatures left by gravitational waves on the Cosmic Microwave Background and some imprints in the Large-Scale Structure of the Universe. Finally, current bounds and prospects of detection for inflationary gravitational waves are summarized.
     :ARCHIVEPREFIX: arXiv
     :EPRINT:   1605.01615
     :PRIMARYCLASS: astro-ph.CO
-    :ADSURL:   https://ui.adsabs.harvard.edu/\#abs/2016arXiv160501615C
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2016arXiv160501615C
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 *** Stochastic gravity-wave background in inflationary-universe models
@@ -2512,18 +2586,23 @@
   :ADSURL:   http://adsabs.harvard.edu/abs/1980Natur.287..307B
   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
   :END:
+
 * A Practical Theorem on Gravitational Wave Backgrounds
   :PROPERTIES:
   :TITLE:    A Practical Theorem on Gravitational Wave Backgrounds
   :BTYPE:    article
   :CUSTOM_ID: 2001astro.ph..8028P
   :AUTHOR:   {Phinney}, E.~S.
-  :JOURNAL:  ArXiv Astrophysics e-prints
-  :EPRINT:   astro-ph/0108028
+  :JOURNAL:  arXiv e-prints
   :KEYWORDS: Astrophysics, General Relativity and Quantum Cosmology
   :YEAR:     2001
-  :MONTH:    aug
-  :ADSURL:   http://adsabs.harvard.edu/abs/2001astro.ph..8028P
+  :MONTH:    Aug
+  :EID:      astro-ph/0108028
+  :PAGES:    astro-ph/0108028
+  :ARCHIVEPREFIX: arXiv
+  :EPRINT:   astro-ph/0108028
+  :PRIMARYCLASS: astro-ph
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/2001astro.ph..8028P
   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
   :END:
 * Gravitational Waves Probe the Coalescence Rate of Massive Black Hole Binaries
@@ -2569,7 +2648,9 @@
 
 
 
-* Lots of stuff after here needs to be resorted
+
+
+* Detector sensitivity curves
 ** Gravitational-wave sensitivity curves
    :PROPERTIES:
    :TITLE:    Gravitational-wave sensitivity curves
@@ -2602,6 +2683,8 @@
    :ADSURL:   http://adsabs.harvard.edu/abs/2009LRR....12....2S
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
+
+* Lots of stuff after here needs to be resorted
 ** Advanced LIGO
    :PROPERTIES:
    :TITLE:    Advanced LIGO
@@ -2805,3 +2888,153 @@
    :ADSURL:   http://adsabs.harvard.edu/abs/2014PhRvL.112x1101B
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
+** A Measurement of Excess Antenna Temperature at 4080 Mc/s.
+   :PROPERTIES:
+   :TITLE:    A Measurement of Excess Antenna Temperature at 4080 Mc/s.
+   :BTYPE:    article
+   :CUSTOM_ID: 1965ApJ...142..419P
+   :AUTHOR:   {Penzias}, A.~A. and {Wilson}, R.~W.
+   :JOURNAL:  \apj
+   :KEYWORDS: Microwave Background, Cosmic Background Radiation
+   :YEAR:     1965
+   :MONTH:    Jul
+   :VOLUME:   142
+   :PAGES:    419-421
+   :DOI:      10.1086/148307
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/1965ApJ...142..419P
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Detection methods for stochastic gravitational-wave backgrounds: a unified treatment
+   :PROPERTIES:
+   :TITLE:    Detection methods for stochastic gravitational-wave backgrounds: a unified treatment
+   :BTYPE:    article
+   :CUSTOM_ID: 2017LRR....20....2R
+   :AUTHOR:   {Romano}, Joseph D. and {Cornish}, Neil. J.
+   :JOURNAL:  Living Reviews in Relativity
+   :KEYWORDS: Gravitational waves, Data analysis, Stochastic backgrounds, General Relativity and Quantum Cosmology
+   :YEAR:     2017
+   :MONTH:    Apr
+   :VOLUME:   20
+   :NUMBER:   1
+   :EID:      2
+   :PAGES:    2
+   :DOI:      10.1007/s41114-017-0004-1
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1608.06889
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017LRR....20....2R
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** The Stochastic Gravity-Wave Background: Sources and Detection
+   :PROPERTIES:
+   :TITLE:    The Stochastic Gravity-Wave Background: Sources and Detection
+   :BTYPE:    inproceedings
+   :CUSTOM_ID: 1997stgr.proc....3A
+   :AUTHOR:   {Allen}, B.
+   :BOOKTITLE: Some Topics on General Relativity and Gravitational Radiation
+   :YEAR:     1997
+   :EDITOR:   {Miralles}, J.~A. and {Morales}, J.~A. and {Saez}, D.
+   :MONTH:    Jan
+   :PAGES:    3
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/1997stgr.proc....3A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Predicting the LISA white dwarf binary population in the Milky Way with cosmological simulations
+   :PROPERTIES:
+   :TITLE:    Predicting the LISA white dwarf binary population in the Milky Way with cosmological simulations
+   :BTYPE:    article
+   :CUSTOM_ID: 2019MNRAS.tmp.2426L
+   :AUTHOR:   {Lamberts}, Astrid and {Blunt}, Sarah and {Littenberg}, Tyson B. and {Garrison-Kimmel}, Shea and {Kupfer}, Thomas and {Sanderson}, Robyn E.
+   :JOURNAL:  \mnras
+   :KEYWORDS: Gravitational waves, binaries: close, stars: white dwarfs, Galaxy: stellar content, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology
+   :YEAR:     2019
+   :MONTH:    Oct
+   :PAGES:    2426
+   :DOI:      10.1093/mnras/stz2834
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1907.00014
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019MNRAS.tmp.2426L
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Impact of galactic foreground characterization on a global analysis for the LISA gravitational wave observatory
+   :PROPERTIES:
+   :TITLE:    Impact of galactic foreground characterization on a global analysis for the LISA gravitational wave observatory
+   :BTYPE:    article
+   :CUSTOM_ID: 2017CQGra..34x4002R
+   :AUTHOR:   {Robson}, Travis and {Cornish}, Neil
+   :JOURNAL:  Classical and Quantum Gravity
+   :KEYWORDS: General Relativity and Quantum Cosmology
+   :YEAR:     2017
+   :MONTH:    Dec
+   :VOLUME:   34
+   :NUMBER:   24
+   :EID:      244002
+   :PAGES:    244002
+   :DOI:      10.1088/1361-6382/aa9601
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1705.09421
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017CQGra..34x4002R
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** The basic physics of the binary black hole merger GW150914
+   :PROPERTIES:
+   :TITLE:    The basic physics of the binary black hole merger GW150914
+   :BTYPE:    article
+   :CUSTOM_ID: 2017AnP...52900209A
+   :AUTHOR:   {Abbott}, B.~P. and {Abbott}, R. and {Abbott}, T.~D. and {Abernathy}, M.~R. and {Acernese}, F. and {Ackley}, K. and {Adams}, C. and {Adams}, T. and {Addesso}, P. and {Adhikari}, R.~X. and {Adya}, V.~B. and {Affeldt}, C. and {Agathos}, M. and {Agatsuma}, K. and {Aggarwal}, N. and {Aguiar}, O.~D. and {Aiello}, L. and {Ain}, A. and {Ajith}, P. and {Allen}, B. and {Allocca}, A. and {Altin}, P.~A. and {Anderson}, S.~B. and {Anderson}, W.~G. and {Arai}, K. and {Araya}, M.~C. and {Arceneaux}, C.~C. and {Areeda}, J.~S. and {Arnaud}, N. and {Arun}, K.~G. and {Ascenzi}, S. and {Ashton}, G. and {Ast}, M. and {Aston}, S.~M. and {Astone}, P. and {Aufmuth}, P. and {Aulbert}, C. and {Babak}, S. and {Bacon}, P. and {Bader}, M.~K.~M. and {Baldaccini}, F. and {Ballardin}, G. and {Ballmer}, S.~W. and {Barayoga}, J.~C. and {Barclay}, S.~E. and {Barish}, B.~C. and {Barker}, D. and {Barone}, F. and {Barr}, B. and {Barsotti}, L. and {Barsuglia}, M. and {Barta}, D. and {Bartlett}, J. and {Bartos}, I. and {Bassiri}, R. and {Basti}, A. and {Batch}, J.~C. and {Baune}, C. and {Bavigadda}, V. and {Bazzan}, M. and {Bejger}, M. and {Bell}, A.~S. and {Bergmann}, G. and {Berry}, C.~P.~L. and {Bersanetti}, D. and {Bertolini}, A. and {Betzwieser}, J. and {Bhagwat}, S. and {Bhandare}, R. and {Bilenko}, I.~A. and {Billingsley}, G. and {Birch}, J. and {Birney}, R. and {Birnholtz}, O. and {Biscans}, S. and {Bisht}, A. and {Bitossi}, M. and {Biwer}, C. and {Bizouard}, M.~A. and {Blackburn}, J.~K. and {Blair}, C.~D. and {Blair}, D.~G. and {Blair}, R.~M. and {Bloemen}, S. and {Bock}, O. and {Boer}, M. and {Bogaert}, G. and {Bogan}, C. and {Bohe}, A. and {Bond}, C. and {Bondu}, F. and {Bonnand}, R. and {Boom}, B.~A. and {Bork}, R. and {Boschi}, V. and {Bose}, S. and {Bouffanais}, Y. and {Bozzi}, A. and {Bradaschia}, C. and {Braginsky}, V.~B. and {Branchesi}, M. and {Brau}, J.~E. and {Briant}, T. and {Brillet}, A. and {Brinkmann}, M. and {Brisson}, V. and {Brockill}, P. and {Broida}, J.~E. and {Brooks}, A.~F. and {Brown}, D.~A. and {Brown}, D.~D. and {Brown}, N.~M. and {Brunett}, S. and {Buchanan}, C.~C. and {Buikema}, A. and {Bulik}, T. and {Bulten}, H.~J. and {Buonanno}, A. and {Buskulic}, D. and {Buy}, C. and {Byer}, R.~L. and {Cabero}, M. and {Cadonati}, L. and {Cagnoli}, G. and {Cahillane}, C. and {Bustillo}, J. Calder{\'o}n and {Callister}, T. and {Calloni}, E. and {Camp}, J.~B. and {Cannon}, K.~C. and {Cao}, J. and {Capano}, C.~D. and {Capocasa}, E. and {Carbognani}, F. and {Caride}, S. and {Casanueva Diaz}, J. and {Casentini}, C. and {Caudill}, S. and {Cavagli{\`a}}, M. and {Cavalier}, F. and {Cavalieri}, R. and {Cella}, G. and {Cepeda}, C.~B. and {Cerboni Baiardi}, L. and {Cerretani}, G. and {Cesarini}, E. and {Chamberlin}, S.~J. and {Chan}, M. and {Chao}, S. and {Charlton}, P. and {Chassand e-Mottin}, E. and {Chen}, H.~Y. and {Chen}, Y. and {Cheng}, C. and {Chincarini}, A. and {Chiummo}, A. and {Cho}, H.~S. and {Cho}, M. and {Chow}, J.~H. and {Christensen}, N. and {Chu}, Q. and {Chua}, S. and {Chung}, S. and {Ciani}, G. and {Clara}, F. and {Clark}, J.~A. and {Cleva}, F. and {Coccia}, E. and {Cohadon}, P. -F. and {Colla}, A. and {Collette}, C.~G. and {Cominsky}, L. and {Constancio}, M., Jr. and {Conte}, A. and {Conti}, L. and {Cook}, D. and {Corbitt}, T.~R. and {Corsi}, A. and {Cortese}, S. and {Costa}, C.~A. and {Coughlin}, M.~W. and {Coughlin}, S.~B. and {Coulon}, J. -P. and {Countryman}, S.~T. and {Couvares}, P. and {Cowan}, E.~E. and {Coward}, D.~M. and {Cowart}, M.~J. and {Coyne}, D.~C. and {Coyne}, R. and {Craig}, K. and {Creighton}, J.~D.~E. and {Cripe}, J. and {Crowder}, S.~G. and {Cumming}, A. and {Cunningham}, L. and {Cuoco}, E. and {Dal Canton}, T. and {Danilishin}, S.~L. and {D'Antonio}, S. and {Danzmann}, K. and {Darman}, N.~S. and {Dasgupta}, A. and {Da Silva Costa}, C.~F. and {Dattilo}, V. and {Dave}, I. and {Davier}, M. and {Davies}, G.~S. and {Daw}, E.~J. and {Day}, R. and {De}, S. and {DeBra}, D. and {Debreczeni}, G. and {Degallaix}, J. and {De Laurentis}, M. and {Del{\'e}glise}, S. and {Del Pozzo}, W. and {Denker}, T. and {Dent}, T. and {Dergachev}, V. and {De Rosa}, R. and {DeRosa}, R.~T. and {DeSalvo}, R. and {Devine}, R.~C. and {Dhurand har}, S. and {D{\'\i}az}, M.~C. and {Fiore}, L. Di and {Giovanni}, M. Di and {Girolamo}, T. Di and {Lieto}, A. Di and {Pace}, S. Di and {Palma}, I. Di and {Virgilio}, A. Di and {Dolique}, V. and {Donovan}, F. and {Dooley}, K.~L. and {Doravari}, S. and {Douglas}, R. and {Downes}, T.~P. and {Drago}, M. and {Drever}, R.~W.~P. and {Driggers}, J.~C. and {Ducrot}, M. and {Dwyer}, S.~E. and {Edo}, T.~B. and {Edwards}, M.~C. and {Effler}, A. and {Eggenstein}, H. -B. and {Ehrens}, P. and {Eichholz}, J. and {Eikenberry}, S.~S. and {Engels}, W. and {Essick}, R.~C. and {Etzel}, T. and {Evans}, M. and {Evans}, T.~M. and {Everett}, R. and {Factourovich}, M. and {Fafone}, V. and {Fair}, H. and {Fairhurst}, S. and {Fan}, X. and {Fang}, Q. and {Farinon}, S. and {Farr}, B. and {Farr}, W.~M. and {Favata}, M. and {Fays}, M. and {Fehrmann}, H. and {Fejer}, M.~M. and {Fenyvesi}, E. and {Ferrante}, I. and {Ferreira}, E.~C. and {Ferrini}, F. and {Fidecaro}, F. and {Fiori}, I. and {Fiorucci}, D. and {Fisher}, R.~P. and {Flaminio}, R. and {Fletcher}, M. and {Fournier}, J. -D. and {Frasca}, S. and {Frasconi}, F. and {Frei}, Z. and {Freise}, A. and {Frey}, R. and {Frey}, V. and {Fritschel}, P. and {Frolov}, V.~V. and {Fulda}, P. and {Fyffe}, M. and {Gabbard}, H.~A.~G. and {Gair}, J.~R. and {Gammaitoni}, L. and {Gaonkar}, S.~G. and {Garufi}, F. and {Gaur}, G. and {Gehrels}, N. and {Gemme}, G. and {Geng}, P. and {Genin}, E. and {Gennai}, A. and {George}, J. and {Gergely}, L. and {Germain}, V. and {Ghosh}, Abhirup and {Ghosh}, Archisman and {Ghosh}, S. and {Giaime}, J.~A. and {Giardina}, K.~D. and {Giazotto}, A. and {Gill}, K. and {Glaefke}, A. and {Goetz}, E. and {Goetz}, R. and {Gondan}, L. and {Gonz{\'a}lez}, G. and {Gonzalez Castro}, J.~M. and {Gopakumar}, A. and {Gordon}, N.~A. and {Gorodetsky}, M.~L. and {Gossan}, S.~E. and {Gosselin}, M. and {Gouaty}, R. and {Grado}, A. and {Graef}, C. and {Graff}, P.~B. and {Granata}, M. and {Grant}, A. and {Gras}, S. and {Gray}, C. and {Greco}, G. and {Green}, A.~C. and {Groot}, P. and {Grote}, H. and {Grunewald}, S. and {Guidi}, G.~M. and {Guo}, X. and {Gupta}, A. and {Gupta}, M.~K. and {Gushwa}, K.~E. and {Gustafson}, E.~K. and {Gustafson}, R. and {Hacker}, J.~J. and {Hall}, B.~R. and {Hall}, E.~D. and {Hammond}, G. and {Haney}, M. and {Hanke}, M.~M. and {Hanks}, J. and {Hanna}, C. and {Hannam}, M.~D. and {Hanson}, J. and {Hardwick}, T. and {Harms}, J. and {Harry}, G.~M. and {Harry}, I.~W. and {Hart}, M.~J. and {Hartman}, M.~T. and {Haster}, C. -J. and {Haughian}, K. and {Heidmann}, A. and {Heintze}, M.~C. and {Heitmann}, H. and {Hello}, P. and {Hemming}, G. and {Hendry}, M. and {Heng}, I.~S. and {Hennig}, J. and {Henry}, J. and {Heptonstall}, A.~W. and {Heurs}, M. and {Hild}, S. and {Hoak}, D. and {Hofman}, D. and {Holt}, K. and {Holz}, D.~E. and {Hopkins}, P. and {Hough}, J. and {Houston}, E.~A. and {Howell}, E.~J. and {Hu}, Y.~M. and {Huang}, S. and {Huerta}, E.~A. and {Huet}, D. and {Hughey}, B. and {Husa}, S. and {Huttner}, S.~H. and {Huynh-Dinh}, T. and {Indik}, N. and {Ingram}, D.~R. and {Inta}, R. and {Isa}, H.~N. and {Isac}, J. -M. and {Isi}, M. and {Isogai}, T. and {Iyer}, B.~R. and {Izumi}, K. and {Jacqmin}, T. and {Jang}, H. and {Jani}, K. and {Jaranowski}, P. and {Jawahar}, S. and {Jian}, L. and {Jim{\'e}nez-Forteza}, F. and {Johnson}, W.~W. and {Jones}, D.~I. and {Jones}, R. and {Jonker}, R.~J.~G. and {Ju}, L. and {K}, Haris and {Kalaghatgi}, C.~V. and {Kalogera}, V. and {Kandhasamy}, S. and {Kang}, G. and {Kanner}, J.~B. and {Kapadia}, S.~J. and {Karki}, S. and {Karvinen}, K.~S. and {Kasprzack}, M. and {Katsavounidis}, E. and {Katzman}, W. and {Kaufer}, S. and {Kaur}, T. and {Kawabe}, K. and {K{\'e}f{\'e}lian}, F. and {Kehl}, M.~S. and {Keitel}, D. and {Kelley}, D.~B. and {Kells}, W. and {Kennedy}, R. and {Key}, J.~S. and {Khalili}, F.~Y. and {Khan}, I. and {Khan}, S. and {Khan}, Z. and {Khazanov}, E.~A. and {Kijbunchoo}, N. and {Kim}, Chi-Woong and {Kim}, Chunglee and {Kim}, J. and {Kim}, K. and {Kim}, N. and {Kim}, W. and {Kim}, Y. -M. and {Kimbrell}, S.~J. and {King}, E.~J. and {King}, P.~J. and {Kissel}, J.~S. and {Klein}, B. and {Kleybolte}, L. and {Klimenko}, S. and {Koehlenbeck}, S.~M. and {Koley}, S. and {Kondrashov}, V. and {Kontos}, A. and {Korobko}, M. and {Korth}, W.~Z. and {Kowalska}, I. and {Kozak}, D.~B. and {Kringel}, V. and {Krishnan}, B. and {Kr{\'o}lak}, A. and {Krueger}, C. and {Kuehn}, G. and {Kumar}, P. and {Kumar}, R. and {Kuo}, L. and {Kutynia}, A. and {Lackey}, B.~D. and {Land ry}, M. and {Lange}, J. and {Lantz}, B. and {Lasky}, P.~D. and {Laxen}, M. and {Lazzarini}, A. and {Lazzaro}, C. and {Leaci}, P. and {Leavey}, S. and {Lebigot}, E.~O. and {Lee}, C.~H. and {Lee}, H.~K. and {Lee}, H.~M. and {Lee}, K. and {Lenon}, A. and {Leonardi}, M. and {Leong}, J.~R. and {Leroy}, N. and {Letendre}, N. and {Levin}, Y. and {Lewis}, J.~B. and {Li}, T.~G.~F. and {Libson}, A. and {Littenberg}, T.~B. and {Lockerbie}, N.~A. and {Lombardi}, A.~L. and {London}, L.~T. and {Lord}, J.~E. and {Lorenzini}, M. and {Loriette}, V. and {Lormand}, M. and {Losurdo}, G. and {Lough}, J.~D. and {L{\"u}ck}, H. and {Lundgren}, A.~P. and {Lynch}, R. and {Ma}, Y. and {Machenschalk}, B. and {MacInnis}, M. and {Macleod}, D.~M. and {Maga{\~n}a-Sandoval}, F. and {Zertuche}, L. Maga{\~n}a and {Magee}, R.~M. and {Majorana}, E. and {Maksimovic}, I. and {Malvezzi}, V. and {Man}, N. and {Mandic}, V. and {Mangano}, V. and {Mansell}, G.~L. and {Manske}, M. and {Mantovani}, M. and {Marchesoni}, F. and {Marion}, F. and {M{\'a}rka}, S. and {M{\'a}rka}, Z. and {Markosyan}, A.~S. and {Maros}, E. and {Martelli}, F. and {Martellini}, L. and {Martin}, I.~W. and {Martynov}, D.~V. and {Marx}, J.~N. and {Mason}, K. and {Masserot}, A. and {Massinger}, T.~J. and {Masso-Reid}, M. and {Mastrogiovanni}, S. and {Matichard}, F. and {Matone}, L. and {Mavalvala}, N. and {Mazumder}, N. and {McCarthy}, R. and {McClelland}, D.~E. and {McCormick}, S. and {McGuire}, S.~C. and {McIntyre}, G. and {McIver}, J. and {McManus}, D.~J. and {McRae}, T. and {Meacher}, D. and {Meadors}, G.~D. and {Meidam}, J. and {Melatos}, A. and {Mendell}, G. and {Mercer}, R.~A. and {Merilh}, E.~L. and {Merzougui}, M. and {Meshkov}, S. and {Messenger}, C. and {Messick}, C. and {Metzdorff}, R. and {Meyers}, P.~M. and {Mezzani}, F. and {Miao}, H. and {Michel}, C. and {Middleton}, H. and {Mikhailov}, E.~E. and {Milano}, L. and {Miller}, A.~L. and {Miller}, A. and {Miller}, B.~B. and {Miller}, J. and {Millhouse}, M. and {Minenkov}, Y. and {Ming}, J. and {Mirshekari}, S. and {Mishra}, C. and {Mitra}, S. and {Mitrofanov}, V.~P. and {Mitselmakher}, G. and {Mittleman}, R. and {Moggi}, A. and {Mohan}, M. and {Mohapatra}, S.~R.~P. and {Montani}, M. and {Moore}, B.~C. and {Moore}, C.~J. and {Moraru}, D. and {Moreno}, G. and {Morriss}, S.~R. and {Mossavi}, K. and {Mours}, B. and {Mow-Lowry}, C.~M. and {Mueller}, G. and {Muir}, A.~W. and {Mukherjee}, Arunava and {Mukherjee}, D. and {Mukherjee}, S. and {Mukund}, N. and {Mullavey}, A. and {Munch}, J. and {Murphy}, D.~J. and {Murray}, P.~G. and {Mytidis}, A. and {Nardecchia}, I. and {Naticchioni}, L. and {Nayak}, R.~K. and {Nedkova}, K. and {Nelemans}, G. and {Nelson}, T.~J.~N. and {Neri}, M. and {Neunzert}, A. and {Newton}, G. and {Nguyen}, T.~T. and {Nielsen}, A.~B. and {Nissanke}, S. and {Nitz}, A. and {Nocera}, F. and {Nolting}, D. and {Normandin}, M.~E.~N. and {Nuttall}, L.~K. and {Oberling}, J. and {Ochsner}, E. and {O'Dell}, J. and {Oelker}, E. and {Ogin}, G.~H. and {Oh}, J.~J. and {Oh}, S.~H. and {Ohme}, F. and {Oliver}, M. and {Oppermann}, P. and {Oram}, Richard J. and {O'Reilly}, B. and {O'Shaughnessy}, R. and {Ottaway}, D.~J. and {Overmier}, H. and {Owen}, B.~J. and {Pai}, A. and {Pai}, S.~A. and {Palamos}, J.~R. and {Palashov}, O. and {Palomba}, C. and {Pal-Singh}, A. and {Pan}, H. and {Pankow}, C. and {Pannarale}, F. and {Pant}, B.~C. and {Paoletti}, F. and {Paoli}, A. and {Papa}, M.~A. and {Paris}, H.~R. and {Parker}, W. and {Pascucci}, D. and {Pasqualetti}, A. and {Passaquieti}, R. and {Passuello}, D. and {Patricelli}, B. and {Patrick}, Z. and {Pearlstone}, B.~L. and {Pedraza}, M. and {Pedurand}, R. and {Pekowsky}, L. and {Pele}, A. and {Penn}, S. and {Perreca}, A. and {Perri}, L.~M. and {Phelps}, M. and {Piccinni}, O.~J. and {Pichot}, M. and {Piergiovanni}, F. and {Pierro}, V. and {Pillant}, G. and {Pinard}, L. and {Pinto}, I.~M. and {Pitkin}, M. and {Poe}, M. and {Poggiani}, R. and {Popolizio}, P. and {Post}, A. and {Powell}, J. and {Prasad}, J. and {Pratt}, J. and {Predoi}, V. and {Prestegard}, T. and {Price}, L.~R. and {Prijatelj}, M. and {Principe}, M. and {Privitera}, S. and {Prix}, R. and {Prodi}, G.~A. and {Prokhorov}, L. and {Puncken}, O. and {Punturo}, M. and {Puppo}, P. and {P{\"u}rrer}, M. and {Qi}, H. and {Qin}, J. and {Qiu}, S. and {Quetschke}, V. and {Quintero}, E.~A. and {Quitzow-James}, R. and {Raab}, F.~J. and {Rabeling}, D.~S. and {Radkins}, H. and {Raffai}, P. and {Raja}, S. and {Rajan}, C. and {Rakhmanov}, M. and {Rapagnani}, P. and {Raymond}, V. and {Razzano}, M. and {Re}, V. and {Read}, J. and {Reed}, C.~M. and {Regimbau}, T. and {Rei}, L. and {Reid}, S. and {Rew}, H. and {Reyes}, S.~D. and {Ricci}, F. and {Riles}, K. and {Rizzo}, M. and {Robertson}, N.~A. and {Robie}, R. and {Robinet}, F. and {Rocchi}, A. and {Rolland}, L. and {Rollins}, J.~G. and {Roma}, V.~J. and {Romano}, J.~D. and {Romano}, R. and {Romanov}, G. and {Romie}, J.~H. and {Rosi{\'n}ska}, D. and {Rowan}, S. and {R{\"u}diger}, A. and {Ruggi}, P. and {Ryan}, K. and {Sachdev}, S. and {Sadecki}, T. and {Sadeghian}, L. and {Sakellariadou}, M. and {Salconi}, L. and {Saleem}, M. and {Salemi}, F. and {Samajdar}, A. and {Sammut}, L. and {Sanchez}, E.~J. and {Sandberg}, V. and {Sandeen}, B. and {Sand ers}, J.~R. and {Sassolas}, B. and {Saulson}, P.~R. and {Sauter}, O.~E.~S. and {Savage}, R.~L. and {Sawadsky}, A. and {Schale}, P. and {Schilling}, R. and {Schmidt}, J. and {Schmidt}, P. and {Schnabel}, R. and {Schofield}, R.~M.~S. and {Sch{\"o}nbeck}, A. and {Schreiber}, E. and {Schuette}, D. and {Schutz}, B.~F. and {Scott}, J. and {Scott}, S.~M. and {Sellers}, D. and {Sengupta}, A.~S. and {Sentenac}, D. and {Sequino}, V. and {Sergeev}, A. and {Setyawati}, Y. and {Shaddock}, D.~A. and {Shaffer}, T. and {Shahriar}, M.~S. and {Shaltev}, M. and {Shapiro}, B. and {Shawhan}, P. and {Sheperd}, A. and {Shoemaker}, D.~H. and {Shoemaker}, D.~M. and {Siellez}, K. and {Siemens}, X. and {Sieniawska}, M. and {Sigg}, D. and {Silva}, A.~D. and {Singer}, A. and {Singer}, L.~P. and {Singh}, A. and {Singh}, R. and {Singhal}, A. and {Sintes}, A.~M. and {Slagmolen}, B.~J.~J. and {Smith}, J.~R. and {Smith}, N.~D. and {Smith}, R.~J.~E. and {Son}, E.~J. and {Sorazu}, B. and {Sorrentino}, F. and {Souradeep}, T. and {Srivastava}, A.~K. and {Staley}, A. and {Steinke}, M. and {Steinlechner}, J. and {Steinlechner}, S. and {Steinmeyer}, D. and {Stephens}, B.~C. and {Stone}, R. and {Strain}, K.~A. and {Straniero}, N. and {Stratta}, G. and {Strauss}, N.~A. and {Strigin}, S. and {Sturani}, R. and {Stuver}, A.~L. and {Summerscales}, T.~Z. and {Sun}, L. and {Sunil}, S. and {Sutton}, P.~J. and {Swinkels}, B.~L. and {Szczepa{\'n}czyk}, M.~J. and {Tacca}, M. and {Talukder}, D. and {Tanner}, D.~B. and {T{\'a}pai}, M. and {Tarabrin}, S.~P. and {Taracchini}, A. and {Taylor}, R. and {Theeg}, T. and {Thirugnanasambandam}, M.~P. and {Thomas}, E.~G. and {Thomas}, M. and {Thomas}, P. and {Thorne}, K.~A. and {Thorne}, K.~S. and {Thrane}, E. and {Tiwari}, S. and {Tiwari}, V. and {Tokmakov}, K.~V. and {Toland}, K. and {Tomlinson}, C. and {Tonelli}, M. and {Tornasi}, Z. and {Torres}, C.~V. and {Torrie}, C.~I. and {T{\"o}yr{\"a}}, D. and {Travasso}, F. and {Traylor}, G. and {Trifir{\`o}}, D. and {Tringali}, M.~C. and {Trozzo}, L. and {Tse}, M. and {Turconi}, M. and {Tuyenbayev}, D. and {Ugolini}, D. and {Unnikrishnan}, C.~S. and {Urban}, A.~L. and {Usman}, S.~A. and {Vahlbruch}, H. and {Vajente}, G. and {Valdes}, G. and {van Bakel}, N. and {van Beuzekom}, M. and {van den Brand}, J.~F.~J. and {Van Den Broeck}, C. and {Vander-Hyde}, D.~C. and {van der Schaaf}, L. and {van Heijningen}, J.~V. and {van Veggel}, A.~A. and {Vardaro}, M. and {Vass}, S. and {Vas{\'u}th}, M. and {Vaulin}, R. and {Vecchio}, A. and {Vedovato}, G. and {Veitch}, J. and {Veitch}, P.~J. and {Venkateswara}, K. and {Verkindt}, D. and {Vetrano}, F. and {Vicer{\'e}}, A. and {Vinciguerra}, S. and {Vine}, D.~J. and {Vinet}, J. -Y. and {Vitale}, S. and {Vo}, T. and {Vocca}, H. and {Vorvick}, C. and {Voss}, D.~V. and {Vousden}, W.~D. and {Vyatchanin}, S.~P. and {Wade}, A.~R. and {Wade}, L.~E. and {Wade}, M. and {Walker}, M. and {Wallace}, L. and {Walsh}, S. and {Wang}, G. and {Wang}, H. and {Wang}, M. and {Wang}, X. and {Wang}, Y. and {Ward}, R.~L. and {Warner}, J. and {Was}, M. and {Weaver}, B. and {Wei}, L. -W. and {Weinert}, M. and {Weinstein}, A.~J. and {Weiss}, R. and {Wen}, L. and {We{\ss}els}, P. and {Westphal}, T. and {Wette}, K. and {Whelan}, J.~T. and {Whiting}, B.~F. and {Williams}, R.~D. and {Williamson}, A.~R. and {Willis}, J.~L. and {Willke}, B. and {Wimmer}, M.~H. and {Winkler}, W. and {Wipf}, C.~C. and {Wiseman}, A.~G. and {Wittel}, H. and {Woan}, G. and {Woehler}, J. and {Worden}, J. and {Wright}, J.~L. and {Wu}, D.~S. and {Wu}, G. and {Yablon}, J. and {Yam}, W. and {Yamamoto}, H. and {Yancey}, C.~C. and {Yu}, H. and {Yvert}, M. and {Zadro{\.z}ny}, A. and {Zangrando}, L. and {Zanolin}, M. and {Zendri}, J. -P. and {Zevin}, M. and {Zhang}, L. and {Zhang}, M. and {Zhang}, Y. and {Zhao}, C. and {Zhou}, M. and {Zhou}, Z. and {Zhu}, X.~J. and {Zucker}, M.~E. and {Zuraw}, S.~E. and {Zweizig}, J.
+   :JOURNAL:  Annalen der Physik
+   :KEYWORDS: General Relativity and Quantum Cosmology
+   :YEAR:     2017
+   :MONTH:    Jan
+   :VOLUME:   529
+   :NUMBER:   1-2
+   :PAGES:    1600209
+   :DOI:      10.1002/andp.201600209
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1608.01940
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017AnP...52900209A
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** A comparison of methods for gravitational wave burst searches from LIGO and Virgo
+   :PROPERTIES:
+   :TITLE:    A comparison of methods for gravitational wave burst searches from LIGO and Virgo
+   :BTYPE:    article
+   :CUSTOM_ID: 2008CQGra..25d5002B
+   :AUTHOR:   {Beauville}, F. and {Bizouard}, M. -A. and {Blackburn}, L. and {Bosi}, L. and {Brocco}, L. and {Brown}, D.~A. and {Buskulic}, D. and {Cavalier}, F. and {Chatterji}, S. and {Christensen}, N. and {Clapson}, A. -C. and {Fairhurst}, S. and {Grosjean}, D. and {Guidi}, G. and {Hello}, P. and {Heng}, S. and {Hewitson}, M. and {Katsavounidis}, E. and {Klimenko}, S. and {Knight}, M. and {Lazzarini}, A. and {Leroy}, N. and {Marion}, F. and {Markowitz}, J. and {Melachrinos}, C. and {Mours}, B. and {Ricci}, F. and {Vicer{\'e}}, A. and {Yakushin}, I. and {Zanolin}, M. and {joint LSC/Virgo working Group}
+   :JOURNAL:  Classical and Quantum Gravity
+   :KEYWORDS: General Relativity and Quantum Cosmology
+   :YEAR:     2008
+   :MONTH:    Feb
+   :VOLUME:   25
+   :NUMBER:   4
+   :EID:      045002
+   :PAGES:    045002
+   :DOI:      10.1088/0264-9381/25/4/045002
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   gr-qc/0701026
+   :PRIMARYCLASS: gr-qc
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2008CQGra..25d5002B
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+* 
+
+* Calculation of a constant Q spectral transform
+  :PROPERTIES:
+  :TITLE:    Calculation of a constant Q spectral transform
+  :BTYPE:    article
+  :CUSTOM_ID: 1991ASAJ...89..425B
+  :AUTHOR:   {Brown}, Judith C.
+  :JOURNAL:  Acoustical Society of America Journal
+  :YEAR:     1991
+  :MONTH:    Jan
+  :VOLUME:   89
+  :NUMBER:   1
+  :PAGES:    425-434
+  :DOI:      10.1121/1.400476
+  :ADSURL:   https://ui.adsabs.harvard.edu/abs/1991ASAJ...89..425B
+  :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+  :END:

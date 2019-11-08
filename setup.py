@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-import versioneer
+# import versioneer
 
 with open('README.md') as readme_file:
     readme = readme_file.read()

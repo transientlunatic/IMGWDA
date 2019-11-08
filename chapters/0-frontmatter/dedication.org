@@ -12,7 +12,7 @@ More generally, I extend my thanks to the members of the LIGO Scientific Collabo
 I had plenty of opportunity to see parts of the world I'd never have expected to see before starting on this endeavour, and my thanks go to all of the kind hosts who looked after me, whether it was at a world-class lab in the middle of a swamp in Louisiana; in humid Midtown, Atlanta; or the entirely exciting Daejong.
 
 Without the people around me to keep me sane, or distract me from my work, I doubt this tome would ever have come about. 
-Euan, Magnus, Rhys, Shona, laura, Alex, and David; you all bear some responsibility for this happening (and must accept some thanks and credit for the fact that it did). 
+Euan, Magnus, Rhys, Shona, Laura, Alex, and David; you all bear some responsibility for this happening (and must accept some thanks and credit for the fact that it did). 
 There were times when I doubted I'd finish at all, and without Andrew I'm sure I wouldn't: thanks for being around to listen to me complaining, and for letting yourself get embroiled in some of my harebrained schemes.
 
 Then to my supervisors, without whom I'd have never discovered the joys of the Bayesian (correct) interpretation of probability: Siong and Graham, thank you for taking on the risk of taking me on as a student.

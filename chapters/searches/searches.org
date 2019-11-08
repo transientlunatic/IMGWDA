@@ -1,0 +1,525 @@
+In the world of abpl:gw there are /known knowns/, astrophysical sources, including abpl:bbh where the source is well understood, and the abbr:gw signal it produces is also well understood.
+We also know that there are /known unknowns/: astrophysical sources which have been observed electromagnetically, and which are expected to produce abpl:gw, however for these sources the signal they should produce is poorly understood, and poorly modelled.
+But we know there will be /unknown unknowns/: each development in observational astronomy has been accompanied by unanticipated discoveries. 
+It is unlikely that abpl:gw will be any different, but detecting signals with no prior knowledge of the physics which generates them is a formidable challenge.
+``Burst'' searches are designed to identify signals in detector data which fall into the latter two categories: the known unknowns, such as supernovae, and the unknown unknowns.
+
+* Burst searches
+  :PROPERTIES:
+  :CUSTOM_ID: sec:sources:burstsearch
+  :END:
+  \label{sec:sources:burstsearch}
+
+Burst searches cannot rely on well-known template waveforms in the way that compact binary searches can, and so matched filtering techniques cannot be used.
+Performing analysis of the signals from the data collected from a gravitational wave detector is complicated by the presence of both stationary and non-stationary noise (see section ref:sec:detectors:noise for a discussion of the sources and extent of this noise), and by the signal's convolution with the detector's antenna pattern (see section ref:sec:detectors:antennaresponse).
+The final construction of the signal detected by a network of detectors is outlined in figure ref:fig:sources:burst:signalflow.
+
+Instead burst searches, similarly to searches for the stochastic background, make use of information gained from correlations between detectors in a network.
+
+There are two approaches to analysing data across a network of detectors. 
+   + Coherent analysis :: which combines the data steams of detectors together into a single stream, with all of the data analysed in the same process. An outline diagram of the operation of a coherent burst search is provided in figure ref:fig:sources:burst:coherentsearch.
+   + Coincident analysis :: performs a search for signals on each detector's data separately, providing a list of times at which a candidate signal (or gls:trigger) is identified. These are then compared, allowing for suitable time delays corresponding to the wave travel time between detectors in the network, to identify coincident events. An outline diagram of the operation of a coincident burst search is provided in figure ref:fig:sources:burst:coincidentsearch.
+
+The coherent method is substantially more difficult to perform, and can require access to greater computational resources than the simpler, faster coincident method. 
+However, the coincident method is generally less sensitive, as a signal which is weakly detected in one detector, but strongly in another may not produce triggers in both analyses, where a coherent analysis would help to identify the more weakly-detected signal.
+
+Initial abbr:ligo searches were performed both between the detectors constituting the abbr:ligo network (the two 4-km detectors at abbr:llo and abbr:lho, in addition to the 2-km detector at abbr:lho), and between this network and gls:tama, gls:geo600, and gls:auriga. 
+
+At this stage it will be useful to define a few quantities which are used in search algorithms.
+
+# \begin{definition}[Signal energy]
+# The signal energy is the summed squared absolute value of a segment of data.
+# \end{definition}
+
+\begin{definition}[Null stream energy]
+   The gls:null-stream energy is the minimum amount of energy in whitened detector data which is inconsistent with a abbr:gw signal from a given sky location, across a network of detectors.
+\end{definition}
+
+\begin{definition}[Excess energy]
+The excess energy of a single detector measurement is the amount of energy which is not consistent with a noise hypothesis in whitened detector data.
+\end{definition}
+
+\begin{figure}
+
+\centering
+\begin{tikzpicture}[]
+
+%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
+
+\begin{scope}
+
+\fill [red!40] (-2,0.8) rectangle (10,-0.6);
+\fill [green!40] (-2,-0.6) rectangle (10,-4.2);
+\fill [blue!40] (-2,-4.2) rectangle (10,-6.2);
+
+\node (signal) {$h$};
+ 
+\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
+ \foreach \x in {1,..., 3} {
+ 	\node (convolution\x) at (\x, 0) { $\otimes$};
+	\draw (signal.south) -- (convolution\x.north);
+	\node  at (\x-0.3, 0) {$F_{\x}$};
+
+	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
+	\draw(convolution\x.south) -- (xi\x.north);
+
+	\node (addition\x) at (\x,-3.3) { $\oplus$};
+	\draw (xi\x.south) -- (addition\x.north);
+	\node at (\x-0.35, -3.3) {$N_{\x}$};
+
+	\node (s\x) at (\x, -4.6) {$s_{\x}$};
+	\draw (addition\x.south) -- (s\x.north);
+	
+}
+\end{scope}
+\end{scope}
+
+\begin{scope}[xshift=5cm, every node/.style={text width=7cm}]
+
+\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
+\node (convolution-text) at (0, -2.5cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$. The geographical separation of the detectors will introduce a relative time delay between each detector.};
+
+\node (addition-text) at (0, -5.3) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
+
+\end{scope}
+
+\end{tikzpicture}
+
+\caption[The construction of a GW signal observed by a network of detectors]{The construction of the abbr:gw signal observed by a network of detectors, from the abbr:gw source through to its measurement by a detector. \label{fig:sources:burst:signalflow}}
+
+\end{figure}
+
+
+** Fundamental search methods
+   :PROPERTIES:
+   :CUSTOM_ID: sec:sources:burst:searchmethods
+   :END:
+   \label{sec:sources:burst:searchmethods}
+
+   While a large number of algorithms for searching for burst signals exist, most rely on a small number of fundamental techniques to identify burst events in detector data.
+
+   + Power filter :: Calculates a weighted spectrogram of the data by splitting the whitened detector data into overlapping chunks.  cite:2004CQGra..21S.815G
+   + Wavelet transform ::  These methods uses either a wavelet or a Q-transform cite:1991ASAJ...89..425B approach to produce a time-frequency representation of the measured signal. This is then thresholded, and clusters of outlier pixels (discrete regions of the time-frequency plane) are identified. By performing a number of Q-transforms with varying $q$ parameters it is possible to estimate the parameters of the detected waveform cite:2004CQGra..21S1809C.
+   + Mean filter :: The mean filter is a time-series approach to burst detection, which searches for excesses in the moving average of the measured signal. The method is most sensitive to bursts which have a similar length to the moving window, so the search must be repeated for a number of different window lengths cite:2008CQGra..25d5002B.
+
+** Search pipelines
+   :PROPERTIES:
+   :CUSTOM_ID: sec:sources:burst:pipelines
+   :END:
+   \label{sec:sources:burst:pipelines}
+
+While the fundamental methods described in section ref:sec:sources:burst:searchmethods are plausible methods for identifying burst signals in data, they are unable to operate in isolation. 
+This has lead to the need to construct /pipelines/ which are capable of pre-processing the detector data, performing searches to produce lists of glspl:trigger, estimate the significance of these glspl:trigger, and perform parameter estimation on the signals. 
+There are at least four major burst search pipelines in use during the advanced detector runs.
+
+\begin{figure}
+
+\begin{tikzpicture}[]
+
+%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
+
+\begin{scope}
+
+\fill [red!40] (-2,0.8) rectangle (10,-0.6);
+\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
+\fill [blue!40] (-2,-3.2) rectangle (10,-5.2);
+
+\fill [yellow!40] (-2,-5.2) rectangle (10,-8.2);
+
+\fill [orange!40] (-2,-8.2) rectangle (10, -13);
+
+\node (signal) {$h$};
+ 
+\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
+ \foreach \x in {1,..., 3} {
+ 	\node (convolution\x) at (\x, 0) { $\otimes$};
+	\draw (signal.south) -- (convolution\x.north);
+	\node  at (\x-0.3, 0) {$F_{\x}$};
+
+	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
+	\draw(convolution\x.south) -- (xi\x.north);
+
+	\node (addition\x) at (\x,-2.3) { $\oplus$};
+	\draw (xi\x.south) -- (addition\x.north);
+	\node at (\x-0.3, -2.3) {$N_{\x}$};
+
+	\node (s\x) at (\x, -3.6) {$s_{\x}$};
+	\draw (addition\x.south) -- (s\x.north);
+
+	\node [circle, fill] (segment\x) at (\x, -4.5) {};
+	\draw (s\x.south) -- (segment\x.north);
+
+	\node [circle, fill] (whiten\x) at (\x, -5.5) {};
+	\draw (segment\x.south) -- (whiten\x.north);
+
+	\node [circle, fill] (delay\x) at (\x, -6.5) {};
+	\draw (whiten\x.south) -- (delay\x.north);
+
+	\node [circle, fill] (tf\x) at (\x, -8) {};
+	\draw (delay\x.south) -- (tf\x.north);
+
+	\node [circle, fill] (excess\x) at (\x, -9.5) {};
+	\draw (tf\x.south) -- (excess\x.north);
+	
+}
+
+	\node [rectangle, fill, minimum width=1cm] (significance) at (2, -11) {};
+
+	\draw [bend left] (excess1.south) -- (significance.north);
+	\draw [bend left] (excess2.south) -- (significance.north);
+	\draw [bend left] (excess3.south) -- (significance.north);
+
+
+	\node [circle, fill] (triggers) at (2, -12.5)  {};
+	\draw (significance.south) -- (triggers.north);
+
+	
+
+\end{scope}
+\end{scope}
+
+\begin{scope}[xshift=6cm, every node/.style={text width=7cm}]
+
+\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
+\node (convolution-text) at (0, -2cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$.};
+
+\node (addition-text) at (0, -4) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
+
+\node (segment-text) at (0,-5.7) {The recorded signals are split into segments of equal length.};
+\node (segment-text) at (0,-6.7) {A filter is applied to whiten the data.};
+\node (segment-text) at (0,-7.7) {Each detector signal is time-delayed with respect to a given sky location.};
+
+\node (tf-text) at (0,-9.3) {The data from each detector is converted to a time-frequency representation.};
+\node (excess-text) at (0,-10.8) {Pixels with excess power are identified, and clusters of these pixels are identified.};
+
+\node (significance-text) at (0, -12.2) {The significance of the clusters are calculated jointly using the data from all detectors.};
+
+\node (trigger-text) at (0, -13.7) {A list of triggers is produced, which can be sorted by significance, and thresholded.};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+
+\caption{The principles of a coherent all-sky burst search pipeline.
+	     \label{fig:sources:burst:coherentsearch}
+}
+
+\end{figure}
+
+
+   + X-Pipeline :: X-Pipeline is designed to run coherent triggered searches for abbr:gw bursts, motivated by the detection of events such as abpl:sgrb cite:2010NJPh...12e3034S. The analysis constructs time-frequency spectrograms of the plus and cross strain polarisations, and the gls:null-stream, after they have been whitened and time-shifted. Pixels in the spectrograms are then clustered in order to identify significant outliers from the noise. This process is repeated for each location on the sky being searched, with appropriate time-shifts, for each detector's data. Events are vetoed if they have a strong correlation between the coherent energies and incoherent energies, a feature which indicates a noise glitch rather than a burst signal. The X-Pipeline can be combined with the SphRad pipeline to run all-sky, untargetted searches cite:maxfayesthesis in the XSphRad configuration.
+
+#   + spherical radiometer 
+   + Coherent WaveBurst :: The abbr:cwb pipeline cite:waveburst is a coherent, untriggered burst search method which performs a wavelet transform on blocks of detector data to first produce a time-frequency representation. The wavelet layers are then whitened with a linear prediction error filter, and time-delayed. Correlations and excess-power regions in the  time-frequency plane are then clustered to identify coherent triggers, which are then selected by thresholding based on the abbr:fap.
+
+\begin{figure}
+\begin{tikzpicture}[]
+
+%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
+
+\begin{scope}
+
+\fill [red!40] (-2,0.8) rectangle (10,-0.6);
+\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
+\fill [blue!40] (-2,-3.2) rectangle (10,-5.2);
+
+\fill [yellow!40] (-2,-5.2) rectangle (10,-8.2);
+
+\fill [orange!40] (-2,-8.2) rectangle (10, -13);
+
+\node (signal) {$h$};
+ 
+\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
+ \foreach \x in {1,..., 3} {
+ 	\node (convolution\x) at (\x, 0) { $\otimes$};
+	\draw (signal.south) -- (convolution\x.north);
+	\node  at (\x-0.3, 0) {$F_{\x}$};
+
+	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
+	\draw(convolution\x.south) -- (xi\x.north);
+
+	\node (addition\x) at (\x,-2.3) { $\oplus$};
+	\draw (xi\x.south) -- (addition\x.north);
+	\node at (\x-0.3, -2.3) {$N_{\x}$};
+
+	\node (s\x) at (\x, -3.6) {$s_{\x}$};
+	\draw (addition\x.south) -- (s\x.north);
+
+	\node [circle, fill] (segment\x) at (\x, -4.5) {};
+	\draw (s\x.south) -- (segment\x.north);
+
+	\node [circle, fill] (whiten\x) at (\x, -5.5) {};
+	\draw (segment\x.south) -- (whiten\x.north);
+
+	\node [circle, fill] (delay\x) at (\x, -6.5) {};
+	\draw (whiten\x.south) -- (delay\x.north);
+
+	\node [circle, fill] (tf\x) at (\x, -8) {};
+	\draw (delay\x.south) -- (tf\x.north);
+
+	\node [circle, fill] (excess\x) at (\x, -9.5) {};
+	\draw (tf\x.south) -- (excess\x.north);
+	
+	\node [rectangle, fill] (significance\x) at (\x, -11) {};
+
+	\draw [bend left] (excess\x.south) -- (significance\x.north);
+
+	\node [circle, fill] (triggers\x) at (\x, -12.5)  {};
+	\draw (significance\x.south) -- (triggers\x.north);
+
+}
+
+\node (collection) [rectangle, fill, minimum width=2cm] at (2, -14) {};
+	
+\draw (triggers1.south) -- (collection.north);
+\draw (triggers2.south) -- (collection.north);
+\draw (triggers3.south) -- (collection.north);
+	
+
+\end{scope}
+\end{scope}
+
+\begin{scope}[xshift=6cm, every node/.style={text width=7cm}]
+
+\node (signal-text) at (0,0) {A signal, $h$ is generated by an astrophysical source.};
+\node (convolution-text) at (0, -2cm) {The signal is convolved with each detector's antenna pattern, $F$. \\ This gives the \emph{antenna response}, $\xi$.};
+
+\node (addition-text) at (0, -4) {The signal, combined with noise, $N$, from the detector, giving the \emph{observed signal}, $s$.};
+
+\node (segment-text) at (0,-5.7) {The recorded signals are split into segments.};
+\node (segment-text) at (0,-6.7) {A filter is applied to whiten the data.};
+\node (segment-text) at (0,-7.7) {Each detector signal is time-delayed with respect to a given sky location.};
+
+\node (tf-text) at (0,-9.3) {The data from each detector is converted to a time-frequency representation.};
+\node (excess-text) at (0,-10.8) {Pixels with excess power are identified, and clusters of these pixels are identified.};
+
+\node (significance-text) at (0, -12.2) {The significance of the clusters are estimated for events in individual detectors.};
+
+\node (trigger-text) at (0, -13.7) {Lists of triggers are produced, which can be sorted by significance, and thresholded.};
+
+\node (collection-text) at (0, -15.2) {The trigger times from each detector are compared, and coincident events are identified.};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+
+\caption{A typical all-sky coincident burst search pipeline.
+\label{fig:sources:burst:coincidentsearch}}
+\end{figure}
+
+   + Omicron / LALInference burst :: The abbr:olib pipeline cite:2015arXiv151105955L is a coincident all-sky burst search pipeline which relies on the use of Q-transforms to generate time-frequency representations of detector data, in order to identify regions of excess energy. The significance of single-detector triggers are then determined using Bayesian inference to produce a joint detection significance from the network of detectors.
+   + Bayeswave :: In contrast to other burst search pipelines, abbr:bw cite:2015CQGra..32m5012C is designed to determine the significance of pre-determined triggers, and does not generate triggers on its own. It takes a direct approach to distinguishing signal transients (bursts) from noise transients (glitches) by directly modelling glitches with Morlet waveforms, and then performing Bayesian model selection to identify a favoured hypothesis: either a noise, glitch, or signal model.
+
+* Mock data challenges and all-sky searches
+  \label{sec:sources:mdc}
+
+  Given the complexity of modern burst search algorithms, and their need to operate in a regime of non-Gaussian, non-stationary noise it is important to be able to demonstrate the efficacy of an individual pipeline.
+In addition to this, the nature of the noise in abbr:gw detectors makes estimating the sensitivity of each search method difficult, as the time-evolution of the noise abbr:psd will affect the sensitivity over time.
+To address these problems pipelines are tested against known signals which are ``injected'' into the recorded data from the detector.
+
+This process can be performed in two ways, either as a /hardware injection/, where the test mass of the detector is physically actuated (using either an electrostatic drive, or through photon pressure from a laser placed behind the test mass), or as a /software injection/, where the signal waveform is added to the pre-recorded data.
+The former process has the advantage of testing the performance of the pipeline ``end-to-end'', as the signal will be present in the analysed data at all times. 
+Indeed, prior to the detection of gls:gw150914 the use of ``blind'' injections to test the readiness of search algorithms was a standard practice[fn:bigdog]. 
+In contrast software injections can be performed offline, and thus do not run the risk of obfuscating an astrophysical signal.
+However, as these are added to the recorded data it is necessary to ensure that a consistent set of signals is analysed by all pipelines to provide consistent sensitivity estimates.
+
+At the beginning of the advanced detector era it became clear that the production of these /mock data challenges/ required new infrastructure, and the /Minke/ project was initiated to handle this.
+
+
+[fn:bigdog] Indeed, a major undertaking towards the end of the initial detector era had involved the analysis of a signal, identified as a abbr:bbh coalescence in Canis Major, which was dubbed the /Big Dog/ event. After a thorough end-to-end analysis of the signal was conducted it was revealed to have been such a blind injection. While this exercise demonstrated that the various search algorithms in operation at the time were capable of identifying a signal, it also demonstrated a number of failings in the various components of the software chain which was used to produce and inject this signal into the detector. In fact, the intended signal had been an abbr:nsbh signal, and had not been injected at a location in CMa. A fuller discussion of the event can be found at \url{https://www.ligo.org/news/blind-injection.php}.
+
+* Minke
+  \label{sec:sources:minke}
+
+\begin{figure}
+\begin{tikzpicture}[]
+
+%\draw[help lines,step=5mm,gray!20] (0,0) grid (4,3);
+
+\begin{scope}
+
+\fill [pink!40] (-2,2.8) rectangle (10,-4.5);
+%\fill [green!40] (-2,-0.6) rectangle (10,-3.2);
+\fill [blue!40] (-2,-4.5) rectangle (10,-6.5);
+
+
+\node (parameters) at (0,1.5) {$\vec{p}$};
+
+\node (signal) at (0,0) {$h$};
+
+\draw (parameters) -- (signal);
+ 
+\begin{scope}[below of = signal, anchor = north, xshift=-2 cm]
+ \foreach \x in {1,..., 3} {
+ 	\node (convolution\x) at (\x, 0) { $\otimes$};
+	\draw (signal.south) -- (convolution\x.north);
+	\node  at (\x-0.3, 0) {$F_{\x}$};
+
+	\node (xi\x) at (\x, -1) {$\xi_{\x}$};
+	\draw(convolution\x.south) -- (xi\x.north);
+
+	\node [rectangle, fill]  (frame\x) at (\x,-4.5) {};
+	\draw (xi\x.south) -- (frame\x.north);
+
+
+
+}
+
+
+\end{scope}
+\end{scope}
+
+\begin{scope}[xshift=5.5cm, every node/.style={text width=7cm}]
+
+\node (signal-text) at (0,1.5) {A set of waveform parameters is selected from the MDC specification.};
+\node (signal-text) at (0,.1) {A mock signal, $h$ is generated from defined source parameters.};
+\node (convolution-text) at (0, -2.7cm) {The signal is time-delayed and convolved with each detector's antenna pattern, $F$, giving the \emph{antenna response}, $\xi$.
+A random jitter is added to the central time and amplitude of the signal to simulate calibration uncertainties.};
+
+\node (addition-text) at (0, -5.5) {These injection ready signals are then stored in a form ready to be added to detector noise.};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+
+\caption[The process of frame production for a mock data challenge using Minke]{The process of frame production for a abbr:mdc using \gls{minke}. For software injections the injection-ready signals are normally stored in GWF frame files, ready to be injected into the signal recorded from the detector. For waveforms to be used for hardware injections the signals are simply written out as ASCII-format text files. \label{fig:sources:minke:frame}}
+\end{figure}
+
+/gls:minke/ cite:daniel_williams_2019_3352036 is a software library[fn:minkeavailability] implemented in the ~python~ programming language which is designed to produce large-scale abpl:mdc for burst waveforms. 
+In order to ensure consistency with other abbr:gw analyses, and to make use of as much pre-existing, reviewed code as possible, gls:minke makes use of as much functionality as possible from pre-existing code released as part of the  gls:lalsuite cite:lalsuite library of abbr:gw analysis software.
+While \gls{minke} was designed for the primary purpose of abbr:mdc production, it also provides a convenient python wrapper to a number of functions from the \texttt{LALSimulation} cite:lalsuite C library, making it a convenient means to generate abbr:gw signals, for example for machine learning training data.
+
+Burst searches are used to search for both totally unmodelled sources, and poorly modelled sources (see section ref:sec:sources:burst for a discussion of the various morphologies of these signals). 
+gls:minke supports a large subset of these waveforms; analytical waveforms, such as Gaussians and sine-Gaussians are generated using \texttt{LALSimulation}, while more complicated models can be used (such as abbr:nr derived supernova waveforms) can be used to generate signals if the waveform is available either as pre-computed strain values in the $+$- and $\times$-polarisations, or decomposed into a spherical harmonic basis.
+
+The process for producing an abbr:mdc using \gls{minke} is broken into a number of stages (which are also depicted in figure ref:fig:sources:minke:frame):
+
+1. The distributions of source parameters are specified; these include the probability distributions from which parameters of individual signals are drawn, and the hyperparameters defining those distributions. For example, the injections may be made uniformly across the sky, or a more specific distribution may be chosen.
+
+2. A specification for the signal set is generated as a table of source parameters, with each row specifying a single signal. This table can be stored in XML format for later use.
+
+3. Each signal can then be generated using \texttt{LALSimulation}. In the case of analytical waveforms the appropriate generating function is evaluated, and in the case of a pre-computed signal the waveform data is interpolated appropriately for the desired sample rate, and where appropriate, is reconstructed from a spherical harmonic basis.
+
+4. The generated signal must then be convolved with the antenna pattern for each detector involved in the analysis, for the appropriate sky position and time, and must have the appropriate time delay applied relative to the geocentre. A random ``jitter'' may also be applied at this stage to the centre time and amplitude of the signal, to emulate timing and calibration uncertainties in the detector.
+
+5. The signals, which are now ready to be injected, can be stored either in a GWF frame file, or as ASCII data. The former is used for software injections, and the latter for hardware injections.
+
+6. The analysis-ready abbr:mdc is constructed by adding the injection signal to the detector data, allowing the sensitivity of the detector to a specific signal morphology to be tested over time, in the presence of real noise and glitches.
+
+When injecting signals which possess abbr:gw memory effects (that is, when the strain at the end of the signal does not equal the strain at the beginning) it is desirable to remove this effect.
+When adding a signal with memory to pre-recorded noise there will be a sharp discontinuity at the end of the signal which will produce artefacts in any frequency-domain representation of the signal.
+To account for this \gls{minke} adds a low-frequency half cosine decay to the end of the signal to present a smooth transition.
+
+Examples of the abbr:sn waveforms which Minke is capable of injecting are shown in figure ref:fig:sources:burst:minke:supernova.
+In the Mueller waveform signal cite:2013ApJ...766...43M in the left column the smooth transition which is added by Minke is clear.
+# This waveform is produced using a simulation of a neutrino-driven abbr:sn explosion.
+# The Dimmelmeier waveform signal cite:2008PhRvD..78f4056D plotted in the middle column of figure ref:fig:sources:burst:minke:supernova was produced by 2-dimensional abbr:nr simulation without neutrino-driven effects.
+# The final waveform plotted in the right column of figure ref:fig:sources:burst:minke:supernova was produced using full three-dimensional relativistic magnetohydrodynamic simulation of a slowly-rotating star undergoing abbr:sn cite:2010CQGra..27k4101S.
+
+   \begin{figure}
+   \caption[A catalogue of supernova burst waveforms]{Three of the supernova burst ``waveforms'' which can be simulated and injected by Minke.
+   From left to right, Mueller~\cite{2013ApJ...766...43M}, Dimmelmeier~\cite{2008PhRvD..78f4056D}, Scheidegger~\cite{2010CQGra..27k4101S} waveforms are depicted in the time domain, with both the plus polarisation (red) and cross polarisation (blue) depicted.
+   \label{fig:sources:burst:minke:supernova}
+   }
+   \includegraphics[width=\textwidth]{figures/sources/minke-supernova.pdf}
+   \end{figure}	
+
+[fn:minkeavailability] The Minke source code can be obtained from \url{https://git.ligo.org/daniel-williams/minke}, and is documented at \url{https://daniel-williams.docs.ligo.org/minke/}. It can also be installed using the ~pip~ package manager by running ~pip install minke~.
+
+* O1 and O2 all-sky search sensitivity
+  \label{sec:sources:burstresults}
+
+The data from the first two observing runs of the advanced gls:ligo detector were analysed by three all-sky burst glspl:search-pipeline: abbr:cwb, abbr:olib, and abbr:bw.
+These pipelines, which employ techniques described in section ref:sec:sources:burstsearch, did not make detections of non abbr:cbc events during these two observing runs, but were able to place limits on the rate of such events within the sensitive volume of the detector.
+In order to determine this sensitive volume abpl:mdc were constructed using Minke (described in the previous section).
+Signals from each abbr:mdc were injected into the strain data collected from each detector every $\SI{50}{\second}$; these signals had a distribution of abbr:hrss values, such that the distance distribution of the events, $p(r) = r + 50/r$, for distance $r$.
+The resulting abbr:hrss distribution will contain both ``loud'' events, with a high abbr:hrss, and ``quiet'' events with low abbr:hrss.
+
+\begin{table}
+\centering
+\begin{tabular}{lllllllll}
+\toprule
+\multicolumn{3}{c}{Waveform parameters} & \multicolumn{3}{c}{Observing run 1} & \multicolumn{3}{c}{Observing run 2} \\
+&&                                      & abbr:cwb & abbr:olib & abbr:bw      & abbr:cwb & abbr:olib & abbr:bw \\
+\midrule
+\multicolumn{3}{c}{Gaussian}            &&&                                   &&& \\
+& $\tau/\si{\milli\second}$ &          &&&                                   &&& \\
+\midrule
+& 0.1                        &          & 34 & NA & NA                        & 8.4 & 6.2 & NA \\
+& 2.5                        &          & 33 & 7.4 & NA                       & 11  & 5.3 & NA \\
+\midrule
+\multicolumn{3}{c}{Sine-Gaussian}       &&&                                   &&& \\
+$f_0 / \si{\hertz}$ & $q$    &          &&&                                   &&& \\
+\midrule
+70                  & 3      &          &&&                                   & 4.9 & - & NA \\
+70                  & 100    &          & 24  & NA  & NA                      & 6.4 & - & NA \\
+153                 & 8.9    &          & 1.6 & 1.7 & 5.4                     & 1.4 & 1.3 & 16 \\
+253                 & 100    &          & 14  & 19  & NA                      & 3.3 & 1.1 & 1.4 \\
+554                 & 8.9    &          & 2.6 & 2.7 & 3.6                     & 1.8 & 1.5 & NA  \\
+849                 & 3      &          & 27  & 3.3 & 5.4                     & 5.5 & 2.0 & 17  \\
+1304                & 9      &          &&&                                   & 3.3 & 2.8 & -   \\
+1615                & 100    &          & 5.5 &  -  & -                       & 3.6 & 3.3 & -   \\
+2000                & 3      &          & 8.7 &  -  & -                       & 5.4 & 5.3 & -   \\
+2477                & 8.9    &          & 11  &  -  & -                       & 7.5 & -   & -   \\
+3067                & 3      &          & 15  &  -  & -                       & 9.7 & -   & -   \\
+\midrule
+\multicolumn{3}{c}{White-noise burst}   &&&                                   &&& \\
+$f_{\text{low}} / \si{\hertz}$ & $\Delta f / \si{\hertz}$ &  $\tau/\si{\milli\second}$   &&&  &&& \\
+\midrule
+100                 & 100    & 0.1      & 2.0 &     & 3.0                     & 1.4 & 3.0 & 3.0 \\
+250                 & 100    & 0.1      & 2.2 & NA  & 9.2                     & 1.4 & 3.8 & 3.8 \\
+750                 & 100    & 0.1      &&&                                   & 1.8 & 3.7 & 4.2 \\
+\bottomrule
+\end{tabular}
+\caption[Detection sensitivities of the burst search pipelines in LIGO's second observing run]{The abbr:hrss values, in units of $\SI{E-22}{\hertz^{-1/2}}$ at which each pipeline achieves a $50\%$ detection efficiency at a abbr:far of $1$ in $\SI{100}{\year}$ in both the first and second advanced gls:ligo observing runs, thus a lower value implies a more sensitive search. A value of NA indicates that $50\%$ efficiency could not be achieved, while ``-'' indicates that the search was not run on a given morphology, as the characteristic frequency did not meet the criteria of the search.
+The data in this table is derived from tables presented in~\cite{2017PhRvD..95d2003A} (O1) and~\cite{2019PhRvD.100b4017A} (O2).
+\label{tab:sources:mdc:o1o2}
+}
+\end{table}
+
+The injection process was repeated for a number of waveform morphologies, listed in table ref:tab:sources:mdc:o1o2, allowing the pipelines to be assessed across a range of frequencies.
+The same table indicates the abbr:hrss of the weakest signal which was detected with $50\%$ efficiency given a abbr:far of one per hundred years.
+
+These results indicate that between O1 and O2 there are substantial improvements in the detection efficiency for some signals, with changes to the algorithm allowing some waveforms, such as the $\SI{849}{\hertz}$ sine-Gaussian, to be detected with much greater efficiency.
+Abbr:bw is noticeably the least sensitive pipeline to sine-Gaussian signals during O2, as it struggles to differentiate simple signals which can be represented using a single sine-Gaussian basis from noise.
+
+
+The abbr:gw energy, $E_{\text{GW}}$ can be found from the abbr:hrss through the relationship
+\begin{equation}
+\label{eq:sources:hrss2energy}
+E_{{\text{GW}}} = \frac{\pi^{2}c^{3}}{G} r_{0}^{2} f_{0}^{2} h_{0}^{2},
+\end{equation}
+for a distance $r_{0}$, (fixed) frequency $f_{0}$, and abbr:hrss $h_{0}$.
+
+Each result in table ref:tab:sources:mdc:o1o2 can then be converted into a representative energy, taking a fiducial distance $r_{0} = \SI{10}{\kilo\parsec}$, and these values are plotted in figure ref:fig:sources:mdc:o1o2.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[]{figures/sources/o1o2-sensitivity.pdf}}
+\caption[The sensitivity of the all-sky burst search algorithms in the first two observing runs of advanced LIGO]{
+	The emitted abbr:gw energy, in units of solar masses, which correspond to a 50\% detection efficiency at a given frequency, for a abbr:far of 1 event per hundred years, and at a fiducial distance of $\SI{10}{\kilo\parsec}$. 
+	At each frequency the marker corresponds to the best performance from the three glspl:search-pipeline.
+	The data to produce this plot were derived from the values in table~\ref{tab:sources:mdc:o1o2}, for the sine-Gaussian and white-noise burst waveforms.
+\label{fig:sources:mdc:o1o2}}
+\end{figure}
+
+The results presented in figure ref:fig:sources:mdc:o1o2 indicate that the sensitivity of the three burst glspl:search-pipeline has improved across the range of observed frequencies between the first two observing runs, but the data in table ref:tab:sources:mdc:o1o2 indicate that the improvements are not uniform across all searches, with some searches altering their configuration in such a way that they gain sensitivity in some frequencies while reducing it in others.
+The greatest sensitivity of the network of abbr:gw detectors to burst signals is therefore achieved by considering the results from all the available glspl:search-pipeline.
+
+* Summary
+
+The development of Minke as a means of testing the sensitivity of all of the burst glspl:search-pipeline running on data from the advanced gls:ligo and advanced gls:virgo detectors has allowed the sensitivity of each pipeline to be compared on fair and equal terms using mock data challenges.
+
+While this is a useful exercise for the purposes of algorithm development, it is also important to properly understand the sensitivity of the detectors to unmodelled signals, as this allows limits to be placed on the rate at which astrophysical events producing abbr:gw bursts occur in the local universe, even in the case of non-detection.
+The ability of the various algorithms to detect signals in mock data challenges, detailed in table ref:tab:sources:mdc:o1o2 demonstrates why it is necessary that each gls:search-pipeline is tested, as each pipeline's sensitivity is frequency-dependent. 
+Understanding the behaviour of each pipeline allows the results from the appropriate pipeline to be used when calculating event rates based across each region of the observed spectrum.
+
+Previously to my development of Minke these tests were often conducted in an ad-hoc manner, and the process of producing an abbr:mdc was not standardised or automated.
+The move to standardised, automated abbr:mdc production should allow the continued comparable testing of glspl:search-pipeline throughout future observing runs.
+
+
