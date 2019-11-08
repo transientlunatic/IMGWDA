@@ -462,7 +462,7 @@ The quality factor, $Q$, of a burst signal is defined as
    \end{equation}
    for a strain $h$ at time $t$, with an amplitude $A$, central time $t_{0}$ and duration $\sigma$.
 
-   An example of a Gaussian burst ($\sigma = \SI{0.01}{\second}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$) is plotted in the left column of figure ref:fig:sources:burst:adhoc, with the time-domain waveform in the first row. 
+   An example of a Gaussian burst waveform ($\sigma = \SI{0.01}{\second}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$) is plotted in the left column of figure ref:fig:sources:burst:adhoc.
    In this figure the two polarisations of the signal are plotted, with only the plus polarisation containing abbr:gw power for this morphology. 
 
 ** Sine-Gaussian bursts 
@@ -475,14 +475,14 @@ The quality factor, $Q$, of a burst signal is defined as
    \end{equation} 
    for a strain $h$ at time $t$, with $A$ the amplitude of the signal, $t_{0}$ its central time, $Q$ the quality factor of the burst, and $f$ is frequency.
 
-   An example of a sine-Gaussian burst ($q = 8$, $f = \SI{100}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the middle column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
+   An example of a time-domain sine-Gaussian burst signal($q = 8$, $f = \SI{100}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the middle column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised waveforms both shown. 
 
 ** White noise bursts
    :PROPERTIES:
    :CUSTOM_ID: sources:burst:models
    :END:
    Astrophysical processes are unlikely to produce emission at a single frequency, or with a smooth evolution of amplitude, and so searches are normally expected to be sensitive to band-limited white noise bursts, which consist of band-limited uncorrelated noise within a Gaussian amplitude envelope.
-   An example of a whitenoise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms in the first row. 
+   An example of a time-domain white noise burst (with duration $\SI{0.05}{\second}$, $f = \SI{1000}{\hertz}$, $A = 1\ee{-21}$, and $t_{0} = \SI{100}{\second}$, with linear polarisation) is plotted in the right column of figure ref:fig:sources:burst:adhoc, with the plus- and cross-polarised time-domain waveforms both shown. 
 
 
 

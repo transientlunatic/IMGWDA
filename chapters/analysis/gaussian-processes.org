@@ -126,9 +126,9 @@ Here the generating function is plotted as a grey line.
 Then we choose a covariance function for the  abbr:gp, in this case an exponential-quadratic covariance function (covariance functions are discussed in detail in section ref:sec:gp:covariance). The Gaussian process containing no data forms our prior probability distribution. 
 In the second row of figure ref:fig:gp:steps 10 draws from the prior distribution are plotted.
 The process of ``training'' the abbr:gp is discussed in detail in section ref:sec:gp:training.
-A prior distribution is placed over the $\sigma$ parameter (see equation eq:gp:prior-and-likelihood), and the abbr:gp is trained to find the most probable value for the $\sigma$ parameter and the hyperparameters of the covariance function.
+A prior distribution is placed over the $\sigma$ parameter (see equation ref:eq:gp:prior-and-likelihood), and the abbr:gp is trained to find the most probable value for the $\sigma$ parameter and the hyperparameters of the covariance function.
 For this example the prior placed on $\sigma$ is $\mathcal{N}(0.5, 0.2)$, and the priors on the hyperparameters are flat.
-and the trained Gaussian process can then be sampled multiple times to produce multiple different potential  fitting functions. 
+The trained Gaussian process can then be sampled multiple times to produce multiple different potential  fitting functions. 
 In the third row of figure ref:fig:gp:steps 10 draws from the abbr:gp posterior are displayed. 
 We can also take the mean and the covariance of the abbr:gp, and produce a single ``best-fit'' with confidence intervals, which is depicted in the fourth row of figure ref:fig:gp:steps. 
 Where, again, the original generating function for the data is shown as a grey line.
@@ -841,7 +841,7 @@ Each point corresponds to the summit of a hill (derived from the /Database of Br
 In order to interpolate a ``landscape'' based on these measurements I trained a abbr:gp with a rational quadratic kernel on the latitude and the longitude. 
 The $\alpha$ parameter of the kernel was set to be the same in both dimensions, and a $\Gamma$-function prior was placed on it with shape parameters $(\alpha_\Gamma = 5, \beta_\Gamma = 0.5)$.
 A normal distribution prior was placed on the lengthscale of each dimension, each with $(\mu=0.012, \sigma=1)$.
-It is worth noting that applying a constraint on a abbr:gp is difficult, and as such, despite proving the peak heights in the landscape, the abbr:gp is free to interpolate larger height values throughout the landscape.
+It is worth noting that applying a constraint on a abbr:gp is difficult, and as such, despite providing the peak heights in the landscape, the abbr:gp is free to interpolate larger height values throughout the landscape.
 Finally, the covariance function was multiplied by a constant kernel scaling factor ($\Con$), the amplitude of which was drawn from a normal distribution prior with parameters $(\mu = 1, \sigma=1)$.
 
 The abbr:gp was implemented using the ~PyMC3~ python library cite:Salvatier2016.

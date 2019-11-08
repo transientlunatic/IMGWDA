@@ -1,4 +1,4 @@
-In this thesis I have attempted to provide a broad overview of the broad field of abbr:gw research, ranging from the development of detectors capable of making observations of the minute displacements produced by propagating gravitational waves, to the various astrophysical systems which are expected to produce observable abpl:gw.
+In this thesis I have attempted to provide an overview of the broad field of abbr:gw research, ranging from the development of detectors capable of making observations of the minute displacements produced by propagating gravitational waves, to the various astrophysical systems which are expected to produce observable abpl:gw.
 
 The arrival of the first abbr:gw detection in September 2015 ushered-in a new era of observational abbr:gw astronomy, and with it a number of new challenges.
 The work presented in this thesis is an attempt to address some of these challenges.
@@ -20,7 +20,7 @@ The approach outlined in chapter ref:cha:gamma-ray-burst relies on understanding
 This task is non-trivial, as the noise present in measurements from these detectors is both non-stationary and evolves over time.
 The range of the detectors, which is affected by their sensitivity, is measured by ``injecting'' known signals, produced from theoretical models, into real, noisy data from the detectors.
 By injecting signals at a variety of amplitudes, corresponding to a range of distances, and determining which can be recovered by an analysis, allows the sensitivity of the detector over time to be estimated.
-A technique for producing these ``mock data challenges'' (and its implementation in the Minke python package) for transient signals is described in ref:cha:searches, along with an overview of how the unmodelled searches, which these challenges are intended to test, operate.
+A technique for producing these ``mock data challenges'' (and its implementation in the Minke python package) for transient signals is described in chapter  ref:cha:searches, along with an overview of how the unmodelled searches, which these challenges are intended to test, operate.
 
 The field of abbr:gw astronomy is developing rapidly, but as a young field, the future is likely to bring many surprises, and there are likely to be many sources of abpl:gw which have yet to be considered. 
 In chapter ref:cha:sources I discuss a number of sources which are considered likely to produce abpl:gw, but in section ref:sec:sources:burst:encounters:waveforms I present a preliminary study on the detectability of a source which has not been widely considered: encounters between black holes, and the potential capture of one black hole by another which results in a abbr:bbh coalescence event. 

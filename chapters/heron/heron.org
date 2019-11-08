@@ -82,7 +82,7 @@ Later in this chapter I will detail the results presented in cite:2019arXiv19030
 For the first demonstration model I will use 15 waveforms produced using the ~IMRPhenomPv2~ waveform model with mass-ratios spaced uniformly in log-space between $q=0.1$ and $q=1.0$.
 Each waveform is composed only from the $(2,2)$ spherical harmonic mode, and the strain is labelled as $h_{2,2}$.
 Each waveform was sampled at $\SI{4096}{\hertz}$ for a total system mass of $\SI{60}{\solMass}$. 
-The strain data is generated assuming that the source is placed at a distance of $\SI{1}{\solMass}$ (or approximately $\SI{1.477}{\meter}$ from the observer, allowing the strain to be easily rescaled to any distance, $r$, by dividing the amplitude by the distance to the source (in units of $\solMass$).
+The strain data is generated assuming that the source is placed at a distance of $\SI{1}{\solMass}$ (or approximately $\SI{1.477}{\kilo\meter}$) from the observer, allowing the strain to be easily rescaled to any distance, $r$, by dividing the amplitude by the distance to the source (in units of $\solMass$).
 The strain data used for training is then denoted $rh_{2,2}$.
 The timestamps are then divided by the total mass of the system to produce a waveform which can be rescaled for an arbitrary total mass by multiplying the timestamps by the desired total mass (in units of $\solMass$).
 The training data is plotted in figure ref:fig:heron:imr:testdata.
@@ -144,7 +144,7 @@ The match is a useful quantity to consider, as it is widely used in abbr:gw sign
 I calculate the (noise-free, with $S_n(f) = 1$) match between the mean waveform from the abbr:gp surrogate and the waveform from ~IMRPhenomPv2~  for 100 mass ratios between $q=0.1$ and $q=1.0$ in figure ref:fig:heron:imr:match.
 The match of the model is consistently above $0.995$ at each mass-ratio tested (although there is a notable drop in match around $0.35$ corresponding to one of the locations furthest from training data).
 While the use of match demonstrates that the abbr:gp is capable of reproducing the structure of a waveform accurately it will fail to characterise problems with a model which incorrectly predicts the amplitude of the waveform. 
-The match (and mismatch) are the standard metric which is used for evaluating waveform models, however there may be need for additional checks (beyond simply verification by-eye as in plot ref:fig:heron:imr:test1).
+The match (and mismatch) are the standard metric which is used for evaluating waveform models, however there may be need for additional checks (beyond simply verification by-eye as in figure ref:fig:heron:imr:test1).
 
 \begin{figure}
 \includegraphics{figures/heron/imr-test-match.pdf}
@@ -445,7 +445,7 @@ In this chapter I have laid-out an approach to producing a waveform model which 
 The ability to include these uncertainties should allow the accuracy of gravitational wave parameter estimation to be improved, as it allows biases introduced by uncertain waveform production to be taken into account.
 
 In contrast to previous attempts to produce a abbr:gp based model for waveforms, such as cite:2017PhRvD..96l3011D, this model is trained on data from the Georgia Tech waveform catalogue, described in section ref:sec:heron:nrdata.
-Other approaches have also been taken to producing surrogate models---eg the NRSur family of models cite:2015PhRvL.115l1102B,2017PhRvD..95j4023B,2017PhRvD..96b4058B (discussed in section ref:sec:sources:cbc:surrogates)---however these approaches do not have the attractive feature of producing an estimate of the waveform uncertainty.
+Other approaches have also been taken to producing surrogate models -- eg the NRSur family of models cite:2015PhRvL.115l1102B,2017PhRvD..95j4023B,2017PhRvD..96b4058B (discussed in section ref:sec:sources:cbc:surrogates) -- however these approaches do not have the attractive feature of producing an estimate of the waveform uncertainty.
 
 In section ref:sec:heron:verification I presented a number of tests which were used on the model to ensure that its outputs are reliable.
 The results of these tests indicate that the Heron model is capable of producing similar matches against numerical relativity waveforms 

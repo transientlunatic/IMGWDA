@@ -374,7 +374,7 @@ This means that the arrival rate is changed compared to the emission rate by
     In this arrangement we must account for the abbr:gw having a different strength one the return trip, and so equation ref:eq:detectors:interferometric:theory:arrival-times-gw becomes 
  \begin{align}	       
    \label{eq:detectors:interferometric:theory:three-term}	
-   \frac{\dd t_{\text{round}}}{\dd t} = 1 + \frac{1}{2} \Big(  (& 1-\cos(\theta) )h_+ (t+2L) - (1+\cos(\theta))h_+(t) \nonumber \\ & + 2 \cos(\theta) h_+ [t+L(1 - \cos(\theta))] \Big),
+   \frac{\dd t_{\text{round}}}{\dd t} = 1 + \frac{1}{2} \Big[  (& 1-\cos \theta )h_+ (t+2L) - (1+\cos \theta )h_+(t) \nonumber \\ & + 2 \cos \theta \ h_+ \left(t+L[1 - \cos \theta]\right) \Big],
  \end{align}
  which is often called the /three-term/ relation.
 
@@ -472,7 +472,7 @@ This allows a less powerful laser to be used as the input for the interferometer
  By setting the arm up as a cavity the effective length of the arm can be increased; a finesse of 100 will then increase the effective length of the arm 100-fold.
  This in turn increases the apparent change in the arm length by a factor of 100, and substantially aids the sensitivity of the detector.
 
- In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a finesse of $450$ cite:2015CQGra..32g4001L.
+ In Advanced gls:ligo, for example, the main arms form a Fabry-Perot cavity, with a finesse of 450 cite:2015CQGra..32g4001L.
  This is formed by placing a mirror between the beam-splitter and the end mirror in each arm.
 
 
@@ -755,7 +755,7 @@ The former includes noise sources which are due to the equipment used to constru
      \label{eq:intro:noise:radpressure}
      S(f) = \frac{1}{m f^{2} L} \sqrt{ \frac{ \hbar P }{ 2 \pi^{3} c \lambda} },
      \end{equation}
-at a given frequency $f$ (with $\hbar$ the reduced Planck constant), for a detector with arm-length $L$ cite:2011LRR....14....5P.
+at a given frequency $f$ (with $\hbar$ the reduced Planck constant), for a detector with arm-length $L$ \cite{2011LRR....14....5P}.
 # *Need to check this is correct for a cavity rather than a single laser beam*.
 Radiation pressure can be mitigated by increasing the power circulating in the arms, however this must be balanced against the increased shot noise introduced by the increased power.
 

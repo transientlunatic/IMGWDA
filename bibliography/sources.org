@@ -1610,25 +1610,89 @@
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 ** Supernovae
-*** Gravitational waves from supernova matter
+** Gravitational waves from supernova matter
+   :PROPERTIES:
+   :TITLE:    Gravitational waves from supernova matter
+   :BTYPE:    article
+   :CUSTOM_ID: 2010CQGra..27k4101S
+   :AUTHOR:   {Scheidegger}, S. and {Whitehouse}, S.~C. and {K{\"a}ppeli}, R. and {Liebend{\"o}rfer}, M.
+   :JOURNAL:  Classical and Quantum Gravity
+   :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
+   :YEAR:     2010
+   :MONTH:    Jun
+   :VOLUME:   27
+   :NUMBER:   11
+   :EID:      114101
+   :PAGES:    114101
+   :ABSTRACT: We have performed a set of 11 three-dimensional magnetohydrodynamical (MHD) core-collapse supernova simulations in order to investigate the dependences of the gravitational wave signal on the progenitor's initial conditions. We study the effects of the initial central angular velocity and different variants of neutrino transport. Our models are started up from a 15M$_{odot}$ progenitor and incorporate an effective general relativistic gravitational potential and a finite temperature nuclear equation of state. Furthermore, the electron flavour neutrino transport is tracked by efficient algorithms for the radiative transfer of massless fermions. We find that non- and slowly rotating models show gravitational wave emission due to prompt- and lepton driven convection that reveals details about the hydrodynamical state of the fluid inside the protoneutron stars. Furthermore we show that protoneutron stars can become dynamically unstable to rotational instabilities at T/|W| values as low as \raisebox{-0.5ex}\textasciitilde2\% at core bounce. We point out that the inclusion of deleptonization during the postbounce phase is very important for the quantitative gravitational wave (GW) prediction, as it enhances the absolute values of the gravitational wave trains up to a factor of ten with respect to a lepton-conserving treatment.
+   :DOI:      10.1088/0264-9381/27/11/114101
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   0912.1455
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2010CQGra..27k4101S
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+
+*** Gravitational wave burst signal from core collapse of rotating stars
     :PROPERTIES:
-    :TITLE:    Gravitational waves from supernova matter
+    :TITLE:    Gravitational wave burst signal from core collapse of rotating stars
     :BTYPE:    article
-    :CUSTOM_ID: 2010CQGra..27k4101S
-    :AUTHOR:   {Scheidegger}, S. and {Whitehouse}, S.~C. and {K{\"a}ppeli}, R. and {Liebend{\"o}rfer}, M.
-    :JOURNAL:  Classical and Quantum Gravity
-    :KEYWORDS: Astrophysics - High Energy Astrophysical Phenomena
-    :YEAR:     2010
-    :MONTH:    Jun
-    :VOLUME:   27
-    :NUMBER:   11
-    :EID:      114101
-    :PAGES:    114101
-    :DOI:      10.1088/0264-9381/27/11/114101
+    :CUSTOM_ID: 2008PhRvD..78f4056D
+    :AUTHOR:   {Dimmelmeier}, Harald and {Ott}, Christian D. and {Marek}, Andreas and {Janka}, H. -Thomas
+    :JOURNAL:  \prd
+    :KEYWORDS: 04.25.D-, 02.70.Bf, 04.30.Db, 97.60.Bw, Numerical relativity, Finite-difference methods, Wave generation and sources, Supernovae, Astrophysics
+    :YEAR:     2008
+    :MONTH:    Sep
+    :VOLUME:   78
+    :NUMBER:   6
+    :EID:      064056
+    :PAGES:    064056
+    :DOI:      10.1103/PhysRevD.78.064056
     :ARCHIVEPREFIX: arXiv
-    :EPRINT:   0912.1455
-    :PRIMARYCLASS: astro-ph.HE
-    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2010CQGra..27k4101S
+    :EPRINT:   0806.4953
+    :PRIMARYCLASS: astro-ph
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2008PhRvD..78f4056D
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** General Relativistic Explosion Models of Core-Collapse Supernovae
+    :PROPERTIES:
+    :TITLE:    General Relativistic Explosion Models of Core-Collapse Supernovae
+    :BTYPE:    inproceedings
+    :CUSTOM_ID: 2012ASPC..459..137M
+    :AUTHOR:   {M{\"u}ller}, B. and {Marek}, A. and {Janka}, H. -T. and {Dimmelmeier}, H.
+    :KEYWORDS: Astrophysics - Solar and Stellar Astrophysics, General Relativity and Quantum Cosmology
+    :BOOKTITLE: Numerical Modeling of Space Plasma Slows (ASTRONUM 2011)
+    :YEAR:     2012
+    :EDITOR:   {Pogorelov}, N.~V. and {Font}, J.~A. and {Audit}, E. and {Zank}, G.~P.
+    :SERIES:   Astronomical Society of the Pacific Conference Series
+    :VOLUME:   459
+    :MONTH:    Jul
+    :PAGES:    137
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1112.1920
+    :PRIMARYCLASS: astro-ph.SR
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2012ASPC..459..137M
+    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+    :END:
+*** A New Multi-dimensional General Relativistic Neutrino Hydrodynamics Code of Core-collapse Supernovae. III. Gravitational Wave Signals from Supernova Explosion Models
+    :PROPERTIES:
+    :TITLE:    A New Multi-dimensional General Relativistic Neutrino Hydrodynamics Code of Core-collapse Supernovae. III. Gravitational Wave Signals from Supernova Explosion Models
+    :BTYPE:    article
+    :CUSTOM_ID: 2013ApJ...766...43M
+    :AUTHOR:   {M{\"u}ller}, Bernhard and {Janka}, Hans-Thomas and {Marek}, Andreas
+    :JOURNAL:  \apj
+    :KEYWORDS: gravitation, gravitational waves, hydrodynamics, neutrinos, radiative transfer, supernovae: general, Astrophysics - Solar and Stellar Astrophysics, General Relativity and Quantum Cosmology
+    :YEAR:     2013
+    :MONTH:    Mar
+    :VOLUME:   766
+    :NUMBER:   1
+    :EID:      43
+    :PAGES:    43
+    :DOI:      10.1088/0004-637X/766/1/43
+    :ARCHIVEPREFIX: arXiv
+    :EPRINT:   1210.6984
+    :PRIMARYCLASS: astro-ph.SR
+    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2013ApJ...766...43M
     :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
     :END:
 *** Three-dimensional simulations of neutrino-driven core-collapse supernovae from low-mass single and binary star progenitors

@@ -605,6 +605,7 @@ When advanced gls:ligo   design   sensitivity   is achieved  around  2020  the  
 These limits narrow to between $\ang{8.10}$ and $\ang{14.95}$ if perfect efficiency is assumed.
 
 In contrasts to previous work, this method incorporates uncertainty in the event rate of abbr:bns signals detected by a abbr:gw detector, and also includes uncertainty in the efficiency with which abbr:sgrb are produced by these merger events. 
+The limits found from this method are consistent with results using the rates based approach outlined in cite:Abbott:2016ymx which finds a lower limit of $\ang{2.3}^{+{1.7}}_{-{1.1}}$ after analysis of the first gls:ligo observing run data, under the assumption that all abpl:sgrb are the result of a abbr:bns.
 Previous methods have included uncertainty in the abbr:bns rate, but none have performed the analysis using this hierarchical approach.
 I also believe this is the first work which has attempted to account for the potential efficiency factor, and has presented opening angle estimates using different priors on this quantity.
 
