@@ -1,4 +1,4 @@
-# Topics in Gravitational Wave Astronomy
+# Inference Methods for Gravitational Wave Data Analysis
 Daniel Williams
 
 This repository contains the text and code necessary to produce my thesis.
