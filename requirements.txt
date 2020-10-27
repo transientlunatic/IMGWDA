@@ -16,7 +16,7 @@ Click==7.0
 CommonMark==0.5.4
 configparser==3.5.0
 corner==2.0.1
-cryptography==2.4.2
+cryptography==3.2
 cycler==0.10.0
 Cython==0.29.2
 DateTime==4.3
