@@ -10,7 +10,7 @@ backports-abc==0.5
 backports.shutil-get-terminal-size==1.0.0
 beautifulsoup4==4.6.3
 binaryBHexp==1.0.1
-bleach==2.0.0
+bleach==3.3.0
 cffi==1.11.5
 Click==7.0
 CommonMark==0.5.4
