@@ -69,7 +69,7 @@ nbconvert==5.1.1
 nbformat==4.3.0
 nbsphinx==0.2.13
 nestle==0.2.0
-notebook==5.7.2
+notebook==6.1.5
 NRSur7dq2==1.0.5
 numdifftools==0.9.20
 numpy==1.15.4
