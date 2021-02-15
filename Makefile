@@ -20,7 +20,15 @@ BIB_FILES=$(ORG_BIB:.org=.bib)
 #$(patsubst chapters/%.org,$(BDIR)/org/%.int_tex,$(ORG_FILES))
 #TEX_FILES=$(patsubst chapters/%.org,$(BDIR)/tex/%.tex,$(ORG_FILES))
 HTML_FILES=$(patsubst chapters/%.org,$(BDIR)/html/%.html,$(ORG_FILES))
-.PHONY: document.pdf all clean glossary pdf help tex figures scripts
+
+
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
+SOURCEDIR     = .
+BUILDDIR      = _build
+
+
+.PHONY: document.pdf all clean glossary pdf help tex figures scripts Makefile
 
 help :  ## Show this help message.
 # This code snippet came from https://gist.github.com/prwhite/8168133
@@ -32,7 +40,8 @@ view :  ## View the output PDF file.
 	evince document.pdf &
 
 tex :	$(TEX_FILES)
-html : $(HTML_FILES)
+html : Makefile
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 pdf :	document.pdf ## Produce a PDF output
 

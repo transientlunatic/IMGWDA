@@ -1,0 +1,36 @@
+name: Sphinx site build
+
+on:
+  push:
+    branches: [ sphinx ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Setup ImageMagick
+      run: |
+        mkdir /tmp/imagick
+        echo '<policymap><policy domain="coder" rights="read | write" pattern="PDF" /></policymap>' >> /tmp/imagick/policy.xml
+        export MAGICK_CONFIGURE_PATH='/tmp/imagick/:$MAGICK_CONFIGURE_PATH' 
+    - name: Build HTML
+      run: |
+        pip install sphinx
+        pip install kentigern
+        pip install -r requirements.txt
+        make html
+    - name: SCP Deploy HTML
+      uses: horochx/deploy-via-scp@v1.0.1
+      with:
+        local: _build/html/*
+        remote: /home/danwilliams/thesis.daniel-williams.co.uk
+        host: ${{ secrets.sshhost }}
+        user: ${{ secrets.sshuser }}
+        key: ${{ secrets.sshkey }}
