@@ -1,5 +1,5 @@
 Probability
-===========
+###########
 
 In this work I consider \`\`probability'' as a measure of evidential
 support for a given outcome or event (this is the so-called
