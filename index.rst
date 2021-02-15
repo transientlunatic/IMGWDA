@@ -13,8 +13,9 @@ Introduction
    :maxdepth: 1
    :caption: Introduction
 
-   intro-gw
-   intro-det
+   ..
+      intro-gw
+      intro-det
    intro-source
 
 Data analysis
@@ -24,9 +25,10 @@ Data analysis
    :maxdepth: 1
    :caption: Data Analysis
 
-   analysis-bayesian
-   analysis-grb
-   analysis-gaussianprocess
+   ..
+      analysis-bayesian
+      analysis-grb
+      analysis-gaussianprocess
 
 Summary & conclusions
 ---------------------
@@ -40,8 +42,9 @@ Summary & conclusions
 .. toctree::
    :caption: Extras
 
-   zbibliography
-   glossary
+   bibliography
+   ..
+      glossary
    
 Indices and tables
 ==================
