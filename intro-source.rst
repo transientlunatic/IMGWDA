@@ -1,18 +1,14 @@
-The morphologies of abbr:gw signals can be divided roughly into three
-categories cite:2009LRR....12....2S, which correspond approximately to
-the classifications of the astrophysical sources which produce them.
+Sources of gravitational waves
+##############################
+
+The morphologies of abbr:gw signals can be divided roughly into three categories :cite:`2009LRR....12....2S`, which correspond approximately to the classifications of the astrophysical sources which produce them.
 
 Continuous
-    signals are expected to be produced by sources over long periods of
-    time. The primary source of continuous sources for gls:ligo are
-    expected to be abbr:gw pulsars, but in detectors which are sensitive
-    at lower frequencies, such as the proposed gls:lisa mission, the
-    radiation from inspiralling binary systems should also be
-    detectable.
+    signals are expected to be produced by sources over long periods of time. The primary source of continuous sources for gls:ligo are expected to be abbr:gw pulsars, but in detectors which are sensitive at lower frequencies, such as the proposed gls:lisa mission, the radiation from inspiralling binary systems should also be detectable.
 Stochastic
     signals are expected to constitute a background of abpl:gw, produced
     by the black holes at the centres of galaxies
-    cite:1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S,
+    :cite:`1980Natur.287..307B,2001astro.ph..8028P,2003ApJ...583..616J,2008MNRAS.390..192S`,
     and from the Universe's inflationary period
     cite:1988PhRvD..37.2078A.
 Transient
@@ -28,8 +24,7 @@ Transient
     for burst searches in the advanced observing runs, however there are
     prospects for burst sources in the gls:lisa regime, for example from
     hyperbolic encounters between compact objects and stars or other
-    compact objects
-    cite:2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G.
+    compact objects :cite:`2012PhRvD..86l4012B,2012PhRvD..86d4017D,2008MPLA...23...99C,2008APh....30..105C,2010MmSAI..81...87D,2005PhRvD..72h4009G,2010PhRvD..82j7501B,2011ApJ...729L..23G`.
 
 Continuous wave sources
 =======================
@@ -200,13 +195,13 @@ arrays cite:2015MNRAS.453.2576L,PhysRevLett.115.041101.
 Compact Binary Coalescences
 ===========================
 
-.. raw:: latex
+.. _figSourcesCBCSpectrum:
+.. figure:: figures/sources/aligo-cbc.png
+   :name: fig:sources:cbc:spectrum
+   :figwidth: 100%
+   :width: 100%
 
-   \begin{figure}
-   \includegraphics{figures/sources/aligo-cbc.pdf}
-   \caption[Spectra of a binary neutron star and a binary black hole coalescence]{The frequency spectrum of two types of compact binary coalescence—a binary neutron star coalescence, and a binary black hole coalescence—alongside the design sensitivity power spectrum of the Advanced LIGO detector at its design sensitivity.
-   \label{fig:sources:cbc:spectrum}}
-   \end{figure}
+   The frequency spectrum of two types of compact binary coalescence—a binary neutron star coalescence, and a binary black hole coalescence—alongside the design sensitivity power spectrum of the Advanced LIGO detector at its design sensitivity.
 
 The moment of inertia tensor of a two-body system will lead to
 non-spherical motion within the system, which will in turn produce
@@ -296,13 +291,14 @@ The abbr:pn correction to the Newtonian limit on the order
 The compact binary waveform
 ---------------------------
 
-.. raw:: latex
+.. _figSourcesCBCbbhCartoon:
+.. figure:: figures/sources/bbh-cartoon.png
+   :name: fig:sources:cbc:bbh-cartoon
+   :figwidth: 100%
+   :width: 100%
 
-   \begin{figure}
-      \includegraphics{figures/sources/bbh-cartoon.pdf}
-      \caption[Cartoon highlighting the components of the binary black hole waveform]{The waveform of a abbr:bbh from the inspiral (highlighted in red), to the merger (yellow), and the ringdown (purple).
-      \label{fig:sources:cbc:bbh-cartoon}}
-   \end{figure}
+   The waveform of a abbr:bbh from the inspiral (highlighted in red), to the merger (yellow), and the ringdown (purple).
+
 
 The gravitational waveform for a compact binary system can be split into
 three broad periods, which are each associated with the dominant energy
@@ -438,28 +434,30 @@ are not parallel to :math:`\vec{L}`. The distribution of abbr:bbh
 parameters for the waveforms in the catalogue are plotted in the corner
 plot of figure ref:fig:sources:cbc:nr:gtcoverage.
 
-.. raw:: latex
+.. figure:: figures/sources/gt-catalogue.png
+   :name: fig:sources:cbc:spectrum
+   :figwidth: 100%
+   :width: 100%
 
-   \begin{figure}
-   \caption[The coverage of the Georgia Tech numerical relativity waveform catalogue]{The coverage of the Georgia Tech catalogue over the intrinsic physical parameter space of abbr:bbh systems. \label{fig:sources:cbc:nr:gtcoverage}}
-   \includegraphics[width=\textwidth]{figures/sources/gt-catalogue.pdf}
-   \end{figure}
+   The coverage of the Georgia Tech catalogue over the intrinsic physical parameter space of abbr:bbh systems.
+
 
 SXS waveform catalogue
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The SXS waveform catalogue
-cite:2013PhRvL.111x1104M,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B
+:cite:p:`2013PhRvL.111x1104M`
+      ..
+	 ,2018arXiv181207865V,2019PhRvL.122a1101V,2016CQGra..33p5001C,2016PhRvD..94f4035A,2016PhRvD..93h4031B`
 includes over :math:`400` waveforms, both spinning and non-spinning,
 generated using abbr:spec. The coverage of this catalogue is shown in
 the corner plot of figure ref:fig:sources:cbc:nr:sxscoverage.
 
-.. raw:: latex
+.. figure:: figures/sources/sxs-catalogue.png
+   :name: fig:sources:cbc:spectrum
+   :figwidth: 100%
+   :width: 100%
 
-   \begin{figure}
-   \caption[The coverage of the SXS numerical relativity waveform catalogue]{The coverage of the SXS waveform catalogue over the intrinsic physical parameter space of abbr:bbh systems. \label{fig:sources:cbc:nr:sxscoverage}}
-   \includegraphics[width=\textwidth]{figures/sources/sxs-catalogue.pdf}
-   \end{figure}
 
 Analytical approximants
 -----------------------
