@@ -1,3 +1,6 @@
+Gravitational waves
+###################
+
 14 September 2015 will likely be remembered as one of the most
 significant in the history of astronomy, and of astrophysics. Early in
 the morning of this autumn day, at 09:50 UTC, a abbr:gw passed through
@@ -12,7 +15,7 @@ public outreach effort. Eventually, the collaboration found itself in a
 position to make the announcement of the first direct detection of
 abpl:gw, gls:gw150914, on 11 February 2016.
 
-Further discoveries were made during the first observing run of the
+Further discoveries2 were made during the first observing run of the
 advanced abbr:ligo facilities, gls:lvt151012  [1]_, observed in October,
 and gls:gw151226, observed in December, added to the collection of
 directly detected black hole binaries (although the significance of the
@@ -407,7 +410,7 @@ expression for the abbr:snr, :math:`\rho`  [6]_, in terms of the signal
 strain in the frequency-domain, :math:`\tilde{h}(f)`, and the noise
 abbr:psd, :math:`S_{\text{n}}(f)`:
 
-.. raw:: latex
+.. math::
 
    \begin{equation}
    \label{eq:intro:snr}
@@ -415,7 +418,7 @@ abbr:psd, :math:`S_{\text{n}}(f)`:
    \end{equation}
 
 Detecting gravitational waves
-=============================
+#############################
 
 Despite Pirani's work simplifying the description of abpl:gw in abbr:gr,
 it would take until 1957 for his arguments to gain prominence. The
@@ -423,7 +426,7 @@ Chapel Hill Conference of 1957 brought together around 40 physicists at
 the University of North Carolina, Chapel Hill, with discussions focussed
 around gravitation and abbr:gr cite:2016Univ....2...22C. It was during a
 session of this meeting chaired by Hermann Bondi that Richard Feynman is
-credited with developing the \`\`sticky bead'' argument. Feynman used
+credited with developing the "sticky bead" argument. Feynman used
 Pirani's formulation to argue that a device could be constructed which
 would measure the energy carried by a abbr:gw.
 
