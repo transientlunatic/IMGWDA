@@ -1,5 +1,6 @@
 sphinx
 kentigern
+nbsphinx
 sphinxcontrib-bibtex
 sphinxcontrib-thm
 sphinxcontrib-tikz

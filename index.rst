@@ -45,6 +45,14 @@ Summary & conclusions
    bibliography
    ..
       glossary
+
+Notebooks
+---------
+
+.. toctree::
+   :caption: Extras
+
+   notebooks/gp/mountains.ipynb
    
 Indices and tables
 ==================
