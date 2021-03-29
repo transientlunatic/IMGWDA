@@ -94,7 +94,7 @@ pybind11==2.2.4
 PyCBC==1.13.2
 pycparser==2.19
 pyDOE==0.3.8
-Pygments==2.2.0
+Pygments==2.7.4
 -e git+git@git.ligo.org:gwinc/pygwinc.git@1bdd0c9eee1e41e4764f1ffe9de9b50285fe5699#egg=pygwinc
 pymc3==3.6
 pyOpenSSL==18.0.0
