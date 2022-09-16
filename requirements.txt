@@ -58,7 +58,7 @@ ligo-common==1.0.3
 ligo-segments==1.1.0
 ligotimegps==1.2.3
 lscsoft-glue==1.60.0
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.0
 matplotlib==2.0.0
 -e git+git@git.ligo.org:daniel-williams/minke.git#egg=minke
