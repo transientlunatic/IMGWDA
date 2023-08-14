@@ -125,7 +125,7 @@ terminado==0.8.1
 testpath==0.3
 Theano==1.0.3
 -e git+git@github.com:transientlunatic/thesis.git@0ab0db0837f1dc7463d43b9d36c047b8cfd205df#egg=thesis
-tornado==6.3.2
+tornado==6.3.3
 tqdm==4.11.2
 traitlets==4.3.2
 wcwidth==0.1.7
